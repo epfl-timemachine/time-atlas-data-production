@@ -1,0 +1,115 @@
+{
+  "$id": "https://timeatlas.eu/rde/dataset_configuration.schema.json",
+  "type": "object",
+  "properties": {
+    "hr_config": {
+      "type": "object",
+      "properties": {
+        "main_label": {
+          "type": "string"
+        },
+        "sub_label": {
+          "type": "string"
+        },
+        "display_thumbnail": {
+          "type": "boolean"
+        },
+        "metadata_field_config": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": [
+                  "string"
+                ]
+              },
+              "display_label": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "fr": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "it": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "en"
+                ]
+              },
+              "nullable": {
+                "type": "boolean"
+              },
+              "indexable": {
+                "type": "boolean"
+              },
+              "short_display": {
+                "type": "boolean"
+              },
+              "hidden": {
+                "type": "boolean"
+              },
+              "tag": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "display_order": {
+                "type": "integer"
+              },
+              "uuid": {
+                "type": "string"
+              },
+              "dictionary": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "display_label",
+              "display_order",
+              "hidden",
+              "id",
+              "indexable",
+              "tag",
+              "nullable",
+              "short_display",
+              "type",
+              "uuid"
+            ]
+          }
+        }
+      },
+      "required": [
+        "main_label",
+        "metadata_field_config",
+        "sub_label",
+        "display_thumbnail"
+      ]
+    },
+    "uuid": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "hr_config",
+    "uuid"
+  ],
+  "additionalProperties": false
+}

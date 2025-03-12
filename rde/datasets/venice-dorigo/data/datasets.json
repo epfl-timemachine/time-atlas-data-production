@@ -1,0 +1,268 @@
+{
+ "name": "dorigo_dataset",
+ "type_in_file": [
+  "dataset"
+ ],
+ "creation_time": "2025-02-20T12:41:31.640792",
+ "rde_objects": [
+  {
+   "uuid": "488b5e83-f303-562f-bfe3-3d86ccbaab87",
+   "slug": "venice-dorigo",
+   "version": "1.0",
+   "name": {
+    "en": [
+     "Ownership mentioned in Dorigo"
+    ],
+    "fr": [
+     "Propriété mentionnée dans Dorigo"
+    ],
+    "it": [
+     "Proprietà menzionata in Dorigo"
+    ]
+   },
+   "rde_type": "dataset",
+   "publish": {
+    "doi": null,
+    "url": "https://github.com/epfl-timemachine/dorigo"
+   },
+   "description": {
+    "en": [
+     "Digitisation of several maps depicting zones from the 2003 book “Venezia romanica” by Wladimiro Dorigo. The zones are linked with entries from tables, which are also included in the book. The table entries contain information about properties within the zones and their owners."
+    ],
+    "fr": [
+     "Numérisation de plusieurs cartes représentant des zones du livre de 2003 “Venezia romanica” de Wladimiro Dorigo. Les zones sont liées à des entrées de tableaux, qui sont également inclus dans le livre. Les entrées de tableaux contiennent des informations sur les propriétés situées dans les zones et leurs propriétaires."
+    ],
+    "it": [
+     "Digitalizzazione di diverse mappe che raffigurano zone del libro del 2003 “Venezia romanica” di Wladimiro Dorigo. Le zone sono collegate a voci di tabelle, che sono anche incluse nel libro. Le voci delle tabelle contengono informazioni sulle proprietà all’interno delle zone e sui loro proprietari."
+    ]
+   },
+   "paradata": {
+    "en": [
+     "The maps with zones were manually georeferenced and automatically digitised using computer vision techniques. The table cells were detected by an optimization-based approach due to the curvature of the pages. The text within the table cells was recognized by an OCR library and entities were extracted by string matching from index pages."
+    ],
+    "fr": [
+     "Les cartes avec les zones ont été géoréférencées manuellement et numérisées automatiquement à l’aide de techniques de vision par ordinateur. Les cellules des tableaux ont été détectées par une approche basée sur l’optimisation en raison de la courbure des pages. Le texte à l’intérieur des cellules des tableaux a été reconnu par une bibliothèque OCR et les entités ont été extraites par correspondance de chaînes à partir des pages d’index."
+    ],
+    "it": [
+     "Le mappe con le zone sono state georeferenziate manualmente e digitalizzate automaticamente utilizzando tecniche di visione artificiale. Le celle delle tabelle sono state rilevate da un approccio basato sull’ottimizzazione a causa della curvatura delle pagine. Il testo all’interno delle celle delle tabelle è stato riconosciuto da una libreria OCR e le entità sono state estratte tramite corrispondenza di stringhe dalle pagine di indice."
+    ]
+   },
+   "sources": [],
+   "start_time": "0946-01-01T00:00:00",
+   "end_time": "1408-12-31T23:59:59",
+   "transcribed_pages_amount": 0,
+   "is_operationally_described_by": {
+    "hr_config": {
+     "main_label": "${owner_name}",
+     "sub_label": "${place_name}",
+     "display_thumbnail": false,
+     "metadata_field_config": [
+      {
+       "id": "place_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Place name"
+        ],
+        "it": [
+         "Nome del luogo"
+        ],
+        "fr": [
+         "Nom du lieu"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 1,
+       "uuid": "1cf8bd10-5784-5a1c-9858-cf5ece4638a2"
+      },
+      {
+       "id": "bibliographic_citation",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Bibliographic citation"
+        ],
+        "it": [
+         "Citazione bibliografica"
+        ],
+        "fr": [
+         "Citation bibliographique"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 2,
+       "uuid": "5a886299-2d5c-53d7-b484-5d2538d1a2a4"
+      },
+      {
+       "id": "date_comment",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Date comment"
+        ],
+        "it": [
+         "Commento sulla data"
+        ],
+        "fr": [
+         "Commentaire sur la date"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 3,
+       "uuid": "f5b4247a-bace-5c31-8c8b-350429793321"
+      },
+      {
+       "id": "source",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Source"
+        ],
+        "it": [
+         "Fonte"
+        ],
+        "fr": [
+         "Source"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 4,
+       "uuid": "af52cef9-a4f4-573e-8fae-beb024b1b399"
+      },
+      {
+       "id": "owner_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner name"
+        ],
+        "it": [
+         "Nome del proprietario"
+        ],
+        "fr": [
+         "Nom du propriétaire"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 5,
+       "uuid": "6b0be8db-fb4e-52a9-8d40-3b8ad514d6e6"
+      },
+      {
+       "id": "owner_last_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner last name"
+        ],
+        "it": [
+         "Cognome del proprietario"
+        ],
+        "fr": [
+         "Nom de famille du propriétaire"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 6,
+       "uuid": "073649fc-d6ab-5f29-9fd7-a74f0635d0a6"
+      },
+      {
+       "id": "owner_first_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner first name"
+        ],
+        "it": [
+         "Nome del proprietario"
+        ],
+        "fr": [
+         "Prénom du propriétaire"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 7,
+       "uuid": "6e1fb24f-5687-537a-88a5-62ffe11ca99c"
+      },
+      {
+       "id": "owner_name_appendix",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner name appendix"
+        ],
+        "it": [
+         "Appendice del nome del proprietario"
+        ],
+        "fr": [
+         "Appendice du nom du propriétaire"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 8,
+       "uuid": "858c2097-bb6c-5efa-b7f3-c9a11385835a"
+      },
+      {
+       "id": "owner_title",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner title"
+        ],
+        "it": [
+         "Titolo del proprietario"
+        ],
+        "fr": [
+         "Titre du propriétaire"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 9,
+       "uuid": "6d7de7ee-35e7-5699-a506-35730dda90c2"
+      }
+     ]
+    },
+    "uuid": "27f482da-c48c-565f-842b-8f30b8128671"
+   },
+   "falls_within": [
+    "620962bb-bb0d-50ed-b534-8903ad265932"
+   ],
+   "creation_time": "2025-02-20T12:41:31.637749"
+  }
+ ]
+}

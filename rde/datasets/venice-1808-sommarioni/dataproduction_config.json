@@ -1,0 +1,72 @@
+{
+    "UUID_NAMESPACE": "https://timemachine.epfl.ch/venice/sommarioni",
+    "TIMERANGE_MINIMUM": 18080101,
+    "TIMERANGE_MAXIMUM": 18081231,
+    "AREA_FILE_LOC": "../../areas/venice-area.json",
+    "DATASET_CONFIGURATION": {
+        "slug": "venice-1808-sommarioni",
+        "name": {
+            "en": ["Napoleonic Cadaster of 1808"],
+            "fr": ["Cadastre napoléonien de 1808"],
+            "it": ["Catasto Napoleonico del 1808"]
+        },
+        "description": {
+            "en": ["Digitisation of the 1808 Napoleonic cadaster of Venice. Contains both numeric facsimile of the cadaster map as well as the parcel's description in the written registry, called the \"Sommarioni\""],
+            "fr": ["Numérisation du cadastre napoléonien de 1808 de Venise. Contient à la fois un fac-similé numérique de la carte cadastrale et les descriptions des parcells dans le registre écrit, appelé le \"Sommarioni\""],
+            "it": ["Digitalizzazione del catasto napoleonico del 1808 di Venezia. Contiene sia il facsimile numerico della mappa catastale che la descrizione delle particelle nel registro scritto, chiamato \"Sommarioni\""]
+        },
+        "paradata": {
+            "en": ["The textual data from the register was manually transcribed, then semi-automatically cleaned and normalized by various researchers. The maps were vetcorized into geometries through computer vision techniques and then manually corrected and expanded."],
+            "fr": ["Les données textuelles du registre ont été manuellement transcrites, puis nettoyées et normalisées semi-automatiquement par divers chercheurs. Les cartes ont été vectorisées en géométries grâce à des techniques de vision par ordinateur, puis corrigées et étendues manuellement."],    
+            "it": ["I dati testuali del registro sono stati trascritti manualmente, quindi puliti e normalizzati semi-automaticamente da vari ricercatori. Le mappe sono state vettorializzate in geometrie attraverso tecniche di visione artificiale e quindi corrette ed espandere"]
+        },
+        "doi": null,
+        "github_link": "https://github.com/epfl-timemachine/venice-1808-sommarioni",
+        "indexed": [
+            "place",
+            "owner_standardised",
+            "parcel_number",
+            "sub_parcel_number"
+        ],
+        "short_display" : [
+            "owner_standardised", 
+            "place", 
+            "parcel_number", 
+            "sub_parcel_number"
+        ],
+        "hidden": [
+            "area",
+            "owner",
+            "district_acronym"
+        ],
+        "main_label": "${owner}",
+        "sub_label": "${place}",
+        "tagged_fields": {
+            "owner_standardised": "PEOPLE",
+            "owner": "PEOPLE",
+            "place": "PLACE",
+            "parcel_number": "PLACE",
+            "sub_parcel_number": "PLACE",
+            "house_number": "PLACE",
+            "ownership_types": "LAND_USE",
+            "qualities": "LAND_USE"
+        },
+        "labels": {
+            "parcel_number": {"en": ["Parcel's Number"], "fr": ["Numéro de parcelle"], "it": ["Numero di particella"]},
+            "sub_parcel_number": {"en":["Sub-parcel's Number"], "fr": ["Numéro de sous-parcelle"], "it": ["Numero di sottoparticella"]},
+            "owner": {"en": ["Description of the parcel(s)' owner(s)"], "fr": ["Description du ou des propriétaires de la parcelle"], "it": ["Descrizione del(i) proprietario(i) della particella"]},
+            "quality": {"en": ["Description of the parcel's function(s)"], "fr": ["Description de la ou des fonction(s) de la parcelle"], "it": ["Descrizione della o delle funzione(i) della particella"]},
+            "place": {"en": ["Description of the location"], "fr": ["Description de l'emplacement"], "it": ["Descrizione della posizione"]},
+            "district": {"en": ["District"], "fr": ["District"], "it": ["Distretto"]},
+            "austrian_cadaster_correspondance": {"en": ["Corresponding number in the austrian cadaster"], "fr": ["Numéro correspondant dans le cadastre autrichien"], "it": ["Numero corrispondente nel catasto austriaco"]},
+            "austro_italian_cadaster_correspondance": {"en": ["Corresponding number in the austro-italian cadaster"], "fr": ["Numéro correspondant dans le cadastre austro-italien"], "it": ["Numero corrispondente nel catasto austro-italiano"]},
+            "house_number": {"en": ["Number of the physical door of the building"], "fr": ["Numéro de la porte physique du bâtiment"], "it": ["Numero della porta fisica dell'edificio"]},
+            "owner_standardised": {"en": ["Standardised description of the parcel(s)' owner(s)"], "fr": ["Description standardisée du ou des propriétaires de la parcelle"], "it": ["Descrizione standardizzata del(i) proprietario(i) della particella"]},
+            "ownership_types": {"en": ["Type of ownership"], "fr": ["Type de propriété"], "it": ["Tipo di proprietà"]},
+            "qualities": {"en": ["Standardized parcel's function(s)"], "fr": ["Fonction(s) standardisée(s) de la parcelle"], "it": ["Funzione(i) standardizzata(e) della particella"]},
+            "area": {"en": ["Parcel's area in squared meters"], "fr": ["Superficie de la parcelle en mètres carrés"], "it": ["Superficie della particella in metri quadrati"]},
+            "district_acronym": {"en": ["District Acronym"], "fr": ["Acronyme du district"], "it": ["Acronimo del distretto"]},
+            "parish_standardized": {"en": ["Parish"], "fr": ["Paroisse"], "it": ["Parrocchia"]}
+        }
+    }
+}

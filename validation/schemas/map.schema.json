@@ -1,0 +1,131 @@
+{
+  "$id": "https://timeatlas.eu/rde/map.schema.json",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "rde_type": {
+      "type": "string"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fr": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "it": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "en"
+      ]
+    },
+    "description": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fr": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "it": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "en"
+      ]
+    },
+    "paradata": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fr": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "it": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "en"
+      ]
+    },
+    "thumbnail": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "contains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "falls_within": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "contains",
+    "description",
+    "end_time",
+    "falls_within",
+    "name",
+    "version",
+    "paradata",
+    "thumbnail",
+    "rde_type",
+    "slug",
+    "start_time",
+    "uuid"
+  ]
+}

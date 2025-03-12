@@ -1,0 +1,61 @@
+{
+  "$id": "https://timeatlas.eu/rde/historical_record.schema.json",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "rde_type": {
+      "type": "string"
+    },
+    "paradata": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "annotated_content": {
+      "type": "object"
+    },
+    "thumbnail": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "annotated_content",
+    "dataset",
+    "documents",
+    "end_time",
+    "paradata",
+    "rde_type",
+    "start_time",
+    "type",
+    "uuid"
+  ],
+  "additionalProperties": false
+}

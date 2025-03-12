@@ -1,0 +1,77 @@
+{
+  "$id": "https://timeatlas.eu/rde/area.schema.json",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fr": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "it": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "en"
+      ]
+    },
+    "slug": {
+      "type": "string"
+    },
+    "rde_type": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ]
+    }
+  },
+  "required": [
+    "rde_type",
+    "name",
+    "slug",
+    "uuid",
+    "version",
+    "geometry"
+  ],
+  "additionalProperties": false
+}

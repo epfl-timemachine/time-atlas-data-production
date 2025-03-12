@@ -1,0 +1,54 @@
+{
+    "$id": "https://timeatlas.eu/rde/file.schema.json",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type_in_file": {
+          "type": "array",
+          "items": {
+            "enum": ["historical_record",  "observation", "point_of_interest", "geometry", "dataset", "map", "layer", "area", "dictionary"]
+          }
+        }
+      },
+      "creation_time": {
+        "type": "string"
+      },
+      "rde_objects": {
+        "type": "array",
+        "items": {
+         "anyOf": [
+            {
+              "$ref": "https://timeatlas.eu/rde/observation.schema.json"
+            },
+            {
+              "$ref": "https://timeatlas.eu/rde/historical_record.schema.json"
+            },
+            {
+              "$ref": "https://timeatlas.eu/rde/point_of_interest.schema.json"
+            },
+            {
+              "$ref": "https://timeatlas.eu/rde/geometry.schema.json"
+            },
+            {
+              "$ref": "https://timeatlas.eu/rde/dataset.schema.json"
+            },
+            {
+              "$ref": "https://timeatlas.eu/rde/layer.schema.json"
+            },
+            {
+              "$ref": "https://timeatlas.eu/rde/map.schema.json"
+            },
+            {
+              "$ref": "https://timeatlas.eu/rde/area.schema.json"
+            }
+          ]
+        }
+      }
+    },
+    "required": [
+      "name",
+      "creation_time",
+      "type_in_file",
+      "rde_objects"
+    ]
+  }

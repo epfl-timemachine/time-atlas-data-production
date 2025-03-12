@@ -1,0 +1,466 @@
+{
+ "name": "1857_gc_dataset",
+ "type_in_file": [
+  "dataset"
+ ],
+ "creation_time": "2025-02-24T15:09:04.489601",
+ "rde_objects": [
+  {
+   "uuid": "1bf144f8-5d89-537d-8dff-87420f4e9763",
+   "slug": "venice-1857-commercial-directory",
+   "version": "1.0",
+   "name": {
+    "en": [
+     "Commercial directory of Venice in 1857"
+    ],
+    "it": [
+     "Guida commerciale di Venezia nel 1857"
+    ],
+    "fr": [
+     "Annuaire commercial de Venise en 1857"
+    ]
+   },
+   "rde_type": "dataset",
+   "publish": {
+    "doi": null,
+    "url": "https://www.github.com/epfl-timemachine/venice-1857-commercial-directory"
+   },
+   "description": {
+    "en": [
+     "Digitisation of the commercial directory of Venice in 1857, represent data relating to the profession and location of the different registered workers of the city."
+    ],
+    "it": [
+     "Digitalizzazione della guida commerciale di Venezia del 1857, rappresenta i dati relativi alla professione e alla localizzazione dei diversi lavoratori registrati della città."
+    ],
+    "fr": [
+     "Numérisation de l'annuaire commercial de Venise en 1857, représentant les données relatives à la profession et à la localisation des différents travailleurs enregistrés de la ville."
+    ]
+   },
+   "paradata": {
+    "en": [
+     "The textual data from the commercial directory was automatically transcribed using OCR technics and then manually corrected. The geolocation of the different workers was done semi-automatically comparing the addresses provided in the directory against sources both contemporary and modern."
+    ],
+    "it": [
+     "I dati testuali della guida commerciale sono stati trascritti automaticamente utilizzando tecniche OCR e quindi corretti manualmente. La geolocalizzazione dei diversi lavoratori è stata effettuata in modo semiautomatico confrontando gli indirizzi forniti nella guida con fonti sia contemporanee che moderne."
+    ],
+    "fr": [
+     "Les données textuelles de l'annuaire commercial ont été automatiquement transcrites à l'aide de techniques d'OCR puis corrigées manuellement. La géolocalisation des différents travailleurs a été effectuée de manière semi-automatique en comparant les adresses fournies dans l'annuaire avec des sources à la fois contemporaines et modernes."
+    ]
+   },
+   "sources": [],
+   "start_time": "1857-01-01T00:00:00",
+   "end_time": "1857-12-31T23:59:59",
+   "transcribed_pages_amount": 0,
+   "is_operationally_described_by": {
+    "hr_config": {
+     "main_label": "${name}",
+     "sub_label": "${profession_eng}",
+     "display_thumbnail": false,
+     "metadata_field_config": [
+      {
+       "id": "index",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Interal index"
+        ],
+        "it": [
+         "Indice interno"
+        ],
+        "fr": [
+         "Index interne"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 1,
+       "uuid": "d7639dc4-52c8-54a1-b301-84dcb2cbe2ee"
+      },
+      {
+       "id": "name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Full Name"
+        ],
+        "it": [
+         "Nome completo"
+        ],
+        "fr": [
+         "Nom complet"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 2,
+       "uuid": "dfd776ac-5e12-5a4a-b113-6aa73959c875"
+      },
+      {
+       "id": "profession_eng",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Profession"
+        ],
+        "it": [
+         "Professione"
+        ],
+        "fr": [
+         "Profession"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PROFESSION",
+       "display_order": 3,
+       "uuid": "4c768001-042f-557d-a9de-df5b2a521af5"
+      },
+      {
+       "id": "profession",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Profession (transcription)"
+        ],
+        "it": [
+         "Professione (trascrizione)"
+        ],
+        "fr": [
+         "Profession (transcription)"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PROFESSION",
+       "display_order": 4,
+       "uuid": "4d84841c-c75c-5b6c-917d-90a1060336fe"
+      },
+      {
+       "id": "category_eng",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Category of profession"
+        ],
+        "it": [
+         "Categoria di professione"
+        ],
+        "fr": [
+         "Catégorie de profession"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PROFESSION",
+       "display_order": 5,
+       "uuid": "19137856-0192-5423-a7ec-5c593fa51c53"
+      },
+      {
+       "id": "category",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Category of profession (it)"
+        ],
+        "it": [
+         "Categoria di professione (it)"
+        ],
+        "fr": [
+         "Catégorie de profession (it)"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PROFESSION",
+       "display_order": 6,
+       "uuid": "63e8488c-d568-55dc-8f81-010321c58871"
+      },
+      {
+       "id": "FIRST_N",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "First name"
+        ],
+        "it": [
+         "Nome"
+        ],
+        "fr": [
+         "Prénom"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 7,
+       "uuid": "81517597-6a72-55fc-95a9-3b2ea7b0d9e9"
+      },
+      {
+       "id": "LAST_N",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Last name"
+        ],
+        "it": [
+         "Cognome"
+        ],
+        "fr": [
+         "Nom de famille"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 8,
+       "uuid": "059ca511-0f09-5b09-829d-0232d2dcb595"
+      },
+      {
+       "id": "OCC_COMPL",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Complement to profession"
+        ],
+        "it": [
+         "Complemento alla professione"
+        ],
+        "fr": [
+         "Complément de profession"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 9,
+       "uuid": "d44e94ec-53b4-558f-8859-35f0d9b4824f"
+      },
+      {
+       "id": "PER_GRP",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Person group"
+        ],
+        "it": [
+         "Gruppo di persone"
+        ],
+        "fr": [
+         "Groupe de personnes"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 10,
+       "uuid": "146ce439-b9fd-5949-bf60-57199795eac9"
+      },
+      {
+       "id": "PER_COMPL",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Complement to person"
+        ],
+        "it": [
+         "Complemento alla persona"
+        ],
+        "fr": [
+         "Complément de personne"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 11,
+       "uuid": "1ea30116-b712-50d3-8167-bc554361f11c"
+      },
+      {
+       "id": "LOC_PAR",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Parish"
+        ],
+        "it": [
+         "Parrocchia"
+        ],
+        "fr": [
+         "Paroisse"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 12,
+       "uuid": "7fb11160-4b45-5a05-8b25-35f02647434b"
+      },
+      {
+       "id": "LOC_STR",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Street"
+        ],
+        "it": [
+         "Strada"
+        ],
+        "fr": [
+         "Rue"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 13,
+       "uuid": "2ca5c28f-842d-580d-9353-68ab16a7410e"
+      },
+      {
+       "id": "NUM",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "House number"
+        ],
+        "it": [
+         "Numero civico"
+        ],
+        "fr": [
+         "Numéro de maison"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 14,
+       "uuid": "a2e389a6-55d9-59a9-94a6-ef0ce6740235"
+      },
+      {
+       "id": "LOC_COMPL",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Complement to location"
+        ],
+        "it": [
+         "Complemento alla localizzazione"
+        ],
+        "fr": [
+         "Complément de localisation"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 15,
+       "uuid": "72364ef9-0381-5046-b529-b9a9a7e61a3d"
+      },
+      {
+       "id": "NORM_PARISH",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Normalized parish"
+        ],
+        "it": [
+         "Parrocchia normalizzata"
+        ],
+        "fr": [
+         "Paroisse normalisée"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 16,
+       "uuid": "024d4334-2ef3-5d6c-920b-e79b38da00ec"
+      },
+      {
+       "id": "DISTRICT",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "District"
+        ],
+        "it": [
+         "Distretto"
+        ],
+        "fr": [
+         "District"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 17,
+       "uuid": "5f3f9554-a78c-5bfd-8ddc-94c2050c9303"
+      },
+      {
+       "id": "geometry_from",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "GPS Location stemming from source"
+        ],
+        "it": [
+         "Posizione GPS proveniente dalla fonte"
+        ],
+        "fr": [
+         "Emplacement GPS provenant de la source"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 18,
+       "uuid": "282db9e4-db23-5557-8912-d4fbc3afea36"
+      }
+     ]
+    },
+    "uuid": "94e6838e-5247-579e-a0b3-d698969ecd64"
+   },
+   "falls_within": [
+    "620962bb-bb0d-50ed-b534-8903ad265932"
+   ],
+   "creation_time": "2025-02-24T15:09:04.487840"
+  }
+ ]
+}

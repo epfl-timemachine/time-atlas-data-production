@@ -1,0 +1,73 @@
+{
+  "$id": "https://timeatlas.eu/rde/observation.schema.json",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "rde_type": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "has_geometry": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "documented_in": {
+      "type": "string"
+    },
+    "has_handle": {
+      "type": "string"
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ]
+    }
+  },
+  "required": [
+    "dataset",
+    "documented_in",
+    "end_time",
+    "has_geometry",
+    "has_handle",
+    "rde_type",
+    "start_time",
+    "type",
+    "uuid"
+  ],
+  "additionalProperties":false
+}

@@ -1,0 +1,406 @@
+{
+ "name": "sommarioni_dataset",
+ "type_in_file": [
+  "dataset"
+ ],
+ "creation_time": "2025-02-20T12:33:00.167784",
+ "rde_objects": [
+  {
+   "uuid": "266e0ce9-26f4-50bc-b75b-c5d3b71fed82",
+   "slug": "venice-1808-sommarioni",
+   "version": "1.0",
+   "name": {
+    "en": [
+     "Napoleonic Cadaster of 1808"
+    ],
+    "fr": [
+     "Cadastre napoléonien de 1808"
+    ],
+    "it": [
+     "Catasto Napoleonico del 1808"
+    ]
+   },
+   "rde_type": "dataset",
+   "publish": {
+    "doi": null,
+    "url": "https://github.com/epfl-timemachine/venice-1808-sommarioni"
+   },
+   "description": {
+    "en": [
+     "Digitisation of the 1808 Napoleonic cadaster of Venice. Contains both numeric facsimile of the cadaster map as well as the parcel's description in the written registry, called the \"Sommarioni\""
+    ],
+    "fr": [
+     "Numérisation du cadastre napoléonien de 1808 de Venise. Contient à la fois un fac-similé numérique de la carte cadastrale et les descriptions des parcells dans le registre écrit, appelé le \"Sommarioni\""
+    ],
+    "it": [
+     "Digitalizzazione del catasto napoleonico del 1808 di Venezia. Contiene sia il facsimile numerico della mappa catastale che la descrizione delle particelle nel registro scritto, chiamato \"Sommarioni\""
+    ]
+   },
+   "paradata": {
+    "en": [
+     "The textual data from the register was manually transcribed, then semi-automatically cleaned and normalized by various researchers. The maps were vetcorized into geometries through computer vision techniques and then manually corrected and expanded."
+    ],
+    "fr": [
+     "Les données textuelles du registre ont été manuellement transcrites, puis nettoyées et normalisées semi-automatiquement par divers chercheurs. Les cartes ont été vectorisées en géométries grâce à des techniques de vision par ordinateur, puis corrigées et étendues manuellement."
+    ],
+    "it": [
+     "I dati testuali del registro sono stati trascritti manualmente, quindi puliti e normalizzati semi-automaticamente da vari ricercatori. Le mappe sono state vettorializzate in geometrie attraverso tecniche di visione artificiale e quindi corrette ed espandere"
+    ]
+   },
+   "sources": [
+    "b2aae0de-bac0-5965-af70-f346f2dceb29"
+   ],
+   "start_time": "1808-01-01T00:00:00",
+   "end_time": "1808-12-31T23:59:59",
+   "transcribed_pages_amount": 1494,
+   "is_operationally_described_by": {
+    "hr_config": {
+     "main_label": "${owner}",
+     "sub_label": "${place}",
+     "display_thumbnail": false,
+     "metadata_field_config": [
+      {
+       "id": "parcel_number",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Parcel's Number"
+        ],
+        "fr": [
+         "Numéro de parcelle"
+        ],
+        "it": [
+         "Numero di particella"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 1,
+       "uuid": "1c347247-5750-5374-bb3d-ea66528ae25b"
+      },
+      {
+       "id": "sub_parcel_number",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Sub-parcel's Number"
+        ],
+        "fr": [
+         "Numéro de sous-parcelle"
+        ],
+        "it": [
+         "Numero di sottoparticella"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 2,
+       "uuid": "4e9f5d27-1afc-5a79-8209-5a72c1150bc6"
+      },
+      {
+       "id": "owner",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Description of the parcel(s)' owner(s)"
+        ],
+        "fr": [
+         "Description du ou des propriétaires de la parcelle"
+        ],
+        "it": [
+         "Descrizione del(i) proprietario(i) della particella"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": "PEOPLE",
+       "display_order": 3,
+       "uuid": "59b303b4-edc2-5812-9c4d-4c47ae8308a2"
+      },
+      {
+       "id": "quality",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Description of the parcel's function(s)"
+        ],
+        "fr": [
+         "Description de la ou des fonction(s) de la parcelle"
+        ],
+        "it": [
+         "Descrizione della o delle funzione(i) della particella"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 4,
+       "uuid": "9a06c699-e939-55bf-9bda-2c5af7922ae0"
+      },
+      {
+       "id": "place",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Description of the location"
+        ],
+        "fr": [
+         "Description de l'emplacement"
+        ],
+        "it": [
+         "Descrizione della posizione"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 5,
+       "uuid": "aa207f1d-d0f1-5d65-9942-569bf2adde5b"
+      },
+      {
+       "id": "district",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "District"
+        ],
+        "fr": [
+         "District"
+        ],
+        "it": [
+         "Distretto"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 6,
+       "uuid": "acefbf3c-e00d-5bb2-be96-4e2bc0d839e9"
+      },
+      {
+       "id": "austrian_cadaster_correspondance",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Corresponding number in the austrian cadaster"
+        ],
+        "fr": [
+         "Numéro correspondant dans le cadastre autrichien"
+        ],
+        "it": [
+         "Numero corrispondente nel catasto austriaco"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 7,
+       "uuid": "1c1a7059-18a9-5787-b1ec-522a6ab89426"
+      },
+      {
+       "id": "austro_italian_cadaster_correspondance",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Corresponding number in the austro-italian cadaster"
+        ],
+        "fr": [
+         "Numéro correspondant dans le cadastre austro-italien"
+        ],
+        "it": [
+         "Numero corrispondente nel catasto austro-italiano"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 8,
+       "uuid": "aa2a0e2a-aea1-50ac-bde6-1fff7a6b8f06"
+      },
+      {
+       "id": "house_number",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Number of the physical door of the building"
+        ],
+        "fr": [
+         "Numéro de la porte physique du bâtiment"
+        ],
+        "it": [
+         "Numero della porta fisica dell'edificio"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 9,
+       "uuid": "d38aad38-5f53-5043-bea6-aebca41bbc4a"
+      },
+      {
+       "id": "owner_standardised",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Standardised description of the parcel(s)' owner(s)"
+        ],
+        "fr": [
+         "Description standardisée du ou des propriétaires de la parcelle"
+        ],
+        "it": [
+         "Descrizione standardizzata del(i) proprietario(i) della particella"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 10,
+       "uuid": "8c8cdaed-e1b0-51b5-8701-9a46c4c24e6b"
+      },
+      {
+       "id": "ownership_types",
+       "type": "LIST[CATEGORY]",
+       "display_label": {
+        "en": [
+         "Type of ownership"
+        ],
+        "fr": [
+         "Type de propriété"
+        ],
+        "it": [
+         "Tipo di proprietà"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "LAND_USE",
+       "display_order": 11,
+       "uuid": "c565ebec-f525-5677-bd86-7fd684f7d008",
+       "dictionary": "b18e1afd-2326-5826-853e-4ba749d94f80"
+      },
+      {
+       "id": "qualities",
+       "type": "LIST[CATEGORY]",
+       "display_label": {
+        "en": [
+         "Standardized parcel's function(s)"
+        ],
+        "fr": [
+         "Fonction(s) standardisée(s) de la parcelle"
+        ],
+        "it": [
+         "Funzione(i) standardizzata(e) della particella"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "LAND_USE",
+       "display_order": 12,
+       "uuid": "ccdb54b2-6a16-5308-b86b-e674e399cce5",
+       "dictionary": "231fa303-1c48-5dc4-bbbc-eb101d993301"
+      },
+      {
+       "id": "area",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Parcel's area in squared meters"
+        ],
+        "fr": [
+         "Superficie de la parcelle en mètres carrés"
+        ],
+        "it": [
+         "Superficie della particella in metri quadrati"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 13,
+       "uuid": "e6bb1963-4db6-581d-9350-3da4f2cae97c"
+      },
+      {
+       "id": "district_acronym",
+       "type": "CATEGORY",
+       "display_label": {
+        "en": [
+         "District Acronym"
+        ],
+        "fr": [
+         "Acronyme du district"
+        ],
+        "it": [
+         "Acronimo del distretto"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 14,
+       "uuid": "88e9f720-6ef5-5d4e-9895-ea3c5fbb5309",
+       "dictionary": "62977b2b-43c7-52e7-8cbd-612bb1a55299"
+      },
+      {
+       "id": "parish_standardized",
+       "type": "CATEGORY",
+       "display_label": {
+        "en": [
+         "Parish"
+        ],
+        "fr": [
+         "Paroisse"
+        ],
+        "it": [
+         "Parrocchia"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 15,
+       "uuid": "32f8a529-aad3-5ddd-8527-b9725fba4001",
+       "dictionary": "fa2030af-bf07-5cce-bac3-cecbde3af2d8"
+      }
+     ]
+    },
+    "uuid": "645885b5-0c48-5c04-972a-a79a5630f54b"
+   },
+   "falls_within": [
+    "620962bb-bb0d-50ed-b534-8903ad265932"
+   ],
+   "creation_time": "2025-02-20T12:33:00.165842"
+  }
+ ]
+}

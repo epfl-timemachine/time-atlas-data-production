@@ -1,0 +1,76 @@
+{
+    "UUID_NAMESPACE": "https://timemachine.epfl.ch/venice/1857_commercial_directory",
+    "TIMERANGE_MINIMUM": 18570101,
+    "TIMERANGE_MAXIMUM": 18571231,
+    "AREA_FILE_LOC": "../../areas/venice-area.json",
+    "DATASET_CONFIGURATION": {
+        "slug": "venice-1857-commercial-directory",
+        "name": {
+            "en": ["Commercial directory of Venice in 1857"],
+            "it": ["Guida commerciale di Venezia nel 1857"],
+            "fr": ["Annuaire commercial de Venise en 1857"]
+        },
+        "description": {
+            "en": ["Digitisation of the commercial directory of Venice in 1857, represent data relating to the profession and location of the different registered workers of the city."],
+            "it": ["Digitalizzazione della guida commerciale di Venezia del 1857, rappresenta i dati relativi alla professione e alla localizzazione dei diversi lavoratori registrati della città."],
+            "fr": ["Numérisation de l'annuaire commercial de Venise en 1857, représentant les données relatives à la profession et à la localisation des différents travailleurs enregistrés de la ville."]
+        },
+        "paradata": {
+            "en": ["The textual data from the commercial directory was automatically transcribed using OCR technics and then manually corrected. The geolocation of the different workers was done semi-automatically comparing the addresses provided in the directory against sources both contemporary and modern."],
+            "it": ["I dati testuali della guida commerciale sono stati trascritti automaticamente utilizzando tecniche OCR e quindi corretti manualmente. La geolocalizzazione dei diversi lavoratori è stata effettuata in modo semiautomatico confrontando gli indirizzi forniti nella guida con fonti sia contemporanee che moderne."],
+            "fr": ["Les données textuelles de l'annuaire commercial ont été automatiquement transcrites à l'aide de techniques d'OCR puis corrigées manuellement. La géolocalisation des différents travailleurs a été effectuée de manière semi-automatique en comparant les adresses fournies dans l'annuaire avec des sources à la fois contemporaines et modernes."]
+        },
+        "doi": null,
+        "github_link": "https://www.github.com/epfl-timemachine/venice-1857-commercial-directory",
+        "indexed": [
+            "name",
+            "profession_eng",
+            "profession",
+            "LOC_STR"
+        ],
+        "short_display" : [
+            "name",
+            "profession_eng",
+            "LOC_STR",
+            "NUM"
+        ],
+        "hidden": [
+            "index", 
+            "geometry_from"
+        ],
+        "main_label": "${name}",
+        "sub_label": "${profession_eng}",
+        "tagged_fields": {
+            "name": "PEOPLE",
+            "FIRST_N": "PEOPLE",
+            "LAST_N": "PEOPLE",
+            "LOC_STR": "PLACE",
+            "DISTRICT": "PLACE",
+            "LOC_PAR": "PLACE",
+            "profession_eng": "PROFESSION",
+            "profession": "PROFESSION",
+            "category_eng": "PROFESSION",
+            "category": "PROFESSION"
+        },
+        "labels": {
+            "index": {"en": ["Interal index"], "it": ["Indice interno"], "fr": ["Index interne"]},
+            "name": {"en": ["Full Name"], "it": ["Nome completo"], "fr": ["Nom complet"]},
+            "profession_eng": {"en": ["Profession"], "it": ["Professione"], "fr": ["Profession"]},
+            "profession": {"en": ["Profession (transcription)"], "it": ["Professione (trascrizione)"], "fr": ["Profession (transcription)"]},
+            "category_eng": {"en": ["Category of profession"], "it": ["Categoria di professione"], "fr": ["Catégorie de profession"]},
+            "category": {"en": ["Category of profession (it)"], "it": ["Categoria di professione (it)"], "fr": ["Catégorie de profession (it)"]},
+            "FIRST_N": {"en": ["First name"], "it": ["Nome"], "fr": ["Prénom"]},
+            "LAST_N": {"en": ["Last name"], "it": ["Cognome"], "fr": ["Nom de famille"]},
+            "OCC_COMPL": {"en": ["Complement to profession"], "it": ["Complemento alla professione"], "fr": ["Complément de profession"]},
+            "PER_GRP": {"en": ["Person group"], "it": ["Gruppo di persone"], "fr": ["Groupe de personnes"]},
+            "PER_COMPL": {"en": ["Complement to person"], "it": ["Complemento alla persona"], "fr": ["Complément de personne"]},
+            "LOC_PAR": {"en": ["Parish"], "it": ["Parrocchia"], "fr": ["Paroisse"]},
+            "LOC_STR": {"en": ["Street"], "it": ["Strada"], "fr": ["Rue"]},
+            "NUM": {"en": ["House number"], "it": ["Numero civico"], "fr": ["Numéro de maison"]},
+            "LOC_COMPL": {"en": ["Complement to location"], "it": ["Complemento alla localizzazione"], "fr": ["Complément de localisation"]},
+            "NORM_PARISH": {"en": ["Normalized parish"], "it": ["Parrocchia normalizzata"], "fr": ["Paroisse normalisée"]},
+            "DISTRICT": {"en": ["District"], "it": ["Distretto"], "fr": ["District"]},
+            "geometry_from": {"en": ["GPS Location stemming from source"], "it": ["Posizione GPS proveniente dalla fonte"], "fr": ["Emplacement GPS provenant de la source"]}
+        }
+    }
+}

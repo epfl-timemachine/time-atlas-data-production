@@ -1,0 +1,97 @@
+{
+  "$id": "https://timeatlas.eu/rde/layer.schema.json",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fr": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "it": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "en"
+      ]
+    },
+    "description": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fr": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "it": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "en"
+      ]
+    },
+    "slug": {
+      "type": "string"
+    },
+    "map_uuid": {
+      "type": "string"
+    },
+    "type": {
+       "enum": ["vector", "raster"] 
+    },
+    "rde_type": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "is_operationally_described_by": {
+      "type": "array",
+      "items": {
+        "$ref": "https://timeatlas.eu/rde/layer_configuration.schema.json"
+      }
+    }
+  },
+  "required": [
+    "description",
+    "end_time",
+    "name",
+    "is_operationally_described_by",
+    "rde_type",
+    "slug",
+    "start_time",
+    "type",
+    "uuid"
+  ],
+  "additionalProperties": false
+}

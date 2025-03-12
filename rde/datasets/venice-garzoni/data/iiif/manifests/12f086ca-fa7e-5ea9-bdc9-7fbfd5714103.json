@@ -1,0 +1,228 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "12f086ca-fa7e-5ea9-bdc9-7fbfd5714103",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Garzoni 3 page sample for testing annotations."
+    ],
+    "fr": [
+      "Garzoni, échantillon de 3 pages pour tester les annotations."
+    ],
+    "it": [
+      "Garzoni 3 pagine, test."
+    ]
+  },
+  "items": [
+    {
+      "id": "62a5a891-ef77-5607-9898-5d009bfd6f29",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Box annotation"
+        ]
+      },
+      "height": 5896,
+      "width": 4486,
+      "items": [
+        {
+          "id": "bfccde63-3de4-5556-95c8-0cfd1d141277",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4714666b-0412-5df1-a489-dafe89bbae94",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/venice%2Fgarzoni%2F0d4a6d1e-20dc-4ddd-80ea-2a035dc9dcad%2F257.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 5896,
+                "width": 4486,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/venice%2Fgarzoni%2F0d4a6d1e-20dc-4ddd-80ea-2a035dc9dcad%2F257.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "62a5a891-ef77-5607-9898-5d009bfd6f29"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1971a297-74d5-59d0-a94b-2d3e51ee2e81",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "39b2a8e2-db5e-51fe-bfd7-041d786e3290",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Some text about Apostolo, the master."
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e3692019-59f9-5ff0-96e2-3a396b85fc62"
+                }
+              ],
+              "target": "62a5a891-ef77-5607-9898-5d009bfd6f29#xywh=500,300,3760,1539"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "314d3ea8-0e28-5b61-a291-1fcc72165f02",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Point annotation"
+        ]
+      },
+      "height": 5896,
+      "width": 4759,
+      "items": [
+        {
+          "id": "3e69c4cb-5201-5270-9dee-8cfa1b8c5dd3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d38717ec-e73a-517b-90f7-d1810bd3533d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/venice%2Fgarzoni%2F0d4a6d1e-20dc-4ddd-80ea-2a035dc9dcad%2F258.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 5896,
+                "width": 4759,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/venice%2Fgarzoni%2F0d4a6d1e-20dc-4ddd-80ea-2a035dc9dcad%2F258.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "314d3ea8-0e28-5b61-a291-1fcc72165f02"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cec140c0-0eb7-5482-a6e9-66ff94649fd3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9a3687cf-cc40-5b5c-aa30-12fc73680105",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Some text about Daniel, the master."
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b7f52cbd-5460-58dc-8ff1-b0006866a012"
+                }
+              ],
+              "target": {
+                "type": "SpecificResource",
+                "source": "314d3ea8-0e28-5b61-a291-1fcc72165f02",
+                "selector": {
+                  "type": "PointSelector",
+                  "x": 2385,
+                  "y": 3464
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1c8bd800-899f-59c1-9b1c-76fdac78187b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Polygon annotation"
+        ]
+      },
+      "height": 5896,
+      "width": 4486,
+      "items": [
+        {
+          "id": "91483b63-99c9-5fb6-afd8-e18ffca33bb7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9e45f8fb-5c38-5efc-9a09-4bd1f36a7034",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/venice%2Fgarzoni%2F0d4a6d1e-20dc-4ddd-80ea-2a035dc9dcad%2F259.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 5896,
+                "width": 4486,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/venice%2Fgarzoni%2F0d4a6d1e-20dc-4ddd-80ea-2a035dc9dcad%2F259.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1c8bd800-899f-59c1-9b1c-76fdac78187b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "311359cb-c73f-5d62-9c7a-3de6da7591b6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4e0f4c23-30f8-5219-8029-1430561c4810",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Some text about Alessandro, the master."
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8f3f1297-0824-5b61-9bc9-5b528d3b2369"
+                }
+              ],
+              "target": {
+                "type": "SpecificResource",
+                "source": "1c8bd800-899f-59c1-9b1c-76fdac78187b",
+                "selector": {
+                  "type": "SvgSelector",
+                  "value": "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g><path d='M270,1900L1530,1900 L1530,1610 L1315,1300 L1200,986 L904,661 L600,986 L500,1300 L270,1630 L270,1900' /></g></svg>"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

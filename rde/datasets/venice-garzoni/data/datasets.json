@@ -1,0 +1,362 @@
+{
+ "name": "garzoni_dataset",
+ "type_in_file": [
+  "dataset"
+ ],
+ "creation_time": "2025-02-20T12:21:15.487005",
+ "rde_objects": [
+  {
+   "uuid": "baad2d2b-7714-56dd-acd0-ff2c36a35ed5",
+   "slug": "venice-garzoni",
+   "version": "1.0",
+   "name": {
+    "en": [
+     "Garzoni from 1575 until 1772"
+    ],
+    "fr": [
+     "Garzoni de 1575 à 1772"
+    ],
+    "it": [
+     "Garzoni da 1575 a 1772"
+    ]
+   },
+   "rde_type": "dataset",
+   "publish": {
+    "doi": "https://zenodo.org/records/2636551",
+    "url": "https://github.com/epfl-timemachine/venice-garzoni"
+   },
+   "description": {
+    "en": [
+     "Digitisation of the registry of various apprenticeships (\"garzoni\") conducted in the city of Venice from 1575 to 1772. An apprenticeship in this registry is represented by a contract between the apprentice, its profession's master, and a guarantor."
+    ],
+    "fr": [
+     "Numérisation du registre des divers apprentissages (\"garzoni\") réalisés dans la ville de Venise de 1575 à 1772. Un apprentissage dans ce registre est représenté par un contrat entre l'apprenti, le maître de sa profession et un garant."
+    ],
+    "it": [
+     "Digitalizzazione del registro di vari apprendistati (\"garzoni\") condotti nella città di Venezia dal 1575 al 1772. Un apprendistato in questo registro è rappresentato da un contratto tra l'apprendista, il maestro della sua professione e un garante."
+    ]
+   },
+   "paradata": {
+    "en": [
+     "The registry was humanly transcribed and annotated from a digital facsimile of the original document. To localize the different apprenticeships, an approximation of the city's parish delimitation was drawn based on contemporary sources and expert knowledge of the city. Each entry was then matched to the wikidata coordinates of the church helming the parish encompassing the workshop in which the apprenticeship was conducted."
+    ],
+    "fr": [
+     "Le registre a été humainement transcrit et annoté à partir d'un fac-similé numérique du document original. Pour localiser les différents apprentissages, une approximation de la délimitation des paroisses de la ville a été établie sur la base de sources contemporaines et de la connaissance de la ville par des experts. Chaque entrée a ensuite été associée aux coordonnées wikidata de l'église qui chapeaute la paroisse englobant l'atelier dans lequel l'apprentissage a été effectué."
+    ],
+    "it": [
+     "Il registro è stato trascritto e annotato umanamente da un facsimile digitale del documento originale. Per localizzare i diversi apprendistati, è stata tracciata un'approssimazione della delimitazione parrocchiale della città sulla base di fonti contemporanee e della conoscenza esperta della città. Ogni voce è stata poi abbinata alle coordinate wikidata della chiesa che guida la parrocchia che comprende la bottega in cui si è svolto l'apprendistato."
+    ]
+   },
+   "sources": [
+    "3a325dfc-e7a2-5634-a0cc-d01a5768f2e2"
+   ],
+   "start_time": "1575-01-01T00:00:00",
+   "end_time": "1772-12-31T23:59:59",
+   "transcribed_pages_amount": 3,
+   "is_operationally_described_by": {
+    "hr_config": {
+     "main_label": "${Apprentice}, ${Master}",
+     "sub_label": "${Professions - Standard Forms}",
+     "display_thumbnail": false,
+     "metadata_field_config": [
+      {
+       "id": "Apprentice",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Apprentice"
+        ],
+        "fr": [
+         "Apprenti"
+        ],
+        "it": [
+         "Apprendista"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 1,
+       "uuid": "baa10b2f-7c1f-563a-a813-4d47d5b8f661"
+      },
+      {
+       "id": "Master",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Master"
+        ],
+        "fr": [
+         "Maître"
+        ],
+        "it": [
+         "Maestro"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 2,
+       "uuid": "6978e011-a97e-5813-afbb-4cfea5799b4e"
+      },
+      {
+       "id": "Guarantor",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Guarantor"
+        ],
+        "fr": [
+         "Garant"
+        ],
+        "it": [
+         "Garante"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 3,
+       "uuid": "4aadb770-0dc4-5b88-8151-6afda3ad4b90"
+      },
+      {
+       "id": "Profession - Standard Forms",
+       "type": "CATEGORY",
+       "display_label": {
+        "en": [
+         "Standardized profession of the apprenticeship"
+        ],
+        "fr": [
+         "Profession standardisée de l'apprentissage"
+        ],
+        "it": [
+         "Professione apprendista standardizzata"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 4,
+       "uuid": "c164b220-717d-5d6f-a554-0eb807cac8b3",
+       "dictionary": "44c686fe-0085-58aa-82d4-dcac3e67bc2b"
+      },
+      {
+       "id": "Master Workshop - Parish",
+       "type": "CATEGORY",
+       "display_label": {
+        "en": [
+         "Master's workshop parish"
+        ],
+        "fr": [
+         "Paroisse de l'atelier du maître"
+        ],
+        "it": [
+         "Parrocchia dell'officina del maestro"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 5,
+       "uuid": "629c0f5b-0ac8-56ff-9325-6c88b3391f3a",
+       "dictionary": "fa2030af-bf07-5cce-bac3-cecbde3af2d8"
+      },
+      {
+       "id": "Master Workshop - Insigna",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Master's workshop insigna"
+        ],
+        "fr": [
+         "Insigne de l'atelier du maître"
+        ],
+        "it": [
+         "Insegna dell'officina del maestro"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 6,
+       "uuid": "4c6dbfaf-65e9-5272-96cd-6710f66cec6c"
+      },
+      {
+       "id": "Guarantor Workshop - Insigna",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Guarantor's workshop insigna"
+        ],
+        "fr": [
+         "Insigne de l'atelier du garant"
+        ],
+        "it": [
+         "Insegna dell'officina del garante"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 7,
+       "uuid": "2e4ff218-119b-5928-a31e-e20431a9c6fc"
+      },
+      {
+       "id": "Guarantor Workshop - Parish",
+       "type": "CATEGORY",
+       "display_label": {
+        "en": [
+         "Guarantor's workshop parish"
+        ],
+        "fr": [
+         "Paroisse de l'atelier du garant"
+        ],
+        "it": [
+         "Parrocchia dell'officina del garante"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 8,
+       "uuid": "f33d665a-7b01-5179-a065-f5ac99181cc6",
+       "dictionary": "fa2030af-bf07-5cce-bac3-cecbde3af2d8"
+      },
+      {
+       "id": "Profession - Transcripts",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Transcripted profession of the apprenticeship"
+        ],
+        "fr": [
+         "Profession transcrite de l'apprentissage"
+        ],
+        "it": [
+         "Professione apprendista trascritta"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 9,
+       "uuid": "4b4e1278-3f3e-5dd6-833e-0372ae761e53"
+      },
+      {
+       "id": "Other",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Other"
+        ],
+        "fr": [
+         "Autre"
+        ],
+        "it": [
+         "Altro"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 10,
+       "uuid": "6958bd9e-352f-5ec5-8af3-76885f193442"
+      },
+      {
+       "id": "Other Workshop - Insigna",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Other's workshop insigna"
+        ],
+        "fr": [
+         "Insigne de l'atelier de l'autre"
+        ],
+        "it": [
+         "Insegna dell'officina dell'altro"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 11,
+       "uuid": "a469ab76-d2ae-5f9f-998a-1392faeaaca1"
+      },
+      {
+       "id": "Other Workshop - Parish",
+       "type": "CATEGORY",
+       "display_label": {
+        "en": [
+         "Other's workshop parish"
+        ],
+        "fr": [
+         "Paroisse de l'atelier de l'autre"
+        ],
+        "it": [
+         "Parrocchia dell'officina dell'altro"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 12,
+       "uuid": "6dfe695f-00f5-5fad-a184-b3dfce2f85cd",
+       "dictionary": "fa2030af-bf07-5cce-bac3-cecbde3af2d8"
+      },
+      {
+       "id": "Contract ID",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Contract ID"
+        ],
+        "fr": [
+         "ID du contrat"
+        ],
+        "it": [
+         "ID del contratto"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 13,
+       "uuid": "cf9e8e46-e7db-587a-8ce7-da8e7928c127"
+      }
+     ]
+    },
+    "uuid": "671cfbe5-8b6a-5926-876b-a49f43ee6e20"
+   },
+   "falls_within": [
+    "620962bb-bb0d-50ed-b534-8903ad265932"
+   ],
+   "creation_time": "2025-02-20T12:21:15.484855"
+  }
+ ]
+}

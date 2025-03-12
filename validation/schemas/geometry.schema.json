@@ -1,0 +1,83 @@
+{
+  "$id": "https://timeatlas.eu/rde/geometry.schema.json",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "layer_uuid": {
+      "type": "string"
+    },
+    "rde_type": {
+      "type": "string"
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "coordinates": {
+          "oneOf":
+          [
+            {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                  }
+                }
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ]
+    }
+  },
+  "required": [
+    "end_time",
+    "layer_uuid",
+    "rde_type",
+    "start_time",
+    "uuid",
+    "geometry"
+  ],
+  "additionalProperties": false
+}

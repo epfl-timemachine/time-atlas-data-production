@@ -1,0 +1,800 @@
+{
+ "name": "catastici_dataset",
+ "type_in_file": [
+  "dataset"
+ ],
+ "creation_time": "2025-02-20T12:18:21.709793",
+ "rde_objects": [
+  {
+   "uuid": "463ed45f-7d20-5496-89b2-1d331c09ceb1",
+   "slug": "venice-1740-catastici",
+   "version": "1.0",
+   "name": {
+    "it": [
+     "Catastici di Venezia 1740"
+    ],
+    "en": [
+     "Venice's census registry from 1740"
+    ],
+    "fr": [
+     "Registre civil de Venise en 1740"
+    ]
+   },
+   "rde_type": "dataset",
+   "publish": {
+    "doi": null,
+    "url": "https://github.com/epfl-timemachine/venice-1740-catastici"
+   },
+   "description": {
+    "en": [
+     "Digitisation of the 1740 census registry of Venice, represent data relating to tenants and owner of the different parcels of the city."
+    ],
+    "it": [
+     "Digitalizzazione del catasto del 1740 di Venezia, rappresenta i dati relativi agli inquilini e ai proprietari dei diversi appezzamenti della città."
+    ],
+    "fr": [
+     "Digitalisation du cadastre de 1740 de Venise, représentant les données relatives aux locataires et propriétaires des différents parcelles de la ville."
+    ]
+   },
+   "paradata": {
+    "en": [
+     "The textual data from the registry was manually transcribed, then semi-automatically cleaned and normalized by various researchers. Analysis of the place name and adress written in the registry was conducted in order to geolocalize each entry of the cadaster on the contemporary map."
+    ],
+    "fr": [
+     "Les données textuelles du registre ont été transcrites manuellement, puis nettoyées et normalisées semi-automatiquement par divers chercheurs. Une analyse des noms de lieux et des adresses écrits dans le registre a été menée afin de géolocaliser chaque entrée du cadastre sur la carte contemporaine."
+    ],
+    "it": [
+     "I dati testuali del registro sono stati trascritti manualmente, quindi puliti e normalizzati semi-automaticamente da vari ricercatori. È stata condotta un'analisi del nome del luogo e dell'indirizzo scritti nel registro al fine di geolocalizzare ciascuna voce del catasto sulla mappa contemporanea."
+    ]
+   },
+   "sources": [
+    "a706c39f-c6f8-5e89-859d-7e7bae72a880"
+   ],
+   "start_time": "1740-01-01T00:00:00",
+   "end_time": "1740-12-31T23:59:59",
+   "transcribed_pages_amount": 2741,
+   "is_operationally_described_by": {
+    "hr_config": {
+     "main_label": "${owner_name}",
+     "sub_label": "${place}",
+     "display_thumbnail": false,
+     "metadata_field_config": [
+      {
+       "id": "owner_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's name"
+        ],
+        "fr": [
+         "Nom du propriétaire"
+        ],
+        "it": [
+         "Nome del proprietario"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 1,
+       "uuid": "f1814dbb-ac33-5dd7-abcc-ed21ec413ef8"
+      },
+      {
+       "id": "ten_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Tenant's name"
+        ],
+        "fr": [
+         "Nom du locataire"
+        ],
+        "it": [
+         "Nome dell'inquilino"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 2,
+       "uuid": "500b988e-759d-5bb4-97da-6e11164c3f16"
+      },
+      {
+       "id": "place",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Place"
+        ],
+        "fr": [
+         "Lieu"
+        ],
+        "it": [
+         "Luogo"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 3,
+       "uuid": "12ea95a7-fc4b-5153-aaa5-c7642911c154"
+      },
+      {
+       "id": "function",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Function"
+        ],
+        "fr": [
+         "Fonction"
+        ],
+        "it": [
+         "Funzione"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "LAND_USE",
+       "display_order": 4,
+       "uuid": "11a20c44-377a-5216-9e10-7796dad4f57d"
+      },
+      {
+       "id": "an_rendi",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Rent paid"
+        ],
+        "fr": [
+         "Loyer payé"
+        ],
+        "it": [
+         "Affitto pagato"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 5,
+       "uuid": "e2cffbe5-b788-5d3d-ba02-3435ec28c464"
+      },
+      {
+       "id": "quantity_income",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Quantity of rent paid (in goods)"
+        ],
+        "fr": [
+         "Quantité de loyer payé (en nature)"
+        ],
+        "it": [
+         "Quantità di affitto pagato (in natura)"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 6,
+       "uuid": "f1034761-fe63-55b1-bc9b-49a2b2a3cc0b"
+      },
+      {
+       "id": "quality_income",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Type of rent paid (in goods)"
+        ],
+        "fr": [
+         "Type de loyer payé (en nature)"
+        ],
+        "it": [
+         "Tipo di affitto pagato (in natura)"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 7,
+       "uuid": "ccac4166-2057-5027-adce-f22cddb27bf8"
+      },
+      {
+       "id": "parish_std",
+       "type": "CATEGORY",
+       "display_label": {
+        "en": [
+         "Parish"
+        ],
+        "fr": [
+         "Paroisse"
+        ],
+        "it": [
+         "Parrocchia"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 8,
+       "uuid": "a1571c57-93a8-554b-8fce-2b26fb22c5c6",
+       "dictionary": "fa2030af-bf07-5cce-bac3-cecbde3af2d8"
+      },
+      {
+       "id": "sestiere",
+       "type": "CATEGORY",
+       "display_label": {
+        "en": [
+         "District"
+        ],
+        "fr": [
+         "District"
+        ],
+        "it": [
+         "Sestiere"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 9,
+       "uuid": "426f4fee-bc04-5509-8fd5-984df4e872cb",
+       "dictionary": "62977b2b-43c7-52e7-8cbd-612bb1a55299"
+      },
+      {
+       "id": "id_napo",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Parcel number in the 1808 Napoleonic cadaster"
+        ],
+        "fr": [
+         "Numéro de parcelle dans le cadastre napoléonien de 1808"
+        ],
+        "it": [
+         "Numero di appezzamento nel catasto napoleonico del 1808"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 10,
+       "uuid": "6f04e44b-444e-5e92-a6d3-02beda631fc4"
+      },
+      {
+       "id": "author",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Transcription's author"
+        ],
+        "fr": [
+         "Auteur(e) de la transcription"
+        ],
+        "it": [
+         "Autore della trascrizione"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 11,
+       "uuid": "e7e20586-df14-5705-a77a-f35e8e0d8191"
+      },
+      {
+       "id": "owner_code",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's code"
+        ],
+        "fr": [
+         "Code du propriétaire"
+        ],
+        "it": [
+         "Codice del proprietario"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 12,
+       "uuid": "676026f3-3e09-5949-a3a9-59038a3de990"
+      },
+      {
+       "id": "owner_count",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Owner's count"
+        ],
+        "fr": [
+         "Nombre de propriétaires"
+        ],
+        "it": [
+         "Numero di proprietari"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 13,
+       "uuid": "9d85158d-d978-5a45-96b2-6a4d72ded3e4"
+      },
+      {
+       "id": "owner_count_remark",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's count remark"
+        ],
+        "fr": [
+         "Remarque sur le nombre de propriétaires"
+        ],
+        "it": [
+         "Osservazione sul numero di proprietari"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 14,
+       "uuid": "fc0a6bac-7d1f-52b7-87f1-b8e6d2f59413"
+      },
+      {
+       "id": "owner_first_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's first name"
+        ],
+        "fr": [
+         "Prénom du propriétaire"
+        ],
+        "it": [
+         "Nome del proprietario"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 15,
+       "uuid": "a2a3494f-1425-5b2d-a6ee-eacf58fddaca"
+      },
+      {
+       "id": "owner_family_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's family name"
+        ],
+        "fr": [
+         "Nom de famille du propriétaire"
+        ],
+        "it": [
+         "Cognome del proprietario"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 16,
+       "uuid": "be813246-96aa-5d89-98f1-24caafd68371"
+      },
+      {
+       "id": "owner_family_group",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's family group standardized"
+        ],
+        "fr": [
+         "Groupe de famille du propriétaire standardisé"
+        ],
+        "it": [
+         "Gruppo familiare del proprietario standardizzato"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 17,
+       "uuid": "b6622719-bf7a-5fc2-8f5f-21c265c205b3"
+      },
+      {
+       "id": "owner_entity",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's entity name"
+        ],
+        "fr": [
+         "Nom de l'entité propriétaire"
+        ],
+        "it": [
+         "Nome dell'entità proprietaria"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 18,
+       "uuid": "6e940c50-dc19-51a7-805d-986dca1ba588"
+      },
+      {
+       "id": "owner_entity_group",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's entity group standardized"
+        ],
+        "fr": [
+         "Groupe d'entité propriétaire standardisé"
+        ],
+        "it": [
+         "Gruppo di entità proprietaria standardizzato"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 19,
+       "uuid": "8106914a-8449-5589-b4e6-5b5f8744eb3b"
+      },
+      {
+       "id": "owner_title",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's title"
+        ],
+        "fr": [
+         "Titre du propriétaire"
+        ],
+        "it": [
+         "Titolo del proprietario"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 20,
+       "uuid": "0f1835cf-5cb3-5b7c-859b-aca5c37158d4"
+      },
+      {
+       "id": "owner_title_std",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's title standardized"
+        ],
+        "fr": [
+         "Titre du propriétaire standardisé"
+        ],
+        "it": [
+         "Titolo del proprietario standardizzato"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 21,
+       "uuid": "3c3492a6-f78b-59df-b5c5-571b1b8c164e"
+      },
+      {
+       "id": "owner_mestiere",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's profession"
+        ],
+        "fr": [
+         "Profession du propriétaire"
+        ],
+        "it": [
+         "Professione del proprietario"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 22,
+       "uuid": "8bc8864d-40a8-5696-9908-841342d09c02"
+      },
+      {
+       "id": "owner_mestiere_std",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's profession standardized"
+        ],
+        "fr": [
+         "Profession du propriétaire standardisée"
+        ],
+        "it": [
+         "Professione del proprietario standardizzata"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 23,
+       "uuid": "ef79e37a-7096-5cc7-b343-1111a1c63f35"
+      },
+      {
+       "id": "id",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "ID as written in the document"
+        ],
+        "fr": [
+         "ID tel qu'écrit dans le document"
+        ],
+        "it": [
+         "ID come scritto nel documento"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 24,
+       "uuid": "18a0062b-a1ea-54cd-b354-631e84b9bb19"
+      },
+      {
+       "id": "path_img",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Path to the image"
+        ],
+        "fr": [
+         "Chemin vers l'image"
+        ],
+        "it": [
+         "Percorso all'immagine"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 25,
+       "uuid": "5a366bd6-3ad8-58b0-adf2-0d0b55160001"
+      },
+      {
+       "id": "tif_path_img",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Path to the tif image"
+        ],
+        "fr": [
+         "Chemin vers l'image tif"
+        ],
+        "it": [
+         "Percorso all'immagine tif"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": true,
+       "tag": null,
+       "display_order": 26,
+       "uuid": "93191ae6-9ccf-5695-b867-0b83509fe190"
+      },
+      {
+       "id": "professions_standardized",
+       "type": "LIST",
+       "display_label": {
+        "en": [
+         "Professions standardized"
+        ],
+        "fr": [
+         "Professions standardisées"
+        ],
+        "it": [
+         "Professioni standardizzate"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": "PROFESSION",
+       "display_order": 27,
+       "uuid": "2ed22537-c836-59e3-a86c-5be138c6ac82"
+      },
+      {
+       "id": "quality_standardized",
+       "type": "LIST",
+       "display_label": {
+        "en": [
+         "Quality Standardized"
+        ],
+        "fr": [
+         "Qualité standardisée"
+        ],
+        "it": [
+         "Qualità standardizzata"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 28,
+       "uuid": "cf922e7b-d626-5784-9741-4e076770cd7b"
+      },
+      {
+       "id": "spatial_standardized",
+       "type": "LIST",
+       "display_label": {
+        "en": [
+         "Spatial information standardized"
+        ],
+        "fr": [
+         "Information spatiale standardisée"
+        ],
+        "it": [
+         "Informazioni spaziali standardizzate"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 29,
+       "uuid": "ca2ef85f-e6f2-514c-97b3-34d290775dad"
+      },
+      {
+       "id": "quantity_standardized",
+       "type": "LIST",
+       "display_label": {
+        "en": [
+         "Quantity standardized"
+        ],
+        "fr": [
+         "Quantité standardisée"
+        ],
+        "it": [
+         "Quantità standardizzata"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 30,
+       "uuid": "ba7067b3-a784-5070-9171-326282e7b49a"
+      },
+      {
+       "id": "rights_standardized",
+       "type": "LIST",
+       "display_label": {
+        "en": [
+         "Rights standardized"
+        ],
+        "fr": [
+         "Droits standardisés"
+        ],
+        "it": [
+         "Diritti standardizzati"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 31,
+       "uuid": "e87c8b68-9bce-5d4e-b307-b3ba61db9178"
+      },
+      {
+       "id": "professions_tenant_standardized",
+       "type": "LIST",
+       "display_label": {
+        "en": [
+         "Professions of the tenant standardized"
+        ],
+        "fr": [
+         "Professions du locataire standardisées"
+        ],
+        "it": [
+         "Professioni dell'inquilino standardizzate"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 32,
+       "uuid": "042300c1-aead-574c-aad1-cd27b0d93de2"
+      },
+      {
+       "id": "functions_standardized",
+       "type": "LIST",
+       "display_label": {
+        "en": [
+         "Functions standardized"
+        ],
+        "fr": [
+         "Fonctions standardisées"
+        ],
+        "it": [
+         "Funzioni standardizzate"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 33,
+       "uuid": "cdee4fbc-352d-50c1-9a6c-4bc75d474fd7"
+      }
+     ]
+    },
+    "uuid": "c5fd5485-8698-5f56-a683-d42bac21e5a2"
+   },
+   "falls_within": [
+    "620962bb-bb0d-50ed-b534-8903ad265932"
+   ],
+   "creation_time": "2025-02-20T12:18:21.708027"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+    "UUID_NAMESPACE": "https://timemachine.epfl.ch/venice/garzoni",
+    "TIMERANGE_MINIMUM": 15750101,
+    "TIMERANGE_MAXIMUM": 17721231,
+    "AREA_FILE_LOC": "../../areas/venice-area.json",
+    "DATASET_CONFIGURATION": {
+        "slug": "venice-garzoni",
+        "name": {
+            "en": ["Garzoni from 1575 until 1772"],
+            "fr": ["Garzoni de 1575 à 1772"],
+            "it": ["Garzoni da 1575 a 1772"]
+        },
+        "description": {
+            "en": ["Digitisation of the registry of various apprenticeships (\"garzoni\") conducted in the city of Venice from 1575 to 1772. An apprenticeship in this registry is represented by a contract between the apprentice, its profession's master, and a guarantor."],
+            "fr": ["Numérisation du registre des divers apprentissages (\"garzoni\") réalisés dans la ville de Venise de 1575 à 1772. Un apprentissage dans ce registre est représenté par un contrat entre l'apprenti, le maître de sa profession et un garant."],
+            "it": ["Digitalizzazione del registro di vari apprendistati (\"garzoni\") condotti nella città di Venezia dal 1575 al 1772. Un apprendistato in questo registro è rappresentato da un contratto tra l'apprendista, il maestro della sua professione e un garante."]
+        },
+        "paradata": {
+            "en": ["The registry was humanly transcribed and annotated from a digital facsimile of the original document. To localize the different apprenticeships, an approximation of the city's parish delimitation was drawn based on contemporary sources and expert knowledge of the city. Each entry was then matched to the wikidata coordinates of the church helming the parish encompassing the workshop in which the apprenticeship was conducted."],
+            "fr": ["Le registre a été humainement transcrit et annoté à partir d'un fac-similé numérique du document original. Pour localiser les différents apprentissages, une approximation de la délimitation des paroisses de la ville a été établie sur la base de sources contemporaines et de la connaissance de la ville par des experts. Chaque entrée a ensuite été associée aux coordonnées wikidata de l'église qui chapeaute la paroisse englobant l'atelier dans lequel l'apprentissage a été effectué."],
+            "it": ["Il registro è stato trascritto e annotato umanamente da un facsimile digitale del documento originale. Per localizzare i diversi apprendistati, è stata tracciata un'approssimazione della delimitazione parrocchiale della città sulla base di fonti contemporanee e della conoscenza esperta della città. Ogni voce è stata poi abbinata alle coordinate wikidata della chiesa che guida la parrocchia che comprende la bottega in cui si è svolto l'apprendistato."]
+        },
+        "doi": "https://zenodo.org/records/2636551",
+        "github_link": "https://github.com/epfl-timemachine/venice-garzoni",
+        "indexed": [
+            "Apprentice",
+            "Guarantor",
+            "Master",
+            "Profession - Standard Forms"
+        ],
+        "short_display" : [
+             "Profession - Standard Forms",
+            "Apprentice",
+            "Master"
+        ],
+        "hidden": [
+            "Contract ID"
+        ],
+        "main_label": "${Apprentice}, ${Master}",
+        "sub_label": "${Professions - Standard Forms}",
+        "tagged_fields": {
+            "Professions - Standard Forms": "PROFESSION",
+            "Apprentice": "PEOPLE",
+            "Master": "PEOPLE",
+            "Guarantor": "PEOPLE",
+            "Other": "PEOPLE",
+            "Master Workshop - Insigna": "PLACE",
+            "Guarantor Workshop - Insigna": "PLACE",
+            "Other Workshop - Insigna": "PLACE",
+            "Master Workshop - Parish": "PLACE",
+            "Guarantor Workshop - Parish": "PLACE",
+            "Other Workshop - Parish": "PLACE"
+        },
+        "labels": {
+            "Profession - Standard Forms":{"en": ["Standardized profession of the apprenticeship"], "fr": ["Profession standardisée de l'apprentissage"], "it": ["Professione apprendista standardizzata"]},
+            "Profession - Transcripts": {"en": ["Transcripted profession of the apprenticeship"], "fr": ["Profession transcrite de l'apprentissage"], "it": ["Professione apprendista trascritta"]},
+            "Apprentice": {"en": ["Apprentice"], "fr": ["Apprenti"], "it": ["Apprendista"]},
+            "Master": {"en": ["Master"], "fr": ["Maître"], "it": ["Maestro"]},
+            "Guarantor": {"en": ["Guarantor"], "fr": ["Garant"], "it": ["Garante"]},
+            "Other": {"en": ["Other"], "fr": ["Autre"], "it": ["Altro"]},
+            "Master Workshop - Insigna": {"en": ["Master's workshop insigna"], "fr": ["Insigne de l'atelier du maître"], "it": ["Insegna dell'officina del maestro"]},
+            "Guarantor Workshop - Insigna": {"en": ["Guarantor's workshop insigna"], "fr": ["Insigne de l'atelier du garant"], "it": ["Insegna dell'officina del garante"]},
+            "Other Workshop - Insigna": {"en": ["Other's workshop insigna"], "fr": ["Insigne de l'atelier de l'autre"], "it": ["Insegna dell'officina dell'altro"]},
+            "Master Workshop - Parish": {"en": ["Master's workshop parish"], "fr": ["Paroisse de l'atelier du maître"], "it": ["Parrocchia dell'officina del maestro"]},
+            "Guarantor Workshop - Parish": {"en": ["Guarantor's workshop parish"], "fr": ["Paroisse de l'atelier du garant"], "it": ["Parrocchia dell'officina del garante"]},
+            "Other Workshop - Parish": {"en": ["Other's workshop parish"], "fr": ["Paroisse de l'atelier de l'autre"], "it": ["Parrocchia dell'officina dell'altro"]},
+            "Contract ID": {"en": ["Contract ID"], "fr": ["ID du contrat"], "it": ["ID del contratto"]}
+        }
+    }
+}

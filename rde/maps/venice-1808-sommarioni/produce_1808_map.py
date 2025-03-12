@@ -1,0 +1,119 @@
+import sys
+import os
+# to retrieve the utils function used by all notebooks
+parent_dir = os.path.abspath('../../../')
+if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
+from utils.data_modeling import *
+from utils.rde import RDE
+
+BASE_SLUG = 'venice-1808'
+MAP_SLUG = f"{BASE_SLUG}-map"
+BEGIN_TR = 18080101
+END_TR = 18081231
+sommarioni_TR = (datetime_obj_from_int_time(BEGIN_TR), datetime_obj_from_int_time(END_TR, match_to_end=True))
+sn_END_TR = 18481231
+sn_TR = (datetime_obj_from_int_time(BEGIN_TR), datetime_obj_from_int_time(sn_END_TR, match_to_end=True))
+MAP_UUID = str(uuid.uuid5(VMAP_UUID5_NS, MAP_SLUG))
+# cadastral layer uuid:
+cadaster_slug = f"{MAP_SLUG}-cadaster"
+bm_slug = f"{MAP_SLUG}-sommmarioni-base"
+cadaster_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, cadaster_slug))
+basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
+
+streetnetwork_slug = f"{BASE_SLUG}-streetnetwork"
+streetnetwork_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, streetnetwork_slug))
+
+# the two corners of the bounding box of the area.
+extent =  [5692718.6843, 1370421.2197, 1376129.1641, 5689219.1288]
+
+# transforming those two corners into a closed polygon.
+extent_as_point = list(zip(extent, extent[1:] + extent[:1]))
+extent_as_point = extent_as_point + [extent_as_point[0]]
+wgs84_extent = [(p.x, p.y) for p in [to_wgs84_from_epsg3857(e[0], e[1]) for e in extent_as_point]]
+zoom_lvl= [11,21]
+
+venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+
+sommarioni_bm_layer = produce_layer_obj(basemap_layer_uuid,
+                                        bm_slug,
+                                         {"en": ["Historical maps of the parcels"],
+                                          "fr": ["Cartes historiques des parcelles"],
+                                            "it": ["Mappe storiche delle particelle"]},
+                                        {"en": ["The historical maps of the parcels are the digital facsimile of the original cadaster map."],
+                                         "fr": ["Les cartes historiques des parcelles sont le fac-similé numérique de la carte cadastrale originale."],
+                                         "it": ["Le mappe storiche delle particelle sono il facsimile digitale della mappa catastale originale."]},
+                                         sommarioni_TR,
+                                         MAP_UUID,
+                                         is_vector=False,
+                                         layer_configs=[produce_layer_config(
+                                          str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
+                                          zoom_lvl=zoom_lvl,
+                                          extent=wgs84_extent,
+                                          access_url="https://geo-timemachine.epfl.ch/geoserver/www/tilesets/venice/sommarioni/{z}/{x}/{y}.png",
+                                          format='xyz'
+                                          )]
+                                        )
+ 
+sommarioni_parcel_layer = produce_layer_obj(cadaster_layer_uuid, 
+                                            cadaster_slug,
+                                          {"en": ["Parcels of 1808"],
+                                           "fr": ["Parcelles de 1808"],
+                                           "it": ["Particelle del 1808"]},
+                                           {"en": ["The parcels of 1808 are the vectorized representation of the parcels from the original cadaster"],
+                                            "fr": ["Les parcelles de 1808 sont la représentation vectorisée des parcelles du cadastre original"],
+                                            "it": ["Le particelle del 1808 sono la rappresentazione vettoriale delle particelle del catasto originale"]},
+                                            sommarioni_TR,
+                                            MAP_UUID,
+                                            is_vector=True,
+                                            layer_configs=[produce_layer_config(
+                                              str(uuid.uuid5(VMAP_UUID5_NS, f'{cadaster_slug}-config-1')),
+                                              zoom_lvl=zoom_lvl,
+                                              extent=wgs84_extent,
+                                              access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{cadaster_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
+                                              format='mvt'
+                                              )]
+                                            )
+
+sommarioni_sn_layer = produce_layer_obj(streetnetwork_layer_uuid,
+                                        streetnetwork_slug,
+                                        {"en": ["Street network of 1808"],
+                                         "fr": ["Réseauviaire de 1808"],
+                                         "it": ["Rete stradale del 1808"]},
+                                        {"en": ["The street network of 1808 is the vectorized representation of the street network from the original cadaster"],
+                                         "fr": ["Le réseauviaire de 1808 est la représentation vectorisée du réseau viaire du cadastre original"],
+                                         "it": ["La rete stradale del 1808 è la rappresentazione vettoriale della rete stradale del catasto originale"]},
+                                         sn_TR,
+                                         MAP_UUID,
+                                         is_vector=True,
+                                         layer_configs=[produce_layer_config(
+                                              str(uuid.uuid5(VMAP_UUID5_NS, f'{streetnetwork_slug}-config-1')),
+                                              zoom_lvl=zoom_lvl,
+                                              extent=wgs84_extent,
+                                              access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{streetnetwork_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
+                                              format='mvt'
+                                              )]
+                                        )
+                                         
+
+layers = [sommarioni_bm_layer, sommarioni_parcel_layer, sommarioni_sn_layer]
+layer_ids = [l['uuid'] for l in layers]
+eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID, 
+                             MAP_SLUG,
+                             {"en": ["Map of the Napolean cadaster of 1808"],
+                              "fr": ["Carte du cadastre napoléonien de 1808"],
+                              "it": ["Mappa del catasto napoleonico del 1808"]},
+                             {"en": ["Is formed of the digital facsimile of the original cadaster map, a layer of vectorization of parcels from this map, and a layer formed by the vectorization of the street network"],
+                             "fr": ["Est formée du fac-similé numérique de la carte cadastrale originale, d'une couche de vectorisation des parcelles de cette carte, et d'une couche formée par la vectorisation du réseau viaire"],
+                              "it": ["È formata dal facsimile digitale della mappa catastale originale, da un livello di vettorizzazione delle particelle di questa mappa e da un livello formato dalla vettorizzazione della rete stradale"]},
+                             {"en": ["The maps were vetcorized into geometries through computer vision techniques and then manually corrected and expanded."],
+                              "fr": ["Les cartes ont été vectorisées en géométries grâce à des techniques de vision par ordinateur, puis corrigées et étendues manuellement."],
+                              "it": ["Le mappe sono state vettorializzate in geometrie attraverso tecniche di visione artificiale e quindi corrette ed espandere"]},
+                              "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Fsommarioni_rialto.png/full/max/0/default.jpg",
+                              "1.0",
+                              sn_TR,
+                              layer_ids,
+                              areas_id=[venice_area_uuid]
+                             )
+
+save_data_file_if_different('', 'map', [eighteen_o_eight_map_obj], '1808_sommarioni_map', RDE.MAP.value)
+save_data_file_if_different('', 'layers', layers, '1808_sommarioni_layers', RDE.LAYER.value)
