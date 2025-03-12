@@ -3,9 +3,11 @@ import pandas as pd
 import geopandas as gpd
 import os
 import sys
+from dotenv import dotenv_values
 from tqdm import tqdm
 # to have progress bar in the notebook
 tqdm.pandas()
+
 
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
@@ -27,6 +29,7 @@ def min_without_nan(series: pd.Series):
 def max_without_nan(series: pd.Series):
     return series.dropna().max()
 
+
 edifici_layer_uuid = get_layer_uuid('../../maps/venice-2024-contemporary/layers.json', 'venice-2024-contemporary-map-edifici')
 df = pd.read_json('src/sample_3_edifici.json')
 # fix NaN being serialized as literal in JSON alongside "null"
@@ -38,8 +41,11 @@ df['end_time'] = df['EndDate'].apply(lambda x: datetime_obj_from_int_time(int(x)
 df['author_birth_date_time'] = df['AuthorBirth'].apply(lambda x: datetime_obj_from_int_time(int(x)) if not pd.isnull(x) else x)
 df['author_death_date_time'] = df['AuthorDeath'].apply(lambda x: datetime_obj_from_int_time(int(x)) if not pd.isnull(x) else x)
 
+config = dotenv_values("../../../.env")
+DATA_VENICE_FOLDER = config['DATA_VENICE']
+
 # to note: all the geometries are expressde as multipolygon, but actually there is a single geometry in each. No need to do multiple geometries per obs a simple explode reduce them to single polygon.
-df_edifici = gpd.read_file('../../../../contemporary_maps/2024_Edifici_EPSG32633.geojson').to_crs('EPSG:4326').explode()
+df_edifici = gpd.read_file(os.path.join(DATA_VENICE_FOLDER, 'contemporary_maps/2024_Edifici_EPSG32633.geojson')).to_crs('EPSG:4326').explode()
 gdf_edifici = df_edifici[['geometry', 'EDIFI_ID']].groupby('EDIFI_ID').first().reset_index()
 df = df.merge(df_edifici[['geometry', 'EDIFI_ID']].set_index('EDIFI_ID'), on='EDIFI_ID')
 gdf = gpd.GeoDataFrame(df, geometry='geometry')
