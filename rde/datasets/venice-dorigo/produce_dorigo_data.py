@@ -2,6 +2,7 @@ import uuid
 import pandas as pd
 import geopandas as gpd
 import os
+from os.path import join
 import sys
 from tqdm import tqdm
 from pathlib import Path
@@ -18,7 +19,8 @@ from utils.rde import RDE
 with open('dataproduction_config.json') as f:
     DATA_CONFIG = json.load(f)
 
-DORIGO_DATA_SRC = Path('../../../../Dorigo/')
+DORIGO_DATA_SRC = join(parent_dir, 'data-venice/Dorigo/')
+DORIGO_DATA_PATH = Path(DORIGO_DATA_SRC)
 
 CITATION_FMT = "Dorigo W. (2003) “Venezia romanica”. Cierre edizioni. P."
 
@@ -45,7 +47,7 @@ raimund_fmt = "%Y/%m/%d %H:%M:%S"
 def format_raimund_dt(dt_str: str) -> str:
     return datetime.strptime(dt_str[:-3], raimund_fmt).isoformat() if dt_str and not pd.isnull(str) else dt_str
 
-geometries_fp = list(DORIGO_DATA_SRC.rglob('*geometries.geojson'))[0]
+geometries_fp = list(DORIGO_DATA_PATH.rglob('*geometries.geojson'))[0]
 # sample for testing uuid_gen
 gdf = gpd.read_file(geometries_fp)
 gdf = gdf.to_crs(UNIVERSAL_CRS)
@@ -67,7 +69,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 geom_shorthand = 'dorigo_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
 save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
-df = pd.read_json(list(DORIGO_DATA_SRC.rglob('*historical_records.json'))[0])
+df = pd.read_json(list(DORIGO_DATA_PATH.rglob('*historical_records.json'))[0])
 # fix NaN being serialized as literal in JSON alongside "null"
 df = df.replace({np.nan: None})
 df = df[~df['date_start'].isna()]
@@ -82,7 +84,7 @@ def try_to_parse_date_end(date_end):
 
 df['end_time'] = df['date_end'].astype(int).apply(try_to_parse_date_end)
 # direct IIIF sources with Dorigo is currently not advised as the data is under some rights limitation, instead we baked a bibliographical citation to the book in the data. 
-with open('../../../../Dorigo/tables_manifest.json', 'r') as f:
+with open(join(DORIGO_DATA_SRC, 'tables_manifest.json'), 'r') as f:
     tables_manifest = json.load(f)
 tables_manifest
 

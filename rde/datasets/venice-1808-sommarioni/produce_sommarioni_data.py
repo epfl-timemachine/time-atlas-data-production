@@ -2,6 +2,7 @@ import uuid
 import pandas as pd
 import geopandas as gpd
 import os
+from os.path import join
 import sys
 from pathlib import Path
 from tqdm import tqdm
@@ -10,8 +11,6 @@ from functools import reduce
 
 # to have progress bar in the notebook
 tqdm.pandas()
-DATA_SRC_PATH = Path('../../../../1808_Sommarioni/')
-
 with open('dataproduction_config.json') as f:
     DATA_CONFIG = json.load(f)
 
@@ -20,6 +19,10 @@ parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
 from utils.data_modeling import *
 from utils.rde import RDE
+
+
+DATA_SRC_PATH = Path(join(parent_dir, 'data-venice/1808_Sommarioni/'))
+
 
 # aribtrary namespace, just to generate reproducible UUIDv5 from the entries of the dataset.
 VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])

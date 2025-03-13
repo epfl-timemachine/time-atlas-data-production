@@ -3,11 +3,9 @@ import pandas as pd
 import geopandas as gpd
 import os
 import sys
-from dotenv import dotenv_values
 from tqdm import tqdm
 # to have progress bar in the notebook
 tqdm.pandas()
-
 
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
@@ -40,9 +38,7 @@ df['start_time'] = df['BeginDate'].apply(lambda x: datetime_obj_from_int_time(in
 df['end_time'] = df['EndDate'].apply(lambda x: datetime_obj_from_int_time(int(x), match_to_end=True) if not pd.isna(x) else max_time)
 df['author_birth_date_time'] = df['AuthorBirth'].apply(lambda x: datetime_obj_from_int_time(int(x)) if not pd.isnull(x) else x)
 df['author_death_date_time'] = df['AuthorDeath'].apply(lambda x: datetime_obj_from_int_time(int(x)) if not pd.isnull(x) else x)
-
-config = dotenv_values("../../../.env")
-DATA_VENICE_FOLDER = config['DATA_VENICE']
+DATA_VENICE_FOLDER = os.path.join(parent_dir, 'data-venice')
 
 # to note: all the geometries are expressde as multipolygon, but actually there is a single geometry in each. No need to do multiple geometries per obs a simple explode reduce them to single polygon.
 df_edifici = gpd.read_file(os.path.join(DATA_VENICE_FOLDER, 'contemporary_maps/2024_Edifici_EPSG32633.geojson')).to_crs('EPSG:4326').explode()

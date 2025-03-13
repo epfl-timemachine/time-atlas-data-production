@@ -2,6 +2,7 @@ import uuid
 import pandas as pd
 import geopandas as gpd
 import os
+from os.path import join
 import sys
 import json
 import re
@@ -25,6 +26,7 @@ from pathlib import Path
 with open('dataproduction_config.json') as f:
     DATA_CONFIG = json.load(f)
 
+CATASTICI_DATA_PATH = Path(join(parent_dir, 'data-venice/1740_Catastici/'))
 
 # boolean flag to switch between the tif and the jpeg version of the manifest to be generated.
 is_man_tif = True
@@ -39,7 +41,7 @@ DS_OBJ = (DS_UUID, DS_SLUG)
 formatted_begin = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM'])
 formatted_end = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
 TR_OBJ = (formatted_begin, formatted_end)
-df = pd.read_json(list(Path('../../../../1740_Catastici/').rglob('catastici_text_data_*.json'))[-1])
+df = pd.read_json(list(CATASTICI_DATA_PATH.rglob('catastici_text_data_*.json'))[-1])
 
 venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 

@@ -3,6 +3,7 @@ import pandas as pd
 import geopandas as gpd
 import sys
 import os
+from os.path import join
 from tqdm import tqdm
 from shapely import Point
 from datetime import datetime as dt
@@ -21,6 +22,9 @@ gpd.options.io_engine = "pyogrio"
 with open('dataproduction_config.json') as f:
     DATA_CONFIG = json.load(f)
 
+VENICE_DATA_SRC = join(parent_dir, 'data-venice')
+GARZONI_DATA_SRC = join(VENICE_DATA_SRC, 'data-alignment/Garzoni/')
+
 # aribtrary namespace, just to generate reproducible UUIDv5 from the data of this dataset.
 VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
@@ -38,7 +42,7 @@ parish_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/venice-1740-par
 venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
 # Geometry RDE production
-gdf = gpd.read_file('../../../../1740_redrawn_parishes_cleaned_wikidata_standardised.geojson')
+gdf = gpd.read_file(join(VENICE_DATA_SRC, '1740_redrawn_parishes_cleaned_wikidata_standardised.geojson'))
 gdf['id'] = gdf['id'].astype(int)
 
 # adding the sestiere since we have it thanks to wikidata reconciliation on the geometries file.
@@ -66,7 +70,7 @@ save_gdf = gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde
 save_data_file_if_different(DATA_FOLDER,'geometries', save_gdf, f'garzoni_geometries', RDE.GEOM.value)
 QA_check_uuid_are_unique(gdf)
 
-garzoni_fp = '../../../../data-alignment/Garzoni/contracts_20240409_180544.xlsx'
+garzoni_fp = join(GARZONI_DATA_SRC, 'contracts_20240409_180544.xlsx')
 #large dataset, I load it separately for ease of computation in the next cell
 contracts = pd.read_excel(garzoni_fp, engine='openpyxl', sheet_name="Person Mentions")
 people_mentions = contracts[~contracts['Workshop - Parish'].isna()]
@@ -150,7 +154,7 @@ def correct_date_and_strptime(d:str)->dt.date:
             raise e
 
 contract_ids_to_date = {k: correct_date_and_strptime(v) for k,v in contract_ids_to_date.items() if v != '0000-00-00'} #filtering null date
-img_path_fp = '../../../../data-alignment/Garzoni/contracts_id_to_img_path.json'
+img_path_fp = join(GARZONI_DATA_SRC, 'contracts_id_to_img_path.json')
 with open(img_path_fp, 'r') as f:
     contracts_ids_to_img_path = json.load(f)
 
@@ -161,8 +165,10 @@ df_flat['end_time'] = df_flat['date'].apply(lambda v: v.replace(hour=23, minute=
 df_flat = df_flat[~df_flat.date.isna()].drop_duplicates()
 df_flat['img_path'] = df_flat['Contract ID'].apply(lambda v: contracts_ids_to_img_path[v] if v in contracts_ids_to_img_path else None)
 
-grz_to_loc = pd.read_csv('../../../../data-alignment/Garzoni/grz_parish_to_geometry_id_and_church_coordinates.csv')
-grz_to_loc['poi_uuid'] = grz_to_loc.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['church_coordinate']), axis=1)
+grz_to_loc = pd.read_csv(join(GARZONI_DATA_SRC, 'grz_parish_to_geometry_id_and_church_coordinates.csv'))
+
+tqdm.pandas(desc="Generating uuid for PoIs")
+grz_to_loc['poi_uuid'] = grz_to_loc.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['church_coordinate']), axis=1)
 
 def parse_coordinates(coord:str) -> Point:
     c1, c2 = coord.split(' ')
@@ -193,7 +199,8 @@ for l in parish_loc_cols:
     # important, the name of the column is given as an ad-hoc seed to the UUID generation
     df_flat[s] = df_flat.apply(lambda v: (make_uuid_from_row_selection(VTM_UUID5_NS, v, ["Contract ID"], l), v[s]) if v[s] else None, axis=1)
 
-df_flat['hr_uuid'] = df_flat.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['Contract ID']), axis=1)
+tqdm.pandas(desc="Generating uuid for HRs")
+df_flat['hr_uuid'] = df_flat.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['Contract ID']), axis=1)
 
 # Obs. RDE Production
 # because of the cardinality of the different links between all data, we need to prepare dictionnary of uuid and generate the obs in two steps.
