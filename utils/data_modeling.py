@@ -24,6 +24,7 @@ AREA_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, 'https://timemachine.epfl.ch/area
 
 # so all maps have the same namespace to generate UUIDs
 VMAP_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, 'https://timemachine.epfl.ch/venice/maps')
+LMAP_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, 'https://timemachine.epfl.ch/lausanne/maps')
 
 def union_geom_from_geometry_ids_list(geom_ids:list[str], gdf: gpd.GeoDataFrame) -> Union[Polygon, MultiPolygon]:
     # as there can be multiple geometry_ids per line, we need to unite the geometries into a single one before generating the centroid that will serve as the GPS handle on the map.

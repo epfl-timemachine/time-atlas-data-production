@@ -22,7 +22,6 @@ varea_data = produce_area_obj(varea_uuid, varea_name, Polygon(varea_points), var
 save_data_file_if_different('', varea_slug, varea_data, varea_slug, RDE.AREA.value)
 
 
-
 darea_points = [ [13.301703273382266, 50.816405027956586],
                 [13.301703273382266, 51.25046323137894],
                 [13.971978610336509, 51.25046323137894],
@@ -35,3 +34,17 @@ darea_slug = 'dresden-area'
 darea_uuid = str(uuid.uuid5(AREA_UUID5_NS, darea_slug))
 darea_data = produce_area_obj(darea_uuid, darea_name, Polygon(darea_points), darea_slug, '1.0')
 save_data_file_if_different('', darea_slug, darea_data, darea_slug, RDE.AREA.value)
+
+
+larea_points = [ [6.501622899, 46.642692356],
+                [6.501622899, 46.470149236],
+                [6.790137624, 46.470149236],
+                [6.790137624,  46.642692356],
+                [6.501622899, 46.642692356] ]
+
+larea_name = {"en": ['Lausanne Area'], "fr": ["Aire de Lausanne"], "de": ["Raststätte Lausanne"], 'it': ["Area di Losanna"]}
+larea_slug = 'lausanne-area'
+
+larea_uuid = str(uuid.uuid5(AREA_UUID5_NS, larea_slug))
+larea_data = produce_area_obj(larea_uuid, larea_name, Polygon(larea_points), larea_slug, '1.0')
+save_data_file_if_different('', larea_slug, larea_data, larea_slug, RDE.AREA.value)

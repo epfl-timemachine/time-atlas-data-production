@@ -1,0 +1,65 @@
+from pathlib import Path
+import sys
+import uuid
+import os
+# to retrieve the utils function used by all notebooks
+parent_dir = os.path.abspath('../../../')
+if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
+from utils.data_modeling import *
+from utils.rde import RDE
+
+BEGIN_TR = 18880101
+END_TR = 18881231
+TR_OBJ = (datetime_obj_from_int_time(BEGIN_TR), datetime_obj_from_int_time(END_TR, match_to_end=True))
+MAP_SLUG = "lausanne-1888-cadastre-renove-map"
+MAP_UUID = str(uuid.uuid5(LMAP_UUID5_NS, MAP_SLUG))
+vector_layer_slug = f"{MAP_SLUG}-vector-layer"
+vector_layer_uuid = str(uuid.uuid5(LMAP_UUID5_NS, vector_layer_slug))
+# the two corners of the bounding box of the area.
+extent =  [46.642692356, 6.501622899, 6.790137624, 46.470149236]
+
+lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
+
+# copied from sommarioni code, probably a modular function to be added to the utils
+# transforming those two corners into a closed polygon.
+extent_as_point = list(zip(extent, extent[1:] + extent[:1]))
+extent_as_point = extent_as_point + [extent_as_point[0]]
+zoom_lvl= [11,21]
+
+layer_name = {"en": ["Cadastral vectors of 1888"], "fr": ["Vecteurs cadastraux de 1888"], "it": ["Vettori catastali del 1888"]}
+layer_description = {"en": ["Vectors of the renovated cadaster of 1888 for the city of Lausanne."], "fr": ["Vecteurs du cadastre rénové de 1888 pour la ville de Lausanne."], "it": ["Vettori del catasto rinnovato del 1888 per la città di Losanna."]}
+vector_layer = produce_layer_obj(
+    vector_layer_uuid,
+    vector_layer_slug,
+    layer_name,
+    layer_description,
+    TR_OBJ,
+    MAP_UUID,
+    is_vector=True,
+    layer_configs=[produce_layer_config(
+        str(uuid.uuid5(LMAP_UUID5_NS, f'{vector_layer_slug}-config-1')),
+        zoom_lvl=zoom_lvl,
+        extent=extent,
+        format='mvt',
+        access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{vector_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf"
+    )]
+)
+
+map_name = {"en":["Map relating to the renovated cadaster of Lausanne in 1888 in 1740"], "fr":["Carte du cadastre rénové de Lausanne en 1888"], "it": ["Mappa relativa al catasto rinnovato di Losanna nel 1888"]}
+map_description = {"fr":["Provient des planches du cadastre rénové de la ville de Lausanne réalisé en 1888"], "en":["Comes from the sheets of the renovated cadaster of the city of Lausanne carried out in 1888"], "it": ["Proviene dalle tavole del catasto rinnovato della città di Losanna realizzato nel 1888"]}
+map_paradata = {"fr":["Les planches du cadastre rénové ont été vectorisées à l'aide de technique de computer vision modernes."], "en": ["The sheets of the renovated cadaster have been vectorized using modern computer vision techniques."], "it": ["Le tavole del catasto rinnovato sono state vettorializzate utilizzando moderne tecniche di computer vision."]}
+map_1888 = produce_map_obj(
+    MAP_UUID,
+    MAP_SLUG,
+    map_name,
+    map_description,
+    map_paradata,
+    "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Flausanne-1888-cadastre-vector.png/full/max/0/default.jpg",
+    "1.0",
+    TR_OBJ,
+    [vector_layer_uuid],
+    areas_id=[lausanne_area_uuid]
+)
+
+save_data_file_if_different('', 'map', [map_1888], 'lausanne_cadastre_renove_1888_map', RDE.MAP.value)
+save_data_file_if_different('', 'layers', [vector_layer], 'lausanne_cadastre_renove_1888_layers', RDE.LAYER.value)
