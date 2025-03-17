@@ -16,7 +16,7 @@ bm_slug = f"{MAP_SLUG}-base"
 basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 
 # the two corners of the bounding box of the area.
-extent =  [5692718.6843, 1370421.2197, 1376129.1641, 5689219.1288]
+extent =  [1370421.2197, 5692718.6843, 1376129.1641, 5689219.1288]
 
 # transforming those two corners into a closed polygon.
 extent_as_point = list(zip(extent, extent[1:] + extent[:1]))

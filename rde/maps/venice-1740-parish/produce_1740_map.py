@@ -16,7 +16,7 @@ MAP_UUID = str(uuid.uuid5(VMAP_UUID5_NS, MAP_SLUG))
 parish_layer_slug = f"{MAP_SLUG}-parish-layer"
 parish_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, parish_layer_slug))
 # the two corners of the bounding box of the area.
-extent =  [5692718.6843, 1370421.2197, 1376129.1641, 5689219.1288]
+extent =  [1370421.2197, 5692718.6843, 1376129.1641, 5689219.1288]
 
 venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
 

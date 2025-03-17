@@ -16,7 +16,7 @@ MAP_UUID = str(uuid.uuid5(LMAP_UUID5_NS, MAP_SLUG))
 vector_layer_slug = f"{MAP_SLUG}-vector-layer"
 vector_layer_uuid = str(uuid.uuid5(LMAP_UUID5_NS, vector_layer_slug))
 # the two corners of the bounding box of the area.
-extent =  [46.642692356, 6.501622899, 6.790137624, 46.470149236]
+extent =  [6.501622899, 46.642692356, 6.790137624, 46.470149236]
 
 lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
 
