@@ -56,7 +56,7 @@ gdf['poi_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_
 # Produce HR RDE
 tpe = 'commerce location'
 obs = [produce_obs_obj(r.obs_uuid, TR_OBJ, DS_UUID, r.hr_uuid, tpe, r.geometry, None, r.poi_uuid) for _,r in gdf.iterrows()]
-gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_index('uuid')
+gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, '1857_gc_obs', RDE.OBS.value)
@@ -65,7 +65,7 @@ save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, '1857_gc_obs',
 # for the one to many relationship with the obs 
 df_poi = gdf[['poi_uuid', 'obs_uuid', 'geometry']].groupby('poi_uuid').agg(list)
 gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry[0], v.obs_uuid) for _,v in df_poi.reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_index('uuid')
+gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_poi.reset_index())
 QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
@@ -81,7 +81,7 @@ exclude_hr_labels = {
 }
 hr_metadata_cols = list(set(df.columns).difference(exclude_hr_labels))
 tpe = 'commercial registry'
-gdf['name'].fillna('No name registered', inplace=True)
+gdf['name'] = gdf['name'].fillna('No name registered')
 recs = [produce_hr_obj(r.hr_uuid,\
                        DS_UUID,\
                        [[r.obs_uuid, 'place']],\

@@ -197,7 +197,7 @@ exclude_hr_labels = {
     'parcel_id'
 }
 # for display purposes in the intreface only, we will use the "owner" column, if it's empty, we will use "Unknown owner"
-df['owner'].fillna('Unknown owner', inplace=True)
+df['owner'] = df['owner'].fillna('Unknown owner')
 hr_metadata_cols = list(set(df.columns).difference(exclude_hr_labels))
 tpe = 'cadaster registry'
 recs = [produce_hr_obj(r.hr_uuid,\

@@ -11,8 +11,8 @@ pip install -r requirements.txt
 run_scripts_in_directory() {
     local dir=$1
     data_type=$(basename "$dir")
-    data_type=${data_type%?}
     echo "Generating data for $data_type"
+    data_type=${data_type%?} # Remove the trailing 's'
     for folder in "$dir"/*; do
         if [ -d "$folder" ]; then
             cd "$folder"
@@ -49,14 +49,13 @@ cd - > /dev/null
 # Inform success
 echo "Data generation completed successfully."
 
-
 # Step 5: Validate data
 pip install -r validation/requirements.txt
 cd validation
 python validate_data.py
 
-
 # Deactivate and remove the virtual environment
+cd - > /dev/null
 deactivate
 rm -rf data-production-venv
 

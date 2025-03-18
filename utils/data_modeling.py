@@ -493,6 +493,16 @@ def is_all_caps(s: pd.Series) -> bool:
                 return False 
     return True
 
+def is_empty_or_null(x):
+    if isinstance(x, np.ndarray) or isinstance(x, pd.Series):
+        return x.size == 0 or np.any(pd.isna(x))
+    elif isinstance(x, list):
+        return len(x) == 0 or any(pd.isna(x))
+    elif isinstance(x, str):
+        return x.strip() == ""
+    else:
+        return np.any(pd.isna(x))
+
 def produce_configuration_file_from_metadata_df(
         uuid_ns: uuid.UUID,
         df: pd.DataFrame,
@@ -559,7 +569,8 @@ def produce_configuration_file_from_metadata_df(
             curr_conf = field_template.copy()
             curr_conf['uuid'] = str(uuid.uuid5(uuid_ns, col))
             curr_conf["id"] = col
-            curr_conf["nullable"] = bool(vals.replace(r'^s*$', np.nan, regex=True).isna().any())
+            nullable = is_empty_or_null(vals)
+            curr_conf["nullable"] = bool(nullable)
             if col in indexable_array:
                 curr_conf['indexable'] = True
             if col in hidden:

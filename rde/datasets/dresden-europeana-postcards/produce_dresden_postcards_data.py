@@ -132,4 +132,4 @@ ds = produce_dataset_obj(
     publish_obj=(CONF['doi'], CONF['github_link'])
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'dresden_dataset', RDE.DATASET.value)
+save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'dresden_dataset', RDE.DATASET.value, is_dataset_obj=True)

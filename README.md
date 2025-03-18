@@ -1,6 +1,6 @@
 # Run the data production script
 
-Simply runu the bash script "generate_data.sh", this will take care of installing the required dependencies, run all generation data script and validate the data. The script need to be set the execution mode to be run, so run the following command once:
+Simply run the bash script "generate_data.sh", this will take care of installing the required dependencies, run all generation data script and validate the data. The script needs to be set the execution mode to be run, requiring the following command to be issued once:
 
 ```bash
 chmod u+x generate_data.sh
@@ -8,7 +8,7 @@ chmod u+x generate_data.sh
 
 Then 
 ```bash
-generate_data.sh
+./generate_data.sh
 ```
 
 # Data Model & Data Production

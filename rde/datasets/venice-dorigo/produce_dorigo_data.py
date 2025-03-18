@@ -42,7 +42,6 @@ DATA_FOLDER = 'data'
 venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
 # Geometry RDE production
-
 raimund_fmt = "%Y/%m/%d %H:%M:%S"
 def format_raimund_dt(dt_str: str) -> str:
     return datetime.strptime(dt_str[:-3], raimund_fmt).isoformat() if dt_str and not pd.isnull(str) else dt_str
@@ -144,7 +143,7 @@ hr_metadata_cols = [
  'source',
 ]
 
-df['owner_name'].fillna('Unknown owner', inplace=True)
+df['owner_name'] = df['owner_name'].fillna('Unknown owner')
 recs = [produce_hr_obj(r.hr_uuid,\
                        DS_UUID,\
                        [[r['obs_uuid'], 'place_name']],\

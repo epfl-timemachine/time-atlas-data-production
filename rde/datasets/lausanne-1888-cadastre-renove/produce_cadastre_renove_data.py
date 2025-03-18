@@ -155,8 +155,8 @@ dfs['obs_uuid'] = dfs['obs_uuid'].apply(lambda vs: [[v, 'parcel_id'] for v in vs
 
 
 # for display purposes in the intreface only, we will use the "owner" column, if it's empty, we will use "Unknown owner"
-dfs['owner'].fillna('Propriétaire inconnu', inplace=True)
-dfs['Noms locaux'].fillna('Toponyme inconnu', inplace=True)
+dfs['owner'] = dfs['owner'].fillna('Propriétaire inconnu')
+dfs['Noms locaux'] = dfs['Noms locaux'].fillna('Toponyme inconnu')
 hr_metadata_cols = list(set(dfs.columns).difference(exclude_hr_labels))
 tpe = 'cadaster registry'
 recs = [produce_hr_obj(r.hr_uuid,\

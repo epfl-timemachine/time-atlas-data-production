@@ -44,7 +44,7 @@ DATA_VENICE_FOLDER = os.path.join(parent_dir, 'data-venice')
 df_edifici = gpd.read_file(os.path.join(DATA_VENICE_FOLDER, 'contemporary_maps/2024_Edifici_EPSG32633.geojson')).to_crs('EPSG:4326').explode()
 gdf_edifici = df_edifici[['geometry', 'EDIFI_ID']].groupby('EDIFI_ID').first().reset_index()
 df = df.merge(df_edifici[['geometry', 'EDIFI_ID']].set_index('EDIFI_ID'), on='EDIFI_ID')
-gdf = gpd.GeoDataFrame(df, geometry='geometry')
+gdf = gpd.GeoDataFrame(df, geometry='geometry').set_crs('EPSG:4326')
 geom_begin = datetime_obj_from_int_time(20240101)
 geom_end = datetime_obj_from_int_time(20241231, match_to_end=True)
 gdf_geom = gdf[['geometry', 'EDIFI_ID']].groupby('EDIFI_ID').first().reset_index()
@@ -71,17 +71,15 @@ if not QA_check_all_geometries_are_valid(gdf_edifici, raise_exception=False):
 
 geom_shorthand = 'cini-photographs_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf_edifici[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
-
+save_data_file_if_different(DATA_FOLDER, 'geometries', gdf_edifici[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']].set_crs('EPSG:4326'), geom_shorthand, RDE.GEOM.value)
 gdf['hr_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['ImageNumber']), axis=1)
 gdf['obs_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['ImageNumber'], ad_hoc_seed='obs'), axis=1)
 gdf['poi_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['EDIFI_ID'], ad_hoc_seed='poi'), axis=1)
-
 # Generating PoIs
 poi_df = gdf.groupby('EDIFI_ID').agg(list)[['geometry', 'obs_uuid', 'poi_uuid']].reset_index()
-poi_df['centroid'] = poi_df['geometry'].apply(lambda x: x[0].centroid)
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v['poi_uuid'][0], v['centroid'], v['obs_uuid']) for _, v in poi_df.iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+# this weird contraption to get the .centroid of the first geometry properly without getting the warning about no crs projected
+poi_rec = gpd.GeoDataFrame([[v['poi_uuid'][0], v['geometry'][0], v['obs_uuid']] for _, v in poi_df.iterrows()], columns=['poi_uuid', 'geometry', 'obs_uuid']).set_geometry('geometry').set_crs('EPSG:4326')
+gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v['poi_uuid'], v.geometry.centroid, v['obs_uuid']) for _, v in poi_rec.iterrows()]).set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
 gdf_poi.rename(columns={'poi_uuid': 'uuid'}, inplace=True)
@@ -93,9 +91,8 @@ QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
 
 # Generating Obs
 gdf['has_geometry'] = gdf.apply(lambda r: gdf_geom[gdf_geom['EDIFI_ID'] == r['EDIFI_ID']]['uuid'].values, axis=1)
-gdf['centroid'] = gdf['geometry'].centroid
 gdf['type'] = 'photograph'
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.centroid, v.has_geometry, v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.geometry.centroid, v.has_geometry, v.poi_uuid)
 obs = [obs_from_row(v) for _, v in gdf.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')

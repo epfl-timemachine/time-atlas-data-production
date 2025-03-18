@@ -219,7 +219,7 @@ if is_man_tif:
     filenames_of_interest = {**filenames_of_interest, **vol_first_pages}
     df_tifs[['volume_number_toc', 'volume_toc', 'parish_number_toc', 'parish_toc']] = df_tifs['filename'].apply(lambda x: filenames_of_interest.get(x, None)).apply(pd.Series)
     # ffill is forward fill, matches all volume and parish name from the first page to the following.
-    df_wh_tif = df_tifs.fillna(method="ffill").drop(columns=['volume_number', 'parish_number']).rename(columns={'volume_number_toc':'volume_number', 'parish_number_toc':'parish_number', 'volume_toc':'volume', 'parish_toc':'parish'})
+    df_wh_tif = df_tifs.ffill().drop(columns=['volume_number', 'parish_number']).rename(columns={'volume_number_toc':'volume_number', 'parish_number_toc':'parish_number', 'volume_toc':'volume', 'parish_toc':'parish'})
     # we don't have the tif version of the ghetto, so we add the values from the jpeg/png version instead.
     df_ghetto = df_wh[df_wh['volume_number'] == 440]
     df_ghetto_sorted = df_ghetto.sort_values(by=['parish_number','page_index'])
