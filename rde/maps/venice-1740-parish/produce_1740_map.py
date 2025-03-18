@@ -24,7 +24,7 @@ venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
 # transforming those two corners into a closed polygon.
 extent_as_point = list(zip(extent, extent[1:] + extent[:1]))
 extent_as_point = extent_as_point + [extent_as_point[0]]
-wgs84_extent = [(p.x, p.y) for p in [to_wgs84_from_epsg3857(e[0], e[1]) for e in extent_as_point]]
+wgs84_extent = [[p.x, p.y] for p in [to_wgs84_from_epsg3857(e[0], e[1]) for e in extent_as_point]]
 zoom_lvl= [11,21]
 
 layer_name = {"en": ["Parishes of 1740"], "fr": ["Paroisses de 1740"], "it": ["Parrocchie di 1740"]}

@@ -19,10 +19,8 @@ vector_layer_uuid = str(uuid.uuid5(LMAP_UUID5_NS, vector_layer_slug))
 extent =  [6.501622899, 46.642692356, 6.790137624, 46.470149236]
 
 lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
-
-# copied from sommarioni code, probably a modular function to be added to the utils
-# transforming those two corners into a closed polygon.
-extent_as_point = list(zip(extent, extent[1:] + extent[:1]))
+# the list(map(list)) thing makes it so the result of the function compoisition is a list of list instead of tuples (prevents an issue when saving the file to json format)
+extent_as_point = list(map(list, zip(extent, extent[1:] + extent[:1])))
 extent_as_point = extent_as_point + [extent_as_point[0]]
 zoom_lvl= [11,21]
 
