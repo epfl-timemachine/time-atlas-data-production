@@ -70,6 +70,7 @@ save_gdf = gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde
 save_data_file_if_different(DATA_FOLDER,'geometries', save_gdf, f'garzoni_geometries', RDE.GEOM.value)
 QA_check_uuid_are_unique(gdf)
 
+print('loading garzoni data into a dataframe, this may take a while.')
 garzoni_fp = join(GARZONI_DATA_SRC, 'contracts_20240409_180544.xlsx')
 #large dataset, I load it separately for ease of computation in the next cell
 contracts = pd.read_excel(garzoni_fp, engine='openpyxl', sheet_name="Person Mentions")

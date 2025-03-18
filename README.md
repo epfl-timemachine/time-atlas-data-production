@@ -1,3 +1,16 @@
+# Run the data production script
+
+Simply runu the bash script "generate_data.sh", this will take care of installing the required dependencies, run all generation data script and validate the data. The script need to be set the execution mode to be run, so run the following command once:
+
+```bash
+chmod u+x generate_data.sh
+```
+
+Then 
+```bash
+generate_data.sh
+```
+
 # Data Model & Data Production
 The data model is quite simple and generic, having only 8 data classes, with most of them sharing a similar set of core attributes. The principle of this modeling is to highlight the most common characteristics of any set of data that could be visualized in the Time Machine Atlas interface and generalize them into simple entites class, hereby called "Research Data Entities". At the same time, this model expects each of those entities to record as much heterogeneous and specific metadata as posisble from the original historical source while having both the backend and the frontend be made aware of dataset-level idiosyncracies. Correctly displaying, indexing and manipulating specific metadata are documented in what is called "Operational Entities" describing technical information for both a backend and frontend system on how to parse and disperese and process those informations.
 
