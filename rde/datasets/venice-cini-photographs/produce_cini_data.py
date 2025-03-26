@@ -62,6 +62,9 @@ gdf_edifici['uuid'] = gdf_edifici.progress_apply(lambda r: make_uuid_from_row_se
 gdf_geom = gdf_geom.merge(gdf_edifici[['uuid', 'EDIFI_ID']], on='EDIFI_ID')
 gdf_edifici['layer_uuid'] = edifici_layer_uuid
 gdf_edifici['rde_type'] = RDE.GEOM.value
+with open('edifici_id_to_geom_uuid.json', 'w+') as f:
+    #if other dataset might need to point to the same geometries, this file can be used to correctly reference the uuids.
+    json.dump(gdf_edifici.set_index('EDIFI_ID')['uuid'].to_dict(), f)
 QA_check_uuid_are_unique(gdf_geom)
 
 if not QA_check_all_geometries_are_valid(gdf_edifici, raise_exception=False):
