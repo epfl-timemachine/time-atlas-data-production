@@ -40,6 +40,7 @@ gdf = gdf[~gdf.geometry.isna()] # for now.
 gdf['NAME'] = gdf['NAME'].str.replace('_', ' ') 
 # fixing the typo in the column
 gdf['length'] = gdf['lenght']
+gdf['length'] = gdf['length'].apply(lambda s: str(s) + 'm' if not pd.isna(s) else s)
 
 # I have no idea what the id column is for, so dropping it for the moment.
 gdf = gdf.drop(columns=['lenght', 'id']).reset_index()
