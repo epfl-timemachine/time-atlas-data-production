@@ -1,7 +1,3 @@
-"""
-assigns terrain and building heights retrieved from tiles from the MapTiler API to point features
-"""
-
 import os
 import geopandas as gpd
 import numpy as np
@@ -14,6 +10,7 @@ from PIL import Image
 from mapbox_vector_tile import decode
 from shapely.geometry import shape
 from dotenv import load_dotenv
+from tqdm import tqdm
 
 # environment variable for MapTiler API key
 load_dotenv()
@@ -59,7 +56,7 @@ def get_terrain_tile(x, y, z):
         url = maptiler_terrain_url(x, y, z)
         os.makedirs(os.path.dirname(cache_path), exist_ok=True)
 
-        print("Downloading height tile...", url)
+        # print("Downloading height tile...", url)
         response = requests.get(url, headers=HEADERS)
         if response.status_code != 200:
             print(f"Error: {response.status_code} - {response.reason}")
@@ -80,7 +77,7 @@ def get_vector_tile(x, y, z):
         url = maptiler_vector_url(x, y, z)
         os.makedirs(os.path.dirname(cache_path), exist_ok=True)
 
-        print("Downloading vector tile...", url)
+        # print("Downloading vector tile...", url)
         response = requests.get(url, headers=HEADERS)
         if response.status_code != 200:
             print(f"Error: {response.status_code} - {response.reason}")
@@ -103,9 +100,16 @@ def get_vector_tile(x, y, z):
     return shapely_features
 
 
-def processing_points(points: gpd.GeoDataFrame):
+def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd.GeoDataFrame:
+    '''
+    Assigns terrain and building heights to point features.
+    Args:
+        points (gpd.GeoDataFrame): GeoDataFrame containing point features.
+        format_rde (bool): If True, format the output for RDE. (storing building and terrain height in a single column)
+    Returns:
+        gpd.GeoDataFrame: GeoDataFrame with terrain and building heights assigned to point features.
+    '''
     points = points.to_crs("EPSG:3857")
-
     # determine the tile coordinates
     points["tile_x"] = np.floor((points.geometry.x - tile0.left) / tile_size_m).astype(np.uint32)
     points["tile_y"] = np.ceil(2 ** highest_zoom_level - 1 - (points.geometry.y - tile0.bottom) / tile_size_m).astype(
@@ -133,8 +137,7 @@ def processing_points(points: gpd.GeoDataFrame):
 
     num_points = len(points)
 
-    for index, (_, row) in enumerate(points.iterrows()):
-        print(f"Processing point {index + 1}/{num_points}...")
+    for _, row in tqdm(points.iterrows(), desc="Processing points", total=num_points):
 
         tile_x, tile_y = row.tile_x, row.tile_y
 
@@ -167,9 +170,10 @@ def processing_points(points: gpd.GeoDataFrame):
 
     # remove temporary columns
     points = points.drop(columns=["tile_x", "tile_y", "normalized_left", "normalized_top", "terrain_x", "terrain_y", "vector_x", "vector_y"])
+    if format_rde:
+        points['height'] = points.apply(lambda row: {"terrain": row['terrain_height'], "building": row['building_height']}, axis=1)
+        points = points.drop(columns=["terrain_height", "building_height"])
     return points
-
-
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()

@@ -16,6 +16,7 @@ import typing
 from collections import Counter
 from datetime import datetime as dt
 from .rde import RDE
+from .get_terrain_and_building_heights import processing_points
 
 UNIVERSAL_CRS = "EPSG:4326"
 
@@ -401,6 +402,8 @@ def save_data_file_if_different(fp:str,
     filename_with_ext = f'{filename}.json'
     filepath = os.path.join(fp, filename_with_ext)
     if isinstance(data, gpd.GeoDataFrame):
+        if tpe == RDE.POI.value or tpe == RDE.OBS.value:
+            data = processing_points(data, format_rde=True)
         t_data = geodataframe_to_json(data)
         t_data = t_data['features']
         # flattening the geojson object to only keep the features
