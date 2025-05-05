@@ -6,22 +6,30 @@ import os
 import geopandas as gpd
 import numpy as np
 import mercantile
-import rasterio
 import requests
 import shapely
+import argparse
+from platformdirs import user_cache_dir
 from PIL import Image
 from mapbox_vector_tile import decode
 from shapely.geometry import shape
+from dotenv import load_dotenv
 
-# file format can be anything which is supported by geopandas
-input_file_path = r"D:\Data\TimeAtlas\lausanne_point_sample.geojson"
-# file format can be anything which is supported by geopandas
-output_file_path = input_file_path.replace(".geojson", "_height.geojson")
+# environment variable for MapTiler API key
+load_dotenv()
+maptiler_key = os.getenv("MAPTILER_API_KEY")
+if maptiler_key is None:
+    raise ValueError("MAPTILER_API_KEY environment variable not set. Please set it to your MapTiler API key.")
 
-maptiler_key = "XXXXXXXXXXXXX"
-
-maptiler_terrain_cache_path = lambda x, y, z: rf"D:\Data\TimeAtlas\maptiler_cache\terrain\{z}\{x}\{y}.webp"
-maptiler_vector_cache_path = lambda x, y, z: rf"D:\Data\TimeAtlas\maptiler_cache\vector\{z}\{x}\{y}.pbf"
+# Set up cache directories
+cachedir = user_cache_dir("time-atlas-data-production", "time-machine-unit")
+TERRAIN_CACHE = os.path.join(cachedir, "maptiler_cache", "terrain")
+VECTOR_CACHE = os.path.join(cachedir, "maptiler_cache", "vector")
+OS_SEP = os.path.sep
+TERRAIN_CACHE_FMT = OS_SEP.join([TERRAIN_CACHE, '{z}', '{x}', '{y}.webp'])
+maptiler_terrain_cache_path = lambda x, y, z: TERRAIN_CACHE_FMT.format(z=z, x=x, y=y)
+VECTOR_CACHE_FMT = OS_SEP.join([VECTOR_CACHE, '{z}', '{x}', '{y}.pbf'])
+maptiler_vector_cache_path = lambda x, y, z: VECTOR_CACHE_FMT.format(z=z, x=x, y=y)
 
 maptiler_terrain_url = lambda x, y, z: f"https://api.maptiler.com/tiles/terrain-rgb-v2/{z}/{x}/{y}.webp?key={maptiler_key}"
 maptiler_vector_url = lambda x, y, z: f"https://api.maptiler.com/tiles/v3-openmaptiles/{z}/{x}/{y}.pbf?key={maptiler_key}"
@@ -44,16 +52,18 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
 }
 
-
 def get_terrain_tile(x, y, z):
     cache_path = maptiler_terrain_cache_path(x, y, z)
 
-    if (not os.path.exists(cache_path)):
+    if not os.path.exists(cache_path):
         url = maptiler_terrain_url(x, y, z)
         os.makedirs(os.path.dirname(cache_path), exist_ok=True)
 
         print("Downloading height tile...", url)
         response = requests.get(url, headers=HEADERS)
+        if response.status_code != 200:
+            print(f"Error: {response.status_code} - {response.reason}")
+            raise Exception(f"Failed to download terrain tile: {response.status_code} - {response.reason}")
 
         with open(cache_path, "wb") as f:
             f.write(response.content)
@@ -62,42 +72,23 @@ def get_terrain_tile(x, y, z):
 
     rgb_img = rgba_img.convert('RGB')
     rgb_img_data = np.array(rgb_img, np.float32)
-
-    """
-    # debug height image
-    height_img = -10000 + ((rgb_img_data[..., 0] * 256 * 256 + rgb_img_data[..., 1] * 256 + rgb_img_data[..., 2]) * 0.1)
-
-    bbox = mercantile.xy_bounds(x, y, z)
-
-    tf = rasterio.transform.from_bounds(
-        bbox.left,
-        bbox.bottom,
-        bbox.right,
-        bbox.top,
-        width=512,
-        height=512
-    )
-
-    with rasterio.open(cache_path.replace(".webp", ".tif"), "w", count=1, driver="GTiff", crs="EPSG:3857",
-                       transform=tf, width=512, height=512, dtype=np.uint16) as dst:
-        dst.write(height_img, 1)
-    """
     return rgb_img_data
-
 
 def get_vector_tile(x, y, z):
     cache_path = maptiler_vector_cache_path(x, y, z)
-
-    if (not os.path.exists(cache_path)):
+    if not os.path.exists(cache_path):
         url = maptiler_vector_url(x, y, z)
         os.makedirs(os.path.dirname(cache_path), exist_ok=True)
 
         print("Downloading vector tile...", url)
         response = requests.get(url, headers=HEADERS)
-
+        if response.status_code != 200:
+            print(f"Error: {response.status_code} - {response.reason}")
+            raise Exception(f"Failed to download vector tile: {response.status_code} - {response.reason}")
+        data = response.content
+        
         with open(cache_path, "wb") as f:
             f.write(response.content)
-
     with open(cache_path, "rb") as f:
         data = f.read()
 
@@ -112,8 +103,7 @@ def get_vector_tile(x, y, z):
     return shapely_features
 
 
-def main():
-    points = gpd.read_file(input_file_path)
+def processing_points(points: gpd.GeoDataFrame):
     points = points.to_crs("EPSG:3857")
 
     # determine the tile coordinates
@@ -166,7 +156,7 @@ def main():
                 found = True
                 break
 
-        if (not found):
+        if not found:
             building_height_values.append(0)
 
         previous_tile_x = tile_x
@@ -175,9 +165,24 @@ def main():
     points["terrain_height"] = terrain_height_values
     points["building_height"] = building_height_values
 
-    points = points[["_id", "geometry", "terrain_height", "building_height"]]
-    points.to_file(output_file_path, driver="GeoJSON")
+    # remove temporary columns
+    points = points.drop(columns=["tile_x", "tile_y", "normalized_left", "normalized_top", "terrain_x", "terrain_y", "vector_x", "vector_y"])
+    return points
+
 
 
 if __name__ == '__main__':
-    main()
+    args = argparse.ArgumentParser()
+    args.add_argument("--input_file_path", type=str, required=True, help="Path to the input GeoJSON file")
+    args.add_argument("--output_file_path", type=str, required=True, help="Path to the output GeoJSON file")
+    args = args.parse_args()
+    input_file_path = args.input_file_path
+    output_file_path = args.output_file_path
+    if not os.path.exists(input_file_path):
+        raise FileNotFoundError(f"Input file {input_file_path} does not exist.")
+    if os.path.exists(output_file_path):
+        raise FileExistsError(f"Output file {output_file_path} already exists.")
+    
+    points = gpd.read_file(input_file_path)
+    points = processing_points(points)
+    points.to_file(output_file_path, driver="GeoJSON")
