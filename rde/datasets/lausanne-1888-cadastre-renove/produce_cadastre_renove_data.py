@@ -119,7 +119,7 @@ point_gdf['poi_uuid'] = point_gdf.progress_apply(lambda r: make_uuid_from_row_se
 gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry, v.obs_uuid) for _, v in point_gdf.reset_index().iterrows()])
 gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-
+gdf_poi = gdf_poi.set_geometry('geometry')
 save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'lausanne_1888_cadastre_renove_pois', RDE.POI.value)
 QA_check_uuid_are_unique(gdf_poi.reset_index())
 
@@ -136,6 +136,7 @@ gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
+gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'lausanne_1888_cadastre_renove_observations'
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
