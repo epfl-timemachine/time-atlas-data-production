@@ -46,8 +46,13 @@ parish_layer = produce_layer_obj(
     )]
 )
 
-map_name = {"en":["Map relating to Venice in 1740"], "fr":["Carte relative à Venise en 1740"], "it":["Mappa relativa a Venezia nel 1740"]}
-map_description = {"en":["Is formed of a manual interpretation of the parishes' geographical delimitation from 1740"], "fr":["Est formée d'une interprétation manuelle de la délimitation géographique des paroisses de 1740"], "it": ["Basato su un'interpretazione manuale dei confini parrocchiali del 1740."]}
+map_name = {"en":["Digital Layer – 1740 Parish Boundaries"],
+            "fr":["Couche numérique - Limites des paroisses de 1740"],
+            "it":["Layer digitale - Confini parrocchiali del 1740"]
+            }
+map_description = {"en":["Vector data manually extracted and realigned from the parishes mentioned in the 1740 Catastici dataset. Provides spatial representations of parish areas based on historical references. Dataset created at EPFL."],
+                    "fr":["Données vectorielles extraites et réalignées manuellement à partir des paroisses mentionnées dans le jeu de données Catastici de 1740. Fournit des représentations spatiales des zones paroissiales basées sur des références historiques. Jeu de données créé à l'EPFL."],
+                    "it":["Dati vettoriali estratti e riallineati manualmente dalle parrocchie menzionate nel dataset Catastici del 1740. Fornisce rappresentazioni spaziali delle aree parrocchiali basate su riferimenti storici. Dataset creato all'EPFL."]}
 map_paradata = {"en":["Is formed of a manual interpretation of the parishes' geographical delimitation from 1740"], "fr":["Est formée d'une interprétation manuelle de la délimitation géographique des paroisses de 1740"], "it": ["Basato su un'interpretazione manuale dei confini parrocchiali del 1740."]}
 map_1740 = produce_map_obj(
     MAP_UUID,

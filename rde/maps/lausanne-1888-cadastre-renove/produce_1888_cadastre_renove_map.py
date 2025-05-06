@@ -43,8 +43,12 @@ vector_layer = produce_layer_obj(
     )]
 )
 
-map_name = {"en":["Map relating to the renovated cadaster of Lausanne in 1888 in 1740"], "fr":["Carte du cadastre rénové de Lausanne en 1888"], "it": ["Mappa relativa al catasto rinnovato di Losanna nel 1888"]}
-map_description = {"fr":["Provient des planches du cadastre rénové de la ville de Lausanne réalisé en 1888"], "en":["Comes from the sheets of the renovated cadaster of the city of Lausanne carried out in 1888"], "it": ["Proviene dalle tavole del catasto rinnovato della città di Losanna realizzato nel 1888"]}
+map_name = {"en":["Digital Layer – 1808 Cadastral Footprints"],
+            "fr":["Couche numérique - Empreintes cadastrales de 1808"],
+            "it":["Layer digitale - Impronte catastali del 1808"]}
+map_description = {"en":["Vector data extracted from the cadastral map of Lausanne, dated 1888. Dataset created at EPFL."],
+                    "fr":["Données vectorielles extraites de la carte cadastrale de Lausanne, datée de 1888. Jeu de données créé à l'EPFL."],
+                    "it":["Dati vettoriali estratti dalla mappa catastale di Losanna, datata 1888. Dataset creato all'EPFL."]}
 map_paradata = {"fr":["Les planches du cadastre rénové ont été vectorisées à l'aide de technique de computer vision modernes."], "en": ["The sheets of the renovated cadaster have been vectorized using modern computer vision techniques."], "it": ["Le tavole del catasto rinnovato sono state vettorializzate utilizzando moderne tecniche di computer vision."]}
 map_1888 = produce_map_obj(
     MAP_UUID,

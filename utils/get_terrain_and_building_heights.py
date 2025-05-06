@@ -137,7 +137,7 @@ def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd
 
     num_points = len(points)
 
-    for _, row in tqdm(points.iterrows(), desc="Processing points", total=num_points):
+    for _, row in tqdm(points.iterrows(), desc="Processing elevation data", total=num_points):
 
         tile_x, tile_y = row.tile_x, row.tile_y
 
