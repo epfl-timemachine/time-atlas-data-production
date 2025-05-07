@@ -173,6 +173,7 @@ def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd
     if format_rde:
         points['height'] = points.apply(lambda row: {"terrain": row['terrain_height'], "building": row['building_height']}, axis=1)
         points = points.drop(columns=["terrain_height", "building_height"])
+        points = points.to_crs("EPSG:4326")
     return points
 
 if __name__ == '__main__':
