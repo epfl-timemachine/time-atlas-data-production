@@ -73,6 +73,7 @@ def get_terrain_tile(x, y, z):
 
 def get_vector_tile(x, y, z):
     cache_path = maptiler_vector_cache_path(x, y, z)
+    # print(cache_path)
     if not os.path.exists(cache_path):
         url = maptiler_vector_url(x, y, z)
         os.makedirs(os.path.dirname(cache_path), exist_ok=True)
