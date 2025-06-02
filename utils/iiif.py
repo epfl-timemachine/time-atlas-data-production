@@ -23,8 +23,21 @@ class Selector():
         raise ValueError('SVG selector should be a list of number')
       
 
-def generate_page_object(uuid_ns:uuid.UUID, dataset_id:str, range_idx:int, manifest_uuid:str, label:str, path:str, format:str, height:int, width:int, lan:str, metadata: Optional[list[Union[tuple[str,str], tuple[str, str, Selector]]]] = None) -> dict:
+def generate_page_object(uuid_ns:uuid.UUID,
+                        dataset_id:str,
+                        range_idx:int, 
+                        manifest_uuid:str,
+                        label:str,
+                        path:str,
+                        format:str, 
+                        height:int, 
+                        width:int,
+                        lan:str,
+                        metadata: Optional[list[Union[tuple[str,str], tuple[str, str, Selector]]]] = None,
+                        external_resource: Optional[str] = None) -> dict:
     canvas_uid = str(uuid.uuid5(uuid_ns, f"{dataset_id}_{manifest_uuid}_{range_idx}"))
+    if external_resource:
+        canvas_uid = (canvas_uid, external_resource)
     v = {
         "id": canvas_uid,
         "type": "Page",
@@ -45,17 +58,22 @@ def iiif_canvas_object_from_page_obj(uuid_ns: uuid.UUID, page_obj:dict, lan:str)
     # todo: make the annotation and page id modular, and not hardcoded to 1 (cf. webannotation model, for multiple annotations per page)
 
     url_encoded = f"https://image-timemachine.epfl.ch/iiif/3/{quote_plus(page_obj['path'])}"
-    annot_page_idx = page_obj['id']+f"/{page_obj['range_idx']:04d}-image"
     metadata = page_obj.get('metadata', None)
+    page_id = page_obj['id']
+    if isinstance(page_id, tuple) or isinstance(page_id, list):
+        # we're in the case were there is an external resource in the id.
+        page_id = page_id[0]
+      
+    annot_page_idx = page_id+f"/{page_obj['range_idx']:04d}-image"
     obj = {
-      "id": page_obj['id'],
+      "id": page_id,
       "type": "Canvas",
       "label": page_obj['label'],
       "height": page_obj['height'],
       "width": page_obj['width'],
       "items": [
         {
-          "id": str(uuid.uuid5(uuid_ns, page_obj['id']+'/1')), 
+          "id": str(uuid.uuid5(uuid_ns, page_id+'/1')), 
           "type": "AnnotationPage",
           "items": [
             {
@@ -76,7 +94,7 @@ def iiif_canvas_object_from_page_obj(uuid_ns: uuid.UUID, page_obj:dict, lan:str)
                   }
                 ]
               },
-              "target": page_obj['id']
+              "target": page_id
             }
           ]
         }
@@ -96,18 +114,17 @@ def generate_hr_commenting_annotation(uuid_ns:str, canvas_uid:Union[tuple[str, s
         hr_txt_selector = [(hr_id, txt, None) for hr_id, txt in hr_txt_selector]
     if isinstance(canvas_uid, str):
       target_obj = [{
-        "id": canvas_uid if isinstance(canvas_uid, str) else canvas_uid[0],
-        "type": "Canvas" if isinstance(canvas_uid, str) else "SpecificResource"
+        "id": canvas_uid,
+        "type": "Canvas"
       }]
     elif isinstance(canvas_uid, tuple):
       target_obj = [{
         "id": canvas_uid[0],
-        "type": "SpecificResource",
+        "type": "Canvas",
       },{
         "id": canvas_uid[1],
-        "type": "ThumbnailResource",
-      },
-      
+        "type": "ExternalResource",
+      }
       ]
     return {
           "id": str(uuid.uuid5(uuid_ns, f'{canvas_uid}_hr_commenting_annotation')),

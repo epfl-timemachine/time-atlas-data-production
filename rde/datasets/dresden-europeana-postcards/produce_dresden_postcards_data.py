@@ -30,9 +30,9 @@ DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 
-
 dresden_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
-df = pd.read_csv('src/dresden_identified_data_export.csv')
+
+df = pd.read_csv('src/dresden_347_20250602.csv')
 df['lat_lon'] = df['lat_lon'].apply(lambda v: literal_eval(v))
 df['geometry'] = df['lat_lon'].apply(lambda v: Point(v[1], v[0]))
 gdf = gpd.GeoDataFrame(df.drop('lat_lon', axis=1)).set_geometry('geometry')
@@ -70,6 +70,39 @@ QA_check_uuid_are_unique(gdf_poi.reset_index())
 QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
 save_data_file_if_different(DATA_FOLDER, 'pois', gdf_poi, f'dresden_pois', RDE.POI.value)
 
+from utils.iiif import *
+# Generating the IIIF manifests
+gdf['image_fp'] = df['image_path'].apply(lambda v: v.replace('to_iiif/dresden', 'dresden/europeana_postcards'))
+man_list = {}
+for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
+    manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'])
+    width, height = literal_eval(row['image_size'])
+    page_obj = generate_page_object(
+        TM_UUID5_NS,
+        DS_UUID,
+        0,
+        manifest_uuid,
+        row['Image Name'],
+        row['image_fp'],
+        row['media_type'],
+        height,
+        width,
+        'en',
+        metadata=[[row['hr_uuid'], row['description']]],
+        external_resource=row['landin_page'],)
+    man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[row['description']]},'en', [page_obj])
+    with open(f'data/iiif/manifests/{manifest_uuid}.json', 'w') as f:
+        f.write(json.dumps(man, indent=2, ensure_ascii=False))
+    man_list[manifest_uuid] = {"en":[row['description']]}
+    
+# generating the collection
+collection_uuid = str(uuid.uuid5(TM_UUID5_NS, f'{DS_SLUG}_collection'))
+collection_obj = generate_collection_manifest(
+    collection_uuid,
+    {'en': ['Geolocated postcards from Dresden, Germany. Data retrieved from Europeana.']},
+    man_list)
+with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
+    f.write(json.dumps(collection_obj, indent=2, ensure_ascii=False))
 # HR RDE Production
 # 1 to 1 relationship 
 hr_obs_df = gdf[['obs_uuid', 'hr_uuid']].groupby('hr_uuid').agg(list)
@@ -81,12 +114,14 @@ def image_name_to_url(img_name:str) -> str:
     return f"https://image-timemachine.epfl.ch/iiif/3/venice%2Fdresden%2Fto_transfer%2F{img_name}/full/300,/0/default.jpg"
 
 tpe = 'postarcds'
+
+drop_cols = ['external_links', 'iiif_manifest', 'image', 'thumbnail', 'landin_page', 'rights_attribution', 'image_size', 'media_type', 'image_path', 'record', 'image_fp']
 recs = [produce_hr_obj(r.hr_uuid,\
                        DS_UUID,\
                    [[r.obs_uuid[0], 'Monument']],\
                        (r.start_time, r.end_time),\
                        tpe, \
-                   r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time']).to_dict(),
+                   r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time'] + drop_cols).to_dict(),
                    thumbnail = image_name_to_url(r['Image Name'])
                    ) \
                    for _, r in hr_df.iterrows()]
