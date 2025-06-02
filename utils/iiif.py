@@ -23,7 +23,6 @@ class Selector():
         raise ValueError('SVG selector should be a list of number')
       
 
-
 def generate_page_object(uuid_ns:uuid.UUID, dataset_id:str, range_idx:int, manifest_uuid:str, label:str, path:str, format:str, height:int, width:int, lan:str, metadata: Optional[list[Union[tuple[str,str], tuple[str, str, Selector]]]] = None) -> dict:
     canvas_uid = str(uuid.uuid5(uuid_ns, f"{dataset_id}_{manifest_uuid}_{range_idx}"))
     v = {
@@ -87,7 +86,7 @@ def iiif_canvas_object_from_page_obj(uuid_ns: uuid.UUID, page_obj:dict, lan:str)
         obj['annotations'] = [generate_hr_commenting_annotation(uuid_ns, page_obj['id'], lan, metadata)]
     return obj
 
-def generate_hr_commenting_annotation(uuid_ns:str, canvas_uid:str, lan:str, hr_txt_selector:list[tuple[str,str, Optional[Selector]]]) -> dict:
+def generate_hr_commenting_annotation(uuid_ns:str, canvas_uid:Union[tuple[str, str], str], lan:str, hr_txt_selector:list[tuple[str,str, Optional[Selector]]]) -> dict:
     '''
     This function returns a simple annotation object with a textual body, that has the transcription of the HR
     as well as the link to the HR object.
@@ -95,6 +94,21 @@ def generate_hr_commenting_annotation(uuid_ns:str, canvas_uid:str, lan:str, hr_t
     if len(hr_txt_selector[0]) == 2:
         # no selector present, casting the third value to None:
         hr_txt_selector = [(hr_id, txt, None) for hr_id, txt in hr_txt_selector]
+    if isinstance(canvas_uid, str):
+      target_obj = [{
+        "id": canvas_uid if isinstance(canvas_uid, str) else canvas_uid[0],
+        "type": "Canvas" if isinstance(canvas_uid, str) else "SpecificResource"
+      }]
+    elif isinstance(canvas_uid, tuple):
+      target_obj = [{
+        "id": canvas_uid[0],
+        "type": "SpecificResource",
+      },{
+        "id": canvas_uid[1],
+        "type": "ThumbnailResource",
+      },
+      
+      ]
     return {
           "id": str(uuid.uuid5(uuid_ns, f'{canvas_uid}_hr_commenting_annotation')),
           "type": "AnnotationPage",
@@ -113,7 +127,7 @@ def generate_hr_commenting_annotation(uuid_ns:str, canvas_uid:str, lan:str, hr_t
                 "type": "rde:HistoricalRecord",
                 "id": hr_id
               }],
-              "target": canvas_uid if selector is None else generate_selector_template(canvas_uid, selector)
+              "target": target_obj if selector is None else generate_selector_template(canvas_uid, selector)
             } for hr_id, txt, selector in hr_txt_selector
           ]
         }
