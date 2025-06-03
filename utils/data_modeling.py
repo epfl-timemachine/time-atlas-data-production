@@ -542,6 +542,7 @@ def produce_configuration_file_from_metadata_df(
             "main_label": "",
             "sub_label": "",
             "display_thumbnail": False,
+            "external_source": False,
             "metadata_field_config": []
         }
     }
@@ -558,8 +559,6 @@ def produce_configuration_file_from_metadata_df(
 
     if external_source:
         base['hr_config']['external_source'] = True
-    else:
-        base['hr_config']['external_source'] = False
 
     base["uuid"] = str(uuid.uuid5(uuid_ns, 'dataset_configuration'))
     field_template = {
