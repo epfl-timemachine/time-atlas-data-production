@@ -35,8 +35,34 @@ venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 df = pd.read_csv('src/venice_67_20250602.csv')
 df['lat_lon'] = df['lat_lon'].apply(lambda v: literal_eval(v))
 df['geometry'] = df['lat_lon'].apply(lambda v: Point(v[1], v[0]))
+
+def start_end_date_from_venice_postcards_date_value(date_value):
+    if pd.isna(date_value):
+        return TR_OBJ
+    begin = None
+    end = None
+    if '[' in date_value and ']' in date_value:
+        date_value = literal_eval(date_value)
+    if isinstance(date_value, tuple):
+        begin = dt.strptime(date_value[0][0], '%Y-%m-%d')
+        end = dt.strptime(date_value[1][0], '%Y-%m-%d')
+    elif isinstance(date_value, str):
+        if date_value.endswith('XX'):
+            # if the date ends with XX, it means that the exact date is not known, so we assume the whole year
+            year = int(date_value[:-2])*100
+            begin = dt(year, 1, 1)
+            end = dt(year+99, 12, 31, 23, 59, 59)
+        else:
+            # otherwise, we assume the date is a year
+            year = int(date_value)
+            begin = dt(year, 1, 1)
+            end = dt(year, 12, 31, 23, 59, 59)
+
+    return (begin.isoformat(), end.isoformat())
+
+df['start_time'], df['end_time']= zip(*df['date'].apply(start_end_date_from_venice_postcards_date_value))
+
 gdf = gpd.GeoDataFrame(df.drop('lat_lon', axis=1)).set_geometry('geometry')
-gdf['date'] = gdf['date'].apply(lambda v: str(v)[:4]) # keep only the year
 gdf = gdf.set_crs('EPSG:4326').reset_index()
 
 tqdm.pandas(desc="Generating obs uuid")
@@ -46,14 +72,9 @@ gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UU
 tqdm.pandas(desc="Generating poi uuid")
 gdf['poi_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['geometry']), axis=1)
 
-# Generating Obs RDE
-
-print(gdf.date.value_counts())
-gdf['dt_time'] = gdf['date'].apply(lambda v: dt.strptime(v, '%Y'))
-gdf['start_time'], gdf['end_time']= gdf['dt_time'].apply(lambda v: v.isoformat()), gdf['dt_time'].apply(lambda v: v.replace(month=12, day=31, hour=23, minute=59, second=59).isoformat())
-gdf.drop(columns=['dt_time'], inplace=True)
 tpe='monument'
 
+# Generating Obs RDE
 obs = [produce_obs_obj(
     v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None, v.poi_uuid
 ) for _,v in gdf.iterrows()]
@@ -79,6 +100,7 @@ man_list = {}
 for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
     manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'])
     width, height = literal_eval(row['image_size'])
+    description = row['description'] if not pd.isna(row['description']) else row['Image Name'].replace('.jpg', '').replace('.jpeg', '')
     page_obj = generate_page_object(
         TM_UUID5_NS,
         DS_UUID,
@@ -90,12 +112,12 @@ for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifest
         height,
         width,
         'en',
-        metadata=[[row['hr_uuid'], row['description']]],
+        metadata=[[row['hr_uuid'], description]],
         external_resource=row['landin_page'],)
-    man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[row['description']]},'en', [page_obj])
+    man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[description]},'en', [page_obj])
     with open(f'data/iiif/manifests/{manifest_uuid}.json', 'w') as f:
         f.write(json.dumps(man, indent=2, ensure_ascii=False))
-    man_list[manifest_uuid] = {"en":[row['description']]}
+    man_list[manifest_uuid] = {"en":[description]}
     
 # generating the collection
 collection_uuid = str(uuid.uuid5(TM_UUID5_NS, f'{DS_SLUG}_collection'))
@@ -109,6 +131,7 @@ with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
 # 1 to 1 relationship 
 hr_obs_df = gdf[['obs_uuid', 'hr_uuid']].groupby('hr_uuid').agg(list)
 hr_df = gdf.drop(columns=['index', 'poi_uuid', 'geometry', 'obs_uuid']).set_index('hr_uuid')
+hr_df = hr_df.replace({np.nan: None})
 hr_df['obs_uuid'] = hr_obs_df['obs_uuid']
 hr_df = hr_df.reset_index()
 
