@@ -171,6 +171,7 @@ ds_conf = produce_configuration_file_from_metadata_df(
     labels,
     CONF['main_label'],
     CONF['sub_label'],
+    True,
     True
 )
 

@@ -2,14 +2,14 @@
     "UUID_NAMESPACE": "https://timemachine.epfl.ch/dresden/europeana_postcards",
     "TIMERANGE_MINIMUM": 18900101,
     "TIMERANGE_MAXIMUM": 20241231,
-    "AREA_FILE_LOC": "../../areas/venice-area.json",
+    "AREA_FILE_LOC": "../../areas/paris-area.json",
     "DATASET_CONFIGURATION": {
-        "slug": "venice-europeana-postcards",
+        "slug": "paris-europeana-postcards",
         "name": {
-            "en": ["Postcards from Venice"],
-            "fr": ["Cartes postales de Venise"],
-            "de": ["Postkarten aus Venedig"],
-            "it": ["Cartoline da Venezia"]
+            "en": ["Postcards from Paris"],
+            "fr": ["Cartes postales de Paris"],
+            "de": ["Postkarten aus Paris"],
+            "it": ["Cartoline di Parigi"]
         },
         "description": {
             "en": ["Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."],
@@ -26,27 +26,24 @@
         "doi": null,
         "github_link": null,
         "indexed": [
-            "Monument",
-            "description"
+            "Monuments"
         ],
         "short_display" : [
-            "Monument",
-            "wd_id"
+            "Monuments"
         ],
         "hidden": [
             "Image Name"
         ],
-        "main_label": "${Monument}, ${date}",
+        "main_label": "${Monuments}, ${date}",
         "sub_label": "${description}",
         "tagged_fields": {
             "description": "PLACE",
-            "Monument": "PLACE"
+            "Monuments": "PLACE"
         },
         "labels": {
             "description": {"en": ["Description"], "fr": ["Description"], "de": ["Beschreibung"], "it": ["Descrizione"]},
             "date": {"en":["Date from the postcard"], "fr": ["Date de la carte postale"], "de": ["Datum der Postkarte"], "it": ["Data della cartolina"]},
-            "Monument": {"en": ["Monument identified by the AI"], "fr": ["Monument identifié par l'IA"], "de": ["Monument identifiziert durch KI"], "it": ["Monumento identificato dall'IA"]},
-            "wd_id": {"en":["Wikidata ID"], "fr": ["ID Wikidata"], "de": ["Wikidata ID"], "it": ["ID Wikidata"]},
+            "Monuments": {"en": ["Monuments identified by the AI"], "fr": ["Monuments identifiés par l'IA"], "de": ["Monumenten identifiziert durch KI"], "it": ["Monumenti identificati dall'IA"]},
             "Image Name": {"en": ["Image Name"], "fr": ["Nom de l'image"], "de": ["Bildname"], "it": ["Nome dell'immagine"]}
         }
     }

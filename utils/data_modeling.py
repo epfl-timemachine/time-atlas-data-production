@@ -517,7 +517,8 @@ def produce_configuration_file_from_metadata_df(
         labels: dict[str,str],
         main_label: str = '',
         sub_label: str = '',
-        display_thumbnail: bool = False) -> dict:
+        display_thumbnail: bool = False,
+        external_source: bool = False) -> dict:
     '''
     Returns a configuration file for the dataset based on the values from the dataframe and 
     various configuration object given as parameters.
@@ -552,6 +553,13 @@ def produce_configuration_file_from_metadata_df(
     
     if display_thumbnail:
         base['hr_config']['display_thumbnail'] = True
+    else:
+        base['hr_config']['display_thumbnail'] = False
+
+    if external_source:
+        base['hr_config']['external_source'] = True
+    else:
+        base['hr_config']['external_source'] = False
 
     base["uuid"] = str(uuid.uuid5(uuid_ns, 'dataset_configuration'))
     field_template = {

@@ -120,8 +120,8 @@ def validate(data:dict):
                 #print (json.dumps(err.instance, indent=4))
                 errorCount += 1
             okay = 0
-    if okay == 1:
-        print ('Passed Validation!')
+    if okay != 1:
+        print ('Validation Failed. Found {} errors.'.format(len(errorsJson)))
     error = ""
     return {
         'okay': okay,
