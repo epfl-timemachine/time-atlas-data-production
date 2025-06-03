@@ -30,9 +30,9 @@ DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 
-dresden_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
-df = pd.read_csv('src/dresden_347_20250602.csv')
+df = pd.read_csv('src/venice_67_20250602.csv')
 df['lat_lon'] = df['lat_lon'].apply(lambda v: literal_eval(v))
 df['geometry'] = df['lat_lon'].apply(lambda v: Point(v[1], v[0]))
 gdf = gpd.GeoDataFrame(df.drop('lat_lon', axis=1)).set_geometry('geometry')
@@ -47,6 +47,8 @@ tqdm.pandas(desc="Generating poi uuid")
 gdf['poi_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['geometry']), axis=1)
 
 # Generating Obs RDE
+
+print(gdf.date.value_counts())
 gdf['dt_time'] = gdf['date'].apply(lambda v: dt.strptime(v, '%Y'))
 gdf['start_time'], gdf['end_time']= gdf['dt_time'].apply(lambda v: v.isoformat()), gdf['dt_time'].apply(lambda v: v.replace(month=12, day=31, hour=23, minute=59, second=59).isoformat())
 gdf.drop(columns=['dt_time'], inplace=True)
@@ -60,7 +62,7 @@ gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'venice_postcards_obs', RDE.OBS.value)
 
 # Generate PoI RDE
 gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry[0], v.obs_uuid) for _, v in gdf.groupby('poi_uuid').agg(list).reset_index().iterrows()])
@@ -68,11 +70,11 @@ gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
 
 QA_check_uuid_are_unique(gdf_poi.reset_index())
 QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
-save_data_file_if_different(DATA_FOLDER, 'pois', gdf_poi, f'dresden_pois', RDE.POI.value)
+save_data_file_if_different(DATA_FOLDER, 'pois', gdf_poi, f'venice_postcards_pois', RDE.POI.value)
 
 from utils.iiif import *
 # Generating the IIIF manifests
-gdf['image_fp'] = df['image_path'].apply(lambda v: v.replace('to_iiif/dresden', 'dresden/europeana_postcards'))
+gdf['image_fp'] = df['image_path'].apply(lambda v: v.replace('to_iiif/venice', 'venice/europeana_postcards'))
 man_list = {}
 for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
     manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'])
@@ -99,7 +101,7 @@ for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifest
 collection_uuid = str(uuid.uuid5(TM_UUID5_NS, f'{DS_SLUG}_collection'))
 collection_obj = generate_collection_manifest(
     collection_uuid,
-    {'en': ['Geolocated postcards from Dresden, Germany. Data retrieved from Europeana.']},
+    {'en': ['Geolocated postcards from Venice, Italy. Data retrieved from Europeana.']},
     man_list)
 with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
     f.write(json.dumps(collection_obj, indent=2, ensure_ascii=False))
@@ -123,7 +125,7 @@ recs = [produce_hr_obj(r.hr_uuid,\
                    ) \
                    for _, r in hr_df.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'dresden_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'venice_postcards_hrs', RDE.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 
@@ -160,8 +162,8 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
-    [dresden_area_uuid],
+    [venice_area_uuid],
     publish_obj=(CONF['doi'], CONF['github_link'])
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'dresden_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'venice_postcards_dataset', RDE.DATASET.value, is_dataset_obj=True)

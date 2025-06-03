@@ -130,7 +130,7 @@ def produce_hr_obj(uuid: str,
                time_range: tuple[str, str],
                type: str,
                metadata: dict,
-               thumbnail: str = None) -> tuple[str, dict]:
+               rights_attribution: str = None) -> tuple[str, dict]:
     return {
         "uuid": uuid,
         "dataset": ds,
@@ -140,7 +140,7 @@ def produce_hr_obj(uuid: str,
         "documents": obs_uid_list,
         "start_time": time_range[0],
         "end_time": time_range[1],
-        "thumbnail": thumbnail,
+        "rights_attribution": rights_attribution,
         "annotated_content": metadata
     }
 
