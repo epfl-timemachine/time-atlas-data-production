@@ -44,7 +44,8 @@ def format_single_date_elem(date_elem):
     else:
         # If the date is not in a recognized format, we return None
         return dt.strptime(date_elem, '%Y') if date_elem.isdigit() else None
-    
+
+# ugly but not the time to make it better
 def start_end_date_from_paris_postcards_date_value(date_value):
     if pd.isna(date_value):
         return TR_OBJ
