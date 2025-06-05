@@ -139,7 +139,7 @@ from utils.iiif import *
 df['image_fp'] = df['image_path'].apply(lambda v: v.replace('to_iiif/paris', 'paris/europeana_postcards'))
 man_list = {}
 for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests"):
-    manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'])
+    manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'], ad_hoc_seed='postcard_manifest')
     width, height = literal_eval(row['image_size'])
     description = row['description'] if not pd.isna(row['description']) else row['Image Name'].replace('.jpg', '').replace('.jpeg', '')
     page_obj = generate_page_object(
@@ -177,7 +177,7 @@ df_hr['obs_uuid'] = df_hr['obs_data'].apply(lambda x: [o[2] for o in x])
 df_hr = df_hr.drop(columns=['obs_data', 'Monuments_wd_id', 'Monuments_lat_lon'])
 
 df_hr = df_hr.replace({np.nan: None})
-tpe = 'postarcds'
+tpe = 'postcard'
 
 recs = [produce_hr_obj(r.hr_uuid,\
                        DS_UUID,\
@@ -185,7 +185,8 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        (r.start_time, r.end_time),\
                        tpe, \
                    r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time', 'rights_attribution']).to_dict(),
-                   r['rights_attribution']
+                   r['rights_attribution'],
+                   'a'
                    ) \
                    for _, r in df_hr.iterrows()]
 

@@ -98,7 +98,7 @@ from utils.iiif import *
 gdf['image_fp'] = df['image_path'].apply(lambda v: v.replace('to_iiif/venice', 'venice/europeana_postcards'))
 man_list = {}
 for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
-    manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'])
+    manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'], ad_hoc_seed='postcard_manifest')
     width, height = literal_eval(row['image_size'])
     description = row['description'] if not pd.isna(row['description']) else row['Image Name'].replace('.jpg', '').replace('.jpeg', '')
     page_obj = generate_page_object(
@@ -144,7 +144,8 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        (r.start_time, r.end_time),\
                        tpe, \
                    r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time'] + drop_cols).to_dict(),
-                   r['rights_attribution']
+                   r['rights_attribution'],
+                   'a'
                    ) \
                    for _, r in hr_df.iterrows()]
 

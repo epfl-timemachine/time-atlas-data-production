@@ -130,12 +130,13 @@ def produce_hr_obj(uuid: str,
                time_range: tuple[str, str],
                type: str,
                metadata: dict,
-               rights_attribution: str = None) -> tuple[str, dict]:
+               rights_attribution: str = None,
+               paradata: str = 'm') -> tuple[str, dict]:
     return {
         "uuid": uuid,
         "dataset": ds,
         "rde_type": RDE.HR.value,
-        "paradata": "m",
+        "paradata": paradata,
         "type": type,
         "documents": obs_uid_list,
         "start_time": time_range[0],
@@ -554,8 +555,6 @@ def produce_configuration_file_from_metadata_df(
     
     if display_thumbnail:
         base['hr_config']['display_thumbnail'] = True
-    else:
-        base['hr_config']['display_thumbnail'] = False
 
     if external_source:
         base['hr_config']['external_source'] = True

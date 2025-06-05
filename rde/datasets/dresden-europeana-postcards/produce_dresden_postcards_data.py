@@ -75,7 +75,7 @@ from utils.iiif import *
 gdf['image_fp'] = df['image_path'].apply(lambda v: v.replace('to_iiif/dresden', 'dresden/europeana_postcards'))
 man_list = {}
 for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
-    manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'])
+    manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['Image Name'], ad_hoc_seed='postcard_manifest')
     width, height = literal_eval(row['image_size'])
     page_obj = generate_page_object(
         TM_UUID5_NS,
@@ -110,7 +110,7 @@ hr_df = gdf.drop(columns=['index', 'poi_uuid', 'geometry', 'obs_uuid']).set_inde
 hr_df['obs_uuid'] = hr_obs_df['obs_uuid']
 hr_df = hr_df.reset_index()
 
-tpe = 'postarcds'
+tpe = 'postcard'
 
 drop_cols = ['external_links', 'iiif_manifest', 'image', 'rights_attribution', 'thumbnail', 'landin_page', 'image_size', 'media_type', 'image_path', 'record', 'image_fp']
 recs = [produce_hr_obj(r.hr_uuid,\
@@ -119,7 +119,8 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        (r.start_time, r.end_time),\
                        tpe, \
                    r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time'] + drop_cols).to_dict(),
-                   r['rights_attribution']
+                   r['rights_attribution'],
+                   'a'
                    ) \
                    for _, r in hr_df.iterrows()]
 
