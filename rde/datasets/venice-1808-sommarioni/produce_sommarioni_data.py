@@ -7,7 +7,6 @@ import sys
 from pathlib import Path
 from tqdm import tqdm
 import json
-from functools import reduce
 
 # to have progress bar in the notebook
 tqdm.pandas()
@@ -20,9 +19,7 @@ if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
 from utils.data_modeling import *
 from utils.rde import RDE
 
-
 DATA_SRC_PATH = Path(join(parent_dir, 'data-venice/1808_Sommarioni/'))
-
 
 # aribtrary namespace, just to generate reproducible UUIDv5 from the entries of the dataset.
 VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
@@ -42,28 +39,32 @@ DATA_FOLDER = 'data'
 from utils import iiif
 
 collection = {}
-# debug that HR: 9b33424c-4947-52ce-b7ec-fa289ac1223f
 df_imgs = pd.read_csv('src/imgs_width_height_format.csv')
 df_imgs['volume'], df_imgs['page'] = zip(*df_imgs['filename'].str.split('/'))
 df_imgs['label'] = df_imgs['filename'].str.replace('.jpg', '')
 df_imgs = df_imgs.reset_index() # to derive a canvas_idx value for page generation.
 
-manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}'))
-registry_label = {"en": ['Napoleonic cadaster\'s registry of 1808'],
-                  "fr": ['Registre du cadastre napoléonien de 1808'],
-                    "it": ['Registro catastale napoleonico del 1808']
+df_imgs['page_obj'] = None
+df_imgs['manifest_uid'] = None
+for vol, sdf in df_imgs.groupby('volume'):
+    manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}_{vol}'))
+    registry_label = {
+                        "en": [f'Napoleonic cadaster\'s registry of 1808 ({vol})'],
+                        "fr": [f'Registre du cadastre napoléonien de 1808 ({vol})'],
+                        "it": [f'Registro catastale napoleonico del 1808 ({vol})']
                     }
-
-collection[manifest_uid] = registry_label
-
-df_imgs['page_obj'] = df_imgs.apply(lambda x:\
-                                     iiif.generate_page_object(VTM_UUID5_NS, DS_SLUG, x['index'], manifest_uid, \
-                                                             x['label'], 'venice/sommarioni/registry/'+x['filename'],\
-                                                             x['media_type'], x['width'], x['height'], 'it'), axis=1)
+    collection[manifest_uid] = registry_label
+    for _, x in sdf.iterrows():
+        df_imgs.at[x['index'], 'page_obj'] = iiif.generate_page_object(VTM_UUID5_NS, DS_SLUG, x['index'], manifest_uid, \
+                                                                    x['label'], 'venice/sommarioni/registry/'+x['filename'],\
+                                                                    x['media_type'], x['width'], x['height'], 'it')
+        df_imgs.at[x['index'], 'manifest_uid'] = manifest_uid
+                      
+# as grouping were done on the volume, no longer necessary in the splitted version of the manifest. 
+# range_id_pref = f'{manifest_uid}/range'
+# groups = df_imgs[['volume', 'canvas_id']].groupby(['volume']).agg(list)
+# structures = iiif.ordered_dict_to_iiif_toc_structure(iiif.multiindex_to_nested_dict(groups), "it", "Sommarioni", range_id_pref)
 df_imgs['canvas_id'] = df_imgs['page_obj'].apply(lambda x: x['id'])
-range_id_pref = f'{manifest_uid}/range'
-groups = df_imgs[['volume', 'canvas_id']].groupby(['volume']).agg(list)
-structures = iiif.ordered_dict_to_iiif_toc_structure(iiif.multiindex_to_nested_dict(groups), "it", "Sommarioni", range_id_pref)
 
 #2. manifest for the map
 df_maps = pd.read_csv('src/maps_width_height_format.csv')
@@ -77,12 +78,13 @@ map_label = {"en": ['Napoleonic\'s cadaster map of 1808'],
             }
 collection[map_manifest_uid] = map_label
 df_maps['page_obj'] = df_maps.apply(lambda x:\
-                                     iiif.generate_page_object(VTM_UUID5_NS, MAP_SLUG, x['index'], map_manifest_uid, \
-                                                             x['label'], 'venice/sommarioni/cadastral_maps/'+x['filename'],\
-                                                             x['media_type'], x['width'], x['height'], 'it'), axis=1)
+                                    iiif.generate_page_object(VTM_UUID5_NS, MAP_SLUG, x['index'], map_manifest_uid, \
+                                                            x['label'], 'venice/sommarioni/cadastral_maps/'+x['filename'],\
+                                                            x['media_type'], x['width'], x['height'], 'it'), axis=1)
 df_maps['canvas_id'] = df_maps['page_obj'].apply(lambda x: x['id'])
 with open(f'data/iiif/manifests/{map_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, map_manifest_uid, map_label, 'en', df_maps['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
+
 
 #3. the collection of manifests
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
@@ -94,11 +96,18 @@ with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encodin
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, collection), f, indent=2, ensure_ascii=False)
 
 # Geometry RDE production
-geometries_fp = get_filepath_like(os.path.join(DATA_SRC_PATH,"sommarioni_geometries_"), 'geojson')#sorted(list(DATA_SRC_PATH.rglob('sommarioni_geometries_*.geojson')))[-1]
+geometries_fp = get_filepath_like(os.path.join(DATA_SRC_PATH, "venice_1808_landregister_geometries_internal_version"), 'geojson')#sorted(list(DATA_SRC_PATH.rglob('sommarioni_geometries_*.geojson')))[-1]
 # sample for testing uuid_gen
 gdf = gpd.read_file(geometries_fp)
-gdf_star = gdf[gdf.geometry_id >= 0].copy() # removing the -1 geometry id since we don't have historical record tied to those ones (-1 is default value for all geometries we have nothing for)
-centre_gdf = gdf_star.dissolve(by='geometry_id').reset_index()[['geometry_id', 'geometry', 'parish_standardized']]
+gdf['geometry_id'] = gdf['geometry_id'].fillna(0).astype(int)
+
+
+txt_data_w_pages_file = get_filepath_like(os.path.join(DATA_SRC_PATH, "venice_1808_landregister_textual_entries_internal_version"), 'json') #sorted(list(DATA_SRC_PATH.rglob('sommarioni_text_data_with_pages_*.json')))[-1]
+dfs = pd.read_json(txt_data_w_pages_file)
+
+gdf_star = gdf[gdf.geometry_id.isin(dfs['geometry_id'])].copy()
+
+centre_gdf = gdf_star.dissolve(by='geometry_id').reset_index()[['geometry_id', 'geometry', 'parish_standardised']]
 centre_gdf['centroid'] = centre_gdf['geometry'].apply(lambda v: v.centroid)
 centre_gdf['coordinate'] = centre_gdf.apply(lambda x: constraint_point_to_center_of_one_polygon(x['centroid'], x['geometry']), axis=1)
 centre_gdf.drop(columns=['centroid'], inplace=True)
@@ -121,39 +130,13 @@ geom_shorthand = 'sommarioni_geometries'
 save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 
 # storing in a single dataframe all the data that will be needed to add to the Obs objects. 
-geomid_uuid_list = gdf[gdf.geometry_id >= 0].groupby(by="geometry_id")['uuid'].apply(list).reset_index(name='has_geometry').set_index('geometry_id')
+geomid_uuid_list = gdf.groupby(by="geometry_id")['uuid'].apply(list).reset_index(name='has_geometry').set_index('geometry_id')
 centre_gdf = centre_gdf.set_index('geometry_id')
 geomid_uuid_list['coordinate'] = centre_gdf['coordinate']
-geomid_uuid_list['parish_standardized'] = centre_gdf['parish_standardized']
-
-txt_data_w_pages_file = get_filepath_like(os.path.join(DATA_SRC_PATH,"sommarioni_text_data_with_pages_"), 'json') #sorted(list(DATA_SRC_PATH.rglob('sommarioni_text_data_with_pages_*.json')))[-1]
-
-dfs = pd.read_json(txt_data_w_pages_file)
-# removing the 5 duplicated entries
-s = dfs.drop(columns=['ownership_types', 'qualities', 'unique_id']).drop_duplicates()
-dfs = dfs.iloc[s.index]
+geomid_uuid_list['parish_standardised'] = centre_gdf['parish_standardised']
 
 # so we have obs. of specific subparcels.
 dfs['parcel_id'] = dfs[["parcel_number", "sub_parcel_number"]].apply(lambda v:  ", ".join(e for e in v if e), axis=1) # merci arnaud
-# remove the "N" as a first value, so that the values are homogeneous with the ones from Catastici.
-dfs['district_acronym'] = dfs['district_acronym'].str[1:]
-
-
-# dictionary below obtained using a "value_counts" method and then it was simply manual matching with the list of the 6 venetian districts.
-# Ghetto was added so the dictionary can be used with the catastici values
-# dfs.district_acronym.value_counts()
-district_acronym_d = {
-    "CN": "Cannaregio",
-    "CS": "Castello",
-    "SM": "San Marco",
-    "DD": "Dorsoduro",
-    "SP": "San Polo",
-    "SC": "San Croce",
-    "GH": "Ghetto",
-    "CC": "Cannaregio" # de facto all places with NCC as district (240 in total) all have the "CN" acronym as first information in the "place" value. To check with Isabella if it's meaningful.
-}
-# whiile waiting for proper dictionary implementation in the frontend, expanding the district_acronym to the full name.
-dfs['district'] = dfs['district_acronym'].map(district_acronym_d)
 df = dfs.join(geomid_uuid_list, on='geometry_id')
 
 # the sorted is important to ensure reproducibility of the UUIDs.
@@ -163,7 +146,7 @@ tqdm.pandas(desc="Generating uuid for hr")
 df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['unique_id']), axis=1)
 
 tqdm.pandas(desc="Generating uuid for obs")
-df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['parcel_id', 'place']), axis=1)
+df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['parcel_id', 'place', 'hr_uuid']), axis=1)
 
 tqdm.pandas(desc="Generating uuid for poi")
 df['poi_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['coordinate']), axis=1)
@@ -196,9 +179,31 @@ exclude_hr_labels = {
     'hr_uuid',
     'parcel_id'
 }
+
+drop_cols = {
+    "llm_guess",
+    "is_people",
+    "new_transcription",
+    "area",
+    "page_intern"
+}
+
+bilingual_cols = {
+   "old_religious_entity_type",
+    "qualities",
+    "old_owner_right_of_use_",
+    "owner_type",
+    "owner_right_of_use",
+    "ownership_types"
+}
+exlude_cols = exclude_hr_labels.union(drop_cols.union(bilingual_cols))
+
 # for display purposes in the intreface only, we will use the "owner" column, if it's empty, we will use "Unknown owner"
-df['owner'] = df['owner'].fillna('Unknown owner')
-hr_metadata_cols = list(set(df.columns).difference(exclude_hr_labels))
+df['owner_transcription'] = df['owner_transcription'].fillna('Unknown owner')
+df = df.replace({np.nan:None})
+# for some reasone, a NaN cannot be replaced there.
+df.at[df[df.unique_id == 23647].index[0], 'parish_standardised'] = None 
+hr_metadata_cols = list(set(df.columns).difference(exlude_cols))
 tpe = 'cadaster registry'
 recs = [produce_hr_obj(r.hr_uuid,\
                        DS_UUID,\
@@ -216,9 +221,10 @@ df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
 QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
 
+
 # POI RDE Production
-df_poi = df[['coordinate', 'poi_uuid', 'obs_uuid']].groupby(by=['coordinate', 'poi_uuid']).agg(list)
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.coordinate, v.obs_uuid) for _, v in df_poi.reset_index().iterrows()])
+df_poi = df[['coordinate', 'poi_uuid', 'obs_uuid']].groupby(by=['poi_uuid']).agg(list)
+gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.coordinate[0], v.obs_uuid) for _, v in df_poi.reset_index().iterrows()])
 gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
@@ -228,6 +234,7 @@ QA_check_uuid_are_unique(gdf_poi.reset_index())
 
 QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
 QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
+
 
 # Generating the manifest for the textual data
 # (now that all HR uuid were generated)
@@ -252,35 +259,15 @@ df_iiif_links['canvas_id'] = df_iiif_links['page'].apply(lambda v: page_to_canva
 # # the hr_uuid is missing. 
 iiif_links = df_iiif_links[['canvas_id', 'iiif_metadata_obj']].groupby('canvas_id', sort=False).agg(list).reset_index().set_index('canvas_id')['iiif_metadata_obj'].to_dict()
 df_imgs['page_obj'] = df_imgs['page_obj'].apply(lambda x: dict(x, metadata = iiif_links.get(x['id'], '')))
-with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
-    json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, registry_label, 'en', df_imgs['page_obj'].tolist(), structures), f, indent=2, ensure_ascii=False)
 
-# dictionary OE Production
-own_tpe_d = {k: k[0] + k.lower()[1:] for k in sorted(reduce(lambda a,b: a.union(set(b)), dfs.ownership_types.to_list(), set()))}
-qual_d = {k: k[0] + k.lower()[1:] for k in sorted(reduce(lambda a,b: a.union(set(b)), dfs.qualities.to_list(), set()))}
+for manifest_uid, sub_df in df_imgs.groupby('manifest_uid'):
+    curr_label = collection[manifest_uid]
+    with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
+        json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, curr_label, 'en', sub_df['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
 
-own_tpe_n = 'venice-sommarioni-ownership-types-dictionary'
-own_tpe_name = { "en": ['Ownership types of 1808 cadaster'], "fr": ['Types de propriété du cadastre de 1808'], "it": ['Tipi di proprietà del catasto del 1808']}
-own_uuid = str(uuid.uuid5(VTM_UUID5_NS, own_tpe_n))
-save_dictionary('../../dictionaries/', own_uuid, own_tpe_n, own_tpe_name, own_tpe_d)
-qual_n = 'venice-sommarioni-parcel-functions-dictionary'
-qual_name = { "en": ['Parcel functions of 1808 cadaster'], "fr": ['Fonctions des parcelles du cadastre de 1808'], "it": ['Funzioni delle particelle del catasto del 1808']}
-qual_uuid = str(uuid.uuid5(VTM_UUID5_NS, qual_n))
-save_dictionary('../../dictionaries/', qual_uuid,qual_n, qual_name, qual_d)
-dist_n = 'venice-district-dictionary'
-dist_name = { "en": ['Venetian districts'], "fr": ['Districts vénitiens'], "it": ['Distretti veneziani']}
-dist_uuid = str(uuid.uuid5(VTM_UUID5_NS, dist_n))
-save_dictionary('../../dictionaries/',dist_uuid, dist_n, dist_name, district_acronym_d)
 
 # Dataset RDE Production
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']
-
-dictionnaries = {
-    "district_acronym": dist_uuid,
-    "ownership_types": own_uuid,
-    "qualities": qual_uuid,
-    "parish_standardized": get_single_object_uuid('../../dictionaries/venice-garzoni-church-dictionary.json')
-}
 
 filtered_df = df[hr_metadata_cols].copy()
 remaining_vals = list(filtered_df.columns)
@@ -292,7 +279,7 @@ ds_conf = produce_configuration_file_from_metadata_df(
     filtered_df[order], CONF["indexed"], 
     CONF["short_display"],
     CONF["hidden"], 
-    dictionnaries, 
+    {}, 
     CONF["tagged_fields"], 
     CONF["labels"],
     main_label=CONF["main_label"], 
@@ -302,7 +289,7 @@ ds_conf = produce_configuration_file_from_metadata_df(
 ds = produce_dataset_obj(
     DS_UUID,
     DS_SLUG,
-    '1.0',
+    '1.1',
     CONF['name'],
     CONF['description'],
     CONF['paradata'],

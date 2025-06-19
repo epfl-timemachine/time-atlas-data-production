@@ -135,7 +135,7 @@ hr_df = hr_df.replace({np.nan: None})
 hr_df['obs_uuid'] = hr_obs_df['obs_uuid']
 hr_df = hr_df.reset_index()
 
-tpe = 'postarcds'
+tpe = 'postcard'
 
 drop_cols = ['external_links', 'iiif_manifest', 'image', 'rights_attribution', 'thumbnail', 'landin_page', 'image_size', 'media_type', 'image_path', 'record', 'image_fp']
 recs = [produce_hr_obj(r.hr_uuid,\

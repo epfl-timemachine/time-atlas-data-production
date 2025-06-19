@@ -3,12 +3,13 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-06-03T17:57:16.779388",
+ "creation_time": "2025-06-19T17:53:22.006763",
  "rde_objects": [
   {
    "uuid": "266e0ce9-26f4-50bc-b75b-c5d3b71fed82",
    "slug": "venice-1808-sommarioni",
-   "version": "1.0",
+   "version": "1.1",
+   "creation_time": "2025-06-19T17:53:22.006298",
    "name": {
     "en": [
      "1808 – Land Registers"
@@ -23,11 +24,11 @@
    "rde_type": "dataset",
    "publish": {
     "doi": null,
-    "url": "https://github.com/epfl-timemachine/venice-1808-sommarioni"
+    "url": "https://github.com/epfl-timemachine/venice-1808-landregister"
    },
    "description": {
     "en": [
-     "Semi-automated transcription from the Napoleonic land registry and cadastral maps. The dataset contains parcel identifiers, ownership, land use, toponyms, geolocation, and area. Information geolocated by machine learning algorithms. Semi-automatic checking. Dataset created at EPFL."
+     "Semi-automated transcription from the Napoleonic land registry and cadastral maps (ASVe, Censo Stabile, Catasto Napoleonico, Sommarioni). The dataset contains parcel identifiers, ownership, land use, toponyms, geolocation, and area. Information geolocated by machine learning algorithms. Semi-automatic checking. Dataset created at EPFL."
     ],
     "it": [
      "Trascrizione semi-automatica dal catasto fondiario napoleonico e dalle mappe catastali. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, toponimi, geolocalizzazione e area. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Controllo semi-automatico. Dataset creato presso l'EPFL."
@@ -52,7 +53,7 @@
    ],
    "start_time": "1808-01-01T00:00:00",
    "end_time": "1808-12-31T23:59:59",
-   "transcribed_pages_amount": 1494,
+   "transcribed_pages_amount": 1,
    "is_operationally_described_by": {
     "hr_config": {
      "main_label": "${owner}",
@@ -105,17 +106,17 @@
        "uuid": "4e9f5d27-1afc-5a79-8209-5a72c1150bc6"
       },
       {
-       "id": "owner",
+       "id": "owner_transcription",
        "type": "STRING",
        "display_label": {
         "en": [
-         "Description of the parcel(s)' owner(s)"
+         "Transcription of the parcel(s)' owner(s)"
         ],
         "fr": [
-         "Description du ou des propriétaires de la parcelle"
+         "Transcription du ou des propriétaire(s) de la parcelle"
         ],
         "it": [
-         "Descrizione del(i) proprietario(i) della particella"
+         "Trascrizione del(i) proprietario(i) della particella"
         ]
        },
        "nullable": false,
@@ -124,29 +125,51 @@
        "hidden": false,
        "tag": "PEOPLE",
        "display_order": 3,
-       "uuid": "59b303b4-edc2-5812-9c4d-4c47ae8308a2"
+       "uuid": "ca229e30-6135-5da5-b03c-241dbc078e79"
       },
       {
-       "id": "quality",
+       "id": "owner_standardised",
        "type": "STRING",
        "display_label": {
         "en": [
-         "Description of the parcel's function(s)"
+         "Standardised description of the parcel(s)' owner(s)"
         ],
         "fr": [
-         "Description de la ou des fonction(s) de la parcelle"
+         "Description standardisée du ou des propriétaires de la parcelle"
         ],
         "it": [
-         "Descrizione della o delle funzione(i) della particella"
+         "Descrizione standardizzata del(i) proprietario(i) della particella"
         ]
        },
        "nullable": true,
-       "indexable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PEOPLE",
+       "display_order": 4,
+       "uuid": "8c8cdaed-e1b0-51b5-8701-9a46c4c24e6b"
+      },
+      {
+       "id": "owner_standardised_class",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Standardised class of the parcel(s)' owner(s)"
+        ],
+        "fr": [
+         "Classe standardisée du ou des propriétaires de la parcelle"
+        ],
+        "it": [
+         "Classe standardizzata del(i) proprietario(i) della particella"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 4,
-       "uuid": "9a06c699-e939-55bf-9bda-2c5af7922ae0"
+       "display_order": 5,
+       "uuid": "8d6f26fc-3a80-56eb-a64f-72d231a5e120"
       },
       {
        "id": "place",
@@ -167,7 +190,7 @@
        "short_display": true,
        "hidden": false,
        "tag": "PLACE",
-       "display_order": 5,
+       "display_order": 6,
        "uuid": "aa207f1d-d0f1-5d65-9942-569bf2adde5b"
       },
       {
@@ -189,7 +212,7 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 6,
+       "display_order": 7,
        "uuid": "acefbf3c-e00d-5bb2-be96-4e2bc0d839e9"
       },
       {
@@ -211,7 +234,7 @@
        "short_display": false,
        "hidden": true,
        "tag": null,
-       "display_order": 7,
+       "display_order": 8,
        "uuid": "1c1a7059-18a9-5787-b1ec-522a6ab89426"
       },
       {
@@ -233,7 +256,7 @@
        "short_display": false,
        "hidden": true,
        "tag": null,
-       "display_order": 8,
+       "display_order": 9,
        "uuid": "aa2a0e2a-aea1-50ac-bde6-1fff7a6b8f06"
       },
       {
@@ -255,34 +278,12 @@
        "short_display": false,
        "hidden": false,
        "tag": "PLACE",
-       "display_order": 9,
+       "display_order": 10,
        "uuid": "d38aad38-5f53-5043-bea6-aebca41bbc4a"
       },
       {
-       "id": "owner_standardised",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Standardised description of the parcel(s)' owner(s)"
-        ],
-        "fr": [
-         "Description standardisée du ou des propriétaires de la parcelle"
-        ],
-        "it": [
-         "Descrizione standardizzata del(i) proprietario(i) della particella"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "short_display": true,
-       "hidden": false,
-       "tag": "PEOPLE",
-       "display_order": 10,
-       "uuid": "8c8cdaed-e1b0-51b5-8701-9a46c4c24e6b"
-      },
-      {
-       "id": "ownership_types",
-       "type": "LIST[CATEGORY]",
+       "id": "ownership_types_en",
+       "type": "LIST",
        "display_label": {
         "en": [
          "Type of ownership"
@@ -294,18 +295,17 @@
          "Tipo di proprietà"
         ]
        },
-       "nullable": false,
-       "indexable": false,
+       "nullable": true,
+       "indexable": true,
        "short_display": false,
        "hidden": false,
        "tag": "LAND_USE",
        "display_order": 11,
-       "uuid": "c565ebec-f525-5677-bd86-7fd684f7d008",
-       "dictionary": "b18e1afd-2326-5826-853e-4ba749d94f80"
+       "uuid": "22fd673f-b3fc-581d-8488-182e519b36b4"
       },
       {
-       "id": "qualities",
-       "type": "LIST[CATEGORY]",
+       "id": "qualities_en",
+       "type": "LIST",
        "display_label": {
         "en": [
          "Standardized parcel's function(s)"
@@ -317,63 +317,17 @@
          "Funzione(i) standardizzata(e) della particella"
         ]
        },
-       "nullable": false,
-       "indexable": false,
+       "nullable": true,
+       "indexable": true,
        "short_display": false,
        "hidden": false,
        "tag": "LAND_USE",
        "display_order": 12,
-       "uuid": "ccdb54b2-6a16-5308-b86b-e674e399cce5",
-       "dictionary": "231fa303-1c48-5dc4-bbbc-eb101d993301"
+       "uuid": "548542be-324f-53d8-8bdd-60742aa87979"
       },
       {
-       "id": "area",
-       "type": "FLOAT",
-       "display_label": {
-        "en": [
-         "Parcel's area in squared meters"
-        ],
-        "fr": [
-         "Superficie de la parcelle en mètres carrés"
-        ],
-        "it": [
-         "Superficie della particella in metri quadrati"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 13,
-       "uuid": "e6bb1963-4db6-581d-9350-3da4f2cae97c"
-      },
-      {
-       "id": "district_acronym",
-       "type": "CATEGORY",
-       "display_label": {
-        "en": [
-         "District Acronym"
-        ],
-        "fr": [
-         "Acronyme du district"
-        ],
-        "it": [
-         "Acronimo del distretto"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": true,
-       "tag": null,
-       "display_order": 14,
-       "uuid": "88e9f720-6ef5-5d4e-9895-ea3c5fbb5309",
-       "dictionary": "62977b2b-43c7-52e7-8cbd-612bb1a55299"
-      },
-      {
-       "id": "parish_standardized",
-       "type": "CATEGORY",
+       "id": "parish_standardised",
+       "type": "STRING",
        "display_label": {
         "en": [
          "Parish"
@@ -390,9 +344,250 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
+       "display_order": 13,
+       "uuid": "332dbb39-9395-53cd-96d7-ef0c74fb6a61"
+      },
+      {
+       "id": "old_entity",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Previous owner"
+        ],
+        "fr": [
+         "Ancien propriétaire"
+        ],
+        "it": [
+         "Proprietario precedente"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 14,
+       "uuid": "60782afd-71d9-52d1-8735-a787c34f3f09"
+      },
+      {
+       "id": "old_entity_standardised",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Previous owner standardised"
+        ],
+        "fr": [
+         "Ancien propriétaire standardisé"
+        ],
+        "it": [
+         "Proprietario precedente standardizzato"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
        "display_order": 15,
-       "uuid": "32f8a529-aad3-5ddd-8527-b9725fba4001",
-       "dictionary": "fa2030af-bf07-5cce-bac3-cecbde3af2d8"
+       "uuid": "712839c7-dbd3-519d-9043-9f7c53fc7c80"
+      },
+      {
+       "id": "old_entity_standardised_class",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Previous owner standardised class"
+        ],
+        "fr": [
+         "Classe de l'ancien propriétaire standardisé"
+        ],
+        "it": [
+         "Classe del proprietario precedente standardizzato"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 16,
+       "uuid": "d74655e1-b378-5217-b9e4-be526712478a"
+      },
+      {
+       "id": "owner_wd",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Wikidata ID of the owner"
+        ],
+        "fr": [
+         "ID Wikidata du propriétaire"
+        ],
+        "it": [
+         "ID Wikidata del proprietario"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 17,
+       "uuid": "10b279c7-ec96-5e54-8c8e-71eaf25de46d"
+      },
+      {
+       "id": "owner_type_en",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Type of owner"
+        ],
+        "fr": [
+         "Type de propriétaire"
+        ],
+        "it": [
+         "Tipo di proprietario"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 18,
+       "uuid": "eb4b1725-35dd-5b60-bab1-4c1284909faa"
+      },
+      {
+       "id": "owner_right_of_use_en",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Owner's right of use"
+        ],
+        "fr": [
+         "Droit d'usage du propriétaire"
+        ],
+        "it": [
+         "Diritto di uso del proprietario"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": "LAND_USE",
+       "display_order": 19,
+       "uuid": "cfe18e27-ac45-58d1-a8b3-618be490a688"
+      },
+      {
+       "id": "old_owner_right_of_use_en",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Previous owner's right of use"
+        ],
+        "fr": [
+         "Droit d'usage de l'ancien propriétaire"
+        ],
+        "it": [
+         "Diritto di uso del proprietario precedente"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": "LAND_USE",
+       "display_order": 20,
+       "uuid": "8bca3ac6-f370-51f9-9b4f-027818c34e6a"
+      },
+      {
+       "id": "old_religious_entity_type_en",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Type of previous religious entity"
+        ],
+        "fr": [
+         "Type d'ancienne entité religieuse"
+        ],
+        "it": [
+         "Tipo di precedente ente religioso"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 21,
+       "uuid": "2bf447d9-b809-5340-ac0f-1601cdfa75f6"
+      },
+      {
+       "id": "owner_supplementary",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Supplementary information about the owner"
+        ],
+        "fr": [
+         "Informations complémentaires sur le propriétaire"
+        ],
+        "it": [
+         "Informazioni supplementari sul proprietario"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 22,
+       "uuid": "ea2eaa21-1129-5003-8a9f-146f4094568a"
+      },
+      {
+       "id": "old_entity_wd",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Wikidata ID of the previous owner"
+        ],
+        "fr": [
+         "ID Wikidata de l'ancien propriétaire"
+        ],
+        "it": [
+         "ID Wikidata del proprietario precedente"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 23,
+       "uuid": "53027e98-17fd-5336-8119-ff54d2c7a445"
+      },
+      {
+       "id": "page",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Bibliographic reference of the page in the land register"
+        ],
+        "fr": [
+         "Référence bibliographique de la page du registre cadastrale"
+        ],
+        "it": [
+         "Riferimento bibliografico della pagina del registro"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 24,
+       "uuid": "d15a6562-bdb2-58fe-a1f9-f2ddeb0e8d79"
       }
      ]
     },
@@ -400,8 +595,7 @@
    },
    "falls_within": [
     "620962bb-bb0d-50ed-b534-8903ad265932"
-   ],
-   "creation_time": "2025-06-03T17:57:16.778008"
+   ]
   }
  ]
 }
