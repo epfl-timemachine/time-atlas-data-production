@@ -140,11 +140,6 @@ def filename_to_label(filename:str) -> tuple[int, str, int, str, int]:
         print(filename)
         return filename, '', ''
 
-collection = {}
-man_label = {"it": ['Catastici di Venezia 1740'], "en": ['Venice\'s cadaster registry from 1740'], "fr": ['Registre du cadastre de Venise en 1740']}
-manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}'))
-collection[manifest_uid] = man_label
-
 # the file below was produced by the script "images_width_height_format_extrator.py" on the images of the dataset.
 df_wh = pd.read_csv('src/imgs_width_height_format.csv')
 df_wh['filename'] = df_wh['filename'].apply(lambda x: x.replace('434_SanMarco', '434_SMarco') if x is not None else x)
@@ -153,7 +148,6 @@ df_wh['volume_number'], df_wh['volume'], df_wh['parish_number'], df_wh['parish']
 
 
 if is_man_tif:
-    
     # firstly, reunite all the tif wh/format reads into a single file that adds the folder prefix to all the files.
     all_catasticis = Path('src/tif_img_wh/').rglob('catastici_1740_4*.csv')
 
@@ -235,21 +229,39 @@ if is_man_tif:
     df_wh = df_wh_tif
 
 df_pages = df_wh.sort_values(by=['volume_number', 'parish_number', 'page_index']).reset_index(drop=True).reset_index()
-df_pages['page_obj'] = df_pages.apply(lambda x: \
-                                      iiif.generate_page_object(VTM_UUID5_NS, DS_UUID, x['index'],\
-                                                                       manifest_uid, f"{x['volume']}: {x['page_index']}",\
-                                                                       'venice/' + ('' if x['filename'].endswith('tif') else 'catastici_1740/')+ x['filename']  \
-                                                                            , x['media_type'], x['height'], x['width'], 'it'), axis=1)
-df_pages['canvas_id'] = df_pages['page_obj'].apply(lambda x: x['id'])
-filename_to_canvas_id = dict(zip(df_pages['filename'], df_pages['canvas_id']))
 
-# adding back the numbers so the structure is ordered correctly.
-df_pages['volume_order'] = df_pages['volume_number'].astype(str) + '-' + df_pages['volume']
-df_pages['parish_order'] = df_pages['parish_number'].apply(lambda v: f"{v:02d}") + '-' + df_pages['parish']
-groups = df_pages[['volume_order', 'parish_order', 'canvas_id']].groupby(['volume_order', 'parish_order']).agg(list)
-range_id_pref = f'{manifest_uid}/range'
-structures = iiif.ordered_dict_to_iiif_toc_structure(iiif.multiindex_to_nested_dict(groups), "it", "Sommario", range_id_pref)
+collection = {}
+structures = {}
+df_pages['page_obj'] = None
+df_pages['manifest_uid'] = None
+df_pages['canvas_id'] = None
+for g, group_df in df_pages.groupby(['volume_number', 'volume']):
+    volume_number = g[0]
+    volume_name = g[1]
+    volume_title = f'{volume_number}-{volume_name}'
+    man_label = {"it": [f'Catastici di Venezia 1740 ({volume_title})'], "en": [f'Venice\'s civil registry from 1740 ({volume_title})'], "fr": [f'Registre civil de Venise en 1740 ({volume_title})']}
+    manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}_{volume_title}'))
+    collection[manifest_uid] = man_label
+    for i, x in group_df.iterrows():
+        page_obj =  iiif.generate_page_object(VTM_UUID5_NS, DS_UUID, x['index'],\
+                                                                manifest_uid, f"{x['volume']}: {x['page_index']}",\
+                                                                'venice/' + ('' if x['filename'].endswith('tif') else 'catastici_1740/')+ x['filename'],  \
+                                                                x['media_type'], x['height'], x['width'], 'it')
+        df_pages.at[i, 'page_obj'] = page_obj
+        df_pages.at[i, 'manifest_uid'] = manifest_uid
+        df_pages.at[i, 'canvas_id'] = page_obj['id']
+        group_df.at[i, 'canvas_id'] = page_obj['id']
+
+    # adding back the numbers so the structure is ordered correctly.
+    group_df['volume_order'] = group_df['volume_number'].astype(str) + '-' + group_df['volume']
+    group_df['parish_order'] = group_df['parish_number'].apply(lambda v: f"{v:02d}") + '-' + group_df['parish']
+    groups = group_df[['parish_order', 'canvas_id']].groupby(['parish_order']).agg(list)
+    range_id_pref = f'{manifest_uid}/range'
+    curr_structure = iiif.ordered_dict_to_iiif_toc_structure(iiif.multiindex_to_nested_dict(groups), "it", "Sommario", range_id_pref)
+    structures[manifest_uid] = curr_structure
+
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
+filename_to_canvas_id = dict(zip(df_pages['filename'], df_pages['canvas_id']))
 
 # this sanity check works only in the jpeg version because of how "path_imag" is used to do the sanity check (would need some workaround for tif, as there are no scans for the Ghetto)
 if not is_man_tif:
@@ -257,7 +269,6 @@ if not is_man_tif:
     trsnc_p = set(gdf['path_img'].unique())
     # sanity check to be sure all images referenced in the transcription is matched to a filename on the disk
     missingno = trsnc_p.difference(disk_p)
-    missingno
 
 tqdm.pandas(desc="Generating obs uuid")
 df['obs_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx', 'id']), axis=1)
@@ -341,11 +352,16 @@ df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x
 iiif_links = df_iiif_links[['canvas_id', 'iiif_metadata_obj']].groupby('canvas_id').agg(list).reset_index().set_index('canvas_id')['iiif_metadata_obj'].to_dict()
 df_pages['page_obj'] = df_pages['page_obj'].apply(lambda x: dict(x, metadata = iiif_links.get(x['id'], '')))
 
-# generating the manifests
-with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
-    json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, man_label, 'it', df_pages['page_obj'].tolist(), structures), f, indent=2, ensure_ascii=False)
+for manifest_uid, man_label in collection.items():
+    # generating the manifests
+    with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
+        data = df_pages[df_pages['manifest_uid'] == manifest_uid].copy()
+        json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, man_label, 'it', data['page_obj'].tolist(), structures[manifest_uid]), f, indent=2, ensure_ascii=False)
 
-coll_mulilingual_label = {"en": ["Collection of the venitian cadaster registry from 1740"], "it": ["Collezione del catasto veneziano del 1740"], "fr": ["Collection du cadastre vénitien de 1740"]}
+coll_mulilingual_label = {'en': ["Venice's civil registry from 1740"],
+  'fr': ['Registre civil de Venise en 1740'], 
+  'it': ['Catastici di Venezia 1740']
+}
 
 with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, coll_mulilingual_label, collection), f, indent=2, ensure_ascii=False)
