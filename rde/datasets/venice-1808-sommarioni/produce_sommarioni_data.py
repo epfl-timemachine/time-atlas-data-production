@@ -191,8 +191,7 @@ drop_cols = {
 bilingual_cols = {
    "old_religious_entity_type",
     "qualities",
-    "old_owner_right_of_use_",
-    "owner_type",
+    "old_owner_right_of_use_"
     "owner_right_of_use",
     "ownership_types"
 }
@@ -229,6 +228,8 @@ gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uui
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
 gdf_poi = gdf_poi.set_geometry('geometry')
+# TODO: understand why there was this single PoI without a geometry.
+gdf_poi = gdf_poi[~gdf_poi.geometry.x.isna()]
 save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'sommarioni_pois', RDE.POI.value)
 QA_check_uuid_are_unique(gdf_poi.reset_index())
 
