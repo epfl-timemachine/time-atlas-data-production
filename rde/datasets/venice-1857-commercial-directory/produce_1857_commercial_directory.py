@@ -32,7 +32,7 @@ DS_OBJ = (DS_UUID, DS_SLUG)
 formatted_begin = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM'])
 formatted_end = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
 TR_OBJ = (formatted_begin, formatted_end)
-df = pd.read_csv(list(Path('src').rglob('1857_commercial_guide_*.csv'))[-1])
+df = pd.read_csv(list(Path('src').rglob('1857_commercial_guide_20*.csv'))[-1])
 # removing points that could not be located
 df = df[df.geometry.notna()]
 # fix NaN being serialized as literal in JSON alongside "null"

@@ -52,12 +52,15 @@ def generate_page_object(uuid_ns:uuid.UUID,
         v['metadata'] = metadata
     return v
 
+def url_encoded_iiif_image_url(path:str) -> str:
+    return f"https://image-timemachine.epfl.ch/iiif/3/{quote_plus(path)}"
+
 from urllib.parse import quote_plus
 def iiif_canvas_object_from_page_obj(uuid_ns: uuid.UUID, page_obj:dict, lan:str) -> dict:
     # it is here that the annotation is generated, should be in page_obj.
     # todo: make the annotation and page id modular, and not hardcoded to 1 (cf. webannotation model, for multiple annotations per page)
 
-    url_encoded = f"https://image-timemachine.epfl.ch/iiif/3/{quote_plus(page_obj['path'])}"
+    url_encoded = url_encoded_iiif_image_url(page_obj['path'])
     metadata = page_obj.get('metadata', None)
     page_id = page_obj['id']
     if isinstance(page_id, tuple) or isinstance(page_id, list):
@@ -205,11 +208,17 @@ def generate_collection_manifest(uuid:str, label:dict[str, list[str]], manifests
 
 
 def generate_manifest_object(uuid_ns: uuid.UUID, manifest_uid:str, label: dict[str, list[str]], default_lan:str, pages:list[dict], structures:Optional[dict] = None) -> dict:
+    first_page = pages[0]
     man =  {
         "@context": "http://iiif.io/api/presentation/3/context.json",
         "id": manifest_uid,
         "type": "Manifest",
         "label": label,
+        "thumbnail": [{
+          "id": f"{url_encoded_iiif_image_url(first_page['path'])}/full/300,/0/default.jpg",
+          "type": "Image"
+        }
+      ],
         "items": [iiif_canvas_object_from_page_obj(uuid_ns, p, default_lan) for p in pages]
     }
     if structures:
