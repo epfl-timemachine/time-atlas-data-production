@@ -189,8 +189,7 @@ drop_cols = {
     "llm_guess",
     "is_people",
     "new_transcription",
-    "area",
-    "page"
+    "area"
 }
 
 bilingual_cols = {
@@ -245,7 +244,7 @@ QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
 # Generating the manifest for the textual data
 # (now that all HR uuid were generated)
 
-df_of_hr['page'] = df_of_hr['annotated_content'].apply(lambda v: v['page'])
+df_of_hr['page'] = df_of_hr['annotated_content'].apply(lambda v: v['page_number'])
 # only for reordering purpose. (note that parcel number should likely be casted to int, the ordering is not perfect)
 df_of_hr['parcel_number'] = df_of_hr['annotated_content'].apply(lambda v: v['parcel_number'])
 df_of_hr['sub_parcel_number'] = df_of_hr['annotated_content'].apply(lambda v: v['sub_parcel_number'])
@@ -267,7 +266,7 @@ iiif_links = df_iiif_links[['canvas_id', 'iiif_metadata_obj']].groupby('canvas_i
 df_imgs['page_obj'] = df_imgs['page_obj'].apply(lambda x: dict(x, metadata = iiif_links.get(x['id'], '')))
 
 for manifest_uid, sub_df in df_imgs.groupby('manifest_uid'):
-    curr_label = collection[manifest_uid]
+    curr_label = collection[manifest_uid][0]
     with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
         json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, curr_label, 'en', sub_df['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
 
