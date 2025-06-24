@@ -158,7 +158,7 @@ ds = produce_dataset_obj(
     CONF['name'],
     CONF['description'],
     CONF['paradata'],
-    [],
+    [collection_uuid],
     TR_OBJ,
     0,
     ds_conf,

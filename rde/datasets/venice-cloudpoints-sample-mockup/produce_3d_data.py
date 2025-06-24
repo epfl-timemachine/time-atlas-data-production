@@ -228,7 +228,7 @@ ds = produce_dataset_obj(
     CONF['name'],
     CONF['description'],
     CONF['paradata'],
-    [],
+    [collection_manifest_uid],
     (min_time, max_time),
     0,
     ds_conf,
