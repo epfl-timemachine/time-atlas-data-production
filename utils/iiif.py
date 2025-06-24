@@ -189,7 +189,7 @@ def generate_selector_template(source, sel:Selector) -> dict:
 
  
 
-def generate_collection_manifest(uuid:str, label:dict[str, list[str]], manifests: dict[str, str]):
+def generate_collection_manifest(uuid:str, label:dict[str, list[str]], manifests: dict[str, (str, dict)]):
     return {
         "@context": "http://iiif.io/api/presentation/3/context.json",
         "id": uuid,
@@ -199,8 +199,13 @@ def generate_collection_manifest(uuid:str, label:dict[str, list[str]], manifests
             {
                 "id": manifest_id,
                 "type": "Manifest",
-                "label": label,
-            } for manifest_id, label in manifests.items()
+                "label": label_pag_obj[0],
+                "thumbnail": [{
+                    "id": f"{url_encoded_iiif_image_url(label_pag_obj[1]['path'])}/full/300,/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg"
+                }],
+            } for manifest_id, label_pag_obj in manifests.items()
         ],
         "total": len(manifests),
         "metadata": [],

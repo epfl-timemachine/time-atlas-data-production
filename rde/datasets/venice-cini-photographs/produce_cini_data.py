@@ -196,15 +196,15 @@ for g, sdf in df_wh.groupby('Drawer'):
                                              'venice/cini/cardboards' +r['filename'],r['media_type'], r['height'], r['width'], 'en')
         # annotation done with the "metadata" tag. Weird.
         pages.append(dict(page_obj, metadata =[(r['hr_uuid'], r['annotation_txt'])]))
-    man_uuids_and_cont[man_uuid] = iiif.generate_manifest_object(VTM_UUID5_NS, man_uuid, {'en': ['Cardboards Photographs from Cini\'s Foundation: '+g]}, 'en', pages, None)
+    man_uuids_and_cont[man_uuid] = (iiif.generate_manifest_object(VTM_UUID5_NS, man_uuid, {'en': ['Cardboards Photographs from Cini\'s Foundation: '+g]}, 'en', pages, None), pages[0])
 
-for uid,man in man_uuids_and_cont.items():
+for uid,(man,_) in man_uuids_and_cont.items():
     with open(f'data/iiif/manifests/{uid}.json', 'w+', encoding='utf-8') as f:
         json.dump(man, f, indent=2)
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
 collection_label = {"en": ['Cini\'s Foundation: Photographs of 3 Venetian Buildings (test sample)']
                     }
-man_and_label = {k: v['label']['en'][0] for k,v in man_uuids_and_cont.items()}
+man_and_label = {k: (v[0]['label']['en'][0], v[1]) for k,v in man_uuids_and_cont.items()}
 with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, man_and_label), f, indent=2, ensure_ascii=False)
 

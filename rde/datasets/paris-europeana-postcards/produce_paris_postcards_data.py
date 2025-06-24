@@ -158,7 +158,7 @@ for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests
     man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[description]},'en', [page_obj])
     with open(f'data/iiif/manifests/{manifest_uuid}.json', 'w') as f:
         f.write(json.dumps(man, indent=2, ensure_ascii=False))
-    man_list[manifest_uuid] = {"en":[description]}
+    man_list[manifest_uuid] = ({"en":[description]}, page_obj)
     
 # generating the collection
 collection_uuid = str(uuid.uuid5(TM_UUID5_NS, f'{DS_SLUG}_collection'))

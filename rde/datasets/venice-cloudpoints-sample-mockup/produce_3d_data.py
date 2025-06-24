@@ -198,8 +198,10 @@ collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
 collection_label = {"en": ['Screenshots of 3d models of 63 Venetian Buildings (test sample)']
                     }
 
+man_list = {man_uuid: (man_label, pages[0])}
+
 with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
-    json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, {man_uuid: man_label}), f, indent=2, ensure_ascii=False)
+    json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, man_list), f, indent=2, ensure_ascii=False)
 
 # Produce dataset object
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']

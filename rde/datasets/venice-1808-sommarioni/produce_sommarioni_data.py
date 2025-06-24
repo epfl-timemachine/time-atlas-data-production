@@ -53,12 +53,13 @@ for vol, sdf in df_imgs.groupby('volume'):
                         "fr": [f'Registre du cadastre napoléonien de 1808 ({vol})'],
                         "it": [f'Registro catastale napoleonico del 1808 ({vol})']
                     }
-    collection[manifest_uid] = registry_label
     for _, x in sdf.iterrows():
         df_imgs.at[x['index'], 'page_obj'] = iiif.generate_page_object(VTM_UUID5_NS, DS_SLUG, x['index'], manifest_uid, \
                                                                     x['label'], 'venice/sommarioni/registry/'+x['filename'],\
                                                                     x['media_type'], x['width'], x['height'], 'it')
         df_imgs.at[x['index'], 'manifest_uid'] = manifest_uid
+    
+    collection[manifest_uid] = (registry_label, df_imgs[df_imgs['manifest_uid'] == manifest_uid]['page_obj'].tolist()[0])
                       
 # as grouping were done on the volume, no longer necessary in the splitted version of the manifest. 
 # range_id_pref = f'{manifest_uid}/range'
@@ -76,11 +77,14 @@ map_label = {"en": ['Napoleonic\'s cadaster map of 1808'],
             "fr": ['Carte du cadastre napoléonien de 1808'],
             "it": ['Mappa del catastro napoleonico del 1808']
             }
-collection[map_manifest_uid] = map_label
 df_maps['page_obj'] = df_maps.apply(lambda x:\
                                     iiif.generate_page_object(VTM_UUID5_NS, MAP_SLUG, x['index'], map_manifest_uid, \
                                                             x['label'], 'venice/sommarioni/cadastral_maps/'+x['filename'],\
                                                             x['media_type'], x['width'], x['height'], 'it'), axis=1)
+
+
+collection[map_manifest_uid] = (map_label, df_maps['page_obj'].tolist()[0])
+
 df_maps['canvas_id'] = df_maps['page_obj'].apply(lambda x: x['id'])
 with open(f'data/iiif/manifests/{map_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, map_manifest_uid, map_label, 'en', df_maps['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
@@ -139,6 +143,7 @@ geomid_uuid_list['parish_standardised'] = centre_gdf['parish_standardised']
 dfs['parcel_id'] = dfs[["parcel_number", "sub_parcel_number"]].apply(lambda v:  ", ".join(e for e in v if e), axis=1) # merci arnaud
 df = dfs.join(geomid_uuid_list, on='geometry_id')
 
+df['owner_transcription'] = df['owner_transcription'].fillna('Unknown owner')
 # the sorted is important to ensure reproducibility of the UUIDs.
 cols_for_hr_uuid_prod = sorted(set(df.columns).difference({'geometry_id', 'has_geometry', 'coordinate', 'parcel_id'}))
 
@@ -185,7 +190,7 @@ drop_cols = {
     "is_people",
     "new_transcription",
     "area",
-    "page_intern"
+    "page"
 }
 
 bilingual_cols = {

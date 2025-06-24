@@ -241,7 +241,7 @@ for g, group_df in df_pages.groupby(['volume_number', 'volume']):
     volume_title = f'{volume_number}-{volume_name}'
     man_label = {"it": [f'Catastici di Venezia 1740 ({volume_title})'], "en": [f'Venice\'s civil registry from 1740 ({volume_title})'], "fr": [f'Registre civil de Venise en 1740 ({volume_title})']}
     manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}_{volume_title}'))
-    collection[manifest_uid] = man_label
+    
     for i, x in group_df.iterrows():
         page_obj =  iiif.generate_page_object(VTM_UUID5_NS, DS_UUID, x['index'],\
                                                                 manifest_uid, f"{x['volume']}: {x['page_index']}",\
@@ -251,6 +251,8 @@ for g, group_df in df_pages.groupby(['volume_number', 'volume']):
         df_pages.at[i, 'manifest_uid'] = manifest_uid
         df_pages.at[i, 'canvas_id'] = page_obj['id']
         group_df.at[i, 'canvas_id'] = page_obj['id']
+
+    collection[manifest_uid] = (man_label, df_pages[df_pages['manifest_uid'] == manifest_uid]['page_obj'].tolist()[0])
 
     # adding back the numbers so the structure is ordered correctly.
     group_df['volume_order'] = group_df['volume_number'].astype(str) + '-' + group_df['volume']
@@ -352,7 +354,7 @@ df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x
 iiif_links = df_iiif_links[['canvas_id', 'iiif_metadata_obj']].groupby('canvas_id').agg(list).reset_index().set_index('canvas_id')['iiif_metadata_obj'].to_dict()
 df_pages['page_obj'] = df_pages['page_obj'].apply(lambda x: dict(x, metadata = iiif_links.get(x['id'], '')))
 
-for manifest_uid, man_label in collection.items():
+for manifest_uid, (man_label,_) in collection.items():
     # generating the manifests
     with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
         data = df_pages[df_pages['manifest_uid'] == manifest_uid].copy()
