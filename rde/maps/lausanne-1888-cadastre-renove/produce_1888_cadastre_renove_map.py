@@ -1,4 +1,3 @@
-from pathlib import Path
 import sys
 import uuid
 import os
@@ -15,13 +14,9 @@ MAP_SLUG = "lausanne-1888-cadastre-renove-map"
 MAP_UUID = str(uuid.uuid5(LMAP_UUID5_NS, MAP_SLUG))
 vector_layer_slug = f"{MAP_SLUG}-vector-layer"
 vector_layer_uuid = str(uuid.uuid5(LMAP_UUID5_NS, vector_layer_slug))
-# the two corners of the bounding box of the area.
-extent =  [6.501622899, 46.642692356, 6.790137624, 46.470149236]
 
 lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
 # the list(map(list)) thing makes it so the result of the function compoisition is a list of list instead of tuples (prevents an issue when saving the file to json format)
-extent_as_point = list(map(list, zip(extent, extent[1:] + extent[:1])))
-extent_as_point = extent_as_point + [extent_as_point[0]]
 zoom_lvl= [11,21]
 
 layer_name = {"en": ["Cadastral vectors of 1888"], "fr": ["Vecteurs cadastraux de 1888"], "it": ["Vettori catastali del 1888"]}
@@ -37,7 +32,6 @@ vector_layer = produce_layer_obj(
     layer_configs=[produce_layer_config(
         str(uuid.uuid5(LMAP_UUID5_NS, f'{vector_layer_slug}-config-1')),
         zoom_lvl=zoom_lvl,
-        extent=extent_as_point,
         format='mvt',
         access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{vector_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf"
     )]

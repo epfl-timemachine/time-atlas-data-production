@@ -14,13 +14,6 @@ def produce_area_poly_from_two_corners(corners_array: list[float]) -> Polygon:
     min_x, min_y, max_x, max_y = corners_array
     return Polygon([(min_x, min_y), (min_x, max_y), (max_x, max_y), (max_x, min_y), (min_x, min_y)])
 
-
-varea_points = [ [12.301703273382266, 45.416405027956586],
-    [12.301703273382266, 45.45046323137894],
-    [12.371978610336509, 45.45046323137894],
-    [12.371978610336509,  45.416405027956586],
-    [12.301703273382266, 45.416405027956586] ]
-
 varea_min = [12.290776992, 45.373579637]
 varea_max = [12.469331224, 45.497617311]
 
@@ -31,12 +24,6 @@ varea_uuid = str(uuid.uuid5(AREA_UUID5_NS, varea_slug))
 varea_data = produce_area_obj(varea_uuid, varea_name, produce_area_poly_from_two_corners(varea_min + varea_max), varea_slug, '1.0')
 save_data_file_if_different('', varea_slug, varea_data, varea_slug, RDE.AREA.value)
 
-
-darea_points = [ [13.301703273382266, 50.816405027956586],
-                [13.301703273382266, 51.25046323137894],
-                [13.971978610336509, 51.25046323137894],
-                [13.971978610336509,  50.816405027956586],
-                [13.301703273382266, 50.816405027956586] ]
 darea_min = [13.301703273382266, 50.816405027956586]
 darea_max = [13.971978610336509, 51.25046323137894]
 
@@ -47,12 +34,6 @@ darea_uuid = str(uuid.uuid5(AREA_UUID5_NS, darea_slug))
 darea_data = produce_area_obj(darea_uuid, darea_name, produce_area_poly_from_two_corners(darea_min+darea_max), darea_slug, '1.0')
 save_data_file_if_different('', darea_slug, darea_data, darea_slug, RDE.AREA.value)
 
-
-larea_points = [ [6.501622899, 46.642692356],
-                [6.501622899, 46.470149236],
-                [6.790137624, 46.470149236],
-                [6.790137624,  46.642692356],
-                [6.501622899, 46.642692356] ]
 larea_min = [6.501622899, 46.470149236]
 larea_max = [6.790137624, 46.642692356]
 

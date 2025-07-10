@@ -26,6 +26,7 @@ AREA_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, 'https://timemachine.epfl.ch/area
 # so all maps have the same namespace to generate UUIDs
 VMAP_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, 'https://timemachine.epfl.ch/venice/maps')
 LMAP_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, 'https://timemachine.epfl.ch/lausanne/maps')
+AMAP_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, 'https://timemachine.epfl.ch/amsterdam/maps')
 
 def union_geom_from_geometry_ids_list(geom_ids:list[str], gdf: gpd.GeoDataFrame) -> Union[Polygon, MultiPolygon]:
     # as there can be multiple geometry_ids per line, we need to unite the geometries into a single one before generating the centroid that will serve as the GPS handle on the map.
@@ -259,7 +260,6 @@ def produce_map_obj(
 def produce_layer_config(
     uuid: str,
     zoom_lvl: tuple[int, int],
-    extent: list[list[float, float]],
     format: str,
     access_url: str,
 ) -> dict:
@@ -273,7 +273,6 @@ def produce_layer_config(
     return {  
         "uuid": uuid,
         "zoom_lvl": zoom_lvl,
-        "extent": extent,
         "service": {
             "url": access_url,
             "media_type": format

@@ -1,4 +1,3 @@
-from pathlib import Path
 import sys
 import uuid
 import os
@@ -15,18 +14,10 @@ MAP_SLUG = "venice-1740-map"
 MAP_UUID = str(uuid.uuid5(VMAP_UUID5_NS, MAP_SLUG))
 parish_layer_slug = f"{MAP_SLUG}-parish-layer"
 parish_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, parish_layer_slug))
-# the two corners of the bounding box of the area.
-extent =  [1370421.2197, 5692718.6843, 1376129.1641, 5689219.1288]
 
 venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
 
-# copied from sommarioni code, probably a modular function to be added to the utils
-# transforming those two corners into a closed polygon.
-extent_as_point = list(zip(extent, extent[1:] + extent[:1]))
-extent_as_point = extent_as_point + [extent_as_point[0]]
-wgs84_extent = [[p.x, p.y] for p in [to_wgs84_from_epsg3857(e[0], e[1]) for e in extent_as_point]]
 zoom_lvl= [11,21]
-
 layer_name = {"en": ["Parishes of 1740"], "fr": ["Paroisses de 1740"], "it": ["Parrocchie di 1740"]}
 layer_description = {"en": ["Manual interpretation of the administrative delimitation of the religious parishes from 1740 in the isle of Venice."], "fr": ["Interprétation manuelle de la délimitation administrative des paroisses religieuses de 1740 dans l'île de Venise."], "it": ["Interpretazione manuale della delimitazione amministrativa delle parrocchie religiose del 1740 nell'isola di Venezia."]}
 parish_layer = produce_layer_obj(
@@ -40,7 +31,6 @@ parish_layer = produce_layer_obj(
     layer_configs=[produce_layer_config(
         str(uuid.uuid5(VMAP_UUID5_NS, f'{parish_layer_slug}-config-1')),
         zoom_lvl=zoom_lvl,
-        extent=wgs84_extent,
         format='mvt',
         access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{parish_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf"
     )]

@@ -22,14 +22,6 @@ basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 
 streetnetwork_slug = f"{BASE_SLUG}-streetnetwork"
 streetnetwork_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, streetnetwork_slug))
-
-# the two corners of the bounding box of the area.
-extent =  [1370421.2197, 5692718.6843, 1376129.1641, 5689219.1288]
-
-# transforming those two corners into a closed polygon.
-extent_as_point = list(zip(extent, extent[1:] + extent[:1]))
-extent_as_point = extent_as_point + [extent_as_point[0]]
-wgs84_extent = [[p.x, p.y] for p in [to_wgs84_from_epsg3857(e[0], e[1]) for e in extent_as_point]]
 zoom_lvl= [11,21]
 
 venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
@@ -48,7 +40,6 @@ sommarioni_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
-                                          extent=wgs84_extent,
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/www/tilesets/venice/sommarioni/{z}/{x}/{y}.png",
                                           format='xyz'
                                           )]
@@ -68,7 +59,6 @@ sommarioni_parcel_layer = produce_layer_obj(cadaster_layer_uuid,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{cadaster_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
-                                              extent=wgs84_extent,
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{cadaster_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]
@@ -88,7 +78,6 @@ sommarioni_sn_layer = produce_layer_obj(streetnetwork_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{streetnetwork_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
-                                              extent=wgs84_extent,
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{streetnetwork_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]
