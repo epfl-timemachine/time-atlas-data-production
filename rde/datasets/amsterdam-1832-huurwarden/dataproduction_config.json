@@ -1,0 +1,66 @@
+{
+    "UUID_NAMESPACE": "https://timemachine.epfl.ch/amsterdam/1832-huurwarden",
+    "TIMERANGE_MINIMUM": 18320101,
+    "TIMERANGE_MAXIMUM": 18321231,
+    "AREA_FILE_LOC": "../../areas/venice-area.json",
+    "DATASET_CONFIGURATION": {
+        "slug": "amsterdam-1832-huurwarden",
+        "name": {
+            "en": ["1832 – Land Registers"],
+            "it": ["1832 – Registri fondiari"],
+            "fr": ["1832 – Registres fonciers"],
+            "nl": ["1832 - Huurwarden"]
+        },
+        "description": {
+            "en": ["Transcription of the land registry and cadastral maps from the city of Amsterdam in 1832. The dataset contains parcel identifiers, ownership, land use, geolocation, and area. Dataset created at the University of Amsterdam."],
+            "it": ["Trascrizione del registro fondiario e delle mappe catastali della città di Amsterdam nel 1832. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, geolocalizzazione e area. Dataset creato presso l'Università di Amsterdam."],
+            "fr": ["Transcription du registre foncier et des cartes cadastrales de la ville d'Amsterdam en 1832. Le jeu de données contient des identifiants de parcelles, de propriété, d'utilisation des terres, de géolocalisation et de superficie. Jeu de données créé à l'Université d'Amsterdam."],
+            "nl": ["Transcriptie van het landregister en de kadastrale kaarten van de stad Amsterdam in 1832. De dataset bevat perceelidentificaties, eigendom, landgebruik, geolocatie en oppervlakte. Dataset gemaakt aan de Universiteit van Amsterdam."]
+        },
+        "paradata": {
+            "en": ["The textual data from the register was manually transcribed by various researchers."],
+            "fr": ["Les données textuelles du registre ont été transcrites manuellement par divers chercheurs."],
+            "it": ["I dati testuali del registro sono stati trascritti manualmente da vari ricercatori."],
+            "nl": ["De tekstuele gegevens uit het register zijn handmatig getranscribeerd door verschillende onderzoekers."]
+        },
+        "doi": "http://dx.doi.org/10.18352/tseg.201",
+        "github_link": null,
+        "indexed": [
+            "Naam",
+            "Voornaam",
+            "Beroep",
+            "Soort_eige",
+            "Soort_ei_1"
+        ],
+        "short_display" : [
+            "Naam", 
+            "Voornaam", 
+            "Beroep"
+        ],
+        "hidden": [
+            "Klasse_geb"
+        ],
+        "main_label": "${Naam} ${Voornaam}",
+        "sub_label": "${Beroep}",
+        "tagged_fields": {
+            "Naam": "PEOPLE",
+            "Voornaam": "PEOPLE",
+            "Beroep": "PROFESSION",
+            "Soort_eige": "LAND_USE",
+            "Soort_ei_1": "LAND_USE"
+        },
+        "labels": {
+            "Perceel": {"en": ["Parcel's Number"], "fr": ["Numéro de parcelle"], "it": ["Numero di particella"], "nl": ["Nummer van de perceel"]},
+            "Naam": {"en": ["Owner's Name"], "fr": ["Nom du propriétaire"], "it": ["Nome del proprietario"], "nl": ["Naam van de eigenaar"]},
+            "Voornaam": {"en": ["Owner's First Name"], "fr": ["Prénom du propriétaire"], "it": ["Nome del proprietario"], "nl": ["Voornaam van de eigenaar"]},
+            "Beroep": {"en": ["Owner's Profession"], "fr": ["Profession du propriétaire"], "it": ["Professione del proprietario"], "nl": ["Beroep van de eigenaar"]},
+            "Soort_ei_1": {"en": ["Type of ownership"], "fr": ["Type de propriété"], "it": ["Tipo di proprietà"], "nl": ["Soort eigendom"]},
+            "Soort_eige": {"en": ["Parcel's function"], "fr": ["Fonction de la parcelle"], "it": ["Funzione della particella"], "nl": ["Functie van de perceel"]},
+            "Belasting_": {"en": ["Tax paid"], "fr": ["Impôt payé"], "it": ["Tassa pagata"], "nl": ["Belasting betaald"]},
+            "Shape_Leng": {"en": ["Surcace's perimeter"], "fr": ["Périmètre de la surface"], "it": ["Perimetro della superficie"], "nl": ["Omtrek van het oppervlak"]},
+            "Shape_Area": {"en": ["Surface's area"], "fr": ["Superficie de la surface"], "it": ["Superficie della superficie"], "nl": ["Oppervlakte van het oppervlak"]},
+            "Huurwaarde": {"en": ["Rent value"], "fr": ["Valeur locative"], "it": ["Valore locativo"], "nl": ["Huurwaarde"]},
+            "Klasse_geb": {"en": ["Building class"], "fr": ["Classe de bâtiment"], "it": ["Classe di edificio"], "nl": ["Gebouw klasse"]}
+        }
+    }
+}
