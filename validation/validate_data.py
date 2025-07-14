@@ -42,12 +42,15 @@ all_resources_name = ["file",
 all_schemas = {k: json.load(open(f'schemas/{k}.schema.json')) for k in all_resources_name}
 schema_store = [(s['$id'], DRAFT202012.create_resource(s)) for _,s in all_schemas.items()]
 
+uuid_store = {}
+
 def validate_file(fp:str, validator:Draft202012Validator, raise_error=False):
     with open(fp) as f:
         cont = json.load(f)
         try:
             validator.validate(cont)
         except ValidationError as e:
+            uuids = []
             #the validationError launched from $ref tag with jsonschema is unfortunately very vague, so we need to check the error message by directly validating the object
             rde_type = cont['type_in_file'][0]
             corr_schema = all_schemas[rde_type]
@@ -55,12 +58,16 @@ def validate_file(fp:str, validator:Draft202012Validator, raise_error=False):
             try:
                 for obj in cont['rde_objects']:
                     rde_validator.validate(obj)
+                    uuids.append(obj['uuid'])
             except ValidationError as e:
                 if raise_error:
                     raise e
                 else:
                     print(f'Error in {fp}, on obj {obj}: {e}')
+                    uuid_store[fp] = uuids
                     return
+            uuid_store[fp] = uuids
+                
 
 file_schema = all_schemas['file']
 registry = Registry().with_resources(schema_store)
@@ -94,10 +101,21 @@ if __name__ == '__main__':
             print(f'Validating {a}')
             validate_file(a, validator)
 
+    print('Checking unicity of UUIDs')
+    uuid_file = {}
+    for k, vs in uuid_store.items():
+        for v in vs:
+            if v not in uuid_file:
+                uuid_file[v] = k
+            else:
+                print(f'UUID {v} found in multiple files: {uuid_file[v]} and {k}')
+                if args.error_interrupt:
+                    raise Exception(f'UUID {v} found in multiple files: {uuid_file[v]} and {k}')
+
     for ds in dataset_list:
         iiif_loc_path = os.path.join(DATASET_ROOT, ds, 'data', 'iiif')
         if os.path.exists(iiif_loc_path):
-            coll_list = os.listdir(os.path.join(iiif_loc_path, 'collections'))
+            coll_list = [f for f in  os.listdir(os.path.join(iiif_loc_path, 'collections')) if f.endswith('.json')]
             if len(coll_list) > 1:
                 print('Multiple collections found in', ds, ' is this expected?')
                 print('Validating collection manifests of', ds)
