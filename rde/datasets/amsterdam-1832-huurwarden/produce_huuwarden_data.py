@@ -100,7 +100,7 @@ gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uui
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
 gdf_poi = gdf_poi.set_geometry('geometry')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'amsterdam_1832_huurwardenb_pois', RDE.POI.value)
+save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'amsterdam_1832_huurwarden_pois', RDE.POI.value)
 QA_check_uuid_are_unique(gdf_poi.reset_index())
 
 QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
@@ -175,4 +175,4 @@ ds = produce_dataset_obj(
     publish_obj=(CONF['doi'], CONF['github_link'])
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'amsterdam_1832_huurwardenb_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'amsterdam_1832_huurwarden_dataset', RDE.DATASET.value, is_dataset_obj=True)
