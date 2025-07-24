@@ -69,6 +69,7 @@ geom_shorthand = 'dorigo_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
 save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 df = pd.read_json(list(DORIGO_DATA_PATH.rglob('*historical_records.json'))[0])
+
 # fix NaN being serialized as literal in JSON alongside "null"
 df = df.replace({np.nan: None})
 df = df[~df['date_start'].isna()]
@@ -139,6 +140,8 @@ hr_metadata_cols = [
  'owner_last_name',
  'owner_first_name',
  'owner_name_appendix',
+ 'owner_ocr', 
+ 'place_ocr',
  'date_comment',
  'source',
 ]
@@ -183,7 +186,7 @@ ds_conf = produce_configuration_file_from_metadata_df(
 ds = produce_dataset_obj(
     DS_UUID,
     DS_SLUG,
-    '1.0',
+    '1.1',
     CONF["name"],
     CONF["description"],
     CONF["paradata"],
