@@ -75,12 +75,19 @@ validator = Draft202012Validator(schema=file_schema, registry=registry)
 
 if __name__ == '__main__':
     args = ArgumentParser()
+    args.add_argument('-d', '--dataset', default=None, help='Dataset to validate (does no support maps and areas)')
     args.add_argument('--only_iiif', default=False, action=BooleanOptionalAction, help='Only validate IIIF files')
     args.add_argument('--error_interrupt', default=False, action=BooleanOptionalAction, help='Interrupts the script if any validation fails')
     args = args.parse_args()
 
     DATASET_ROOT = '../rde/datasets'
     dataset_list = os.listdir(DATASET_ROOT)
+    if args.dataset:
+        new_dataset_list = [d for d in dataset_list if args.dataset in d]
+        if len(new_dataset_list) == 0:
+            print(f'Dataset {args.dataset} not found in {DATASET_ROOT}')
+            sys.exit(1)
+        dataset_list = new_dataset_list
     if not args.only_iiif:
         for d in dataset_list:
             all_files_to_validate = [v for v in list(Path(join(DATASET_ROOT, d, 'data')).rglob('*.json')) if 'iiif' not in str(v)]
