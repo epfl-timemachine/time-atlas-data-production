@@ -74,6 +74,11 @@ df = pd.read_json(list(DORIGO_DATA_PATH.rglob('*historical_records.json'))[0])
 df = df.replace({np.nan: None})
 df = df[~df['date_start'].isna()]
 
+from resolve_acronym import process_source_acronym
+df = process_source_acronym(df)
+df.rename(columns={'source': 'source_ocr', 'source_resolved': 'source'}, inplace=True)
+print(df.columns)
+
 df['start_time'] = df['date_start'].astype(int).apply(datetime_obj_from_int_time)
 
 def try_to_parse_date_end(date_end):
@@ -144,6 +149,7 @@ hr_metadata_cols = [
  'place_ocr',
  'date_comment',
  'source',
+ 'source_ocr'
 ]
 
 df['owner_name'] = df['owner_name'].fillna('Unknown owner')
