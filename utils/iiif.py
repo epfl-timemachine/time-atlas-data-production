@@ -55,6 +55,41 @@ def generate_page_object(uuid_ns:uuid.UUID,
 def url_encoded_iiif_image_url(path:str) -> str:
     return f"https://image-timemachine.epfl.ch/iiif/3/{quote_plus(path)}"
 
+
+def single_3d_model_manifest(man_id:str, label: dict, access_url:str, format:str) -> dict: 
+   return {
+    "@context": "http://iiif.io/api/presentation/4/context.json",
+    "id": man_id,
+    "type": "Manifest",
+    "label": label,
+    "items": [
+      {
+        "id": f"{man_id}/page/p1/1",
+        "type": "Scene",
+        "label": label,
+        "items": [
+          {
+            "id": f"{man_id}/page/p1/1",
+            "type": "AnnotationPage",
+            "items": [
+              {
+                "id": f"{man_id}/annotation/a1/1",
+                "type": "Annotation",
+                "motivation": ["painting"],
+                "body": {
+                  "id": access_url,
+                  "type": "Model",
+                  "format": format
+                },
+                "target": f"{man_id}/page/p1/1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+
 from urllib.parse import quote_plus
 def iiif_canvas_object_from_page_obj(uuid_ns: uuid.UUID, page_obj:dict, lan:str) -> dict:
     # it is here that the annotation is generated, should be in page_obj.

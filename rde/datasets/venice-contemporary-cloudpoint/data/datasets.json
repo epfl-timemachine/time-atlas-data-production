@@ -1,0 +1,443 @@
+{
+ "name": "cloudpoints_dataset",
+ "type_in_file": [
+  "dataset"
+ ],
+ "creation_time": "2025-09-03T16:21:37.258531",
+ "rde_objects": [
+  {
+   "uuid": "92cae623-b4e9-5959-8292-2e4671bd4889",
+   "slug": "venice-3d-mockup",
+   "version": "1.0",
+   "name": {
+    "en": [
+     "Contemporary cloudpoints of Venice"
+    ],
+    "fr": [
+     "Nuage de points contemporains de Venise"
+    ],
+    "it": [
+     "Nuvola di punti contemporanei di Venezia"
+    ]
+   },
+   "rde_type": "dataset",
+   "publish": {
+    "doi": null,
+    "url": null
+   },
+   "description": {
+    "en": [
+     "Data derived from a cloupoint acquisition from a flyover of the city of Venice. Building were identified and segmented, resulting in more than 8000 3d models accompanied by facade and panoramic extractions."
+    ],
+    "fr": [
+     "Les données proviennent d'une acquisition de nuages de points lors d'un survol de la ville de Venise. Les bâtiments ont été identifiés et segmentés, ce qui a permis d'obtenir plus de 8000 modèles 3D accompagnés d'extractions de façades et de panoramas."
+    ],
+    "it": [
+     "I dati derivano da un'acquisizione di nuvole di punti durante un sorvolo della città di Venezia. Gli edifici sono stati identificati e segmentati, ottenendo oltre 8000 modelli 3D accompagnati da estrazioni di facci e e panorami."
+    ]
+   },
+   "paradata": {
+    "en": [
+     "Paul Guhennec segemented the cloudpoints of the building from a general flyover cloud points data acquisition of the city."
+    ],
+    "fr": [
+     "Paul Guhennec a segmenté le nuage de points de l'immeuble à partir d'une acquisition de données de nuages de points en survol général de la ville."
+    ],
+    "it": [
+     "Paul Guhennec ha segmentato il nuvola di punti dell'edificio a partire da un'acquisizione di dati di nuvole di punti in volo generale della città."
+    ]
+   },
+   "sources": [
+    "a8e3c62b-64cf-5a7b-9a02-9a5bd54ba6a5"
+   ],
+   "start_time": "2024-01-01T00:00:00",
+   "end_time": "2024-12-31T23:59:59",
+   "transcribed_pages_amount": 0,
+   "is_operationally_described_by": {
+    "hr_config": {
+     "main_label": "${aulic_name}, ${EDIFI_ID}",
+     "sub_label": "${CIVICI}",
+     "display_thumbnail": true,
+     "external_source": false,
+     "metadata_field_config": [
+      {
+       "id": "EDIFI_ID",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "EDIFICI ID"
+        ],
+        "it": [
+         "EDIFICI ID"
+        ],
+        "fr": [
+         "EDIFICI ID"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 1,
+       "uuid": "f61e7e9b-cf58-56e9-9add-8e51f852d9b7"
+      },
+      {
+       "id": "SESTIERE",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "District"
+        ],
+        "it": [
+         "Sestiere"
+        ],
+        "fr": [
+         "Sestiere"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 2,
+       "uuid": "ec3c8c60-f581-5e26-add5-14e8f4150f08"
+      },
+      {
+       "id": "SESTIERE_ABR",
+       "type": "STRING",
+       "display_label": "SESTIERE ABR",
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 3,
+       "uuid": "edd5a2a4-f5b8-51e6-9a0d-f0f7cd86b4a2"
+      },
+      {
+       "id": "ISOLA",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Island"
+        ],
+        "it": [
+         "Isola"
+        ],
+        "fr": [
+         "Île"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 4,
+       "uuid": "d343b51c-ca63-5cc2-98c2-f78be28af20e"
+      },
+      {
+       "id": "aulic_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Aulic name"
+        ],
+        "it": [
+         "Nome aulico"
+        ],
+        "fr": [
+         "Nom aulique"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 5,
+       "uuid": "d302bd8d-0d66-57ee-a421-fa5b26c5513f"
+      },
+      {
+       "id": "typology",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Typology"
+        ],
+        "it": [
+         "Tipologia"
+        ],
+        "fr": [
+         "Typologie"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 6,
+       "uuid": "0ec40ae2-a46d-5fa4-9efa-ca7b9fcd020a"
+      },
+      {
+       "id": "style",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Style"
+        ],
+        "it": [
+         "Stile"
+        ],
+        "fr": [
+         "Style"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 7,
+       "uuid": "80dec2b1-161a-501d-8d18-910bab1e5768"
+      },
+      {
+       "id": "CIVICI",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Civic number"
+        ],
+        "it": [
+         "Civic number"
+        ],
+        "fr": [
+         "Civic number"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 8,
+       "uuid": "f4f96ee7-ce20-5b42-874a-70be849fcba1"
+      },
+      {
+       "id": "wikidata",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Wikidata"
+        ],
+        "it": [
+         "Wikidata"
+        ],
+        "fr": [
+         "Wikidata"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 9,
+       "uuid": "f4a5a4e3-e3fe-5102-a6ba-1857e439f899"
+      },
+      {
+       "id": "nb_points",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Number of points"
+        ],
+        "it": [
+         "Numero di punti"
+        ],
+        "fr": [
+         "Nombre de points"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 10,
+       "uuid": "2f103431-e550-5005-8e28-66121e586260"
+      },
+      {
+       "id": "points_density",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Points density"
+        ],
+        "it": [
+         "Densità di punti"
+        ],
+        "fr": [
+         "Densité de points"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 11,
+       "uuid": "2503ae92-5ab6-5632-8a5e-051f3bd79efd"
+      },
+      {
+       "id": "area",
+       "type": "FLOAT",
+       "display_label": "Area",
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 12,
+       "uuid": "98468d76-402e-514f-a0be-1937efa2ef04"
+      },
+      {
+       "id": "volume [m3]",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Volume [m3]"
+        ],
+        "it": [
+         "Volume [m3]"
+        ],
+        "fr": [
+         "Volume [m3]"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 13,
+       "uuid": "38ac8448-5f41-5862-a233-3a57b86a33d3"
+      },
+      {
+       "id": "mean_height",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Mean height"
+        ],
+        "it": [
+         "Altezza media"
+        ],
+        "fr": [
+         "Hauteur médiane"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 14,
+       "uuid": "0bd64ad7-c550-5992-b487-929d413e2a1e"
+      },
+      {
+       "id": "max_height",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Max height"
+        ],
+        "it": [
+         "Altezza massima"
+        ],
+        "fr": [
+         "Hauteur maximale"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 15,
+       "uuid": "4663214e-9ffb-5efe-894d-3ede0f201d66"
+      },
+      {
+       "id": "geometry",
+       "type": "geometry",
+       "display_label": "Geometry",
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 16,
+       "uuid": "d5686edc-d708-5bc4-b81a-abec5c9f56dc"
+      },
+      {
+       "id": "start_time",
+       "type": "STRING",
+       "display_label": "Start Time",
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 17,
+       "uuid": "e7bd7d26-0a53-525a-8dcc-07d8e0e6e367"
+      },
+      {
+       "id": "end_time",
+       "type": "STRING",
+       "display_label": "End Time",
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 18,
+       "uuid": "5bdfdf71-6753-5dad-ac91-83208a4fb329"
+      },
+      {
+       "id": "has_geometry",
+       "type": "LIST",
+       "display_label": "Has Geometry",
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 19,
+       "uuid": "76c98381-31f9-5ad9-b5b8-9e82c7140265"
+      },
+      {
+       "id": "type",
+       "type": "STRING",
+       "display_label": "Type",
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 20,
+       "uuid": "6d5a75be-8e8e-5c54-8eb2-b2350e6bff04"
+      }
+     ]
+    },
+    "uuid": "7e3f28bb-f9ad-54d4-b0ba-a9e0600056d4"
+   },
+   "falls_within": [
+    "620962bb-bb0d-50ed-b534-8903ad265932"
+   ],
+   "creation_time": "2025-09-03T16:21:37.256905"
+  }
+ ]
+}

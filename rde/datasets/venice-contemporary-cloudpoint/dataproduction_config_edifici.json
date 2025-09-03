@@ -1,0 +1,58 @@
+{
+    "UUID_NAMESPACE": "https://timemachine.epfl.ch/venice/cloudpoints-sample-mockup",
+    "TIMERANGE_MINIMUM": 20240101,
+    "TIMERANGE_MAXIMUM": 20241231,
+    "AREA_FILE_LOC": "../../areas/venice-area.json",
+    "DATASET_CONFIGURATION": {
+        "slug": "venice-3d-mockup",
+        "name": {
+            "en": ["Contemporary cloudpoints of Venice"],
+            "fr": ["Nuage de points contemporains de Venise"],
+            "it": ["Nuvola di punti contemporanei di Venezia"]
+        },
+        "description": {
+            "en": ["Data derived from a cloupoint acquisition from a flyover of the city of Venice. Building were identified and segmented, resulting in more than 8000 3d models accompanied by facade and panoramic extractions."],
+            "fr": ["Les données proviennent d'une acquisition de nuages de points lors d'un survol de la ville de Venise. Les bâtiments ont été identifiés et segmentés, ce qui a permis d'obtenir plus de 8000 modèles 3D accompagnés d'extractions de façades et de panoramas."],
+            "it": ["I dati derivano da un'acquisizione di nuvole di punti durante un sorvolo della città di Venezia. Gli edifici sono stati identificati e segmentati, ottenendo oltre 8000 modelli 3D accompagnati da estrazioni di facci e e panorami."]
+        },
+        "paradata": {
+            "en": ["Paul Guhennec segemented the cloudpoints of the building from a general flyover cloud points data acquisition of the city."],
+            "fr": ["Paul Guhennec a segmenté le nuage de points de l'immeuble à partir d'une acquisition de données de nuages de points en survol général de la ville."],
+            "it": ["Paul Guhennec ha segmentato il nuvola di punti dell'edificio a partire da un'acquisizione di dati di nuvole di punti in volo generale della città."]
+        },
+        "doi": "doi.org/10.5075/epfl-thesis-11172",
+        "github_link": null,
+        "indexed": [
+            "aulic_name",
+            "typology"
+        ],
+        "short_display" : [
+            "aulic_name",
+            "area [m2]",
+            "EDIFI_ID"
+        ],
+        "hidden": [
+        ],
+        "main_label": "${aulic_name}, ${EDIFI_ID}",
+        "sub_label": "${CIVICI}",
+        "tagged_fields": {
+            "aulic_name": "PLACE"
+        },
+        "labels": {
+            "EDIFI_ID": {"en": ["EDIFICI ID"], "it": ["EDIFICI ID"], "fr": ["EDIFICI ID"]},
+            "CIVICI": {"en": ["Civic number"], "it": ["Civic number"], "fr": ["Civic number"]},
+            "ISOLA": {"en": ["Island"], "it": ["Isola"], "fr": ["Île"]},
+            "SESTIERE": {"en": ["District"], "it": ["Sestiere"], "fr": ["Sestiere"]},
+            "area [m2]": {"en": ["Area [m2]"], "it": ["Area [m2]"], "fr": ["Aire [m2]"]},
+            "aulic_name": {"en": ["Aulic name"], "it": ["Nome aulico"], "fr": ["Nom aulique"]},
+            "max_height": {"en": ["Max height"], "it": ["Altezza massima"], "fr": ["Hauteur maximale"]},
+            "mean_height": {"en": ["Mean height"], "it": ["Altezza media"], "fr": ["Hauteur médiane"]},
+            "nb_points": {"en": ["Number of points"], "it": ["Numero di punti"], "fr": ["Nombre de points"]},
+            "points_density": {"en": ["Points density"], "it": ["Densità di punti"], "fr": ["Densité de points"]},
+            "style": {"en": ["Style"], "it": ["Stile"], "fr": ["Style"]},
+            "typology": {"en": ["Typology"], "it": ["Tipologia"], "fr": ["Typologie"]},
+            "volume [m3]": {"en": ["Volume [m3]"], "it": ["Volume [m3]"], "fr": ["Volume [m3]"]},
+            "wikidata": {"en": ["Wikidata"], "it": ["Wikidata"], "fr": ["Wikidata"]}
+        }
+    }
+}
