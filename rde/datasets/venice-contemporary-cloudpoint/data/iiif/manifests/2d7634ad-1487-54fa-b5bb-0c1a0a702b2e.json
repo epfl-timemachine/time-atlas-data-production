@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "2d7634ad-1487-54fa-b5bb-0c1a0a702b2e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Barbaro a Santo Stefano, 6466 - SM 2947,SM 2952,SM 2951,SM 2949,SM 2950,SM 2948"
+    ]
+  },
+  "items": [
+    {
+      "id": "8c88cd33-a93a-5281-83fa-878ed08aae32",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Barbaro a Santo Stefano, 6466 - SM 2947,SM 2952,SM 2951,SM 2949,SM 2950,SM 2948"
+        ]
+      },
+      "items": [
+        {
+          "id": "b2ad5a9e-6bcd-5c96-b1ba-a5440d651978",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7f564846-8b5a-50bc-b453-92b018531d08",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6466.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "8c88cd33-a93a-5281-83fa-878ed08aae32"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a0971712-fc58-576d-aceb-afd837d4499c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "64b940a3-5889-5ec8-bfa2-4134f8ed37d0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Barbaro a Santo Stefano, 6466 - SM 2947,SM 2952,SM 2951,SM 2949,SM 2950,SM 2948"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a927b930-5c0e-5b6c-9397-a410726dcb69"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8c88cd33-a93a-5281-83fa-878ed08aae32",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

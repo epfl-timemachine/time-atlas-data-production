@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "dc7696f5-15c2-5845-a66a-b4de5e067317",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Zaccaria, 1596 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "6fbafcf0-4024-54b4-8ca2-2dc11603decd",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Zaccaria, 1596 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "830069c9-f9e6-5aa1-96dd-dbc049155fd3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "60ac2b12-21ad-5225-a0de-af2f437293dd",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1596.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "6fbafcf0-4024-54b4-8ca2-2dc11603decd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e690fac1-82db-52d0-88e8-868e3ece9279",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8836a38b-2a85-5ee0-ae52-b207335d9e66",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Zaccaria, 1596 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5ee9e0b9-1c5c-54a6-8c47-4db851423a1c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6fbafcf0-4024-54b4-8ca2-2dc11603decd",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

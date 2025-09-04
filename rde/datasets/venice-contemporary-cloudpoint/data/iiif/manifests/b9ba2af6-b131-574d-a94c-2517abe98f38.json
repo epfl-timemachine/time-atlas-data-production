@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "b9ba2af6-b131-574d-a94c-2517abe98f38",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Sebastian, 3222 - DD 1655,DD 1652,DD 1656,DD 1686,DD 1654,DD 1653"
+    ]
+  },
+  "items": [
+    {
+      "id": "569e5968-fad1-559c-be1e-487580939530",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Sebastian, 3222 - DD 1655,DD 1652,DD 1656,DD 1686,DD 1654,DD 1653"
+        ]
+      },
+      "items": [
+        {
+          "id": "de1bb5b8-d8d6-55d0-a9c2-f3eb75c64c3b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9e9d0aa1-a700-5749-9e07-3e97e1004339",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3222.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "569e5968-fad1-559c-be1e-487580939530"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "de6c7810-30f7-564f-be46-e1584ad371af",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "33d2ea38-c248-5f3e-8128-779a4431c19c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Sebastian, 3222 - DD 1655,DD 1652,DD 1656,DD 1686,DD 1654,DD 1653"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "33c93053-e48a-5c99-8ff8-035f45a28ddf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "569e5968-fad1-559c-be1e-487580939530",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

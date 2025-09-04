@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "1e6cf786-6cab-533b-91f7-d5f8e8fc82e3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Monastero di San Giorgio Maggiore, 6085 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "0fed9e25-1e47-514f-84b4-eccaaeaf71ad",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Monastero di San Giorgio Maggiore, 6085 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "eda46b96-fc98-5b84-be85-2a76fb838292",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0a785791-3585-55cf-a7e3-e10d32564fb3",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6085.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "0fed9e25-1e47-514f-84b4-eccaaeaf71ad"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "45d1a379-3505-54fc-aa75-5f06a1dcd314",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "273c4c38-878d-5a20-981d-7c3a9a19ddfe",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Monastero di San Giorgio Maggiore, 6085 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "96def559-2c25-540e-8d3b-fad158b813d4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0fed9e25-1e47-514f-84b4-eccaaeaf71ad",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

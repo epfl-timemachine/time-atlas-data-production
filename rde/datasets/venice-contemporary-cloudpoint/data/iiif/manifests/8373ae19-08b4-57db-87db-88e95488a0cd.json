@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "8373ae19-08b4-57db-87db-88e95488a0cd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Gallo, 6392 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "855f582e-0310-5ece-99d0-3631c678ac3d",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Gallo, 6392 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "1e9998e0-74fa-5799-9449-f354448a6c77",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c6ff6fd7-bc9b-5bac-8809-6d7fbc465998",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6392.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "855f582e-0310-5ece-99d0-3631c678ac3d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "74df8293-578c-5e4e-9d01-4c7e8df604c3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bf74f558-4dcd-53ff-ab66-b078f827062f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Gallo, 6392 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bc0a9b4d-cc0c-57c1-9d8d-3bea4f69070e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "855f582e-0310-5ece-99d0-3631c678ac3d",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

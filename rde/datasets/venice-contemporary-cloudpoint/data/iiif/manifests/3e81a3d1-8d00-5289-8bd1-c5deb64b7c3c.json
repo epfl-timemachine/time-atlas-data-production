@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "3e81a3d1-8d00-5289-8bd1-c5deb64b7c3c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Contarini Fasan, 6411 - SM 2321"
+    ]
+  },
+  "items": [
+    {
+      "id": "bc735a6b-06b0-5269-80cb-c0db81bcb0fd",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Contarini Fasan, 6411 - SM 2321"
+        ]
+      },
+      "items": [
+        {
+          "id": "3eff4806-ab5e-5989-b274-d900172144e0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "59d83386-21e4-580a-aa45-b31f1a0813a7",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6411.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "bc735a6b-06b0-5269-80cb-c0db81bcb0fd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d4137d3d-32bc-5634-bc9a-6cc44b898ebc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "46f9d42b-7af0-59a2-ac94-d5d4a12a0cc5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Contarini Fasan, 6411 - SM 2321"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "24a4e65d-64cd-5943-aae9-701a986fc070"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bc735a6b-06b0-5269-80cb-c0db81bcb0fd",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

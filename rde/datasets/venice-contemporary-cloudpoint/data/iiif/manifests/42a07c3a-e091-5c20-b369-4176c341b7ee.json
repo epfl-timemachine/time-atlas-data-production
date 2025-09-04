@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "42a07c3a-e091-5c20-b369-4176c341b7ee",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Bonaventura, 8 - CN 3144,CN 3145"
+    ]
+  },
+  "items": [
+    {
+      "id": "866b33b9-45e5-5003-93df-062522bed9b9",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Bonaventura, 8 - CN 3144,CN 3145"
+        ]
+      },
+      "items": [
+        {
+          "id": "7ab73553-2d41-5625-9414-787518cdecca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9454fd8b-1937-5f43-8389-ba064d1b01b0",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_8.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "866b33b9-45e5-5003-93df-062522bed9b9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "917d78f6-47f1-51ee-9ca8-20c87e5076cb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c8b58dd2-d702-510d-a906-bc846e0eb436",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Bonaventura, 8 - CN 3144,CN 3145"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c8609773-dda8-51d1-9896-198568c30482"
+                }
+              ],
+              "target": [
+                {
+                  "id": "866b33b9-45e5-5003-93df-062522bed9b9",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

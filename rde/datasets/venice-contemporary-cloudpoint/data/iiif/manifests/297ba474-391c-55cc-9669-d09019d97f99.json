@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "297ba474-391c-55cc-9669-d09019d97f99",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Teodoro, 6679 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "870be0be-f9d2-5573-bd96-eef065271419",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Teodoro, 6679 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "9d3a5635-9da7-5251-8582-5c8ef23599ce",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "42c7e8c0-cedd-5bb2-84c7-c1bf45e3d519",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6679.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "870be0be-f9d2-5573-bd96-eef065271419"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9808296c-cbee-52b8-b7bd-023619e3dfe8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "08407a0a-2764-55e7-b382-21a1b4cd2c88",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Teodoro, 6679 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "79916129-3c21-5c3b-a016-3205a3d0cccf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "870be0be-f9d2-5573-bd96-eef065271419",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

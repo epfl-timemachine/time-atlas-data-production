@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "a3f91749-d964-5043-87fe-c9dfe2767583",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Barbaro, 6406 - SM 2819,SM 2820,SM 2840"
+    ]
+  },
+  "items": [
+    {
+      "id": "cfed5513-5d3e-5228-9edc-28139cd3e59b",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Barbaro, 6406 - SM 2819,SM 2820,SM 2840"
+        ]
+      },
+      "items": [
+        {
+          "id": "cb2e611f-b69a-5178-a2dd-2e0cab5fa3a7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9ac617fa-c583-565b-8a8f-fe174c332e0e",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6406.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "cfed5513-5d3e-5228-9edc-28139cd3e59b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ef526e75-af36-51b1-96de-444145ca741a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8bef811a-7b5a-570a-a73a-774b6688a95b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Barbaro, 6406 - SM 2819,SM 2820,SM 2840"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fdd0f6dd-38ba-5094-9a08-f4ca91115ff8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cfed5513-5d3e-5228-9edc-28139cd3e59b",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

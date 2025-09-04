@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "14e70794-c18b-59f3-a278-e99304e69d03",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ca' Dolfin, 3213 - DD 3857,DD 3858,DD 3859/A,DD 3859,DD 3858/A,DD 3845"
+    ]
+  },
+  "items": [
+    {
+      "id": "7a3c2e02-6f6c-5385-b6c7-a0751242765b",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Ca' Dolfin, 3213 - DD 3857,DD 3858,DD 3859/A,DD 3859,DD 3858/A,DD 3845"
+        ]
+      },
+      "items": [
+        {
+          "id": "cb9b9fc4-e980-5526-af89-683de2352d2c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ec3edea8-98f9-5651-a163-59d66ff5db2e",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3213.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "7a3c2e02-6f6c-5385-b6c7-a0751242765b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "805dec6b-2c2a-54ff-acab-9dd348292978",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "187616a9-3b4b-5bf4-b0bb-0e8ce61b8c5b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Ca' Dolfin, 3213 - DD 3857,DD 3858,DD 3859/A,DD 3859,DD 3858/A,DD 3845"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4ffd4357-0def-510b-a8a1-f10a1d054917"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7a3c2e02-6f6c-5385-b6c7-a0751242765b",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

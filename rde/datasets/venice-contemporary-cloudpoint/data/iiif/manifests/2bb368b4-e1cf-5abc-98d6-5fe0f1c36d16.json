@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "2bb368b4-e1cf-5abc-98d6-5fe0f1c36d16",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Contarini del Bovolo, 6824 - SM 4299,SM 4301,SM 4302,SM 4303,SM 4300"
+    ]
+  },
+  "items": [
+    {
+      "id": "3bf39bd5-a201-55a4-9faa-d28c4f25ca6e",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Contarini del Bovolo, 6824 - SM 4299,SM 4301,SM 4302,SM 4303,SM 4300"
+        ]
+      },
+      "items": [
+        {
+          "id": "cc39d531-2542-520e-bf0e-a5b3d616868a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fa28522d-4e3c-5ae0-93b7-22f3831bfad8",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6824.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "3bf39bd5-a201-55a4-9faa-d28c4f25ca6e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "659dc8dd-f686-56e3-9c45-5445224717f1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6fe3d032-30bb-55bb-b412-b4ffed9e0297",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Contarini del Bovolo, 6824 - SM 4299,SM 4301,SM 4302,SM 4303,SM 4300"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3c22fe2b-243d-5d5f-9b10-9b03a1e13f0c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3bf39bd5-a201-55a4-9faa-d28c4f25ca6e",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

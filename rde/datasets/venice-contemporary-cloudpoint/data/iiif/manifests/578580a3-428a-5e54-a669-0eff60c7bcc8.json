@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "578580a3-428a-5e54-a669-0eff60c7bcc8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Foscari Contarini, 7861 - SC 712,SC 745/A,SC 746,SC 715,SC 745,SC 708,SC 710,SC 716/B,SC 714,SC 711"
+    ]
+  },
+  "items": [
+    {
+      "id": "c44b74e0-38a6-51fd-9a79-e459f3657874",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Foscari Contarini, 7861 - SC 712,SC 745/A,SC 746,SC 715,SC 745,SC 708,SC 710,SC 716/B,SC 714,SC 711"
+        ]
+      },
+      "items": [
+        {
+          "id": "6701156f-68b3-5f1f-9005-945f836e8c8b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f1f23369-da14-5ffb-9452-8bde921c1697",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7861.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "c44b74e0-38a6-51fd-9a79-e459f3657874"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d0d78afb-6d22-5711-b83a-2c22e3252143",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8e7abbeb-4acb-590c-a3aa-68ed44ffdf89",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Foscari Contarini, 7861 - SC 712,SC 745/A,SC 746,SC 715,SC 745,SC 708,SC 710,SC 716/B,SC 714,SC 711"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fc07fe20-b952-5e47-84bd-35109637f1f2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c44b74e0-38a6-51fd-9a79-e459f3657874",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

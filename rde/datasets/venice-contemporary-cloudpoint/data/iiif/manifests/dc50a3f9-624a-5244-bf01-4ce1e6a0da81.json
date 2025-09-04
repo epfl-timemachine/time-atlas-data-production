@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "dc50a3f9-624a-5244-bf01-4ce1e6a0da81",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Genovese, 3240 - DD 173/A,DD 172,DD 173/B"
+    ]
+  },
+  "items": [
+    {
+      "id": "bf8fecc7-72f4-5873-a8f3-f7ebea943343",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Genovese, 3240 - DD 173/A,DD 172,DD 173/B"
+        ]
+      },
+      "items": [
+        {
+          "id": "24a533e7-aebe-510a-80eb-6b6b4d58f797",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c6865c96-a0e1-5880-8ef2-c5ca93e53cfb",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3240.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "bf8fecc7-72f4-5873-a8f3-f7ebea943343"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "65532e9d-dae2-55c3-a2f8-3e323cd7da3e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c332158a-855c-5ca0-8513-041b42fb2717",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Genovese, 3240 - DD 173/A,DD 172,DD 173/B"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "40e53181-f240-5b38-8a58-c1c4fd7b76e0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bf8fecc7-72f4-5873-a8f3-f7ebea943343",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

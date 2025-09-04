@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "69e60973-b185-5bd2-adab-db97d77fefba",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Unknown edifice name, 1750 - CS 5192"
+    ]
+  },
+  "items": [
+    {
+      "id": "41c3de86-cc55-57d4-90ca-764315fe0535",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Unknown edifice name, 1750 - CS 5192"
+        ]
+      },
+      "items": [
+        {
+          "id": "ab644c73-5d0f-5b04-a815-0a306e783d7c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "63cb51bc-ee85-516c-b218-67bfdf1c782f",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1750.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "41c3de86-cc55-57d4-90ca-764315fe0535"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f9f3c643-d708-50a8-b5f8-34578456bd8a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "66b96f89-781f-58b3-b4d6-b6da733be6fa",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Unknown edifice name, 1750 - CS 5192"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "71f5b57d-17a3-595d-8c09-c68bfe9a01d1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "41c3de86-cc55-57d4-90ca-764315fe0535",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

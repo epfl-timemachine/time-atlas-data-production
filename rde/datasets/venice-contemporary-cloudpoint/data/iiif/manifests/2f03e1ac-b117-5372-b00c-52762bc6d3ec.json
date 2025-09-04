@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "2f03e1ac-b117-5372-b00c-52762bc6d3ec",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ponte di Rialto, 7488 - SP 11,SM 5327,SM 5325,SM 5328,SP 12,SP 13,SM 5323,SP 9,SP 10,SM 5324,SM 5326,SP 8"
+    ]
+  },
+  "items": [
+    {
+      "id": "ee9c6300-6d82-5808-95bc-c60fb2532c99",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Ponte di Rialto, 7488 - SP 11,SM 5327,SM 5325,SM 5328,SP 12,SP 13,SM 5323,SP 9,SP 10,SM 5324,SM 5326,SP 8"
+        ]
+      },
+      "items": [
+        {
+          "id": "a9603c32-0014-5d01-bb93-0c01cb8603be",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c8731fbc-10a1-5a26-9415-2c1332595a7e",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7488.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "ee9c6300-6d82-5808-95bc-c60fb2532c99"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0358ab23-5458-5faa-a992-498c9f143778",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eec9a386-29d3-5f68-a48b-bdb86dfe7743",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Ponte di Rialto, 7488 - SP 11,SM 5327,SM 5325,SM 5328,SP 12,SP 13,SM 5323,SP 9,SP 10,SM 5324,SM 5326,SP 8"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "57f331f2-bc6c-519f-b72a-befccaa5df1d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ee9c6300-6d82-5808-95bc-c60fb2532c99",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

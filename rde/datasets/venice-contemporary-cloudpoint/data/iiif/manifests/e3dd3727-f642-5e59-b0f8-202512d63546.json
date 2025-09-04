@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "e3dd3727-f642-5e59-b0f8-202512d63546",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Morosini del Pestrin, 1619 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "e413d4c4-bdb3-5235-b59e-637fed30acfd",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Morosini del Pestrin, 1619 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "f1c96c32-93e5-5bb5-ab0a-ae7764e59c97",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b22b4b08-2761-5154-982d-42429a06d99c",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1619.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "e413d4c4-bdb3-5235-b59e-637fed30acfd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "57d34d40-b629-5054-863e-260fbe9c36b6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "61fd8e83-9b59-5ff5-a481-91d1d6bdd758",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Morosini del Pestrin, 1619 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "80b49f57-5da2-55dd-873e-eda4abc4cb79"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e413d4c4-bdb3-5235-b59e-637fed30acfd",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

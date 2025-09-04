@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "0b3867f5-23d8-5da0-8953-b524b39ee4fa",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Gran Teatro La Fenice, 6721 - SM 1943,SM 1972,SM 1973,SM 1977,SM 1942,SM 1970,SM 1975,SM 1974"
+    ]
+  },
+  "items": [
+    {
+      "id": "3fd5b61e-6a24-502b-9217-c0beb8b9fad1",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Gran Teatro La Fenice, 6721 - SM 1943,SM 1972,SM 1973,SM 1977,SM 1942,SM 1970,SM 1975,SM 1974"
+        ]
+      },
+      "items": [
+        {
+          "id": "e0f9ddcc-ddd0-5589-94dd-ee56cc10ff54",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d5fcfc8d-ce68-5061-b7f1-96fe52e581d9",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6721.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "3fd5b61e-6a24-502b-9217-c0beb8b9fad1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "eaa4cf66-987b-56c4-acac-0f25e261ad00",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1d5d0d45-111b-5e48-9329-9a011cff5523",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Gran Teatro La Fenice, 6721 - SM 1943,SM 1972,SM 1973,SM 1977,SM 1942,SM 1970,SM 1975,SM 1974"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0e7ad5b6-7eb5-5bce-ad75-7adaa82cabd0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3fd5b61e-6a24-502b-9217-c0beb8b9fad1",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "f02f0183-ee43-5bd0-a264-b1f975fb43ba",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Molin, 6430 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "ba6ddd43-54a3-55bd-85d5-59dd1e1453a6",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Molin, 6430 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "21335fb5-8efe-5c72-868f-340d9fa6bde4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "015f450a-33d3-523c-b823-2d087bb8af33",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6430.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "ba6ddd43-54a3-55bd-85d5-59dd1e1453a6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0d0bec9a-29fa-5957-b1cf-2146132f2fee",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "245bdc6c-4248-517f-bf9b-98b34fa60a72",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Molin, 6430 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "39d3a755-829b-5f05-b750-cca52400e67a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ba6ddd43-54a3-55bd-85d5-59dd1e1453a6",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

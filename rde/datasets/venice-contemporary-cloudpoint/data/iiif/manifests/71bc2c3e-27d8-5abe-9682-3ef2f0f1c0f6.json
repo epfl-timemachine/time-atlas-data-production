@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "71bc2c3e-27d8-5abe-9682-3ef2f0f1c0f6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Scuola Grande San Teodoro, 6745 - SM 4818,SM 4815,SM 4812,SM 4814,SM 4816,SM 4817,SM 4813,SM 4811"
+    ]
+  },
+  "items": [
+    {
+      "id": "87e8c02c-56cb-52d7-afba-74bf05ef4bab",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Scuola Grande San Teodoro, 6745 - SM 4818,SM 4815,SM 4812,SM 4814,SM 4816,SM 4817,SM 4813,SM 4811"
+        ]
+      },
+      "items": [
+        {
+          "id": "4d5617ae-e248-5415-86aa-bbf37a8c47c9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1a0cf2fd-4e7a-5d94-b660-6c0b023dd084",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6745.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "87e8c02c-56cb-52d7-afba-74bf05ef4bab"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "69acaae0-24c3-5fb5-b615-7db7c67bd012",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3184498d-5cb5-5963-998a-b274e500cbec",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Scuola Grande San Teodoro, 6745 - SM 4818,SM 4815,SM 4812,SM 4814,SM 4816,SM 4817,SM 4813,SM 4811"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b869cdc1-30c4-5b79-9668-38bc33141c96"
+                }
+              ],
+              "target": [
+                {
+                  "id": "87e8c02c-56cb-52d7-afba-74bf05ef4bab",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "1bea674a-a1e8-5ad1-8299-f4569869d86d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Trevisan Cappello, 2006 - CS 4331,CS 4329,CS 4329/A,CS 4327,CS 4330/A,CS 4328,CS 4328/A"
+    ]
+  },
+  "items": [
+    {
+      "id": "77c94193-cef6-5285-845c-bb354c695f13",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Trevisan Cappello, 2006 - CS 4331,CS 4329,CS 4329/A,CS 4327,CS 4330/A,CS 4328,CS 4328/A"
+        ]
+      },
+      "items": [
+        {
+          "id": "9200c985-05ee-5f1f-8ceb-337a514517ef",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bbc01bab-1867-5209-a17d-a18f8434e46b",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_2006.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "77c94193-cef6-5285-845c-bb354c695f13"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1f84ca78-be1d-5773-8a88-2806068b7813",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "02d0883e-f812-53dc-8f80-c2a69e0aff88",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Trevisan Cappello, 2006 - CS 4331,CS 4329,CS 4329/A,CS 4327,CS 4330/A,CS 4328,CS 4328/A"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b90ff248-906f-5f08-9dc9-014f84c70a12"
+                }
+              ],
+              "target": [
+                {
+                  "id": "77c94193-cef6-5285-845c-bb354c695f13",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

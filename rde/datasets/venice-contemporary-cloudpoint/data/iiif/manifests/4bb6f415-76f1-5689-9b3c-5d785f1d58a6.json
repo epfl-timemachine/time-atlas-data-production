@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "4bb6f415-76f1-5689-9b3c-5d785f1d58a6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Albrizzi, 299 - CN 4118,CN 4115/A,CN 4119/A,CN 4117/A,CN 4116,CN 4117,CN 4115"
+    ]
+  },
+  "items": [
+    {
+      "id": "bd79652d-4cca-5658-a657-834f6045338c",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Albrizzi, 299 - CN 4118,CN 4115/A,CN 4119/A,CN 4117/A,CN 4116,CN 4117,CN 4115"
+        ]
+      },
+      "items": [
+        {
+          "id": "c2e6b9e6-0a55-5f47-996e-5ffb15f3077e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d3942e98-5306-5b74-a7cc-6d354927571c",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_299.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "bd79652d-4cca-5658-a657-834f6045338c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "721e2c3b-1a8c-56bc-a445-38bfc1c3e40e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b6923a31-ca64-53fa-9ddd-94ae8b89f3cd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Albrizzi, 299 - CN 4118,CN 4115/A,CN 4119/A,CN 4117/A,CN 4116,CN 4117,CN 4115"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3dbb433f-bfa2-537e-bde4-9a643089191e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bd79652d-4cca-5658-a657-834f6045338c",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ from typing import Optional, Union
 from collections import OrderedDict
 from pandas.core.indexes.multi import MultiIndex
 from enum import Enum
+from urllib.parse import quote_plus
 
 
 class SelectorType(Enum):
@@ -55,8 +56,8 @@ def generate_page_object(uuid_ns:uuid.UUID,
 def url_encoded_iiif_image_url(path:str) -> str:
     return f"https://image-timemachine.epfl.ch/iiif/3/{quote_plus(path)}"
 
-
-def single_3d_model_manifest(man_id:str, label: dict, access_url:str, format:str) -> dict: 
+def single_3d_model_manifest(uuid_ns: uuid.UUID, man_id:str, label: dict, access_url:str, format:str) -> dict: 
+   scene_id = str(uuid.uuid5(uuid_ns, man_id+'/scene/1'))
    return {
     "@context": "http://iiif.io/api/presentation/4/context.json",
     "id": man_id,
@@ -64,16 +65,16 @@ def single_3d_model_manifest(man_id:str, label: dict, access_url:str, format:str
     "label": label,
     "items": [
       {
-        "id": f"{man_id}/page/p1/1",
+        "id": scene_id,
         "type": "Scene",
         "label": label,
         "items": [
           {
-            "id": f"{man_id}/page/p1/1",
+            "id": str(uuid.uuid5(uuid_ns, f"{man_id}/page/p1/1")),
             "type": "AnnotationPage",
             "items": [
               {
-                "id": f"{man_id}/annotation/a1/1",
+                "id": str(uuid.uuid5(uuid_ns, f"{man_id}/annotation/a1/1")),
                 "type": "Annotation",
                 "motivation": ["painting"],
                 "body": {
@@ -81,7 +82,7 @@ def single_3d_model_manifest(man_id:str, label: dict, access_url:str, format:str
                   "type": "Model",
                   "format": format
                 },
-                "target": f"{man_id}/page/p1/1"
+                "target": scene_id
               }
             ]
           }
@@ -90,7 +91,6 @@ def single_3d_model_manifest(man_id:str, label: dict, access_url:str, format:str
     ]
   }
 
-from urllib.parse import quote_plus
 def iiif_canvas_object_from_page_obj(uuid_ns: uuid.UUID, page_obj:dict, lan:str) -> dict:
     # it is here that the annotation is generated, should be in page_obj.
     # todo: make the annotation and page id modular, and not hardcoded to 1 (cf. webannotation model, for multiple annotations per page)
@@ -139,26 +139,28 @@ def iiif_canvas_object_from_page_obj(uuid_ns: uuid.UUID, page_obj:dict, lan:str)
       ]
     }
     if metadata:
-        obj['annotations'] = [generate_hr_commenting_annotation(uuid_ns, page_obj['id'], lan, metadata)]
+        obj['annotations'] = [generate_hr_commenting_annotation(uuid_ns, page_obj['id'], lan, metadata, 'Canvas')]
     return obj
 
-def generate_hr_commenting_annotation(uuid_ns:str, canvas_uid:Union[tuple[str, str], str], lan:str, hr_txt_selector:list[tuple[str,str, Optional[Selector]]]) -> dict:
+def generate_hr_commenting_annotation(uuid_ns:str, canvas_uid:Union[tuple[str, str], str], lan:str, hr_txt_selector:list[tuple[str,str, Optional[Selector]]], container_type:str = 'Canvas') -> dict:
     '''
     This function returns a simple annotation object with a textual body, that has the transcription of the HR
     as well as the link to the HR object.
     '''
+    if container_type != 'Canvas' and container_type != 'Scene':
+        raise ValueError('Invalid container type for commenting annotation:', container_type)
     if len(hr_txt_selector[0]) == 2:
         # no selector present, casting the third value to None:
         hr_txt_selector = [(hr_id, txt, None) for hr_id, txt in hr_txt_selector]
     if isinstance(canvas_uid, str):
       target_obj = [{
         "id": canvas_uid,
-        "type": "Canvas"
+        "type": container_type
       }]
     elif isinstance(canvas_uid, tuple):
       target_obj = [{
         "id": canvas_uid[0],
-        "type": "Canvas",
+        "type": container_type,
       },{
         "id": canvas_uid[1],
         "type": "ExternalResource",
@@ -246,6 +248,22 @@ def generate_collection_manifest(uuid:str, label:dict[str, list[str]], manifests
         "metadata": [],
     }
 
+def generate_collection_manifest_no_thumbnail(uuid:str, label:dict[str, list[str]], manifests: dict[str, (str, dict)]) -> dict:
+    return {
+        "@context": "http://iiif.io/api/presentation/3/context.json",
+        "id": uuid,
+        "type": "Collection",
+        "label": label,
+        "items": [
+            {
+                "id": manifest_id,
+                "type": "Manifest",
+                "label": label_pag_obj[0],
+            } for manifest_id, label_pag_obj in manifests.items()
+        ],
+        "total": len(manifests),
+        "metadata": [],
+    }
 
 def generate_manifest_object(uuid_ns: uuid.UUID, manifest_uid:str, label: dict[str, list[str]], default_lan:str, pages:list[dict], structures:Optional[dict] = None) -> dict:
     first_page = pages[0]

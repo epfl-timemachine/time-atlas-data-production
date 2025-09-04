@@ -11,18 +11,22 @@ import os
 from iiif_validation.schemavalidator import validate
 
 def validate_iiif_file_and_report(fp:str, raise_error=False):
-    err_reports = validate(open(fp).read())
-    if err_reports['warnings'] and len(err_reports['warnings']) > 0:
-        print(f"{len(err_reports['warnings'])} warnings found in {fp}:")
-        for w in err_reports['warnings']:
-            print('Warning:', w)
-        
-    if err_reports['errorList'] and len(err_reports['errorList']) > 0:
-        print(f"{len(err_reports['errorList'])} errors found in {fp}:")
-        for w in err_reports['errorList']:
-            print('Error:', w)
-        if raise_error:
-            raise Exception('Validation errors found: ', err_reports['errorList'])
+    try:
+        err_reports = validate(open(fp).read())
+        if err_reports['warnings'] and len(err_reports['warnings']) > 0:
+            print(f"{len(err_reports['warnings'])} warnings found in {fp}:")
+            for w in err_reports['warnings']:
+                print('Warning:', w)
+            
+        if err_reports['errorList'] and len(err_reports['errorList']) > 0:
+            print(f"{len(err_reports['errorList'])} errors found in {fp}:")
+            for w in err_reports['errorList']:
+                print('Error:', w)
+            if raise_error:
+                raise Exception('Validation errors found: ', err_reports['errorList'])
+    except Exception as e:
+        print(f"Error validating {fp}: {e}")
+        raise e
 
 parent_dir = os.path.abspath('../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
@@ -132,6 +136,9 @@ if __name__ == '__main__':
                 validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'collections', c))
             man_list = os.listdir(os.path.join(iiif_loc_path, 'manifests'))
             print('Validating ', len(man_list), ' manifests of ', ds)
+            man_list = [m for m in man_list if m.endswith('.json')]
             for m in man_list:
-                validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'manifests', m))
-            
+                try:
+                    validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'manifests', m))
+                except Exception as e:
+                    print(f"Error validating {m}: {e}")

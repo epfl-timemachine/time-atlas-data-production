@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "a56f3cd0-78d7-517e-8921-c5b9384ccb12",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Unknown edifice name, 994 - CN 539/E,CN 539/C,CN 539/D,CN 539/A,CN 539/B,CN 539,CN 539/G,CN 539/F"
+    ]
+  },
+  "items": [
+    {
+      "id": "51c22022-ea93-51ca-a214-1fedcd69ed69",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Unknown edifice name, 994 - CN 539/E,CN 539/C,CN 539/D,CN 539/A,CN 539/B,CN 539,CN 539/G,CN 539/F"
+        ]
+      },
+      "items": [
+        {
+          "id": "16e6108b-42a0-503e-b661-7ad3941e3c3a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3ede1f2d-e0ec-5305-9edd-270fa92c84be",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_994.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "51c22022-ea93-51ca-a214-1fedcd69ed69"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e7303d6b-f4ba-510b-affd-f244b66c1bf9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3e76ffba-48d7-5b98-97ea-3fa47e58fc95",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Unknown edifice name, 994 - CN 539/E,CN 539/C,CN 539/D,CN 539/A,CN 539/B,CN 539,CN 539/G,CN 539/F"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f1621429-cf8c-5cca-bd28-6fa096de937a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "51c22022-ea93-51ca-a214-1fedcd69ed69",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

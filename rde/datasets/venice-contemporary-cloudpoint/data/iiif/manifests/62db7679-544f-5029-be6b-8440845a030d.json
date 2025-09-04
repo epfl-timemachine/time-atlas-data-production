@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "62db7679-544f-5029-be6b-8440845a030d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Pietro di Castello, 1582 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "0fd76692-7095-553a-b856-1083baa5c439",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Pietro di Castello, 1582 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "888cb6be-e6cb-542d-90c7-6d20f5ac4777",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f6951218-62db-51ea-aabe-6437dfcb4c12",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1582.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "0fd76692-7095-553a-b856-1083baa5c439"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8ab9e910-000e-5b46-b1d0-3de40c3a9511",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4f9c11ee-e830-5886-9b5f-ce69630669ba",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Pietro di Castello, 1582 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d4942706-ef6b-5eca-a9f6-b287453e39b6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0fd76692-7095-553a-b856-1083baa5c439",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

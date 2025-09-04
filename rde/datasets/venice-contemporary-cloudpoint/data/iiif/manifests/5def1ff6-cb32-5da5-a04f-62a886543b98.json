@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "5def1ff6-cb32-5da5-a04f-62a886543b98",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ca' Bembo, 4115 - DD 1075"
+    ]
+  },
+  "items": [
+    {
+      "id": "0d9fc6bb-41df-5356-a302-aae61272549e",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Ca' Bembo, 4115 - DD 1075"
+        ]
+      },
+      "items": [
+        {
+          "id": "f6f3823e-711b-5030-81b5-dc5215e4d2a0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eedeac5d-62ce-5fb3-9403-95339b36df7d",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_4115.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "0d9fc6bb-41df-5356-a302-aae61272549e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b0f9a1f3-573a-5859-a94f-181070dd3626",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8167c122-bbef-5f87-a113-44ff73d7646a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Ca' Bembo, 4115 - DD 1075"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "480f4971-5e1a-5034-a054-09197aa26e38"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0d9fc6bb-41df-5356-a302-aae61272549e",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "8e33eb29-9e00-51f2-a3f9-995f8f150a9d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Biagio, 1585 - CS 2132,CS 2131/B,CS 2131/A"
+    ]
+  },
+  "items": [
+    {
+      "id": "23cbbaf3-6790-5424-badc-b7ca35435625",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Biagio, 1585 - CS 2132,CS 2131/B,CS 2131/A"
+        ]
+      },
+      "items": [
+        {
+          "id": "0972268c-5948-5de6-926d-9cc5ac7582c4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "18725d5c-b519-5748-84ed-1462afa8043f",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1585.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "23cbbaf3-6790-5424-badc-b7ca35435625"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f60f8548-59f6-55d0-81c2-238f2f6bd564",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0bcdd779-ac60-58b9-8ce4-3c96f10be019",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Biagio, 1585 - CS 2132,CS 2131/B,CS 2131/A"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "10a829d5-41ad-5a18-84f8-5da1c7a15ae5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "23cbbaf3-6790-5424-badc-b7ca35435625",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

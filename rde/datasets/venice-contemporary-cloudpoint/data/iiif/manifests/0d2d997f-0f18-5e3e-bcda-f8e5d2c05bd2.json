@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "0d2d997f-0f18-5e3e-bcda-f8e5d2c05bd2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Albrizzi, 7435 - SP 1944,SP 1943,SP 1941,SP 1942,SP 1939,SP 1940"
+    ]
+  },
+  "items": [
+    {
+      "id": "52f2199c-4b01-589b-859a-a760b06109ff",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Albrizzi, 7435 - SP 1944,SP 1943,SP 1941,SP 1942,SP 1939,SP 1940"
+        ]
+      },
+      "items": [
+        {
+          "id": "212d471f-db5f-5336-97a5-2756cd7ffd6e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "25714d2e-cba5-585c-a155-62d4447298d6",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7435.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "52f2199c-4b01-589b-859a-a760b06109ff"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e7fb0a9f-309a-507e-891d-be457fabee80",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6a6a1317-f4a7-5d18-9c12-1c713f0b876b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Albrizzi, 7435 - SP 1944,SP 1943,SP 1941,SP 1942,SP 1939,SP 1940"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eb5dda89-f1f8-5f29-b910-71a6c6611043"
+                }
+              ],
+              "target": [
+                {
+                  "id": "52f2199c-4b01-589b-859a-a760b06109ff",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

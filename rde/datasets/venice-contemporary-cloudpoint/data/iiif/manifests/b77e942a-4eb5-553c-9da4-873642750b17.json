@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "b77e942a-4eb5-553c-9da4-873642750b17",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Giustinian Recanati, 3241 - DD 1402/A,DD 1403,DD 1402/B,DD 1402,DD 1369,DD 1402/C"
+    ]
+  },
+  "items": [
+    {
+      "id": "fbb5f6d9-f183-594a-84e0-21cb70334389",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Giustinian Recanati, 3241 - DD 1402/A,DD 1403,DD 1402/B,DD 1402,DD 1369,DD 1402/C"
+        ]
+      },
+      "items": [
+        {
+          "id": "d23ad8ce-b9b1-5f11-9d32-37d782062255",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "15f1f759-ef10-530c-a093-cc8cb7ea5f9c",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3241.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "fbb5f6d9-f183-594a-84e0-21cb70334389"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4a4407ec-7fb1-50fb-b10b-27cd615b4795",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5242908b-16f9-5984-bee8-20501fd46d34",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Giustinian Recanati, 3241 - DD 1402/A,DD 1403,DD 1402/B,DD 1402,DD 1369,DD 1402/C"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5555d855-cb1f-5bc2-ba4f-b02f5ff5a958"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fbb5f6d9-f183-594a-84e0-21cb70334389",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

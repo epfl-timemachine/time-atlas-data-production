@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "ed0e4961-e820-5223-8759-a3495718388e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Morosini Sagredo, 40 - CN 4001,CN 4197,CN 4001/A,CN 4000,CN 4198,CN 4195,CN 4196,CN 4001/C,CN 4001/B,CN 4199"
+    ]
+  },
+  "items": [
+    {
+      "id": "b2d269ed-c4e8-5861-b6fa-ac0df33cfaab",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Morosini Sagredo, 40 - CN 4001,CN 4197,CN 4001/A,CN 4000,CN 4198,CN 4195,CN 4196,CN 4001/C,CN 4001/B,CN 4199"
+        ]
+      },
+      "items": [
+        {
+          "id": "9bd28da8-8a9d-5e83-ac57-c5a0ce1a35b5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e9d13363-ab64-5aa2-9d9c-f3733833e968",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_40.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "b2d269ed-c4e8-5861-b6fa-ac0df33cfaab"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3c98b439-aeb0-56fb-920d-050e250f5c3f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0286e67f-4918-5d8a-9aff-b793ac73afbf",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Morosini Sagredo, 40 - CN 4001,CN 4197,CN 4001/A,CN 4000,CN 4198,CN 4195,CN 4196,CN 4001/C,CN 4001/B,CN 4199"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "327e8743-8d87-5634-aef9-26a3efe9af13"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b2d269ed-c4e8-5861-b6fa-ac0df33cfaab",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

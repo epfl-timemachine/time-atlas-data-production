@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "0cf4fb1e-a6cf-5386-a192-5351c5cfaf55",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Silvestro, 7432 - SP 1102/A"
+    ]
+  },
+  "items": [
+    {
+      "id": "bbc9273d-10f3-5596-a714-a7a64856412a",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Silvestro, 7432 - SP 1102/A"
+        ]
+      },
+      "items": [
+        {
+          "id": "a5187ea5-41b7-525c-aa19-2aa9d518c117",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1f7f5994-0966-51a4-a6b2-5048c61e5c21",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7432.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "bbc9273d-10f3-5596-a714-a7a64856412a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "31da75ab-e516-5431-9fa7-8eeba24d1e71",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e0626b8a-db3d-5787-8a03-9845da49ec9d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Silvestro, 7432 - SP 1102/A"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d4184dde-1c7b-5811-a5cf-9e1c73872b63"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bbc9273d-10f3-5596-a714-a7a64856412a",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

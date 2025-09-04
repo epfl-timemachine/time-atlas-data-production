@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "5191c055-ae6c-5471-abad-25c04cc53d4a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Polo, 7430 - SP 2119/A"
+    ]
+  },
+  "items": [
+    {
+      "id": "98bba729-71e7-596e-b7d3-f60d11690e95",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Polo, 7430 - SP 2119/A"
+        ]
+      },
+      "items": [
+        {
+          "id": "5bbf38ef-ce69-580e-819b-8e51003532ba",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "318d264f-e57c-5e9f-bd47-448b6aad7a2c",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7430.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "98bba729-71e7-596e-b7d3-f60d11690e95"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e4f211da-3102-5406-95fe-90c1f948466c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "df3e245c-223d-5aba-8cea-c13fca936fbf",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Polo, 7430 - SP 2119/A"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bdf0e81c-c442-5bd9-bb6c-b35fe7610168"
+                }
+              ],
+              "target": [
+                {
+                  "id": "98bba729-71e7-596e-b7d3-f60d11690e95",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

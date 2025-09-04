@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "437b1bdd-3fc6-5f05-834f-73527bb6217c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Gritti Badoer, 1617 - CS 3491/B,CS 3606,CS 3607,CS 3492,CS 3604,CS 3609,CS 3605,CS 3608"
+    ]
+  },
+  "items": [
+    {
+      "id": "1fa33140-2051-51e5-9b8e-504e7a9d6fdd",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Gritti Badoer, 1617 - CS 3491/B,CS 3606,CS 3607,CS 3492,CS 3604,CS 3609,CS 3605,CS 3608"
+        ]
+      },
+      "items": [
+        {
+          "id": "4596b601-2232-5bf1-8f6d-63c9cb504b2f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e0ae999c-8497-5b21-b862-1f372e75f56a",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1617.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "1fa33140-2051-51e5-9b8e-504e7a9d6fdd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e5adb538-00db-5149-b3f9-c4a2c3f61930",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1f3400ac-418a-5f7c-b482-b89d49c63eb7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Gritti Badoer, 1617 - CS 3491/B,CS 3606,CS 3607,CS 3492,CS 3604,CS 3609,CS 3605,CS 3608"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "651315db-47d8-5ea0-86d4-bf307f0122c1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1fa33140-2051-51e5-9b8e-504e7a9d6fdd",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

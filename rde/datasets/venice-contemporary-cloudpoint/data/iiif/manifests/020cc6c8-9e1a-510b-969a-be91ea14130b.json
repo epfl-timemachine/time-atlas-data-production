@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "020cc6c8-9e1a-510b-969a-be91ea14130b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Testa, 45 - CN 465,CN 467,CN 463,CN 468,CN 466,CN 464,CN 469"
+    ]
+  },
+  "items": [
+    {
+      "id": "f2bf12b9-0e95-50fb-bdc2-9cc44383d4b7",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Testa, 45 - CN 465,CN 467,CN 463,CN 468,CN 466,CN 464,CN 469"
+        ]
+      },
+      "items": [
+        {
+          "id": "f488cbb0-3ba8-5646-81d5-5c8155d64415",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b09b9c8d-16e4-59b4-84ff-0b9dce50184a",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_45.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "f2bf12b9-0e95-50fb-bdc2-9cc44383d4b7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e4e21bf0-7efa-5d0d-bcd6-48344670aa09",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "54801b53-fb6b-5cee-901e-1945fcb91ed2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Testa, 45 - CN 465,CN 467,CN 463,CN 468,CN 466,CN 464,CN 469"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "afed8889-6efa-5b13-8e89-3bb21ae1d536"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f2bf12b9-0e95-50fb-bdc2-9cc44383d4b7",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

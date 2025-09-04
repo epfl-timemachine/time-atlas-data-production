@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "18c03345-f483-5fbe-aede-f30c45956fa6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Martino, 1595 - CS 2358/B"
+    ]
+  },
+  "items": [
+    {
+      "id": "bf89b5f8-f6cf-5059-8567-e782e7b243d3",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Martino, 1595 - CS 2358/B"
+        ]
+      },
+      "items": [
+        {
+          "id": "2cba2b05-070b-5459-8029-6a83437ed0ae",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dcfefb86-3bdf-5d4c-9cef-991acd7ab94a",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1595.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "bf89b5f8-f6cf-5059-8567-e782e7b243d3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9ae79bf7-38d3-579b-9a97-7dff9954cc85",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b3eadb07-705a-541b-ad61-0df4251dd786",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Martino, 1595 - CS 2358/B"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5cb2b89d-48b3-5052-80bc-8e664b8b17b9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bf89b5f8-f6cf-5059-8567-e782e7b243d3",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "d3776091-65b0-5a1f-91a4-6e07e8fa661b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Monastero di Sant'Anna, 3207 - CS 501"
+    ]
+  },
+  "items": [
+    {
+      "id": "05d6c1e0-d552-509f-a401-c72748bf4a24",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Monastero di Sant'Anna, 3207 - CS 501"
+        ]
+      },
+      "items": [
+        {
+          "id": "8f6d22b8-f0ba-5203-9ec9-440efeeed7c6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fd3ac326-969a-5995-8f24-82da2758a7ba",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3207.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "05d6c1e0-d552-509f-a401-c72748bf4a24"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6eb3b211-9bd8-57f5-9270-90a0c7f6d567",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8f22b7f0-f425-5b69-87a8-24971cc425b8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Monastero di Sant'Anna, 3207 - CS 501"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f3739268-9276-5d50-b910-091b494099a9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "05d6c1e0-d552-509f-a401-c72748bf4a24",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

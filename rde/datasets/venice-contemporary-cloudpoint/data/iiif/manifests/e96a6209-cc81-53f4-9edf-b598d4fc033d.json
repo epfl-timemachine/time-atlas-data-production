@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "e96a6209-cc81-53f4-9edf-b598d4fc033d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Unknown edifice name, 1649 - CS 1661,CS 1662"
+    ]
+  },
+  "items": [
+    {
+      "id": "b73371bf-7026-502c-ae91-1cd6adb78d3f",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Unknown edifice name, 1649 - CS 1661,CS 1662"
+        ]
+      },
+      "items": [
+        {
+          "id": "b35af19e-249e-5b69-87da-128bd99e90ca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aa4e34a2-ff13-5261-b3bd-e57388acac08",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1649.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "b73371bf-7026-502c-ae91-1cd6adb78d3f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fc228bb1-caef-597e-a0bf-38428ad66418",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3af99455-44aa-525d-9a08-31769944ea9b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Unknown edifice name, 1649 - CS 1661,CS 1662"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "99e5c5fb-59b3-5dde-9ed3-97249d4adb2d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b73371bf-7026-502c-ae91-1cd6adb78d3f",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

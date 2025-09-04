@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "0233f01c-411e-5be3-9f5a-7bdc8029e5a5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Patriarcale, 7123 - SM 319/A,SM 319,SM 318/A,SM 318,SM 337/A,SM 333,SM 337/E,SM 337/B"
+    ]
+  },
+  "items": [
+    {
+      "id": "36192fad-125d-55ac-9611-086efe61efd0",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Patriarcale, 7123 - SM 319/A,SM 319,SM 318/A,SM 318,SM 337/A,SM 333,SM 337/E,SM 337/B"
+        ]
+      },
+      "items": [
+        {
+          "id": "98b2e4b4-1bcd-5246-b170-6f187911c9a0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "27eb82b8-966b-5913-b378-8d5c7e2ba4e9",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7123.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "36192fad-125d-55ac-9611-086efe61efd0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3adf6006-56b4-5595-9707-77c94b9b3649",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e61db7e1-5d3f-5384-9e1a-5ea5e6635dda",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Patriarcale, 7123 - SM 319/A,SM 319,SM 318/A,SM 318,SM 337/A,SM 333,SM 337/E,SM 337/B"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "096ac28d-e335-55e5-8ea5-cfbf19ade948"
+                }
+              ],
+              "target": [
+                {
+                  "id": "36192fad-125d-55ac-9611-086efe61efd0",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

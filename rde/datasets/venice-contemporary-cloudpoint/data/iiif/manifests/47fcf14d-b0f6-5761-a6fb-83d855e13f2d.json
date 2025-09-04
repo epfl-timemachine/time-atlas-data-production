@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "47fcf14d-b0f6-5761-a6fb-83d855e13f2d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Santa Croce degli Armeni, 6400 - SM 965,SM 960,SM 963,SM 964,SM 962,SM 961,SM 965/A,SM 983"
+    ]
+  },
+  "items": [
+    {
+      "id": "bfd76da5-0e71-529e-a592-78aad0e574d6",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Santa Croce degli Armeni, 6400 - SM 965,SM 960,SM 963,SM 964,SM 962,SM 961,SM 965/A,SM 983"
+        ]
+      },
+      "items": [
+        {
+          "id": "b8dab1b2-0cbf-581a-a4d8-c0ef8a7ad10c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d64e0def-7c1c-5097-b73d-3c6d10485c37",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6400.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "bfd76da5-0e71-529e-a592-78aad0e574d6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f741616c-2949-5677-83bb-7f579fbdc1cf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e587d1e-45dd-5c38-85fe-5999249ad477",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Santa Croce degli Armeni, 6400 - SM 965,SM 960,SM 963,SM 964,SM 962,SM 961,SM 965/A,SM 983"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e50c8616-5d2e-500d-b837-82c624214f75"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bfd76da5-0e71-529e-a592-78aad0e574d6",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "d3b2b216-29bc-541c-b84d-5601c1c38c1e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Simeon Grande, 7849 - SC 924"
+    ]
+  },
+  "items": [
+    {
+      "id": "7bd45f9e-6661-54a9-9b9b-4234513b59a2",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Simeon Grande, 7849 - SC 924"
+        ]
+      },
+      "items": [
+        {
+          "id": "3f53702c-a902-5d2a-9202-93700dd581c7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "466d36ec-8104-5967-96a9-d5c475f0f401",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7849.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "7bd45f9e-6661-54a9-9b9b-4234513b59a2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a58bc777-aac2-5367-a914-f06fb86b21a3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7a25ccc8-2063-54fe-a3b3-2b5029ca77e1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Simeon Grande, 7849 - SC 924"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ea4c1f1a-91a5-5548-950f-bc6d5881b523"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7bd45f9e-6661-54a9-9b9b-4234513b59a2",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

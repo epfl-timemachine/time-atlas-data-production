@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "1c2aedd9-b2a5-5eb6-bcc5-fc916629082c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Campanile di San Luca, 6831 - SM 4040,SM 4041,SM 4064,SM 4060,SM 4066,SM 4042,SM 4065"
+    ]
+  },
+  "items": [
+    {
+      "id": "03c8003a-5f59-5fa1-99e9-15f14d5ec402",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Campanile di San Luca, 6831 - SM 4040,SM 4041,SM 4064,SM 4060,SM 4066,SM 4042,SM 4065"
+        ]
+      },
+      "items": [
+        {
+          "id": "d020c2b4-8863-57f7-a20c-e00094baf9eb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "527a8fee-7c01-505b-94ce-26dbe6afa638",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6831.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "03c8003a-5f59-5fa1-99e9-15f14d5ec402"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "77dfb4cc-c098-5898-85ee-645bece2b90d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "979e196d-68da-530a-aa0c-80d198e70bc9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Campanile di San Luca, 6831 - SM 4040,SM 4041,SM 4064,SM 4060,SM 4066,SM 4042,SM 4065"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c06db2cf-fb06-5469-903c-ede8ba44b93f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "03c8003a-5f59-5fa1-99e9-15f14d5ec402",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "6a70e2e0-e815-51fe-bd39-403604c0f640",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Muazzo, 3182 - CS 6451,CS 6451/A,CS 6451/C,CS 6452/B,CS 6451/D,CS 6451/B"
+    ]
+  },
+  "items": [
+    {
+      "id": "cec6d959-cf36-5923-8951-60cd675e607b",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Muazzo, 3182 - CS 6451,CS 6451/A,CS 6451/C,CS 6452/B,CS 6451/D,CS 6451/B"
+        ]
+      },
+      "items": [
+        {
+          "id": "7689f5f9-23a2-5193-9fde-f2b36e10d252",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9fdb3fe3-6e60-55d8-8076-97d378f8d73d",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3182.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "cec6d959-cf36-5923-8951-60cd675e607b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1dc539d9-cd29-5032-8489-8d556edd01c1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0e6ac363-7540-5c7c-b24b-9e9d623b6e66",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Muazzo, 3182 - CS 6451,CS 6451/A,CS 6451/C,CS 6452/B,CS 6451/D,CS 6451/B"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bb1edcad-6fc8-58d4-aeff-2cb2829fd346"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cec6d959-cf36-5923-8951-60cd675e607b",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "e65d4eb2-6439-5ad7-b915-9ea7c674fd0c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzetto Zatta, 1483 - CN 329/A,CN 278/A,CN 278,CN 329,CN 329/B,CN 328,CN 278/B,CN 278/C"
+    ]
+  },
+  "items": [
+    {
+      "id": "ef253ab0-fa19-5b46-8fe8-210801690968",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzetto Zatta, 1483 - CN 329/A,CN 278/A,CN 278,CN 329,CN 329/B,CN 328,CN 278/B,CN 278/C"
+        ]
+      },
+      "items": [
+        {
+          "id": "33c5bf26-f047-5d41-952f-aa4a3f771b37",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b8ad6f26-ccd4-57bf-8e5e-55e68b78c16b",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1483.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "ef253ab0-fa19-5b46-8fe8-210801690968"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6abca24e-d530-5f0b-afe1-844d9171148a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3b865469-5654-58b0-94aa-c54d4bb92745",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzetto Zatta, 1483 - CN 329/A,CN 278/A,CN 278,CN 329,CN 329/B,CN 328,CN 278/B,CN 278/C"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b501e6d3-d6ae-5578-98cb-e4f013153005"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ef253ab0-fa19-5b46-8fe8-210801690968",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "3dcbb92a-9b3f-50ca-9905-73bb1153a5a7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ca' Foscari, 3214 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "8faf401e-e6ab-596b-beaf-64e1a5e848eb",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Ca' Foscari, 3214 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "a44395dc-9bc7-50f2-a137-b6ba2a572f56",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b0d4dbbf-c803-5d30-9f4f-991b018aed0e",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3214.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "8faf401e-e6ab-596b-beaf-64e1a5e848eb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "686dc45b-9a56-5e1d-9527-455cd03c3699",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3a10aa8f-f285-58d6-ae25-4cc473fbbc41",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Ca' Foscari, 3214 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "288d93dd-16ab-5034-894f-96b10557438a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8faf401e-e6ab-596b-beaf-64e1a5e848eb",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "111bd716-38bf-57f7-a17f-4ad2b1dfaecd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Arsenale, 1809 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "4592a71a-865b-5891-9431-415411da69d6",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Arsenale, 1809 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "9a27abaa-1ebf-57e5-9f9e-dea7fd6774e0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ee91f15f-04db-58f5-80f8-09e50cfc6e96",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1809.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "4592a71a-865b-5891-9431-415411da69d6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "71dbcb03-d461-5156-bcbf-9e7c49c347f0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fa8d70ef-9e96-5ac9-b2a0-69ee69f2ab44",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Arsenale, 1809 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "48cfcae6-1acb-5540-98f3-89fc8c33e9e8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4592a71a-865b-5891-9431-415411da69d6",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

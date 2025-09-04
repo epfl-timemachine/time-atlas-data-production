@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "1d793f14-9c63-52ed-b910-1f425ccf9be8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Monastero dei Gesuiti, 1577 - CN 4879,CN 4880,CN 4876/A,CN 4878,CN 4877,CN 4882,CN 4876,CN 4881"
+    ]
+  },
+  "items": [
+    {
+      "id": "67d08a88-577e-5b76-8fc2-c10e7a5fddcc",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Monastero dei Gesuiti, 1577 - CN 4879,CN 4880,CN 4876/A,CN 4878,CN 4877,CN 4882,CN 4876,CN 4881"
+        ]
+      },
+      "items": [
+        {
+          "id": "a5235741-1e48-568c-a718-f60c7d115ee4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "040d35e4-be09-52fb-af91-803ee1f9cf50",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1577.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "67d08a88-577e-5b76-8fc2-c10e7a5fddcc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f4aa3d19-116d-528e-83f8-fe6726018448",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "08221d59-6512-5b21-ab8b-12e5d173adfe",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Monastero dei Gesuiti, 1577 - CN 4879,CN 4880,CN 4876/A,CN 4878,CN 4877,CN 4882,CN 4876,CN 4881"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b9ef9133-d7fa-549b-a2e1-77fa4a909a4b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "67d08a88-577e-5b76-8fc2-c10e7a5fddcc",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "92e59417-41a0-54b4-81f7-b17be549bea0",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Moro, 3245 - DD 1264,DD 1265/B,DD 1265,DD 1265/A,DD 1266/A,DD 1263/A,DD 1263"
+    ]
+  },
+  "items": [
+    {
+      "id": "c6798510-1fd4-5e72-a07c-13448926041b",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Moro, 3245 - DD 1264,DD 1265/B,DD 1265,DD 1265/A,DD 1266/A,DD 1263/A,DD 1263"
+        ]
+      },
+      "items": [
+        {
+          "id": "0c9fa064-03b7-5750-a5d3-898c59452cdb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eaad32b3-9355-514f-a32f-588daef21d29",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3245.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "c6798510-1fd4-5e72-a07c-13448926041b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c261f6b5-3855-5fb2-9b37-7c57ac26f0ce",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fd391e96-8210-5f82-accc-20e912c51b6a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Moro, 3245 - DD 1264,DD 1265/B,DD 1265,DD 1265/A,DD 1266/A,DD 1263/A,DD 1263"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f72bf08b-b0eb-500e-aaa1-a16a3e70399d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c6798510-1fd4-5e72-a07c-13448926041b",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

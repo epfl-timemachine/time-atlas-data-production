@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "c20bf0e5-952d-526a-83d5-4df07f68832c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Unknown edifice name, 1338 - CN 1333/B,CN 1334/C,CN 1332,CN 1333/C,CN 1333,CN 1334/A"
+    ]
+  },
+  "items": [
+    {
+      "id": "3b5aad0d-99f2-5733-b3d5-86f96d8ec07f",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Unknown edifice name, 1338 - CN 1333/B,CN 1334/C,CN 1332,CN 1333/C,CN 1333,CN 1334/A"
+        ]
+      },
+      "items": [
+        {
+          "id": "e81f9d69-d26f-547d-9f7f-576416651c5c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c5a688f9-6139-5911-b9a0-abfcf8141e6b",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1338.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "3b5aad0d-99f2-5733-b3d5-86f96d8ec07f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "97eb9cda-0e09-5d1b-966c-9a73cb9d06f6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8b9db080-33c0-50f1-8bc5-36144a9ac3a6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Unknown edifice name, 1338 - CN 1333/B,CN 1334/C,CN 1332,CN 1333/C,CN 1333,CN 1334/A"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "54ec2c4c-da39-5c57-97b4-c4ff2bd8d0b6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3b5aad0d-99f2-5733-b3d5-86f96d8ec07f",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

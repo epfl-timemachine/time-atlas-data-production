@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "9f3590d1-ac82-5884-81ba-92ece9f663bd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Priuli Scarpon, 1459 - CN 3710,CN 3711"
+    ]
+  },
+  "items": [
+    {
+      "id": "bc533888-8303-56d4-9a7e-96dc4cbbb4af",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Priuli Scarpon, 1459 - CN 3710,CN 3711"
+        ]
+      },
+      "items": [
+        {
+          "id": "3c305a9c-4516-5256-abed-55a5e184b353",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "beb47cef-d95d-5ccc-99de-a22a742eebb4",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1459.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "bc533888-8303-56d4-9a7e-96dc4cbbb4af"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c04b8645-9b9c-56ca-9abc-01bd2c6b21c4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e2f74697-95b1-52b0-b734-711dc51adf22",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Priuli Scarpon, 1459 - CN 3710,CN 3711"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4cb1b3f0-9fca-5af0-a902-e185a3b52aad"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bc533888-8303-56d4-9a7e-96dc4cbbb4af",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "5c2fc927-773d-57dc-a6f5-59b16ce1c183",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Giorgio Maggiore, 6083 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "79317db2-8cde-58d1-a1d5-0a5480e82eaf",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Giorgio Maggiore, 6083 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "e31d306f-2f5f-5f89-a85d-a31f03c1f5f2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "62e312ef-70e5-5e42-99b6-9262d25a8010",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6083.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "79317db2-8cde-58d1-a1d5-0a5480e82eaf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e637fab8-12ef-58b1-a489-a6f688ca5c10",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0c37256f-7451-5e2d-89fe-9bd6f72e3db2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Giorgio Maggiore, 6083 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a510cf3d-6eda-5a22-ad02-cd9cdb251350"
+                }
+              ],
+              "target": [
+                {
+                  "id": "79317db2-8cde-58d1-a1d5-0a5480e82eaf",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

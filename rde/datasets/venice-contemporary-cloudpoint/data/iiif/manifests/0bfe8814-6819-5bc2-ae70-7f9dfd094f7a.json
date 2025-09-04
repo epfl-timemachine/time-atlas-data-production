@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "0bfe8814-6819-5bc2-ae70-7f9dfd094f7a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ca' Biondetti, 3211 - DD 716,DD 714,DD 715"
+    ]
+  },
+  "items": [
+    {
+      "id": "e30c29ab-806e-5fe1-a6ec-6ec89e7a3e31",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Ca' Biondetti, 3211 - DD 716,DD 714,DD 715"
+        ]
+      },
+      "items": [
+        {
+          "id": "82882f72-c5db-5cae-9550-984e0f90b5bf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d7e24ee4-2b0d-5a22-aade-f2f9d73c68fa",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3211.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "e30c29ab-806e-5fe1-a6ec-6ec89e7a3e31"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d04dd0f5-db2b-5210-9a3a-a14f717b8a71",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c9790329-8bd6-590e-9b9f-c2a3c68369a0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Ca' Biondetti, 3211 - DD 716,DD 714,DD 715"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4be153a7-fd67-53fb-ada8-f3cacfc4f815"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e30c29ab-806e-5fe1-a6ec-6ec89e7a3e31",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

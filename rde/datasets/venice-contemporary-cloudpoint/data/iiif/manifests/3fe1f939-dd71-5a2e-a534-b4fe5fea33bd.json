@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "3fe1f939-dd71-5a2e-a534-b4fe5fea33bd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Monastero di Santa Maria della Visitazione, 3324 - DD 918/B,DD 919,DD 917/A,DD 917/B,DD 918,DD 919/B,DD 918/A,DD 917"
+    ]
+  },
+  "items": [
+    {
+      "id": "b0654a01-caaf-591a-82be-29273f13fe0e",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Monastero di Santa Maria della Visitazione, 3324 - DD 918/B,DD 919,DD 917/A,DD 917/B,DD 918,DD 919/B,DD 918/A,DD 917"
+        ]
+      },
+      "items": [
+        {
+          "id": "0d83147c-4fac-5791-826a-fce85e11762c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e0fefe48-75aa-56d6-a657-8e12faf5d4ae",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3324.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "b0654a01-caaf-591a-82be-29273f13fe0e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "623b4eb0-15df-5ff8-b727-60629e197f87",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c3028e1a-1641-56c1-b578-f0b0fa912813",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Monastero di Santa Maria della Visitazione, 3324 - DD 918/B,DD 919,DD 917/A,DD 917/B,DD 918,DD 919/B,DD 918/A,DD 917"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eb811324-f78f-5fad-bd68-f11dd77d6fbb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b0654a01-caaf-591a-82be-29273f13fe0e",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

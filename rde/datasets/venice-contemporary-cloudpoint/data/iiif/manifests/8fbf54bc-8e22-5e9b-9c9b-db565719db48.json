@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "8fbf54bc-8e22-5e9b-9c9b-db565719db48",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Widmann, 56 - CN 5404,CN 5419/B,CN 5404/B,CN 5419,CN 5404/A,CN 5403,CN 5419/C,CN 5419/A,CN 5408"
+    ]
+  },
+  "items": [
+    {
+      "id": "164326be-7002-5167-812d-bf4210e857f1",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Widmann, 56 - CN 5404,CN 5419/B,CN 5404/B,CN 5419,CN 5404/A,CN 5403,CN 5419/C,CN 5419/A,CN 5408"
+        ]
+      },
+      "items": [
+        {
+          "id": "d64c7db2-27cd-5df1-8533-f738c545b144",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "234d11ec-8b55-53ff-8c7c-d4dc4e090a9e",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_56.las",
+                "type": "Model",
+                "format": "model/las-binary"
+              },
+              "target": "164326be-7002-5167-812d-bf4210e857f1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ed4cc8c2-7696-5052-908c-5fbaad26755d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "33511d46-efe8-5aca-9e0b-f7bf1507576a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Widmann, 56 - CN 5404,CN 5419/B,CN 5404/B,CN 5419,CN 5404/A,CN 5403,CN 5419/C,CN 5419/A,CN 5408"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "43aa170b-edfb-50f2-ab52-6fee8f7e52b8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "164326be-7002-5167-812d-bf4210e857f1",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
