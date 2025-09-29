@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e8aa98fe-d4db-5184-a1ea-b0cf15369169",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Altmarkt und König-Jo"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bs_0002579_postkarte.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "271ffe6d-9caa-5d20-b779-0546710180cf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Altmarkt und König-Jo"
+        ]
+      },
+      "height": 1000,
+      "width": 1507,
+      "items": [
+        {
+          "id": "ab5ccfd2-4883-53ec-a382-5f249bfd4ece",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b3420369-d043-55a3-b6d3-2432d3c60493",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bs_0002579_postkarte.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1000,
+                "width": 1507,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bs_0002579_postkarte.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "271ffe6d-9caa-5d20-b779-0546710180cf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "87dd0727-44a6-56d8-bb4d-c82786278b0c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e6374725-c19b-51f9-8ee2-317052af080a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Altmarkt und König-Jo"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9c63e0db-0315-52d8-80b4-f7db9f1e61e6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "271ffe6d-9caa-5d20-b779-0546710180cf",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/725264c4-3533-492a-8e44-2952d0b53c0e/df_bs_0002579_postkarte.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

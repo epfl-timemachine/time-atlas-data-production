@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a24ad784-b6d4-509b-8e56-ed01c18a521e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Salzgasse"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006396.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "78fb6da8-7d03-532d-90ea-02838b35cbba",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Salzgasse"
+        ]
+      },
+      "height": 1600,
+      "width": 1278,
+      "items": [
+        {
+          "id": "abdf7193-2788-5c1b-93fd-79c96afa54bb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "09cb13ef-99fe-50c6-9b64-a967c9f89e8a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006396.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1278,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006396.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "78fb6da8-7d03-532d-90ea-02838b35cbba"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2fd1db7f-3050-5843-a110-214fb6339d3a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f88c6412-a295-539b-bbcb-d90df27eb2dd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Salzgasse"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ad17fd07-1f80-5f85-a164-ac1723c25a00"
+                }
+              ],
+              "target": [
+                {
+                  "id": "78fb6da8-7d03-532d-90ea-02838b35cbba",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/84186783-baf1-403f-bd9a-2ec697f45469/df_hauptkatalog_0006396.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1ce46ac4-4f2d-5ccb-8d7a-0a55d4e298f7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden: Blick über die Frauen"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313003_a.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eb625629-7438-5959-8539-d5e62252eabb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden: Blick über die Frauen"
+        ]
+      },
+      "height": 1515,
+      "width": 1214,
+      "items": [
+        {
+          "id": "4d9de093-5d19-5d46-a7c8-3753c81116cd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "033a75b6-d2a5-5912-9380-059a2a3ec941",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313003_a.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1515,
+                "width": 1214,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313003_a.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eb625629-7438-5959-8539-d5e62252eabb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6494d2f5-54f0-5861-8ecd-35b5b53a883f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6d69bb07-3b79-5f5c-9fd5-0b34e7c9ee77",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden: Blick über die Frauen"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d07bc6e7-93b3-51e1-939d-9c9db7c6c7e7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eb625629-7438-5959-8539-d5e62252eabb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/a8c8a5f1-82f8-414a-be4e-40e13066f1ff/df_hauptkatalog_0313003_a.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

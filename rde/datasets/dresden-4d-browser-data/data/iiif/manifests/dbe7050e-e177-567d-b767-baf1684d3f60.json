@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dbe7050e-e177-567d-b767-baf1684d3f60",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Opernhaus am Zwinger"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121397.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "16ce6860-e218-55c1-af6b-c207d2611c1d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Opernhaus am Zwinger"
+        ]
+      },
+      "height": 1098,
+      "width": 1600,
+      "items": [
+        {
+          "id": "06c1b39a-fe70-5de3-ba6f-d1cc72162eb3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "84e0eae5-cef8-511f-8a3a-5442f29c915e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121397.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1098,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121397.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "16ce6860-e218-55c1-af6b-c207d2611c1d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8bac9985-2ef4-5bef-a0be-44c8cbebc2e5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cfc42c6c-f1bb-5fba-818f-a38938066905",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Opernhaus am Zwinger"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2fe65e9d-32e2-5ee4-b46e-251b2ffe3bf6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "16ce6860-e218-55c1-af6b-c207d2611c1d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/dd9f342a-ad40-4db7-95e7-8e213701f753/df_hauptkatalog_0121397.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

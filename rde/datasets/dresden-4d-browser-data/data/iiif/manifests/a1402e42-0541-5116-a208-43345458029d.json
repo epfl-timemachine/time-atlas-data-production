@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a1402e42-0541-5116-a208-43345458029d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt. Adolf-Hitler"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0310727.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0100b1c0-a14b-5c38-a9be-0b07c0cd3ddc",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt. Adolf-Hitler"
+        ]
+      },
+      "height": 965,
+      "width": 1584,
+      "items": [
+        {
+          "id": "9ea1db82-3f51-5008-8f48-9b1e540537e7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d5217470-a050-541e-839e-96269ae5f12f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0310727.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 965,
+                "width": 1584,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0310727.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0100b1c0-a14b-5c38-a9be-0b07c0cd3ddc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a52eca5c-9a2b-52cb-bc05-b322a3e3cc86",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b13bd53e-d8c1-5db3-888e-c0a153d0f736",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt. Adolf-Hitler"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "abf58212-883e-52ab-aef1-d0c2724ba66d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0100b1c0-a14b-5c38-a9be-0b07c0cd3ddc",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e07bb189-e489-4aec-8405-9e55b8f946da/df_hauptkatalog_0310727.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

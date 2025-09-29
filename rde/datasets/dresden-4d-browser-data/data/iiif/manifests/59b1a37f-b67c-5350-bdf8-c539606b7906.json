@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "59b1a37f-b67c-5350-bdf8-c539606b7906",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Nymphenbad"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0112502.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8803d78d-6abc-5aee-b602-4b6ba343aa7f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Nymphenbad"
+        ]
+      },
+      "height": 1600,
+      "width": 1133,
+      "items": [
+        {
+          "id": "ef5404ec-abd9-589a-8ec8-e30bfc171fca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "203f9fe0-4caa-5aac-8588-431867564dc3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0112502.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1133,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0112502.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8803d78d-6abc-5aee-b602-4b6ba343aa7f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5b894da6-e3e0-59a7-aecc-ce98a3b318ec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5382bb32-fee8-5f96-9289-ef1c6274393b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Nymphenbad"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1e86f5cc-ac3a-5ce3-8527-a411d2628582"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8803d78d-6abc-5aee-b602-4b6ba343aa7f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/32ada325-3dae-4e91-a2cb-8af73f582a81/df_hauptkatalog_0112502.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

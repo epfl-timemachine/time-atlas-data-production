@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ed452b46-441f-51c0-8a90-7e9a7a0cba3d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Die Brühlsche Terrass"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0123456.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "209fc1cf-7b1c-500a-bad0-3a1ca9dce3b0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Die Brühlsche Terrass"
+        ]
+      },
+      "height": 1132,
+      "width": 1600,
+      "items": [
+        {
+          "id": "805c4553-5e9a-5c67-a397-bbc1e655edfa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "db9bce0a-8b9e-5ed9-8375-3bc7afc62078",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0123456.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1132,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0123456.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "209fc1cf-7b1c-500a-bad0-3a1ca9dce3b0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a2c21dc0-fe3b-56c6-975e-c5483e8dac78",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cddef924-06c5-5dbc-92a7-987536cff05e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Die Brühlsche Terrass"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a1976e46-ea04-58e8-a0d7-42a703cdff6c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "209fc1cf-7b1c-500a-bad0-3a1ca9dce3b0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ac55731a-ccf9-48bf-a571-ed1cd9407b61/df_hauptkatalog_0123456.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

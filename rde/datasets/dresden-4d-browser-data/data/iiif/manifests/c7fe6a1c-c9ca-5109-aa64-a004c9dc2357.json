@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c7fe6a1c-c9ca-5109-aa64-a004c9dc2357",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt. Blick vom QF"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009500.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "76b72a02-1dd6-5a7f-b719-c09c839fda53",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt. Blick vom QF"
+        ]
+      },
+      "height": 1000,
+      "width": 1500,
+      "items": [
+        {
+          "id": "b83993dc-1327-597a-a34f-31478debe4c1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2e4621b8-97f6-5f46-8bac-d009de0975f4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009500.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1000,
+                "width": 1500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009500.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "76b72a02-1dd6-5a7f-b719-c09c839fda53"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "75020841-1c4f-5ed7-9808-3b36c34816c3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "826bc624-79ca-5b23-af79-df2402010e54",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt. Blick vom QF"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "116a4305-4a24-5e9a-b015-9ee58f5825d1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "76b72a02-1dd6-5a7f-b719-c09c839fda53",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/33032c4f-4d19-4382-b89d-32c0a64953bb/df_dat_0009500.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

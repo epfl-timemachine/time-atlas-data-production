@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b887e1e5-c16e-53d4-974b-11ed1188474b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Antonsplatz, Wallstraße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107417.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2b86577e-0e4a-52f2-b5fe-07e2614ff059",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Antonsplatz, Wallstraße"
+        ]
+      },
+      "height": 1154,
+      "width": 1600,
+      "items": [
+        {
+          "id": "7e842b3c-e3a8-591c-be40-d888ad92d90a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "312dba9f-05ad-599a-b917-30d0e3dbf68e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107417.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1154,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107417.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2b86577e-0e4a-52f2-b5fe-07e2614ff059"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f5410fe9-8772-5fb2-9ef2-935173291e98",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b698ff3d-7117-505f-bb1d-1b036ea90441",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Antonsplatz, Wallstraße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f485aba6-ff02-5bcc-a695-c62110cb4f4b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2b86577e-0e4a-52f2-b5fe-07e2614ff059",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/8dd5040d-50fe-409f-afbf-f35c8d9b7af4/df_hauptkatalog_0107417.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

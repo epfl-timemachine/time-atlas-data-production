@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a517bc6c-7039-5bc7-99d4-df7bb3199af0",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Blick vom Turm der Fr"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008802.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fb5ddd28-fe2e-50e1-9618-2a8429668e0d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Blick vom Turm der Fr"
+        ]
+      },
+      "height": 1082,
+      "width": 1600,
+      "items": [
+        {
+          "id": "6b8d19e5-a1d6-5d2c-8429-048fc0ba6096",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0f1f3807-21d0-52ae-8df7-6a7ae740592a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008802.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1082,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008802.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fb5ddd28-fe2e-50e1-9618-2a8429668e0d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6038aca4-03d1-5857-829a-8821fb55cbf8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a67e6efb-a71c-5dd1-a74e-e56708d59cc6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Blick vom Turm der Fr"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a3f75a84-fb67-5d77-b5fa-423444b4b3bb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fb5ddd28-fe2e-50e1-9618-2a8429668e0d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/0425ca81-773a-40bf-b25a-d44001b8028f/df_hauptkatalog_0008802.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

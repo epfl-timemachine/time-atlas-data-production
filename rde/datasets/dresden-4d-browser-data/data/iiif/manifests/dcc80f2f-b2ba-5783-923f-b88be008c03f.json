@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dcc80f2f-b2ba-5783-923f-b88be008c03f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Warenhaus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0359441.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a86ab9d2-6d9b-56d0-a9e9-e3d4061604de",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Warenhaus"
+        ]
+      },
+      "height": 1119,
+      "width": 1600,
+      "items": [
+        {
+          "id": "7771ca0b-cd1f-5f69-84ef-04669cc8c637",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1aeb43f5-fc18-55fd-8690-7dafb36c6213",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0359441.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1119,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0359441.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a86ab9d2-6d9b-56d0-a9e9-e3d4061604de"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7c7d67e0-461b-5001-a8e1-0d2efe4889c9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cc4b7b46-df98-5e4b-a110-61f0f0825466",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Warenhaus"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "af82ec8f-d9eb-5a46-9aaf-b31aa9ea4818"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a86ab9d2-6d9b-56d0-a9e9-e3d4061604de",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7d3abc2e-3d9d-463b-8630-97c623896dba/df_hauptkatalog_0359441.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

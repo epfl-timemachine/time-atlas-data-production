@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b4bed022-f32b-51e6-85d3-aaae184419c5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden: Theaterplatz"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0152474.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c4e72105-5cdb-5bd0-938f-20deddb84dc8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden: Theaterplatz"
+        ]
+      },
+      "height": 1040,
+      "width": 1600,
+      "items": [
+        {
+          "id": "2a6693cc-33da-58e8-a96e-8289378d0130",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a5cc24b7-dc91-5bb7-8a78-09a0e7088986",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0152474.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1040,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0152474.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c4e72105-5cdb-5bd0-938f-20deddb84dc8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "296aca0d-b2dc-5b70-866d-8467654b1fe4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a76016a3-1a70-53cd-b9a2-9cbb44152b31",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden: Theaterplatz"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dbbe6c16-2ade-5726-881d-9e6cf636a9f2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c4e72105-5cdb-5bd0-938f-20deddb84dc8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/5fac51fd-56ab-4c83-8a2e-c55215b4a833/df_hauptkatalog_0152474.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

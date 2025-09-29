@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "520ca55a-258e-5294-a361-f90162672bd7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Historischer Festumzug - 800 J"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0570080_015.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "df0e33b8-ddb4-52bf-b385-448ce4ac67de",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Historischer Festumzug - 800 J"
+        ]
+      },
+      "height": 1150,
+      "width": 1600,
+      "items": [
+        {
+          "id": "5b57ab08-6a2b-5f26-8de4-9525b669f9d8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a530c71b-e67b-5f53-aec3-b09e9120d031",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0570080_015.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1150,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0570080_015.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "df0e33b8-ddb4-52bf-b385-448ce4ac67de"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5c76ac36-20c9-58e9-9bc5-8307f3143c7e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0b00bf3a-b1ba-58da-8b23-1013fc660162",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Historischer Festumzug - 800 J"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c6f59818-f235-577a-af78-42b977e62bb7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "df0e33b8-ddb4-52bf-b385-448ce4ac67de",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/2fe68e4f-6b59-40ac-943d-a499bfa027ee/df_hauptkatalog_0570080_015.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

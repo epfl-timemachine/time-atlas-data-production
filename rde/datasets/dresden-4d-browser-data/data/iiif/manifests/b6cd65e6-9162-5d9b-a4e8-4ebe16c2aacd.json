@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b6cd65e6-9162-5d9b-a4e8-4ebe16c2aacd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Die Frauenkirche zu Dresden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0007271.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ffd4ac8a-f9f5-50c0-8b59-87cbc3983842",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Die Frauenkirche zu Dresden"
+        ]
+      },
+      "height": 1600,
+      "width": 1515,
+      "items": [
+        {
+          "id": "72794806-b2aa-52d5-b055-f563c8e50433",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c2c1ee55-4586-5c99-a8de-10993c09f90e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0007271.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1515,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0007271.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ffd4ac8a-f9f5-50c0-8b59-87cbc3983842"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "346b520d-db49-599a-8deb-57047cc43fe6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "baa8119d-b67f-5e85-b9a4-832d98a2ddbc",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Die Frauenkirche zu Dresden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4cfe035b-c13c-5f55-bc8e-0cc1f8a6f576"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ffd4ac8a-f9f5-50c0-8b59-87cbc3983842",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/b23eeb4f-6fe4-46d8-9f1b-a42cce51e17e/df_hauptkatalog_0007271.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

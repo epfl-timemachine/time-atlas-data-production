@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1f39d1ff-ce40-5d14-a9eb-091026c80421",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Residenzschloß"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041520.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "650a81aa-e33f-5991-96c3-c722c5c7452e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Residenzschloß"
+        ]
+      },
+      "height": 1202,
+      "width": 1600,
+      "items": [
+        {
+          "id": "bc333473-cdcf-50a9-9273-f2bbffc7a820",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d5af96bd-66cb-5a70-a20b-6d525c9848a5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041520.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1202,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041520.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "650a81aa-e33f-5991-96c3-c722c5c7452e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ae40e65b-a6ef-551b-90fc-c9045dfbb9c4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0eb22f4e-1611-53c2-a759-703fcb0d9064",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Residenzschloß"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bfe5aa43-63a5-59b1-9746-06a288a5e3f8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "650a81aa-e33f-5991-96c3-c722c5c7452e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/c0b9f962-c203-4dfa-9dc9-ce40f747f809/df_hauptkatalog_0041520.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

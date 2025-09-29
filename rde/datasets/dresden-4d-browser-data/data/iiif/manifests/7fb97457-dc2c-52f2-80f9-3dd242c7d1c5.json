@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7fb97457-dc2c-52f2-80f9-3dd242c7d1c5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Frauenkirche"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114301.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "068a73b4-ca22-5e2c-84f4-2106de94cfec",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Frauenkirche"
+        ]
+      },
+      "height": 1198,
+      "width": 1600,
+      "items": [
+        {
+          "id": "fa6a45fe-0e6e-5689-8b21-c6925980d982",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "16a08210-b68f-5ecc-a698-54a4c35aad54",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114301.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1198,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114301.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "068a73b4-ca22-5e2c-84f4-2106de94cfec"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "228f3249-2d81-523c-943d-248574aab82c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fcf45e4d-365a-5bbc-9e26-152c96703669",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Frauenkirche"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c897cf52-c6dd-5781-a5c6-5bb8b65fe601"
+                }
+              ],
+              "target": [
+                {
+                  "id": "068a73b4-ca22-5e2c-84f4-2106de94cfec",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f4c2c261-0440-4415-a96a-eec687d92ebc/df_hauptkatalog_0114301.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

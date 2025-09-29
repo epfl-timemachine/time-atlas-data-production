@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d0a6d50d-886d-5521-8c82-d850ce1c506a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden: Innenstadt von Westen"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312919.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eb1b2df0-c8df-50cb-8ad1-9da1e347a9f6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden: Innenstadt von Westen"
+        ]
+      },
+      "height": 1093,
+      "width": 1600,
+      "items": [
+        {
+          "id": "39868b75-62bc-5ce9-907c-700001cfe762",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d8d8ec9c-b37b-5e30-830d-616e7f207c61",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312919.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1093,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312919.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eb1b2df0-c8df-50cb-8ad1-9da1e347a9f6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "22bdbac6-667c-5b01-8133-9c81bac2d0fc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "35bf0aea-ce51-5d91-a626-2275200935f3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden: Innenstadt von Westen"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c8b922ad-575b-5754-952e-74fa06452e12"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eb1b2df0-c8df-50cb-8ad1-9da1e347a9f6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ddb270f3-ef5c-4c34-89e0-7e4ed224bb17/df_hauptkatalog_0312919.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

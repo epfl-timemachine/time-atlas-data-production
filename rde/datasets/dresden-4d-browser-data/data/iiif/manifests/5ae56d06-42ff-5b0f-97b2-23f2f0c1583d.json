@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5ae56d06-42ff-5b0f-97b2-23f2f0c1583d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Zwinger, Gemäldegalerie"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0164326.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "77a16a30-3a6f-53e7-891c-ff1629266f26",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Zwinger, Gemäldegalerie"
+        ]
+      },
+      "height": 1080,
+      "width": 1600,
+      "items": [
+        {
+          "id": "67ac454f-38c1-5d84-b40c-7a45f95f3ac9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ae1dddd1-e653-599c-93f4-49d80564dec1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0164326.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1080,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0164326.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "77a16a30-3a6f-53e7-891c-ff1629266f26"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b237a7b1-d717-59eb-bc56-43018c278efd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9504cc76-21bb-57ed-afd4-b91884cdef69",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Zwinger, Gemäldegalerie"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "99113202-b8bd-5193-b494-afa16f47ff58"
+                }
+              ],
+              "target": [
+                {
+                  "id": "77a16a30-3a6f-53e7-891c-ff1629266f26",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/a533975a-536a-4191-ba71-04dfec143061/df_hauptkatalog_0164326.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

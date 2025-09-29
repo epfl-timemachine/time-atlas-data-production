@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d1b0b436-33c2-5f52-b4ad-0f8d594b14d7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kopf des Ignatius von Loyala"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0128172.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c3cc87d8-c7b9-533d-8aaa-dd7913991910",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kopf des Ignatius von Loyala"
+        ]
+      },
+      "height": 1600,
+      "width": 1330,
+      "items": [
+        {
+          "id": "bcf4445c-71fc-55d1-a444-7cff0e141a48",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "abe92e15-dc0c-5edb-961a-2497e7494e13",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0128172.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1330,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0128172.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c3cc87d8-c7b9-533d-8aaa-dd7913991910"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "52529da8-5b11-5427-bea0-2544a0a9b0f3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c3fcba08-5ed1-5b6d-8a72-ee51aefbcfbc",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kopf des Ignatius von Loyala"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7326c5ee-bb58-5b6e-a4bf-41636e1ac78e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c3cc87d8-c7b9-533d-8aaa-dd7913991910",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d97aa620-ee72-4641-8621-93ee1f268b1b/df_hauptkatalog_0128172.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

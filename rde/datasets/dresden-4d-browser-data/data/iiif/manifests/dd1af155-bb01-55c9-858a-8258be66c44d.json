@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dd1af155-bb01-55c9-858a-8258be66c44d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Zwinger. Kronentor mi"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008004.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "721f634f-fbe8-5d49-a98c-0955a7f7a020",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Zwinger. Kronentor mi"
+        ]
+      },
+      "height": 1600,
+      "width": 1205,
+      "items": [
+        {
+          "id": "a450c02f-3774-5513-b669-0f764c7795b9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "15ddfb9c-0c5b-5517-835f-0d97c7c235e8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008004.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1205,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008004.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "721f634f-fbe8-5d49-a98c-0955a7f7a020"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bb97ebe7-ac88-5bf9-abe0-595ad7421794",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ff129e65-6626-5620-8763-175a50218a58",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Zwinger. Kronentor mi"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "25d4401b-336c-5cfa-8dde-2db499851129"
+                }
+              ],
+              "target": [
+                {
+                  "id": "721f634f-fbe8-5d49-a98c-0955a7f7a020",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/867ffc22-048a-4f01-8252-6a12861438b0/df_hauptkatalog_0008004.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

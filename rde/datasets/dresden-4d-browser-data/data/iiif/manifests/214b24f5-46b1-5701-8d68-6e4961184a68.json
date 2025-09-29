@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "214b24f5-46b1-5701-8d68-6e4961184a68",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Damenbildnis"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0021594.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "85bb913f-230a-5701-b0d6-3c121bd411b6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Damenbildnis"
+        ]
+      },
+      "height": 1600,
+      "width": 1269,
+      "items": [
+        {
+          "id": "adefd6f6-6176-5cda-ab9f-6dadd42aab34",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b53a3608-d1e9-5fef-a514-c1cd16ad333e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0021594.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1269,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0021594.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "85bb913f-230a-5701-b0d6-3c121bd411b6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "af4e5ff9-55f7-525f-a73c-27c6c019fc9f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5fb5204f-8c05-5125-aaad-45883282e4c5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Damenbildnis"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "21c8eb37-474f-578a-945c-5c8b4b27289e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "85bb913f-230a-5701-b0d6-3c121bd411b6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/907927b2-02ea-4388-8ba1-d10795688f53/df_hauptkatalog_0021594.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

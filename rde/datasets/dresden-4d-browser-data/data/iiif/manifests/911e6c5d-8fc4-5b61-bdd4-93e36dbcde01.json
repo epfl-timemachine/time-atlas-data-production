@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "911e6c5d-8fc4-5b61-bdd4-93e36dbcde01",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Wohnhaus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0025219.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b2acb67a-f37e-591b-9776-65352f9ee8db",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Wohnhaus"
+        ]
+      },
+      "height": 1237,
+      "width": 1600,
+      "items": [
+        {
+          "id": "611b5046-2c0d-50c8-a61a-ed65118ec385",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1ca7a339-e887-5d68-93e3-bc23858cb648",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0025219.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1237,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0025219.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b2acb67a-f37e-591b-9776-65352f9ee8db"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f17dbfd8-212e-5f5d-bddb-e902b29d3ce0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1ca72b5b-f7c7-5549-b676-092a2c2478a9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Wohnhaus"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fb222aaa-c42a-5a04-9dda-7c88779c13a2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b2acb67a-f37e-591b-9776-65352f9ee8db",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/bbe0d0fe-0e17-4a35-919f-b0bb41be2e4e/df_hauptkatalog_0025219.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b0ec3bac-9432-50af-9135-2f532708292c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick in den Stallhof"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_m_0005182.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "aa18bd22-0134-52fb-8bc0-cd3082d41af5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick in den Stallhof"
+        ]
+      },
+      "height": 1137,
+      "width": 1600,
+      "items": [
+        {
+          "id": "eafb724b-5a0e-5960-89ca-7d4c3d9114a6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "37b8ff59-2853-5fca-a4f4-4383af49ec1a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_m_0005182.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1137,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_m_0005182.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "aa18bd22-0134-52fb-8bc0-cd3082d41af5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "842b059d-4f45-5206-9c31-26c704e87a3e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6d1f7718-d808-5bae-a1d6-d5336d539ef8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick in den Stallhof"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "17299564-e1bb-5400-818d-f774291bccd4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "aa18bd22-0134-52fb-8bc0-cd3082d41af5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/eb17ca39-b9aa-4de8-80f4-54446181ff8e/df_m_0005182.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

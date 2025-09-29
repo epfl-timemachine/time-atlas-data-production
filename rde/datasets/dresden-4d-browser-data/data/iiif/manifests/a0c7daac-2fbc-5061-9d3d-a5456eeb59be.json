@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a0c7daac-2fbc-5061-9d3d-a5456eeb59be",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, Theaterplatz"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0105359.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "20a19056-831f-50d2-b93e-50faaaa231bd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, Theaterplatz"
+        ]
+      },
+      "height": 1124,
+      "width": 1600,
+      "items": [
+        {
+          "id": "c927f0eb-3794-5d42-ba80-cbc6092b7d76",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "823fad25-af9d-5f56-877e-929987709ce9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0105359.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1124,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0105359.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "20a19056-831f-50d2-b93e-50faaaa231bd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d2f6fb22-8310-580d-a1d9-3506c0119e37",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e235f865-56ac-5031-aa20-4942278eb879",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, Theaterplatz"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "de62553e-6891-5cce-ad5e-5369967c3d0c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "20a19056-831f-50d2-b93e-50faaaa231bd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/cb2dca79-9411-49db-b0a9-d0a4eafaa27a/df_hauptkatalog_0105359.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

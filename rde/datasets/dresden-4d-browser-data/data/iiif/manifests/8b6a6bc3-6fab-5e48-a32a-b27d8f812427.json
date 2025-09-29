@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8b6a6bc3-6fab-5e48-a32a-b27d8f812427",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Heiliger Rochus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0123638.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d22d2c1d-5ea1-5a5b-89f3-30c6eb106b35",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Heiliger Rochus"
+        ]
+      },
+      "height": 1600,
+      "width": 1091,
+      "items": [
+        {
+          "id": "6f96d016-e3ad-597a-ace1-39e4fd3e85dd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "76e653ea-199b-533f-a384-d8ec69c730d5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0123638.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1091,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0123638.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d22d2c1d-5ea1-5a5b-89f3-30c6eb106b35"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4be44769-6bd5-52a5-bfdf-3e238e53203c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "540a210a-04ac-5e6a-9fbe-9201b1dd60e4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Heiliger Rochus"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e235a7c5-f6a8-5084-9b86-1618ceed872f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d22d2c1d-5ea1-5a5b-89f3-30c6eb106b35",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/a0f97ec9-5294-4105-a25f-349aed1266de/df_hauptkatalog_0123638.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

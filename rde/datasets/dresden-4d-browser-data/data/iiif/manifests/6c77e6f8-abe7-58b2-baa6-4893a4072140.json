@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6c77e6f8-abe7-58b2-baa6-4893a4072140",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kanzleihaus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0400245.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d485fa1e-d7a6-5f80-90e7-9c4aa4159aee",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kanzleihaus"
+        ]
+      },
+      "height": 1223,
+      "width": 1600,
+      "items": [
+        {
+          "id": "c30c30e8-4d3d-5b00-984f-f1ba8e16d4a7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0e565b90-c856-52a8-97fd-79925c891eac",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0400245.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1223,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0400245.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d485fa1e-d7a6-5f80-90e7-9c4aa4159aee"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3d5ae540-c412-56fc-8c69-4f457edec2a0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6862996b-bb0a-5a5b-a191-553459488b36",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kanzleihaus"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "67456718-9b83-5dbd-acfe-34322bc036aa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d485fa1e-d7a6-5f80-90e7-9c4aa4159aee",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f3a7a1d3-7652-4eb1-8355-0e575580c255/df_hauptkatalog_0400245.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

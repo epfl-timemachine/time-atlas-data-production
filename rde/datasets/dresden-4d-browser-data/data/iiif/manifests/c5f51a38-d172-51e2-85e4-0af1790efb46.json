@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c5f51a38-d172-51e2-85e4-0af1790efb46",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Das schöne vis-à-vis"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2013-b_0000526.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c30acd5a-b2df-5d88-8c85-c5a365ebdbac",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Das schöne vis-à-vis"
+        ]
+      },
+      "height": 2070,
+      "width": 1600,
+      "items": [
+        {
+          "id": "bf6643ea-8e5e-5f76-8ce5-6e2cad0af050",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ffdabb40-1efa-5699-bfda-2e699408943e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2013-b_0000526.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 2070,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2013-b_0000526.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c30acd5a-b2df-5d88-8c85-c5a365ebdbac"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "444d7bb7-2a82-5dfa-9f21-afa389b5842f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9c1d9b51-3e5c-52a3-9093-a6cb73005b4d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Das schöne vis-à-vis"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "69606ca6-8a9c-5a9e-b5be-9c33b89213bf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c30acd5a-b2df-5d88-8c85-c5a365ebdbac",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/1b114d77-2777-41f3-aff3-b6d377686fd5/df_pos-2013-b_0000526.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

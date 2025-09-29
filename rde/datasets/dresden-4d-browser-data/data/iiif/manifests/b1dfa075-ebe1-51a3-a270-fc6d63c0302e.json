@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b1dfa075-ebe1-51a3-a270-fc6d63c0302e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Taschenbergpalais"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008205.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fb48caf7-ba33-5d27-9edf-f68285fb79d7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Taschenbergpalais"
+        ]
+      },
+      "height": 1600,
+      "width": 1150,
+      "items": [
+        {
+          "id": "e0f66a72-b055-517a-a9f2-f155992f660a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f7cd8a75-2d6f-5fbf-bb7a-86904d1023ff",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008205.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1150,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008205.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fb48caf7-ba33-5d27-9edf-f68285fb79d7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9257057f-09fd-5198-baea-0a35b35ed4be",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4ff14265-7ef6-5a82-8131-1cd0f6198e4b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Taschenbergpalais"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "95c0456d-2c19-5b7d-b98e-c6446f0b38bd"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fb48caf7-ba33-5d27-9edf-f68285fb79d7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7a68f29c-a285-4a49-a6a9-7079b76a26c7/df_hauptkatalog_0008205.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8da753db-3273-53d6-be19-8a6b35a7d77a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Denkmal König Friedrich August"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0314991_029.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cdcfa59d-b84a-5229-9785-04b2c5875622",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Denkmal König Friedrich August"
+        ]
+      },
+      "height": 1600,
+      "width": 1138,
+      "items": [
+        {
+          "id": "6d5e688b-2728-5ef4-9d88-6b2e3af54340",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e8662de3-1944-5d9c-9ffd-ed60929ba6c6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0314991_029.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1138,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0314991_029.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cdcfa59d-b84a-5229-9785-04b2c5875622"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1b47f930-e4e0-5835-b676-c5906a4bcb84",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e4b59b9f-d664-55f3-bb52-7ef33ccdac46",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Denkmal König Friedrich August"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f901c5d3-3571-5196-a9f8-e03920ad6882"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cdcfa59d-b84a-5229-9785-04b2c5875622",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/6f238e01-ce7f-4049-9d27-9fdd006b9003/df_hauptkatalog_0314991_029.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

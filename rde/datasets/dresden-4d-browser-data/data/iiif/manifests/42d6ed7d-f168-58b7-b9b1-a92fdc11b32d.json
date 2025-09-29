@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "42d6ed7d-f168-58b7-b9b1-a92fdc11b32d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Pomona"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0003372.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d879c7e1-41b4-58c3-a3b0-07f14d5a2974",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Pomona"
+        ]
+      },
+      "height": 1600,
+      "width": 1212,
+      "items": [
+        {
+          "id": "f6f6d825-e0c1-50e4-aada-fa5f2d100620",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "14b5bd0b-d429-5d61-bf4d-d6f0895acde5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0003372.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1212,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0003372.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d879c7e1-41b4-58c3-a3b0-07f14d5a2974"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c55363e8-1cbd-505c-b009-ac7988bad3bf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9419b82e-6e0b-5afb-9b75-8c8ee930550d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Pomona"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9b2b61a5-2547-5a7c-8bc5-d271963b55e6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d879c7e1-41b4-58c3-a3b0-07f14d5a2974",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/8e0856da-e420-4645-b8b2-979b43b8db98/df_ps_0003372.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

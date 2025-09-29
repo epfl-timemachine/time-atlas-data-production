@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d09b9a9c-0eec-55ba-8da8-7980a19bacec",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kröner, Karl"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0175180.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b9e8bc3e-85df-561b-ae0d-1722b1994d04",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kröner, Karl"
+        ]
+      },
+      "height": 1190,
+      "width": 1600,
+      "items": [
+        {
+          "id": "55c6813b-6982-5622-92db-e891daf91ea2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "59d5f4a7-413f-510d-9726-46a6c8d3948d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0175180.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1190,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0175180.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b9e8bc3e-85df-561b-ae0d-1722b1994d04"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0c1e4186-aa34-59a4-b33d-22690febd2d0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7bf7cdbd-8419-5d5d-a280-e0a421b60084",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kröner, Karl"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "31281b5f-30b0-5464-b6f2-afc97d333072"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b9e8bc3e-85df-561b-ae0d-1722b1994d04",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/82dc2afd-27b3-4167-8104-b0a974aa1048/df_hauptkatalog_0175180.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

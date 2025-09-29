@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d9eef46b-efb8-528d-9fcd-7269b99dfc1f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, Taschenberg "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika122_0000261_motiv.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b40140a8-4fba-5a40-84a3-d71883201661",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, Taschenberg "
+        ]
+      },
+      "height": 1153,
+      "width": 1600,
+      "items": [
+        {
+          "id": "2660d769-5b5e-5813-9d8c-66570d1c1af8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fd8be803-74ba-58b4-bb5b-c48a94a11433",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika122_0000261_motiv.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1153,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika122_0000261_motiv.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b40140a8-4fba-5a40-84a3-d71883201661"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2dd27b0c-39ee-5d88-b2e5-61d9064f511e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e4bddf7a-bb2c-5e3c-8ebc-5908e2b73bce",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, Taschenberg "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7c4431ea-9a1e-5ab9-aaec-81bb7f5b033a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b40140a8-4fba-5a40-84a3-d71883201661",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/5f34d0ab-477f-4e2f-9c44-9ce074945c5c/df_bika122_0000261_motiv.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

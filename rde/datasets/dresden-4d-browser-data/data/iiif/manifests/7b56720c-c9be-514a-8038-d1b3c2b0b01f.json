@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7b56720c-c9be-514a-8038-d1b3c2b0b01f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Fürstenzug"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0098805.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dfaa7c90-e506-5b6f-9961-b1b0e244d93e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Fürstenzug"
+        ]
+      },
+      "height": 1109,
+      "width": 1600,
+      "items": [
+        {
+          "id": "b03c1d83-fc97-5843-9a61-88829d7fbf4a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "401745d6-f40c-54dd-bcc5-dd87291ed036",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0098805.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1109,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0098805.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dfaa7c90-e506-5b6f-9961-b1b0e244d93e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c567cfbc-b8ea-5242-b643-f9baa5734c14",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4814a270-689b-53f0-a07e-32782bda1a35",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Fürstenzug"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5c0150a4-ce53-5d66-bb12-4d45c1b56c3c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dfaa7c90-e506-5b6f-9961-b1b0e244d93e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e1bfe1ab-a7e6-44f5-ba0e-3295b66fe6ad/df_hauptkatalog_0098805.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

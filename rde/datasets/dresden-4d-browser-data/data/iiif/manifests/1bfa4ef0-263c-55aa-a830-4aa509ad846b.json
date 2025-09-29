@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1bfa4ef0-263c-55aa-a830-4aa509ad846b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schöne Pforte"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000354.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9876d49e-e9fc-5b90-a6bb-e7774b170726",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schöne Pforte"
+        ]
+      },
+      "height": 739,
+      "width": 500,
+      "items": [
+        {
+          "id": "2163d57c-5a2b-5d41-962d-822a31785109",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "abc2ce2e-e658-546a-a488-22f59d43958c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000354.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 739,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000354.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9876d49e-e9fc-5b90-a6bb-e7774b170726"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "46c1f050-f277-5dfe-bb59-0309034c2f65",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "160f5aee-77ff-5620-b271-3027299b824d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schöne Pforte"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "36c608d0-26de-5a97-89f5-da95ce0d88e4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9876d49e-e9fc-5b90-a6bb-e7774b170726",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/9a4537e0-2f2e-4698-bc0f-0102a1ce4aa4/df_ps_0000354.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

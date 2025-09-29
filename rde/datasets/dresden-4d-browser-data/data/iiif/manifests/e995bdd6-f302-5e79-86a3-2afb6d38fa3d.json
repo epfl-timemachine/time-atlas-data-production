@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e995bdd6-f302-5e79-86a3-2afb6d38fa3d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Semperoper"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0105628.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4b77b71b-7e12-58bd-be04-c4bcabbdc62e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Semperoper"
+        ]
+      },
+      "height": 1600,
+      "width": 1127,
+      "items": [
+        {
+          "id": "a04c1416-114f-5f59-b1b8-1533a7fdb11a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "230b1ff1-c137-5b3b-ab21-50946a566d02",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0105628.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1127,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0105628.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4b77b71b-7e12-58bd-be04-c4bcabbdc62e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fa205fe1-bfb6-597a-b5c4-d6d6e71b5750",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d61d6908-29b8-52d8-9d64-b7c7d6b40f3f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Semperoper"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "72591274-1b4a-5e8b-81e8-6a115cecf62e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4b77b71b-7e12-58bd-be04-c4bcabbdc62e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/dc1bdf62-1ce9-462c-9e58-e6acc64abe7b/df_hauptkatalog_0105628.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

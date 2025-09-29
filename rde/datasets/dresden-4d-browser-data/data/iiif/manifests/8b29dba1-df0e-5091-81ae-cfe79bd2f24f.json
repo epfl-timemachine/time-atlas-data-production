@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8b29dba1-df0e-5091-81ae-cfe79bd2f24f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schloßplatz, Augustusstraße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0262313.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "74a2cce0-f415-50cd-a71c-a7203d991aab",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schloßplatz, Augustusstraße"
+        ]
+      },
+      "height": 991,
+      "width": 1600,
+      "items": [
+        {
+          "id": "92a3bfd1-1746-5be5-a924-96fe45ec4307",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4e507737-c3c7-57a4-8345-7f1416ca9a44",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0262313.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 991,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0262313.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "74a2cce0-f415-50cd-a71c-a7203d991aab"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6efbeee1-9594-53b9-af05-17aaf2915034",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "20c7c7bc-2a5b-580c-aeca-85719443bbd6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schloßplatz, Augustusstraße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7f7ba545-6c82-569e-9011-1950028cd55b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "74a2cce0-f415-50cd-a71c-a7203d991aab",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/0a55bf44-e1b5-40fa-b3d7-e1581e894ff0/df_hauptkatalog_0262313.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

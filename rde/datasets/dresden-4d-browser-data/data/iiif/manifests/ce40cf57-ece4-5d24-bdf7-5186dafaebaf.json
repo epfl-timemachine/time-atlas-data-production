@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ce40cf57-ece4-5d24-bdf7-5186dafaebaf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Heilige Katharina"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0252867.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7f9def39-7f37-57c6-9d63-cd6a4958c901",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Heilige Katharina"
+        ]
+      },
+      "height": 1600,
+      "width": 1134,
+      "items": [
+        {
+          "id": "04b99c09-8387-59b2-bd39-ff5183fdb325",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "903caa2e-8255-5d34-aa0f-8f239fb16b66",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0252867.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1134,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0252867.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7f9def39-7f37-57c6-9d63-cd6a4958c901"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7dd8ea66-6ca7-59cf-b093-835178ecb094",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c461209c-e86e-58a8-afcc-8d6af588f4b4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Heilige Katharina"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f47214bb-9e9b-563e-b2f3-c27d56c4ecfa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7f9def39-7f37-57c6-9d63-cd6a4958c901",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ed48d0d4-54e5-44f2-aa0c-8e8f90083bc0/df_hauptkatalog_0252867.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0f433ba9-2ce6-5af0-8fc4-dbdaae5a60dd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, Ostraallee 2"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0046809.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8c433536-91c0-5eed-a310-76011bf385a1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, Ostraallee 2"
+        ]
+      },
+      "height": 1180,
+      "width": 1600,
+      "items": [
+        {
+          "id": "fa455cd7-b80a-57a2-b458-e6480f440680",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "50e765c2-997c-5438-bf7c-ee68c9ba3e02",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0046809.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1180,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0046809.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8c433536-91c0-5eed-a310-76011bf385a1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e5f62783-f537-590c-92da-21aaa1e733c6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7f22bc72-a90c-576e-acb1-1dbde2bf3e7d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, Ostraallee 2"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "17406007-9cc0-5f3b-b6aa-4d4a9abfdca7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8c433536-91c0-5eed-a310-76011bf385a1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/50138ac9-2132-4a8f-856f-e3d94e6f3c86/df_hauptkatalog_0046809.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

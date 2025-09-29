@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cd22e094-22ef-5c1a-aed3-a961f72a40cb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kulturpalast"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0170092.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ca8ef03d-36c9-5fe2-9d54-5584f44be709",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kulturpalast"
+        ]
+      },
+      "height": 1111,
+      "width": 1600,
+      "items": [
+        {
+          "id": "631e766a-2fe3-59b8-bed7-d799bdb3edcc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2a206a6c-d3a7-53cc-a42f-54d5756f6e38",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0170092.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1111,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0170092.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ca8ef03d-36c9-5fe2-9d54-5584f44be709"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ac359bc4-5140-5769-b039-5e7fbd7be7f6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c0b5da8d-1ce5-5d99-9858-dc50882a3d2c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kulturpalast"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "03f1cdbd-ee1e-50be-9dea-c260af3f7a48"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ca8ef03d-36c9-5fe2-9d54-5584f44be709",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/fc3a21ba-b295-4c38-8043-698f0c384be0/df_hauptkatalog_0170092.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

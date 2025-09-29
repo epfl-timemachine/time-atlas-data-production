@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a9f3c6ee-37ee-5f30-b119-0f588640e1fb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Blick vom Dach der Ka"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0104491.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "69970cd0-ac93-5714-83aa-2f1329b7a2cc",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Blick vom Dach der Ka"
+        ]
+      },
+      "height": 1129,
+      "width": 1600,
+      "items": [
+        {
+          "id": "3a22bbe4-0603-587c-8e78-53ee60565698",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f7d6b360-3c74-53fa-ae4d-0f06fe940a7b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0104491.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1129,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0104491.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "69970cd0-ac93-5714-83aa-2f1329b7a2cc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "999c8055-3e67-5375-b8c4-2076103ca8e0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ed0c72e9-df65-551b-a5ff-4e9fbefabac3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Blick vom Dach der Ka"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "26a60494-e6e7-57b5-81ab-95d2041015ea"
+                }
+              ],
+              "target": [
+                {
+                  "id": "69970cd0-ac93-5714-83aa-2f1329b7a2cc",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/be1dedbd-131f-4a5d-8a00-390ad50177a8/df_hauptkatalog_0104491.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3b7f1d8b-4285-53af-ad83-580955f17bd7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Der Gutschmidbrunnen "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0106712.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "847bc9c7-0e0a-5a0a-a332-9f61c59c19a5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Der Gutschmidbrunnen "
+        ]
+      },
+      "height": 1600,
+      "width": 880,
+      "items": [
+        {
+          "id": "ba3909d8-9be6-5741-be24-67755bd8f19d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eb4c1764-7b2d-5b35-a30c-44c885f993c8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0106712.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 880,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0106712.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "847bc9c7-0e0a-5a0a-a332-9f61c59c19a5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0710c4a0-6e84-56b7-a7db-1c5c5b330e42",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e90a9e01-d6df-5684-8f80-b48fe8394be8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Der Gutschmidbrunnen "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b1cb2936-926d-50eb-9ca3-b98ed66058df"
+                }
+              ],
+              "target": [
+                {
+                  "id": "847bc9c7-0e0a-5a0a-a332-9f61c59c19a5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/1ecef43c-de1e-4d61-bb72-a858e94c6512/df_hauptkatalog_0106712.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

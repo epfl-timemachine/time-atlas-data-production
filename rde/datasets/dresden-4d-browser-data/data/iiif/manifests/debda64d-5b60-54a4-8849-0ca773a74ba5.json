@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "debda64d-5b60-54a4-8849-0ca773a74ba5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Flott"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0163081.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a477ca52-17ad-55fe-8bda-8e86035953c9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Flott"
+        ]
+      },
+      "height": 1115,
+      "width": 1600,
+      "items": [
+        {
+          "id": "ee439821-0cc8-5059-91d1-e3dce1e86b97",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "299b8261-d4b1-5802-85d8-71f96bdd3dcd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0163081.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1115,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0163081.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a477ca52-17ad-55fe-8bda-8e86035953c9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f8ec16b3-08f4-528c-a09e-3406e070302c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ad532a51-cbf7-5c1e-bbcc-517629c7bcc6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Flott"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b863f075-b60e-5f78-be68-89b44119d332"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a477ca52-17ad-55fe-8bda-8e86035953c9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/09a1f9eb-89d4-4a3c-961a-55c8325322e0/df_hauptkatalog_0163081.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c075c4fa-36d3-5e0d-bd12-a68b4d46bf5c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Salomonis-Apotheke"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0057662.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "934d1219-1253-5bc5-9bee-aef99488559b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Salomonis-Apotheke"
+        ]
+      },
+      "height": 696,
+      "width": 500,
+      "items": [
+        {
+          "id": "a71d8373-533a-5b85-bb8f-3473822fab6e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9ca83434-a250-5c33-9943-55e838af942d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0057662.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 696,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0057662.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "934d1219-1253-5bc5-9bee-aef99488559b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "23bb7c0f-d5d9-56ab-8456-dbf1244d5fb2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "06216339-5c3f-5a09-9260-d93c61ea9aa8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Salomonis-Apotheke"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "af11f32f-6c1e-5f5e-a1c6-caa001ca4d37"
+                }
+              ],
+              "target": [
+                {
+                  "id": "934d1219-1253-5bc5-9bee-aef99488559b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/34b216cb-6648-4be4-872c-eae29f39fe33/df_hauptkatalog_0057662.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

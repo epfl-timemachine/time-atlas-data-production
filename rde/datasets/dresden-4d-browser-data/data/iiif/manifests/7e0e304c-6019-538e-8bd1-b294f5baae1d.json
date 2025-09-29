@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7e0e304c-6019-538e-8bd1-b294f5baae1d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Belvedere auf der Brü"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0097237.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "395f33f6-0fc5-5434-99ce-33d43663f4d7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Belvedere auf der Brü"
+        ]
+      },
+      "height": 1600,
+      "width": 1232,
+      "items": [
+        {
+          "id": "1790102e-d820-5b93-8513-f061c84bf72d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5a901a91-ef84-5786-9cfa-b7cdf4e7e88c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0097237.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1232,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0097237.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "395f33f6-0fc5-5434-99ce-33d43663f4d7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8ada73cf-7bed-5102-be62-d0824fc5e8fc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "605b5d75-c11f-5369-bfae-7d00a6d8823a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Belvedere auf der Brü"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ee581d36-9bd7-5b12-864d-87ffed2fd7cd"
+                }
+              ],
+              "target": [
+                {
+                  "id": "395f33f6-0fc5-5434-99ce-33d43663f4d7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/9f2017fa-c5a0-4a26-855d-36205bf60fa4/df_hauptkatalog_0097237.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1c80c6f2-f73a-531f-9092-0df2e3580cbf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, Ernst-Thälma"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0314524.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ea9aa092-cbbd-501e-a1b2-dcaa7092807e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, Ernst-Thälma"
+        ]
+      },
+      "height": 1135,
+      "width": 1600,
+      "items": [
+        {
+          "id": "9077270f-8b29-5fee-b4c7-986abe105c53",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "36978634-554a-526c-bfa6-2d277a5646a5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0314524.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1135,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0314524.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ea9aa092-cbbd-501e-a1b2-dcaa7092807e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d07b0fa3-cd15-5693-b6de-135600e32466",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c0fe7ee6-8cf2-5a03-b59f-c08791b8b102",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, Ernst-Thälma"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3e6098bc-1da1-53bb-89e3-45a830de9acb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ea9aa092-cbbd-501e-a1b2-dcaa7092807e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ad77d6c5-b6b8-47a4-9521-b87f1cdc1c58/df_hauptkatalog_0314524.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

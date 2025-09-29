@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6ac17a10-8de7-57e0-971f-5259da2ee548",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ansicht vom Johanneum in Dresd"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0128240.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e5412448-55cb-5aa1-beb8-f7b13d01c894",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Ansicht vom Johanneum in Dresd"
+        ]
+      },
+      "height": 1224,
+      "width": 1600,
+      "items": [
+        {
+          "id": "f71ee8b7-c2f7-56c1-adbd-5ee938453ef7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d12de5f0-f97c-539b-9b7e-87cb3e87a90d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0128240.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1224,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0128240.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e5412448-55cb-5aa1-beb8-f7b13d01c894"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7cf7e031-21f2-50cd-8ba6-71ca9ee84181",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d008c437-3a87-5d0f-b0d1-aad7d2568f39",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Ansicht vom Johanneum in Dresd"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "03d12ff2-d1ec-5539-85ef-62d5e6d84f7f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e5412448-55cb-5aa1-beb8-f7b13d01c894",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/52579846-6e41-48d4-b6ef-4d0649e4d282/df_hauptkatalog_0128240.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

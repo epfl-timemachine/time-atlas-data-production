@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "17426b06-a6e1-53e4-94ba-e638acf85dde",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick über die August"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110269.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2661e7c1-3809-5713-a019-d75467830658",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick über die August"
+        ]
+      },
+      "height": 1135,
+      "width": 1600,
+      "items": [
+        {
+          "id": "90dc960e-52e5-5659-bf17-ad7f465ab6f0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "db6838f3-42ee-51ce-babe-b471b197ef08",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110269.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1135,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110269.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2661e7c1-3809-5713-a019-d75467830658"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "edfd7271-ff75-50cb-b303-918aa40c2e18",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f885964c-1a12-54ce-9ee2-b05219836b49",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick über die August"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "af50a5f8-1e46-5abc-a9c5-5c90e893cb5f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2661e7c1-3809-5713-a019-d75467830658",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ddc1bbe2-6737-4b4f-bacc-8ca1ae4be4eb/df_hauptkatalog_0110269.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

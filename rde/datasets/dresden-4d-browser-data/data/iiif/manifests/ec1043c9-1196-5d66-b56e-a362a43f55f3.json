@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ec1043c9-1196-5d66-b56e-a362a43f55f3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Wilsdruffer Straße, Pirnaische"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0129925.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dea5d59b-6771-58cd-b533-134c88ad39a0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Wilsdruffer Straße, Pirnaische"
+        ]
+      },
+      "height": 1125,
+      "width": 1600,
+      "items": [
+        {
+          "id": "8349f4ce-20bf-54b8-b9db-6a14002f6cdf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "03079471-3ed7-58b4-89cc-c3bdd2116e61",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0129925.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1125,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0129925.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dea5d59b-6771-58cd-b533-134c88ad39a0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fa8aa9fe-5d75-58c4-b59a-8c328b875cd5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fb75e1b2-8997-504e-b301-b239b88eaef5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Wilsdruffer Straße, Pirnaische"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "25fbdab7-e6ed-52af-9599-68d01ea5cc36"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dea5d59b-6771-58cd-b533-134c88ad39a0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/3699f1fe-c280-4776-9ac5-4e9ccbee175b/df_hauptkatalog_0129925.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

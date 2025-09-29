@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3ce4840f-0461-50d2-937a-6fc0462692dc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick aus der Wiesent"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312774.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ce2c6d14-1b79-5ceb-9f8e-abf03b77b7e9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick aus der Wiesent"
+        ]
+      },
+      "height": 1600,
+      "width": 1181,
+      "items": [
+        {
+          "id": "65c658f9-f728-52b6-9610-d4bddffc6cd9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b6b0a802-668d-5cc3-9934-dd67f3c3a435",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312774.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1181,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312774.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ce2c6d14-1b79-5ceb-9f8e-abf03b77b7e9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0b72a9fb-e11d-544e-88af-4f01798cc46e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d9309e6b-21db-5a97-984a-f32946366515",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick aus der Wiesent"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ab642c95-b1c9-5a00-93ca-bd3aa2906a56"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ce2c6d14-1b79-5ceb-9f8e-abf03b77b7e9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/876a3188-8078-4780-837a-0de307b3aa8c/df_hauptkatalog_0312774.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

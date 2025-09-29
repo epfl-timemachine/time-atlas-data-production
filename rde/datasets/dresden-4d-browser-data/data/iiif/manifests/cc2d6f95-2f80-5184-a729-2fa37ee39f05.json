@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cc2d6f95-2f80-5184-a729-2fa37ee39f05",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Kandelaber, Stallhof"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0257325.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d2a12554-ec7c-55a2-89d1-2388105e3067",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Kandelaber, Stallhof"
+        ]
+      },
+      "height": 1110,
+      "width": 1600,
+      "items": [
+        {
+          "id": "62a1a701-c818-5bdf-af5a-49392f6b1b18",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d4f4a835-f9c5-5e5c-9b50-686642b65629",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0257325.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1110,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0257325.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d2a12554-ec7c-55a2-89d1-2388105e3067"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0de7ba2c-7a6f-517c-8129-d441358a9a12",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e7be851d-a929-5b9d-a77f-78dc58a9f9f1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Kandelaber, Stallhof"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "634da73e-b8fb-5a3b-a616-0fe979ef9b06"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d2a12554-ec7c-55a2-89d1-2388105e3067",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d6ef911f-1a46-4315-bc0b-4e0e4feda3cd/df_hauptkatalog_0257325.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

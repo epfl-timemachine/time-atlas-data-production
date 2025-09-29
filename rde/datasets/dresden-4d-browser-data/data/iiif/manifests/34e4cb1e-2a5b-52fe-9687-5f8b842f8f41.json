@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "34e4cb1e-2a5b-52fe-9687-5f8b842f8f41",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, Ringstraße 3"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pj_0009789.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "589f5fec-edae-53a9-a116-ae49e0d4be2f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, Ringstraße 3"
+        ]
+      },
+      "height": 999,
+      "width": 1000,
+      "items": [
+        {
+          "id": "00bc7210-018c-5362-88b0-64ab7e85c324",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3b1ec714-38b9-5f98-8e51-568ac157d623",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pj_0009789.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 999,
+                "width": 1000,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pj_0009789.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "589f5fec-edae-53a9-a116-ae49e0d4be2f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "461d46f7-b3ed-55e1-b0e8-88971bb065fe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b05527b8-d216-550c-a108-daf98e2b7f0d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, Ringstraße 3"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1cf57953-1555-5fe9-aaff-5536cd0bcfa3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "589f5fec-edae-53a9-a116-ae49e0d4be2f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/5b0b8b90-4007-4455-a784-33b7e9a3a07f/df_pj_0009789.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

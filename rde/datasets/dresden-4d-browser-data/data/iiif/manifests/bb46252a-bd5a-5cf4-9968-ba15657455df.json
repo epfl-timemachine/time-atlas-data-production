@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bb46252a-bd5a-5cf4-9968-ba15657455df",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Hotel Bellevue"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0063613.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8cb12142-d56e-51e7-bd00-79ec96b169ac",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Hotel Bellevue"
+        ]
+      },
+      "height": 1141,
+      "width": 1600,
+      "items": [
+        {
+          "id": "46dbd991-6dbf-56a7-ba94-13d2dd1dbb82",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "45bda1f7-ceaf-54c0-8130-8c11abd0bdfa",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0063613.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1141,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0063613.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8cb12142-d56e-51e7-bd00-79ec96b169ac"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8dab9b1f-20ca-503a-aa15-6a2bda781c4e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9870e0a4-e122-59ee-8098-04f9a30151f2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Hotel Bellevue"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ba55f43b-2dd0-5aac-a0e5-8349d274e0ce"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8cb12142-d56e-51e7-bd00-79ec96b169ac",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e1e43386-f435-494a-aeb3-8179169d7984/df_hauptkatalog_0063613.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

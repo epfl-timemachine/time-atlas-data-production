@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c708c57c-1c74-53d6-b1b1-86c19e0d1d86",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Augustusstraße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260576.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c54d6965-0d1c-5b29-99d6-eda49193f597",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Augustusstraße"
+        ]
+      },
+      "height": 912,
+      "width": 1600,
+      "items": [
+        {
+          "id": "3ad304ad-76cd-5756-8096-86a39e826caa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b155d43e-b49e-5e8e-b027-8a032d46c592",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260576.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 912,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260576.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c54d6965-0d1c-5b29-99d6-eda49193f597"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6fb6c526-462c-5233-91c9-3aa0c06828cf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b6317b28-c9cd-568a-8e70-48cc25ffc6ea",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Augustusstraße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "40bb6cc5-c023-5d12-a198-ad4df92f3018"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c54d6965-0d1c-5b29-99d6-eda49193f597",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/71fa3abe-3166-4a11-a129-36b7289e149b/df_hauptkatalog_0260576.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

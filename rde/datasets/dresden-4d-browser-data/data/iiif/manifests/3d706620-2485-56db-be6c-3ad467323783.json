@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3d706620-2485-56db-be6c-3ad467323783",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ansicht des Brühlschen Palais "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0007781.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bca83b01-853c-5003-a90d-498de003434f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Ansicht des Brühlschen Palais "
+        ]
+      },
+      "height": 1230,
+      "width": 1600,
+      "items": [
+        {
+          "id": "730cd02f-e6bc-506f-9c8f-d33f163d6073",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a39cff55-7dcb-5059-a4f6-b0818cd4c63d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0007781.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1230,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0007781.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bca83b01-853c-5003-a90d-498de003434f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c1e69efc-53d8-50e9-824b-d1b7aba36acf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a2d4d234-574b-523d-8248-0b26804452c5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Ansicht des Brühlschen Palais "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3e5648dc-8b76-5234-9426-85239554c065"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bca83b01-853c-5003-a90d-498de003434f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/389b00cd-57cc-4af8-a684-ad59164588c8/df_dk_0007781.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

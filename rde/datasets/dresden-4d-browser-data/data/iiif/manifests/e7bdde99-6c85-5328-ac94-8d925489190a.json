@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e7bdde99-6c85-5328-ac94-8d925489190a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Das Belvedere auf der Brühlsch"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0259881.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "241cc7da-d525-579e-be7d-b4a083f6cbac",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Das Belvedere auf der Brühlsch"
+        ]
+      },
+      "height": 1181,
+      "width": 1600,
+      "items": [
+        {
+          "id": "e84ab745-dbd4-50e2-ac12-a14b3b4bc4c0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fa96a16f-3d5a-55d4-92bc-7de40238ad1c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0259881.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1181,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0259881.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "241cc7da-d525-579e-be7d-b4a083f6cbac"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "eb6beb81-658a-5c15-8485-49ecd3edc5d5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "701c57e8-67ba-548e-a17c-d88404966d7d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Das Belvedere auf der Brühlsch"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4b222dfc-459b-5210-a470-6bbfeb62a08a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "241cc7da-d525-579e-be7d-b4a083f6cbac",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d743379c-67fe-4952-ac21-118ee38c58ad/df_hauptkatalog_0259881.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

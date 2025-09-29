@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e36afdb6-780c-5da2-b3e6-e0f2cd58a1bf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kopf eines älteren Heiligen"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107072.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "98cf072f-1a2f-59c1-bc44-aa5802273fa3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kopf eines älteren Heiligen"
+        ]
+      },
+      "height": 1600,
+      "width": 1275,
+      "items": [
+        {
+          "id": "962147d2-5d46-5eae-8c2e-7c88f97588d8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2c9bd4b9-e0b0-58c0-8270-a3bda1f1b4a9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107072.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1275,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107072.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "98cf072f-1a2f-59c1-bc44-aa5802273fa3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "516af17d-b084-51f4-90cb-8aad9e17e217",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e3820ab4-091b-5ac2-b0fc-dfa8ac2aa716",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kopf eines älteren Heiligen"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8d73ad7d-e03e-5e9b-b4c7-719fb494ec54"
+                }
+              ],
+              "target": [
+                {
+                  "id": "98cf072f-1a2f-59c1-bc44-aa5802273fa3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/df6705f4-700b-4609-bc00-ad1d2a64e8c7/df_hauptkatalog_0107072.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

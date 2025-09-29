@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1f299643-05ce-5c77-9719-7a2bbd001f97",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Johanneum, Ansicht vom Neumark"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0040370.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6d32b9ce-e8bf-5c55-a6c4-de05347855db",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Johanneum, Ansicht vom Neumark"
+        ]
+      },
+      "height": 964,
+      "width": 1476,
+      "items": [
+        {
+          "id": "1166f304-ff3c-5dea-9fe9-9df62b50a6e0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ece32bfc-3a49-5c4e-ae62-ba503ab804db",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0040370.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 964,
+                "width": 1476,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0040370.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6d32b9ce-e8bf-5c55-a6c4-de05347855db"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2048c223-8d44-5789-906c-5712e4349c05",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "831326e1-6bf7-50ce-a819-a6bbb81a730d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Johanneum, Ansicht vom Neumark"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "78c92e49-9517-5dc4-bcb5-178d86972b97"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6d32b9ce-e8bf-5c55-a6c4-de05347855db",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f007dfe6-2d02-4ecb-ba91-34f010c53f30/df_hauptkatalog_0040370.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

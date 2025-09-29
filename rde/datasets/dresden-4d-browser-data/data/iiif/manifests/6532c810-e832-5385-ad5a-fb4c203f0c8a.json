@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6532c810-e832-5385-ad5a-fb4c203f0c8a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Canaletto"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0145922.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c7b5db70-9efd-50a7-9f6c-7fea4e75f1d4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Canaletto"
+        ]
+      },
+      "height": 1048,
+      "width": 1506,
+      "items": [
+        {
+          "id": "7ae931ee-e401-5e99-8ca9-e9dbb56ca2b7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4e5afba2-d110-5ee6-8faa-60b047409a3c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0145922.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1048,
+                "width": 1506,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0145922.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c7b5db70-9efd-50a7-9f6c-7fea4e75f1d4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7a3ae95a-2325-5eeb-a224-ab93a7ff33cb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ec0d8488-dcb8-5835-8ef2-382ff1cfd576",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Canaletto"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6a90abed-3fc9-5b68-986c-558d89e2dcf0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c7b5db70-9efd-50a7-9f6c-7fea4e75f1d4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/346a97fe-c9e1-4470-9a8e-2bb28be58193/df_hauptkatalog_0145922.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

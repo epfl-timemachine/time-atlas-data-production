@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bce36332-0c71-5a64-a67c-f4429d100b78",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Wallpavillon"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0159840.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ef5749d9-4aa9-5d39-98d1-351b6d908ab7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Wallpavillon"
+        ]
+      },
+      "height": 1106,
+      "width": 1600,
+      "items": [
+        {
+          "id": "be9b28ec-3a2d-5cd7-8bde-14321e0d163c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "78499963-ceea-5137-ab01-57579c83892f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0159840.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1106,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0159840.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ef5749d9-4aa9-5d39-98d1-351b6d908ab7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f248bc58-c3ce-5ea7-90dc-191b53aab4cc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5f7fc865-cc54-551b-ad06-5779b865c41b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Wallpavillon"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cac11f9e-647e-5ea3-896e-5277a9480c30"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ef5749d9-4aa9-5d39-98d1-351b6d908ab7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f8397e3d-93ac-4f77-8e1a-436a573c3518/df_hauptkatalog_0159840.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

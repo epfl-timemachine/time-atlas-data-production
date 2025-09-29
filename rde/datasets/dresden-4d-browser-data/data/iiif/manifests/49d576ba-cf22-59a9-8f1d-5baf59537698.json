@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "49d576ba-cf22-59a9-8f1d-5baf59537698",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Hotel Bellevue, Haupt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0063614.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a47d8e35-46f0-52e1-9e81-b971950b848e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Hotel Bellevue, Haupt"
+        ]
+      },
+      "height": 1111,
+      "width": 1600,
+      "items": [
+        {
+          "id": "3c53da98-9110-5ffd-82a1-a4588496954a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8af06e6e-b596-505d-be54-74bd48265e02",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0063614.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1111,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0063614.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a47d8e35-46f0-52e1-9e81-b971950b848e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5a310c6c-8a71-5c07-aa7d-7166356d43ce",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dfc28902-597c-55ad-8aa1-3a433e5e487d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Hotel Bellevue, Haupt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3bcd4aac-3853-5c36-8cdf-039ef1546b33"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a47d8e35-46f0-52e1-9e81-b971950b848e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/52e49cf6-c2a9-4edc-8a3b-885ecdc46d27/df_hauptkatalog_0063614.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

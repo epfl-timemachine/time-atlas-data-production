@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7f6dcdb7-8192-5447-bb8f-6d79071358da",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ceres"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0001056.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2cef349e-ee38-5042-aa3c-150e8c831c97",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Ceres"
+        ]
+      },
+      "height": 1581,
+      "width": 1600,
+      "items": [
+        {
+          "id": "0d82169a-7e59-58b4-82e4-fa1a460120c6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "42c601f0-9abc-5281-a28c-4515288348d9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0001056.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1581,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0001056.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2cef349e-ee38-5042-aa3c-150e8c831c97"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fe2b911a-3c47-5d6b-8e81-b2af4582de7f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2c83230e-807e-50c1-b064-9b043ed1879e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Ceres"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f421d61a-c0ae-5ff0-b917-36114a5dc901"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2cef349e-ee38-5042-aa3c-150e8c831c97",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d86abc1c-f97c-43d2-b4f3-816bf99084ad/df_ps_0001056.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

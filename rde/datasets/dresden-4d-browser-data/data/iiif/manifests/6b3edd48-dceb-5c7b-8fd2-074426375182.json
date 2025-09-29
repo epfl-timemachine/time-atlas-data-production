@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6b3edd48-dceb-5c7b-8fd2-074426375182",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden - Der Fürstenzug"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ge_0025345.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6291509b-d83e-521e-9ddc-fea31cd51c0e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden - Der Fürstenzug"
+        ]
+      },
+      "height": 877,
+      "width": 1200,
+      "items": [
+        {
+          "id": "dd472792-d94f-5ebb-9dfc-ae96b88c0f62",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "25d032a4-cb80-5465-ab53-89078c12111a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ge_0025345.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 877,
+                "width": 1200,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ge_0025345.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6291509b-d83e-521e-9ddc-fea31cd51c0e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1e37e9b7-a42a-5bef-8aeb-75c90c4c6968",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d9d69dec-791e-573f-b250-57645bed8ece",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden - Der Fürstenzug"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "017bd339-a92a-5e35-8136-dba10e184b63"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6291509b-d83e-521e-9ddc-fea31cd51c0e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ec392185-dcb8-4366-8767-172ed0e0f101/df_ge_0025345.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

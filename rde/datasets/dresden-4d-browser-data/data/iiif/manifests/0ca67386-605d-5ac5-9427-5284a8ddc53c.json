@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0ca67386-605d-5ac5-9427-5284a8ddc53c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Grundriss Semperoper"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096814.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "aff4d1b4-fa88-5e06-9ac0-5632829e1101",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Grundriss Semperoper"
+        ]
+      },
+      "height": 2112,
+      "width": 1600,
+      "items": [
+        {
+          "id": "45ff26f7-3f2a-5d38-9ede-7e726018b9ab",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aa98edb8-2e25-5259-910b-087bc9d6a534",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096814.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 2112,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096814.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "aff4d1b4-fa88-5e06-9ac0-5632829e1101"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1beba8e2-f1e8-50ba-a1cd-f3fabab6b7fa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c3b6e5d9-c25e-5fef-a950-2110c632afbd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Grundriss Semperoper"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2320af1d-e70c-59fa-a020-fad5bf3d0351"
+                }
+              ],
+              "target": [
+                {
+                  "id": "aff4d1b4-fa88-5e06-9ac0-5632829e1101",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/b2d1026a-68f8-485f-a506-13ebf8200593/df_hauptkatalog_0096814.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

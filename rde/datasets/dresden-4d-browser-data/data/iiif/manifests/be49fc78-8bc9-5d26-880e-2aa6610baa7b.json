@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "be49fc78-8bc9-5d26-880e-2aa6610baa7b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Enttrümmerung der Inn"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107429.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "85ffe1fa-b741-562f-89e1-660f7e7e7f12",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Enttrümmerung der Inn"
+        ]
+      },
+      "height": 1150,
+      "width": 1600,
+      "items": [
+        {
+          "id": "fe7413bf-51dc-5442-abe1-e752a119ab1b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b741f6f7-61a4-5fe5-b0c1-d82e6d8da4c8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107429.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1150,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107429.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "85ffe1fa-b741-562f-89e1-660f7e7e7f12"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4240087e-df6f-5408-8355-c16d89c1f4b7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "60873b3f-0406-59b7-9001-52aded7b8065",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Enttrümmerung der Inn"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8eb3f017-1a81-5544-9090-b25ddeb28071"
+                }
+              ],
+              "target": [
+                {
+                  "id": "85ffe1fa-b741-562f-89e1-660f7e7e7f12",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/477db2c7-30fb-4c35-aa4a-9a014ba561f1/df_hauptkatalog_0107429.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c6c38660-ca6c-58c6-99f9-1d3475a8e809",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Neumarkt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186866.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ac8d5bec-2350-53a0-aacb-3134715cd5c5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Neumarkt"
+        ]
+      },
+      "height": 1600,
+      "width": 1101,
+      "items": [
+        {
+          "id": "d5c4fa12-6d50-5770-a1ab-60a70b9e35e5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1a611dd0-02f8-5dd2-9691-b920a08f4577",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186866.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1101,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186866.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ac8d5bec-2350-53a0-aacb-3134715cd5c5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "925c0000-9605-5800-9afd-5d11f92cbe01",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aff7c885-81d3-5be7-9511-20e21948a983",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Neumarkt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9c8c17f8-823f-5551-8adb-00cffb0275ca"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ac8d5bec-2350-53a0-aacb-3134715cd5c5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/48820172-366f-42b9-b600-03809afc609d/df_hauptkatalog_0186866.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

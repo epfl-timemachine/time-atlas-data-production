@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6059b8e6-0862-58b9-82f4-9f3a39142928",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick vom Neustädter "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006122.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "23e36fd6-b56f-543d-b820-53a3bc1b8510",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick vom Neustädter "
+        ]
+      },
+      "height": 1112,
+      "width": 1529,
+      "items": [
+        {
+          "id": "cd87c679-60e6-5699-8968-d33c691f31c7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5765ed91-bf17-59f7-be17-6e80f14bf580",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006122.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1112,
+                "width": 1529,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006122.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "23e36fd6-b56f-543d-b820-53a3bc1b8510"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "caefeced-cf4c-5756-8bb6-e21c2b2f51b5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9afe034c-48a3-5a52-a614-dad2d1ebae2c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick vom Neustädter "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a4197904-e6ed-5a06-8b1a-fa14eb266305"
+                }
+              ],
+              "target": [
+                {
+                  "id": "23e36fd6-b56f-543d-b820-53a3bc1b8510",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f0aa4426-7807-44c5-820a-a0325f9bc684/df_hauptkatalog_0006122.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

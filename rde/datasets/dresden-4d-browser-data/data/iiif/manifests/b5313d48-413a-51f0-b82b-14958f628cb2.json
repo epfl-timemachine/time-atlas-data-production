@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b5313d48-413a-51f0-b82b-14958f628cb2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Landhaus, Grundriss 2"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0108380.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5a70048b-87ee-55fe-92ad-741663db35f5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Landhaus, Grundriss 2"
+        ]
+      },
+      "height": 890,
+      "width": 1600,
+      "items": [
+        {
+          "id": "bd09079e-cdab-5677-b6e7-461cbc000765",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6da5a0be-243e-54be-98d0-e9ead8827d2b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0108380.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 890,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0108380.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5a70048b-87ee-55fe-92ad-741663db35f5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1d186cb9-15d1-55df-9cca-cb35e36e5a22",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "67ec4f3c-ee4e-5748-b57a-be0fc9e0ff9b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Landhaus, Grundriss 2"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "751c73e9-e1ce-5c83-abc9-e763777ec1c4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5a70048b-87ee-55fe-92ad-741663db35f5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/13032f2e-24bc-41a2-8393-354b0b48c150/df_hauptkatalog_0108380.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

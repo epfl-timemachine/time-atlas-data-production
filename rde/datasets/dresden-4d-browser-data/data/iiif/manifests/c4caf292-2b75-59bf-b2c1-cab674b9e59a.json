@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c4caf292-2b75-59bf-b2c1-cab674b9e59a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Panorama von Dresden, im Zentr"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0195293.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ca62a58c-def8-5bf5-9d39-dd9f834e8194",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Panorama von Dresden, im Zentr"
+        ]
+      },
+      "height": 1600,
+      "width": 1478,
+      "items": [
+        {
+          "id": "a40e1a30-c56e-5421-8e86-fb17675c824e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f9ff5b1c-898d-5651-9b3e-85b0a6b41091",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0195293.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1478,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0195293.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ca62a58c-def8-5bf5-9d39-dd9f834e8194"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "61056485-f305-52e7-adbc-7f284e469db1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "94ce34f5-9b3d-5bbe-9000-49325d9ab04e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Panorama von Dresden, im Zentr"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c949ff67-072e-56e4-8ea0-c89c9bfd0ae0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ca62a58c-def8-5bf5-9d39-dd9f834e8194",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e031d683-8d00-428f-a6ab-49680b17b734/df_hauptkatalog_0195293.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

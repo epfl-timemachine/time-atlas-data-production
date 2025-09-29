@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b64a309f-2183-5fa1-b9d7-366c92630479",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Naumann, Paul Hermann"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0134572.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "751c5ab3-869f-50a7-9b38-45faa7c3addd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Naumann, Paul Hermann"
+        ]
+      },
+      "height": 1107,
+      "width": 1600,
+      "items": [
+        {
+          "id": "280547d6-15e5-50c9-8680-47111b072e91",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "324bec68-d575-59bb-a0a6-d95097749597",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0134572.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1107,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0134572.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "751c5ab3-869f-50a7-9b38-45faa7c3addd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6478477a-7fad-5403-8f73-dc015b77f545",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2d8a002d-8779-590d-b20d-b1da039cd3db",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Naumann, Paul Hermann"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0b59692b-f230-5ad5-bf3e-4a87f40b65e2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "751c5ab3-869f-50a7-9b38-45faa7c3addd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/9371d92c-5610-49ed-8a2b-9fc744e280ab/df_hauptkatalog_0134572.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

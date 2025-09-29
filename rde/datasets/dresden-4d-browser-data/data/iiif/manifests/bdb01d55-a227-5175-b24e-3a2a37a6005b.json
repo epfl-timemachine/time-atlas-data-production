@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bdb01d55-a227-5175-b24e-3a2a37a6005b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Postplatz"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0169002.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8b52a11f-4245-56c5-b380-d7961338d0b8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Postplatz"
+        ]
+      },
+      "height": 1123,
+      "width": 1600,
+      "items": [
+        {
+          "id": "e056af67-776c-58aa-9628-32c663fe9c6d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "445804a1-6a8d-5acc-adf8-49dafbc05242",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0169002.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1123,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0169002.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8b52a11f-4245-56c5-b380-d7961338d0b8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5cbd0e2f-ce12-5958-831c-bcf85676eb7f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a0b2f750-2200-57ac-918b-0797af278465",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Postplatz"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ddf24dec-80cd-5c06-83f9-3f5d40550823"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8b52a11f-4245-56c5-b380-d7961338d0b8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/42ed3374-83e0-4305-97c8-63c60a89628a/df_hauptkatalog_0169002.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

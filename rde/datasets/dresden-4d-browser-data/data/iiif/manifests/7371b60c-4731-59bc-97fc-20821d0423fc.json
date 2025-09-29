@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7371b60c-4731-59bc-97fc-20821d0423fc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, Taschenberg "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_mbs_0081015_019_a.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e981d86f-4a8b-5c65-b03e-d760c237147b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, Taschenberg "
+        ]
+      },
+      "height": 1600,
+      "width": 1172,
+      "items": [
+        {
+          "id": "20c1d48f-8a02-5109-87d1-07b43588f2c7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f53abb75-d503-5904-b00c-7838094ffbab",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_mbs_0081015_019_a.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1172,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_mbs_0081015_019_a.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e981d86f-4a8b-5c65-b03e-d760c237147b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4e16b5b6-be59-5012-a545-6e115971fe74",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c3d99106-279d-571f-9264-f62ca70221bc",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, Taschenberg "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "297ce290-de5d-5f9a-a29b-ad47de7be634"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e981d86f-4a8b-5c65-b03e-d760c237147b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/041d32bf-7943-4c57-b089-8f2a20240001/df_mbs_0081015_019_a.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

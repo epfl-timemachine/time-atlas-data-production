@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4a06eda1-f08f-5617-a09c-96164685e049",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Postplatz, Ostraallee"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0304885.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ccbc22dd-5478-5249-aa68-09cae413e72d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Postplatz, Ostraallee"
+        ]
+      },
+      "height": 1029,
+      "width": 1600,
+      "items": [
+        {
+          "id": "7350afa7-5b73-5bcb-b1cf-7f17c582e2f1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "27e81887-6e9c-50b8-a47d-6cffbac3238a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0304885.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1029,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0304885.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ccbc22dd-5478-5249-aa68-09cae413e72d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4da9532d-e0fb-56a2-9033-317eeb1df365",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4f5e1347-606f-5503-98cb-55d5c0b5470a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Postplatz, Ostraallee"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "af7571b6-9fdb-5cfe-8183-fc8cc471a4e0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ccbc22dd-5478-5249-aa68-09cae413e72d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/acab7e39-4f31-49bf-af6a-384038d8b9d5/df_hauptkatalog_0304885.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

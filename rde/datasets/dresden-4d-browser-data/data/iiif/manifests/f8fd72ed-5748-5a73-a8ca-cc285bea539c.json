@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f8fd72ed-5748-5a73-a8ca-cc285bea539c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Postplatz, Wallstraße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054491.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ab17cc03-d729-521e-8911-dae99b177944",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Postplatz, Wallstraße"
+        ]
+      },
+      "height": 1108,
+      "width": 1558,
+      "items": [
+        {
+          "id": "5ceedb97-58c1-518e-809b-883a63c29b77",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "047723f6-4169-54d4-a0a4-e7a79f285685",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054491.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1108,
+                "width": 1558,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054491.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ab17cc03-d729-521e-8911-dae99b177944"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "af8db1a7-b426-59f9-83f8-e14d7a3bea4e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "addc52b3-ae90-5640-90c5-bfa91c3a7a68",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Postplatz, Wallstraße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a467e7eb-cc62-51d2-aecd-b407c7adf0d5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ab17cc03-d729-521e-8911-dae99b177944",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/9b42092f-80a7-4de7-ac7a-dfe206d31bde/df_hauptkatalog_0054491.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

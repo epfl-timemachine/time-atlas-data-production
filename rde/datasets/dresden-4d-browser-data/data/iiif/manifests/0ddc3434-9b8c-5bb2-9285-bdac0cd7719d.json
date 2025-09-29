@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0ddc3434-9b8c-5bb2-9285-bdac0cd7719d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Wiesentorstraße mit B"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054840.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "85b30549-ebc1-56b5-a5ab-527179237c60",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Wiesentorstraße mit B"
+        ]
+      },
+      "height": 1600,
+      "width": 1096,
+      "items": [
+        {
+          "id": "e33259de-87ae-5c68-a89f-650041831c5a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7fa673e3-3941-5dbe-980f-adef5a95a656",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054840.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1096,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054840.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "85b30549-ebc1-56b5-a5ab-527179237c60"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cd21af4f-47ef-592f-8a3d-b950977b6032",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "acbc7bcb-d07c-5bb5-9213-d2b0e5ec71f8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Wiesentorstraße mit B"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c72d5ce7-2f4b-5b08-a9bb-12f6df1f8c6e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "85b30549-ebc1-56b5-a5ab-527179237c60",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/41c52c0a-5ef3-40aa-8708-6d6690bdb850/df_hauptkatalog_0054840.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

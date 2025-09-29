@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f463d95f-90a5-50c3-bfdf-21b016f3259e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Schössergasse 16, Por"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008815.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a50de034-bb2b-5ff2-a32a-7aae2995d99c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Schössergasse 16, Por"
+        ]
+      },
+      "height": 1600,
+      "width": 1182,
+      "items": [
+        {
+          "id": "c58449b1-52f2-570a-82fb-9d7dbee89e3e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "206ee19d-297e-5c2c-b142-507f0d50ad36",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008815.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1182,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008815.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a50de034-bb2b-5ff2-a32a-7aae2995d99c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5484a2ec-f875-5bc6-9a4a-d5b626894ae9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c02ceb90-7383-581b-b630-f811a78cd8e0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Schössergasse 16, Por"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d39375cf-dcef-5b1b-a9ce-9e28ac71ad7b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a50de034-bb2b-5ff2-a32a-7aae2995d99c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f856ab4c-6b16-4579-ac1a-64b42106dfec/df_hauptkatalog_0008815.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

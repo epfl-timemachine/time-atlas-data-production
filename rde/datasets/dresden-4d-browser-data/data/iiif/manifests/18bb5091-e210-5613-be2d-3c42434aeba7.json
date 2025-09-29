@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "18bb5091-e210-5613-be2d-3c42434aeba7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Riesensaal"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0141078.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6339169a-8976-5a68-867b-32404932212f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Riesensaal"
+        ]
+      },
+      "height": 1142,
+      "width": 1600,
+      "items": [
+        {
+          "id": "306e6dcd-2a8e-5b73-b1b1-52ee1203556d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7b2c6bb3-8609-5654-9a60-434f549b83e4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0141078.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1142,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0141078.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6339169a-8976-5a68-867b-32404932212f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "64bd0197-317a-555a-87a5-4bda349b4d5b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2a531df3-1166-5882-89c9-11cb8ce75ec0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Riesensaal"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "afb8d504-6cbd-5729-bb47-b0f4e818d42c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6339169a-8976-5a68-867b-32404932212f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/01386887-c9d2-4b96-8496-a0fad5aec98e/df_hauptkatalog_0141078.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

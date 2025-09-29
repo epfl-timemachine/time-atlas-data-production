@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "933334a8-4c7c-5322-8dbe-d38fc5842f0a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, 1845"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054454.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "314b0bc3-681c-5a8f-8205-cf08f02a5bd5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, 1845"
+        ]
+      },
+      "height": 1142,
+      "width": 1500,
+      "items": [
+        {
+          "id": "e2cde6ea-a68e-5018-b680-7a371f381226",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "70a02b2c-5e96-5854-8639-0c673bf4fc9f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054454.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1142,
+                "width": 1500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054454.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "314b0bc3-681c-5a8f-8205-cf08f02a5bd5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a2e3b704-f78d-5194-9080-e33add433e30",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d928883c-1078-56ca-b357-de77ccf40993",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, 1845"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "077a8731-1530-56d5-855b-d912f048ccb4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "314b0bc3-681c-5a8f-8205-cf08f02a5bd5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/0c725900-488f-4596-9b10-15e17a13c2db/df_hauptkatalog_0054454.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0b06f1b5-967e-537b-8e51-372d0c8142bc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Jüdenhof"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0033950.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2a42db87-94f7-5b40-8ba3-b4bb09464f30",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Jüdenhof"
+        ]
+      },
+      "height": 1600,
+      "width": 1198,
+      "items": [
+        {
+          "id": "9fe268aa-0794-55d2-aa79-30aa16e22c73",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aa9fd17c-438c-5c03-a86b-503d774b5a5b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0033950.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1198,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0033950.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2a42db87-94f7-5b40-8ba3-b4bb09464f30"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "20a41264-dfec-5544-9aa6-5f70199deeb0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3889f7a7-2c1c-50bd-bbed-a77e1da8fa6b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Jüdenhof"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7570cb10-0f2a-54d2-9d0b-f3f23dd58044"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2a42db87-94f7-5b40-8ba3-b4bb09464f30",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/a7390097-df37-43c9-917e-022cea40e268/df_hauptkatalog_0033950.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

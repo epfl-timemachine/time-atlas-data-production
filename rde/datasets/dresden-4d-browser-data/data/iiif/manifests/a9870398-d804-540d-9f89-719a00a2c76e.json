@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a9870398-d804-540d-9f89-719a00a2c76e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick vom Schlossturm"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0039815.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ae3ffdb6-3a8f-5e41-aa9f-db837a8013d4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick vom Schlossturm"
+        ]
+      },
+      "height": 1600,
+      "width": 1205,
+      "items": [
+        {
+          "id": "0000dbd1-06ff-500a-a418-7c0182cd3702",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "391e98a6-66fa-5edf-b062-0a8caa0db2e5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0039815.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1205,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0039815.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ae3ffdb6-3a8f-5e41-aa9f-db837a8013d4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "29f3c7c9-7d55-5939-90ba-086ba3d38a6a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fdc06229-7dcf-532e-8256-7b4f216bbf7d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick vom Schlossturm"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "197ee825-b2c7-505e-953f-72072ce44b94"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ae3ffdb6-3a8f-5e41-aa9f-db837a8013d4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7c6cb0c5-2729-4f21-8a52-4ad041e95bc9/df_hauptkatalog_0039815.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

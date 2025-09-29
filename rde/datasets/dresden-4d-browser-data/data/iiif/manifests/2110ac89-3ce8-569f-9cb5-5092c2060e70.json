@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2110ac89-3ce8-569f-9cb5-5092c2060e70",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Landhaus, Querschnitt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0084239.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d5d8ff39-3c46-578a-98d8-2f47ee9a33ed",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Landhaus, Querschnitt"
+        ]
+      },
+      "height": 1104,
+      "width": 1600,
+      "items": [
+        {
+          "id": "06ed9dec-5f85-55cd-af18-047055ab1e22",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "496ebbd9-37c1-5167-b856-f421852d9b8e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0084239.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1104,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0084239.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d5d8ff39-3c46-578a-98d8-2f47ee9a33ed"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "28f48703-997a-5a9d-b859-f0031c73440b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c1190e0c-a47b-52e4-be6c-652dca07fda8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Landhaus, Querschnitt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "426a41ed-022a-5d68-a245-f52b7901523c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d5d8ff39-3c46-578a-98d8-2f47ee9a33ed",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/90e3eaed-ba3c-467b-82c6-5b80d376054d/df_hauptkatalog_0084239.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "437af846-44d9-5c78-b878-53aa426fc0d0",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Café Central am Altmarkt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0111050.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "24f040e0-41b2-5c6b-854c-bf08011a1bfb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Café Central am Altmarkt"
+        ]
+      },
+      "height": 2114,
+      "width": 1600,
+      "items": [
+        {
+          "id": "8da857d2-63a3-5011-aa78-5ebbc9c6d5ec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6f6bdbb5-e23a-51e9-8db0-9050b48cc9c6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0111050.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 2114,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0111050.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "24f040e0-41b2-5c6b-854c-bf08011a1bfb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9571cc94-657c-55b2-af38-1f5413641de9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f108ea07-32ed-565a-bb26-536b5c3b8b57",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Café Central am Altmarkt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1799ff3e-4bef-5423-b397-d8619462223a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "24f040e0-41b2-5c6b-854c-bf08011a1bfb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/b313b31a-86d9-48d9-8d68-d8cf5511c3c3/df_hauptkatalog_0111050.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

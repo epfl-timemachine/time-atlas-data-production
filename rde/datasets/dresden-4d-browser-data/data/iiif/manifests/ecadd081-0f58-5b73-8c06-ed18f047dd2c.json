@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ecadd081-0f58-5b73-8c06-ed18f047dd2c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Venus Anadyomene"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000577.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b0a56c49-bc79-5685-b7cf-6c67bba43738",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Venus Anadyomene"
+        ]
+      },
+      "height": 1600,
+      "width": 1175,
+      "items": [
+        {
+          "id": "86d59f5c-7479-5e92-8632-4c5feaeb254f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1ddf689b-c492-5e3d-883d-511163d94225",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000577.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1175,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000577.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b0a56c49-bc79-5685-b7cf-6c67bba43738"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c3a4d26a-6a45-5725-b475-b6f7bf66b550",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4c1d78c7-1d96-52bc-8708-14e24aba45c3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Venus Anadyomene"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "20ae48a5-3385-5025-88ac-76805c42b053"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b0a56c49-bc79-5685-b7cf-6c67bba43738",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/36844110-6d51-4d09-bfcf-3a0b11dab2a2/df_ps_0000577.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

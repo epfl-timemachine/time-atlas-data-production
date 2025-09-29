@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ce6c6d2f-5deb-5df9-9ca5-6935e09efeeb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Fürstenzug"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika133_0001031_motiv.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3d5bd0e8-7a8d-502f-afdf-f89f169f48b1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Fürstenzug"
+        ]
+      },
+      "height": 1177,
+      "width": 1600,
+      "items": [
+        {
+          "id": "b384711e-9e0a-575d-9fc7-f2c2d4a53ece",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3e2bd486-433a-542c-961a-726470bb9e1c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika133_0001031_motiv.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1177,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika133_0001031_motiv.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3d5bd0e8-7a8d-502f-afdf-f89f169f48b1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "79202f75-a36d-581e-91b3-f1e76b9da0f8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6f8f93ba-44d5-59c9-bafe-d378feba5c39",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Fürstenzug"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "130e7d18-d0aa-5501-a7c6-1c053457aefc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3d5bd0e8-7a8d-502f-afdf-f89f169f48b1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/edf4ab9f-d876-4e50-9898-10b83d684d3b/df_bika133_0001031_motiv.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

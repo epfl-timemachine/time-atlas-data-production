@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a6384429-930e-5ab5-9870-d42278cb6fef",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Zeichnung"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0120209.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "adcd3608-ea40-5654-8bcd-cff1ca37dc1c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Zeichnung"
+        ]
+      },
+      "height": 1059,
+      "width": 1600,
+      "items": [
+        {
+          "id": "9f7376b4-3e24-5c5c-822a-4acb35a5ee9c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f29f5d8a-e204-52f6-a35b-17745ec6474e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0120209.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1059,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0120209.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "adcd3608-ea40-5654-8bcd-cff1ca37dc1c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fa092a3f-cd48-57d2-8fec-e5fa8d867e3c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "32df3a7f-5723-5278-a205-b443c783c3d3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Zeichnung"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f612a689-547b-565c-83c5-e67a54598ead"
+                }
+              ],
+              "target": [
+                {
+                  "id": "adcd3608-ea40-5654-8bcd-cff1ca37dc1c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ab7c16f6-1de7-48a5-849b-efc42809c042/df_hauptkatalog_0120209.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

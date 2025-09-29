@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d87f2615-0725-5e85-8b47-8a7e46a621d7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dinglinger-Haus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0132634.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "520135db-f2a9-5306-8687-6b65954bc652",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dinglinger-Haus"
+        ]
+      },
+      "height": 1600,
+      "width": 932,
+      "items": [
+        {
+          "id": "2cb91279-e073-5f05-8a1f-0d53f7854bd9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b1c53089-4d1a-50f2-b244-5b7f7f550194",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0132634.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 932,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0132634.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "520135db-f2a9-5306-8687-6b65954bc652"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2aa26924-18c6-5481-aa1b-de05f462f038",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "792ab516-c3b5-56cb-ae8d-99d2362aeddc",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dinglinger-Haus"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b244305c-196e-56ac-93b7-6775c8c88116"
+                }
+              ],
+              "target": [
+                {
+                  "id": "520135db-f2a9-5306-8687-6b65954bc652",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/91a193bc-d1eb-4ed1-baa7-746594d9e0b8/df_hauptkatalog_0132634.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1c2d5851-90c4-5eaf-95a6-21a1557f7999",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Probst, Georg Balthasar"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0075880.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1ab12213-58ff-52aa-8a83-707512934afc",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Probst, Georg Balthasar"
+        ]
+      },
+      "height": 1221,
+      "width": 1600,
+      "items": [
+        {
+          "id": "1320ab29-aad1-57ab-8946-62aeed9f096e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1b14a088-3621-56b2-869b-dd9c38fa386a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0075880.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1221,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0075880.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1ab12213-58ff-52aa-8a83-707512934afc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "175e4b0a-bab5-5ac2-af03-f5e308d3abf1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "54e59c22-b7ab-5640-87e2-c1630e76786b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Probst, Georg Balthasar"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9517ad37-8f01-5af2-8c82-50d7d63dd68b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1ab12213-58ff-52aa-8a83-707512934afc",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/1cc3752d-4b72-4ac7-b4e5-b8caa475f78e/df_hauptkatalog_0075880.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

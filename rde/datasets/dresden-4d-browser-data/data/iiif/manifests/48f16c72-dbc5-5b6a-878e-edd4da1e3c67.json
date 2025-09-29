@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "48f16c72-dbc5-5b6a-878e-edd4da1e3c67",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Herkules Saxonicus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0003057.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ece89ade-88c6-563d-b62e-23d6f36a25f8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Herkules Saxonicus"
+        ]
+      },
+      "height": 1600,
+      "width": 1590,
+      "items": [
+        {
+          "id": "13b50491-149f-5d96-8cb3-6ee909a98293",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c213c9db-6270-5ff7-9951-cd2bbe335c30",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0003057.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1590,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0003057.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ece89ade-88c6-563d-b62e-23d6f36a25f8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "36854b53-bef3-50e7-9354-6fbc35ce92d0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4dda29ed-8f4c-5f97-8cf5-44a06a0a6dd2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Herkules Saxonicus"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "46ddfdad-1fb9-5ad6-9e76-08134d49560b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ece89ade-88c6-563d-b62e-23d6f36a25f8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d733ad79-def3-450e-a07a-def0459849c9/df_ps_0003057.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

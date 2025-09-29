@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b349a6b3-ede9-5dd3-a734-8e29e8280d63",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Katholische Hofkirche"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0191578.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "047c5dcb-1ddd-5df8-bd99-a69109b33822",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Katholische Hofkirche"
+        ]
+      },
+      "height": 1600,
+      "width": 1074,
+      "items": [
+        {
+          "id": "b0dc8dca-037d-569d-99e1-44a1b9b442dd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2cd05dc1-c25c-5321-b0d0-372290d65e4d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0191578.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1074,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0191578.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "047c5dcb-1ddd-5df8-bd99-a69109b33822"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f454a51a-a0ff-50eb-9bf0-ad4362452c91",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "55915586-bb30-5874-93f5-908edaf4c38d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Katholische Hofkirche"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "179bc1a0-081e-5646-91f7-e38eef5f0762"
+                }
+              ],
+              "target": [
+                {
+                  "id": "047c5dcb-1ddd-5df8-bd99-a69109b33822",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e151c714-b02a-4d2a-bfc9-77d6f55e897d/df_hauptkatalog_0191578.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "060a7ba5-d645-53ea-845d-733457578144",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, \"Zeitreise\""
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bo-pos-53_0000091.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8cc9a7b0-8836-5ba0-8412-caf55051c243",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, \"Zeitreise\""
+        ]
+      },
+      "height": 373,
+      "width": 500,
+      "items": [
+        {
+          "id": "9a2d7162-0dde-5901-bd2b-0d523929ba27",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3e3f1703-dbac-5fe0-a2c1-289bf5540b59",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bo-pos-53_0000091.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 373,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bo-pos-53_0000091.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8cc9a7b0-8836-5ba0-8412-caf55051c243"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6e8c9737-c51c-5863-81a6-3dd91216b630",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8e846ca9-53ab-5dd6-840c-7a9da52eabda",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, \"Zeitreise\""
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a9c39deb-9df2-5293-9cc9-444d2dc0dd19"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8cc9a7b0-8836-5ba0-8412-caf55051c243",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/444b4931-a786-49ed-a845-a6f33d4b24fc/df_bo-pos-53_0000091.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

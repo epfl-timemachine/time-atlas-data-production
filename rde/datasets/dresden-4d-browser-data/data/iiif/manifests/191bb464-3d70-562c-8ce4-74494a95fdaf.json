@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "191bb464-3d70-562c-8ce4-74494a95fdaf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Zwinger, Wallbrücke"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0060347.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "76f47a6c-88bd-5cf8-8daf-eab7d2b65d8a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Zwinger, Wallbrücke"
+        ]
+      },
+      "height": 1176,
+      "width": 1600,
+      "items": [
+        {
+          "id": "a3d62fa6-ab42-5385-b07c-504200d8ec91",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "736ab2c5-78ee-51f4-a09b-9df4c77b2b13",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0060347.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1176,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0060347.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "76f47a6c-88bd-5cf8-8daf-eab7d2b65d8a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9266867d-ce25-5ec6-92cf-84161086a106",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "166ada59-717f-5bd6-a40d-1a212187eaf0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Zwinger, Wallbrücke"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c44e9ae7-ad2c-554e-a06d-086d6d5904f2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "76f47a6c-88bd-5cf8-8daf-eab7d2b65d8a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/08031093-26d1-48f1-adc5-2b0e0725f7c6/df_hauptkatalog_0060347.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

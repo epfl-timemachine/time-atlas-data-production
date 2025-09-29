@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1a0585c6-cbdf-5c19-97bc-9327c7ba99a4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Wiederaufbau des Dres"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0095428.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ac5c044e-c85e-528a-9eed-43e19fbc2da5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Wiederaufbau des Dres"
+        ]
+      },
+      "height": 1191,
+      "width": 1600,
+      "items": [
+        {
+          "id": "f8929bd2-626e-5556-a26f-2e779538f825",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "95115273-e684-5949-8c7d-a8bf5c52b538",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0095428.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1191,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0095428.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ac5c044e-c85e-528a-9eed-43e19fbc2da5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0e030fa1-7cda-589d-9a2d-83c736601f77",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e0da36de-ee41-5430-ac4b-b87158ff33c5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Wiederaufbau des Dres"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "62186291-a02f-5934-b02e-4578ccd4eb39"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ac5c044e-c85e-528a-9eed-43e19fbc2da5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/84425acc-99cf-44fc-ac8b-67d3dbc24138/df_hauptkatalog_0095428.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

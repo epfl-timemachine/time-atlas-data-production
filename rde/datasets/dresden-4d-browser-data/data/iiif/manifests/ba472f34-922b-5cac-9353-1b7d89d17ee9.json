@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ba472f34-922b-5cac-9353-1b7d89d17ee9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Johanneum, Historisches Museum"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054047.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e304ee8b-f34b-50ff-81a2-b57276e3f62c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Johanneum, Historisches Museum"
+        ]
+      },
+      "height": 1186,
+      "width": 1600,
+      "items": [
+        {
+          "id": "ef60a59a-e5c9-5792-bffd-a4cfcdeee978",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7ab9de48-038d-5752-8d45-6e844d76c3b0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054047.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1186,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0054047.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e304ee8b-f34b-50ff-81a2-b57276e3f62c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "74580300-c9fe-5223-b071-6b5603e33ebc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "be5df3da-c7bf-5148-8588-917d3c69f617",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Johanneum, Historisches Museum"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ca321025-2a1b-52fc-81eb-4b13b3a6a0aa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e304ee8b-f34b-50ff-81a2-b57276e3f62c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/9d798906-f3e8-4f3f-84ed-2f28b3df2ade/df_hauptkatalog_0054047.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "34ffde22-e263-5ebc-a964-0e48ff0a80b1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schlossbauprojekt Dresden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0122507.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4edaca00-bab4-5c62-a19d-803292f6725d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schlossbauprojekt Dresden"
+        ]
+      },
+      "height": 1600,
+      "width": 1053,
+      "items": [
+        {
+          "id": "65ccb459-6490-5e33-9d5a-1cfffb0796d9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6da0720d-ac30-5cd9-8d4f-04ff93c39599",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0122507.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1053,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0122507.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4edaca00-bab4-5c62-a19d-803292f6725d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dc6037f9-aa26-57a7-95a7-f5467a3dcdb7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1159791c-872f-5c59-943d-592e180f1386",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schlossbauprojekt Dresden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fbf33a73-ae18-529b-9df6-b226ec30bd48"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4edaca00-bab4-5c62-a19d-803292f6725d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/2bfad60b-da91-44d9-9bce-8947c170914b/df_hauptkatalog_0122507.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

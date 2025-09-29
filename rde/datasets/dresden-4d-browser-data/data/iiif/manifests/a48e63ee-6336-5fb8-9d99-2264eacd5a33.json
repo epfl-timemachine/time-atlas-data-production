@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a48e63ee-6336-5fb8-9d99-2264eacd5a33",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "\"Dresden\""
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bo-pos-54_0000017.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "468f5eb7-a418-50bd-b287-cc0a0eb9829c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "\"Dresden\""
+        ]
+      },
+      "height": 357,
+      "width": 500,
+      "items": [
+        {
+          "id": "d57293d4-b8a9-529d-93d5-9e89bd1361c4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d75a1479-ed9d-59cb-bba6-6e5c75f2d69b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bo-pos-54_0000017.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 357,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bo-pos-54_0000017.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "468f5eb7-a418-50bd-b287-cc0a0eb9829c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "aa74d731-9777-5c42-96ae-6f8cc19ae7fb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ac86f6dd-f2f7-5552-8562-9602e30bc771",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "\"Dresden\""
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ef7225bd-f24e-5d5e-add6-364d9bf4dbbf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "468f5eb7-a418-50bd-b287-cc0a0eb9829c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ce311886-71d8-4811-871a-7aff6a3c3639/df_bo-pos-54_0000017.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

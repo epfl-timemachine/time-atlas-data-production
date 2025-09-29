@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "842bc6c4-7836-5c98-a254-7b0ca307ce70",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick vom Ständehaus "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0178926.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ead23af9-b044-5ca6-b25e-524f504ce6eb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick vom Ständehaus "
+        ]
+      },
+      "height": 1181,
+      "width": 1600,
+      "items": [
+        {
+          "id": "445d668e-d416-585d-a934-742f68cc4e8e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0309c96e-276b-5821-83b2-05673fec14e5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0178926.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1181,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0178926.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ead23af9-b044-5ca6-b25e-524f504ce6eb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cd693e26-fc5c-536d-8ed3-b7a60487f3a3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "917d2f28-4a4d-528c-9206-fd7ef6e8e09a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick vom Ständehaus "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "464a0fe2-263e-542d-a70d-5bc52fded49e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ead23af9-b044-5ca6-b25e-524f504ce6eb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f72c0b2b-6076-463d-8ba9-577cc6c4398f/df_hauptkatalog_0178926.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

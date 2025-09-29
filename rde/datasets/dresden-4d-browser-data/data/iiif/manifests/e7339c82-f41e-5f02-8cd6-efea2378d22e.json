@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e7339c82-f41e-5f02-8cd6-efea2378d22e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, An der Fraue"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006414.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2082a4e2-b80d-5545-882b-e93b2cf30ea4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, An der Fraue"
+        ]
+      },
+      "height": 1249,
+      "width": 1600,
+      "items": [
+        {
+          "id": "dcc8fc3f-0137-559e-abad-10ca0ce1f84d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "78a7570d-964b-5735-8b2c-76300058af0c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006414.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1249,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006414.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2082a4e2-b80d-5545-882b-e93b2cf30ea4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "58d2c20f-1568-5d40-aa43-77c419ea6ba1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "72b86f2e-6149-59e1-bfa3-b3379d0bce21",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, An der Fraue"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6f03acb3-7989-5c87-846f-0a76068a31e3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2082a4e2-b80d-5545-882b-e93b2cf30ea4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/cd95425b-78f3-4d96-bfcd-d926250bad81/df_hauptkatalog_0006414.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

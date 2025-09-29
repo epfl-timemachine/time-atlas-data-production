@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c0798117-cba2-52d0-b6cb-cb729a69b581",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Sophien-Kirche"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0155287.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8eeb956f-3775-5947-bf15-845054e3571b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Sophien-Kirche"
+        ]
+      },
+      "height": 1600,
+      "width": 1117,
+      "items": [
+        {
+          "id": "5ea6527e-4575-5023-ba9b-995c67b245f0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1419ceb3-05aa-56ac-a9d1-298fd1abd664",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0155287.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1117,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0155287.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8eeb956f-3775-5947-bf15-845054e3571b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b2b475dd-5311-5cc3-80ff-d16daaa10646",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b3fb8c17-b433-526e-9762-cd7980a8d64a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Sophien-Kirche"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "995a6ba7-cff9-515b-a16e-735c0a61e8de"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8eeb956f-3775-5947-bf15-845054e3571b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/6d9357cc-d87e-4887-823f-99833bacea4e/df_hauptkatalog_0155287.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8a36f1e7-478f-5b7f-bbb0-6debded28b7e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Taschenbergpalais"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0052330.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e45d1beb-db48-5267-8639-ddfe7366174c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Taschenbergpalais"
+        ]
+      },
+      "height": 1144,
+      "width": 1600,
+      "items": [
+        {
+          "id": "474ce96e-e153-565d-b6c6-ad64a37b705a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "19723a2a-ae09-55cc-880f-58832bb9bd47",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0052330.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1144,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0052330.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e45d1beb-db48-5267-8639-ddfe7366174c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "22702c51-a889-5d04-a3b2-869711b2a3d4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4a0ab19c-dba7-53b0-b4fb-059ab2f5e154",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Taschenbergpalais"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "42dfcb94-cc9d-54ce-bab8-40880175c8b7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e45d1beb-db48-5267-8639-ddfe7366174c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/cdcc668a-8c35-48e7-a729-f4b355f60f8d/df_hauptkatalog_0052330.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

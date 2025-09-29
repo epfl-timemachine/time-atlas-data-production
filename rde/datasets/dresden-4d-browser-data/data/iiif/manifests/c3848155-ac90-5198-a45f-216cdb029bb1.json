@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c3848155-ac90-5198-a45f-216cdb029bb1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Haus Erdmannsdorf"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121721.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a1495e94-dc38-5c30-8dd6-bf7150d2ff8d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Haus Erdmannsdorf"
+        ]
+      },
+      "height": 1600,
+      "width": 1157,
+      "items": [
+        {
+          "id": "4f921b64-1f57-562d-88f9-dcfa02beb2fd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "49400a4a-5a2b-5e89-b071-81c22a2c63f0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121721.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1157,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121721.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a1495e94-dc38-5c30-8dd6-bf7150d2ff8d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7a8acee3-6518-5b8b-802a-dc604100e200",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4c1315b0-3f23-52e7-9785-7c288007ee3b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Haus Erdmannsdorf"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9d42cd6d-9dd3-5365-8ae3-e75dde744154"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a1495e94-dc38-5c30-8dd6-bf7150d2ff8d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/21ff4e88-7bc2-4c92-b6e0-6aca41c8a71f/df_hauptkatalog_0121721.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

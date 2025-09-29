@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b3b870d8-7e9b-5f64-863a-4b3d3646d6f5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Alstadt. Schloßstraße."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0305334.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cd5cf495-464e-5d90-912d-18a310ac15ce",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Alstadt. Schloßstraße."
+        ]
+      },
+      "height": 1600,
+      "width": 1137,
+      "items": [
+        {
+          "id": "73cf3e7f-5f38-5d1d-8a09-47ef62ef9593",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c401bfc6-6ca5-53d8-89f3-2fa51aedea44",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0305334.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1137,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0305334.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cd5cf495-464e-5d90-912d-18a310ac15ce"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b5164017-b2a5-5d15-9287-d884f9825166",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "87c8226f-de23-5792-b12f-9d578bebb36f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Alstadt. Schloßstraße."
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a589d322-377f-5e20-b23d-ed1cee9a9980"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cd5cf495-464e-5d90-912d-18a310ac15ce",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/4df3f48a-0ab0-485b-bd2c-d566af9cc2b2/df_hauptkatalog_0305334.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "80d17840-b45a-5fa5-b5ab-b1cc231aa20e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Locke, S"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0400996.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b3ce974f-1fc7-574b-b465-7833befc28c4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Locke, S"
+        ]
+      },
+      "height": 1539,
+      "width": 1163,
+      "items": [
+        {
+          "id": "b660a794-cbb0-5b81-a8a9-e189ebbd4052",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7cb66570-888a-57e8-8bf4-58f3f05dcd23",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0400996.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1539,
+                "width": 1163,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0400996.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b3ce974f-1fc7-574b-b465-7833befc28c4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "571fe4c6-e4e9-5f69-96b3-0b13461810c8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f37be80b-8b9d-599e-925a-7ccbe36fa815",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Locke, S"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "02354b05-eab6-5069-8148-1e068b5fa61f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b3ce974f-1fc7-574b-b465-7833befc28c4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/8f12ef9d-f135-46b6-8b7a-91a1761661b9/df_hauptkatalog_0400996.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

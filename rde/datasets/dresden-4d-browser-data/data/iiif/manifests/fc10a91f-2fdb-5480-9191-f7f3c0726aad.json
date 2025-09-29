@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fc10a91f-2fdb-5480-9191-f7f3c0726aad",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Vase auf dem Giebel"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114306.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c932167a-b9aa-5db2-9a13-a09fc61fea72",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Vase auf dem Giebel"
+        ]
+      },
+      "height": 1600,
+      "width": 1142,
+      "items": [
+        {
+          "id": "ad75cd4f-02bf-58b9-811b-5247a2063241",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9db62ba7-77e6-5b7f-838a-ef9701df5fb5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114306.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1142,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114306.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c932167a-b9aa-5db2-9a13-a09fc61fea72"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e6251758-75d9-5002-b43a-af8cf069aefb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "37503b78-bd40-5209-b38f-bc56395728c1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Vase auf dem Giebel"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "41baeb01-5b4a-5be4-aa74-bda1a7ddb739"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c932167a-b9aa-5db2-9a13-a09fc61fea72",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e7c1249f-7af2-45d8-b154-77de6d256bc6/df_hauptkatalog_0114306.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

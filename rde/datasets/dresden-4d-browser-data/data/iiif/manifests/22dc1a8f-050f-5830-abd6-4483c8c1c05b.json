@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "22dc1a8f-050f-5830-abd6-4483c8c1c05b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kunstakademie"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006406.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5601cc7f-043e-588a-881b-5f985ddf39e5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kunstakademie"
+        ]
+      },
+      "height": 1600,
+      "width": 1099,
+      "items": [
+        {
+          "id": "0d000f54-2dc8-5b6e-8c05-ad8617f01b99",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3c48ea9a-4be0-5d2e-96a5-9e5d3a5c33ca",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006406.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1099,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006406.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5601cc7f-043e-588a-881b-5f985ddf39e5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "72933419-0471-5f5c-be12-aac74c3a4b02",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d74a0509-af83-5bbc-9967-a8fb036a1f8f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kunstakademie"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "303eb7c3-f6bc-53ff-be14-7b4dd3ba4ec1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5601cc7f-043e-588a-881b-5f985ddf39e5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/98fd3c91-0abb-46ac-97ed-c00f00ca7545/df_hauptkatalog_0006406.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

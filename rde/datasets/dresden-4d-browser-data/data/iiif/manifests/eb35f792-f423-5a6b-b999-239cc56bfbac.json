@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "eb35f792-f423-5a6b-b999-239cc56bfbac",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Der Neumarkt zu Dresden vom Jü"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0130157.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1a94232-c373-5f1b-8318-13d98e153eb7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Der Neumarkt zu Dresden vom Jü"
+        ]
+      },
+      "height": 1600,
+      "width": 1109,
+      "items": [
+        {
+          "id": "a4960389-7ac5-51b3-a49f-dc574828e2f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1d8c016a-c214-5acd-8227-eddc3a69ed7b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0130157.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1109,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0130157.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c1a94232-c373-5f1b-8318-13d98e153eb7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b2f5f1e8-ce58-522e-9c49-53c829926803",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "adf82124-6573-5d20-aee5-046b775818b3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Der Neumarkt zu Dresden vom Jü"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f41427b4-ee8d-5804-8505-1f79e85c7aba"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c1a94232-c373-5f1b-8318-13d98e153eb7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7c0e0c10-8610-4945-b8ca-d72055e670cf/df_hauptkatalog_0130157.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

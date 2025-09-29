@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "25cc9a5c-3f86-5f31-9054-375343ba4f00",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Johanneum"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0181453.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "287206da-6cdc-5729-9044-49dc55ff34dc",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Johanneum"
+        ]
+      },
+      "height": 1103,
+      "width": 1600,
+      "items": [
+        {
+          "id": "c85b476f-eaf3-5e4b-930c-027daeaa8c46",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1acb986a-a210-5593-a962-eaef1310583a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0181453.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1103,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0181453.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "287206da-6cdc-5729-9044-49dc55ff34dc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7c40bc21-864c-55e2-ac06-f3cd4d978d78",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bea42cb2-e0f7-5177-bc00-180a0cb9adc7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Johanneum"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fdf99c16-f32e-5362-94a1-fd7bd3ac0322"
+                }
+              ],
+              "target": [
+                {
+                  "id": "287206da-6cdc-5729-9044-49dc55ff34dc",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/b3022e3b-e71d-49b4-9e76-a90fd57f2524/df_hauptkatalog_0181453.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

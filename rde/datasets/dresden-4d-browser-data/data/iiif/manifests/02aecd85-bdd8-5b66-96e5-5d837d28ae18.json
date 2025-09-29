@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "02aecd85-bdd8-5b66-96e5-5d837d28ae18",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schmidt, Johann Georg"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0177980.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1e79875-66f6-537e-b598-462230bad195",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schmidt, Johann Georg"
+        ]
+      },
+      "height": 1600,
+      "width": 930,
+      "items": [
+        {
+          "id": "41765c9b-2884-5453-9fb9-e2fe557b8d28",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1ab1301f-247e-5bb5-9391-b79599b3cb7d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0177980.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 930,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0177980.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c1e79875-66f6-537e-b598-462230bad195"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5ffe2921-36e9-5bc1-b606-2967522a409b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5ea1413b-ff60-57a8-9471-2b0121a20f1e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schmidt, Johann Georg"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5b22b348-c13c-598c-89c6-cedba035444b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c1e79875-66f6-537e-b598-462230bad195",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/b0cfede0-2998-4f07-ae51-7930ecd5c9d7/df_hauptkatalog_0177980.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

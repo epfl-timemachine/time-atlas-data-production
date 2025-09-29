@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fbca073a-906f-5f6c-ac02-9200c604d587",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Stallhof in Dresden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0007337.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ac46c9d5-2022-504d-9400-b35a3f01af9a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Stallhof in Dresden"
+        ]
+      },
+      "height": 1250,
+      "width": 1588,
+      "items": [
+        {
+          "id": "9357b01d-c374-5bdf-888c-1c669b21add0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "414c8884-1ab2-5203-b87c-c8bdb43f08b5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0007337.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1250,
+                "width": 1588,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0007337.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ac46c9d5-2022-504d-9400-b35a3f01af9a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "82e17d7d-0f71-51c7-b589-894f8b543b5e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2aaa0e44-c5ac-51f4-89d2-3d7bf8268993",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Stallhof in Dresden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "674dc187-5741-54ca-ba23-4d965907a0d1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ac46c9d5-2022-504d-9400-b35a3f01af9a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7a678f8e-014c-4251-aefb-6b18a2c15fe4/df_hauptkatalog_0007337.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

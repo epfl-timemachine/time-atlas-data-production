@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7f8c763f-05a5-5d71-955e-7130f6dae885",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt. Neumarkt. Bl"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009453.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9abd70da-a9c3-531f-b2f8-b5b44564b064",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt. Neumarkt. Bl"
+        ]
+      },
+      "height": 1500,
+      "width": 1000,
+      "items": [
+        {
+          "id": "2d6bace0-9533-5ab1-8f92-ac66d2b62867",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3591cf0f-35fe-5496-b1b3-859b34304b07",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009453.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009453.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9abd70da-a9c3-531f-b2f8-b5b44564b064"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8c6a2a6d-7464-5e67-aebc-0169a8727a3c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "00bbff60-ae22-5394-a4a8-4beefd21bacd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt. Neumarkt. Bl"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7f61fe24-1f04-5cd2-8b84-352617aa179a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9abd70da-a9c3-531f-b2f8-b5b44564b064",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/b3fdd625-bf62-45f3-8658-eddf10d404b3/df_dat_0009453.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

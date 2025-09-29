@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "58f5b38d-fa45-5c09-a73e-b5084315d0e1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Gemäldegalerie vom Zw"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313844.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "24920531-e601-52a3-b192-379b57d410d9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Gemäldegalerie vom Zw"
+        ]
+      },
+      "height": 1600,
+      "width": 1088,
+      "items": [
+        {
+          "id": "e369ef9d-3d72-5d86-8a15-5fb5f638a29c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d8bc8193-382f-5830-901f-a684a6fc81c2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313844.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1088,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313844.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "24920531-e601-52a3-b192-379b57d410d9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1821927e-59e8-5eb6-9850-8bebf0674c91",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f120604d-6f5c-56f6-a4a7-7dc54d530f89",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Gemäldegalerie vom Zw"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e7538e23-4e5b-552e-91b1-4e7dda8f22c4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "24920531-e601-52a3-b192-379b57d410d9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/82157b17-695d-4c96-8cd6-6bb965893c0e/df_hauptkatalog_0313844.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

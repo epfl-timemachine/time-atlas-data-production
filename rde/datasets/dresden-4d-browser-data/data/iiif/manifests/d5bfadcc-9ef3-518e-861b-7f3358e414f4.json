@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d5bfadcc-9ef3-518e-861b-7f3358e414f4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Coselpalais"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0061534.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "020c6865-78a2-5839-b21b-73e7ed488f93",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Coselpalais"
+        ]
+      },
+      "height": 1129,
+      "width": 1600,
+      "items": [
+        {
+          "id": "4e430651-8935-59dd-a705-71050b4965be",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8379e2e3-9ef9-5239-9ec3-e6e48f4910c6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0061534.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1129,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0061534.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "020c6865-78a2-5839-b21b-73e7ed488f93"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "005a7310-b733-55ac-8234-9d3342d9b83e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c4ec78e8-0504-575b-a562-287c33645f6c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Coselpalais"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5d4e24de-5341-5188-a888-80d1449120b8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "020c6865-78a2-5839-b21b-73e7ed488f93",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d2a879d1-c1e7-46be-a276-48321eab0900/df_hauptkatalog_0061534.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

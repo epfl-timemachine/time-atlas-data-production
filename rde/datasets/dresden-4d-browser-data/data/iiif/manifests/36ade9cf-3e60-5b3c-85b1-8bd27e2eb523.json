@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "36ade9cf-3e60-5b3c-85b1-8bd27e2eb523",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Café Beyer"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0009258.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9a7d68bd-3eca-5249-992a-52c375dd292c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Café Beyer"
+        ]
+      },
+      "height": 1512,
+      "width": 1129,
+      "items": [
+        {
+          "id": "64278b84-3921-5d49-b584-e31cf663b7f2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e8942e27-26ce-5a4a-8c51-02358b2fb27a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0009258.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1512,
+                "width": 1129,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0009258.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9a7d68bd-3eca-5249-992a-52c375dd292c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d96dc606-0fe7-59c8-bb71-6982cb8257d0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "209e5a76-c973-529c-bfed-17ffa3fdf8a3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Café Beyer"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "995d3428-d13d-50d7-9fca-ba1adcef1bbd"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9a7d68bd-3eca-5249-992a-52c375dd292c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/38b15122-2166-4ba5-8719-a20677537244/df_hauptkatalog_0009258.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

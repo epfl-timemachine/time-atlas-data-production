@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f00c9e3a-cf4e-5637-ab54-45e228b7ce21",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schloßplatz"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041893.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a3fb1725-6dbc-5cff-a61f-5416ce94d984",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schloßplatz"
+        ]
+      },
+      "height": 1600,
+      "width": 1166,
+      "items": [
+        {
+          "id": "78080549-f489-5fff-bf8c-cbe6c1b2c0ec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5c162e31-9b7f-5475-b3d2-9d1c7055330d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041893.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1166,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041893.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a3fb1725-6dbc-5cff-a61f-5416ce94d984"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bccb3507-700a-5263-9cac-6238a668696d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "078dc63d-2d74-5de1-a04b-ff8e447620a8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schloßplatz"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "32fc354f-9685-591a-a844-5ec959cca7f7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a3fb1725-6dbc-5cff-a61f-5416ce94d984",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/4f3ff676-b954-41de-addd-2df525776ad0/df_hauptkatalog_0041893.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

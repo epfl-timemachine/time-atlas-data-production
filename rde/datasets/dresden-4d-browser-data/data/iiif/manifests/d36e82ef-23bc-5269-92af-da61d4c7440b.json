@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d36e82ef-23bc-5269-92af-da61d4c7440b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt. Straßenbild "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009603.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5c621ce0-7c9d-58d0-9cfc-6edc14255fb7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt. Straßenbild "
+        ]
+      },
+      "height": 1000,
+      "width": 1500,
+      "items": [
+        {
+          "id": "7ca39498-7a72-5655-9e9e-8fdb0e011a0a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e485a98d-e8c7-57cb-8230-d7f572cdfc1d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009603.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1000,
+                "width": 1500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009603.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5c621ce0-7c9d-58d0-9cfc-6edc14255fb7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ea17c262-dfa1-5957-8aca-b190748b26b6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0a639974-6174-5103-995f-8889f3c9928b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt. Straßenbild "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "53c7bfe4-cae0-5ffa-abab-61b4bacc2379"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5c621ce0-7c9d-58d0-9cfc-6edc14255fb7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/42ee8519-8201-4242-8f33-13f3ae879834/df_dat_0009603.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "90ba0458-d8a0-5f63-b7a0-2d82ea674bd4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Sophienstraße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0133300.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "11ca9a26-4303-5f45-80fa-5c9f396c710e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Sophienstraße"
+        ]
+      },
+      "height": 1087,
+      "width": 1600,
+      "items": [
+        {
+          "id": "17ae2e34-425a-5958-abea-c20967bfef87",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "71d5a2cf-9c85-5e9c-8619-8447f964270d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0133300.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1087,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0133300.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "11ca9a26-4303-5f45-80fa-5c9f396c710e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7903c8d1-4291-537a-818c-0a7fbfc55d13",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dc0ee16e-9790-5a9d-a58e-1ee6b5558309",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Sophienstraße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b534b928-abac-52ca-89ae-bc5e4b01cd87"
+                }
+              ],
+              "target": [
+                {
+                  "id": "11ca9a26-4303-5f45-80fa-5c9f396c710e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/0768c448-3e5e-4567-97cf-58736bd98f21/df_hauptkatalog_0133300.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

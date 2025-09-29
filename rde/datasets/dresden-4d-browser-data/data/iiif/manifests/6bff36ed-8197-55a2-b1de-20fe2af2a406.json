@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6bff36ed-8197-55a2-b1de-20fe2af2a406",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Hotel \"Dresdner Hof\""
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0265784.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "88eaff9c-3de8-52de-a229-8e775827d709",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Hotel \"Dresdner Hof\""
+        ]
+      },
+      "height": 1124,
+      "width": 1600,
+      "items": [
+        {
+          "id": "5c723b6c-d4d1-5c31-a6a4-825d3a578fe8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0d82db98-d278-59c0-9e36-35db7b1f56ab",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0265784.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1124,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0265784.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "88eaff9c-3de8-52de-a229-8e775827d709"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b2829e1a-bb03-5ae6-adde-00418dfd782f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f8edd448-ffd7-5fbc-867a-0462866ba594",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Hotel \"Dresdner Hof\""
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c4ed1c95-99db-58c4-b008-0214833adb4d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "88eaff9c-3de8-52de-a229-8e775827d709",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/91fb9ffd-5ebc-4ef3-ae44-2b7853686bb2/df_hauptkatalog_0265784.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

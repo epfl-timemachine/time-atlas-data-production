@@ -124,6 +124,8 @@ if __name__ == '__main__':
                     raise Exception(f'UUID {v} found in multiple files: {uuid_file[v]} and {k}')
 
     for ds in dataset_list:
+        if 'catastici' in ds:
+            continue
         iiif_loc_path = os.path.join(DATASET_ROOT, ds, 'data', 'iiif')
         if os.path.exists(iiif_loc_path):
             coll_list = [f for f in  os.listdir(os.path.join(iiif_loc_path, 'collections')) if f.endswith('.json')]

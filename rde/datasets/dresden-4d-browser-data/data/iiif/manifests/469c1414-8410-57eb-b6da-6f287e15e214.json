@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "469c1414-8410-57eb-b6da-6f287e15e214",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schönes Haus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008812.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "64cffdbe-fb80-503f-9080-3635a3aacb83",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schönes Haus"
+        ]
+      },
+      "height": 1600,
+      "width": 1174,
+      "items": [
+        {
+          "id": "d92f4429-d64b-58d9-9b49-a106988ef32a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f166f67e-561e-5952-a67e-d9064f4da592",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008812.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1174,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0008812.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "64cffdbe-fb80-503f-9080-3635a3aacb83"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d6af6f4b-f74a-52a0-9bbc-231d4c37c5b5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7e8a2f54-0da6-5708-ad83-f6203eceebf0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schönes Haus"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "39ba031e-33d0-5cfd-b481-8d959119491c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "64cffdbe-fb80-503f-9080-3635a3aacb83",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7d49b167-399c-4790-a82e-09575324a3bd/df_hauptkatalog_0008812.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fd8df1ae-c631-50ef-9c10-5462bc0baa32",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Fleischmann, Julius"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0086671.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ad97322f-154b-52e0-b84a-9d1f7ad37563",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Fleischmann, Julius"
+        ]
+      },
+      "height": 1174,
+      "width": 1600,
+      "items": [
+        {
+          "id": "70199ff8-3385-554b-9147-517f9c9e0974",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "41c5c173-5476-515e-a50d-d6a3243e0ec0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0086671.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1174,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0086671.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ad97322f-154b-52e0-b84a-9d1f7ad37563"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6dc57bee-d89a-5aac-bc48-fa525356a30a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fda948a9-6eca-519a-a4d1-e96c09dfa4cd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Fleischmann, Julius"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fd89e552-6066-5d9d-a8ee-92f5cdcd0a49"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ad97322f-154b-52e0-b84a-9d1f7ad37563",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/324257bc-20e5-4806-9e0d-b873398511af/df_hauptkatalog_0086671.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e6be89ff-2441-5c7c-ad49-e23b3075c7aa",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt. Residenzschl"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009409.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "55e056e9-8e67-5248-8f3b-a5a5507257cd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt. Residenzschl"
+        ]
+      },
+      "height": 1500,
+      "width": 1000,
+      "items": [
+        {
+          "id": "8de11619-dd02-5775-aced-c5a50febf7f2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dbd90be4-4787-569b-bfac-c109886b142c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009409.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0009409.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "55e056e9-8e67-5248-8f3b-a5a5507257cd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "40b7aa63-67a5-58d9-a816-d308199f3d86",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6e23bf78-deab-5969-9b7b-6efc56ee966d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt. Residenzschl"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b948c0f9-3a4e-58df-a99d-f2474809985d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "55e056e9-8e67-5248-8f3b-a5a5507257cd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/00010bf3-5aaa-4b80-aefa-6f4f875a09cb/df_dat_0009409.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

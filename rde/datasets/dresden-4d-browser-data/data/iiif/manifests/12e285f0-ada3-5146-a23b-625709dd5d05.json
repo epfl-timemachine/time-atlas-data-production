@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "12e285f0-ada3-5146-a23b-625709dd5d05",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Neumarkt, sechsspänni"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186868.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c38eba03-0c35-5861-aadc-b2760e16b2e6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Neumarkt, sechsspänni"
+        ]
+      },
+      "height": 1064,
+      "width": 1497,
+      "items": [
+        {
+          "id": "334fb3f5-d01f-5115-88e7-539d525a80a4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6e9a601b-2336-551b-9588-219524ad54f4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186868.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1064,
+                "width": 1497,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186868.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c38eba03-0c35-5861-aadc-b2760e16b2e6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "aac7aff1-af8d-5344-88ec-d988e228304f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f215eb9c-e9ad-5262-9246-be96288830fe",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Neumarkt, sechsspänni"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a7ec2a2d-db98-5c1c-9d84-1a95783c0805"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c38eba03-0c35-5861-aadc-b2760e16b2e6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/753718ba-e168-4b03-8443-4364e10a43ac/df_hauptkatalog_0186868.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

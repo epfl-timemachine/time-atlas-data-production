@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "31acb1be-8f5a-54c8-9e2a-13761f8deaa6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "frutti"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0411294.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b3ae64e8-e437-533d-9bad-196b4509e1dd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "frutti"
+        ]
+      },
+      "height": 1596,
+      "width": 1600,
+      "items": [
+        {
+          "id": "bde99dad-b74e-54a1-97fb-ee4144737207",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a59807d6-dd23-5916-bd5b-a43e80661a97",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0411294.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1596,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0411294.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b3ae64e8-e437-533d-9bad-196b4509e1dd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "537d59fb-8cd6-5884-8ce0-9ba6f3a89e99",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "899cd21e-2407-5c1d-92f4-10e5ad56ef9f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "frutti"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e8d4d9f9-0634-5195-9016-724ff24a0246"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b3ae64e8-e437-533d-9bad-196b4509e1dd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/fc63356b-c7ae-45ac-8c20-81f71ae3ba46/df_hauptkatalog_0411294.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

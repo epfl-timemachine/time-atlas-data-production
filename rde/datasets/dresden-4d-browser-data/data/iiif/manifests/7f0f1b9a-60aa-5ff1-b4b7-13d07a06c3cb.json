@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7f0f1b9a-60aa-5ff1-b4b7-13d07a06c3cb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kronentor"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107438.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4bd88583-c10a-5915-a7ca-307a7a8ca62e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kronentor"
+        ]
+      },
+      "height": 1600,
+      "width": 1100,
+      "items": [
+        {
+          "id": "3f5eecda-9f51-51c3-bc28-2bb95448d859",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d0b565a2-1a9b-5e31-a4ae-06507c8c20c0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107438.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1100,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107438.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4bd88583-c10a-5915-a7ca-307a7a8ca62e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4156ba5f-d0d3-5342-bc52-88c7db17d860",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5e656517-a78f-52bf-bedc-41487a9d2d17",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kronentor"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "40fb3933-e1b6-53d2-a3a4-6106c8b4e1b2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4bd88583-c10a-5915-a7ca-307a7a8ca62e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/85ff3faa-ae61-440a-a643-f983d153dfdd/df_hauptkatalog_0107438.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

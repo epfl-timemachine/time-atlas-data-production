@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e1945e1a-2343-5b09-ade9-a9585cc61fca",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresdner Hof, Skelettbauweise,"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264224.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "abab6bfd-bb74-553e-9655-3ef7b06ad822",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresdner Hof, Skelettbauweise,"
+        ]
+      },
+      "height": 1124,
+      "width": 1600,
+      "items": [
+        {
+          "id": "9d8f31b0-7af7-5dc6-b738-1b7cad5753af",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "62a7173c-6645-54c6-b2dd-381463df842a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264224.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1124,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264224.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "abab6bfd-bb74-553e-9655-3ef7b06ad822"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9cb333f4-54af-548a-9d26-87d2226e50fa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "da882556-9a05-5684-b3b9-f457813939ce",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresdner Hof, Skelettbauweise,"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b982a63b-8ce0-5282-95e4-70a2503386d5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "abab6bfd-bb74-553e-9655-3ef7b06ad822",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/08d29c5b-a336-4491-97d7-de29d8a07a3e/df_hauptkatalog_0264224.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

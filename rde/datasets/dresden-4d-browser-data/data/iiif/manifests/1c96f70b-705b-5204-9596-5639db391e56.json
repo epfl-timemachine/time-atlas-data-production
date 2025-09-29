@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1c96f70b-705b-5204-9596-5639db391e56",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Oper, Bauschäden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0119408.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f3e9219c-0bfa-5e9a-b26a-1a840c3811d1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Oper, Bauschäden"
+        ]
+      },
+      "height": 1600,
+      "width": 1139,
+      "items": [
+        {
+          "id": "0192defe-2bc2-5cb8-aa4a-a716942f9061",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3b26a431-d171-54aa-be90-1dbe52b8d322",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0119408.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1139,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0119408.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f3e9219c-0bfa-5e9a-b26a-1a840c3811d1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cb8b88d7-d385-530b-82c4-ed6dbde2d20f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "debb5cdb-a859-5943-94a7-088a9ccd33e4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Oper, Bauschäden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "82f84391-a0ea-52be-8c68-794acd1927eb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f3e9219c-0bfa-5e9a-b26a-1a840c3811d1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e9025eb2-7f71-436f-b503-7a413b6790d9/df_hauptkatalog_0119408.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

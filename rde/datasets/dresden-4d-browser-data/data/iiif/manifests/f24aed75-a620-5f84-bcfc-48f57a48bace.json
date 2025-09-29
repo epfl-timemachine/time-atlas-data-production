@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f24aed75-a620-5f84-bcfc-48f57a48bace",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Freiberger Platz"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107386.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a5f7d4c3-eb53-5bde-a43d-3f77804dffc4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Freiberger Platz"
+        ]
+      },
+      "height": 1149,
+      "width": 1600,
+      "items": [
+        {
+          "id": "882cc919-9f94-5c34-8390-d27e0a2409a3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "056b97ee-0197-5286-a973-07049d690c5b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107386.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1149,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107386.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a5f7d4c3-eb53-5bde-a43d-3f77804dffc4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3baa9798-0a0c-5984-bdf8-e3dc07a32437",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cbe7586f-8a33-5ab7-94dc-bf1d02e8b942",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Freiberger Platz"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "398b59f8-9e03-5af8-b1db-03a8bf64c708"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a5f7d4c3-eb53-5bde-a43d-3f77804dffc4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/dcd3d136-d44d-48a1-9fc9-aaf5a712a363/df_hauptkatalog_0107386.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

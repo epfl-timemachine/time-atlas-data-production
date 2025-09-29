@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7a226d8b-a776-5878-b066-00dcd8d491a5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Treppe zur Brühlschen"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260991.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7a280cc1-345d-555b-95c3-4c1d690596a8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Treppe zur Brühlschen"
+        ]
+      },
+      "height": 1600,
+      "width": 1235,
+      "items": [
+        {
+          "id": "73b7456b-3621-5469-add0-146558f55a66",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e279701-61a2-57a9-bc31-405fcb289e44",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260991.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1235,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260991.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7a280cc1-345d-555b-95c3-4c1d690596a8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7d67dbc9-8918-5f61-ad38-482665b1e0a9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eec42ad1-80bf-5fa9-bf73-f90e2feb93bb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Treppe zur Brühlschen"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "567e7cd6-b805-5e97-b004-aa75c9363cf6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7a280cc1-345d-555b-95c3-4c1d690596a8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ff7d7cb9-3d5e-4d8f-b5a1-beb66b5b9c05/df_hauptkatalog_0260991.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

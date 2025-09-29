@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1e4f365d-1e19-5c52-aa07-ee88ba632e5f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schloßtor"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041517.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "13af82fd-2dd8-568f-8536-d9338e254493",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schloßtor"
+        ]
+      },
+      "height": 1238,
+      "width": 1600,
+      "items": [
+        {
+          "id": "75678dca-f03b-5048-aa0e-dfa62d0499d4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e9b1bedf-916f-54db-a9cb-1ad37d34c660",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041517.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1238,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0041517.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "13af82fd-2dd8-568f-8536-d9338e254493"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "de8c4d93-dbbc-5b75-9d94-d18f0e81362b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9824c40e-a342-529f-a6ae-f935d999b073",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schloßtor"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "58135b6f-1b96-5623-bbdd-db20ecc8bdd0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "13af82fd-2dd8-568f-8536-d9338e254493",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/816ab8f6-c969-40a3-abfa-b05dfe7ef65b/df_hauptkatalog_0041517.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "de14c869-fde4-5f10-8aeb-124a17194742",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Postplatz, Wallstraße, Schweri"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0169003.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "59eb4f8d-3da8-53bf-98ca-6ee45e13c621",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Postplatz, Wallstraße, Schweri"
+        ]
+      },
+      "height": 1149,
+      "width": 1600,
+      "items": [
+        {
+          "id": "4faaecf4-ef53-57f7-9abb-1cc626546bf0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dfb61181-4282-5fc7-86e0-45381707eccc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0169003.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1149,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0169003.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "59eb4f8d-3da8-53bf-98ca-6ee45e13c621"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "47ab736c-a5cf-522c-8a7a-3619385a4edb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2c8bb50e-b6fc-5d19-8038-04cc8b9df843",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Postplatz, Wallstraße, Schweri"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "915c2f9f-4f93-5567-9ebf-0ad100aae8b7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "59eb4f8d-3da8-53bf-98ca-6ee45e13c621",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/b57af228-9c81-4126-9e80-e294bec6d523/df_hauptkatalog_0169003.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "98ca03ec-ee89-58ad-aac5-acaa5034e0d8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Heilige Magdalena"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006907.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bbc76ec2-8923-5d0b-b605-232cdd20ed10",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Heilige Magdalena"
+        ]
+      },
+      "height": 1600,
+      "width": 1124,
+      "items": [
+        {
+          "id": "1c4634d3-a12d-5662-aa62-c87fea412974",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7219ff83-e289-565d-871b-d47fd0d33cc5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006907.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1124,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006907.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bbc76ec2-8923-5d0b-b605-232cdd20ed10"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f88f2de8-4539-5762-aeb9-0c3f54f8ac64",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6572461f-4d85-5aba-8a63-2db6d10c0cc8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Heilige Magdalena"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "67ecb1ff-a704-5d06-899f-fa8b4c675c15"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bbc76ec2-8923-5d0b-b605-232cdd20ed10",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7d042d3f-16f6-4c8b-909e-21aea7e590e9/df_hauptkatalog_0006907.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

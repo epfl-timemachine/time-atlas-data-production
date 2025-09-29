@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5fc91c6a-9e58-5097-867c-b38e530aa1b0",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_otto_0028260.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3b7328ea-8ae9-530d-826a-8a00df83d529",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden"
+        ]
+      },
+      "height": 1064,
+      "width": 1600,
+      "items": [
+        {
+          "id": "0efb1cfa-b0fa-5e4b-8ec1-f39e1305d5bc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1fb13932-5fd8-54dd-9d80-0740b00cfa61",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_otto_0028260.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1064,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_otto_0028260.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3b7328ea-8ae9-530d-826a-8a00df83d529"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "80fcef49-e501-542a-b6b4-7dd5d06588a4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cb4ee500-ce57-54e2-a50a-074617d302f4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f432b1d4-7e37-54b7-9e30-1a04bcce73aa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3b7328ea-8ae9-530d-826a-8a00df83d529",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/5f6338a6-ed59-4bd2-bad4-5c4e0affcea5/df_otto_0028260.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

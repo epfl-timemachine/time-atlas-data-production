@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7db4b6f1-f776-5fbe-ac4c-9facfa94bb2f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick von der Moritzt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0040067.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f75fcb8b-d6ed-53e9-b272-d82936d1189c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick von der Moritzt"
+        ]
+      },
+      "height": 1600,
+      "width": 1155,
+      "items": [
+        {
+          "id": "d8efcba3-10e0-5a4c-95f8-f7f3fb60c7e0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7d9726d9-3fc0-5bf5-9ac5-9b494f4afb31",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0040067.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1155,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0040067.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f75fcb8b-d6ed-53e9-b272-d82936d1189c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7c5f8093-a818-5e4b-be14-7f533e00f9d2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0273fb7c-ac0a-59f7-9d09-4d4d5fc37168",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick von der Moritzt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5343ec0e-47ab-5fd4-9a41-fa9e7c96fdd2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f75fcb8b-d6ed-53e9-b272-d82936d1189c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ec4cd342-23b7-42f5-8bc9-2cffeb167132/df_hauptkatalog_0040067.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8b435c62-2aa0-5805-b34c-bc049f81cb97",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden Zwinger"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_roe-neg_0000437_004.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f4c36940-2f37-55b5-8a65-7795ed44ab99",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden Zwinger"
+        ]
+      },
+      "height": 348,
+      "width": 500,
+      "items": [
+        {
+          "id": "06242f34-16b8-5ca8-9093-8aa145b93306",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eee9a96e-d101-57b6-91e9-61fcb406a739",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_roe-neg_0000437_004.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 348,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_roe-neg_0000437_004.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f4c36940-2f37-55b5-8a65-7795ed44ab99"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2e098ea5-8996-57a8-9a47-30b48f01e941",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ba0c0541-8ca7-50e4-be22-5ac3f1ee4ebf",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden Zwinger"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ba33d773-7fc1-5235-bdec-681e918c49f7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f4c36940-2f37-55b5-8a65-7795ed44ab99",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/1d9b0346-d054-4620-b42c-fcbc873b3a8a/df_roe-neg_0000437_004.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

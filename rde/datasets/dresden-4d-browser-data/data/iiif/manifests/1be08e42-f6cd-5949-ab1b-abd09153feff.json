@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1be08e42-f6cd-5949-ab1b-abd09153feff",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Wohnhaus \"Zur Glocke\""
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0401002.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9d8fc7a1-1147-5882-b88b-b7826b177389",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Wohnhaus \"Zur Glocke\""
+        ]
+      },
+      "height": 1500,
+      "width": 1182,
+      "items": [
+        {
+          "id": "2f83e86b-f7fc-5422-87be-9231c6612993",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "afdafe50-c2c2-5167-ae97-de73ae8e4599",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0401002.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1182,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0401002.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9d8fc7a1-1147-5882-b88b-b7826b177389"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4fb793e1-1f74-5c58-8309-49b65f8bc1b3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2b5d900c-520c-5cb9-8522-45b997ff4b69",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Wohnhaus \"Zur Glocke\""
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b7cd4070-2d1f-567f-b98f-12ffd20ea405"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9d8fc7a1-1147-5882-b88b-b7826b177389",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f6611ad0-9790-4cff-8f9a-2e392022564b/df_hauptkatalog_0401002.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

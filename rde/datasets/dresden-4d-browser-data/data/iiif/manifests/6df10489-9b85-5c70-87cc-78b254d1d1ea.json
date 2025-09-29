@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6df10489-9b85-5c70-87cc-78b254d1d1ea",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Der Brühlsche Garten"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0261124.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ce07d275-f016-54fd-ac85-8ac47d717cc1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Der Brühlsche Garten"
+        ]
+      },
+      "height": 1107,
+      "width": 1600,
+      "items": [
+        {
+          "id": "0ece1d17-90d9-51da-86c1-16e5bc5e2595",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cf589bdc-fa2d-559f-85a5-f50298895af3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0261124.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1107,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0261124.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ce07d275-f016-54fd-ac85-8ac47d717cc1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bd8b165a-865f-50a5-a637-e6d38251ae10",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "020a43e4-3142-5e4e-ae92-cb6a209c40bb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Der Brühlsche Garten"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "17089543-0696-5856-8e31-25694dc4d7ea"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ce07d275-f016-54fd-ac85-8ac47d717cc1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/27257a0a-9c77-4687-a624-cc087502683f/df_hauptkatalog_0261124.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3ff49910-62db-5129-8a2b-a9c62ea69476",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Sachsenfestzug 1914"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0301588.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ba6cedf6-4c1d-5d55-a253-b3119cd21bdb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Sachsenfestzug 1914"
+        ]
+      },
+      "height": 942,
+      "width": 1600,
+      "items": [
+        {
+          "id": "cde8b4e1-105a-5395-bebf-0359529b82ca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9c6658ce-ad06-5278-85fc-44fa0ed54d0a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0301588.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 942,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0301588.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ba6cedf6-4c1d-5d55-a253-b3119cd21bdb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c5e1c880-895e-533f-a875-c7973adaf220",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5aced27c-67c6-53d8-a91d-46dcf8147db3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Sachsenfestzug 1914"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2219b481-019e-5537-bab7-4df8cceb7d02"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ba6cedf6-4c1d-5d55-a253-b3119cd21bdb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e10bdd05-eefa-45fa-bb05-79082a42af4c/df_hauptkatalog_0301588.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

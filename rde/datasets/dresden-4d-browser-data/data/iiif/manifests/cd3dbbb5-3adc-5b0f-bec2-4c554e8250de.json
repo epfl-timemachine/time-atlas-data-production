@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cd3dbbb5-3adc-5b0f-bec2-4c554e8250de",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Annenstraße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0417514.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "88c15268-1a17-5e3d-9a0c-10644392c70e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Annenstraße"
+        ]
+      },
+      "height": 1308,
+      "width": 1600,
+      "items": [
+        {
+          "id": "02e2831f-7c19-5ffe-9180-3ee2a04c319c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "787aefff-d19a-58c2-b91e-bc3723521cd6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0417514.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1308,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0417514.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "88c15268-1a17-5e3d-9a0c-10644392c70e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "17ff9ccb-44cb-5c3f-850c-ae69770bc130",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "76408325-56fb-5287-91df-0f947bef9812",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Annenstraße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f143fa27-e384-5574-95e5-7f6a71b4b309"
+                }
+              ],
+              "target": [
+                {
+                  "id": "88c15268-1a17-5e3d-9a0c-10644392c70e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/2f8f5f14-0921-4840-a187-8987c9fa6067/df_hauptkatalog_0417514.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

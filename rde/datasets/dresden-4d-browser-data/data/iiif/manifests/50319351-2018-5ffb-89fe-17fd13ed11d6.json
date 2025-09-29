@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "50319351-2018-5ffb-89fe-17fd13ed11d6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Schloßhof"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0005708.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5166b489-d804-5855-89f3-77a802b0a436",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Schloßhof"
+        ]
+      },
+      "height": 1600,
+      "width": 1000,
+      "items": [
+        {
+          "id": "e3dd07ef-8f4e-55c9-b323-87ef00a31a37",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e049cfb7-2c0a-505b-9474-18d107c06448",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0005708.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1000,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dat_0005708.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5166b489-d804-5855-89f3-77a802b0a436"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7506b23b-7467-530d-84e6-7f37d7d5296c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3f0867b2-5461-5cf8-a2e2-bc6464731d8b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Schloßhof"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4a93ccab-89dd-5d07-9b4d-2674791ea360"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5166b489-d804-5855-89f3-77a802b0a436",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/57b4999e-0040-40c7-b1d8-013d770667fb/df_dat_0005708.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

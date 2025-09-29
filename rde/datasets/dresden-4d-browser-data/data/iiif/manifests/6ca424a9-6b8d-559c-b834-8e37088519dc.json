@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6ca424a9-6b8d-559c-b834-8e37088519dc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kronentor zu Dresden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0263680.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1db3a7a4-3a45-531e-9722-65f29dca85ad",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kronentor zu Dresden"
+        ]
+      },
+      "height": 736,
+      "width": 500,
+      "items": [
+        {
+          "id": "487ead49-2030-5938-92b2-f9f81ad74f6f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "77ee08ea-cd05-5c1e-9852-3c7d3aeaa8fa",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0263680.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 736,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0263680.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1db3a7a4-3a45-531e-9722-65f29dca85ad"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f4535b81-137f-5720-ab2e-fa455d1c8316",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a1ebb2ee-8944-518e-b9c8-87efc0892577",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kronentor zu Dresden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fc882bde-b4a2-5d1a-b6f1-dbd2a676c9ed"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1db3a7a4-3a45-531e-9722-65f29dca85ad",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/a37cc8af-d4a2-48a3-80b6-59f34f64de7b/df_hauptkatalog_0263680.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a9a7b70b-66bd-5005-9b07-b320addfbbe7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kleine Brüdergasse 21 mit Ecke"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114340.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6dda204a-c7c5-55fd-a505-ab7fd80e4520",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kleine Brüdergasse 21 mit Ecke"
+        ]
+      },
+      "height": 1600,
+      "width": 1136,
+      "items": [
+        {
+          "id": "ca1db2fb-19a0-54ee-a324-77d9c0490e46",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e9e12a08-d64f-57bc-95d0-7f74e88c4258",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114340.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1136,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0114340.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6dda204a-c7c5-55fd-a505-ab7fd80e4520"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2ac17b5b-72c3-57c3-b069-b5adb18e4d55",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "773e7652-b766-5c26-af11-d47f99885ecf",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kleine Brüdergasse 21 mit Ecke"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ac4f19fa-5b1d-585b-a58a-6312dc2faa7f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6dda204a-c7c5-55fd-a505-ab7fd80e4520",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/482201b1-a180-449e-9c55-585fa209e820/df_hauptkatalog_0114340.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

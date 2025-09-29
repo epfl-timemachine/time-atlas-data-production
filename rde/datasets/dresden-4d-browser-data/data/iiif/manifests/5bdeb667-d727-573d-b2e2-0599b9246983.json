@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5bdeb667-d727-573d-b2e2-0599b9246983",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ansicht vom heutigen Johanneum"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0007685.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d392d7ba-7001-5941-87fb-049d7adfe18b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Ansicht vom heutigen Johanneum"
+        ]
+      },
+      "height": 1148,
+      "width": 1600,
+      "items": [
+        {
+          "id": "2ade5a78-cb09-5de6-8e4e-466997bc2937",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a0b2b7ca-4045-5af5-ba15-d1263488703f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0007685.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1148,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0007685.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d392d7ba-7001-5941-87fb-049d7adfe18b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d5ba427a-3854-5bfc-b0d7-af3728b80980",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b70aee73-224f-5cbc-8a55-a602ecca1fef",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Ansicht vom heutigen Johanneum"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "42be6d92-9a29-5185-82bc-d7134a4d821d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d392d7ba-7001-5941-87fb-049d7adfe18b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/bf95837a-d328-4bcc-8f2e-911c9b5b122d/df_dk_0007685.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "13b18db6-87de-5428-808e-50511648e418",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Altmarkt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0052858.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "310b8c68-5143-52e0-b286-afbbce5739bf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Altmarkt"
+        ]
+      },
+      "height": 1115,
+      "width": 1560,
+      "items": [
+        {
+          "id": "4f78106f-24c8-5be5-827c-64d2b362eaa6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2bf4f3aa-645f-54d2-88e4-e66e7177f321",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0052858.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1115,
+                "width": 1560,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0052858.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "310b8c68-5143-52e0-b286-afbbce5739bf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ea0ab739-c113-5200-b8be-8ee165bf2de2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4c3c3293-d0e5-5696-9af0-fd51e23f1cc5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Altmarkt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0051515a-0b22-5ec4-91d7-2371cc2f761b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "310b8c68-5143-52e0-b286-afbbce5739bf",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e5913b28-5fc2-46a1-ae5e-67e10585cb1a/df_hauptkatalog_0052858.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

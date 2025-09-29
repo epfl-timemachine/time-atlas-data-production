@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b8b5a40a-e351-56b2-92a7-820bdf8c436e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Rampische Straße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0097264.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c10c38ca-575c-56d9-8905-914e3dd967f9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Rampische Straße"
+        ]
+      },
+      "height": 1600,
+      "width": 1194,
+      "items": [
+        {
+          "id": "9be8e25f-bc7e-5e06-8684-56a29a028635",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f9b64b2b-43b4-5750-9d83-b37ffe39a611",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0097264.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1194,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0097264.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c10c38ca-575c-56d9-8905-914e3dd967f9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "95cc8238-b908-5e50-afe5-372771cc3a8f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "813936d7-2007-53ee-8ed2-e79347116c9a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Rampische Straße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "36056e1e-a4db-5859-8762-dd3d8139e0be"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c10c38ca-575c-56d9-8905-914e3dd967f9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d0a65760-a7ac-49ad-9129-cbee83cad324/df_hauptkatalog_0097264.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

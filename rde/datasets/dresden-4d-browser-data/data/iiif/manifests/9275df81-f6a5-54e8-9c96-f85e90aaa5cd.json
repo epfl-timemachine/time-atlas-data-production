@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9275df81-f6a5-54e8-9c96-f85e90aaa5cd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Zwinger, Holzbrücke"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0166184.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b6252f10-0dc0-5b22-baf2-372333d3fbaa",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Zwinger, Holzbrücke"
+        ]
+      },
+      "height": 1600,
+      "width": 1136,
+      "items": [
+        {
+          "id": "1f41e4fd-464e-504c-9013-a25ed784c2cf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "895475be-66ed-5b5b-b19d-62f8680fb0ce",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0166184.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1136,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0166184.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b6252f10-0dc0-5b22-baf2-372333d3fbaa"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a2b26a88-a72a-567c-81b4-3ec8ba0267e1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cd86ac26-b611-594b-b7d0-3b11409cc070",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Zwinger, Holzbrücke"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fa788248-23ab-577c-a7b2-ce90289b390b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b6252f10-0dc0-5b22-baf2-372333d3fbaa",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7d080132-7b94-40c7-9f20-061f3f4f5b82/df_hauptkatalog_0166184.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

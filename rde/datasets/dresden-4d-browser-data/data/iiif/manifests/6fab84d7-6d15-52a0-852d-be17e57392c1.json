@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6fab84d7-6d15-52a0-852d-be17e57392c1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden: Blick über den Neumar"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313002.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "29cfed5e-614e-5ceb-8252-4a6da1e88de7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden: Blick über den Neumar"
+        ]
+      },
+      "height": 1109,
+      "width": 1588,
+      "items": [
+        {
+          "id": "41f5b43c-9964-580c-afbc-ab652c4cf9a4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f6294889-7144-5821-b8a7-dfc33306a2dd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313002.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1109,
+                "width": 1588,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313002.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "29cfed5e-614e-5ceb-8252-4a6da1e88de7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7378e38c-728b-5ff2-a87b-4f681d3b0197",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1c2480e6-1498-52fb-b3c7-f13ea37cff47",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden: Blick über den Neumar"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cd074c5a-80cb-50d4-95a2-6bc1b87e2262"
+                }
+              ],
+              "target": [
+                {
+                  "id": "29cfed5e-614e-5ceb-8252-4a6da1e88de7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/fa2963f6-ef41-4515-b556-6164fa90f575/df_hauptkatalog_0313002.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

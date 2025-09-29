@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5830bea8-e9eb-5abb-aba6-c4d23d048795",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Caritas"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0001061.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "62b81ad0-fc22-509b-a384-bba21b5a6b81",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Caritas"
+        ]
+      },
+      "height": 748,
+      "width": 500,
+      "items": [
+        {
+          "id": "6da6687f-ff07-5fcb-bb46-eb514d4d9987",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "562bd026-4965-570f-b873-6373c37d2253",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0001061.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 748,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0001061.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "62b81ad0-fc22-509b-a384-bba21b5a6b81"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "986dc437-13b8-55d9-8426-34e3b04886be",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8e86cf7a-721e-53dc-b848-01ff88cd6b4c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Caritas"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4cb7133e-1f6f-56eb-b71b-eb7c50b9a8cf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "62b81ad0-fc22-509b-a384-bba21b5a6b81",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/c648653d-534c-48f3-816a-c56058e9956e/df_ps_0001061.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

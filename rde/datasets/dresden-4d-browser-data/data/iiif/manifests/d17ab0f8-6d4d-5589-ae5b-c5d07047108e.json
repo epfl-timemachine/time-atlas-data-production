@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d17ab0f8-6d4d-5589-ae5b-c5d07047108e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dunger, Gustav"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0310990.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ce4e9d5b-b523-55f5-ab7c-9cf2daa9806e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dunger, Gustav"
+        ]
+      },
+      "height": 1600,
+      "width": 1150,
+      "items": [
+        {
+          "id": "fb015006-ecc1-5f48-9c19-27aa9832c087",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ca7984d9-2c0d-5669-8182-ca9a048c9495",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0310990.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1150,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0310990.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ce4e9d5b-b523-55f5-ab7c-9cf2daa9806e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ccce0511-1979-5659-a335-6ca92595a4d0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fb785d46-be55-504a-9cf8-382392ae2b16",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dunger, Gustav"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4304e835-c45c-540d-b4a1-83c9639dae2b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ce4e9d5b-b523-55f5-ab7c-9cf2daa9806e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/4542003c-1e9b-4882-ac7a-991fefabb56a/df_hauptkatalog_0310990.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

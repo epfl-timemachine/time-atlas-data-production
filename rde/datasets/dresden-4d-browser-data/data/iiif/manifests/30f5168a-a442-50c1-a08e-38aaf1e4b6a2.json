@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "30f5168a-a442-50c1-a08e-38aaf1e4b6a2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ansicht vom Zwinger in Dresden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0004874.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1983b4cd-aeda-54dc-931d-6d8f7c885ad0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Ansicht vom Zwinger in Dresden"
+        ]
+      },
+      "height": 1024,
+      "width": 1600,
+      "items": [
+        {
+          "id": "7f5d7605-b22c-5c7c-8390-8b61e0b3891b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "887cfd25-9d65-5a09-a3a7-06c0b1d7964b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0004874.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1024,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_dk_0004874.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1983b4cd-aeda-54dc-931d-6d8f7c885ad0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fb7b852a-0769-5493-bbdf-74583e210da5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "89bbe352-54b9-50ea-b7d0-517f9b98b0db",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Ansicht vom Zwinger in Dresden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dc465b40-02f4-5cfc-a71f-ed0c75d9d44c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1983b4cd-aeda-54dc-931d-6d8f7c885ad0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/675b9dda-fb5c-4d1c-8700-9d8d563d329e/df_dk_0004874.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

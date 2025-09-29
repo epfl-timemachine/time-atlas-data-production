@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b3741333-6193-5351-b8d3-4b5a8cc6525a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick von der Carolab"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110966.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ebde1a9d-d238-5a87-90d5-e1ac08cad68d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick von der Carolab"
+        ]
+      },
+      "height": 1155,
+      "width": 1600,
+      "items": [
+        {
+          "id": "bf0734f5-2f7b-5c49-b390-cda22cb41f86",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5899470b-11d8-559b-b8f6-61d7e877f4fb",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110966.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1155,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110966.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ebde1a9d-d238-5a87-90d5-e1ac08cad68d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "875054e3-5401-581d-9be0-4072ec09f5ab",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a40b127a-edc4-5107-8d8c-834653f229d9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick von der Carolab"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a48f1c8c-088a-533b-8639-215b859f43a5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ebde1a9d-d238-5a87-90d5-e1ac08cad68d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/6c5d1ff7-108f-4099-867d-ba5992e18e90/df_hauptkatalog_0110966.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

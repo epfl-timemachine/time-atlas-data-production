@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6fb6b8f7-060d-59a3-841b-bc6b924f3c70",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Der Zwingerhof in Dresden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186982.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7cfb1bf7-a479-51e3-b2c0-72d002b611be",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Der Zwingerhof in Dresden"
+        ]
+      },
+      "height": 1600,
+      "width": 1125,
+      "items": [
+        {
+          "id": "74e089e8-e71d-5efa-a2c9-ed289fc215d3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cc838fae-e73f-533d-9eee-2ea122482602",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186982.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1125,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0186982.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7cfb1bf7-a479-51e3-b2c0-72d002b611be"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b46d12b7-6815-5dfd-bf5f-6a2e3cc4be1e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "645615cc-3945-501f-8ca4-863c3fe56572",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Der Zwingerhof in Dresden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f5515ca3-7751-526f-8cac-c811709c29cb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7cfb1bf7-a479-51e3-b2c0-72d002b611be",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/ff15143e-8a5c-41fd-96a7-151a86288f3a/df_hauptkatalog_0186982.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

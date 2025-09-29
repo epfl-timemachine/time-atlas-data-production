@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c8eff068-da0a-5368-b94f-89102388800c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Brühlschen Terrasse, "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0122678.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "256f4837-b7ac-5ae4-928d-073819988c58",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Brühlschen Terrasse, "
+        ]
+      },
+      "height": 1102,
+      "width": 1600,
+      "items": [
+        {
+          "id": "a78a1eb0-5cfb-514d-a6ca-84c01597dc56",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "456e8b2e-248d-5011-9516-d4409ec536dc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0122678.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1102,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0122678.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "256f4837-b7ac-5ae4-928d-073819988c58"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6d397d94-7a55-5edc-9ac7-f44c605d94ea",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "29c86f11-beec-52a6-bc9d-79be4d954ed3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Brühlschen Terrasse, "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6b943120-103d-57fa-bc06-74d802668152"
+                }
+              ],
+              "target": [
+                {
+                  "id": "256f4837-b7ac-5ae4-928d-073819988c58",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/8dac170c-a30c-4436-a961-218d3b0c65d6/df_hauptkatalog_0122678.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

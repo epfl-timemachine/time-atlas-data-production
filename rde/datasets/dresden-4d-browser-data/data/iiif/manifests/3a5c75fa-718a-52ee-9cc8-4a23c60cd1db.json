@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3a5c75fa-718a-52ee-9cc8-4a23c60cd1db",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Modehaus \"Chic\""
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0136583.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "06faf4f5-9653-5f24-a5e4-6fa2c7776c31",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Modehaus \"Chic\""
+        ]
+      },
+      "height": 1600,
+      "width": 1144,
+      "items": [
+        {
+          "id": "c4ab40c5-2b44-5507-8959-d4e33a91f417",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ab4a87b6-1b12-5a54-a5ee-7e2f38a08dea",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0136583.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1144,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0136583.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "06faf4f5-9653-5f24-a5e4-6fa2c7776c31"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2631c45a-4302-561f-a153-bbdd6ea262a5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "91956791-136d-51fa-820e-c506e4b691a3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Modehaus \"Chic\""
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f520063c-5d7c-5a86-bae2-f2f8faf800ec"
+                }
+              ],
+              "target": [
+                {
+                  "id": "06faf4f5-9653-5f24-a5e4-6fa2c7776c31",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/822c983e-a882-45ae-872e-35734eb46155/df_hauptkatalog_0136583.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

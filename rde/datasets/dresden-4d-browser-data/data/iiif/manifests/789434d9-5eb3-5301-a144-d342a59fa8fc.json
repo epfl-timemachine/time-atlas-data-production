@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "789434d9-5eb3-5301-a144-d342a59fa8fc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Brühlsche Terrasse"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110270.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "89447f83-0639-52f2-baf3-e04c7c2f44ff",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Brühlsche Terrasse"
+        ]
+      },
+      "height": 1125,
+      "width": 1600,
+      "items": [
+        {
+          "id": "7582786c-8098-5dcb-ac00-5e6acfc363fa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f42e5410-9e57-57ed-b661-11aec227b636",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110270.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1125,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0110270.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "89447f83-0639-52f2-baf3-e04c7c2f44ff"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "620565c6-1ffd-5677-b654-b13339e0fd4b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a7bbaeed-b0bb-5966-bf72-a005d7d596c4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Brühlsche Terrasse"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e18b718e-7832-54fe-ab4d-3c6d07614647"
+                }
+              ],
+              "target": [
+                {
+                  "id": "89447f83-0639-52f2-baf3-e04c7c2f44ff",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/4c16254d-c3f0-4678-839d-a4a425f4dd70/df_hauptkatalog_0110270.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

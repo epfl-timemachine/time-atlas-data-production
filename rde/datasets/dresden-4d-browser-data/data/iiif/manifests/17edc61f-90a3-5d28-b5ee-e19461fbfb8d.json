@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "17edc61f-90a3-5d28-b5ee-e19461fbfb8d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Der Herbst"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096658.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "911ed9a8-f046-5325-a4dc-cfaeb5435602",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Der Herbst"
+        ]
+      },
+      "height": 1600,
+      "width": 933,
+      "items": [
+        {
+          "id": "1b661446-ffb4-5fd6-9356-b6f42a9fdd76",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5563e446-4742-5af9-9b2c-b79ad1071676",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096658.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 933,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096658.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "911ed9a8-f046-5325-a4dc-cfaeb5435602"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ad2a6bd7-5363-5912-b435-7a7151833f03",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c09992cc-fe73-52f1-bcae-4b0dc436ec0c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Der Herbst"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d42807af-2e90-5117-bdc0-afae8a6ba028"
+                }
+              ],
+              "target": [
+                {
+                  "id": "911ed9a8-f046-5325-a4dc-cfaeb5435602",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/0fc643d6-c757-4915-b2a8-c13b34e941ba/df_hauptkatalog_0096658.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

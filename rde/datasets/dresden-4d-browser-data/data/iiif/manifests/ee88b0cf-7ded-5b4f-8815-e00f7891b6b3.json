@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ee88b0cf-7ded-5b4f-8815-e00f7891b6b3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden: Neumarkt und Frauenki"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313006.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1f7e17e-cd79-5551-af76-cb838fea0db0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden: Neumarkt und Frauenki"
+        ]
+      },
+      "height": 1080,
+      "width": 1600,
+      "items": [
+        {
+          "id": "1c83db90-7433-57c7-a7a1-f12babc53dc4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ef88604c-a53a-5e4d-bae9-5b28b49fdf63",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313006.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1080,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313006.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c1f7e17e-cd79-5551-af76-cb838fea0db0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1cc5231d-aae7-5c3f-ab5f-04680dd002df",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9a66de4e-4e32-56f6-8fc3-da8d7a8016d6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden: Neumarkt und Frauenki"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d357cd8b-f6e2-5577-8402-8e3567b734cf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c1f7e17e-cd79-5551-af76-cb838fea0db0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/1751f2d0-0c09-4f57-b008-64580b7a47fc/df_hauptkatalog_0313006.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ff7f48ca-62e0-5704-ba49-0a858b663816",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "St.-Georgs-Brunnen"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006387.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3d39d9b4-6600-5e04-a76e-ad179bc675e1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "St.-Georgs-Brunnen"
+        ]
+      },
+      "height": 2259,
+      "width": 1600,
+      "items": [
+        {
+          "id": "4caac8f4-809c-5990-82fd-d5d369501c6b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "91aaef06-d0d7-5340-bddc-9c8d596cccab",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006387.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 2259,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0006387.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3d39d9b4-6600-5e04-a76e-ad179bc675e1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "067ce352-f40f-5c17-915a-b63174acac77",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b3c3365f-673f-50cb-b316-5f6b3cc15cdb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "St.-Georgs-Brunnen"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4a11f683-8dd2-5f51-b040-dbad1252b1ba"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3d39d9b4-6600-5e04-a76e-ad179bc675e1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/70b38afd-ee6d-4c8e-8122-a835063ef17f/df_hauptkatalog_0006387.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

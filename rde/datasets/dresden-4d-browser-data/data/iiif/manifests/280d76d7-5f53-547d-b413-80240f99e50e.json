@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "280d76d7-5f53-547d-b413-80240f99e50e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresdner Zwinger"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0148587.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7d481147-089e-58f3-a1af-934f7833dc27",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresdner Zwinger"
+        ]
+      },
+      "height": 1157,
+      "width": 1600,
+      "items": [
+        {
+          "id": "542a0875-b53b-55cc-8e0c-5e4942fd097a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6822760f-86ef-5188-a447-7f5c841d781b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0148587.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1157,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0148587.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7d481147-089e-58f3-a1af-934f7833dc27"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "84b88302-7bab-50a8-b8eb-5190e4d8baf1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3d434073-9448-500b-aeff-c6084f7b192a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresdner Zwinger"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c9f9009e-a98b-5aa1-946d-63fa35aa450a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7d481147-089e-58f3-a1af-934f7833dc27",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/6b33b5cf-49d0-44e9-ad40-7f00f2280ddb/df_hauptkatalog_0148587.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

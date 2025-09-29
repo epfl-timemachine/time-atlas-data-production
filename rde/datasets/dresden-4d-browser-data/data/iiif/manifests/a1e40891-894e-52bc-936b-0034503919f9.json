@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a1e40891-894e-52bc-936b-0034503919f9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Pirnaischer Platz"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0023315.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cc55e71d-b897-5d4f-8746-1ac5df7ca18d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Pirnaischer Platz"
+        ]
+      },
+      "height": 1206,
+      "width": 1600,
+      "items": [
+        {
+          "id": "f3413611-d9f0-5db5-9f56-fe2d4e816862",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5c34c5b8-30f7-584f-9132-b4bac31d0d26",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0023315.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1206,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0023315.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cc55e71d-b897-5d4f-8746-1ac5df7ca18d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "02b7516f-24ae-5349-a9f1-b59028615565",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4aded98a-d8c9-56cf-b416-2124ad1e545b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Pirnaischer Platz"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b889bed0-0574-5192-876b-ffe477d2142e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cc55e71d-b897-5d4f-8746-1ac5df7ca18d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d2be311f-a7f9-4d9d-bbfe-de4e7d64b098/df_hauptkatalog_0023315.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

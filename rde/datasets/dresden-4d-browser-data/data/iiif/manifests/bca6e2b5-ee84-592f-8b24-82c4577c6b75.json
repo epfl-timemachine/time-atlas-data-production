@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bca6e2b5-ee84-592f-8b24-82c4577c6b75",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schloßstraße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0017153.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9438e97d-a431-5282-bd80-ad41f22a7063",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schloßstraße"
+        ]
+      },
+      "height": 1600,
+      "width": 1142,
+      "items": [
+        {
+          "id": "e108ef10-ea8d-5039-81b5-839314dfbb5b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9e19350d-db1f-5333-bb3f-ab96286556c3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0017153.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1142,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0017153.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9438e97d-a431-5282-bd80-ad41f22a7063"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a25f762b-0dd7-5d1b-8af2-29744cab9107",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "82b68772-988d-5e6a-9b15-3db790cddb79",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schloßstraße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6519600a-3499-54ec-9728-b4dad82f3528"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9438e97d-a431-5282-bd80-ad41f22a7063",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/2ee93295-904d-4abb-9e4d-3f240e9fe6ee/df_hauptkatalog_0017153.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

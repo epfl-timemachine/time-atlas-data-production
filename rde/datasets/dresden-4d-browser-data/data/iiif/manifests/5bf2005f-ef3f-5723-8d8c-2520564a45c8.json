@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5bf2005f-ef3f-5723-8d8c-2520564a45c8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Blick vom Opernhaus ü"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0168735.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "db619d49-7575-50bb-9f61-1660debb5bc8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Blick vom Opernhaus ü"
+        ]
+      },
+      "height": 1098,
+      "width": 1600,
+      "items": [
+        {
+          "id": "30dba16f-e5e0-50c4-a67b-04b2476fad3e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "91086836-b63f-53e3-8295-8e869f2180af",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0168735.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1098,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0168735.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "db619d49-7575-50bb-9f61-1660debb5bc8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5bfb1678-93d6-5d05-9fbf-6401f0a822ac",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "769147b3-5643-5c20-8d00-ee1905fc1b8f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Blick vom Opernhaus ü"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b5452563-23cf-5a77-9100-a26013fa1a2b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "db619d49-7575-50bb-9f61-1660debb5bc8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f6be6676-7127-448f-a99d-c215276aaa5d/df_hauptkatalog_0168735.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

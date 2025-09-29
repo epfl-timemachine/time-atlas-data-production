@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7ca22225-e918-5476-9864-78a71e1583af",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresdner Hof, 1987"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264207.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "38e76ce0-f74e-5ffc-a36e-27d5b827ac5b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresdner Hof, 1987"
+        ]
+      },
+      "height": 1081,
+      "width": 1600,
+      "items": [
+        {
+          "id": "382d264b-afaa-5c37-93b2-b6aed9c68005",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4b571d0b-4148-5f47-b632-361c2199cc5e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264207.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1081,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264207.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "38e76ce0-f74e-5ffc-a36e-27d5b827ac5b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5c435ba9-8281-5d42-a32c-e160109ee0ff",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4a0182ea-2e1c-5431-8122-37231f5162eb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresdner Hof, 1987"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "716be27e-1476-52f9-ad2e-8ab754e7bb94"
+                }
+              ],
+              "target": [
+                {
+                  "id": "38e76ce0-f74e-5ffc-a36e-27d5b827ac5b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f92c7be2-a6dd-4371-a7c6-b11d5abd73d6/df_hauptkatalog_0264207.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cf4bd30c-0ca3-5ba6-a762-564641b5f1ce",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Zwinger"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2009-a_0000844.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2063a97d-c795-56d6-8469-b991a8e0a165",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Zwinger"
+        ]
+      },
+      "height": 1229,
+      "width": 1600,
+      "items": [
+        {
+          "id": "9e1fe3e0-3949-5a89-81a5-03e0daae17d9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "52946c34-775f-5812-aba9-f172b25960d9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2009-a_0000844.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1229,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2009-a_0000844.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2063a97d-c795-56d6-8469-b991a8e0a165"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d33a5cbc-fd12-5f05-9cca-d7d3bf811145",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9b750f15-f7a3-5203-ae1e-4bb871785c8d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Zwinger"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b1035df0-97ce-5611-a02b-6dadc10b19fc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2063a97d-c795-56d6-8469-b991a8e0a165",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/88cf8118-3389-429d-a1c5-03ca1c0486a3/df_pos-2009-a_0000844.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

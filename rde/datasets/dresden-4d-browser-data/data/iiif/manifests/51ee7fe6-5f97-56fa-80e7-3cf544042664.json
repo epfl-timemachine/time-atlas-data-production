@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "51ee7fe6-5f97-56fa-80e7-3cf544042664",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden im Wiederaufbau"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000320.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eb69bc4e-70dd-5565-9110-c7143bf05f6f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden im Wiederaufbau"
+        ]
+      },
+      "height": 509,
+      "width": 500,
+      "items": [
+        {
+          "id": "b81c14fd-ff05-55f6-9c89-6cce471ddcbe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a75e0895-91d6-5309-bd21-155bdb2cbf51",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000320.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 509,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000320.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eb69bc4e-70dd-5565-9110-c7143bf05f6f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "59f8af63-fcef-53b4-ae2b-08c06c2ab604",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "04dab9ae-708b-50f0-9629-1c27a4135145",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden im Wiederaufbau"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8c07d00b-8813-5eeb-ac3f-42c719d7e143"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eb69bc4e-70dd-5565-9110-c7143bf05f6f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/82ec2a2a-38a6-4fcd-b009-6b848d80b329/df_ps_0000320.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

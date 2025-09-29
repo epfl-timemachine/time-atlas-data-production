@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "75be524a-0863-58e5-a916-eebc04a9b64f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, Postplatz. B"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313796.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "28eebfde-1ce3-5d2a-8842-880d357b485d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, Postplatz. B"
+        ]
+      },
+      "height": 1183,
+      "width": 1600,
+      "items": [
+        {
+          "id": "36897e23-ca63-563f-ad9b-b53ed05dcc95",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "af470dba-b343-5431-85a5-a7c0eaa266c6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313796.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1183,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0313796.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "28eebfde-1ce3-5d2a-8842-880d357b485d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "485cc5f5-bb8a-5f97-a7b9-f30f1ec4101a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "106141c4-7618-5e31-8639-ba2fb097bc41",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, Postplatz. B"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "23759fda-1adf-5d0e-9ae9-f90d46539569"
+                }
+              ],
+              "target": [
+                {
+                  "id": "28eebfde-1ce3-5d2a-8842-880d357b485d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f2851bfb-be22-493c-b258-851f15f1c9c8/df_hauptkatalog_0313796.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "952200aa-b7f8-57b5-81e0-0b3e9b0b1032",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Stallhof"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0193497.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eb8cdcc4-55bf-5afd-9711-74ed5dc22c2c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Stallhof"
+        ]
+      },
+      "height": 1600,
+      "width": 1119,
+      "items": [
+        {
+          "id": "fdc206e2-4751-5288-a723-db1ff46824ed",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e7d25c03-0a73-5625-92ad-c5bd3b409e1f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0193497.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1119,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0193497.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eb8cdcc4-55bf-5afd-9711-74ed5dc22c2c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cf6e7fd3-ef67-5e98-9ea0-0aa57b96f381",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aadbe3c9-bb17-515b-9fc6-c02e7ba818e5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Stallhof"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cb31e213-b32c-5a05-a43f-1ee6a5459b81"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eb8cdcc4-55bf-5afd-9711-74ed5dc22c2c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/8c5d496d-9af3-4e07-a967-7e068650a25c/df_hauptkatalog_0193497.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

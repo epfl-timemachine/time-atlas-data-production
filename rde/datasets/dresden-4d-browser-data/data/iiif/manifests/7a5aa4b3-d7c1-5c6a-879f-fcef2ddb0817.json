@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7a5aa4b3-d7c1-5c6a-879f-fcef2ddb0817",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Zwinger, Dresden"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fb_am_0048629.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5aed1756-e006-5d47-8d85-7955ab0fabaf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Zwinger, Dresden"
+        ]
+      },
+      "height": 501,
+      "width": 640,
+      "items": [
+        {
+          "id": "ae41c77c-60f4-51d7-a057-290df6ae7a37",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "89a745f3-5592-522f-9379-52d274701409",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fb_am_0048629.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 501,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fb_am_0048629.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5aed1756-e006-5d47-8d85-7955ab0fabaf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "78e56ecb-67bd-5dbb-b949-3c2bdacaa5e3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "317e4577-8889-5fe4-9a2d-b23784e24317",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Zwinger, Dresden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d68da298-e471-5ad8-9ad0-08029239e682"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5aed1756-e006-5d47-8d85-7955ab0fabaf",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/82f8db93-1c11-4ce5-b607-43f95cb678db/b_am_0048629.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7b0d0c09-6407-5b9c-9cec-7d317a02f145",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Georgentor"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0152760.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c12d46bd-2f5a-51d4-8d47-2cf4a7fed03e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Georgentor"
+        ]
+      },
+      "height": 1600,
+      "width": 1188,
+      "items": [
+        {
+          "id": "2f9228e2-1b7b-598d-9ea4-992ad4ccb14a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "847ccabd-a874-56f6-89db-e8fbe685e5b2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0152760.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1188,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0152760.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c12d46bd-2f5a-51d4-8d47-2cf4a7fed03e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "73c3ba70-4629-5cc2-ba13-03ca4181f569",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c18e34d8-a8bd-572f-adf8-3625599e08a9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Georgentor"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0c1d2700-6f2a-5544-9f32-24ae811a0e88"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c12d46bd-2f5a-51d4-8d47-2cf4a7fed03e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/a8e79540-10c3-4ed1-a7f0-1efdbb87c0f8/df_hauptkatalog_0152760.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

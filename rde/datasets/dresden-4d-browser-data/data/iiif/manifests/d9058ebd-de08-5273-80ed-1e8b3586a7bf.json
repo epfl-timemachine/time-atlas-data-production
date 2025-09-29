@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d9058ebd-de08-5273-80ed-1e8b3586a7bf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Zwinger. Kronentor"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika037_0000187_motiv.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c58d4c8d-de7f-5bf9-80b8-fa83a6764d58",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Zwinger. Kronentor"
+        ]
+      },
+      "height": 2188,
+      "width": 1600,
+      "items": [
+        {
+          "id": "23c3913d-a308-588a-b39c-cdf56cd54676",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "571746b9-2a3a-5e19-9db1-6b44d25dca29",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika037_0000187_motiv.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 2188,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_bika037_0000187_motiv.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c58d4c8d-de7f-5bf9-80b8-fa83a6764d58"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7e091295-7845-5a9a-acce-d2095972e205",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6cf82e6b-baf8-535f-9dba-7c3eb4e12da9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Zwinger. Kronentor"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cfe58130-5271-5099-a2b1-e81afd5b651f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c58d4c8d-de7f-5bf9-80b8-fa83a6764d58",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/8dbe5ae6-2a15-481f-a852-21660bf2c27a/df_bika037_0000187_motiv.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

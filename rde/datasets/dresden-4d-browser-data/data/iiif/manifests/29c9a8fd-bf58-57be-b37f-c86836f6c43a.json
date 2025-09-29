@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "29c9a8fd-bf58-57be-b37f-c86836f6c43a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Brühlsches Belvedere"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260554.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8bc087a6-38cc-5bc3-92cf-8a54d8b85396",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Brühlsches Belvedere"
+        ]
+      },
+      "height": 1072,
+      "width": 1600,
+      "items": [
+        {
+          "id": "5518b7ea-4813-5c0d-b695-ad737ef20dea",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e26ba29e-de6a-5529-bdcd-d85d4012dc10",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260554.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1072,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0260554.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8bc087a6-38cc-5bc3-92cf-8a54d8b85396"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7c49ff5d-9f77-5305-891b-1610a9f6571e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1a7e0e5a-3a6f-5e16-b060-f0b9a6b49400",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Brühlsches Belvedere"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "edb1a20d-0d27-53b0-9919-68aac2fd6653"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8bc087a6-38cc-5bc3-92cf-8a54d8b85396",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d05aa6e7-4ef6-4348-8e2b-1675c0cc8389/df_hauptkatalog_0260554.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

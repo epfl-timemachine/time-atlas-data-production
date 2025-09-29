@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e7891505-4ca2-57ab-8d76-459364080c46",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Thormeyer, Gottlob Friedrich"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121398.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "12ba581e-e5df-554e-8a19-61531ac8385d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thormeyer, Gottlob Friedrich"
+        ]
+      },
+      "height": 1107,
+      "width": 1600,
+      "items": [
+        {
+          "id": "2c1b9efe-f10f-59c4-a4cb-abc0b39de823",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "644de8e2-d1e3-5dd8-8e8d-4be6ca9ec5d7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121398.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1107,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0121398.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "12ba581e-e5df-554e-8a19-61531ac8385d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ebddeb91-572e-5a30-b19e-29a95338f573",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5abacf47-554f-55a9-88e2-e9c463c72ac8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Thormeyer, Gottlob Friedrich"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b7c1cbac-f512-5a33-acbc-a318a5ab00e5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "12ba581e-e5df-554e-8a19-61531ac8385d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/cdd31902-2a39-4ff1-a684-f8d17def54ec/df_hauptkatalog_0121398.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

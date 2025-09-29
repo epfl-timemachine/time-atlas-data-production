@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b8e64e6d-3dcc-545d-b5af-007acf93f343",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schloßstraße, Georg der Bärtig"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_m_0005126.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "006ed4ec-7d75-5854-99ac-cfbeb92d378e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schloßstraße, Georg der Bärtig"
+        ]
+      },
+      "height": 1600,
+      "width": 1155,
+      "items": [
+        {
+          "id": "9aac0d72-9bc3-598e-8b9c-fb1b749adcde",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d0dc95ca-42d1-526f-aea6-67788cab8a74",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_m_0005126.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1155,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_m_0005126.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "006ed4ec-7d75-5854-99ac-cfbeb92d378e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4510f0df-75c2-59a7-9c66-19cdc5c2721d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "000c7dfc-cef5-5586-9aff-9b12cbe9e3ec",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schloßstraße, Georg der Bärtig"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5dddbe9d-f605-5db3-880b-5e4494c128de"
+                }
+              ],
+              "target": [
+                {
+                  "id": "006ed4ec-7d75-5854-99ac-cfbeb92d378e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7c8d99fc-1464-48a4-88fe-9edc33d59a1b/df_m_0005126.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

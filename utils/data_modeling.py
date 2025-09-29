@@ -129,16 +129,18 @@ def produce_hr_obj(uuid: str,
                ds: str,
                obs_uid_list: list[list[str, str]],
                time_range: tuple[str, str],
-               type: str,
+               tpe: str,
                metadata: dict,
                rights_attribution: str = None,
                paradata: str = 'm') -> tuple[str, dict]:
+    # replace all "NaN" values by None in metadata:
+    metadata = {k: (v if v != "NaN" and (type(v) is list or pd.notna(v)) else None) for k, v in metadata.items()}
     return {
         "uuid": uuid,
         "dataset": ds,
         "rde_type": RDE.HR.value,
         "paradata": paradata,
-        "type": type,
+        "type": tpe,
         "documents": obs_uid_list,
         "start_time": time_range[0],
         "end_time": time_range[1],

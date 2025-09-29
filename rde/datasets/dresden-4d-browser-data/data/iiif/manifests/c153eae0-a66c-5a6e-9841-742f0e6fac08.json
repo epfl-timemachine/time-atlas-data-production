@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c153eae0-a66c-5a6e-9841-742f0e6fac08",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Schlossbauprojekt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096614.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c7c51d36-e364-593d-9e7d-f7b47378d862",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Schlossbauprojekt"
+        ]
+      },
+      "height": 592,
+      "width": 1600,
+      "items": [
+        {
+          "id": "caed8734-3516-5884-8842-8bfec60a2bc6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2fa6a2e9-f0f3-53cc-aeed-2eddbfd41688",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096614.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 592,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0096614.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c7c51d36-e364-593d-9e7d-f7b47378d862"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6ea12b69-66fe-5417-9d28-a5245e4fc702",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "85253ce2-09fd-517e-a33e-9fe8446dc2f9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Schlossbauprojekt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b5e194ed-7bcc-5f27-932f-07b4147fa779"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c7c51d36-e364-593d-9e7d-f7b47378d862",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/aeda8881-2fb0-454b-ad49-a0927d5cf0c3/df_hauptkatalog_0096614.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

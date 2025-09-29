@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "63fa94cd-a6ee-5a28-87e4-948750e26d05",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Hofkirche"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0145180.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0e980496-912c-5ad8-a346-3193e476b9f6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Hofkirche"
+        ]
+      },
+      "height": 1168,
+      "width": 1600,
+      "items": [
+        {
+          "id": "e6f8e135-d7d0-58ea-a9b2-3846cb503c1a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "668049ec-8515-5093-9abd-4760cc1eb4fd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0145180.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1168,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0145180.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0e980496-912c-5ad8-a346-3193e476b9f6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0f7a5aad-858f-5669-a718-9d127b112e65",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d6c33d93-6a66-5648-9e9f-623193fe84f0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Hofkirche"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eecda904-9f32-5fc7-8bad-2bde20806072"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0e980496-912c-5ad8-a346-3193e476b9f6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/24f99672-d35d-4c20-94b1-97659ccc0c06/df_hauptkatalog_0145180.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cfed85d6-71bc-5b98-8b73-0ab0e9d6242e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden: Westlicher Teil der A"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312988.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3daf1ee5-bcc1-5562-a18a-e5905160cc0e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden: Westlicher Teil der A"
+        ]
+      },
+      "height": 1192,
+      "width": 1600,
+      "items": [
+        {
+          "id": "4b8b0f90-3c85-5f86-8a81-e42706eb915b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "79186570-155d-5d45-89bd-7966a33c4e12",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312988.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1192,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0312988.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3daf1ee5-bcc1-5562-a18a-e5905160cc0e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "79779f24-110e-56f8-ad58-150bb0e58e2d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e95eb35e-a7ac-5d9f-a749-92dbbb5602b2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden: Westlicher Teil der A"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "42f0b28e-6bee-5610-bd8b-a230081378d3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3daf1ee5-bcc1-5562-a18a-e5905160cc0e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/603f6f6f-c5a4-40df-b7c1-9f0477fec9e5/df_hauptkatalog_0312988.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

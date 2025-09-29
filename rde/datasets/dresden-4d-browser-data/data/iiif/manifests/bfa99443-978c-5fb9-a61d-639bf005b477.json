@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bfa99443-978c-5fb9-a61d-639bf005b477",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Zwinger, Restaurierun"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0001565.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a1dc446c-7ae3-5df1-98b4-fe4ce5bb6b54",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Zwinger, Restaurierun"
+        ]
+      },
+      "height": 1600,
+      "width": 1228,
+      "items": [
+        {
+          "id": "e3eea6f4-bd43-54b2-8b0a-14f5aa7bf81b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f7c83833-9376-5f2a-afce-0431e7b58ef3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0001565.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1228,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0001565.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a1dc446c-7ae3-5df1-98b4-fe4ce5bb6b54"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "59ea1cad-163a-5224-ae7e-96f33f52063f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "06bfd4e5-bc38-52d4-a848-cc91ca65c021",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Zwinger, Restaurierun"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7318ed87-8866-5183-93fb-4dd3b33ffc13"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a1dc446c-7ae3-5df1-98b4-fe4ce5bb6b54",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/7ca25eaa-e835-4465-98f1-f14003c4e7cb/df_hauptkatalog_0001565.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e0488add-25ce-541e-b26d-cedfc3e133bb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Zeichnung"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0108378.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "23444965-6401-5082-8163-9b61b344326a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Zeichnung"
+        ]
+      },
+      "height": 875,
+      "width": 1600,
+      "items": [
+        {
+          "id": "b78fb7b7-51cc-5a13-bd7e-fa16b18ac3fb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "20071bfa-51e3-5bcf-a368-426de5f3f18b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0108378.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 875,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0108378.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "23444965-6401-5082-8163-9b61b344326a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b0d5d9e9-7b9b-5716-8344-e931ded7c63a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "50181bcf-fe98-50d5-b5a4-5355807e590f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Zeichnung"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a78dbd64-dcbc-5f83-a740-3d5009066032"
+                }
+              ],
+              "target": [
+                {
+                  "id": "23444965-6401-5082-8163-9b61b344326a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/b00e9120-cf40-4939-8ff1-badafd6dd3a5/df_hauptkatalog_0108378.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e29ed165-2294-54f8-a9b8-30f4f13c754a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Salzgasse"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0100695.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a969e89f-cdd2-5c3f-b342-08f264059e78",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Salzgasse"
+        ]
+      },
+      "height": 1600,
+      "width": 1115,
+      "items": [
+        {
+          "id": "c9f12f0f-3e6e-5f49-9852-e5e98b7fb530",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bb8deae2-2e13-5742-992c-efe96be7cf44",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0100695.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1115,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0100695.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a969e89f-cdd2-5c3f-b342-08f264059e78"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a0b08b4b-2ac3-5494-b438-5668617d2d48",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6cb785dc-163f-5992-b730-00a55af4da5a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Salzgasse"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "14a602bb-50b2-589a-8b63-3e0b86c66e41"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a969e89f-cdd2-5c3f-b342-08f264059e78",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/5b120f24-3ea9-4717-8751-ca2da8387516/df_hauptkatalog_0100695.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

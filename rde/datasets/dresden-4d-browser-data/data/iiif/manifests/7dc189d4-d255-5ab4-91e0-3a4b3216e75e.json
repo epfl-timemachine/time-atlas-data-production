@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7dc189d4-d255-5ab4-91e0-3a4b3216e75e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Belvedere"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0100950.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "05fbce23-d1e9-5583-855d-df20d96cb3c4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Belvedere"
+        ]
+      },
+      "height": 1048,
+      "width": 1600,
+      "items": [
+        {
+          "id": "8c97709b-cfa5-5258-9c6e-a70ce64830fd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a3664a1d-29ba-5fe9-8ed5-90f0d21f3d1b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0100950.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1048,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0100950.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "05fbce23-d1e9-5583-855d-df20d96cb3c4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8c218c46-61cf-5449-a514-ccb2fdae94e6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "acf74387-5d23-55e8-b5aa-0f41d90e9d24",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Belvedere"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1be3ea74-a818-58fd-9f9c-30a983142cc1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "05fbce23-d1e9-5583-855d-df20d96cb3c4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/8bf544f9-6f0a-4ac0-9087-b07d93c01e51/df_hauptkatalog_0100950.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c913cd26-5ee5-5b36-971b-5c5403ca84b6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Zwingerhof"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107436.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b1c96c1f-29a6-579e-bbbf-c3059544963e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Zwingerhof"
+        ]
+      },
+      "height": 1115,
+      "width": 1600,
+      "items": [
+        {
+          "id": "7606363a-2cfc-5e1c-9c7c-166e6ed5e0ec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f6c7a20e-64db-5a26-80c7-75abee743f26",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107436.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1115,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0107436.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b1c96c1f-29a6-579e-bbbf-c3059544963e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "46d2b66d-dc2e-537e-adc9-69cd66831b2c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "03ea1ae4-dfc7-5a69-998a-b7c193146447",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Zwingerhof"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bcaac3d0-6159-5380-846a-1efcbe238767"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b1c96c1f-29a6-579e-bbbf-c3059544963e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/0608c9c9-85f4-4e3f-9ed0-e210c25bb703/df_hauptkatalog_0107436.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

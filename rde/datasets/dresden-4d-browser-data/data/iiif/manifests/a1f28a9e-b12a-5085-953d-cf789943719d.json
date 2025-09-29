@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a1f28a9e-b12a-5085-953d-cf789943719d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Johanneum, Inneres, Erdgeschos"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0139937.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dc5b80ae-3ee4-59fa-ab41-bdc8f347589a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Johanneum, Inneres, Erdgeschos"
+        ]
+      },
+      "height": 1600,
+      "width": 1116,
+      "items": [
+        {
+          "id": "0f14b0a2-4aec-5c41-aada-14e3927fc45f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "61b9b62f-d1a9-507e-8d2a-ec4adfdc61b9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0139937.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1116,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0139937.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dc5b80ae-3ee4-59fa-ab41-bdc8f347589a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b5f3ff57-d80c-57ec-bcfb-f5f58d47bd0e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "50f880ac-be76-5fe8-bf72-e7241604de5a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Johanneum, Inneres, Erdgeschos"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b59c6c59-4b1c-5fdc-84be-0113e9741c4d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dc5b80ae-3ee4-59fa-ab41-bdc8f347589a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/013a74ba-fe04-4755-a88f-79c5014958e3/df_hauptkatalog_0139937.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

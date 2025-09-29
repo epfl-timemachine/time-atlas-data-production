@@ -3,7 +3,7 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-09-04T15:59:18.268731",
+ "creation_time": "2025-09-09T10:43:57.298760",
  "rde_objects": [
   {
    "uuid": "92cae623-b4e9-5959-8292-2e4671bd4889",
@@ -61,6 +61,28 @@
      "external_source": false,
      "metadata_field_config": [
       {
+       "id": "aulic_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Aulic name"
+        ],
+        "it": [
+         "Nome aulico"
+        ],
+        "fr": [
+         "Nom aulique"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 1,
+       "uuid": "d302bd8d-0d66-57ee-a421-fa5b26c5513f"
+      },
+      {
        "id": "CIVICI",
        "type": "STRING",
        "display_label": {
@@ -79,52 +101,30 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 1,
+       "display_order": 2,
        "uuid": "f4f96ee7-ce20-5b42-874a-70be849fcba1"
       },
       {
-       "id": "points_density",
-       "type": "FLOAT",
+       "id": "EDIFI_ID",
+       "type": "STRING",
        "display_label": {
         "en": [
-         "Points density"
+         "EDIFICI ID"
         ],
         "it": [
-         "Densità di punti"
+         "EDIFICI ID"
         ],
         "fr": [
-         "Densité de points"
+         "EDIFICI ID"
         ]
        },
        "nullable": false,
        "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 2,
-       "uuid": "2503ae92-5ab6-5632-8a5e-051f3bd79efd"
-      },
-      {
-       "id": "area",
-       "type": "FLOAT",
-       "display_label": {
-        "en": [
-         "Area [m2]"
-        ],
-        "it": [
-         "Area [m2]"
-        ],
-        "fr": [
-         "Aire [m2]"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "short_display": false,
+       "short_display": true,
        "hidden": false,
        "tag": null,
        "display_order": 3,
-       "uuid": "98468d76-402e-514f-a0be-1937efa2ef04"
+       "uuid": "f61e7e9b-cf58-56e9-9add-8e51f852d9b7"
       },
       {
        "id": "SESTIERE",
@@ -149,70 +149,26 @@
        "uuid": "ec3c8c60-f581-5e26-add5-14e8f4150f08"
       },
       {
-       "id": "nb_points",
-       "type": "INTEGER",
+       "id": "typology",
+       "type": "STRING",
        "display_label": {
         "en": [
-         "Number of points"
+         "Typology"
         ],
         "it": [
-         "Numero di punti"
+         "Tipologia"
         ],
         "fr": [
-         "Nombre de points"
+         "Typologie"
         ]
        },
-       "nullable": false,
-       "indexable": false,
+       "nullable": true,
+       "indexable": true,
        "short_display": false,
        "hidden": false,
        "tag": null,
        "display_order": 5,
-       "uuid": "2f103431-e550-5005-8e28-66121e586260"
-      },
-      {
-       "id": "volume",
-       "type": "FLOAT",
-       "display_label": {
-        "en": [
-         "Volume [m3]"
-        ],
-        "it": [
-         "Volume [m3]"
-        ],
-        "fr": [
-         "Volume [m3]"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 6,
-       "uuid": "16be73c6-f92e-5443-b32c-6bfddde26c73"
-      },
-      {
-       "id": "wikidata",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Wikidata"
-        ],
-        "it": [
-         "Wikidata"
-        ],
-        "fr": [
-         "Wikidata"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 7,
-       "uuid": "f4a5a4e3-e3fe-5102-a6ba-1857e439f899"
+       "uuid": "0ec40ae2-a46d-5fa4-9efa-ca7b9fcd020a"
       },
       {
        "id": "mean_height",
@@ -233,43 +189,43 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 8,
+       "display_order": 6,
        "uuid": "0bd64ad7-c550-5992-b487-929d413e2a1e"
       },
       {
-       "id": "EDIFI_ID",
-       "type": "STRING",
+       "id": "volume",
+       "type": "FLOAT",
        "display_label": {
         "en": [
-         "EDIFICI ID"
+         "Volume [m3]"
         ],
         "it": [
-         "EDIFICI ID"
+         "Volume [m3]"
         ],
         "fr": [
-         "EDIFICI ID"
+         "Volume [m3]"
         ]
        },
        "nullable": false,
        "indexable": false,
-       "short_display": true,
+       "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 9,
-       "uuid": "f61e7e9b-cf58-56e9-9add-8e51f852d9b7"
+       "display_order": 7,
+       "uuid": "16be73c6-f92e-5443-b32c-6bfddde26c73"
       },
       {
-       "id": "ISOLA",
-       "type": "STRING",
+       "id": "area",
+       "type": "FLOAT",
        "display_label": {
         "en": [
-         "Island"
+         "Area [m2]"
         ],
         "it": [
-         "Isola"
+         "Area [m2]"
         ],
         "fr": [
-         "Île"
+         "Aire [m2]"
         ]
        },
        "nullable": true,
@@ -277,52 +233,8 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 10,
-       "uuid": "d343b51c-ca63-5cc2-98c2-f78be28af20e"
-      },
-      {
-       "id": "typology",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Typology"
-        ],
-        "it": [
-         "Tipologia"
-        ],
-        "fr": [
-         "Typologie"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 11,
-       "uuid": "0ec40ae2-a46d-5fa4-9efa-ca7b9fcd020a"
-      },
-      {
-       "id": "aulic_name",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Aulic name"
-        ],
-        "it": [
-         "Nome aulico"
-        ],
-        "fr": [
-         "Nom aulique"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "short_display": true,
-       "hidden": false,
-       "tag": "PLACE",
-       "display_order": 12,
-       "uuid": "d302bd8d-0d66-57ee-a421-fa5b26c5513f"
+       "display_order": 8,
+       "uuid": "98468d76-402e-514f-a0be-1937efa2ef04"
       },
       {
        "id": "max_height",
@@ -343,8 +255,96 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 13,
+       "display_order": 9,
        "uuid": "4663214e-9ffb-5efe-894d-3ede0f201d66"
+      },
+      {
+       "id": "points_density",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Points density"
+        ],
+        "it": [
+         "Densità di punti"
+        ],
+        "fr": [
+         "Densité de points"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 10,
+       "uuid": "2503ae92-5ab6-5632-8a5e-051f3bd79efd"
+      },
+      {
+       "id": "ISOLA",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Island"
+        ],
+        "it": [
+         "Isola"
+        ],
+        "fr": [
+         "Île"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 11,
+       "uuid": "d343b51c-ca63-5cc2-98c2-f78be28af20e"
+      },
+      {
+       "id": "wikidata",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Wikidata"
+        ],
+        "it": [
+         "Wikidata"
+        ],
+        "fr": [
+         "Wikidata"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 12,
+       "uuid": "f4a5a4e3-e3fe-5102-a6ba-1857e439f899"
+      },
+      {
+       "id": "nb_points",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Number of points"
+        ],
+        "it": [
+         "Numero di punti"
+        ],
+        "fr": [
+         "Nombre de points"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 13,
+       "uuid": "2f103431-e550-5005-8e28-66121e586260"
       },
       {
        "id": "style",
@@ -375,7 +375,7 @@
    "falls_within": [
     "620962bb-bb0d-50ed-b534-8903ad265932"
    ],
-   "creation_time": "2025-09-04T15:59:18.267628"
+   "creation_time": "2025-09-09T10:43:57.297846"
   }
  ]
 }

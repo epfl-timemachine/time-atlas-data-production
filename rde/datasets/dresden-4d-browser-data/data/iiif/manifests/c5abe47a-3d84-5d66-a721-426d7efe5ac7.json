@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c5abe47a-3d84-5d66-a721-426d7efe5ac7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Blick vom Rathausturm"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0161587.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "192aeb85-f6cd-5ffa-855d-1ffcaad297ed",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Blick vom Rathausturm"
+        ]
+      },
+      "height": 1600,
+      "width": 1160,
+      "items": [
+        {
+          "id": "dc574195-c7d6-5942-b9ea-3ab1e2ef83b9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ae0d5b40-9a08-54bf-94c8-7a5d431a755a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0161587.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1160,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0161587.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "192aeb85-f6cd-5ffa-855d-1ffcaad297ed"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8e7ec312-c7f4-50cf-a7c6-72fd5d4ef606",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "07ecf192-c563-5179-9598-f65300491db2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Blick vom Rathausturm"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "17272dce-f0c2-5f34-b73a-ae0dde33b6e4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "192aeb85-f6cd-5ffa-855d-1ffcaad297ed",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f97af135-6b7c-4cb0-86f1-a5089a074455/df_hauptkatalog_0161587.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

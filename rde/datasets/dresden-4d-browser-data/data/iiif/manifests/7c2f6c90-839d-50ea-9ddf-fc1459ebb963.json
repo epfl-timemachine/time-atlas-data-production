@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7c2f6c90-839d-50ea-9ddf-fc1459ebb963",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresdner Hof"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264215.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7e929479-3f1b-5fbe-b373-04d118cc506f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresdner Hof"
+        ]
+      },
+      "height": 1152,
+      "width": 1600,
+      "items": [
+        {
+          "id": "f4f19f93-6f45-5292-8df5-700f6656116a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "90731546-f3eb-57a3-8fdf-c268429e35f5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264215.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1152,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0264215.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7e929479-3f1b-5fbe-b373-04d118cc506f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4293e401-4903-52df-945d-926f2a22dd20",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "011a24f4-265d-54d8-8156-a40ec692da22",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresdner Hof"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0b4a684b-4102-5ad7-a626-d6fa9778fad3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7e929479-3f1b-5fbe-b373-04d118cc506f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/179efaac-73cd-41c6-a209-cc40e532c2a7/df_hauptkatalog_0264215.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

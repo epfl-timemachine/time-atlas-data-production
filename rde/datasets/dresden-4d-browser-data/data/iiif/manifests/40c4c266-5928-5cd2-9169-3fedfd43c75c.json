@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "40c4c266-5928-5cd2-9169-3fedfd43c75c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Druck"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0253775.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "618064f8-8e20-57ab-ac7c-be78e4a403aa",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Druck"
+        ]
+      },
+      "height": 1181,
+      "width": 1600,
+      "items": [
+        {
+          "id": "08ced728-bb64-5df5-b447-df65ba03faae",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ad510493-a132-5da3-819f-63c10e9efd91",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0253775.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1181,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0253775.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "618064f8-8e20-57ab-ac7c-be78e4a403aa"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a4d7f4ab-9fa5-5755-9ffa-53be5d091ac1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "402cb0b8-7fe9-5f9f-99cc-48639e8a8dff",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Druck"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7f95cecb-8e5a-5649-bcc2-712de3d37dc7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "618064f8-8e20-57ab-ac7c-be78e4a403aa",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/59d5b9a3-5058-4df4-a40b-35687280feb8/df_hauptkatalog_0253775.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2e8c1fd7-35e5-5ffa-b442-c13b10a12946",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden-Altstadt, Sophienstraß"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0046175.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eda17e82-69e7-5b44-9d58-2bd7eea26c07",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden-Altstadt, Sophienstraß"
+        ]
+      },
+      "height": 1186,
+      "width": 1600,
+      "items": [
+        {
+          "id": "d45567de-7127-5ace-8dcb-6802fcf6baf3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f0d0a13f-ac83-53b6-a565-f9d6829f56d1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0046175.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1186,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0046175.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eda17e82-69e7-5b44-9d58-2bd7eea26c07"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "875884be-6210-5bef-9690-395b30767832",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f25a90ba-a0e7-593e-8ef5-56b6e7f9f83f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden-Altstadt, Sophienstraß"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b0e658ad-9738-5635-bb8a-8a4a8b3985dc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eda17e82-69e7-5b44-9d58-2bd7eea26c07",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/85af080e-21e2-4429-8097-d0f86905388a/df_hauptkatalog_0046175.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

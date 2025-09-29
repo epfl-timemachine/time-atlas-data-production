@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bdac6cb6-a440-53cc-a4b3-1ee44fd22b49",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Zwinger"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0163085.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d7af7187-ff9b-5975-8f75-9a8db39cc4d5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Zwinger"
+        ]
+      },
+      "height": 1101,
+      "width": 1600,
+      "items": [
+        {
+          "id": "5511f77f-10a7-5e34-b051-4e262845cae9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "98c3b935-6019-5bab-a251-f34d65dbf01e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0163085.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1101,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0163085.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d7af7187-ff9b-5975-8f75-9a8db39cc4d5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f8f8f5c7-ff12-5988-ab08-6259b9570149",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c9d4e7ef-6011-5778-98dc-84a272d47a4a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Zwinger"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "228012c7-592d-5f98-b981-86bec10b38d5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d7af7187-ff9b-5975-8f75-9a8db39cc4d5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/af5aec84-0131-4363-85b6-d17301ce0f68/df_hauptkatalog_0163085.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

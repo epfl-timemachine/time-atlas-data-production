@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "426e8c7a-08f2-598c-8399-7b2abaadd5c4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Steinberger, J. C"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0129961.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bcba5837-46ce-57d4-8793-9a94a10ea80e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Steinberger, J. C"
+        ]
+      },
+      "height": 1111,
+      "width": 1600,
+      "items": [
+        {
+          "id": "ac29b050-23b5-5073-86ed-f65f1df34431",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d8e4b09d-c84d-5ba2-8ca6-f7b7ae75cec0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0129961.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1111,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0129961.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bcba5837-46ce-57d4-8793-9a94a10ea80e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0eb459da-df9f-5250-b7c2-ed48fdb727f8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9b884032-ec2f-5422-96b9-804231e06d7d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Steinberger, J. C"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ea79a181-f864-5c68-9d26-7c926cd1c499"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bcba5837-46ce-57d4-8793-9a94a10ea80e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/9fd04954-f974-48ca-93c0-43a34841f860/df_hauptkatalog_0129961.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

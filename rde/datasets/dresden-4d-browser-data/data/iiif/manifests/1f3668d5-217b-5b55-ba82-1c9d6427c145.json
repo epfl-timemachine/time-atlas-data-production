@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1f3668d5-217b-5b55-ba82-1c9d6427c145",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Schloßstraße"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2009-b_0000445.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "97538e92-93cc-53b6-b276-fac7a94ff61d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Schloßstraße"
+        ]
+      },
+      "height": 1590,
+      "width": 1600,
+      "items": [
+        {
+          "id": "59ed0d65-1a30-58bc-9733-bf0cd543b8b7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a19ab354-13c8-5d88-8abe-998fc94bebf1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2009-b_0000445.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1590,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_pos-2009-b_0000445.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "97538e92-93cc-53b6-b276-fac7a94ff61d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f0c08b42-c95f-565e-bc3b-82edf887d46c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "222ff74a-f5e2-5e79-a94e-3d169015c936",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Schloßstraße"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "58d9b36d-6157-5e79-b7b8-8bccc8654aea"
+                }
+              ],
+              "target": [
+                {
+                  "id": "97538e92-93cc-53b6-b276-fac7a94ff61d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/71c3b2d7-b546-4bc4-ac95-fba40a241ccd/df_pos-2009-b_0000445.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

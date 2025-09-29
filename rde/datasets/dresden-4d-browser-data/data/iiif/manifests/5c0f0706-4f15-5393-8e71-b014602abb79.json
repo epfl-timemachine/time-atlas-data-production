@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5c0f0706-4f15-5393-8e71-b014602abb79",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Terrassenufer"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0112784.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "02ab9b9e-d9f6-5ced-8fe5-960e9d81652e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Terrassenufer"
+        ]
+      },
+      "height": 1105,
+      "width": 1528,
+      "items": [
+        {
+          "id": "5ae53b46-209d-5cea-8e1e-065281e5011a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8dd97d81-adfd-5383-8fc6-7c5742043b24",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0112784.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1105,
+                "width": 1528,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0112784.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "02ab9b9e-d9f6-5ced-8fe5-960e9d81652e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bd6e81f9-19e2-54b1-9212-3ad3cbdadc35",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5af6cca7-4045-5a30-91dc-45a95b76cfb2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Terrassenufer"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5ba02ea9-d1fb-5ef7-8421-6864e9f7a4b8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "02ab9b9e-d9f6-5ced-8fe5-960e9d81652e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/04702e79-e2d0-4cd6-8ba2-630b6512bc44/df_hauptkatalog_0112784.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

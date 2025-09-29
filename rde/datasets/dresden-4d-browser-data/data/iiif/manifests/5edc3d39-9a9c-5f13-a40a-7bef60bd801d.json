@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5edc3d39-9a9c-5f13-a40a-7bef60bd801d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "An der Frauenkirche"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0118293.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "92f8fb74-a6f8-5341-b395-1cd13c3a10b1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "An der Frauenkirche"
+        ]
+      },
+      "height": 356,
+      "width": 500,
+      "items": [
+        {
+          "id": "c73e3263-9043-57e6-84de-14fed824bae2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5a32aff1-a95a-52f3-838f-8a3d9dd20d17",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0118293.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 356,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0118293.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "92f8fb74-a6f8-5341-b395-1cd13c3a10b1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "58b0790f-0166-58bc-ad19-c6c6b2f080a5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4ee64c7f-0b23-5157-8bc4-26dba36a70f4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "An der Frauenkirche"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "36b0ae67-797c-55d1-a634-f11452d7609c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "92f8fb74-a6f8-5341-b395-1cd13c3a10b1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/4a44285a-422e-410e-9218-d9f42ffa0c59/df_hauptkatalog_0118293.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

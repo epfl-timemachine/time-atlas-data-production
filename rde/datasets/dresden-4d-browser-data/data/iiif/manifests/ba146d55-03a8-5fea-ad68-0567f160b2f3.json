@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ba146d55-03a8-5fea-ad68-0567f160b2f3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Enttrümmerung der Innenstadt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000339.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "348cb996-9879-5808-a6bd-113c8f778f76",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Enttrümmerung der Innenstadt"
+        ]
+      },
+      "height": 350,
+      "width": 500,
+      "items": [
+        {
+          "id": "fc311694-c93c-5fbf-b04b-2a8cc08dc389",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "30f0bc3a-227b-51aa-b4a7-dfc23546f77d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000339.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 350,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_ps_0000339.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "348cb996-9879-5808-a6bd-113c8f778f76"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5716c4de-8740-5868-94fe-f8d539cff63f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1bc43e5d-3663-55cf-b10c-8a10eee28037",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Enttrümmerung der Innenstadt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8002b346-afc1-5a93-b1f2-70b2d16b3eee"
+                }
+              ],
+              "target": [
+                {
+                  "id": "348cb996-9879-5808-a6bd-113c8f778f76",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e6fe7dd8-86a5-48f2-803f-699b7912225f/df_ps_0000339.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

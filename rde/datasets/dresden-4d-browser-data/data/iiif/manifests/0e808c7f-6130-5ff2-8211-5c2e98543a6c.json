@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0e808c7f-6130-5ff2-8211-5c2e98543a6c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Blick über die Elbe z"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0027773.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b88d3466-c1a5-526d-9623-27eb987f5ad4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Blick über die Elbe z"
+        ]
+      },
+      "height": 1600,
+      "width": 1331,
+      "items": [
+        {
+          "id": "5da15aef-8890-54ec-a843-acc2ca60fd00",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f10cabea-1b6c-5734-b8b4-82ecb4a49278",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0027773.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1331,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0027773.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b88d3466-c1a5-526d-9623-27eb987f5ad4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "107e7c5f-bc87-550d-a360-2c4ca98e4a8c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5c016f6e-b043-54ae-9a56-62e63f41d57a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Blick über die Elbe z"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f14b6986-a370-5a76-bc2e-cd10b6fa5403"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b88d3466-c1a5-526d-9623-27eb987f5ad4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/e13b05c2-e273-431c-a230-7f1429d5d54d/df_hauptkatalog_0027773.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

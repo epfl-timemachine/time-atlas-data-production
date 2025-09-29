@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d0f28897-5e94-589d-981f-2750b58b5b85",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Plan der Brühlschen G"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0017136.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "51de80c6-a492-5c2c-9296-0fa14f637623",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Plan der Brühlschen G"
+        ]
+      },
+      "height": 1600,
+      "width": 1447,
+      "items": [
+        {
+          "id": "3b883db9-84dc-5caa-aa0f-96fed75cb81a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9413e653-7e04-59b6-91b9-28f3bede2060",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0017136.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1447,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0017136.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "51de80c6-a492-5c2c-9296-0fa14f637623"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f744bab4-13ce-5d58-871f-bac08dab7aef",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f56337aa-8f91-5c9e-9537-88426cea373c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Plan der Brühlschen G"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "12aa8177-a273-5379-86e2-cdde7b24d32d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "51de80c6-a492-5c2c-9296-0fa14f637623",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/82703105-9ef0-4b4e-8627-496d0e389d35/df_hauptkatalog_0017136.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

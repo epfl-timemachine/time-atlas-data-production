@@ -203,7 +203,7 @@ collection_label = {"en": ['Figures of facades and panoramas extracted from clou
 with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, man_list), f, indent=2, ensure_ascii=False)
 
-format = "model/las-binary"
+format = "application/vnd.las"
 df_of_hr['3d_filename'] = df_of_hr['annotated_content'].apply(lambda x: f"edifici_{x['EDIFI_ID']}.las")
 man_3d_list = {}
 for _, row in df_of_hr.iterrows():
@@ -231,7 +231,7 @@ CONF = DATA_CONFIG['DATASET_CONFIGURATION']
 
 df.rename(columns={'volume [m3]': 'volume'}, inplace=True)
 
-cols_of_interest = set(df.columns).difference(set(cols_of_non_interest))
+cols_of_interest = list(set(df.columns).difference(set(cols_of_non_interest)))
 
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,

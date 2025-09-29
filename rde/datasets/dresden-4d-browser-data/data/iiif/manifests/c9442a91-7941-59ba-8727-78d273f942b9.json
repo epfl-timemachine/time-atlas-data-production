@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c9442a91-7941-59ba-8727-78d273f942b9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Erste Gasanstalt am Z"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0132640.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "88ce1116-2d86-595e-9771-74d4504fd96f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Erste Gasanstalt am Z"
+        ]
+      },
+      "height": 1123,
+      "width": 1600,
+      "items": [
+        {
+          "id": "7a1bbfd2-8d5a-51c4-8241-a767ac712d5e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4f09d729-c8eb-5d14-ac4c-0c97745344ca",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0132640.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1123,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0132640.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "88ce1116-2d86-595e-9771-74d4504fd96f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ce90d9ab-bb9f-5506-bfe1-08b94f7bf406",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a6dc22bc-e796-5fa9-a161-45e49c3a4d13",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Erste Gasanstalt am Z"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fd432fdf-c03a-5976-97fa-b4b9a0be8c47"
+                }
+              ],
+              "target": [
+                {
+                  "id": "88ce1116-2d86-595e-9771-74d4504fd96f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/d95c08ba-aca9-47f0-82d2-7d4b399f3e40/df_hauptkatalog_0132640.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

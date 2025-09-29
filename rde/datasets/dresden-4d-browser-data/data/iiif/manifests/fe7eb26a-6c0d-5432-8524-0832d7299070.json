@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fe7eb26a-6c0d-5432-8524-0832d7299070",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden, Neumarkt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0168051.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8b0b2cc9-c262-596b-982b-e22d23ae5093",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden, Neumarkt"
+        ]
+      },
+      "height": 1144,
+      "width": 1600,
+      "items": [
+        {
+          "id": "712ffc60-a0ad-51bf-a69b-2ff76051d4bd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "90b4cda4-f84e-54b0-a441-4364931b081c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0168051.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1144,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0168051.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8b0b2cc9-c262-596b-982b-e22d23ae5093"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "94872673-b63b-53f4-a31e-2fc20b211ada",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ed983af5-3962-5077-b2dd-6693baa6d352",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden, Neumarkt"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5b55abb8-c377-5c40-b53e-b8b50b47ff3b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8b0b2cc9-c262-596b-982b-e22d23ae5093",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/f9da3e6e-8a55-4ec1-984b-a64cfcdd3ed7/df_hauptkatalog_0168051.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

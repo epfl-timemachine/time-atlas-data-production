@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e4c9748e-7719-5e8f-9890-e7aeb71448f5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Blick vom Georgentor "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0061511.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "204d2c1d-6ec6-5e62-aa10-84ed4642d9ec",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Blick vom Georgentor "
+        ]
+      },
+      "height": 1147,
+      "width": 1600,
+      "items": [
+        {
+          "id": "0cb1f995-79f3-5351-9641-6e8970071fe0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6cfea6c1-27e4-51c9-871e-caf26b3c3d10",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0061511.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1147,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0061511.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "204d2c1d-6ec6-5e62-aa10-84ed4642d9ec"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fc2a03d1-123a-524e-8924-f9e2857f732d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9f818be1-607a-5e72-a59c-abdd09a4381b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Blick vom Georgentor "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f16c0701-ad17-5668-aa0e-a265b447a547"
+                }
+              ],
+              "target": [
+                {
+                  "id": "204d2c1d-6ec6-5e62-aa10-84ed4642d9ec",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/eea8c956-823f-4cba-8d04-bef998e6eed2/df_hauptkatalog_0061511.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

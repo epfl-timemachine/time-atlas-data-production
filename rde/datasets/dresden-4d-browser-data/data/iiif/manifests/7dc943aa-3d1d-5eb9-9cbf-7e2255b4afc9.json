@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7dc943aa-3d1d-5eb9-9cbf-7e2255b4afc9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Landhaus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0064666.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ca02bf39-4997-5709-8b12-5cc8c8595f40",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Landhaus"
+        ]
+      },
+      "height": 1600,
+      "width": 1170,
+      "items": [
+        {
+          "id": "72606ee4-86a5-5d8a-acf3-8958471a659a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "11fd6ef4-572f-539e-82ec-79c1d02c4704",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0064666.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1170,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0064666.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ca02bf39-4997-5709-8b12-5cc8c8595f40"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2483d985-ef64-594a-8034-fc13b9091845",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "43cce511-069e-5dcb-b430-5c179cc87acd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Landhaus"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0757c0ae-cc0b-56fe-88b5-02ea09e4ab2e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ca02bf39-4997-5709-8b12-5cc8c8595f40",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/6b152dae-4bbc-4668-8585-13a768641334/df_hauptkatalog_0064666.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

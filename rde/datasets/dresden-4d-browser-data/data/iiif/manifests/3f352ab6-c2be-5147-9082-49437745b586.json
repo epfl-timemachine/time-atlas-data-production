@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3f352ab6-c2be-5147-9082-49437745b586",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Kronentor, Zwinger"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0281571.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d40d21d7-fe61-57e2-ae31-356651b817b3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Kronentor, Zwinger"
+        ]
+      },
+      "height": 1600,
+      "width": 1010,
+      "items": [
+        {
+          "id": "04c0928e-d639-58bd-8a13-46cf462d4708",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c3ee1a35-1530-5f63-a06b-e6c7db6f98a1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0281571.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1600,
+                "width": 1010,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0281571.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d40d21d7-fe61-57e2-ae31-356651b817b3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "46f02284-1b0f-5942-903c-2e5b676f1cee",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0202906f-7a9b-5bfd-a941-48a7fb5995c9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Kronentor, Zwinger"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bd6cec06-ac76-58b5-b5f5-8447b596d9d7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d40d21d7-fe61-57e2-ae31-356651b817b3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/6911f312-95d8-4bcb-b037-044109355f91/df_hauptkatalog_0281571.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

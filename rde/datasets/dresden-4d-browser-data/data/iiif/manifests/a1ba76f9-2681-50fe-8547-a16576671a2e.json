@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a1ba76f9-2681-50fe-8547-a16576671a2e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Dresden. Neumarkt, Töpferstraß"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0265779.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3c5f58d5-a313-5bfd-aebe-3da8def1a465",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Dresden. Neumarkt, Töpferstraß"
+        ]
+      },
+      "height": 1095,
+      "width": 1600,
+      "items": [
+        {
+          "id": "e8213947-b37b-5762-8fff-184167a6ea67",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "15c7c924-66f2-505e-a26b-1fb347a307a6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0265779.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1095,
+                "width": 1600,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/dresden%2F4d_browser%2Fdf_hauptkatalog_0265779.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3c5f58d5-a313-5bfd-aebe-3da8def1a465"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2bb47e79-d688-512f-9413-28ff8e0a1bfe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f6703237-a84f-51a8-abe4-f04047e000b9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "Dresden. Neumarkt, Töpferstraß"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "aebb1717-a458-5411-826f-677127af3277"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3c5f58d5-a313-5bfd-aebe-3da8def1a465",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://4dbrowser.org/data/images/704b009f-53de-4fd4-a23f-a007c121dada/df_hauptkatalog_0265779.jpg",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
