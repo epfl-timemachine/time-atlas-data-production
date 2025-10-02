@@ -73,7 +73,6 @@ def get_terrain_tile(x, y, z):
 
 def get_vector_tile(x, y, z):
     cache_path = maptiler_vector_cache_path(x, y, z)
-    # print(cache_path)
     if not os.path.exists(cache_path):
         url = maptiler_vector_url(x, y, z)
         os.makedirs(os.path.dirname(cache_path), exist_ok=True)
@@ -91,9 +90,12 @@ def get_vector_tile(x, y, z):
         data = f.read()
 
     decoded_tile = decode(data)
-
-    features = decoded_tile['building']['features']
-
+    try:
+        features = decoded_tile['building']['features']
+    except KeyError as e:
+        if 'building' in e.args:
+            print(f"Error decoding vector tile no building found for feature index: ", x, y, z)
+        return []
     shapely_features = list(map(lambda feature: {
         "geometry": shape(feature["geometry"]),
         "render_height": feature["properties"]["render_height"]}, features))

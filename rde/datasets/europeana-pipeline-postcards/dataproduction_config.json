@@ -1,10 +1,10 @@
 {
-    "UUID_NAMESPACE": "https://timemachine.epfl.ch/paris/europeana_postcards",
+    "UUID_NAMESPACE": "https://timemachine.epfl.ch/europe/europeana_postcards",
     "TIMERANGE_MINIMUM": 18900101,
     "TIMERANGE_MAXIMUM": 20241231,
-    "AREA_FILE_LOC": "../../areas/paris-area.json",
+    "AREA_FILE_LOC": "../../areas/europeana-postcards-area.json",
     "DATASET_CONFIGURATION": {
-        "slug": "paris-europeana-postcards",
+        "slug": "peuropeana-pipeline-postcards",
         "name": {
             "en": ["Postcards from Europeana"],
             "fr": ["Cartes postales d'Europeana"],
@@ -26,26 +26,35 @@
         "doi": null,
         "github_link": null,
         "indexed": [
-            "Monuments",
-            "description"
+            "final_place",
+            "final_city",
+            "landmarks_identified"
         ],
         "short_display" : [
-            "Monuments"
+            "final_place",
+            "final_city",
+            "landmarks_identified",
+            "date"
         ],
         "hidden": [
-            "Image Name"
+            "img_src"
         ],
-        "main_label": "${Monuments}, ${date}",
-        "sub_label": "${description}",
+        "main_label": "${final_country}, ${final_city}",
+        "sub_label": "${final_place}, ${date}",
         "tagged_fields": {
-            "description": "PLACE",
-            "Monuments": "PLACE"
         },
         "labels": {
+            "final_place": {"en": ["Final Place"], "fr": ["Lieu final"], "de": ["Endort"], "it": ["Luogo finale"]},
+            "final_country": {"en": ["Final Country"], "fr": ["Pays final"], "de": ["Endland"], "it": ["Paese finale"]},
+            "final_city": {"en": ["Final City"], "fr": ["Ville finale"], "de": ["Endstadt"], "it": ["Città finale"]},
             "description": {"en": ["Description"], "fr": ["Description"], "de": ["Beschreibung"], "it": ["Descrizione"]},
-            "date": {"en":["Date from the postcard"], "fr": ["Date de la carte postale"], "de": ["Datum der Postkarte"], "it": ["Data della cartolina"]},
-            "Monuments": {"en": ["Monuments identified by the AI"], "fr": ["Monuments identifiés par l'IA"], "de": ["Monumenten identifiziert durch KI"], "it": ["Monumenti identificati dall'IA"]},
-            "Image Name": {"en": ["Image Name"], "fr": ["Nom de l'image"], "de": ["Bildname"], "it": ["Nome dell'immagine"]}
+            "transcription": {"en": ["Transcription"], "fr": ["Transcription"], "de": ["Transkription"], "it": ["Trascrizione"]},
+            "date": {"en": ["Date estimation"], "fr": ["Estimation de la date"], "de": ["Datumsabschätzung"], "it": ["Stima della data"]},
+            "reason": {"en": ["Reason"], "fr": ["Raison"], "de": ["Grund"], "it": ["Motivo"]},
+            "img_src": {"en": ["Image Source"], "fr": ["Source de l'image"], "de": ["Bildquelle"], "it": ["Fonte dell'immagine"]},
+            "tavily": {"en": ["Tavily"], "fr": ["Tavily"], "de": ["Tavily"], "it": ["Tavily"]},
+            "google_search": {"en": ["Google Search"], "fr": ["Recherche Google"], "de": ["Google-Suche"], "it": ["Ricerca Google"]},
+            "landmarks_identified": {"en": ["Landmarks Identified"], "fr": ["Monuments identifiés"], "de": ["Identifizierte Wahrzeichen"], "it": ["Monumenti identificati"]}
         }
     }
 }
