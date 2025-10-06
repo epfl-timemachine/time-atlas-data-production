@@ -9,7 +9,7 @@ def is_extension_an_img(ext:str) -> bool:
     """
     This function returns True if the extension is an image and False otherwise.
     """
-    return ext.lower() in ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'tif', 'tiff', 'svg']
+    return ext.lower() in ['jpg', 'png', 'jpeg', 'gif', 'bmp', 'tif', 'tiff', 'svg', 'webp']
 
 def is_filepath_an_img(fp:str) -> bool:
     """
@@ -39,6 +39,8 @@ def img_extension_to_media_type(ext:str) -> str:
         return 'image/bmp'
     elif ext == 'tiff' or ext == 'tif':
         return 'image/tiff'
+    elif ext == 'webp':
+        return 'image/webp'
     elif ext == 'svg':
         return 'image/svg+xml'
     else:
