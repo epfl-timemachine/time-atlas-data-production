@@ -122,6 +122,9 @@ for s in tqdm(cont):
 df = pd.DataFrame(sampled_values)
 df = df[df['landmarks_coordinates'].notna() | df['google_coordinates'].notna()]
 df = df[df['date'].notna()]
+print(len(df), "postcards with geolocation and date information.")
+df = df[~df['record_id'].str.contains('S_TEK_photo_TEKA0221776')]
+print(len(df), "removing the webp stuff.")
 
 
 df_wh = pd.read_csv('src/2500_imgs_width_height.csv')
