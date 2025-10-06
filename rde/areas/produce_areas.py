@@ -64,8 +64,8 @@ aarea_uid = str(uuid.uuid5(AREA_UUID5_NS, aarea_slug))
 aarea_data = produce_area_obj(aarea_uid, aarea_name, produce_area_poly_from_two_corners(aarea_min+aarea_max), aarea_slug, '1.0')
 save_data_file_if_different('', aarea_slug, aarea_data, aarea_slug, RDE.AREA.value)
 
-earea_max = [62.390556, 126.48944444444444]
-earea_min = [14.917119, -135.0]
+earea_max = [126.48944444444444, 62.390556]
+earea_min = [-135.0, 14.917119]
 
 earea_name = {"en": ['Europeana\'s postcards Area'], "fr": ["Aire des cartes postales d'Europe"], "de": ["Bereich der Postkarten von Europeana"], 'it': ["Area delle cartoline d'Europeana"], 'nl': ["Europeana's ansichtkaartengebied"]}
 earea_slug = 'europeana-postcards-area'
