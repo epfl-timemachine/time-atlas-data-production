@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "0bdc4580-8eb9-5cf9-a429-bdad3c57de36",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Contarini Michiel, 3468 - DD 2796/A,DD 2795/A,DD 2794,DD 2796,DD 2797,DD 2798"
+    ]
+  },
+  "items": [
+    {
+      "id": "e424d8f6-926b-5f5e-85e1-52d6c0c8e0f6",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Contarini Michiel, 3468 - DD 2796/A,DD 2795/A,DD 2794,DD 2796,DD 2797,DD 2798"
+        ]
+      },
+      "items": [
+        {
+          "id": "5298af72-83d6-5a73-a438-7f8de3542846",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4adbca45-488a-5a94-8023-10f837a85307",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3468.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "e424d8f6-926b-5f5e-85e1-52d6c0c8e0f6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "21787ef1-24d8-57b7-a7e6-27515f578ad0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b779a8ad-0195-59b3-af64-aa59d3cf841a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Contarini Michiel, 3468 - DD 2796/A,DD 2795/A,DD 2794,DD 2796,DD 2797,DD 2798"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f01ce0bf-e51f-59a3-bd29-d85dbf93d6ce"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e424d8f6-926b-5f5e-85e1-52d6c0c8e0f6",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

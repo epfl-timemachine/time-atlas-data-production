@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "b87766db-a768-5134-bd31-cfbf24fd20e5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Gritti, 6427 - SM 3832"
+    ]
+  },
+  "items": [
+    {
+      "id": "ca556436-251c-5d60-b0b4-b73e29326efa",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Gritti, 6427 - SM 3832"
+        ]
+      },
+      "items": [
+        {
+          "id": "78bcbd6b-693f-5637-847a-6c994e90f1b0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7c9f577f-fc0a-50fd-a76a-d6f4aa7d0ec9",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_6427.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "ca556436-251c-5d60-b0b4-b73e29326efa"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6dffb2b1-8e4a-5a54-858d-446c84da4be8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "47da5dfb-cb70-548c-9aea-1b9483b67e7a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Gritti, 6427 - SM 3832"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9fb74d66-592b-5905-be86-f417dc140741"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ca556436-251c-5d60-b0b4-b73e29326efa",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

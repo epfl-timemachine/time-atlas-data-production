@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "afa4a4a3-7059-55ac-bc7e-5ceeba50aae1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Sant Agnese, 3224 - DD 908/A"
+    ]
+  },
+  "items": [
+    {
+      "id": "afc5e914-6942-522c-8796-425304478d08",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Sant Agnese, 3224 - DD 908/A"
+        ]
+      },
+      "items": [
+        {
+          "id": "4c47a5bd-f64b-5144-a25c-60a51c85e441",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3cf709f6-bffa-5e4f-b7de-134a0c9240c6",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3224.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "afc5e914-6942-522c-8796-425304478d08"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0e168017-709c-5cfa-a407-4e999a946521",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "028ee9b6-0331-5235-a5e8-de427a915848",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Sant Agnese, 3224 - DD 908/A"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9c4ba2e7-a075-5296-bbfd-b71107d828e0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "afc5e914-6942-522c-8796-425304478d08",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

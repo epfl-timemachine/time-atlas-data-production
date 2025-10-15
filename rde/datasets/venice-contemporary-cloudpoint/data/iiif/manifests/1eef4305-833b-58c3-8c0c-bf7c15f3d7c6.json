@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "1eef4305-833b-58c3-8c0c-bf7c15f3d7c6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Santa Maria della Fava, 1600 - CS 5527/A,CS 5527/B"
+    ]
+  },
+  "items": [
+    {
+      "id": "37d9c201-888f-5657-a863-b2d91d406bb3",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Santa Maria della Fava, 1600 - CS 5527/A,CS 5527/B"
+        ]
+      },
+      "items": [
+        {
+          "id": "b9e3a275-f605-5b8b-a385-fa96463d2afe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b38865b1-c65f-5d54-8b41-1ecfc40a2e7b",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1600.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "37d9c201-888f-5657-a863-b2d91d406bb3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e9498046-5ce5-5759-af26-80fee4782a48",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ae001177-6d1d-5f1a-8db1-f65456ca7205",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Santa Maria della Fava, 1600 - CS 5527/A,CS 5527/B"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1b726c65-3bd5-598d-ad5b-cab4a03aedf2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "37d9c201-888f-5657-a863-b2d91d406bb3",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

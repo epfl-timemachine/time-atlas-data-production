@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "a9832e51-0dec-50db-97a5-104906ed16d5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Balbi, 3232 - DD 3902,DD 3905/A,DD 3904,DD 3905,DD 3899/A,DD 3903/B,DD 3900,DD 3899,DD 3903"
+    ]
+  },
+  "items": [
+    {
+      "id": "97112523-7d17-5003-b8f1-90b5dbba9447",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Balbi, 3232 - DD 3902,DD 3905/A,DD 3904,DD 3905,DD 3899/A,DD 3903/B,DD 3900,DD 3899,DD 3903"
+        ]
+      },
+      "items": [
+        {
+          "id": "ddef9871-ea55-5639-9fe2-4ae42a7db492",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "58ce9099-a37c-5686-aba5-03b6fd59798b",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3232.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "97112523-7d17-5003-b8f1-90b5dbba9447"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cfab7fce-42cc-5c51-8837-4b665c9825d9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2f82a0f3-01c8-5212-9aa9-e345569de01b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Balbi, 3232 - DD 3902,DD 3905/A,DD 3904,DD 3905,DD 3899/A,DD 3903/B,DD 3900,DD 3899,DD 3903"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8af37466-8b74-55a9-ae51-26cd63382e59"
+                }
+              ],
+              "target": [
+                {
+                  "id": "97112523-7d17-5003-b8f1-90b5dbba9447",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

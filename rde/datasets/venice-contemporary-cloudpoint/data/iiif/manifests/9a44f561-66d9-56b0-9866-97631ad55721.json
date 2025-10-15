@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "9a44f561-66d9-56b0-9866-97631ad55721",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Gatti Casazza, 1145 - CN 1761,CN 1763/A,CN 1760,CN 1763/B,CN 1763,CN 1762"
+    ]
+  },
+  "items": [
+    {
+      "id": "affebb1e-b8b0-5e9c-bb35-c5933ad477c5",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Gatti Casazza, 1145 - CN 1761,CN 1763/A,CN 1760,CN 1763/B,CN 1763,CN 1762"
+        ]
+      },
+      "items": [
+        {
+          "id": "243e96bd-6451-54dd-a8ff-122e933bdfdd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "675e0a68-3a52-530a-9418-4da69d0db254",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1145.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "affebb1e-b8b0-5e9c-bb35-c5933ad477c5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8a2e98d0-2304-5a21-8be1-fd7f5c2c2842",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "940fbabb-82c5-50b1-8897-9f9c0e35873c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Gatti Casazza, 1145 - CN 1761,CN 1763/A,CN 1760,CN 1763/B,CN 1763,CN 1762"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "229f1f15-72a6-5907-b210-b6d7eb52162a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "affebb1e-b8b0-5e9c-bb35-c5933ad477c5",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

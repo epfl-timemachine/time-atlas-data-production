@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "80aa0bee-15a4-5ce9-aca0-f8bc40a975f1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Foscari del Prà, 33 - CN 4200,CN 4201,CN 4201/A,CN 4278,CN 4279"
+    ]
+  },
+  "items": [
+    {
+      "id": "30ceb25d-f216-5d3d-a3fe-feaaa6af2fad",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Foscari del Prà, 33 - CN 4200,CN 4201,CN 4201/A,CN 4278,CN 4279"
+        ]
+      },
+      "items": [
+        {
+          "id": "24f06195-cf65-582a-b8b9-38ed45a844b8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9ea8807a-2ae6-54ce-8edc-a01c6510f6d0",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_33.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "30ceb25d-f216-5d3d-a3fe-feaaa6af2fad"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2d6f951a-f803-5006-9ff2-072b38e96657",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "759e6f97-b870-57f5-b836-b7d3ee30b966",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Foscari del Prà, 33 - CN 4200,CN 4201,CN 4201/A,CN 4278,CN 4279"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ee502664-b171-59bd-8545-a959ed06f650"
+                }
+              ],
+              "target": [
+                {
+                  "id": "30ceb25d-f216-5d3d-a3fe-feaaa6af2fad",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

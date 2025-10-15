@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "e22643f8-c1a4-54bd-b7ff-24d9c0671f8c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Giovanni Elemosinario, 7428 - SP 489/A,SP 479,SP 488/A,SP 489,SP 480,SP 490,SP 478,SP 490/A,SP 488"
+    ]
+  },
+  "items": [
+    {
+      "id": "ecb449f2-0998-501a-88bd-6267dd547d05",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Giovanni Elemosinario, 7428 - SP 489/A,SP 479,SP 488/A,SP 489,SP 480,SP 490,SP 478,SP 490/A,SP 488"
+        ]
+      },
+      "items": [
+        {
+          "id": "1bdb55a8-16b6-5f8a-ba83-5137c1e50424",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "97e5e43f-b707-5356-aa28-beedb1eb74d5",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7428.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "ecb449f2-0998-501a-88bd-6267dd547d05"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a6bbed3f-583d-5995-b260-26593ccfe9a1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5420810a-b23e-5d2f-81fd-b49bce94b2fd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Giovanni Elemosinario, 7428 - SP 489/A,SP 479,SP 488/A,SP 489,SP 480,SP 490,SP 478,SP 490/A,SP 488"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "922e472b-9e63-57bf-806d-c932bebc14da"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ecb449f2-0998-501a-88bd-6267dd547d05",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

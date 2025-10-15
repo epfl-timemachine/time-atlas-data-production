@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "1aac8020-c0e5-5e82-99e0-be00feebb502",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Erizzo, 1616 - CS 4002/A,CS 4002/B"
+    ]
+  },
+  "items": [
+    {
+      "id": "62c96cbe-707e-52fb-a73c-f8807f9156e2",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Erizzo, 1616 - CS 4002/A,CS 4002/B"
+        ]
+      },
+      "items": [
+        {
+          "id": "b9c7d465-ac51-506e-bb49-a2242cc95527",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "699144f2-517d-59b3-ae1d-c615ae1d4de1",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1616.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "62c96cbe-707e-52fb-a73c-f8807f9156e2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "205b4c21-4325-5cbe-86c4-d0af1a216421",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2fa3f6d9-8bb7-51da-9512-de23f7413e83",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Erizzo, 1616 - CS 4002/A,CS 4002/B"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "161eb0d5-6947-5fd2-822c-130e4803c933"
+                }
+              ],
+              "target": [
+                {
+                  "id": "62c96cbe-707e-52fb-a73c-f8807f9156e2",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

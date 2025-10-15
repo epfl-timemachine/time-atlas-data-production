@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "96e94bb7-0131-5a3f-923d-f946bc18a7cf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Soranzo Van Axel, 1427 - CN 5401,CN 5401/D,CN 5402,CN 5401/B,CN 5401/C,CN 5401/A"
+    ]
+  },
+  "items": [
+    {
+      "id": "b653930a-6e11-5fea-a188-b3e613638a15",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Soranzo Van Axel, 1427 - CN 5401,CN 5401/D,CN 5402,CN 5401/B,CN 5401/C,CN 5401/A"
+        ]
+      },
+      "items": [
+        {
+          "id": "170f2ee2-aeb5-5b8f-ac11-6b1dab12f466",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "07d644a6-854f-5baf-90d1-736e1b1b8c84",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1427.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "b653930a-6e11-5fea-a188-b3e613638a15"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d01f69a8-7699-5c9e-9cf2-9d4e19b585b3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "92342f0c-44e2-53bb-ac0f-1fcbe7076dcd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Soranzo Van Axel, 1427 - CN 5401,CN 5401/D,CN 5402,CN 5401/B,CN 5401/C,CN 5401/A"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4d02117c-bd1e-59d8-8eb1-3a2626b6f97e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b653930a-6e11-5fea-a188-b3e613638a15",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

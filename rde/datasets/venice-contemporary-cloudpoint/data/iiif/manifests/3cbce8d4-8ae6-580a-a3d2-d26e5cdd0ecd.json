@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "3cbce8d4-8ae6-580a-a3d2-d26e5cdd0ecd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo della Regione Veneto, 670 - CN 14,CN 11,CN 23,CN 12,CN 13,CN 10,CN 6,CN 17,CN 16,CN 18"
+    ]
+  },
+  "items": [
+    {
+      "id": "16b3abff-5bf6-5186-b1f2-dc1761046afe",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo della Regione Veneto, 670 - CN 14,CN 11,CN 23,CN 12,CN 13,CN 10,CN 6,CN 17,CN 16,CN 18"
+        ]
+      },
+      "items": [
+        {
+          "id": "a2ba34d7-9e3a-5676-85f3-74239947f5ae",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a5530527-96e8-5312-96c7-3687d2ae3976",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_670.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "16b3abff-5bf6-5186-b1f2-dc1761046afe"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ac9f8795-2065-52b6-970e-5da53bcbb2ce",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6d32bbef-5cb2-538c-bb8e-004cb1874a98",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo della Regione Veneto, 670 - CN 14,CN 11,CN 23,CN 12,CN 13,CN 10,CN 6,CN 17,CN 16,CN 18"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c774c6e5-e5a0-5406-90ea-c9d04d1dbaa8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "16b3abff-5bf6-5186-b1f2-dc1761046afe",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

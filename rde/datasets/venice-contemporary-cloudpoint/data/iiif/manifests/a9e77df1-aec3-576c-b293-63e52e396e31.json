@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "a9e77df1-aec3-576c-b293-63e52e396e31",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Silvestro, 7432 - SP 1102/A"
+    ]
+  },
+  "items": [
+    {
+      "id": "e810d731-bb44-5a2f-8384-3b7f68148919",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Silvestro, 7432 - SP 1102/A"
+        ]
+      },
+      "items": [
+        {
+          "id": "f0931644-8242-5baf-bf8a-652f7c26c7cb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "809c15b1-d1d0-562f-8d3b-482614afcb2e",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7432.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "e810d731-bb44-5a2f-8384-3b7f68148919"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "26aea702-ea9d-592e-a70a-06efe95265f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8aee1899-fd33-5dcf-8462-f551f0af70b6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Silvestro, 7432 - SP 1102/A"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "99d88605-5e2e-52dc-a26e-34c01b4e8243"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e810d731-bb44-5a2f-8384-3b7f68148919",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

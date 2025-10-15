@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "9991411b-aa51-5a91-8806-1df5e562d79a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Gregorio, 3221 - DD 123/A,DD 170/A,DD 170"
+    ]
+  },
+  "items": [
+    {
+      "id": "ee061f8a-f35b-54e4-816f-b7b1824a7ce3",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Gregorio, 3221 - DD 123/A,DD 170/A,DD 170"
+        ]
+      },
+      "items": [
+        {
+          "id": "aec8d521-b2a2-5e24-bd2b-8ff68947d06b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "113ccccf-e131-5024-8602-013223d91aa6",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3221.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "ee061f8a-f35b-54e4-816f-b7b1824a7ce3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cbb4569e-7282-502e-ba85-08d25292b10e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f6f25f45-1bab-5ef4-9af0-2e1b7febd9ff",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Gregorio, 3221 - DD 123/A,DD 170/A,DD 170"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5de8cb70-37d9-5e7c-9575-a39edaae6ef9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ee061f8a-f35b-54e4-816f-b7b1824a7ce3",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

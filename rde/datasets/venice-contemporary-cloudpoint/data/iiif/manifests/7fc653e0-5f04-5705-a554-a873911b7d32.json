@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "7fc653e0-5f04-5705-a554-a873911b7d32",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Ruzzini, 161 - CN 5780,CN 5782,CN 5781,CN 5785,CN 5786,CN 5784,CN 5783"
+    ]
+  },
+  "items": [
+    {
+      "id": "8c3be5bb-0d6b-5405-93d9-401857f456ff",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Ruzzini, 161 - CN 5780,CN 5782,CN 5781,CN 5785,CN 5786,CN 5784,CN 5783"
+        ]
+      },
+      "items": [
+        {
+          "id": "4ac8fe5c-7d91-5628-8bff-7b867f3a293d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7de25e98-df54-5ca1-8680-2c70c70bf199",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_161.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "8c3be5bb-0d6b-5405-93d9-401857f456ff"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dff12f6f-122d-5083-99b1-80162bc8655f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "999f7fc8-8d44-5bb2-b462-e1beab9cb4c3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Ruzzini, 161 - CN 5780,CN 5782,CN 5781,CN 5785,CN 5786,CN 5784,CN 5783"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7dff5988-ece3-58a6-99d5-c36c61498081"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8c3be5bb-0d6b-5405-93d9-401857f456ff",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

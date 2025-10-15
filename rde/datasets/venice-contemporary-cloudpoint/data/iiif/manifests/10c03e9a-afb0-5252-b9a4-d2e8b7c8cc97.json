@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "10c03e9a-afb0-5252-b9a4-d2e8b7c8cc97",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Santa Sofia, 21 - CN 4230,CN 4193,CN 4191,CN 4194,CN 4217,CN 4191/A,CN 4192"
+    ]
+  },
+  "items": [
+    {
+      "id": "da9e120b-7015-5ddb-8b4c-490b118d38ca",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Santa Sofia, 21 - CN 4230,CN 4193,CN 4191,CN 4194,CN 4217,CN 4191/A,CN 4192"
+        ]
+      },
+      "items": [
+        {
+          "id": "56d9d698-d7c9-587d-b117-708144c30c2d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c666b2bc-a3bb-5844-adbd-9a458af8420f",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_21.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "da9e120b-7015-5ddb-8b4c-490b118d38ca"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ddc3df86-38d4-577b-9081-ffa9bd5c8664",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "780d2fa5-5929-5174-b80a-d89001a3a3f4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Santa Sofia, 21 - CN 4230,CN 4193,CN 4191,CN 4194,CN 4217,CN 4191/A,CN 4192"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d9740646-bb9b-5afc-b0f4-a8fde19252df"
+                }
+              ],
+              "target": [
+                {
+                  "id": "da9e120b-7015-5ddb-8b4c-490b118d38ca",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

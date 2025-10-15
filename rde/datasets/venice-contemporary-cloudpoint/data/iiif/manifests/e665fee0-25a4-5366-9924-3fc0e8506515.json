@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "e665fee0-25a4-5366-9924-3fc0e8506515",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Giacomo di Rialto, 7427 - SP 82,SP 78,SP 80,SP 135,SP 81,SP 77,SP 135/A,SP 79"
+    ]
+  },
+  "items": [
+    {
+      "id": "87c791b2-10d1-5b34-ac71-27412f2f2d1c",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Giacomo di Rialto, 7427 - SP 82,SP 78,SP 80,SP 135,SP 81,SP 77,SP 135/A,SP 79"
+        ]
+      },
+      "items": [
+        {
+          "id": "55fbd3ce-6550-528e-a9e7-c8406d4dcd43",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "180daf02-74d9-51bc-9ddd-1d311ff25b44",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7427.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "87c791b2-10d1-5b34-ac71-27412f2f2d1c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "85c1774f-fd6d-5293-80d2-1d60418a7310",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "db26b319-8da0-54fd-94c5-66baac4f1977",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Giacomo di Rialto, 7427 - SP 82,SP 78,SP 80,SP 135,SP 81,SP 77,SP 135/A,SP 79"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5047e1a8-5b3e-58e0-a113-91bcd549a346"
+                }
+              ],
+              "target": [
+                {
+                  "id": "87c791b2-10d1-5b34-ac71-27412f2f2d1c",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

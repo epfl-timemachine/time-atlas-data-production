@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "692fc111-92fc-5c1f-8434-8af0b6ee0fd1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Sant Antonin, 1597 - "
+    ]
+  },
+  "items": [
+    {
+      "id": "ebad24fd-2c54-583e-8992-7297b6f10cd1",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Sant Antonin, 1597 - "
+        ]
+      },
+      "items": [
+        {
+          "id": "3bf7c2e9-d531-5d88-86ef-6938643c9d88",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d8d15f58-58b0-5bcd-a8f2-32eab03221f4",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1597.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "ebad24fd-2c54-583e-8992-7297b6f10cd1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7f131953-beda-5970-9fbe-84bb4335d99d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "568af855-6ced-583e-b7b0-20c93024d440",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Sant Antonin, 1597 - "
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ad6c6b93-f6ab-5b17-aa13-c9e8d73474b8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ebad24fd-2c54-583e-8992-7297b6f10cd1",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "393c18a2-61f6-55b8-ac2b-5782cad7c8a7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Barzizza, 7437 - SP 1112,SP 1173,SP 1181,SP 1119,SP 1112/A,SP 1172"
+    ]
+  },
+  "items": [
+    {
+      "id": "b71f2fe2-1a7c-5f0d-b10a-c07d19d2d473",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Barzizza, 7437 - SP 1112,SP 1173,SP 1181,SP 1119,SP 1112/A,SP 1172"
+        ]
+      },
+      "items": [
+        {
+          "id": "fafdf365-7506-5b95-b475-51c6aebd11c2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "57fb7a0c-70a7-523b-a397-56ff143d07f7",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7437.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "b71f2fe2-1a7c-5f0d-b10a-c07d19d2d473"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ec702180-9de4-5d38-b172-308e48a11e84",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3552da26-3719-5060-9e79-db16282f07d0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Barzizza, 7437 - SP 1112,SP 1173,SP 1181,SP 1119,SP 1112/A,SP 1172"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fa8fa469-288c-57c8-97bc-166ce02590b0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b71f2fe2-1a7c-5f0d-b10a-c07d19d2d473",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

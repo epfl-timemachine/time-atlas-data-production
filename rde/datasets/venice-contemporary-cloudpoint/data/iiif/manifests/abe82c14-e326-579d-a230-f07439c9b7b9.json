@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "abe82c14-e326-579d-a230-f07439c9b7b9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Palazzo Bernardo, 7438 - SP 1977"
+    ]
+  },
+  "items": [
+    {
+      "id": "81c929e5-3550-59f9-a07a-cd8a770f0faa",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Palazzo Bernardo, 7438 - SP 1977"
+        ]
+      },
+      "items": [
+        {
+          "id": "72b73dc6-954c-582f-8060-ea873bbc9c4d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "db4b9c7f-346c-5cd3-bcde-8b41a1fc6ee1",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_7438.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "81c929e5-3550-59f9-a07a-cd8a770f0faa"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c3d8dee2-686d-5d06-8896-2ef8949f2e36",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0121bf86-2590-5094-9a6b-ea86c5cb5a28",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Palazzo Bernardo, 7438 - SP 1977"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5407429e-b2fb-5766-b916-31ecbf8c42ef"
+                }
+              ],
+              "target": [
+                {
+                  "id": "81c929e5-3550-59f9-a07a-cd8a770f0faa",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

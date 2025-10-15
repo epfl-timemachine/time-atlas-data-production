@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "1aced8e7-e5d0-5a0e-a5d9-ffb5bb06ccdd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "San Giovanni Grisostomo, 46 - CN 5803"
+    ]
+  },
+  "items": [
+    {
+      "id": "cb43ee54-e9e9-5d1c-b423-aae4bc39f6fc",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "San Giovanni Grisostomo, 46 - CN 5803"
+        ]
+      },
+      "items": [
+        {
+          "id": "23fbf598-0141-5494-90d9-9aef90fdbb4c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "248e7e3c-b648-5600-971a-1f71e820d79b",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_46.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "cb43ee54-e9e9-5d1c-b423-aae4bc39f6fc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "73544283-0f7d-5bb6-875b-b9769ee1be3c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d349ee40-b00c-5710-81a4-507ec6473205",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "San Giovanni Grisostomo, 46 - CN 5803"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bc170f7e-1a25-5fc1-a21f-fcf7fda6bb98"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cb43ee54-e9e9-5d1c-b423-aae4bc39f6fc",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

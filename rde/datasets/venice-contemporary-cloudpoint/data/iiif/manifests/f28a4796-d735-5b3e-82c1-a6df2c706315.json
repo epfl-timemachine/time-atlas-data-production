@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "f28a4796-d735-5b3e-82c1-a6df2c706315",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Sant'Anna, 1604 - CS 500"
+    ]
+  },
+  "items": [
+    {
+      "id": "ba1ed63f-541d-5e2f-961c-88d81d7ec63e",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Sant'Anna, 1604 - CS 500"
+        ]
+      },
+      "items": [
+        {
+          "id": "6562dacf-858e-54ed-8886-1d4056f0ce97",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5ad168df-d497-55b9-a7c4-8ac58e126ade",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_1604.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "ba1ed63f-541d-5e2f-961c-88d81d7ec63e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "52ab26db-df5b-588c-9715-68686ef87121",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cce400d1-2f7d-5543-be0c-d3f2269fc908",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Sant'Anna, 1604 - CS 500"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a63b1b33-1d5a-582a-9ced-52eeadd55ce0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ba1ed63f-541d-5e2f-961c-88d81d7ec63e",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

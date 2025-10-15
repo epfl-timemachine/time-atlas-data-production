@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/4/context.json",
+  "id": "8c32ee58-5d04-5d9a-a589-f535472eb5a7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ca' Bernardo, 3618 - DD 3196,DD 3199/B,DD 3200/A,DD 3199/A,DD 3200,DD 3199"
+    ]
+  },
+  "items": [
+    {
+      "id": "8d1fc482-4937-5c5f-93ba-1aa6f2813964",
+      "type": "Scene",
+      "label": {
+        "en": [
+          "Ca' Bernardo, 3618 - DD 3196,DD 3199/B,DD 3200/A,DD 3199/A,DD 3200,DD 3199"
+        ]
+      },
+      "items": [
+        {
+          "id": "31367349-00a3-53de-b3d1-b4ee8fd509a6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ecf16973-022b-5a17-86f4-099ea8823a51",
+              "type": "Annotation",
+              "motivation": [
+                "painting"
+              ],
+              "body": {
+                "id": "http://timeatlas.eu/assets/las/edifici_3618.las",
+                "type": "Model",
+                "format": "application/vnd.las"
+              },
+              "target": "8d1fc482-4937-5c5f-93ba-1aa6f2813964"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "64e91400-ed5b-54f1-ad4a-1a351ca62ece",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cad4f778-d38a-5625-ae69-84ae496dc982",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": {
+                    "en": [
+                      "Ca' Bernardo, 3618 - DD 3196,DD 3199/B,DD 3200/A,DD 3199/A,DD 3200,DD 3199"
+                    ]
+                  }
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5ddc5657-d21e-54e1-9c3b-15e8c81ef7e3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8d1fc482-4937-5c5f-93ba-1aa6f2813964",
+                  "type": "Scene"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
