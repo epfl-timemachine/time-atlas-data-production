@@ -36,6 +36,8 @@ sn_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/venice-1808-sommari
 
 # Geometry RDE Production
 gdf = gpd.read_file('src/1808_TOPONOMASTICA.shp')
+gdf.to_file('1808_street_network.geojson', driver='GeoJSON')
+sys.exit(0)
 gdf = gdf[~gdf.geometry.isna()] # for now.
 gdf['NAME'] = gdf['NAME'].str.replace('_', ' ') 
 # fixing the typo in the column
