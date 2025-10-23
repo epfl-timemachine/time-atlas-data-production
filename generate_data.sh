@@ -46,6 +46,13 @@ python produce_areas.py
 echo ""
 cd - > /dev/null
 
+# Step 4: Run script in rde/pois
+cd rde/pois
+echo "Merging all pois together"
+python merge_pois.py
+echo ""
+cd - > /dev/null
+
 # Inform success
 echo "Data generation completed successfully."
 

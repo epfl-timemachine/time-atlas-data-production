@@ -94,7 +94,8 @@ if __name__ == '__main__':
         dataset_list = new_dataset_list
     if not args.only_iiif:
         for d in dataset_list:
-            all_files_to_validate = [v for v in list(Path(join(DATASET_ROOT, d, 'data')).rglob('*.json')) if 'iiif' not in str(v)]
+            # not validating pois, as they will be validated separately.
+            all_files_to_validate = [v for v in list(Path(join(DATASET_ROOT, d, 'data')).rglob('*.json')) if 'iiif' not in str(v) and 'points_of_interest.json' not in str(v)]
             for fp in all_files_to_validate:
                 print(f'Validating {fp}')
                 validate_file(fp, validator, raise_error=args.error_interrupt)
@@ -111,6 +112,11 @@ if __name__ == '__main__':
         for a in list(Path(AREA_ROOT).rglob('*.json')):
             print(f'Validating {a}')
             validate_file(a, validator)
+
+        POIS_ROOT = '../rde/pois'
+        for p in list(Path(POIS_ROOT).rglob('*.json')):
+            print(f'Validating {p}')
+            validate_file(p, validator)
 
     print('Checking unicity of UUIDs')
     uuid_file = {}

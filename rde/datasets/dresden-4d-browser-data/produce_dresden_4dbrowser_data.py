@@ -77,7 +77,7 @@ gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
 
 QA_check_uuid_are_unique(gdf_poi.reset_index())
 QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
-save_data_file_if_different(DATA_FOLDER, 'pois', gdf_poi, f'dresden_pois', RDE.POI.value)
+save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, f'dresden_pois', RDE.POI.value)
 
 
 # HR RDE Production
