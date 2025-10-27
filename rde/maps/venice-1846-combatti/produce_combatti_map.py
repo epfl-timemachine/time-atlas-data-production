@@ -53,8 +53,8 @@ castello_bm_layer =  produce_layer_obj(castello_layer_uuid,
                                         layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{castello_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
-                                          access_url="https://geo-timemachine.epfl.ch/geoserver/wms?service=WMS&version=1.1.0&request=GetMap&layers=TimeMachine:venice-1846-begcombatti2",
-                                          format='wms'
+                                          access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1846-begcombatti2/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
+                                          format='wmts'
                                           )]
                                         )
                                          
