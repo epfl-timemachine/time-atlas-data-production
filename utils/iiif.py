@@ -149,6 +149,9 @@ def generate_hr_commenting_annotation(uuid_ns:str, canvas_uid:Union[tuple[str, s
     '''
     if container_type != 'Canvas' and container_type != 'Scene':
         raise ValueError('Invalid container type for commenting annotation:', container_type)
+    if len(hr_txt_selector[0]) == 1 or type(hr_txt_selector[0]) == str:
+        # no text neither selector present, casting the second and third value to None:
+        hr_txt_selector = [(hr_id, '', None) for hr_id in hr_txt_selector]
     if len(hr_txt_selector[0]) == 2:
         # no selector present, casting the third value to None:
         hr_txt_selector = [(hr_id, txt, None) for hr_id, txt in hr_txt_selector]

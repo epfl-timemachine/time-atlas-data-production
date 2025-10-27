@@ -26,22 +26,155 @@
         "doi": null, 
         "github_link": null,
         "indexed": [
+            "own_name",
+            "own_surnam",
+            "own_type",
+            "own_desc",
+            "translation",
+            "main_use",
+            "class",
+            "subclass",
+            "use"
         ],
         "short_display" : [
+            "own_name",
+            "own_surnam",
+            "own_type",
+            "own_desc"
         ],
         "hidden": [
+            "identifier",
+            "layer"
         ],
-        "main_label": "${}",
-        "sub_label": "${}",
+        "main_label": "${own_name} ${own_surnam}, ${own_type}",
+        "sub_label": "${own_desc}",
         "tagged_fields": {
+            "own_surnam": "PEOPLE",
+            "own_name": "PEOPLE",
+            "own_desc": "PLACE",
+            "class": "LAND_USE",
+            "main_use": "LAND_USE",
+            "use": "LAND_USE"
         },
         "labels": {
+            "own_surnam": {
+                "en": ["Owner Surname"],
+                "fr": ["Nom de famille du propriétaire"],
+                "it": ["Cognome del proprietario"],
+                "nl": ["Achternaam Eigenaar"],
+                "de": ["Nachname des Eigentümers"]
+            },
+            "own_name": {
+                "en": ["Owner Name"],
+                "fr": ["Nom du propriétaire"],
+                "it": ["Nome del proprietario"],
+                "nl": ["Naam Eigenaar"],
+                "de": ["Name des Eigentümers"]
+            },
             "own_desc": {
-                "en": "Ownership Description",
-                "fr": "Description de la propriété",
-                "it": "Descrizione della proprietà",
-                "nl": "Eigendom Beschrijving",
-                "de": "Beschreibung des Eigentums"
+                "en": ["Ownership Description"],
+                "fr": ["Description de la propriété"],
+                "it": ["Descrizione della proprietà"],
+                "nl": ["Eigendom Beschrijving"],
+                "de": ["Beschreibung des Eigentums"]
+            },
+            "own_type": {
+                "en": ["Ownership Type"],
+                "fr": ["Type de propriété"],
+                "it": ["Tipo di proprietà"],
+                "nl": ["Type Eigendom"],
+                "de": ["Eigentumstyp"]
+            },
+            "own_compl": {
+                "en": ["Ownership Complement"],
+                "fr": ["Complément de propriété"],
+                "it": ["Complemento di proprietà"],
+                "nl": ["Eigendom Complement"],
+                "de": ["Eigenschaftsergänzung"]
+            },
+            "symbol": {
+                "en": ["Symbol"],
+                "fr": ["Symbole"],
+                "it": ["Simbolo"],
+                "nl": ["Symbool"],
+                "de": ["Symbol"]
+            },
+            "category": {
+                "en": ["Category"],
+                "fr": ["Catégorie"],
+                "it": ["Categoria"],
+                "nl": ["Categorie"],
+                "de": ["Kategorie"]
+            },
+            "own_share": {
+                "en": ["Rights of use"],
+                "fr": ["Droits d'utilisation"],
+                "it": ["Diritti d'uso"],
+                "nl": ["Gebruiksrechten"],
+                "de": ["Nutzungsrechte"]
+            },
+            "class": {
+                "en": ["Land Use Class"],
+                "fr": ["Classe d'utilisation des terres"],
+                "it": ["Classe di utilizzo del suolo"],
+                "nl": ["Klasse Landgebruik"],
+                "de": ["Landnutzungsklasse"]
+            },
+            "subclass": {
+                "en": ["Land Use Subclass"],
+                "fr": ["Sous-classe d'utilisation des terres"],
+                "it": ["Sottoclasse di utilizzo del suolo"],
+                "nl": ["Subklasse Landgebruik"],
+                "de": ["Unterklasse der Landnutzung"]
+            },
+            "use": {
+                "en": ["Land Uses"],
+                "fr": ["Utilisations des terres"],
+                "it": ["Usi del suolo"],
+                "nl": ["Landgebruik"],
+                "de": ["Landnutzungen"]
+            },
+            "main_use": {
+                "en": ["Main Land Use"],
+                "fr": ["Utilisation principale des terres"],
+                "it": ["Uso principale del suolo"],
+                "nl": ["Hoofdlandgebruik"],
+                "de": ["Hauptnutzung des Landes"]
+            },
+            "translation": {
+                "en": ["Main Land Use (in english)"],
+                "fr": ["Utilisation principale des terres (en anglais)"],
+                "it": ["Uso principale del suolo (in inglese)"],
+                "nl": ["Hoofdlandgebruik (in het Engels)"],
+                "de": ["Hauptnutzung des Landes (auf Englisch)"]
+            },
+            "own_col_ty": {
+                "fr": ["Type de succession"],
+                "en": ["Type of Inheritance"],
+                "it": ["Tipo di eredità"],
+                "nl": ["Type Erfenis"],
+                "de": ["Art der Erbschaft"]
+            },
+            "area": {
+                "en": ["Area (m²)"],
+                "fr": ["Surface (m²)"],
+                "it": ["Area (m²)"],
+                "nl": ["Oppervlakte (m²)"],
+                "de": ["Fläche (m²)"]
+            },
+            "identifier": {
+                "en": ["Identifier"],
+                "fr": ["Identifiant"],
+                "it": ["Identificatore"],
+                "nl": ["Identificatie"],
+                "de": ["Kennung"]
+            },
+            "layer": {
+                "en": ["Layer"],
+                "fr": ["Couche"],
+                "it": ["Strato"],
+                "nl": ["Laag"],
+                "de": ["Schicht"]
             }
         }
     }

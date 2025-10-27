@@ -125,6 +125,18 @@ def datetime_obj_from_int_time(date_val: Union[str, int], match_to_end:bool = Fa
         return datetime_obj_from_int_time(date_val+'1231', match_to_end) if match_to_end else datetime_obj_from_int_time(date_val+'0101')
     else:
         raise ValueError(f'Invalid date value: {date_val}')
+
+def is_array_like(v) -> bool:
+    return isinstance(v, (list, tuple, np.ndarray, pd.Series))
+
+def convert_array_like_to_list(v):
+    if isinstance(v, pd.Series):
+        return v.tolist()
+    elif isinstance(v, (list, tuple, np.ndarray)):
+        return list(v)
+    else:
+        return v
+
 def produce_hr_obj(uuid: str, 
                ds: str,
                obs_uid_list: list[list[str, str]],
@@ -134,7 +146,15 @@ def produce_hr_obj(uuid: str,
                rights_attribution: str = None,
                paradata: str = 'm') -> tuple[str, dict]:
     # replace all "NaN" values by None in metadata:
-    metadata = {k: (v if v != "NaN" and (type(v) is list or pd.notna(v)) else None) for k, v in metadata.items()}
+    new_md = {}
+    for k, v in metadata.items():
+        if str(v).lower() != "nan" and (is_array_like(v) or pd.notna(v)):
+            if is_array_like(v):
+                new_md[k] = convert_array_like_to_list(v)
+            else:
+                new_md[k] = v
+        else:
+            new_md[k] = None
     return {
         "uuid": uuid,
         "dataset": ds,
@@ -145,8 +165,9 @@ def produce_hr_obj(uuid: str,
         "start_time": time_range[0],
         "end_time": time_range[1],
         "rights_attribution": rights_attribution,
-        "annotated_content": metadata
+        "annotated_content": new_md
     }
+
 
 # so the order is displayed in the type annotation and linting.
 LAYER_UUID = str

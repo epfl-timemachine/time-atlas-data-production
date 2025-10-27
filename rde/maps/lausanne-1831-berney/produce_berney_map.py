@@ -24,24 +24,24 @@ zoom_lvl= [11,21]
 
 lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
 
-# cadastre_bm_layer = produce_layer_obj(basemap_layer_uuid,
-#                                         bm_slug,
-#                                          {"en": ["Historical maps of the parcels"],
-#                                           "fr": ["Cartes historiques des parcelles"],
-#                                             "it": ["Mappe storiche delle particelle"]},
-#                                         {"en": ["The historical maps of the parcels are the digital facsimile of the original cadaster map."],
-#                                          "fr": ["Les cartes historiques des parcelles sont le fac-similé numérique de la carte cadastrale originale."],
-#                                          "it": ["Le mappe storiche delle particelle sono il facsimile digitale della mappa catastale originale."]},
-#                                          berney_TR,
-#                                          MAP_UUID,
-#                                          is_vector=False,
-#                                          layer_configs=[produce_layer_config(
-#                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
-#                                           zoom_lvl=zoom_lvl,
-#                                           access_url="https://geo-timemachine.epfl.ch/geoserver/www/tilesets/lausanne/TODO/{z}/{x}/{y}.png",
-#                                           format='xyz'
-#                                           )]
-#                                         )
+cadastre_bm_layer = produce_layer_obj(basemap_layer_uuid,
+                                        bm_slug,
+                                         {"en": ["Historical maps of the parcels"],
+                                          "fr": ["Cartes historiques des parcelles"],
+                                            "it": ["Mappe storiche delle particelle"]},
+                                        {"en": ["The historical maps of the parcels are the digital facsimile of the original cadaster map."],
+                                         "fr": ["Les cartes historiques des parcelles sont le fac-similé numérique de la carte cadastrale originale."],
+                                         "it": ["Le mappe storiche delle particelle sono il facsimile digitale della mappa catastale originale."]},
+                                         berney_TR,
+                                         MAP_UUID,
+                                         is_vector=False,
+                                         layer_configs=[produce_layer_config(
+                                          str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
+                                          zoom_lvl=zoom_lvl,
+                                          access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:1831_Berney/raster/EPSG:900913x2/EPSG:900913x2:{z}/{x}/{y}",
+                                          format='wmts'
+                                          )]
+                                        )
  
 berney_parcel_layer = produce_layer_obj(cadaster_layer_uuid, 
                                             cadaster_slug,
@@ -64,8 +64,7 @@ berney_parcel_layer = produce_layer_obj(cadaster_layer_uuid,
 
                                          
 
-# layers = [berney_bm_layer, berney_parcel_layer]
-layers = [berney_parcel_layer]
+layers = [cadastre_bm_layer, berney_parcel_layer]
 layer_ids = [l['uuid'] for l in layers]
 eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
