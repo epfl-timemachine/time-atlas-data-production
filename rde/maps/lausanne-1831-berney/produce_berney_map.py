@@ -38,7 +38,7 @@ cadastre_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
-                                          access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:1831_Berney/raster/EPSG:900913x2/EPSG:900913x2:{z}/{x}/{y}",
+                                          access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:1831_Berney/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
                                         )
@@ -77,7 +77,7 @@ eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID,
                              {"en": ["The maps were vetcorized into geometries through computer vision techniques and then manually corrected and expanded."],
                               "fr": ["Les cartes ont été vectorisées en géométries grâce à des techniques de vision par ordinateur, puis corrigées et étendues manuellement."],
                               "it": ["Le mappe sono state vettorializzate in geometrie attraverso tecniche di visione artificiale e quindi corrette ed espandere"]},
-                              "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Flayer_thumbnails%2Fberney_rialto.png/full/max/0/default.jpg",
+                              "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Flayer_thumbnails%2Flausanne_berney.png/full/max/0/default.jpg",
                               "1.0",
                               sn_TR,
                               layer_ids,
