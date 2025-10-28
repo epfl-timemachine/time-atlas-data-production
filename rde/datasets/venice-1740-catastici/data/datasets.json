@@ -3,12 +3,12 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-06-03T17:55:38.061862",
+ "creation_time": "2025-10-28T16:27:31.002586",
  "rde_objects": [
   {
    "uuid": "463ed45f-7d20-5496-89b2-1d331c09ceb1",
    "slug": "venice-1740-catastici",
-   "version": "1.0",
+   "version": "1.1",
    "name": {
     "en": [
      "1740 - Census Data"
@@ -52,7 +52,7 @@
    ],
    "start_time": "1740-01-01T00:00:00",
    "end_time": "1740-12-31T23:59:59",
-   "transcribed_pages_amount": 2741,
+   "transcribed_pages_amount": 2656,
    "is_operationally_described_by": {
     "hr_config": {
      "main_label": "${owner_name}",
@@ -74,7 +74,7 @@
          "Nome del proprietario"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
        "short_display": true,
        "hidden": false,
@@ -96,7 +96,7 @@
          "Nome dell'inquilino"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
        "short_display": true,
        "hidden": false,
@@ -118,7 +118,7 @@
          "Luogo"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
        "short_display": true,
        "hidden": false,
@@ -140,7 +140,7 @@
          "Funzione"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
        "short_display": true,
        "hidden": false,
@@ -150,7 +150,7 @@
       },
       {
        "id": "an_rendi",
-       "type": "INTEGER",
+       "type": "STRING",
        "display_label": {
         "en": [
          "Rent paid"
@@ -162,7 +162,7 @@
          "Affitto pagato"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
@@ -184,7 +184,7 @@
          "Quantità di affitto pagato (in natura)"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
@@ -206,7 +206,7 @@
          "Tipo di affitto pagato (in natura)"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
@@ -262,7 +262,7 @@
       },
       {
        "id": "id_napo",
-       "type": "INTEGER",
+       "type": "STRING",
        "display_label": {
         "en": [
          "Parcel number in the 1808 Napoleonic cadaster"
@@ -274,7 +274,7 @@
          "Numero di appezzamento nel catasto napoleonico del 1808"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
@@ -305,7 +305,7 @@
        "uuid": "e7e20586-df14-5705-a77a-f35e8e0d8191"
       },
       {
-       "id": "owner_code",
+       "id": "PP_OwnerCode_SIMPL",
        "type": "STRING",
        "display_label": {
         "en": [
@@ -324,11 +324,11 @@
        "hidden": false,
        "tag": null,
        "display_order": 12,
-       "uuid": "676026f3-3e09-5949-a3a9-59038a3de990"
+       "uuid": "907a30dd-9697-577e-b164-a2b76429fdfc"
       },
       {
        "id": "owner_count",
-       "type": "INTEGER",
+       "type": "STRING",
        "display_label": {
         "en": [
          "Owner's count"
@@ -340,7 +340,7 @@
          "Numero di proprietari"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
@@ -349,29 +349,7 @@
        "uuid": "9d85158d-d978-5a45-96b2-6a4d72ded3e4"
       },
       {
-       "id": "owner_count_remark",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner's count remark"
-        ],
-        "fr": [
-         "Remarque sur le nombre de propriétaires"
-        ],
-        "it": [
-         "Osservazione sul numero di proprietari"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 14,
-       "uuid": "fc0a6bac-7d1f-52b7-87f1-b8e6d2f59413"
-      },
-      {
-       "id": "owner_first_name",
+       "id": "PP_Owner_FirstName",
        "type": "STRING",
        "display_label": {
         "en": [
@@ -384,20 +362,20 @@
          "Nome del proprietario"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
        "short_display": false,
        "hidden": false,
-       "tag": "PEOPLE",
-       "display_order": 15,
-       "uuid": "a2a3494f-1425-5b2d-a6ee-eacf58fddaca"
+       "tag": null,
+       "display_order": 14,
+       "uuid": "e691a2fc-9969-51e9-a3f8-5d7fe6183d6e"
       },
       {
-       "id": "owner_family_name",
+       "id": "PP_Owner_LastName",
        "type": "STRING",
        "display_label": {
         "en": [
-         "Owner's family name"
+         "Owner's last name"
         ],
         "fr": [
          "Nom de famille du propriétaire"
@@ -406,82 +384,16 @@
          "Cognome del proprietario"
         ]
        },
-       "nullable": false,
-       "indexable": true,
-       "short_display": false,
-       "hidden": false,
-       "tag": "PEOPLE",
-       "display_order": 16,
-       "uuid": "be813246-96aa-5d89-98f1-24caafd68371"
-      },
-      {
-       "id": "owner_family_group",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner's family group standardized"
-        ],
-        "fr": [
-         "Groupe de famille du propriétaire standardisé"
-        ],
-        "it": [
-         "Gruppo familiare del proprietario standardizzato"
-        ]
-       },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 17,
-       "uuid": "b6622719-bf7a-5fc2-8f5f-21c265c205b3"
+       "display_order": 15,
+       "uuid": "7836ef22-3883-5421-8e31-81ee434c4b38"
       },
       {
-       "id": "owner_entity",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner's entity name"
-        ],
-        "fr": [
-         "Nom de l'entité propriétaire"
-        ],
-        "it": [
-         "Nome dell'entità proprietaria"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 18,
-       "uuid": "6e940c50-dc19-51a7-805d-986dca1ba588"
-      },
-      {
-       "id": "owner_entity_group",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner's entity group standardized"
-        ],
-        "fr": [
-         "Groupe d'entité propriétaire standardisé"
-        ],
-        "it": [
-         "Gruppo di entità proprietaria standardizzato"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 19,
-       "uuid": "8106914a-8449-5589-b4e6-5b5f8744eb3b"
-      },
-      {
-       "id": "owner_title",
+       "id": "PP_Owner_Title",
        "type": "STRING",
        "display_label": {
         "en": [
@@ -494,101 +406,13 @@
          "Titolo del proprietario"
         ]
        },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 20,
-       "uuid": "0f1835cf-5cb3-5b7c-859b-aca5c37158d4"
-      },
-      {
-       "id": "owner_title_std",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner's title standardized"
-        ],
-        "fr": [
-         "Titre du propriétaire standardisé"
-        ],
-        "it": [
-         "Titolo del proprietario standardizzato"
-        ]
-       },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 21,
-       "uuid": "3c3492a6-f78b-59df-b5c5-571b1b8c164e"
-      },
-      {
-       "id": "owner_mestiere",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner's profession"
-        ],
-        "fr": [
-         "Profession du propriétaire"
-        ],
-        "it": [
-         "Professione del proprietario"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 22,
-       "uuid": "8bc8864d-40a8-5696-9908-841342d09c02"
-      },
-      {
-       "id": "owner_mestiere_std",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner's profession standardized"
-        ],
-        "fr": [
-         "Profession du propriétaire standardisée"
-        ],
-        "it": [
-         "Professione del proprietario standardizzata"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 23,
-       "uuid": "ef79e37a-7096-5cc7-b343-1111a1c63f35"
-      },
-      {
-       "id": "id",
-       "type": "INTEGER",
-       "display_label": {
-        "en": [
-         "ID as written in the document"
-        ],
-        "fr": [
-         "ID tel qu'écrit dans le document"
-        ],
-        "it": [
-         "ID come scritto nel documento"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": true,
-       "tag": null,
-       "display_order": 24,
-       "uuid": "18a0062b-a1ea-54cd-b354-631e84b9bb19"
+       "display_order": 16,
+       "uuid": "7470f02f-a3e0-5bbb-9716-0832fb7962ca"
       },
       {
        "id": "path_img",
@@ -609,7 +433,7 @@
        "short_display": false,
        "hidden": true,
        "tag": null,
-       "display_order": 25,
+       "display_order": 17,
        "uuid": "5a366bd6-3ad8-58b0-adf2-0d0b55160001"
       },
       {
@@ -631,147 +455,81 @@
        "short_display": false,
        "hidden": true,
        "tag": null,
-       "display_order": 26,
+       "display_order": 18,
        "uuid": "93191ae6-9ccf-5695-b867-0b83509fe190"
       },
       {
-       "id": "professions_standardized",
-       "type": "LIST",
+       "id": "PP_Owner_Entity",
+       "type": "STRING",
        "display_label": {
         "en": [
-         "Professions standardized"
+         "Standardized proprietary's entity"
         ],
         "fr": [
-         "Professions standardisées"
+         "Entité propriétaire standardisée"
         ],
         "it": [
-         "Professioni standardizzate"
+         "Entità proprietaria standardizzata"
         ]
        },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": "PROFESSION",
-       "display_order": 27,
-       "uuid": "2ed22537-c836-59e3-a86c-5be138c6ac82"
-      },
-      {
-       "id": "quality_standardized",
-       "type": "LIST",
-       "display_label": {
-        "en": [
-         "Quality Standardized"
-        ],
-        "fr": [
-         "Qualité standardisée"
-        ],
-        "it": [
-         "Qualità standardizzata"
-        ]
-       },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 28,
-       "uuid": "cf922e7b-d626-5784-9741-4e076770cd7b"
+       "display_order": 19,
+       "uuid": "8dd44bf0-52cc-596a-88cb-9595fcb9959d"
       },
       {
-       "id": "spatial_standardized",
-       "type": "LIST",
+       "id": "PP_Owner_Notes",
+       "type": "STRING",
        "display_label": {
         "en": [
-         "Spatial information standardized"
+         "Type of owner"
         ],
         "fr": [
-         "Information spatiale standardisée"
+         "Type de propriétaire"
         ],
         "it": [
-         "Informazioni spaziali standardizzate"
+         "Tipo di proprietario"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 29,
-       "uuid": "ca2ef85f-e6f2-514c-97b3-34d290775dad"
+       "display_order": 20,
+       "uuid": "897b16ef-272f-5b3b-a4d6-0cf2775dffa3"
       },
       {
-       "id": "quantity_standardized",
-       "type": "LIST",
+       "id": "PP_Function_TOP",
+       "type": "STRING",
        "display_label": {
         "en": [
-         "Quantity standardized"
+         "Top most function"
         ],
         "fr": [
-         "Quantité standardisée"
+         "Fonction la plus élevée"
         ],
         "it": [
-         "Quantità standardizzata"
+         "Funzione più alta"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 30,
-       "uuid": "ba7067b3-a784-5070-9171-326282e7b49a"
+       "display_order": 21,
+       "uuid": "63415d73-4fcc-5bea-851c-f11225eba219"
       },
       {
-       "id": "rights_standardized",
-       "type": "LIST",
+       "id": "PP_Function_MID",
+       "type": "STRING",
        "display_label": {
         "en": [
-         "Rights standardized"
-        ],
-        "fr": [
-         "Droits standardisés"
-        ],
-        "it": [
-         "Diritti standardizzati"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 31,
-       "uuid": "e87c8b68-9bce-5d4e-b307-b3ba61db9178"
-      },
-      {
-       "id": "professions_tenant_standardized",
-       "type": "LIST",
-       "display_label": {
-        "en": [
-         "Professions of the tenant standardized"
-        ],
-        "fr": [
-         "Professions du locataire standardisées"
-        ],
-        "it": [
-         "Professioni dell'inquilino standardizzate"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 32,
-       "uuid": "042300c1-aead-574c-aad1-cd27b0d93de2"
-      },
-      {
-       "id": "functions_standardized",
-       "type": "LIST",
-       "display_label": {
-        "en": [
-         "Functions standardized"
+         "Standardized functions"
         ],
         "fr": [
          "Fonctions standardisées"
@@ -780,13 +538,79 @@
          "Funzioni standardizzate"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 33,
-       "uuid": "cdee4fbc-352d-50c1-9a6c-4bc75d474fd7"
+       "display_order": 22,
+       "uuid": "d3459e7d-24e2-591d-95c4-1d917a7a37e5"
+      },
+      {
+       "id": "PP_Function_PROPERTY",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Property function"
+        ],
+        "fr": [
+         "Fonction de propriété"
+        ],
+        "it": [
+         "Funzione di proprietà"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 23,
+       "uuid": "9d0bb0aa-0755-558b-8e14-b2180ccee238"
+      },
+      {
+       "id": "PP_Bottega_STD",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Standardized shop"
+        ],
+        "fr": [
+         "Boutique standardisée"
+        ],
+        "it": [
+         "Negozio standardizzato"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 24,
+       "uuid": "e6794978-4502-5ecd-a6bb-a12e77f3fef9"
+      },
+      {
+       "id": "PP_Bottega_METACATEGORY",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Shop metacategory"
+        ],
+        "fr": [
+         "Métacatégorie de la boutique"
+        ],
+        "it": [
+         "Metacategoria del negozio"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 25,
+       "uuid": "d6d20d07-76de-5b13-886e-3f021c7b2f20"
       }
      ]
     },
@@ -795,7 +619,7 @@
    "falls_within": [
     "620962bb-bb0d-50ed-b534-8903ad265932"
    ],
-   "creation_time": "2025-06-03T17:55:38.059005"
+   "creation_time": "2025-10-28T16:27:30.999654"
   }
  ]
 }
