@@ -203,7 +203,7 @@ def produce_obs_obj(uuid:str,
     }
 
 
-def produce_poi_obj(uuid:str, coordinate, obs_uuid:list[str]) -> dict:
+def produce_poi_obj(uuid:str, coordinate, height_data) -> dict:
     '''
     returns the geometry object created as a dictionary
     uuid: the UUID of the PoI
@@ -214,7 +214,7 @@ def produce_poi_obj(uuid:str, coordinate, obs_uuid:list[str]) -> dict:
         "uuid": uuid,
         "rde_type": RDE.POI.value,
         "coordinate": coordinate,
-        "represents": obs_uuid
+        "height": height_data
     }
 
 
@@ -425,7 +425,7 @@ def save_data_file_if_different(fp:str,
     filename_with_ext = f'{filename}.json'
     filepath = os.path.join(fp, filename_with_ext)
     if isinstance(data, gpd.GeoDataFrame):
-        if tpe == RDE.POI.value or tpe == RDE.OBS.value:
+        if tpe == RDE.OBS.value:
             data = processing_points(data, format_rde=True)
         t_data = geodataframe_to_json(data)
         t_data = t_data['features']
