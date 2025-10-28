@@ -31,7 +31,8 @@ DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 MAP_SLUG = f"{DS_SLUG}-map" # used for the map manifest, different from the map slug of the map itself.
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 # cadastral layer uuid:
-cadaster_layer_uuid = get_layer_uuid('../../maps/venice-dorigo/layers.json', 'venice-dorigo-map-zones') 
+MAP_FOLDER = '../../maps/venice-dorigo/'
+cadaster_layer_uuid = get_layer_uuid(MAP_FOLDER+'layers.json', 'venice-dorigo-map-zones') 
 # so the same layer uuid is used between this dataset and the street network dataset
 BEGIN_TR = 9460101
 END_TR = 14081231
@@ -64,10 +65,9 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
     gdf['geometry'] = gdf['geometry'].apply(lambda g: g if g.is_valid else make_valid(g))
     QA_check_all_geometries_are_valid(gdf)
 
-
 geom_shorthand = 'dorigo_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 df = pd.read_json(list(DORIGO_DATA_PATH.rglob('*historical_records.json'))[0])
 
 # fix NaN being serialized as literal in JSON alongside "null"

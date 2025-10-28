@@ -33,11 +33,12 @@ run_scripts_in_directory() {
     done
 }
 
-# Step 2: Run scripts in rde/datasets
-run_scripts_in_directory "rde/datasets"
 
-# Step 3: Run scripts in rde/maps
+# Step 2: Run scripts in rde/maps
 run_scripts_in_directory "rde/maps"
+
+# Step 3: Run scripts in rde/datasets
+run_scripts_in_directory "rde/datasets"
 
 # Step 4: Run scripts in rde/areas
 cd rde/areas

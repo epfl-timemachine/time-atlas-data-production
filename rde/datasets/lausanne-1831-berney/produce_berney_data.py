@@ -44,7 +44,8 @@ gdf = gpd.read_file(geometries_fp, use_arrow=True).to_crs("EPSG:4326")
 gdf['start_time'] = pd.Series(data = [TR_OBJ[0]] * len(gdf), name='start_time')
 gdf['end_time'] = pd.Series(data = [TR_OBJ[1]] * len(gdf), name='end_time')
 
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/lausanne-1831-berney/layers', 'json'), 'cadaster')
+MAP_FOLDER = '../../maps/lausanne-1831-berney/'
+cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'cadaster')
 tqdm.pandas(desc="Generating uuid from geometry")
 gdf['uuid'] = gdf.progress_apply(lambda row: make_uuid_from_row_selection(VTM_UUID5_NS, row, ['geometry']), axis=1)
 
@@ -83,7 +84,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'lausanne_1831_berney_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 tqdm.pandas(desc="Generating uuid for hr")
 df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['identifier'], ad_hoc_seed='hr'), axis=1)
 

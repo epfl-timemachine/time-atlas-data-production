@@ -37,8 +37,8 @@ man_id = str(uuid.uuid5(VTM_UUID5_NS, f"manifest_{DS_SLUG}"))
 PAR_TR_OBJ = (datetime_obj_from_int_time(17400101), datetime_obj_from_int_time(17401231, match_to_end=True))
 collection = {man_id: "Garzoni 3 page sample for testing annotations."}
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
-
-parish_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/venice-1740-parish/layers', 'json'), 'parish')
+MAP_FOLDER = '../../maps/venice-1740-parish/'
+parish_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'parish')
 venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
 # Geometry RDE production
@@ -67,7 +67,7 @@ gdf['rde_type'] = "geometry"
 
 save_gdf = gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']]
 
-save_data_file_if_different(DATA_FOLDER,'geometries', save_gdf, f'garzoni_geometries', RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER,'geometries', save_gdf, f'garzoni_geometries', RDE.GEOM.value)
 QA_check_uuid_are_unique(gdf)
 
 print('loading garzoni data into a dataframe, this may take a while.')

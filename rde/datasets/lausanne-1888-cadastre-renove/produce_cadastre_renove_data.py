@@ -27,7 +27,9 @@ LTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(LTM_UUID5_NS, DS_SLUG))
 
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/lausanne-1888-cadastre-renove/layers', 'json'), 'vector')
+
+MAP_FOLDER = '../../maps/lausanne-1888-cadastre-renove/'
+cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'vector')
 lausanne_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
 DS_OBJ = (DS_UUID, DS_SLUG)
@@ -57,7 +59,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'lausanne_1888_cadastre_renove_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 
 txt_fp = get_filepath_like(os.path.join(DATA_SRC_PATH, "lausanne-1888-cadastre-renove-registre-"), 'csv')
 dfs = pd.read_csv(txt_fp)

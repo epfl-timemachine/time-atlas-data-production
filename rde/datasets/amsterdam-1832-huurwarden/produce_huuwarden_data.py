@@ -42,8 +42,8 @@ df = gpd.read_file(point_fp).set_crs("EPSG:28992").to_crs("EPSG:4326")
 gdf['start_time'] = pd.Series(data = [TR_OBJ[0]] * len(gdf), name='start_time')
 gdf['end_time'] = pd.Series(data = [TR_OBJ[1]] * len(gdf), name='end_time')
 
-
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/amsterdam-1832-huurwarden/layers', 'json'), 'huurwarden')
+MAP_FOLDER = '../../maps/amsterdam-1832-huurwarden/'
+cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'huurwarden')
 
 tqdm.pandas(desc="Generating uuid from geometry")
 gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['OBJECTID']), axis=1)
@@ -60,8 +60,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'amsterdam_1832_huurwarden_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
-
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 
 cols_for_hr_uuid_prod = sorted(set(df.columns).difference({'geometry_id', 'has_geometry', 'coordinate', 'parcel_id'}))
 

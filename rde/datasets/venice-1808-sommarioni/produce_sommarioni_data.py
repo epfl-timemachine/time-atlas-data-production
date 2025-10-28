@@ -27,7 +27,8 @@ DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 MAP_SLUG = f"{DS_SLUG}-map" # used for the map manifest, different from the map slug of the map itself.
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/venice-1808-sommarioni/layers', 'json'), 'cadaster')
+MAP_FOLDER = '../../maps/venice-1808-sommarioni/'
+cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'cadaster')
 venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
 DS_OBJ = (DS_UUID, DS_SLUG)
@@ -131,7 +132,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'sommarioni_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 
 # storing in a single dataframe all the data that will be needed to add to the Obs objects. 
 geomid_uuid_list = gdf.groupby(by="geometry_id")['uuid'].apply(list).reset_index(name='has_geometry').set_index('geometry_id')

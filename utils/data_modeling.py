@@ -168,7 +168,6 @@ def produce_hr_obj(uuid: str,
         "annotated_content": new_md
     }
 
-
 # so the order is displayed in the type annotation and linting.
 LAYER_UUID = str
 GEOMETRY_UUID = str

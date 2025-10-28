@@ -31,7 +31,8 @@ DATA_FOLDER = 'data'
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 
 venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
-sn_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/venice-1808-sommarioni/layers', 'json'), 'street')
+MAP_FOLDER = '../../maps/venice-1808-sommarioni/'
+sn_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'street')
 
 # Geometry RDE Production
 gdf = gpd.read_file('src/1808_TOPONOMASTICA.shp')
@@ -53,7 +54,7 @@ gdf['layer_uuid'] = sn_layer_uuid
 gdf = gdf.set_geometry('geometry').to_crs('EPSG:4326')
 QA_check_uuid_are_unique(gdf)
 # "NAME" was removed for consistency with the other datasets.
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], '1808_street_network_geometries', RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], '1808_street_network_geometries', RDE.GEOM.value)
 gdf['coordinate'] = gdf['geometry'].apply(lambda v: v.centroid)
 tqdm.pandas(desc="Generating obs uuid")
 gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['coordinate']), axis=1)

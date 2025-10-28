@@ -24,7 +24,9 @@ DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
 min_time = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM'])
 max_time = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
-edifici_layer_uuid = get_layer_uuid('../../maps/venice-2024-contemporary/layers.json', 'venice-2024-contemporary-map-edifici')
+
+MAP_FOLDER = '../../maps/venice-2024-contemporary/'
+edifici_layer_uuid = get_layer_uuid(MAP_FOLDER+'layers.json', 'venice-2024-contemporary-map-edifici')
 DATA_VENICE_FOLDER = os.path.join(parent_dir, 'data-venice')
 
 # to note: all the geometries are expressde as multipolygon, but actually there is a single geometry in each. No need to do multiple geometries per obs a simple explode reduce them to single polygon.

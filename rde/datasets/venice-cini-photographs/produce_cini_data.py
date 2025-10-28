@@ -27,8 +27,8 @@ def min_without_nan(series: pd.Series):
 def max_without_nan(series: pd.Series):
     return series.dropna().max()
 
-
-edifici_layer_uuid = get_layer_uuid('../../maps/venice-2024-contemporary/layers.json', 'venice-2024-contemporary-map-edifici')
+MAP_FOLDER = '../../maps/venice-2024-contemporary/'
+edifici_layer_uuid = get_layer_uuid(MAP_FOLDER+'layers.json', 'venice-2024-contemporary-map-edifici')
 df = pd.read_json('src/sample_3_edifici.json')
 # fix NaN being serialized as literal in JSON alongside "null"
 df = df.replace({np.nan: None})
@@ -74,7 +74,7 @@ if not QA_check_all_geometries_are_valid(gdf_edifici, raise_exception=False):
 
 geom_shorthand = 'cini-photographs_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf_edifici[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']].set_crs('EPSG:4326'), geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf_edifici[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']].set_crs('EPSG:4326'), geom_shorthand, RDE.GEOM.value)
 gdf['hr_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['ImageNumber']), axis=1)
 gdf['obs_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['ImageNumber'], ad_hoc_seed='obs'), axis=1)
 
