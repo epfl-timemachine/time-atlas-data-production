@@ -109,21 +109,10 @@ tqdm.pandas(desc="Generating UUIDs")
 df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
 df['obs_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
 df['corrected_centroid_str'] = df['corrected_centroid'].progress_apply(lambda p: p.wkt)
-df['poi_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['corrected_centroid_str'], ad_hoc_seed='poi'), axis=1)
 
-# Producing PoIs
-poi_df = df.groupby('corrected_centroid_str').agg(list)[['corrected_centroid','obs_uuid', 'poi_uuid']].reset_index()
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v['poi_uuid'][0], v['corrected_centroid'][0], v['obs_uuid']) for _, v in poi_df.iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
-gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-gdf_poi = gdf_poi.set_geometry('geometry')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'dorigo_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-
-QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
 
 # Producing Obs.
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.corrected_centroid, v.has_geometry, v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.corrected_centroid, v.has_geometry)
 obs = [obs_from_row(v) for _, v in df.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')

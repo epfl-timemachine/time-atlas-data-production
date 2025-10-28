@@ -179,7 +179,7 @@ def produce_obs_obj(uuid:str,
                     tpe: str,
                     coords,
                     geometries_links: list[GEOMETRY_UUID],
-                    poi_link: str) -> dict:
+                    ) -> dict:
     '''
     Produces an observation object for the RDE from the given parameters.
     uuid: the UUID of the observation
@@ -188,6 +188,8 @@ def produce_obs_obj(uuid:str,
     tpe: the type of the observation
     time_range: a tuple of two strings representing the start and end time of the observation
     geometries_links: a list of the UUID of the geometries associated to the current observation
+
+    Note that no poi link are expected as they are patched later, by merging all observations based on their coordinates.
     '''
     return {
         "uuid": uuid,
@@ -199,7 +201,7 @@ def produce_obs_obj(uuid:str,
         "coordinate": coords,
         "has_geometry": geometries_links,
         "documented_in": hr_uuid,
-        "has_handle": poi_link
+        "has_handle": None
     }
 
 

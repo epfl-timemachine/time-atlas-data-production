@@ -276,31 +276,19 @@ tqdm.pandas(desc="Generating obs uuid")
 df['obs_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx', 'id']), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
 df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx']), axis=1)
-tqdm.pandas(desc="Generating poi uuid")
-df['poi_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['geometry']), axis=1)
 
 # Generate Obs RDE
 tpe = 'parcel ownership'
-obs = [produce_obs_obj(r.obs_uuid, TR_OBJ, DS_UUID, r.hr_uuid, tpe, r.geometry, None, r.poi_uuid) for _,r in df.iterrows()]
+obs = [produce_obs_obj(r.obs_uuid, TR_OBJ, DS_UUID, r.hr_uuid, tpe, r.geometry, None) for _,r in df.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_crs('EPSG:32633').to_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, 'catastici_obs', RDE.OBS.value)
 
-# Generate PoI RDE
-# for the one to many relationship with the obs 
-df_poi = df[['poi_uuid', 'obs_uuid', 'geometry']].groupby('poi_uuid').agg(list)
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry[0], v.obs_uuid) for _,v in df_poi.reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:32633').to_crs('EPSG:4326').set_index('uuid')
-
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi,  f'catastici_poi', RDE.POI.value)
 
 # Generate HR RDE
 exclude_hr_labels = {
-    'geometry', 
-    'poi_uuid',
+    'geometry',
     'obs_uuid',
     'hr_uuid',
     'uidx',

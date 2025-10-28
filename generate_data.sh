@@ -48,8 +48,8 @@ cd - > /dev/null
 
 # Step 4: Run script in rde/pois
 cd rde/pois
-echo "Merging all pois together"
-python merge_pois.py
+echo "Generating Points of Interests object from the observations"
+python merge_obs.py
 echo ""
 cd - > /dev/null
 

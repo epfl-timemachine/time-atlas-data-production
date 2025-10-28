@@ -217,14 +217,11 @@ df_obs['geometry'] = df_obs['lat_lon'].apply(lambda v: Point(v[1], v[0]))
 gdf = gpd.GeoDataFrame(df_obs.drop('lat_lon', axis=1)).set_geometry('geometry')
 gdf = gdf.set_crs('EPSG:4326').reset_index()
 
-tqdm.pandas(desc="Generating poi uuid")
-gdf['poi_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['geometry']), axis=1)
-
 tpe='landmark'
 
 # Generating Obs RDE
 obs = [produce_obs_obj(
-    v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None, v.poi_uuid
+    v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None
 ) for _,v in gdf.iterrows()]
 
 gdf_obs = gpd.GeoDataFrame(obs)
@@ -234,14 +231,6 @@ QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'paris_postcards_obs', RDE.OBS.value)
 
 df = df.merge(df_wh, left_on='filename', right_on='filename', how='left')
-
-# Generate PoI RDE
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry[0], v.obs_uuid) for _, v in gdf.groupby('poi_uuid').agg(list).reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
-
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, f'paris_postcards_pois', RDE.POI.value)
 
 from utils.iiif import *
 # Generating the IIIF manifests

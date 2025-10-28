@@ -153,16 +153,11 @@ df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUI
 tqdm.pandas(desc="Generating uuid for obs")
 df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['parcel_id', 'place', 'hr_uuid']), axis=1)
 
-tqdm.pandas(desc="Generating uuid for poi")
-df['poi_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['coordinate']), axis=1)
-
 # Obs RDE Procution
-obs_df = df[['obs_uuid','hr_uuid', 'poi_uuid', 'coordinate']].groupby(by=['obs_uuid','coordinate']).agg(list).reset_index().set_index('obs_uuid')
-obs_df['poi_uuid'] = obs_df['poi_uuid'].apply(lambda v: v[0])
-# I have to do that because there is 7 obs. that have two historical sources recording it...
+obs_df = df[['obs_uuid','hr_uuid', 'coordinate']].groupby(by=['obs_uuid','coordinate']).agg(list).reset_index().set_index('obs_uuid')
 tpe = 'parcel ownership'
 obs_df['has_geometry'] = df[~df.duplicated('obs_uuid',keep='first')].set_index('obs_uuid')['has_geometry']
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid[0], tpe, v.coordinate, [r for r in v.has_geometry], v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid[0], tpe, v.coordinate, [r for r in v.has_geometry])
 obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
@@ -179,7 +174,6 @@ exclude_hr_labels = {
     'geometry_id', 
     'has_geometry', 
     'coordinate',
-    'poi_uuid',
     'obs_uuid',
     'hr_uuid',
     'parcel_id'
@@ -223,23 +217,6 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
 QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
-
-
-# POI RDE Production
-df_poi = df[['coordinate', 'poi_uuid', 'obs_uuid']].groupby(by=['poi_uuid']).agg(list)
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.coordinate[0], v.obs_uuid) for _, v in df_poi.reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
-# when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
-gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-gdf_poi = gdf_poi.set_geometry('geometry')
-# TODO: understand why there was this single PoI without a geometry.
-gdf_poi = gdf_poi[~gdf_poi.geometry.x.isna()]
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'sommarioni_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
-QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
-
 
 # Generating the manifest for the textual data
 # (now that all HR uuid were generated)

@@ -23,7 +23,6 @@ with open('dataproduction_config.json') as f:
 # aribtrary namespace, just to generate reproducible UUIDv5 from the data of this dataset.
 VTM_SN_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'] )
 
-
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(VTM_SN_UUID5_NS, DS_SLUG))
 
@@ -36,8 +35,6 @@ sn_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/venice-1808-sommari
 
 # Geometry RDE Production
 gdf = gpd.read_file('src/1808_TOPONOMASTICA.shp')
-gdf.to_file('1808_street_network.geojson', driver='GeoJSON')
-sys.exit(0)
 gdf = gdf[~gdf.geometry.isna()] # for now.
 gdf['NAME'] = gdf['NAME'].str.replace('_', ' ') 
 # fixing the typo in the column
@@ -62,8 +59,6 @@ tqdm.pandas(desc="Generating obs uuid")
 gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['coordinate']), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
 gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['index']), axis = 1)
-tqdm.pandas(desc="Generating poi uuid")
-gdf['poi_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['obs_uuid']), axis = 1)
 
 # HR RDE Production
 tpe = "street toponym"
@@ -80,23 +75,15 @@ QA_check_uuid_are_unique(df_of_hr)
 QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
 save_data_file_if_different(DATA_FOLDER, 'historical_records',  recs, f'1808_street_network_hrs', RDE.HR.value)
 
-
 # Obs RDE Production
 tpe = "street toponym"
 gpd.options.io_engine = "pyogrio"
 
-gdf_obs = gpd.GeoDataFrame([produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid,tpe, v.coordinate,  [v.uuid], v.poi_uuid) for _, v in gdf.iterrows()])
+gdf_obs = gpd.GeoDataFrame([produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid,tpe, v.coordinate,  [v.uuid]) for _, v in gdf.iterrows()])
 gdf_obs = gdf_obs.set_geometry('coordinate').set_index('uuid').set_crs('EPSG:4326')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 QA_check_unique_uuid_in_uuid_array(gdf_obs, 'has_geometry')
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, f'1808_street_network_obs', RDE.OBS.value)
-
-# PoI RDE Production
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.coordinate, [v.obs_uuid] ) for _, v in gdf.iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_index('uuid').set_crs('EPSG:4326')
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, f'1808_street_network_pois', RDE.POI.value)
 
 # Dataset Object Production
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']

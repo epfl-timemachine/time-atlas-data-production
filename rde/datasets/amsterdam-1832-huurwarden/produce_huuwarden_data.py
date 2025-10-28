@@ -71,16 +71,11 @@ df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUI
 tqdm.pandas(desc="Generating uuid for obs")
 df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='obs'), axis=1)
 
-tqdm.pandas(desc="Generating uuid for poi")
-df['poi_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['geometry']), axis=1)
-
-
-obs_df = df[['obs_uuid','hr_uuid', 'poi_uuid', 'geometry']].groupby(by=['obs_uuid','geometry']).agg(list).reset_index().set_index('obs_uuid')
-obs_df['poi_uuid'] = obs_df['poi_uuid'].apply(lambda v: v[0])
+obs_df = df[['obs_uuid','hr_uuid', 'geometry']].groupby(by=['obs_uuid','geometry']).agg(list).reset_index().set_index('obs_uuid')
 # I have to do that because there is 7 obs. that have two historical sources recording it...
 tpe = 'parcel ownership'
 obs_df['has_geometry'] = df[~df.duplicated('obs_uuid',keep='first')].set_index('obs_uuid')['has_geometry']
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid[0], tpe, v.geometry, [v.has_geometry], v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid[0], tpe, v.geometry, [v.has_geometry])
 obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
@@ -92,23 +87,10 @@ obs_shorthand = 'amsterdam_1832_huurwarden_obs'
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
 QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
 
-
-# POI RDE Production
-df_poi = df[['geometry', 'poi_uuid', 'obs_uuid']].groupby(by=['poi_uuid']).agg(list)
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry[0], v.obs_uuid) for _, v in df_poi.reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
-# when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
-gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-gdf_poi = gdf_poi.set_geometry('geometry')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'amsterdam_1832_huurwarden_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-
-QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
 #HR RDE Production
 exclude_hr_labels = {
     'geometry_id', 
-    'has_geometry', 
-    'poi_uuid',
+    'has_geometry',
     'obs_uuid',
     'hr_uuid',
     'geometry'

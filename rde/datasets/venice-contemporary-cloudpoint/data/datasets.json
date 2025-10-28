@@ -3,7 +3,7 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-10-23T11:07:23.173431",
+ "creation_time": "2025-10-28T14:21:42.102966",
  "rde_objects": [
   {
    "uuid": "93d47eb8-f298-59c4-ab1d-9e6a217788f2",
@@ -61,94 +61,6 @@
      "external_source": false,
      "metadata_field_config": [
       {
-       "id": "nb_points",
-       "type": "INTEGER",
-       "display_label": {
-        "en": [
-         "Number of points"
-        ],
-        "it": [
-         "Numero di punti"
-        ],
-        "fr": [
-         "Nombre de points"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 1,
-       "uuid": "50413bf3-af64-5c94-a0d3-d4108c5d8080"
-      },
-      {
-       "id": "ISOLA",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Island"
-        ],
-        "it": [
-         "Isola"
-        ],
-        "fr": [
-         "Île"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 2,
-       "uuid": "4a9466f7-1697-5fa5-b7fd-ca575c9caef9"
-      },
-      {
-       "id": "SESTIERE",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "District"
-        ],
-        "it": [
-         "Sestiere"
-        ],
-        "fr": [
-         "Sestiere"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 3,
-       "uuid": "04e882b8-cc39-55d9-9dbb-9f82d8a4a38f"
-      },
-      {
-       "id": "points_density",
-       "type": "FLOAT",
-       "display_label": {
-        "en": [
-         "Points density"
-        ],
-        "it": [
-         "Densità di punti"
-        ],
-        "fr": [
-         "Densité de points"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 4,
-       "uuid": "869090e6-4b8f-5af5-8a8b-89090c1e3891"
-      },
-      {
        "id": "mean_height",
        "type": "FLOAT",
        "display_label": {
@@ -167,52 +79,8 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 5,
+       "display_order": 1,
        "uuid": "3b57ed71-d464-5132-9ea3-3f38454f7793"
-      },
-      {
-       "id": "EDIFI_ID",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "EDIFICI ID"
-        ],
-        "it": [
-         "EDIFICI ID"
-        ],
-        "fr": [
-         "EDIFICI ID"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 6,
-       "uuid": "d467d2dc-8ad9-5ad3-9078-e924b7e39642"
-      },
-      {
-       "id": "style",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Style"
-        ],
-        "it": [
-         "Stile"
-        ],
-        "fr": [
-         "Style"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 7,
-       "uuid": "66b144e1-80c8-585a-a04d-82a97e6b50c7"
       },
       {
        "id": "area",
@@ -233,30 +101,8 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 8,
+       "display_order": 2,
        "uuid": "ebe489fd-2d86-53e2-b9e6-4cd17dbc3e93"
-      },
-      {
-       "id": "typology",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Typology"
-        ],
-        "it": [
-         "Tipologia"
-        ],
-        "fr": [
-         "Typologie"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 9,
-       "uuid": "15cecd40-3b83-59b6-8f25-eb5bdbaf1530"
       },
       {
        "id": "max_height",
@@ -277,8 +123,162 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 10,
+       "display_order": 3,
        "uuid": "055b5a20-55af-5e3b-a724-4e5bbacbfc30"
+      },
+      {
+       "id": "nb_points",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Number of points"
+        ],
+        "it": [
+         "Numero di punti"
+        ],
+        "fr": [
+         "Nombre de points"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 4,
+       "uuid": "50413bf3-af64-5c94-a0d3-d4108c5d8080"
+      },
+      {
+       "id": "style",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Style"
+        ],
+        "it": [
+         "Stile"
+        ],
+        "fr": [
+         "Style"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 5,
+       "uuid": "66b144e1-80c8-585a-a04d-82a97e6b50c7"
+      },
+      {
+       "id": "points_density",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Points density"
+        ],
+        "it": [
+         "Densità di punti"
+        ],
+        "fr": [
+         "Densité de points"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 6,
+       "uuid": "869090e6-4b8f-5af5-8a8b-89090c1e3891"
+      },
+      {
+       "id": "EDIFI_ID",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "EDIFICI ID"
+        ],
+        "it": [
+         "EDIFICI ID"
+        ],
+        "fr": [
+         "EDIFICI ID"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 7,
+       "uuid": "d467d2dc-8ad9-5ad3-9078-e924b7e39642"
+      },
+      {
+       "id": "typology",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Typology"
+        ],
+        "it": [
+         "Tipologia"
+        ],
+        "fr": [
+         "Typologie"
+        ]
+       },
+       "nullable": true,
+       "indexable": true,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 8,
+       "uuid": "15cecd40-3b83-59b6-8f25-eb5bdbaf1530"
+      },
+      {
+       "id": "wikidata",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Wikidata"
+        ],
+        "it": [
+         "Wikidata"
+        ],
+        "fr": [
+         "Wikidata"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 9,
+       "uuid": "ce781c16-5fc7-5b04-9b2e-2d72ca44afb5"
+      },
+      {
+       "id": "SESTIERE",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "District"
+        ],
+        "it": [
+         "Sestiere"
+        ],
+        "fr": [
+         "Sestiere"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 10,
+       "uuid": "04e882b8-cc39-55d9-9dbb-9f82d8a4a38f"
       },
       {
        "id": "aulic_name",
@@ -303,28 +303,6 @@
        "uuid": "b56d3ac1-2f9e-54a1-a3cc-30bb7a394ca9"
       },
       {
-       "id": "wikidata",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Wikidata"
-        ],
-        "it": [
-         "Wikidata"
-        ],
-        "fr": [
-         "Wikidata"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 12,
-       "uuid": "ce781c16-5fc7-5b04-9b2e-2d72ca44afb5"
-      },
-      {
        "id": "CIVICI",
        "type": "STRING",
        "display_label": {
@@ -343,7 +321,7 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 13,
+       "display_order": 12,
        "uuid": "87460022-bd60-5cef-a9a1-35a8bd2fa2f8"
       },
       {
@@ -365,8 +343,30 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 14,
+       "display_order": 13,
        "uuid": "67eeb99f-9754-55d1-9f9d-311e52f1cf61"
+      },
+      {
+       "id": "ISOLA",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Island"
+        ],
+        "it": [
+         "Isola"
+        ],
+        "fr": [
+         "Île"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 14,
+       "uuid": "4a9466f7-1697-5fa5-b7fd-ca575c9caef9"
       }
      ]
     },
@@ -375,7 +375,7 @@
    "falls_within": [
     "620962bb-bb0d-50ed-b534-8903ad265932"
    ],
-   "creation_time": "2025-10-23T11:07:23.171635"
+   "creation_time": "2025-10-28T14:21:42.101891"
   }
  ]
 }

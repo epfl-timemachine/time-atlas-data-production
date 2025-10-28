@@ -43,8 +43,6 @@ tqdm.pandas(desc="Generating obs uuid")
 gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['index']), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
 gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['Image Name']), axis=1)
-tqdm.pandas(desc="Generating poi uuid")
-gdf['poi_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['geometry']), axis=1)
 
 # Generating Obs RDE
 gdf['dt_time'] = gdf['date'].apply(lambda v: dt.strptime(v, '%Y'))
@@ -53,7 +51,7 @@ gdf.drop(columns=['dt_time'], inplace=True)
 tpe='monument'
 
 obs = [produce_obs_obj(
-    v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None, v.poi_uuid
+    v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None
 ) for _,v in gdf.iterrows()]
 
 gdf_obs = gpd.GeoDataFrame(obs)
@@ -61,14 +59,6 @@ gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uui
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDE.OBS.value)
-
-# Generate PoI RDE
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry[0], v.obs_uuid) for _, v in gdf.groupby('poi_uuid').agg(list).reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
-
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, f'dresden_pois', RDE.POI.value)
 
 from utils.iiif import *
 # Generating the IIIF manifests
@@ -106,7 +96,7 @@ with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
 # HR RDE Production
 # 1 to 1 relationship 
 hr_obs_df = gdf[['obs_uuid', 'hr_uuid']].groupby('hr_uuid').agg(list)
-hr_df = gdf.drop(columns=['index', 'poi_uuid', 'geometry', 'obs_uuid']).set_index('hr_uuid')
+hr_df = gdf.drop(columns=['index', 'geometry', 'obs_uuid']).set_index('hr_uuid')
 hr_df['obs_uuid'] = hr_obs_df['obs_uuid']
 hr_df = hr_df.reset_index()
 
