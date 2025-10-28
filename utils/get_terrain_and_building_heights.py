@@ -103,6 +103,10 @@ def get_vector_tile(x, y, z):
     return shapely_features
 
 
+def rounding_to_n_decimals(value: float, n: int) -> float:
+    factor = 10 ** n
+    return round(value * factor) / factor
+
 def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd.GeoDataFrame:
     '''
     Assigns terrain and building heights to point features.
@@ -168,8 +172,8 @@ def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd
         previous_tile_x = tile_x
         previous_tile_y = tile_y
 
-    points["terrain_height"] = terrain_height_values
-    points["building_height"] = building_height_values
+    points["terrain_height"] = [rounding_to_n_decimals(vs, 1) for vs in terrain_height_values]
+    points["building_height"] = [rounding_to_n_decimals(vs, 1) for vs in building_height_values]
 
     # remove temporary columns
     points = points.drop(columns=["tile_x", "tile_y", "normalized_left", "normalized_top", "terrain_x", "terrain_y", "vector_x", "vector_y"])
