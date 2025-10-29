@@ -54,7 +54,7 @@ gdf['layer_uuid'] = sn_layer_uuid
 gdf = gdf.set_geometry('geometry').to_crs('EPSG:4326')
 QA_check_uuid_are_unique(gdf)
 # "NAME" was removed for consistency with the other datasets.
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], '1808_street_network_geometries', RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries_street_network', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], '1808_street_network_geometries', RDE.GEOM.value)
 gdf['coordinate'] = gdf['geometry'].apply(lambda v: v.centroid)
 tqdm.pandas(desc="Generating obs uuid")
 gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['coordinate']), axis=1)
