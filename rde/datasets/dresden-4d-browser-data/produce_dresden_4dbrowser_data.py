@@ -154,7 +154,7 @@ def extract_image_name_from_id(image_id):
     return particle[1:] + post
 
 # Generating the IIIF manifests
-
+gdf['lat_lon'] = gdf['geometry'].apply(lambda geom: f'{geom.y},{geom.x}') # for "guessing" the 4d browser in context url
 img_base = 'dresden/4d_browser/{filename}'
 man_list = {}
 for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
@@ -162,7 +162,7 @@ for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifest
     filename = extract_image_name_from_id(row['id'])
     img_path = img_base.format(filename=filename)
     manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['id'], ad_hoc_seed='manifest')
-    original_source = 'https://4dbrowser.org/data/' + file_obj['path'] + filename
+    original_source = f"https://4dbrowser.urbanhistory4d.org/explore/{row['lat_lon']}/image/{row['id']}"
     width, height = file_obj['width'], file_obj['height']
     page_obj = generate_page_object(
         TM_UUID5_NS,
