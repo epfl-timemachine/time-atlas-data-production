@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8d76d063-6698-5fac-adbc-1885bde43e06",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'îlot entre la rue Saint-Laurent et la rue Chaucrau, avec le grand magasin Au Centre en blanc."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170546.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b7cd00c7-2285-59e8-95be-7db35af7791a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 420,
+      "width": 640,
+      "items": [
+        {
+          "id": "ff697d35-2c4f-5a0e-9b84-751204a7b06e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2bb9da18-7d16-5827-b799-d2825f7a68e8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170546.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 420,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170546.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b7cd00c7-2285-59e8-95be-7db35af7791a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "57e90be8-37fb-593a-a336-bf915a9f36d4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "39162e05-1ad7-52cc-b81d-df7486ff7049",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d325ceef-2723-5fa2-9516-e07b4c3568bc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b7cd00c7-2285-59e8-95be-7db35af7791a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169800",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

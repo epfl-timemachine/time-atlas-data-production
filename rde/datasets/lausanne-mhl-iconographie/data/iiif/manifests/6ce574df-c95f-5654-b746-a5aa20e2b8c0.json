@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6ce574df-c95f-5654-b746-a5aa20e2b8c0",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue générale de la maison Beau-Séjour depuis l'est"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109831.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9f70b201-185b-5ca5-93d1-061eff409921",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 378,
+      "width": 640,
+      "items": [
+        {
+          "id": "9b03abf2-8f99-504d-b55a-80943c1edf6e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "705616ad-51c3-5ae7-8409-7217e53dbbd0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109831.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 378,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109831.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9f70b201-185b-5ca5-93d1-061eff409921"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f235c414-7d3c-52a1-a468-626556fe9b00",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e4464861-50fe-57f7-b89e-387738e787ec",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0c4318bb-16c2-5e65-81cb-10650e12f508"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9f70b201-185b-5ca5-93d1-061eff409921",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=109735",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

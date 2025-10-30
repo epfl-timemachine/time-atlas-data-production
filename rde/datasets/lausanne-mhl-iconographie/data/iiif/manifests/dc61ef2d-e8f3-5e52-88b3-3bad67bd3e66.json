@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dc61ef2d-e8f3-5e52-88b3-3bad67bd3e66",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue de Montoie et la colline du Languedoc."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166230.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a2d3defc-a070-5248-a0a3-c6ac6ba5ca81",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 525,
+      "width": 640,
+      "items": [
+        {
+          "id": "cf6a8cd5-074e-5937-aa31-bfa487dd931a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1f631a66-b72d-5ace-88ba-6e1e281e5c46",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166230.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 525,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166230.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a2d3defc-a070-5248-a0a3-c6ac6ba5ca81"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f799a819-cc78-5013-9f11-c89564b2d2c8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e42430b5-f1ee-50d9-904d-2d28b93f6b2d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5cf79447-b3f6-51b7-afbe-31acec2fac6b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a2d3defc-a070-5248-a0a3-c6ac6ba5ca81",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165487",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

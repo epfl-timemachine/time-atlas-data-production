@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a2fdac87-c6c1-5384-8a67-fea3235e5498",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Château de Beaulieu: salon de Meuron"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141044.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c533cdf2-669d-5f17-95e5-f61bbf4884f6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 634,
+      "items": [
+        {
+          "id": "034d507f-a26f-53da-98dc-a84bfe3464fd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3501d7bd-8f0d-523c-8de5-8f4a917699a6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141044.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 634,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141044.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c533cdf2-669d-5f17-95e5-f61bbf4884f6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "325a3ed8-5c30-5df4-b690-a0ee63624aa1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fdd0df88-dddc-5cec-84bb-e4090c852c64",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3e1ebf5c-2951-58b9-83d6-fea3668f77e7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c533cdf2-669d-5f17-95e5-f61bbf4884f6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140323",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

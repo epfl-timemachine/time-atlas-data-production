@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2a709abe-f367-5ead-be1b-775dc64de193",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le n°24 de l'avenue de la Vallonnette et sur n°35 de l'avenue Victor-Ruffy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171309.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "53ae4b58-7e04-5cac-a39f-1b112457ac77",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 376,
+      "width": 640,
+      "items": [
+        {
+          "id": "66034ea8-ce5c-5dc7-8c5b-338bb973f72e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9d44d5e3-4788-5985-a17c-c9ae03907e12",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171309.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 376,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171309.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "53ae4b58-7e04-5cac-a39f-1b112457ac77"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2344f5f2-be9e-569c-ae13-d81faed415a8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4b3708d9-b3c8-5177-9d0e-f312550ee27c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0020ad77-062a-5892-bdaf-6bbef5859a62"
+                }
+              ],
+              "target": [
+                {
+                  "id": "53ae4b58-7e04-5cac-a39f-1b112457ac77",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170563",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5e7e40ee-1bcc-5b7c-ba3b-2fc2de0ccceb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la maison Mercier et la place de la gare du Flon (place de l'Europe)."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141785.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "504b45a8-a37e-5c20-9622-2efa363f9266",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 350,
+      "items": [
+        {
+          "id": "f79508bb-7f70-5e0c-a2fa-9853a980a36d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "20c2dac5-c409-50ee-9eaa-f4ec8420fa3b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141785.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 350,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141785.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "504b45a8-a37e-5c20-9622-2efa363f9266"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8a56fefe-ef32-5161-8498-ba3406f05a69",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "94f38612-6983-5ce0-9e36-c46100bc4bee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bb10eca8-d4fd-5984-9ff1-05603ad8cdb4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "504b45a8-a37e-5c20-9622-2efa363f9266",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141064",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

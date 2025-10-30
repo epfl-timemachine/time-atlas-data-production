@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "acc04bce-09a5-5bcf-b1e7-36f1bd9fa8a8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue du château de Vennes au chemin de Praz-Berthoud 29, à l'époque de l'Institut Blumer."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98914.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "392e46aa-c40a-56a2-996a-b500eecd77a2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 501,
+      "width": 640,
+      "items": [
+        {
+          "id": "92b13458-3965-51d9-ab37-366214d0e375",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c7aa5ed5-0d3c-580e-a4a2-dced96352383",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98914.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 501,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98914.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "392e46aa-c40a-56a2-996a-b500eecd77a2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2b8a78ce-d697-5eac-84b5-c1fafe4c70dd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "91504715-dc34-5bc7-bd7a-d97167cc4737",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eef9e80d-cbb7-5a4c-be7b-687e6b4f103c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "392e46aa-c40a-56a2-996a-b500eecd77a2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98914",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

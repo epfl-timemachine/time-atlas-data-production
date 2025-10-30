@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c43ba050-b90b-5c03-8ce7-ab9d3439e2b5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la rue du Bugnon depuis le nord, avec quelques passants et une charrette."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140882.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2fdb52d1-b66e-5dc0-a540-440d8d5055ff",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 545,
+      "width": 640,
+      "items": [
+        {
+          "id": "bc8ad347-0928-54cc-9092-ab70378e4ca7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e126132a-19a6-525e-849b-2a308cf34afc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140882.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 545,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140882.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2fdb52d1-b66e-5dc0-a540-440d8d5055ff"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4798e28e-8eae-5779-a3a3-ab95cc21b013",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c7884eaa-2abd-5b7b-a0dc-7a508bd64f40",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "40757ff1-82cb-5a73-909e-782f8dc7c380"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2fdb52d1-b66e-5dc0-a540-440d8d5055ff",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140161",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

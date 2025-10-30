@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "01a803fa-e582-59ff-88f4-2218d2ebceda",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la synagogue."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142289.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "23d2547a-f3e2-58c3-8d58-71050ebec140",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 527,
+      "width": 640,
+      "items": [
+        {
+          "id": "92aa37aa-ea8f-5642-a078-8ccc0a679dee",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d13491a1-8bb4-5db1-936d-d5e4f2be3bd9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142289.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 527,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142289.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "23d2547a-f3e2-58c3-8d58-71050ebec140"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "86bc0e46-441c-57e7-baaf-c707c9699813",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e43821ea-a6ae-51a6-ab50-db16a15d9558",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5de85c8d-469f-5b36-9681-f44b48ff2e1b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "23d2547a-f3e2-58c3-8d58-71050ebec140",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141568",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5773d099-b46f-5333-ab6c-90294e9ce203",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'hôtel Beau-Rivage."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143200.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "208125bd-c456-53b7-830b-1ed57b02e15c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 541,
+      "width": 640,
+      "items": [
+        {
+          "id": "7b7df4ea-de2f-59af-9352-232781067183",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bf908a3a-2284-5b95-8177-71d7c2b32ace",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143200.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 541,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143200.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "208125bd-c456-53b7-830b-1ed57b02e15c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dcd2310b-248b-577b-8649-ee043a52a755",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4b2aafe9-8bfb-595f-9abc-c5765d257eee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5f86bf25-87e6-5f97-b1a6-6ac2586be8d6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "208125bd-c456-53b7-830b-1ed57b02e15c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=142479",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

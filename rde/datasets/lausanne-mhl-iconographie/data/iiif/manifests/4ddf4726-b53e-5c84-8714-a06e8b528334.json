@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4ddf4726-b53e-5c84-8714-a06e8b528334",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un camion passant sous le Grand-Pont entre la place de l'Europe et la place centrale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172839.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d8794871-f9be-5688-bed2-36c072bbaf99",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 390,
+      "width": 640,
+      "items": [
+        {
+          "id": "c98cbfd5-f0c9-54cc-a297-0f25160c754e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7edc6573-74c7-5f18-a972-3f4cea7fc3f5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172839.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 390,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172839.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d8794871-f9be-5688-bed2-36c072bbaf99"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "84c5bb40-c8c6-54c4-905c-d6c3d225cc89",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9042af05-1957-5382-a6bd-b5966c66499a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6423dcf6-5706-5124-9fc2-8534084101cc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d8794871-f9be-5688-bed2-36c072bbaf99",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172092",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

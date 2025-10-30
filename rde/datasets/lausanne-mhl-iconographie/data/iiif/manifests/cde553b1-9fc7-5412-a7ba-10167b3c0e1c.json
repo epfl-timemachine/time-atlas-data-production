@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cde553b1-9fc7-5412-a7ba-10167b3c0e1c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la rue Marterey."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138613.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0dc1226f-915c-5596-8a0a-dd294ea00c73",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 527,
+      "width": 640,
+      "items": [
+        {
+          "id": "09a9a2c6-86ec-5952-a6f8-d29744d89e6d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4324f956-dac9-5885-8c5c-9f93ac887cfd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138613.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 527,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138613.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0dc1226f-915c-5596-8a0a-dd294ea00c73"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "956c347e-9980-58dd-9799-5167568e5bbc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "efd5111b-0f86-5bae-a512-f1c18e2a2ffb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4873080d-80fe-5973-9589-8298705d8be5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0dc1226f-915c-5596-8a0a-dd294ea00c73",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=137892",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8d8520ba-3a02-5a92-add5-85c43f90985c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Gros plan sur la fontaine adossée à l'immeuble d'angle (n°11 et 18) rue Haldimand - rue Saint-Laurent (descente Saint-Laurent). A gauche de la photo, en haut, on peut lire une partie d'une enseigne [restau]rant [lausa]nnois"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99073.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a96c347d-18ee-51f9-8f90-43cb1fe96067",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 543,
+      "items": [
+        {
+          "id": "a30890fa-28ae-59f2-8469-0c7e2b382032",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "35163163-3cc5-5965-99e6-c4ebb8269e69",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99073.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 543,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99073.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a96c347d-18ee-51f9-8f90-43cb1fe96067"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e5e28c59-f4cf-5a44-9a15-f536637ec6d2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6395aa1d-07c8-5e05-9eb3-ca60ebdac897",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6602b31c-ca37-52df-a24a-62509cadaa36"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a96c347d-18ee-51f9-8f90-43cb1fe96067",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99073",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

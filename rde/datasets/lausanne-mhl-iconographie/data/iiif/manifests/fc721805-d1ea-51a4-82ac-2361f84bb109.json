@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fc721805-d1ea-51a4-82ac-2361f84bb109",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la tour Haldimand et le quai d'Ouchy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142372.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e47734d0-ce4c-5a23-b38c-cc1c896b0952",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 546,
+      "items": [
+        {
+          "id": "674c37bb-4822-5f73-8949-d281dcd4a726",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "efdb8d99-30a4-5004-ad8d-211f8e93a993",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142372.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 546,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142372.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e47734d0-ce4c-5a23-b38c-cc1c896b0952"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2bc8d7c4-f279-545f-8d1c-3250521c8bdd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "de69f15f-e3fb-561b-b98c-9961290be329",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "74220889-c495-54e4-a719-7e5cde040b66"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e47734d0-ce4c-5a23-b38c-cc1c896b0952",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141651",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

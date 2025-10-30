@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ec27f632-d457-57e8-9bfc-ac6745396bd6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue de la tour de Mon-Repos avec arbres et arbustes de chaque côté"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111008.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3fb3ff5e-9342-5c9b-a7d5-ae724a925a54",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 586,
+      "items": [
+        {
+          "id": "54491aac-8da8-5362-b1bd-6ee9ad6ecda9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f5234f98-15a2-594b-a64f-60c90b0e0693",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111008.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 586,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111008.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3fb3ff5e-9342-5c9b-a7d5-ae724a925a54"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ad98ea59-3045-5f4d-a688-633dea64439d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b21792a0-d5a7-5aa5-bf44-7fb9aadfb8b4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b19eda49-dc92-521b-bc77-721bc9f51881"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3fb3ff5e-9342-5c9b-a7d5-ae724a925a54",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110912",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

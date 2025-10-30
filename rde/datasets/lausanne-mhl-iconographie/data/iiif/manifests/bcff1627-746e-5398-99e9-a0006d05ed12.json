@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bcff1627-746e-5398-99e9-a0006d05ed12",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'hôtel d'Angleterre depuis le sud-ouest."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135005.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ac15ea33-f1e2-554d-829f-5b33cb14d760",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 407,
+      "width": 640,
+      "items": [
+        {
+          "id": "331a8327-9fc8-5f0a-b786-824300420000",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "31266889-c414-575e-a293-728443eac65b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135005.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 407,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135005.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ac15ea33-f1e2-554d-829f-5b33cb14d760"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b676b349-a2e5-5ec8-8ae5-b5ed935c41cb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "18976f52-6093-5324-bf37-cf86c6700c93",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "db2c2213-f002-5166-ad39-3fe76b87a74a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ac15ea33-f1e2-554d-829f-5b33cb14d760",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134285",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

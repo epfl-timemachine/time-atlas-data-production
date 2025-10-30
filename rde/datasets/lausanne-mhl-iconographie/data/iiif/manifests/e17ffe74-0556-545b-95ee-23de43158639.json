@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e17ffe74-0556-545b-95ee-23de43158639",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue Etraz."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171482.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "57deb056-343b-5dbd-93ca-571097a57987",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 528,
+      "width": 640,
+      "items": [
+        {
+          "id": "c8ec271a-431c-5c1a-817c-44449324e5c3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6b2bd335-5a3b-59da-96bd-af017147c6be",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171482.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 528,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171482.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "57deb056-343b-5dbd-93ca-571097a57987"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0d187368-ebd0-51af-84b7-8a207ece45f8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "32331a0b-420b-5bfc-a7f2-76695a68ffa7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0bafb54e-15e7-5005-9593-5fc0a8f55968"
+                }
+              ],
+              "target": [
+                {
+                  "id": "57deb056-343b-5dbd-93ca-571097a57987",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170736",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

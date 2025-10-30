@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f18b129c-90a7-527b-a81f-f318d971f079",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue d'ensemble de l'hôtel Beau-Rivage et de la villa Lonchamp, depuis le sud-ouest. La future place Général-Guisan est garnie de jeunes arbres (dénudés) et de bancs publics. Tout au fond, on voit le portail de l'hôtel et le chalet."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97361.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a523d26a-663c-53c1-9e87-e53283821568",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 629,
+      "width": 640,
+      "items": [
+        {
+          "id": "2fb5644f-21b7-5e35-8a56-c7de2b72c3ca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b2164a33-927d-5ef9-951a-9941ddc5bae0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97361.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 629,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97361.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a523d26a-663c-53c1-9e87-e53283821568"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "663bebfe-2bc1-5c35-a931-b1dd930ba1d0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "61d658a9-758f-5c34-b0f5-5c87d9abc403",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "93286a67-bd4a-5441-a9e7-9a34cf29f254"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a523d26a-663c-53c1-9e87-e53283821568",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97361",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

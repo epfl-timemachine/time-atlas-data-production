@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "03d6bb4b-2507-55bb-9e4c-35259203bbf0",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le quartier de Sébeillon et les voies de chemin de fer."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172932.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "20e891f5-6044-58f9-a24d-9ce16286fcdd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 445,
+      "width": 640,
+      "items": [
+        {
+          "id": "58613ddd-119d-585c-93af-44499b82dc1d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "338fde79-c0dd-56c8-ac73-ee7c607a218f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172932.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 445,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172932.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "20e891f5-6044-58f9-a24d-9ce16286fcdd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c1443905-266b-5140-8ee9-7b68248d57e6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7b49b3f4-a23d-534c-b13c-21879a4fd1bb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "13502170-41be-5a5c-938b-f173447042bb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "20e891f5-6044-58f9-a24d-9ce16286fcdd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172185",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

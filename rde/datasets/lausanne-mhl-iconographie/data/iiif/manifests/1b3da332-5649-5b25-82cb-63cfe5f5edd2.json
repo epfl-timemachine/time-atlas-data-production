@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1b3da332-5649-5b25-82cb-63cfe5f5edd2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue de la tour de l'Académie encadrée à gauche par un contrefort de la Cathédrale"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110129.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d10dc361-7bd6-57ce-824b-c7b366dfb97c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 314,
+      "items": [
+        {
+          "id": "0153649f-11bd-5b15-80dd-90a85ba97b53",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9d2881db-f1ec-5cfc-800c-6b45802f618c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110129.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 314,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110129.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d10dc361-7bd6-57ce-824b-c7b366dfb97c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1cef50b6-7260-5b01-ac51-47b173a36095",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9c0c9a8d-2ec9-51cf-b904-2764667db1d7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eced7ab9-dda0-50eb-b9e7-5219a29091d6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d10dc361-7bd6-57ce-824b-c7b366dfb97c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110033",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

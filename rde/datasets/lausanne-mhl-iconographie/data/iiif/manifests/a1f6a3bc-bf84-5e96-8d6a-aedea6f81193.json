@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a1f6a3bc-bf84-5e96-8d6a-aedea6f81193",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Lausanne Vue, depuis le nord, du château St-Maire à gauche et de l'Ancienne Académie à droite"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110134.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "37c8e3c3-152f-5e47-a955-5a6353d16d97",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Lausanne"
+        ]
+      },
+      "height": 379,
+      "width": 640,
+      "items": [
+        {
+          "id": "5ec12ca6-5c0b-5c49-b35d-5d1ea182933e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3b4b769f-5626-582e-a6ee-e490264c3c12",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110134.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 379,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110134.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "37c8e3c3-152f-5e47-a955-5a6353d16d97"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e4b99410-7d87-536e-9cb5-49d9db60248a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f4ef5981-04f8-51d2-aba8-55802fd37dfc",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Lausanne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f00232f8-4d72-575f-9467-7dcc4ef450b3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "37c8e3c3-152f-5e47-a955-5a6353d16d97",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110038",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

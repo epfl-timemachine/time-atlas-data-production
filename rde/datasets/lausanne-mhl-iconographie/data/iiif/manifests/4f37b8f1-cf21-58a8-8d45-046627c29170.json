@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4f37b8f1-cf21-58a8-8d45-046627c29170",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis le toit de l'hôtel Lausanne-Palace sur la rue du Grand-Pont, la place Bel-Air et le Flon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165446.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d065b348-9653-584e-8625-32a7820026bf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 401,
+      "width": 640,
+      "items": [
+        {
+          "id": "939b204e-26be-5fa1-85c6-0232be70f1dd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "17d48376-350a-5fac-9341-c573fa2d1bc6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165446.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 401,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165446.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d065b348-9653-584e-8625-32a7820026bf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c1f781ca-1b96-54c8-b9b5-ecaef3598a7a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5b3fb785-5e41-5136-85a9-cd213ebdf6e3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0fc2fab1-b1ea-5fd8-a913-72bef6583308"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d065b348-9653-584e-8625-32a7820026bf",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164705",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

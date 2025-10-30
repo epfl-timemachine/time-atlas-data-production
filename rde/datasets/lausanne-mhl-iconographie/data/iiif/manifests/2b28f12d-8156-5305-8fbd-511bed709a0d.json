@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2b28f12d-8156-5305-8fbd-511bed709a0d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  A Vers-chez-les-Blanc, vues de l'ancienne ferme de la route de Praz-Gilliard n°2."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151701.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "60807baa-5479-5933-bead-320ce5220cde",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 450,
+      "width": 640,
+      "items": [
+        {
+          "id": "ee43aece-2944-5ce9-aad3-b5958a51066e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c47e06e0-8b57-59c2-9e23-5e84c32b1d17",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151701.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 450,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151701.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "60807baa-5479-5933-bead-320ce5220cde"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3ee58137-e73b-5806-8d30-86458f22e0f9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9e3f2993-a340-5c32-b7e8-e8e9ca6b3d50",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a02f207b-55af-54b9-aae7-9bacbdfd1370"
+                }
+              ],
+              "target": [
+                {
+                  "id": "60807baa-5479-5933-bead-320ce5220cde",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=150980",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

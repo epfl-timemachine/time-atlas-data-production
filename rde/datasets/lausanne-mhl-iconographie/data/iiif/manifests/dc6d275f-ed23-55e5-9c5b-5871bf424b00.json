@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dc6d275f-ed23-55e5-9c5b-5871bf424b00",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la ligne Lausanne-Ouchy en direction de l'immeuble locatif à la place de la Navigation 6."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168083.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "430cc5c9-4ef2-503e-bcf3-e9bc623f5f4b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 400,
+      "items": [
+        {
+          "id": "1e03eec6-a167-5419-90d2-30e4a79beef9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a31fb066-6e89-5721-936f-6c2181d529c9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168083.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 400,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168083.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "430cc5c9-4ef2-503e-bcf3-e9bc623f5f4b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1f0ed270-5031-53b0-83d3-8aeafdc2e266",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "efbda42d-a503-5f82-a728-e4ef0262512a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e8549e70-5175-5344-8431-03433d8efa80"
+                }
+              ],
+              "target": [
+                {
+                  "id": "430cc5c9-4ef2-503e-bcf3-e9bc623f5f4b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167339",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

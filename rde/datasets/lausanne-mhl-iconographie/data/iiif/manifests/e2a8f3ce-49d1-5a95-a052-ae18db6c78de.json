@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e2a8f3ce-49d1-5a95-a052-ae18db6c78de",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  vue de la ferme de Rovéréaz."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97206.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9414b189-8d5e-560a-862a-4f52007da1d9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 537,
+      "items": [
+        {
+          "id": "1dd3b3e0-ab41-5d6a-9f09-6e7209f580bd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eab4faab-4ccb-5d8a-84ce-e16603e70a4b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97206.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 537,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97206.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9414b189-8d5e-560a-862a-4f52007da1d9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "db4a482a-96cb-5d0b-a12f-ae3e56c64404",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0e27caa4-4f9c-535e-99b3-2f805af39161",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dbd2007b-4ac0-50f7-b197-0df7628e9721"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9414b189-8d5e-560a-862a-4f52007da1d9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97206",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

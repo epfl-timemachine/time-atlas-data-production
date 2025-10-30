@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "65a880e6-73a7-518a-9b60-c829c8af7b06",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la ferme de Béthusy à l'avenue Beaumont."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165630.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "78a7fb22-513c-5b3a-9bf8-b6c564b09d0a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 412,
+      "width": 640,
+      "items": [
+        {
+          "id": "cc861f56-7b68-5d97-8505-fcbd95648171",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c45d4d10-2e52-57c8-80ba-7f495070ad6c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165630.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 412,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165630.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "78a7fb22-513c-5b3a-9bf8-b6c564b09d0a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bf6a8c27-1be6-5cc0-a468-867f1c5f3da5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1c3e4d90-c048-5ec9-a936-30654e406521",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bf2c8d2b-3a84-5902-bece-12525f223cce"
+                }
+              ],
+              "target": [
+                {
+                  "id": "78a7fb22-513c-5b3a-9bf8-b6c564b09d0a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164887",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

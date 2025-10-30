@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ed94ce7a-2386-5582-bcf8-dde8ea0eacad",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  maison Le Belvédère"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104853.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "684c8216-4868-58b8-b5e1-18d19a14d516",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 468,
+      "width": 640,
+      "items": [
+        {
+          "id": "a1260f55-ba8d-5503-bdf2-d4dba79533c8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e59682f-4e62-55c4-9158-13aeff9d5b1d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104853.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 468,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104853.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "684c8216-4868-58b8-b5e1-18d19a14d516"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f2581a01-5e38-5db0-8219-7974344d736d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8e15b74e-6bca-55d9-b045-0b92c63c0ec0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "90577076-f196-5c72-a419-935f6eb7a3b7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "684c8216-4868-58b8-b5e1-18d19a14d516",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=104853",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "44600bde-405a-5539-a8a2-15fbec534f44",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue de l'allée Ansermet et des immeubles de l'avenue de Montbenon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99747.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bb6fdaa2-048f-55fa-9c7f-17ea80feea43",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 456,
+      "width": 640,
+      "items": [
+        {
+          "id": "1226a4be-c20d-5c76-8e1e-7e2125ea5118",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "afa2c388-cd98-5392-8f70-251d2c69e81d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99747.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 456,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99747.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bb6fdaa2-048f-55fa-9c7f-17ea80feea43"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3c19a25b-27ee-56f4-a5c3-8aa57f6077a8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e6142eda-4010-5c94-bf24-458168dac72a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "75f1bc36-d4e6-5c61-aa13-e93aaaeaff5c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bb6fdaa2-048f-55fa-9c7f-17ea80feea43",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99747",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "98117fbc-0de0-538b-8473-c364a579ce7c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue Druey prise depuis le chemin des Egralets."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164501.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "33dd3b35-1faa-5c46-a089-ec2a75bf66db",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 430,
+      "width": 640,
+      "items": [
+        {
+          "id": "1993c4bb-4a36-5014-bbd8-9699eda9637f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "53f267ed-727c-5dd0-97c8-ecd842eb81f3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164501.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 430,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164501.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "33dd3b35-1faa-5c46-a089-ec2a75bf66db"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dd3818ad-9db0-5af5-a719-d798e195d1fe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2010f7a0-02a8-5071-9de3-872d78b39cc5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ba104eec-a938-522c-9d00-947f6be1f0fa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "33dd3b35-1faa-5c46-a089-ec2a75bf66db",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163760",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

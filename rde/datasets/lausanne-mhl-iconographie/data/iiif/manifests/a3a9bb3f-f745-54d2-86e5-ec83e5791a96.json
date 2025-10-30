@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a3a9bb3f-f745-54d2-86e5-ec83e5791a96",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102160.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b3f0b0db-1fd8-506f-913c-8a17ae5fda20",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 468,
+      "width": 640,
+      "items": [
+        {
+          "id": "5e2950b7-e2ec-5ca6-be3d-80deb9ded784",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "987258ec-ec29-52dd-9051-c9bc1053572b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102160.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 468,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102160.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b3f0b0db-1fd8-506f-913c-8a17ae5fda20"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "308c526a-0f31-5431-bcf2-71405b7363ed",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8df102ab-2571-5599-bf7e-1121d8063f84",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "21ff701a-24b8-5a33-b57b-6d998feb288f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b3f0b0db-1fd8-506f-913c-8a17ae5fda20",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102160",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

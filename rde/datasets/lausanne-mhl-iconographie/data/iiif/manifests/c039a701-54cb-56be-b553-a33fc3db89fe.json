@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c039a701-54cb-56be-b553-a33fc3db89fe",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'église de la Croix d'Ouchy, restaurée."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142300.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d30dfb71-a6f7-57ff-a3a1-1d3a92e9ab47",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 535,
+      "items": [
+        {
+          "id": "16176ea4-aeba-5375-926d-34116b3947bc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e742bd0b-0b39-5765-8ad5-53604d2df0c6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142300.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 535,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142300.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d30dfb71-a6f7-57ff-a3a1-1d3a92e9ab47"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6e29440f-8c6a-5b5a-9df7-90799bcec2b8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "675a6ad3-f61b-5fce-9c11-79da9dba431a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2abfc316-aae9-525e-9a15-f23b75c2b753"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d30dfb71-a6f7-57ff-a3a1-1d3a92e9ab47",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141579",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

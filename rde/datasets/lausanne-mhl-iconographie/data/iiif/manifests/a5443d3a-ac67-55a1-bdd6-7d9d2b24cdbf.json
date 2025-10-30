@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a5443d3a-ac67-55a1-bdd6-7d9d2b24cdbf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue générale du terrain situé près de la maison sise à avenue de Beaumont 24."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99053.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "42c821c3-2926-5b38-81d0-5dcc5db24b25",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 339,
+      "width": 640,
+      "items": [
+        {
+          "id": "08777033-963c-5d3c-ab21-245b9215e61c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b59dcb5f-76a0-5410-bdb4-8affecc15d7d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99053.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 339,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99053.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "42c821c3-2926-5b38-81d0-5dcc5db24b25"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f5b81ed0-d332-5474-b574-edc9cf912dec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "771e4497-361b-5334-98cd-cc473f3368c1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2d512aab-a870-530a-9a10-6d56394100c7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "42c821c3-2926-5b38-81d0-5dcc5db24b25",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99053",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

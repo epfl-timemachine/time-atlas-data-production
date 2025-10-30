@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ccbadb23-0402-545f-8a5b-db568888c498",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la villa Les Rameaux à l'avenue du Léman."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142118.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e0ca8f4d-af9a-53d2-bf30-180db20256fb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 560,
+      "items": [
+        {
+          "id": "df12c848-a123-5b11-ac58-3dc1479aa7a5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b9e7bbee-5a3c-51b7-893c-adea0d29581b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142118.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 560,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142118.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e0ca8f4d-af9a-53d2-bf30-180db20256fb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "25dfd6b0-577f-5f3f-84e7-98cc11097f66",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2f50c4a3-42ed-5dbb-92e3-534c42775e69",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a18478ec-a764-586c-a6da-54a2d35af1e4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e0ca8f4d-af9a-53d2-bf30-180db20256fb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141397",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

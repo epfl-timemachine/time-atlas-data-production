@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a11784a1-a212-54e5-9243-c70e03dcb3ab",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue de l'immeuble des Imprimeries Populaires."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99492.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0f6733d9-2dea-5419-b0eb-341375a85c30",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 490,
+      "items": [
+        {
+          "id": "ea63c3b8-e67b-537d-919b-8faa5411eed7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3fe949d4-3ea5-5e2a-ad0c-d3b59bed6f30",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99492.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 490,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99492.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0f6733d9-2dea-5419-b0eb-341375a85c30"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "60502ebd-3bd3-5597-809a-339eea4054e7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "777c0b1c-8f18-5ed0-9793-c97e9f1709ab",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a6924883-3f04-58d4-8102-59947c57ca94"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0f6733d9-2dea-5419-b0eb-341375a85c30",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99492",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

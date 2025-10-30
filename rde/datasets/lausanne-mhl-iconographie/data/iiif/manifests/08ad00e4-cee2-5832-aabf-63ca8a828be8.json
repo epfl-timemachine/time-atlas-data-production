@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "08ad00e4-cee2-5832-aabf-63ca8a828be8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue extérieure de la Rose avant sa restauration"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127641.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6ecb4de0-4e68-5121-9ee8-cb49cbdfdb63",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 545,
+      "items": [
+        {
+          "id": "24f1836b-7e56-50ee-ad70-eb89b612862c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1083dc44-d5f4-5918-9cb3-3d718ea1e29a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127641.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 545,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127641.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6ecb4de0-4e68-5121-9ee8-cb49cbdfdb63"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "23b267dc-c3a0-51f8-8f49-f0abf4be4c32",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5afccc31-336c-5bc4-91a2-6310b9e4f91e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f3a86a14-fd3a-596f-b045-b34db67495f4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6ecb4de0-4e68-5121-9ee8-cb49cbdfdb63",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=126971",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

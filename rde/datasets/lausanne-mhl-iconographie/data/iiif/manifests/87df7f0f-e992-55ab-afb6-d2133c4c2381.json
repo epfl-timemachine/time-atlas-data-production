@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "87df7f0f-e992-55ab-afb6-d2133c4c2381",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rampe d'escalier extérieur de l'église Saint-Laurent."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175422.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d7a89e9c-fbff-57ec-894b-bde27329d000",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 400,
+      "width": 640,
+      "items": [
+        {
+          "id": "9a8b1fa7-61c8-5832-9bc0-c0cac3270aec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f6f3243d-66f3-5ca2-818f-a95c40edceda",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175422.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 400,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175422.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d7a89e9c-fbff-57ec-894b-bde27329d000"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8585e2e8-a6c7-53e0-93e2-75317173292a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "022ae26b-831d-565f-a422-2efd1812fb19",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5360e6b1-4834-53e0-924a-a1172ce99f46"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d7a89e9c-fbff-57ec-894b-bde27329d000",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=174673",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d7a34110-a445-51f2-b759-5cd5831f0ff9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur les bâtiments de l'avenue Beauregard."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165378.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ffcad4aa-78a0-5243-9f77-288708ae6174",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 475,
+      "width": 640,
+      "items": [
+        {
+          "id": "75b2e714-8b5d-5cfa-ab06-4d501686dd84",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "26c2abd5-6937-53e0-8f7f-a58e29ff10d1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165378.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 475,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165378.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ffcad4aa-78a0-5243-9f77-288708ae6174"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "39ef46a5-c6e6-5b60-9b60-f9200bc4e7ed",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "04cd73fc-f1a5-5c5f-94f1-db22b21c2fc4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "71690a75-e56b-5639-882b-f0c20b17d7d2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ffcad4aa-78a0-5243-9f77-288708ae6174",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164637",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

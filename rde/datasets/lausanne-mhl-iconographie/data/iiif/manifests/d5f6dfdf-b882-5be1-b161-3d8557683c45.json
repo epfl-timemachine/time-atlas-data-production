@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d5f6dfdf-b882-5be1-b161-3d8557683c45",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'esplanade du château et le collège de la Barre."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141150.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1c495712-b05b-524e-ac32-a3799521c647",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 543,
+      "width": 640,
+      "items": [
+        {
+          "id": "8b8cfce2-e8ff-563a-b5c7-9d4e01e0d649",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "95fba2a6-0967-5b28-bc80-c5f2e72de6fc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141150.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 543,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141150.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1c495712-b05b-524e-ac32-a3799521c647"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "74ae6175-59a4-5bd9-927a-a448563d2ebd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4b40b837-a17d-5cf0-889e-e22d39f922d9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b52078dd-7593-55ca-83de-6490b18c22fa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1c495712-b05b-524e-ac32-a3799521c647",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140429",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c39f5b79-651c-5a38-9cc9-2ea6ab6ca7d8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Maison bourgeoise à la Cité entrée de la rue de la Cité-Derrière, avec la maison Chavannes-Porta, à droite, en bordure de la rue Menthon se dresse un grand arbre vert, une femme avec parasol descend la rue"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110082.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0cd8ba20-4a1e-5ba5-9b6e-3b9f2a19d300",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Maison bourgeoise à la Cité"
+        ]
+      },
+      "height": 640,
+      "width": 320,
+      "items": [
+        {
+          "id": "b7d801b6-9c0e-52c3-a356-5b411f4d17f9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fa362bf0-f687-5c4b-8916-224a4c4040c1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110082.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 320,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110082.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0cd8ba20-4a1e-5ba5-9b6e-3b9f2a19d300"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4a3157cd-5a95-5c93-aded-29fa7682ba42",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7fe7bce8-3695-5b0b-9efc-2ba8ec5f428a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Maison bourgeoise à la Cité"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cd10bdd9-213c-5c64-a997-c170371f5011"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0cd8ba20-4a1e-5ba5-9b6e-3b9f2a19d300",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=109986",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

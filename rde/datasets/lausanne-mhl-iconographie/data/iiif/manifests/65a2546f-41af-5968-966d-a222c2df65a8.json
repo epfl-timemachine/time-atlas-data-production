@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "65a2546f-41af-5968-966d-a222c2df65a8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue d'une ferme à Montblesson, à la route du Jorat n°7."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151641.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ee74ce65-7d5e-562e-8eec-e318dba6a17c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 427,
+      "width": 640,
+      "items": [
+        {
+          "id": "ef109001-adea-5b46-9cd4-4db5c3e27d70",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cc2781ce-3475-5862-8f1a-603ace34fd6b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151641.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 427,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151641.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ee74ce65-7d5e-562e-8eec-e318dba6a17c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "55103534-15bc-5639-bef6-146d29492796",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5ec6474d-f4b4-5826-bb18-b2d7a9c58307",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "304c2ce0-1cc4-5087-8dba-0ed6a6d90787"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ee74ce65-7d5e-562e-8eec-e318dba6a17c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=150920",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

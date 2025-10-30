@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "86c5ccff-c96c-5ca9-b989-79add20801cf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Hall de l'hôtel Beau-Séjour (rue Beau-Séjour 8)"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140822.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b98cf6ba-f30a-5ee8-b551-396206981f3c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 541,
+      "width": 640,
+      "items": [
+        {
+          "id": "9a009bb4-5cfc-562e-b40d-d911c46f9ae0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d434b1dd-b83e-595f-9418-f87fab769d50",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140822.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 541,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140822.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b98cf6ba-f30a-5ee8-b551-396206981f3c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "62b6b99f-3795-5993-94c0-5ee2801fc780",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "736640ee-3e87-5b77-9f65-c4fb8f2458e2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2ed12eff-f24f-5050-b474-c9d9b9b96905"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b98cf6ba-f30a-5ee8-b551-396206981f3c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140101",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

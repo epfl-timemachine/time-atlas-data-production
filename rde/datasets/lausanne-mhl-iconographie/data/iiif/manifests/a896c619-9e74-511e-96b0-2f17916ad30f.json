@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a896c619-9e74-511e-96b0-2f17916ad30f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un chantier à la rue de la Borde 12."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165863.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "abb7214a-1b9c-5b8f-830f-eef71680e81c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 550,
+      "width": 640,
+      "items": [
+        {
+          "id": "bffaaf85-f3b6-5ed5-aed6-3727425d724d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b98e6927-d550-5e3c-948e-caf5a5beca9d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165863.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 550,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165863.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "abb7214a-1b9c-5b8f-830f-eef71680e81c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "aaa2f446-185d-591f-b519-2ad92f30f173",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d881e307-4b49-5c64-adc2-9604c610f374",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dc77357c-c1ce-597a-b2aa-f6fd9b2b8b9e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "abb7214a-1b9c-5b8f-830f-eef71680e81c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165120",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

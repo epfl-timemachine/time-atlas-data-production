@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e634f831-6caf-51c8-85bb-1225623b6e05",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  allée bordée d'un côté par trois chênes conduisant, à gauche, à la ferme de la campagne de Rovéréaz. A l'arrière-plan, on peut voir un champ, délimité par une clôture et au fond par une forêt"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_117320.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cd6adbbb-5843-5434-81ad-d50e6955640f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 450,
+      "width": 640,
+      "items": [
+        {
+          "id": "8b173731-7fde-5ba2-8037-4a776cff0ab0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6060f7b0-a5b9-571d-ab80-5a553ddc3f2f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_117320.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 450,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_117320.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cd6adbbb-5843-5434-81ad-d50e6955640f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6ae6453b-3543-5d90-a0b8-e61743336150",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "19a14dbc-1e8e-5f80-9445-a346481a13e6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8042c832-7b73-50ac-b91c-d55c90e8c49c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cd6adbbb-5843-5434-81ad-d50e6955640f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=117224",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

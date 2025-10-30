@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a0f47ba8-f7fb-532e-a59d-b34ac4a5b38b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue de la tour de l'Ale et la rue de la Tour depuis l'est"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133648.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3635bf96-23cb-532f-9dd0-e9f0e8154032",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 327,
+      "items": [
+        {
+          "id": "43b6d510-9b26-50c3-832c-cc8211fcb317",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0870b31e-02e3-56da-b2ae-832e5cbaceb5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133648.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 327,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133648.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3635bf96-23cb-532f-9dd0-e9f0e8154032"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a4c2d279-159c-5106-b4ff-f92dbd13f2d8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6a4e3f01-2526-5c21-bbf7-291f3a35fa59",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7142c9bd-5107-55e7-8bd6-bccd8fd6c73a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3635bf96-23cb-532f-9dd0-e9f0e8154032",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=132928",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

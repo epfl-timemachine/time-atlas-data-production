@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4be02fa2-d380-5be6-8c1f-d4ed5201948f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur les immeubles neufs de la rue Centrale 17 à 31."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166289.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c761b9dd-7b79-57f5-a36d-2597dc950fdd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 418,
+      "width": 640,
+      "items": [
+        {
+          "id": "e94bda5b-7eed-50fe-89f6-a629c01d053b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "81c17b35-f54a-5aae-9482-08f91f983e21",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166289.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 418,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166289.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c761b9dd-7b79-57f5-a36d-2597dc950fdd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3cfd387c-b20b-5928-a679-de9389715ee1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ddcf5fa4-3c4a-53a2-a9f0-e7e0ea7b76ee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a0d64776-387d-5bbd-883e-6d3a43ecbe15"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c761b9dd-7b79-57f5-a36d-2597dc950fdd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165546",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

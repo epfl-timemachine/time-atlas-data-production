@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1dd832d4-1d2e-58ee-a21e-ed188ac5dd4f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le pont de Chailly et ses alentours."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166370.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ecc27d43-fa39-56a4-9f58-937a82811568",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 384,
+      "width": 640,
+      "items": [
+        {
+          "id": "87ca2154-9745-50dc-bbce-a9b69090bd48",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8599ad12-381d-5d91-b8b6-21bd40b06f1d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166370.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 384,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166370.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ecc27d43-fa39-56a4-9f58-937a82811568"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "58afdd1f-2c7a-500c-a3c7-173669bcaa72",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b82a2ad4-9b12-57e6-aa42-5c91e24125d6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2cff9210-3357-54a7-a53b-c54f192d3ee6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ecc27d43-fa39-56a4-9f58-937a82811568",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165627",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

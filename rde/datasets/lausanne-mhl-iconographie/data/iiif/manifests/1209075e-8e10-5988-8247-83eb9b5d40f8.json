@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1209075e-8e10-5988-8247-83eb9b5d40f8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la place Grand-Saint-Jean."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167580.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "551dd0a0-670d-5053-9a76-70703a37db65",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 394,
+      "width": 640,
+      "items": [
+        {
+          "id": "f5f2887f-b1c7-5f28-a42d-c7de6846ed2e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "09af1c31-1c10-5cae-80c1-2f279ffcab4a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167580.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 394,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167580.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "551dd0a0-670d-5053-9a76-70703a37db65"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b5bf8efd-63a9-5d7d-9f4f-65310718a83f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0281d804-d2b5-5a0e-a974-4e2bed4e3c6e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f760d07e-0b21-5a53-9623-eb23c04511b0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "551dd0a0-670d-5053-9a76-70703a37db65",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166837",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

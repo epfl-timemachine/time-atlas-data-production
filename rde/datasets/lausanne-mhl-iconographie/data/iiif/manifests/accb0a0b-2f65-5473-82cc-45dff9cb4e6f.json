@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "accb0a0b-2f65-5473-82cc-45dff9cb4e6f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Gros plan sur l'hôtel du château pris depuis le nord. Au premier plan, on remarque deux personnes (hommes) qui regardent en direction du photographe et, en retrait, la porte d'entrée de l'hôtel du château (inscription lisible)."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97700.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "70b1c217-bdb4-5095-b795-cf3264436d96",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 595,
+      "items": [
+        {
+          "id": "2bb8f2f2-4a14-5ae4-8e1c-e852530c56c9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a1116af7-86ac-584a-8c96-c94eb9ce973e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97700.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 595,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97700.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "70b1c217-bdb4-5095-b795-cf3264436d96"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "80dc1fc7-4b84-5e2c-b51f-af957151bec7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce8f4bbd-05d7-5085-aa39-917c9614da4d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "69214e8c-43d7-5a3a-a5c1-de6187b91c1a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "70b1c217-bdb4-5095-b795-cf3264436d96",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97700",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4c81dea8-a4b5-531c-8a5d-c60fc1e0e459",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.27, fonds Brandt)  Caves du magasin Manuel"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136613.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cc43c6d3-9263-533a-9772-8f40b33690b7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.27, fonds Brandt) "
+        ]
+      },
+      "height": 640,
+      "width": 464,
+      "items": [
+        {
+          "id": "1c7f0df8-4802-53ec-80c6-8527624446f7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b7062786-a066-56bb-9376-45d47f7208a1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136613.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 464,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136613.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cc43c6d3-9263-533a-9772-8f40b33690b7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "96514669-a878-5685-bcf5-05a1c092cb00",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "56e0c252-032c-5b9d-8bc8-0f4bb4ae6422",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.27, fonds Brandt) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ecafad59-4444-5916-addf-90c63edb3bea"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cc43c6d3-9263-533a-9772-8f40b33690b7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=135893",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0d637f83-4fff-54ba-a820-9e4f4160c21f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Terrasse de l'hôtel Jura-Simplon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102569.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e6377b24-9ce6-5f89-bf61-39a4c8b5fa69",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 417,
+      "width": 640,
+      "items": [
+        {
+          "id": "310f5e76-f5d6-5179-abb9-53831953ebdf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9cb0d0db-900d-5699-9918-2d0ec7abe2e0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102569.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 417,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102569.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e6377b24-9ce6-5f89-bf61-39a4c8b5fa69"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dad0f86d-a65a-5e5d-82a9-edb2f31dd752",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c2a86c4e-dc6c-5cdd-8f3d-4109821ebc57",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3868c850-8b22-536f-860f-17a92ee36f25"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e6377b24-9ce6-5f89-bf61-39a4c8b5fa69",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102569",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

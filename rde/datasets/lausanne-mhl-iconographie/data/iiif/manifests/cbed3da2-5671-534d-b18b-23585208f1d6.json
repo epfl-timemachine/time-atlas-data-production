@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cbed3da2-5671-534d-b18b-23585208f1d6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un immeuble locatif à l'avenue de Cour 84."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166815.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2e8b9f77-44a9-570f-a60b-e16661a850ce",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 375,
+      "width": 640,
+      "items": [
+        {
+          "id": "03cd0ed7-3f5a-5a78-b080-ef6c8f021aab",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8bdb852c-2f2c-5464-96f3-51d757c460b7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166815.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 375,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166815.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2e8b9f77-44a9-570f-a60b-e16661a850ce"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f3acb5ce-eb3a-5589-b0ed-14e1aa7c5e32",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fcbb1375-df01-5b01-a01b-526b439d1c89",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d6295016-83e6-50da-b667-683eb1813c86"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2e8b9f77-44a9-570f-a60b-e16661a850ce",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166072",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

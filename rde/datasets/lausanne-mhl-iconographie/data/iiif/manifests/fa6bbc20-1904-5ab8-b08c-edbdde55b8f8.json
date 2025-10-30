@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fa6bbc20-1904-5ab8-b08c-edbdde55b8f8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'immeuble du boulevard de Grancy 15 et 17."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166938.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4a62605f-18c0-5ff1-91f9-81414ecc76c8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 440,
+      "width": 640,
+      "items": [
+        {
+          "id": "da07702f-5966-5335-ae8e-b4e5cfba11fb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4a1cb36c-fba1-5b11-a46f-3771589cc120",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166938.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 440,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166938.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4a62605f-18c0-5ff1-91f9-81414ecc76c8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "49ad6386-4141-5dac-ab1c-72cd8dc6e129",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a7ec72c3-4c13-5b75-b974-eeb422d3f63a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cd4d9c11-f028-5f41-bcc3-0c489f11bdad"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4a62605f-18c0-5ff1-91f9-81414ecc76c8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166195",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

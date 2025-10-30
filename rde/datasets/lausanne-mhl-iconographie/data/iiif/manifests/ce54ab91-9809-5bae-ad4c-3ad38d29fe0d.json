@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ce54ab91-9809-5bae-ad4c-3ad38d29fe0d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  L'intérieur de la cathédrale: l'extrémité ouest de la nef aménagée avec une scène et une estrade de concert."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_130114.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bc9c8f45-ac3e-5079-ac8f-d5982dd31241",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 609,
+      "width": 640,
+      "items": [
+        {
+          "id": "1e9bcf71-2add-5626-beb4-d809345184cc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8b384d61-ba48-55bc-bbd5-beb0d617daeb",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_130114.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 609,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_130114.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bc9c8f45-ac3e-5079-ac8f-d5982dd31241"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b783fcde-4419-5007-9f64-fcb8ec5b39f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "555b2d19-c3d9-5fe2-9fee-dae4471b6eda",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "78ae87a0-6775-5e4e-b823-05969f1ca7f9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bc9c8f45-ac3e-5079-ac8f-d5982dd31241",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=129394",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

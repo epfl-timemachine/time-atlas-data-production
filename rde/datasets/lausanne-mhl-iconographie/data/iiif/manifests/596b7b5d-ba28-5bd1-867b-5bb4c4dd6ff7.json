@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "596b7b5d-ba28-5bd1-867b-5bb4c4dd6ff7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'avenue Floréal."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141791.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e7fa1e90-7159-58c4-8457-390eb554961e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 554,
+      "width": 640,
+      "items": [
+        {
+          "id": "771ac57f-641a-5be4-ae26-4f59d56ad684",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "326a28d2-690d-5b66-9279-fd4d4b4aaffb",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141791.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 554,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141791.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e7fa1e90-7159-58c4-8457-390eb554961e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6ac7a857-e3df-541b-9459-8bee22c72a64",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "94184c05-06b3-5c82-aa3f-5398b8750785",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "319ae5f2-ca1a-5c24-84ef-bdb3ebc0ca1c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e7fa1e90-7159-58c4-8457-390eb554961e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141070",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

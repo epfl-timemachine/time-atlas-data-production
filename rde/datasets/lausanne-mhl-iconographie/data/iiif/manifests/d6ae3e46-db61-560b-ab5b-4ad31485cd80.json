@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d6ae3e46-db61-560b-ab5b-4ad31485cd80",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Hôtel de Ville, galerie de la Lanterne"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98988.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "32b93b47-752a-507b-bd5b-ade9ad4d142c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 480,
+      "items": [
+        {
+          "id": "517a8ca1-70cd-566b-b73a-9d9910582907",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3e2b89b8-7d7e-531d-a9e9-9d9be9d05841",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98988.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 480,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98988.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "32b93b47-752a-507b-bd5b-ade9ad4d142c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "57090146-4ada-5559-9045-bf74a8100b1a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e54daaab-db80-5586-bd7b-62b949b6d1a7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "74067e5a-a148-5a6f-a226-daac1a397c0a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "32b93b47-752a-507b-bd5b-ade9ad4d142c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98988",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dc463706-8f34-5ebb-9de8-a3eb4c504c57",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur deux chalets du Village suisse."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146765.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2d57707f-16a3-5876-9b94-d8ceb46fc8f6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 548,
+      "width": 640,
+      "items": [
+        {
+          "id": "27ad9758-1ee1-573e-a1e1-121fb2f05e85",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7f8a9f65-8e2f-590c-8ff9-b82f95b2f81a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146765.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 548,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146765.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2d57707f-16a3-5876-9b94-d8ceb46fc8f6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cc936989-0c7e-5ca4-94d4-4c00f215eacf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2b94c65d-ceb6-5952-8103-dc41dc506a80",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1a84cf05-9407-5378-8dae-58a64ecd3a2d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2d57707f-16a3-5876-9b94-d8ceb46fc8f6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=146044",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

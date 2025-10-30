@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a3288dbd-8b6a-5987-a7b2-3e10b8f50b50",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Vivaldi "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180477.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "23506a5b-e5ab-5f32-8789-3696913fe8e5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Vivaldi"
+        ]
+      },
+      "height": 640,
+      "width": 447,
+      "items": [
+        {
+          "id": "2ccaa457-a02f-538f-878f-3566892ddb71",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "816fdce8-df28-5c3f-91ac-48ae95961f18",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180477.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 447,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180477.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "23506a5b-e5ab-5f32-8789-3696913fe8e5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3d5804b3-b1a6-56c8-b47b-932bf8975d58",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9c60614d-afd7-5061-a01b-4dc31dfefb42",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Vivaldi"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "93e05cf6-faea-5559-b793-2db991f3ce27"
+                }
+              ],
+              "target": [
+                {
+                  "id": "23506a5b-e5ab-5f32-8789-3696913fe8e5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=179723",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

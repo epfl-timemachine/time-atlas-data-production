@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ea5e6fb1-b300-5f5d-951d-8d9293f84d61",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la place de la Cathédrale 5a, 11, 13 et 15."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175946.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "73e49bb2-9ab3-5fc5-86a3-956c9ec236e6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 389,
+      "width": 640,
+      "items": [
+        {
+          "id": "bec32008-1f07-5f6b-aa9e-1d3a31972038",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c4ef6b63-4f8e-5875-bca0-545eed4d2148",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175946.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 389,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175946.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "73e49bb2-9ab3-5fc5-86a3-956c9ec236e6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "884c959c-1904-527e-b200-5cf80a3ccacf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9cbb9cca-76bc-5b39-b07e-8e6ff92f9fad",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ebc0048c-1938-5bc5-9990-b547399a4d10"
+                }
+              ],
+              "target": [
+                {
+                  "id": "73e49bb2-9ab3-5fc5-86a3-956c9ec236e6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=175195",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

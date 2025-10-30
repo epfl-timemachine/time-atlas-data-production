@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b2986e61-f6ca-5099-acc6-625910e2aa30",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la cour du Collège Belvédère."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175358.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a1592559-12b0-55ba-a23c-cb7931abd61d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 471,
+      "items": [
+        {
+          "id": "f0d35775-eea7-5680-a59c-e6bc2f333d85",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "01d41713-84a4-54ab-9328-fb96da7b4d4f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175358.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 471,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175358.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a1592559-12b0-55ba-a23c-cb7931abd61d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "92d702ab-fc91-56be-8a78-336ca143497f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5af23c7c-56e4-575a-8ecf-b56058bd1fee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4fa79ce5-7d29-5ea6-9ca0-2be2b2fbc033"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a1592559-12b0-55ba-a23c-cb7931abd61d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=174609",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

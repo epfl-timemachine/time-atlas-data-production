@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c4a99b40-cb3e-559b-853d-067b8e410f82",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue des villas de l'avenue de la Rasude."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102513.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f998997e-2c07-5ed5-8834-d1d27bd4cd8b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 583,
+      "width": 640,
+      "items": [
+        {
+          "id": "0a1706f4-f530-5f7a-9c2f-9c2254d767c4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b13a34e2-9f8d-5349-83d7-cc59273f4785",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102513.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 583,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102513.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f998997e-2c07-5ed5-8834-d1d27bd4cd8b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "390fdb14-434a-5759-9a8a-02b9162767fe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b1b5b692-7929-5e65-a742-0825162a3844",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "456a1344-75cf-5bce-855e-49afd29454b2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f998997e-2c07-5ed5-8834-d1d27bd4cd8b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102513",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

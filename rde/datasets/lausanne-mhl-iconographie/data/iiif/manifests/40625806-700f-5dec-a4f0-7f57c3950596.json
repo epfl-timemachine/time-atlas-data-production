@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "40625806-700f-5dec-a4f0-7f57c3950596",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Croisement de l'avenue de Provence et de l'avenue de Tivoli."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168374.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "11e77a0d-074b-553b-985f-39eb5d2ba55f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 375,
+      "items": [
+        {
+          "id": "fbd58abd-2445-53fd-91f5-1d1167eb655c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "203f4208-c62e-55e8-bf74-a651ff8c1861",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168374.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 375,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168374.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "11e77a0d-074b-553b-985f-39eb5d2ba55f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "652f289d-de14-51a3-a6cb-4df10915a011",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bb66ba83-1f4a-5d9a-96ad-d4aad15c6ba2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "698a68b4-47c7-5358-bf7f-ab54059be448"
+                }
+              ],
+              "target": [
+                {
+                  "id": "11e77a0d-074b-553b-985f-39eb5d2ba55f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167630",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

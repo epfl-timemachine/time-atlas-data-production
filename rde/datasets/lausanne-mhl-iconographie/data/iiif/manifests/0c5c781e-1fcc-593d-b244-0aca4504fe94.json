@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0c5c781e-1fcc-593d-b244-0aca4504fe94",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la caserne de la Pontaise (avenue des Casernes 2) et le champ d'exercices, on y voit des militaires allignés."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137501.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d17775be-d612-5282-9046-31e151734ce9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 530,
+      "width": 640,
+      "items": [
+        {
+          "id": "4f039c45-5475-5afd-a3bf-716325e69ca5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a3b9b546-f670-5395-980e-5924ff962bd2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137501.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 530,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137501.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d17775be-d612-5282-9046-31e151734ce9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bbb1ab5f-6548-503a-ac91-631e2ad122f8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8a181a8e-27d7-5f4f-88c9-46477891aa88",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "aaefd43b-0fc5-5aa4-abde-c0ce715269a9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d17775be-d612-5282-9046-31e151734ce9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=136781",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

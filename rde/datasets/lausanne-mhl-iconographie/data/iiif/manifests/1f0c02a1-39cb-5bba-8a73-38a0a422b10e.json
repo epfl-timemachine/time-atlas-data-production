@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1f0c02a1-39cb-5bba-8a73-38a0a422b10e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la chapelle de la Maladière à la route de Vidy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175389.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "11e432fb-9dd1-52e2-bd8a-a6040d0f9636",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 531,
+      "items": [
+        {
+          "id": "70e82829-08c2-5179-b019-de335200c3a3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e311c52b-1ec9-5956-9403-5849cf09a430",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175389.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 531,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175389.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "11e432fb-9dd1-52e2-bd8a-a6040d0f9636"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8401bdc4-c371-5761-908f-b3a97b986e2c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "03770488-17f6-5ceb-8088-421018231876",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "48eec5b2-5922-5064-8512-5ff64146f592"
+                }
+              ],
+              "target": [
+                {
+                  "id": "11e432fb-9dd1-52e2-bd8a-a6040d0f9636",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=174640",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a2dd00a0-9819-5cac-ba2d-8aae6f93be53",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Reconstitution du portail du XIIIe de la grande entrée de la cathédrale, face ouest (maquette)"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134440.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c5eff4b0-c550-5a95-be48-6b38cffdfd72",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 355,
+      "items": [
+        {
+          "id": "5019c483-2f21-56be-9487-05eb90aa475a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7dbcab43-85ec-50a0-974b-de696e273026",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134440.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 355,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134440.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c5eff4b0-c550-5a95-be48-6b38cffdfd72"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1ca0936c-7504-592a-9cfd-0813cfb549dd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d751c1f5-11b0-5335-8c41-8184db460cc5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fe991eb5-d54a-5287-9386-5b3749d4a488"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c5eff4b0-c550-5a95-be48-6b38cffdfd72",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133720",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

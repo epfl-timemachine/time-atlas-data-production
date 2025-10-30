@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6e7be1db-653f-54a7-9290-0da2c6b0be5d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur les immeubles de l'avenue Edouard-Dapples."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166929.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2ddda030-8ea8-5c9b-bb0f-759136c7a2b1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 452,
+      "width": 640,
+      "items": [
+        {
+          "id": "e85ef465-bd65-5a54-b550-02b37645006f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6ccd5575-9c14-5093-9efd-a053aff017f1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166929.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 452,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166929.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2ddda030-8ea8-5c9b-bb0f-759136c7a2b1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5d4857d0-9b97-54e4-91aa-42405b16d448",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "96f00b60-9b15-5338-bd8b-9f8dc9b9915f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "50e7b598-de39-54a0-a694-009d73517957"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2ddda030-8ea8-5c9b-bb0f-759136c7a2b1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166186",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

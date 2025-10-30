@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0d8b6b6c-a0dd-5bcb-b12d-7256d07ad195",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le collège de la Barre ainsi que les rues alentours."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165282.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e14b6afc-6224-5bc3-a00f-38543b07266b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 404,
+      "width": 640,
+      "items": [
+        {
+          "id": "ee87b16f-f28b-581b-bd4d-7d9e1100b026",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c72137b7-648c-5318-b895-784ad5c02f3d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165282.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 404,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165282.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e14b6afc-6224-5bc3-a00f-38543b07266b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9a9a1277-dfe2-5d39-abbe-fea4151fbf89",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9c8509b1-6cbe-5bfe-942b-7cbb6ae1ea6a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4c625f99-8b2b-5a16-b6d4-b929fd7eeba9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e14b6afc-6224-5bc3-a00f-38543b07266b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164541",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

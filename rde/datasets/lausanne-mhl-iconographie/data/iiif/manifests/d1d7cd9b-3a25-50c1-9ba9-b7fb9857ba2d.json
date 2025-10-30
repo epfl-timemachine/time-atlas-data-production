@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d1d7cd9b-3a25-50c1-9ba9-b7fb9857ba2d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de la place Chauderon depuis l'est."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141159.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e6c4ee22-406f-55d6-97e9-32c0b92f870c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 537,
+      "width": 640,
+      "items": [
+        {
+          "id": "c1cd7c8e-95d9-5f59-b256-a17ccc2d8d40",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8caa9c8a-9f40-52fa-8fc1-a88aa4b69bcd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141159.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 537,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141159.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e6c4ee22-406f-55d6-97e9-32c0b92f870c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8c134935-48f2-58cf-b5a6-972ade9ca8cd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e49db1fc-8ee1-5ec2-9116-5c878251fde0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d65c62e5-b7d9-52c4-a43b-b99883b92927"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e6c4ee22-406f-55d6-97e9-32c0b92f870c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140438",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

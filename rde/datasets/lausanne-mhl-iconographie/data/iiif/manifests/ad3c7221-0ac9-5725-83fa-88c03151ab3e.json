@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ad3c7221-0ac9-5725-83fa-88c03151ab3e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur les voies ferrées à la gare de Lausanne."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_139463.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "296aa831-96f8-519a-a3e6-98052802b4f6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 575,
+      "width": 640,
+      "items": [
+        {
+          "id": "a758d8ef-a184-54d2-b459-bca7e92c7ca5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e2e66b9d-93a4-557b-bb2e-4e1f49b14412",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_139463.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 575,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_139463.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "296aa831-96f8-519a-a3e6-98052802b4f6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e745be8d-ebe1-5a0e-9fc6-4677aa0df554",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7b854bed-6bee-5d8d-a254-f35794368677",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c2837b4f-6f45-5eff-a818-e538cbb349a8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "296aa831-96f8-519a-a3e6-98052802b4f6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=138742",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

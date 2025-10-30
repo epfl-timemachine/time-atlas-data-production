@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ab398efa-7f55-501c-85e2-a0951b0519ec",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la façade sud du bâtiment de la tour Bel-Air depuis Montbenon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140701.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "80b3de8d-db3d-58c7-a460-b001a32d5851",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 540,
+      "width": 640,
+      "items": [
+        {
+          "id": "c4d970ff-18b4-5a24-863e-b2fe2a3d37a9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6bccbf42-96d1-50ea-9c38-11975cfdc8de",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140701.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 540,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140701.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "80b3de8d-db3d-58c7-a460-b001a32d5851"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e3888114-3ddb-5e0b-8d4f-150249a24d9c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1c63774f-1821-5b59-a902-dca5293f4dad",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cd5326ad-66d4-565e-9665-b03bfda22a19"
+                }
+              ],
+              "target": [
+                {
+                  "id": "80b3de8d-db3d-58c7-a460-b001a32d5851",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=139980",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

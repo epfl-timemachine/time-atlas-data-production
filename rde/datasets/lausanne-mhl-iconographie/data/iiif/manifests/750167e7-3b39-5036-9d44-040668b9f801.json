@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "750167e7-3b39-5036-9d44-040668b9f801",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Paul Froidevaux En gris, rouge et noir sur fond blanc, annonce d'une exposition de Paul Froidevaux à Lausanne, avec un dessin rouge symbolisant une palette de peintre, des pinceaux et un chevalet."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111875.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5e3fbb1c-c0e5-5d63-8224-2bc942d5cb88",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Paul Froidevaux"
+        ]
+      },
+      "height": 640,
+      "width": 409,
+      "items": [
+        {
+          "id": "8577b74d-05c2-5013-90c9-b9cc096b8d00",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d72da750-a2d0-5120-aa12-6adcfb391c1a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111875.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 409,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111875.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5e3fbb1c-c0e5-5d63-8224-2bc942d5cb88"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8c422fe5-aa4b-525f-bcf5-55862cb69638",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f20cc47a-7e4e-5ffa-8b38-f66562c84beb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Paul Froidevaux"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c211fb80-1f92-5405-a8c2-2901d7cec802"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5e3fbb1c-c0e5-5d63-8224-2bc942d5cb88",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=111779",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6775c86a-babe-55f4-87fd-7b3dfdd23241",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur les bains Haldimand, prise depuis la rue Saint-Martin, avec l'ancienne laiterie sur la gauche et l'Hermitage en arrière-plan"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163874.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "277d10ff-cc26-5ba5-a096-56a7645e14cf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 331,
+      "items": [
+        {
+          "id": "d833697b-30df-54ce-b47e-972fb55f1e59",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c6454279-f89b-5718-ac13-a6e890d99cb2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163874.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 331,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163874.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "277d10ff-cc26-5ba5-a096-56a7645e14cf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8a2fc7e0-debd-59f7-ab44-d3a6159eb46a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3a72c01f-6639-529f-b1d8-e16d92fc46dc",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4e4be1e8-59e5-5bcc-a753-638f03fc0ab8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "277d10ff-cc26-5ba5-a096-56a7645e14cf",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163133",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

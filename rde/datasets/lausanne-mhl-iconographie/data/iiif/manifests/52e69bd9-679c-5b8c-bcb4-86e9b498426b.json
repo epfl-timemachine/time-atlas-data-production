@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "52e69bd9-679c-5b8c-bcb4-86e9b498426b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'entrée du Comptoir suisse."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165200.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "decd8d7b-6280-515a-af4d-931823ad58a1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 538,
+      "width": 640,
+      "items": [
+        {
+          "id": "0246dc48-ad6c-568a-8b0e-ea84b57702da",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9c25def2-081e-5c72-a979-341e32a61f0a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165200.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 538,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165200.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "decd8d7b-6280-515a-af4d-931823ad58a1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f46b7066-a654-5a3e-bf90-6cc81f10dc7b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "62621625-5858-54cd-9e45-f799011d4b03",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6116b762-fa6f-5cb2-8a43-bda53053c3b0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "decd8d7b-6280-515a-af4d-931823ad58a1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164459",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

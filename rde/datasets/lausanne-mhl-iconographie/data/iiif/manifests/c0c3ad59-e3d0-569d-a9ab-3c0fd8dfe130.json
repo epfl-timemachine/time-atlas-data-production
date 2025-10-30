@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c0c3ad59-e3d0-569d-a9ab-3c0fd8dfe130",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Bâtiment se trouvant à l'angle des avenues de la Gare et d'Ouchy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102575.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cc72739e-5cc7-530e-8c85-916ab2a9c1df",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 466,
+      "width": 640,
+      "items": [
+        {
+          "id": "6c48c2a2-b883-58ef-bd49-0af4b0b7b5d2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "51f1ff0d-57ba-5fb2-908a-4262c7903b2a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102575.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 466,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102575.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cc72739e-5cc7-530e-8c85-916ab2a9c1df"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "55acc9ab-5a9f-55ca-991c-b16efb162102",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "469a501c-2fda-51b9-921a-524531760f0f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ce95ddf8-9619-5873-891d-66ea549bbdc2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cc72739e-5cc7-530e-8c85-916ab2a9c1df",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102575",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

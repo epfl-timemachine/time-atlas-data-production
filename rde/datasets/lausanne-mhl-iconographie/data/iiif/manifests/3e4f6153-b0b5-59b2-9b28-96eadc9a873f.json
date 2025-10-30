@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3e4f6153-b0b5-59b2-9b28-96eadc9a873f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur l'Hôtel Gibbon depuis le sud. L'annexe de l'Hôtel Gibbon est en construction sur les emplacements 3-5 de la rue du Petit-Chêne. À droite, en arrière-plan, on devine le Troisième Hôtel des Postes et, au centre, le clocher de l'église Saint-François."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100037.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fc8aed92-1f64-5a6b-9c02-29b5f90a63ca",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 382,
+      "items": [
+        {
+          "id": "77500ed0-2fcc-5bc8-b821-6f84cc1723af",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "88b9a515-c8db-5d44-abe1-8cdd6a83034a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100037.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 382,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100037.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fc8aed92-1f64-5a6b-9c02-29b5f90a63ca"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "874bcbc3-d1a6-5df6-b0c8-2779f34fa046",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce56d177-527d-55fd-868d-48967cab1a03",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "681a0759-2179-5d29-91ef-c6041cd1234f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fc8aed92-1f64-5a6b-9c02-29b5f90a63ca",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100037",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

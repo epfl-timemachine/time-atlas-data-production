@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ed5e0996-c5ae-53b1-bb2a-8f6cdf5ed084",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur les n° 10 à 2 de la rue du Pont vus depuis le bas."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100244.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7576f3fe-a544-52f8-ab9d-d1a6fdf9d323",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 550,
+      "items": [
+        {
+          "id": "23fa4269-b7d3-5141-9f0a-ea28b3f7d2e0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c0db8860-fe46-5041-8b0f-9388c9fd2ef4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100244.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 550,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100244.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7576f3fe-a544-52f8-ab9d-d1a6fdf9d323"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d0b00829-0a88-5566-82c3-3a2972befd58",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2edaacf1-4c4f-5be1-ae4b-0953cde6719a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "37058d9e-bcb9-5271-a5b2-8beef6f899ff"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7576f3fe-a544-52f8-ab9d-d1a6fdf9d323",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100244",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2f9e10fc-f6d8-5c5d-8c6a-0b22b2599c55",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Botanica "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180449.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3bed5c0e-1f96-5ebb-967d-610201ede8a4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Botanica"
+        ]
+      },
+      "height": 640,
+      "width": 421,
+      "items": [
+        {
+          "id": "01bb872b-2d54-56d3-a46d-980925fcaf17",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c0c2c8a5-52ac-5ad9-a813-09d505cfe862",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180449.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 421,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180449.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3bed5c0e-1f96-5ebb-967d-610201ede8a4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "479e537a-2e75-54cf-9f1a-2b915405d0d8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e52e0a75-7642-5c04-8def-c43afc7f211a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Botanica"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e381189a-138c-554c-bc07-a9eef3f93652"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3bed5c0e-1f96-5ebb-967d-610201ede8a4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=179695",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

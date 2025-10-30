@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b03232e1-4518-5e16-8453-d8b7fc1bce23",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un immeuble locatif au passage Bocion 2"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165702.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7eae0c37-fc8a-5f64-98d9-a3ea92e9c9c7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 350,
+      "width": 640,
+      "items": [
+        {
+          "id": "7a1c7f75-5125-5396-b661-975d9de46711",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9f53ece6-89c3-56f7-a0fe-6634a2a8c799",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165702.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 350,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165702.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7eae0c37-fc8a-5f64-98d9-a3ea92e9c9c7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a496a649-20d7-5fcf-9f70-30b83736cac8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bc31c9b6-1bc1-5374-94b8-12e2199950c0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "688ee368-cd17-5bd5-9516-14474f2eb8fb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7eae0c37-fc8a-5f64-98d9-a3ea92e9c9c7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164959",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

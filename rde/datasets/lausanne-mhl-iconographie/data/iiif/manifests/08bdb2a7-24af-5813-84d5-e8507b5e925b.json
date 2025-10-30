@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "08bdb2a7-24af-5813-84d5-e8507b5e925b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le Bar à café à la rue du Lac 14."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168086.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b655ba7e-a47b-58a6-b513-0ad74a7c2c43",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 401,
+      "width": 640,
+      "items": [
+        {
+          "id": "1e4f645f-bed8-5bcd-8e57-12889a3926ae",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7209eab6-3a8a-5dd6-99ce-f6cde4e6f207",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168086.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 401,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168086.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b655ba7e-a47b-58a6-b513-0ad74a7c2c43"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "98c3a868-304b-5347-ae0a-539b12ab240e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5cd8f9ac-bbc5-5e48-a412-088e409325b3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3541f41e-b592-5a24-9f32-bddd76c20c7f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b655ba7e-a47b-58a6-b513-0ad74a7c2c43",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167342",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

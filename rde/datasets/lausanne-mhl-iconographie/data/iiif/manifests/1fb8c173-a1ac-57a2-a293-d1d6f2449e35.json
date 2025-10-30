@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1fb8c173-a1ac-57a2-a293-d1d6f2449e35",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur L'EPCL de la rue du Midi (anciennement collège Vinet)."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_174848.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bfd3d189-aef5-50b7-ac39-c8e7bad8134d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 527,
+      "items": [
+        {
+          "id": "a18dad88-a072-5260-bc52-841359e14cd8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ac0f8f30-535b-5d96-be4d-0e6e9935eaa6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_174848.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 527,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_174848.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bfd3d189-aef5-50b7-ac39-c8e7bad8134d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "963e6942-5436-5709-9737-18285970ff24",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "72be1ba4-e1b7-5ef3-b4dd-4c3fa0d35eea",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0beaa94d-93c6-560c-8c98-ba2e2beae749"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bfd3d189-aef5-50b7-ac39-c8e7bad8134d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=174100",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

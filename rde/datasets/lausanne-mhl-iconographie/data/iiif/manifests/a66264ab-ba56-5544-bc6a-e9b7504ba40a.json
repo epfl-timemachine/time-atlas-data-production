@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a66264ab-ba56-5544-bc6a-e9b7504ba40a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue du Maupas 55 et 57."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168147.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "badf87c9-b8fc-59f8-a4e0-94baa139ecfb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 584,
+      "items": [
+        {
+          "id": "dc6b3ad5-818d-50ff-a7b7-e8d6d1c7a55e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "15d69e35-adef-55ba-82d3-249d2ef071a6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168147.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 584,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168147.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "badf87c9-b8fc-59f8-a4e0-94baa139ecfb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "caecf295-ba69-5d31-b706-f497a3fb7f12",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5e132e95-c410-56a4-b8cb-66f02745e455",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "79a123c9-1193-5596-9a5d-380b9eaa5784"
+                }
+              ],
+              "target": [
+                {
+                  "id": "badf87c9-b8fc-59f8-a4e0-94baa139ecfb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167403",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

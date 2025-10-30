@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8ba17205-54ed-5f46-a0f9-fd7f04ef3e19",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue Haldimand, au croisement de la rue Saint-Laurent"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170548.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2395f9c2-7c8f-5619-adc8-f17d132a5bed",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 395,
+      "items": [
+        {
+          "id": "5b6a903a-0cec-5bee-b0e6-224cf509fefb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a45ea185-684d-5541-bcc7-d11b4078b114",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170548.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 395,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170548.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2395f9c2-7c8f-5619-adc8-f17d132a5bed"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "12e2af01-f1bf-5cb4-acde-da6204bd6cd0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "91d3448a-daaf-55c5-ae76-03123d55dae6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b88b15b0-bbf8-5a04-ae19-b35dd6058823"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2395f9c2-7c8f-5619-adc8-f17d132a5bed",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169802",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

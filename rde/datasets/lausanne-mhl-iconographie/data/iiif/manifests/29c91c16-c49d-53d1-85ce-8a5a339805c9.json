@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "29c91c16-c49d-53d1-85ce-8a5a339805c9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la promenade Jean-Jaques-Mercier."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142220.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "feded3f4-03f1-575a-843e-56c6f7ba6246",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 542,
+      "width": 640,
+      "items": [
+        {
+          "id": "7c37574c-7c0a-5ee8-803e-d6cabca1af9e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "90c617fb-3115-5306-be26-46e6a728e31b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142220.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 542,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142220.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "feded3f4-03f1-575a-843e-56c6f7ba6246"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c284af70-a743-56c0-88d2-12a1805be096",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "65b837c5-69a5-5867-84b9-96e9dbda2c9b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "46df6e8a-7952-5710-a7a7-51683c4c86cd"
+                }
+              ],
+              "target": [
+                {
+                  "id": "feded3f4-03f1-575a-843e-56c6f7ba6246",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141499",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fb835fb3-8c5e-581d-9cd1-28993e9d47b5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Siegfried Lenz En noir sur fond blanc, annonce d'une séance de lecture au Théâtre de Vidy, avec une photo du visage de Siegfried Lenz"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_129564.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "333f0baa-bdd4-58b5-9fbd-7c2b054dc967",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Siegfried Lenz"
+        ]
+      },
+      "height": 640,
+      "width": 411,
+      "items": [
+        {
+          "id": "003a205c-1055-55b2-87ab-9af52c172566",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "606934ab-b15c-589d-abb6-a7de5ca50908",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_129564.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 411,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_129564.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "333f0baa-bdd4-58b5-9fbd-7c2b054dc967"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "20fa9661-7c05-5f5a-8045-b3b62fe197a4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "60b1e2a3-259f-5f88-9a3f-601a1c5157a8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Siegfried Lenz"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "45b30b9e-09ed-59d8-bbf2-4fc34a1381ce"
+                }
+              ],
+              "target": [
+                {
+                  "id": "333f0baa-bdd4-58b5-9fbd-7c2b054dc967",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=128844",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7fa4fc37-085b-520d-a156-93abd9709095",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le château Saint-Maire, les escaliers menant à l'esplanade et la statue du Major Davel"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134811.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "29c583e4-a991-5574-b068-858b2b805d8d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 575,
+      "width": 640,
+      "items": [
+        {
+          "id": "8e2c4221-f0d3-5480-ba46-74775bf908d8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2a4f19f2-1281-53e9-9a43-25cd54fb05de",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134811.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 575,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134811.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "29c583e4-a991-5574-b068-858b2b805d8d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6e4b3d4b-4df5-50fc-8e1c-3172fd2e0b80",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "97e53215-0244-557d-8efe-78de7b6bc331",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e3a8d088-2a60-557d-bc7d-575bff990ea6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "29c583e4-a991-5574-b068-858b2b805d8d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134091",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

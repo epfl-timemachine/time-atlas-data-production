@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1a1a2d97-cbfe-525a-a831-c11b986cf7c9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur le carrefour entre l'avenue Fraisse 4 et le boulevard de Grancy 45"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107483.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9687ea81-2ffa-53f4-a126-d7b765e0919e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 464,
+      "items": [
+        {
+          "id": "db523c86-4104-5ce8-be4c-5d26f7834ac7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4657e8fb-e185-576a-b7d6-ae1dfa315da0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107483.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 464,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107483.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9687ea81-2ffa-53f4-a126-d7b765e0919e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a81f4b37-99da-56a1-bbca-dea1d450b3f2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "08a3e949-d1c9-5a52-8537-6508a30f57e1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4d6fb5c9-cb85-5346-9870-ebdf1861ba2a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9687ea81-2ffa-53f4-a126-d7b765e0919e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=107483",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

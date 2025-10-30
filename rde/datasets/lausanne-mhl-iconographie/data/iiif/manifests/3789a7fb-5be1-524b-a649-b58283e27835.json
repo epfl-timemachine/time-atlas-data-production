@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3789a7fb-5be1-524b-a649-b58283e27835",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise) Vue de la galerie Ciéma Atlantic: vue sur l'écran depuis le balcon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136661.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ab57216f-d350-5aea-b457-2d07a7e92839",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) Vue de la galerie"
+        ]
+      },
+      "height": 515,
+      "width": 640,
+      "items": [
+        {
+          "id": "a8674d62-24a2-52f1-aa1b-6b46d39ed4c3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "495ce83a-e1b9-5ee0-a725-c40accb239d9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136661.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 515,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136661.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ab57216f-d350-5aea-b457-2d07a7e92839"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ba696bff-6f65-5a7a-97db-b82d9f468890",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "351ea750-ce91-5aab-9003-4551f64f6195",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) Vue de la galerie"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4de44bee-d29d-5089-8232-863df6cf3fdf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ab57216f-d350-5aea-b457-2d07a7e92839",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=135941",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

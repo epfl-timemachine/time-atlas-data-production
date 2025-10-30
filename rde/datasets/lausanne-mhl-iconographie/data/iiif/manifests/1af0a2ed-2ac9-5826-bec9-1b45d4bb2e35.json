@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1af0a2ed-2ac9-5826-bec9-1b45d4bb2e35",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la campagne du quartier de la Grangette."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172418.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b27b4da9-94d7-5585-9d9b-150902c915a1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 399,
+      "width": 640,
+      "items": [
+        {
+          "id": "8a068a8f-da5b-5452-bf37-052b2fdbd3aa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d9dbca7d-67a1-5afc-90aa-4cbabda10fbd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172418.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 399,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172418.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b27b4da9-94d7-5585-9d9b-150902c915a1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c7219c89-6053-55bc-9e3b-dd111e2a27b9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5fb35812-083f-5b08-a40d-f51e8499a5e0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6f279310-1aa5-5079-97da-e57f47ed59d7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b27b4da9-94d7-5585-9d9b-150902c915a1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=171671",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

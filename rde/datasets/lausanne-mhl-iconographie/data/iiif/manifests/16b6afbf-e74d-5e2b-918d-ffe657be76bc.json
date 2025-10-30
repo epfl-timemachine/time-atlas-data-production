@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "16b6afbf-e74d-5e2b-918d-ffe657be76bc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le Tunnel depuis la place du Tunnel"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171100.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "043420fd-13c6-51dd-8a0f-0eaf793eefd6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 469,
+      "width": 640,
+      "items": [
+        {
+          "id": "06cd6610-12e6-595e-a856-2341de2749cf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "99338ae8-1ab2-5c80-b62d-e7b16534aece",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171100.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 469,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171100.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "043420fd-13c6-51dd-8a0f-0eaf793eefd6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b75a0467-8c0b-5912-b2b6-58b8a1f7711a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "446e8860-df77-5b93-a8a2-654fa272473c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a95715fb-e0f3-5495-b0ee-58634f33f883"
+                }
+              ],
+              "target": [
+                {
+                  "id": "043420fd-13c6-51dd-8a0f-0eaf793eefd6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170354",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

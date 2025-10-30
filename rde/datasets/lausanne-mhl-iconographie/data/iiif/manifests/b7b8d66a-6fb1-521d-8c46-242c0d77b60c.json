@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b7b8d66a-6fb1-521d-8c46-242c0d77b60c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur la façade néo-médiévale de l'église des Terreaux."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133974.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e848e6ad-f415-5e89-83b5-6143516313ca",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 431,
+      "items": [
+        {
+          "id": "6de71d21-70ba-55a1-9686-d72bcdde8ab8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7da6e46c-0199-582e-a009-9c6eb723696b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133974.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 431,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133974.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e848e6ad-f415-5e89-83b5-6143516313ca"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "96c5ba4f-ea63-5864-a7c7-36f518010636",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c706651d-b1c3-58ae-add6-0601a7da296e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9beee05d-efe4-5267-ac5f-96ab257bc06f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e848e6ad-f415-5e89-83b5-6143516313ca",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133254",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

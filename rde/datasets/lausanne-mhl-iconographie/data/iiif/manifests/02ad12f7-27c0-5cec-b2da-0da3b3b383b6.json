@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "02ad12f7-27c0-5cec-b2da-0da3b3b383b6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la statue de Alexandre Vinet à l'esplanade de Montbenon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168204.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d1133a3e-ad41-53cb-8526-376a72f50b28",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 387,
+      "items": [
+        {
+          "id": "1e94de26-35c0-5c92-8fb5-f7272aa4dde6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "712be3dd-3867-579c-a55b-bbef1c72b465",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168204.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 387,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168204.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d1133a3e-ad41-53cb-8526-376a72f50b28"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "51fbf232-dc79-5f54-97e5-43664d93ca90",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1eb006f0-1556-55d7-b7fc-eaaa3eae908e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "16aac67f-848e-54ae-9575-72c494841700"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d1133a3e-ad41-53cb-8526-376a72f50b28",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167460",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

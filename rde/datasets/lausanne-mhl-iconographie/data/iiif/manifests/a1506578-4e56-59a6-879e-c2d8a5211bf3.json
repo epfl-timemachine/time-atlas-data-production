@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a1506578-4e56-59a6-879e-c2d8a5211bf3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'entrée de la Cathédrale de Lausanne depuis les escaliers de la place."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166799.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e0a92293-8ae4-5f3d-9ae1-c2910c67a387",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 363,
+      "items": [
+        {
+          "id": "13e55fcc-2df0-5ce2-b40a-0f81f830bae0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2ceeb2fe-68d8-5e54-bfac-f3de6ef95e7a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166799.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 363,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166799.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e0a92293-8ae4-5f3d-9ae1-c2910c67a387"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b99055fc-266a-5be7-aa22-964ce2989a20",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "da34f20b-b0f5-5f98-83f0-f256f894c510",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4b75a800-9f27-51fc-86a2-2add91632641"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e0a92293-8ae4-5f3d-9ae1-c2910c67a387",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166056",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

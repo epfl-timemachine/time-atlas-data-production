@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c7812a56-326c-52ea-aee6-91e182eeeac1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  A Montblesson, vue de la ferme du chemin du Pont-Rouge n°1."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151695.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ed034c86-e364-57c5-9d3c-230cd157aea1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 427,
+      "width": 640,
+      "items": [
+        {
+          "id": "02c9f0aa-7d94-58cc-aa6d-87550a9c9750",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "47d6e419-cf5f-593c-9fa9-d42ea255e6ac",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151695.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 427,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151695.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ed034c86-e364-57c5-9d3c-230cd157aea1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1b39ec67-b119-52b6-82a6-0dde12bb5a33",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eff58a28-fd2b-5a5b-b1f8-944750f57496",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "58a8d561-4380-54aa-9895-385c9219529a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ed034c86-e364-57c5-9d3c-230cd157aea1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=150974",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

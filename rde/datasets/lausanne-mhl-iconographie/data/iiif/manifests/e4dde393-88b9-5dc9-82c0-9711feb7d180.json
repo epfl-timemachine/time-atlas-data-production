@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e4dde393-88b9-5dc9-82c0-9711feb7d180",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur des villas au chemin des Sauges."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165745.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "298e374c-5d2a-5475-b54e-37129ef963cb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 403,
+      "width": 640,
+      "items": [
+        {
+          "id": "9b6581a3-9746-5b04-9417-b722ab299111",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4ca58293-49ca-55ec-a146-29dd92bd3ab1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165745.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 403,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165745.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "298e374c-5d2a-5475-b54e-37129ef963cb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0f40fc69-7a64-5dae-90a1-1b03e9b40927",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "12f67b62-b8c2-5c1b-aeff-8c33bfec1af7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c71c074e-a725-5854-9ea2-b3bd9be633f9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "298e374c-5d2a-5475-b54e-37129ef963cb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165002",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

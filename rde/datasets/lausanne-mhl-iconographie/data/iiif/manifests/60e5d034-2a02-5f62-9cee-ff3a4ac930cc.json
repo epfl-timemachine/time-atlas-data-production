@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "60e5d034-2a02-5f62-9cee-ff3a4ac930cc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue du bas de la rue de la Cheneau de Bourg avec au fond la maison de la Cave populaire"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111369.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bb0f96df-74e6-5db4-bcea-735194e23204",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 464,
+      "items": [
+        {
+          "id": "cfaf24a3-2334-5feb-b727-6dcd45787b0f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fb5c886a-0499-53b4-82af-33e413d4c38b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111369.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 464,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111369.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bb0f96df-74e6-5db4-bcea-735194e23204"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1e3b5bc4-a972-5d83-9f30-f7a78e2c162d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7676658e-b105-5d35-a735-4d1f358e3c11",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3a458a37-851c-5976-89f1-762cdcb8ed8a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bb0f96df-74e6-5db4-bcea-735194e23204",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=111273",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

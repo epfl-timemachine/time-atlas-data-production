@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "692fa7cb-c220-524d-83d0-9a3fdd622a55",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur les immeubles du chemin du Calvaire."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171384.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "801d457b-2200-57ff-8c22-9d739bfb8d3d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 376,
+      "width": 640,
+      "items": [
+        {
+          "id": "06af1fda-f3e3-552f-b48c-0309e122973c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4974b924-67f7-5a94-bad5-8f0731f63108",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171384.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 376,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171384.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "801d457b-2200-57ff-8c22-9d739bfb8d3d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "79c8cc86-a4d5-5f5a-acd1-779dd1fee035",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dddcb874-aaf2-5479-a0ea-ca8b959d88d6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "566ffe80-841b-5aa5-9bea-35ef0df4b2d9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "801d457b-2200-57ff-8c22-9d739bfb8d3d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170638",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f8f5941a-3739-5571-b387-bdca686de0b8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de l'entrée du musée olypique."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137388.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6eaeca0c-dc1d-5b3b-8e93-2555a0dffb60",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 568,
+      "width": 640,
+      "items": [
+        {
+          "id": "55a287af-3b00-586d-be30-0fad43034ddb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2d69720e-b9e0-56d6-b47d-e486ecfb1478",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137388.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 568,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137388.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6eaeca0c-dc1d-5b3b-8e93-2555a0dffb60"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c27c42b6-8b8b-5307-be63-095bb490055a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "564f47b9-4da5-57f4-9d6f-73faff5feac6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7da2bce2-3e16-5391-9693-a240d80fbb0a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6eaeca0c-dc1d-5b3b-8e93-2555a0dffb60",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=136668",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

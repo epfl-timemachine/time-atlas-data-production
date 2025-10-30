@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6102fc38-547d-565b-a2f9-a9b3678733d1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  Vue sur la porte Saint-Maire, depuis la Barre, avec à droite le château en partie visible. Sur la rue, quatre personnages s'affairent. Un groupe d'oiseaux volent au-dessus de la porte."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175905.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "981c3f20-5274-5853-a3fb-34affcacf61a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 465,
+      "items": [
+        {
+          "id": "09e144b3-67a5-5605-af31-55ac0e396aad",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d293dc62-c5c7-50d0-b25f-d664af4a325c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175905.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 465,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175905.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "981c3f20-5274-5853-a3fb-34affcacf61a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ae490480-faff-54bb-b68e-d96516d0abe7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f9de90ed-2a4e-59a0-8483-ec0076513075",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "91e7f1e9-2cfc-5111-b8db-e2bd5d4bcaa6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "981c3f20-5274-5853-a3fb-34affcacf61a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=175154",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

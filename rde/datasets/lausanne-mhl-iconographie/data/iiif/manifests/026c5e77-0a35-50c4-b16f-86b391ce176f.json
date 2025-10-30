@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "026c5e77-0a35-50c4-b16f-86b391ce176f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue générale de la maison du Denantou, depuis le sud-ouest. Au premier plan, il y a le jardin avec deux arbres (à gauche et à droite); au second plan, on voit la maison; du lierre agrémente les colonnes, les volets sont fermés."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97568.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2e4ece58-f873-5d1b-a50b-161aec261c4e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 608,
+      "width": 640,
+      "items": [
+        {
+          "id": "a3aa92ce-5f4b-539e-8e30-998ffb0751b6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c7b578e4-24a3-5a96-8955-125d3224f555",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97568.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 608,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97568.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2e4ece58-f873-5d1b-a50b-161aec261c4e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "23e3b83d-7dd3-544b-bc4c-dce1d7f2494d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1b08a1ff-b1dc-5976-b313-cb44f887105d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6d02e409-8633-5793-a61f-693d36cd5920"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2e4ece58-f873-5d1b-a50b-161aec261c4e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97568",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a07f9818-8f4f-5dc8-ac9f-065db7b6188c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'immeuble locatif à la place de la Navigation 10."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167908.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2c331a96-7555-5ec8-9356-bd83c6f9beef",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 400,
+      "width": 640,
+      "items": [
+        {
+          "id": "9084adef-390c-538e-be36-819cc33ee71d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "027c2412-2570-5b83-9b2b-70a78ec06d1c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167908.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 400,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167908.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2c331a96-7555-5ec8-9356-bd83c6f9beef"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d3c6c0e4-845d-5f85-b0b8-f5e87ed5278b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d98ad15c-c63e-5901-9bc5-2f6d86009472",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c6cddbd6-9ebb-5706-b9ed-784f61f992c7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2c331a96-7555-5ec8-9356-bd83c6f9beef",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167164",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

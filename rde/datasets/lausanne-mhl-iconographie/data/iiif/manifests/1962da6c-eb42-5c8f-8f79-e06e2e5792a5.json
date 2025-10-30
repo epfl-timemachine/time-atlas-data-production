@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1962da6c-eb42-5c8f-8f79-e06e2e5792a5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un petit bâtiment situé à la place Chauderon 30."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166546.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "225b3fcf-cc23-5a3e-8a1a-b73130464aa3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 390,
+      "width": 640,
+      "items": [
+        {
+          "id": "1cce0878-4d0b-5254-9db2-b37680e8e723",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6e057e6d-285a-5484-bc00-17fb4fbda80d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166546.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 390,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166546.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "225b3fcf-cc23-5a3e-8a1a-b73130464aa3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "069ecac2-25b8-5da5-b49e-7c426e6fe7ab",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7bf8009e-14ce-5441-8e07-d720e3f0234f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3f6b495a-80e5-5931-b4cf-bb208556beb5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "225b3fcf-cc23-5a3e-8a1a-b73130464aa3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165803",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

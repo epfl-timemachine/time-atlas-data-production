@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c4bdb6db-e717-52f8-b732-5bbc4fae6949",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de la statue du Major Davel"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141154.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c37c42b1-fd70-5f17-af8d-019fda76b5fd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 351,
+      "items": [
+        {
+          "id": "b9e69fdd-a191-5a03-bc42-7f08b689e2e5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8c6003ed-cae4-51a0-b4cd-3e17bda24dae",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141154.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 351,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141154.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c37c42b1-fd70-5f17-af8d-019fda76b5fd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4fe23973-f3d8-5f37-a99a-d647fcb2b0a6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "121773c7-aa2f-557a-9aa3-6b7864f800d4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8a67af35-6567-5bcd-bbaa-12707982d915"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c37c42b1-fd70-5f17-af8d-019fda76b5fd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140433",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "65d54a5a-0a0f-5d50-bd48-b44aaed2d2ea",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue du Valentin et des immeubles, actuellement Valentin 34"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164792.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "197c39a9-2309-504b-93da-78705d5535c5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 244,
+      "width": 640,
+      "items": [
+        {
+          "id": "90ebb2b3-5991-56a3-acf4-3f5f60fc8b7a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6b49e56a-af0f-545f-97f0-152161b95ce4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164792.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 244,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164792.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "197c39a9-2309-504b-93da-78705d5535c5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "830b8a9b-d784-5018-a9a0-81ffe5e3ce16",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "88e87fd3-db40-559d-a47f-f2c8abdb400e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b20e78d0-0637-5610-86f2-fdfeba15df9d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "197c39a9-2309-504b-93da-78705d5535c5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164051",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

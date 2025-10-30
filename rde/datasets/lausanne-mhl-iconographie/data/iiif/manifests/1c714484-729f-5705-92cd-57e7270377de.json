@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1c714484-729f-5705-92cd-57e7270377de",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'Hôtel de Ville et sur la maison Seigneux."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138645.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4f875e85-7774-5175-82bf-0c0c4c1a0aff",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 350,
+      "items": [
+        {
+          "id": "06493f28-7226-5f05-a350-3c74d401a682",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "73a21020-cf87-504d-8ec1-2ec341d4d074",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138645.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 350,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138645.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4f875e85-7774-5175-82bf-0c0c4c1a0aff"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ee6372d7-a8a2-5964-8b95-96d1972b537a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d9128ea9-adc9-5892-8e7b-cdc950aa4158",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c5661c2f-79e6-5c77-a145-c27318860be9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4f875e85-7774-5175-82bf-0c0c4c1a0aff",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=137924",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

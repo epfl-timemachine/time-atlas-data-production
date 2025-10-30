@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8140c845-5fee-59ce-8b5f-447231e051a2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  L'hôtel des Postes à la place Saint-François 15 et l'hôtel Gibbon au numéro 16."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_145980.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0bae256d-2511-5447-b545-5755cbc36f01",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 540,
+      "width": 640,
+      "items": [
+        {
+          "id": "fe3ea7d0-133b-5b9f-81f0-b258f6b8be38",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fb6db34e-b80c-5921-a837-33a304855905",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_145980.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 540,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_145980.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0bae256d-2511-5447-b545-5755cbc36f01"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "51891297-5755-5e42-a478-6dd53f7d5fc7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "622ed31d-a6cd-5e23-97c4-5887c1e8c01f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3405e15f-9b53-5a5c-acd2-e81fcc1f292b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0bae256d-2511-5447-b545-5755cbc36f01",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=145259",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

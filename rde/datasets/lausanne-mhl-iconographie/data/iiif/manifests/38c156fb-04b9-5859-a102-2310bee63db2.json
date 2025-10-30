@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "38c156fb-04b9-5859-a102-2310bee63db2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.10, fonds Bridel)  Vue de la rue Pierre-Viret, en contrebas de l'Ancien Evêché."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133794.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "24e06a0f-4af3-585c-93c9-d3542a04ed3e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.10, fonds Bridel) "
+        ]
+      },
+      "height": 640,
+      "width": 480,
+      "items": [
+        {
+          "id": "0ab041ee-870d-5afd-8a1a-ab5b6d922fad",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "04d46aee-64f8-53bc-8fc8-fb9df89c54e9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133794.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 480,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133794.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "24e06a0f-4af3-585c-93c9-d3542a04ed3e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "34a28d2a-3173-5f88-81b3-42981ec285c1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7bc84213-43e4-5a68-a2e1-a0f16746efee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.10, fonds Bridel) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "329fbdfd-d5c8-563b-9537-dffb242cfffe"
+                }
+              ],
+              "target": [
+                {
+                  "id": "24e06a0f-4af3-585c-93c9-d3542a04ed3e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133074",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

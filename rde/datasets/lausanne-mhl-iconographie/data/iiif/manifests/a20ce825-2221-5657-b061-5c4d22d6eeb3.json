@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a20ce825-2221-5657-b061-5c4d22d6eeb3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue des baraques situées entre la rue Saint-Roch, la rue Pré-du-Marché et la rue de la Tour"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133463.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "87e50061-c7fa-5425-9466-44f8e3979bc1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 614,
+      "items": [
+        {
+          "id": "ecd476f0-6f35-5b74-93ef-4fc052bb92ad",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d2f86a24-4c5c-559f-8a0a-4bc6697a7f0b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133463.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 614,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133463.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "87e50061-c7fa-5425-9466-44f8e3979bc1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c25b51cc-fd9a-53b5-9596-a470722e042b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce4707bb-2aba-506f-8d02-58b467b6b474",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0690d1a3-b956-5cd4-a024-5d2bd9599a2f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "87e50061-c7fa-5425-9466-44f8e3979bc1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=132743",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

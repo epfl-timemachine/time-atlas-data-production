@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4adbf5aa-3d40-5fdf-8fc7-869bcf39a0b0",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur les immeubles à l'angle des rues Haldimand N° 11 et Saint-Laurent N°18."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170514.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c285b4a8-8cec-5b74-9e1f-cbffef314dc2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 352,
+      "items": [
+        {
+          "id": "bc2f3268-3528-5820-ae35-bcc941e89a89",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bafe4663-73c2-52eb-8aeb-ad47a70e677b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170514.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 352,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170514.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c285b4a8-8cec-5b74-9e1f-cbffef314dc2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9b23bf87-8f88-5901-8b8d-d6a157335363",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "de1e0248-ee62-5ed7-b8a3-0de9ca048b47",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "24875e18-917f-571a-a61c-c14057e4bf75"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c285b4a8-8cec-5b74-9e1f-cbffef314dc2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169768",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0f8463bf-9845-573e-bd43-cb8673304e23",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  rue de Genève 17-19\n rue du Port-Franc 6\n rue du Grand-Pont"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99221.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1fe3d5bf-b962-5ab6-b8cb-20fd35c3876a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 436,
+      "width": 640,
+      "items": [
+        {
+          "id": "7deb7040-2bd3-5a73-85a1-b2f7b77514d1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cdbfe054-e81e-5f1a-bd83-d342be7c6325",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99221.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 436,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99221.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1fe3d5bf-b962-5ab6-b8cb-20fd35c3876a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d648fd89-173b-552b-b30e-98ba0ffd0822",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a2655651-a923-5bb2-8d73-8d53f987b4b6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "47faeafa-13b5-5c65-9599-65ae5f572057"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1fe3d5bf-b962-5ab6-b8cb-20fd35c3876a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99221",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

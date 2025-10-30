@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8fa29d62-d5c4-5265-8050-6a79d2f133da",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue de la rue du Valentin 14 (villa Krieg)"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133626.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d4c38c4d-7351-5452-a96e-731ceabe7501",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 434,
+      "items": [
+        {
+          "id": "07088702-87b6-5fa0-b92e-47511b289ddd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0eb2ea64-e87a-59cc-adb9-8ebfc891b166",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133626.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 434,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133626.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d4c38c4d-7351-5452-a96e-731ceabe7501"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "243e479a-5eff-5a1f-82d7-18d12841af99",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "926fb625-283d-5079-89d8-e3c1b43a9f3b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0212dff0-3ea4-5151-be53-2d29da482f32"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d4c38c4d-7351-5452-a96e-731ceabe7501",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=132906",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

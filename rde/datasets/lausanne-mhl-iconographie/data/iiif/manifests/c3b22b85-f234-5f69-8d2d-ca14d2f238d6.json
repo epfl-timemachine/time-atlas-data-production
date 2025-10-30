@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c3b22b85-f234-5f69-8d2d-ca14d2f238d6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Chapelle supérieure de la tour du croisillon nord"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134518.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "21ccf3c9-56bd-50c6-a3aa-ee298ece6e00",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 356,
+      "items": [
+        {
+          "id": "ddfea5d4-1903-5243-b622-27b10e6ba671",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c45a6985-1971-5bc3-88a5-a17719c35d9c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134518.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 356,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134518.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "21ccf3c9-56bd-50c6-a3aa-ee298ece6e00"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c090b94d-e23a-5364-a86a-08c89dbc0abd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "da534fb8-962a-5d24-b451-c7952f40b9ba",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "01fe52b5-7093-5af9-880c-22ee4316b7db"
+                }
+              ],
+              "target": [
+                {
+                  "id": "21ccf3c9-56bd-50c6-a3aa-ee298ece6e00",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133798",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

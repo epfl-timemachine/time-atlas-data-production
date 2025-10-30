@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "50f24612-e2af-500d-9491-ee82d520b216",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue du cercle de Beau-Séjour depuis l'avenue du Théâtre"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109907.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "33bd5e53-cd62-5770-bba1-38d7f8ad6c19",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 481,
+      "items": [
+        {
+          "id": "a07c2121-2179-5ca8-a54e-de547293c7f7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0fd90cf0-8f10-593a-9768-282aba02f19c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109907.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 481,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109907.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "33bd5e53-cd62-5770-bba1-38d7f8ad6c19"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "db119823-60db-58b5-b8da-fd9ef79589fd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5a5ea4a4-c50d-59d7-a6db-af708c2dd3ac",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e42359f4-7bc4-5ec3-a4ed-3090a28ed3e5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "33bd5e53-cd62-5770-bba1-38d7f8ad6c19",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=109811",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

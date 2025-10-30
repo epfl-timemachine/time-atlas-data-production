@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e25d99ad-69e6-5385-8e68-29a5a2620d0a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un immeuble locatif au chemin de la Cassinette 1."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165786.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cf2dec0e-9b0f-53f2-92bf-52eb32d44546",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 397,
+      "width": 640,
+      "items": [
+        {
+          "id": "71072986-b53c-5755-867f-160df4a0a014",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "07b1c91f-f522-569f-893e-8a4ce7e6427b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165786.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 397,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165786.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cf2dec0e-9b0f-53f2-92bf-52eb32d44546"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cc29755b-e134-51ca-8fd7-2cbe6ccd25ce",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fa52a62f-19f2-5603-8370-20bfda0ca4af",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2fb3132f-c366-5832-8a41-885367f2ee3b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cf2dec0e-9b0f-53f2-92bf-52eb32d44546",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165043",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

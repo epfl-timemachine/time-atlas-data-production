@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6db50d1e-26b5-55c1-8148-17a93aad9932",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue du temple de Saint-Luc."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98200.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "027a0ea7-ea4c-52f4-9a74-0b60cda4b6e3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 581,
+      "width": 640,
+      "items": [
+        {
+          "id": "b7f392d0-0747-5487-8ce2-217ccde258b6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d61c466b-5f5f-58c0-a423-6b20525b1711",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98200.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 581,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98200.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "027a0ea7-ea4c-52f4-9a74-0b60cda4b6e3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a32f4963-5a00-57a4-81a9-1a7d3f816c2a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f9111958-db31-5177-8bd8-2bd813713950",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5b46eeba-2f3b-5498-b6bb-47036cfd3269"
+                }
+              ],
+              "target": [
+                {
+                  "id": "027a0ea7-ea4c-52f4-9a74-0b60cda4b6e3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98200",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

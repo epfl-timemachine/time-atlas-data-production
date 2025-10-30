@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "38abd0fd-c40e-5e99-9e13-46b24d5ce0d9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la place Saint-François depuis l'ouest."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141335.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "866139a1-3af2-5ab2-8ea0-7db2be54ba74",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 531,
+      "width": 640,
+      "items": [
+        {
+          "id": "8ff4bb99-e0ab-506a-92d0-a0f48adf5056",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "819141ca-4957-5472-bb26-845313a75772",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141335.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 531,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141335.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "866139a1-3af2-5ab2-8ea0-7db2be54ba74"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a6991f90-565d-5c9d-821b-40baf72f7f4e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4abba001-41d1-5c2b-9370-b61470d3a826",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "99d09a21-030e-5dd8-9ee8-c451f4e61e31"
+                }
+              ],
+              "target": [
+                {
+                  "id": "866139a1-3af2-5ab2-8ea0-7db2be54ba74",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140614",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

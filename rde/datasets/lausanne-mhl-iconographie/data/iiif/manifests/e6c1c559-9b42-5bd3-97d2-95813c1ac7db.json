@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e6c1c559-9b42-5bd3-97d2-95813c1ac7db",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise, P.2.D.17, albums Vieux Lausanne)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102213.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "de0a73db-e48a-52d3-8cf4-ae58b50de494",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise, P.2.D.17, albums Vieux Lausanne) "
+        ]
+      },
+      "height": 640,
+      "width": 516,
+      "items": [
+        {
+          "id": "a1eafa91-c18c-568e-9aee-4b51abb6b2e8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a1e78b0f-6c8a-5109-aeca-694e13ea2a70",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102213.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 516,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102213.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "de0a73db-e48a-52d3-8cf4-ae58b50de494"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "92b73792-09bc-5bce-bd65-a1a10be8f69f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fd82231a-b2e4-5ed8-b284-a4a7e17232e2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise, P.2.D.17, albums Vieux Lausanne) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c3a5600f-4b0c-5a69-ac4f-a5275d751a0b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "de0a73db-e48a-52d3-8cf4-ae58b50de494",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102213",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

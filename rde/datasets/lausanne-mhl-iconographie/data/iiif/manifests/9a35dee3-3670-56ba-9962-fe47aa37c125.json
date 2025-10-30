@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9a35dee3-3670-56ba-9962-fe47aa37c125",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue de l'est d'une allée du parc Beau-Rivage, agrémentée d'arbres et de haies, et de bancs publics; sur les bancs, on voit quatre personnages, dont deux en retrait."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97701.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dd95b744-f743-569c-a80a-eed3ab0395b1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 422,
+      "items": [
+        {
+          "id": "c3cae392-1969-53e3-94f4-5060a9154693",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aa8ac8c2-3380-5466-9ed8-ab717ec55fbc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97701.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 422,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97701.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dd95b744-f743-569c-a80a-eed3ab0395b1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f960f203-a278-5ec6-a1f6-95e34f7da116",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0d5a65a6-589c-577c-be4e-4f4ed81bebca",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "afca587e-9d89-559f-9ca8-d8631461582d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dd95b744-f743-569c-a80a-eed3ab0395b1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97701",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

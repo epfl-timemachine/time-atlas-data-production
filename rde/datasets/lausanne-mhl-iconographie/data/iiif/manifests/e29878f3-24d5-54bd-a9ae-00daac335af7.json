@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e29878f3-24d5-54bd-a9ae-00daac335af7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue panoramique sur le Vieux-Port d'Ouchy avec une simulation de bâtiment et ses environs."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163763.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4a959e31-bb4c-598b-86df-5cd618cc4aad",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 231,
+      "width": 640,
+      "items": [
+        {
+          "id": "a51c4e46-725d-5c29-9396-a3fd6f17937d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0be9c05f-7dd6-599f-b8a5-67be7b9c7f51",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163763.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 231,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163763.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4a959e31-bb4c-598b-86df-5cd618cc4aad"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8a482474-5fdf-523b-b250-28e4e0e92b7b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7d48cb41-bac6-57c1-bef7-ffaefea7b16b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "665c78cd-48f6-566a-ad7f-4d60dcded63a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4a959e31-bb4c-598b-86df-5cd618cc4aad",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163022",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

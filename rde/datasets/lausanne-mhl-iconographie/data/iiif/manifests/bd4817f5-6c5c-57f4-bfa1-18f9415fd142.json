@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bd4817f5-6c5c-57f4-bfa1-18f9415fd142",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  vue  sur l'aile sud du palais de Rumine."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137334.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "17aabbbc-964e-545c-b564-66845801344e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 542,
+      "items": [
+        {
+          "id": "bb93d8e7-429e-56ac-8708-d85af55ecbf2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6202c1a8-fba7-5363-a9f8-d8be376ef46a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137334.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 542,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137334.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "17aabbbc-964e-545c-b564-66845801344e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e448858d-ab7c-5d6e-ad0d-d4a1afd759c2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f4dedc6e-a2ef-5fa5-8689-a628180f7fe0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1b01292f-e860-524b-b931-d7d944580b76"
+                }
+              ],
+              "target": [
+                {
+                  "id": "17aabbbc-964e-545c-b564-66845801344e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=136614",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

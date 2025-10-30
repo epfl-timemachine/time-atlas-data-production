@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "79cba6b7-a499-5bf8-8d0b-4d2d63f260f7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue Saint-Pierre"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167560.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ae90bb95-330c-5427-9998-bf8e912255dc",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 378,
+      "width": 640,
+      "items": [
+        {
+          "id": "61be753d-a846-50f6-88a1-ad6fa11c3c7c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3e89f948-3a35-5e4e-959d-0aaf441f547c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167560.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 378,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167560.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ae90bb95-330c-5427-9998-bf8e912255dc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0042f296-2091-513c-9650-6facf745e608",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eb6f9429-c21a-5b0f-92ec-ab7f04de8cba",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "79b4aa9d-b37e-5bfd-a229-bef22d1103e2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ae90bb95-330c-5427-9998-bf8e912255dc",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166817",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

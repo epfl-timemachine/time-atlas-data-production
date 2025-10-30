@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6b5d1396-bb39-51d7-b7da-dd11db397c4a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue plongeante sur l'avenue de Tivoli et le quartier de Sévelin."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170824.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "00fba5f8-62cd-550c-bc4b-bbc2a70abbd4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 377,
+      "width": 640,
+      "items": [
+        {
+          "id": "338c3bbd-a4c4-55d1-9439-c1f3140758d7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1b9d7974-82ef-5c1f-b865-21d753b95f32",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170824.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 377,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170824.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "00fba5f8-62cd-550c-bc4b-bbc2a70abbd4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "733eb967-7254-50cc-9ed0-2f1348392db2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9f003c2d-49d9-5253-a0d9-3c59e3d6ab8b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "56c55ddc-3513-5564-8703-c7fb76011f32"
+                }
+              ],
+              "target": [
+                {
+                  "id": "00fba5f8-62cd-550c-bc4b-bbc2a70abbd4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170078",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

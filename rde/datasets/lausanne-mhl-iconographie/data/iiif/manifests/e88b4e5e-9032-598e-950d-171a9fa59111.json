@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e88b4e5e-9032-598e-950d-171a9fa59111",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.100, fonds Germaine Martin)  Cirque Knie. Chameau avec ses deux bosses"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128754.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b92ee445-4258-5934-87eb-c47f7525ea58",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.100, fonds Germaine Martin) "
+        ]
+      },
+      "height": 431,
+      "width": 640,
+      "items": [
+        {
+          "id": "64001e8e-895d-520e-8438-8e8356239d8d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "39556d3e-0142-53ef-acb5-043147fc2d1d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128754.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 431,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128754.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b92ee445-4258-5934-87eb-c47f7525ea58"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e7761621-1a28-571a-995e-33a893e1ee53",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b72e05e9-ebdb-57a0-88ef-e7f85d4941e1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.100, fonds Germaine Martin) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ccabe3f1-9c37-5a26-8a7d-a7436580b270"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b92ee445-4258-5934-87eb-c47f7525ea58",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=128034",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

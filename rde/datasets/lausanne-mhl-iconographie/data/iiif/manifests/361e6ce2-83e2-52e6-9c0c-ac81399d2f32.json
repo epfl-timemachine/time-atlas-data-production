@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "361e6ce2-83e2-52e6-9c0c-ac81399d2f32",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Tour de Mon-Repos  vue de la tour crénelée de Mon-Repos"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111005.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3ddefb55-05b4-5f9b-9a6a-2775c9135ea6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Tour de Mon-Repos "
+        ]
+      },
+      "height": 640,
+      "width": 466,
+      "items": [
+        {
+          "id": "38b82895-acf8-5a78-bba1-be558ec325c9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dad62723-14e1-5d26-905a-1d8a511780fa",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111005.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 466,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111005.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3ddefb55-05b4-5f9b-9a6a-2775c9135ea6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b9612baa-aaca-5cf6-b4de-2c9483f509d1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1cbf9225-6eba-516b-8f50-da85449550e3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Tour de Mon-Repos "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5628ed01-ff5a-5036-bec9-9766ed8b5e0d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3ddefb55-05b4-5f9b-9a6a-2775c9135ea6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110909",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e6db7ed3-57ff-598a-8d43-fb2b7228c9ae",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue du côté est de l'église Saint-François avec le kiosque circulaire et le kiosque à journeaux. Quelques personnages sur la place"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111915.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "91e376c5-d541-515f-88f3-ce2675ac0b43",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 459,
+      "items": [
+        {
+          "id": "f4ba27f9-dcd7-51c6-8d27-4d68c6aebc64",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7af464b5-82c1-5611-88d4-7242cfa895c4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111915.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 459,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111915.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "91e376c5-d541-515f-88f3-ce2675ac0b43"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f27630d8-8c3f-58dc-b2ee-69d663aa17f8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b35b15a5-5086-572e-a54f-fbb5564b9790",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4fe7e889-e2b4-5f3c-bbe0-6c728391e7c9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "91e376c5-d541-515f-88f3-ce2675ac0b43",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=111819",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

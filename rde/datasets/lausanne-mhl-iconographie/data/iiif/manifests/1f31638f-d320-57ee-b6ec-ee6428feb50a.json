@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1f31638f-d320-57ee-b6ec-ee6428feb50a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de la place Bel-Air."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142071.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c6ee5369-b238-5ca0-a0c8-eb24100c39ef",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 544,
+      "width": 640,
+      "items": [
+        {
+          "id": "1a4def9e-ea3c-5adc-8683-f9bc415cca47",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5ca0ce12-8454-52b3-8970-5d4ea83b3d4e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142071.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 544,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142071.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c6ee5369-b238-5ca0-a0c8-eb24100c39ef"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "df1aab25-eaaf-5c76-bb71-ba11769f7a0c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5a959e98-f86c-5325-9b7f-3ff71c1c044c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ff546dce-92cf-5c11-9696-2a1b1f4efec7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c6ee5369-b238-5ca0-a0c8-eb24100c39ef",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141350",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4681f1c8-c039-55df-8aac-40454b4af252",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue du domaine des Jordils depuis le sud."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133715.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "952ee0a5-e2aa-5b5a-b9f7-f298d6ef0a85",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 475,
+      "width": 640,
+      "items": [
+        {
+          "id": "98a320ab-4d63-52f3-9baa-73a263a0b94a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4da88d2f-ded7-5d0e-a6d2-d4ebd40d68c2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133715.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 475,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133715.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "952ee0a5-e2aa-5b5a-b9f7-f298d6ef0a85"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7da004df-7388-5b11-b9ee-99f9f203697a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "02303eae-352f-5541-8599-0fcb6937426d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fc25edb4-1b28-5508-b3f4-e34e76f08d99"
+                }
+              ],
+              "target": [
+                {
+                  "id": "952ee0a5-e2aa-5b5a-b9f7-f298d6ef0a85",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=132995",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

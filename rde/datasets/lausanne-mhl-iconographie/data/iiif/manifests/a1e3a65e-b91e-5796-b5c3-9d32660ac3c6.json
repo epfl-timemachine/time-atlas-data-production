@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a1e3a65e-b91e-5796-b5c3-9d32660ac3c6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Vue des Toises prise depuis Mon-Repos vue de la campagne des Toises et de la campagne de la Rosière prise depuis le parc de Mon-Repos. A l'avant-plan on distingue deux jardiniers dans une allée de jardin et sur la droite deux grands peupliers et un bassin avec un jet d'eau. A l'arrière-plan on aperçoit, juste esquissés, le lac (avec bateau) et les montagnes"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111011.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dd7b1457-3b35-5f2e-a864-7d44580c2b01",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Vue des Toises prise depuis Mon-Repos"
+        ]
+      },
+      "height": 438,
+      "width": 640,
+      "items": [
+        {
+          "id": "972ba0f1-55ea-50a9-aefd-88d4ea503d58",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e217eecc-c01f-520a-98aa-56840847eeb2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111011.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 438,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111011.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dd7b1457-3b35-5f2e-a864-7d44580c2b01"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f6810146-4bd5-53cf-b600-b0a4d4a4885f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b3950376-59d4-5f52-8659-416db547a36c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Vue des Toises prise depuis Mon-Repos"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d5ed1557-2ea6-5b6a-b879-235251ddddbc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dd7b1457-3b35-5f2e-a864-7d44580c2b01",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110915",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

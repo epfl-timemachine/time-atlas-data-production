@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "68c1fa9f-5436-5a33-98c7-6f3ba0558b68",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Le bestiaire médiéval sculpté de la cathédrale de Lausanne "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180454.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f3a7658c-5a7c-56d2-b335-ffbb16a0cc7c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Le bestiaire médiéval sculpté de la cathédrale de Lausanne"
+        ]
+      },
+      "height": 640,
+      "width": 422,
+      "items": [
+        {
+          "id": "89fc045b-4262-5bd0-872e-7f028c786e29",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e37e0de-6fa0-599e-924e-6fced22db600",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180454.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 422,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180454.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f3a7658c-5a7c-56d2-b335-ffbb16a0cc7c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "26b34125-9406-5f1d-8ef1-8c70509748ea",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "805f1657-6a9e-5b99-ac2a-8ce6adcc4e5c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Le bestiaire médiéval sculpté de la cathédrale de Lausanne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5f20e91c-2d87-53f7-8578-bc9d736699b9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f3a7658c-5a7c-56d2-b335-ffbb16a0cc7c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=179700",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

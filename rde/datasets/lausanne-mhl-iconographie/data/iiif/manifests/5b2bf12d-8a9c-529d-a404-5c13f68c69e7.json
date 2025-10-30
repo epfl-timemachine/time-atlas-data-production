@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5b2bf12d-8a9c-529d-a404-5c13f68c69e7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  vue de la façade côté jardin de l'hôtel Belmont."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137000.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "16a539cc-79b2-5dbf-b536-3c0331d903a5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 362,
+      "items": [
+        {
+          "id": "7db2376b-ac17-54cf-b87b-b6477dc371ef",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "109f83f1-8376-50f1-ae1a-71551737b2ee",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137000.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 362,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137000.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "16a539cc-79b2-5dbf-b536-3c0331d903a5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c66cdbab-1136-51d1-a813-b01e4982acea",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2a9a91c8-43fb-53b3-9e30-4e4b9da987f0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7f6c3ba8-cae1-5255-8e8c-1ec40836e1e4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "16a539cc-79b2-5dbf-b536-3c0331d903a5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=136280",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

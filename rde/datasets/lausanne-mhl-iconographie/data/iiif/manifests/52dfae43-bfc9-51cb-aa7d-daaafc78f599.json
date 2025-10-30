@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "52dfae43-bfc9-51cb-aa7d-daaafc78f599",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis la place Benjamin-Constant sur la rue Marterey et la rue Saint-Pierre."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166006.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e45ddce5-3252-51d4-892a-b87807de6d87",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 385,
+      "width": 640,
+      "items": [
+        {
+          "id": "ec37b9bb-1683-5c72-ba66-22c5487f3278",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ddc4b83f-7e10-5955-a239-d8864484f4ab",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166006.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 385,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166006.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e45ddce5-3252-51d4-892a-b87807de6d87"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a66f2060-563e-59b1-aae5-e36b1cf76c0c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2f34e8a8-7716-5322-b1fe-30101dfd04aa",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2a3ed6da-46d9-527f-ae65-6a4e41168459"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e45ddce5-3252-51d4-892a-b87807de6d87",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165263",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

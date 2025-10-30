@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fb3cd236-9ac4-57fb-ad58-24c5bbe6100e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de l'entrée du Cimitière du Bois de Vaux à Lausanne."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144256.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "628619d8-9de5-54f5-8ad6-a6a2002c76f2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 575,
+      "width": 640,
+      "items": [
+        {
+          "id": "49e2e0a2-d9ff-5742-86d0-6286955108e6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d47cfed7-7e3c-5d04-b46c-1ef121539372",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144256.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 575,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144256.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "628619d8-9de5-54f5-8ad6-a6a2002c76f2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d3617fb0-a8d6-52da-8309-d2361dadd520",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9524cef7-7cf2-5a9e-811f-9443d9019d5b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "451ef403-3e8f-5564-bef6-fff2b5c32a5c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "628619d8-9de5-54f5-8ad6-a6a2002c76f2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=143535",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

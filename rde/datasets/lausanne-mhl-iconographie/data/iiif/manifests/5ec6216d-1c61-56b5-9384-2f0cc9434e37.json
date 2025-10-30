@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5ec6216d-1c61-56b5-9384-2f0cc9434e37",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue de la façade nord du Château d'Ouchy prise depuis l'avenue d'Ouchy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163563.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d7fc8826-0de6-53f7-b2f6-672e56eea0d3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 576,
+      "items": [
+        {
+          "id": "f1efcb97-38b0-597a-b8b2-5a17dfed136f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "267d9a3f-f19d-5955-8858-ef01342e39a3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163563.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 576,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163563.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d7fc8826-0de6-53f7-b2f6-672e56eea0d3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cfb94005-a082-59e1-b6ec-1df228b0927a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3c3f4028-31ce-50fa-801a-8d3ddf86f021",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0104ed29-1e8a-59d9-bf7a-8f9a162a9875"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d7fc8826-0de6-53f7-b2f6-672e56eea0d3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=162822",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

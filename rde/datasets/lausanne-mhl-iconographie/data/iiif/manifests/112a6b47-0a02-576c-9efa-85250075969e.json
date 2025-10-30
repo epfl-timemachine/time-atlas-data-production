@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "112a6b47-0a02-576c-9efa-85250075969e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le haut de l'avenue Villamont"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171460.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b7763aa4-eb76-5d0c-ac62-63c7f742dbd1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 520,
+      "items": [
+        {
+          "id": "816dafb2-ddd5-5458-814b-dc0e1378979f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ac7aa920-2e35-5ed2-a202-bd38c3dbf9a4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171460.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 520,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171460.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b7763aa4-eb76-5d0c-ac62-63c7f742dbd1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b3b70b9e-fdae-5861-af2e-a2aa869a1cb7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "798b364d-3bd1-534e-ab63-f187563beb85",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7f47bcc0-e1c3-5fec-894c-5ab5eb906e00"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b7763aa4-eb76-5d0c-ac62-63c7f742dbd1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170714",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

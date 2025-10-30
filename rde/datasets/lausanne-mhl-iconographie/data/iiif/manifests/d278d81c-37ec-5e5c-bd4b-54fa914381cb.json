@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d278d81c-37ec-5e5c-bd4b-54fa914381cb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le château Saint-Maire depuis le nord-ouest, avec l'hôpital à l'arrière plan."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141146.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "14ea4e24-73e0-507d-b5e8-ddf3d19fc13b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 540,
+      "width": 640,
+      "items": [
+        {
+          "id": "6ff2067e-e7f0-52fe-9ad5-b927570eba33",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5c046719-f1c5-57fc-8067-2f216459b22d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141146.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 540,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141146.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "14ea4e24-73e0-507d-b5e8-ddf3d19fc13b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9ff5cbf0-4687-5a86-9bf3-8b683d5b17e8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7c56b566-3aeb-5732-b58a-a87fbe2e5661",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f2ac2750-6348-5125-899d-ca8e768e0e51"
+                }
+              ],
+              "target": [
+                {
+                  "id": "14ea4e24-73e0-507d-b5e8-ddf3d19fc13b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140425",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

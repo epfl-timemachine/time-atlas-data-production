@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2eb4903c-f8a6-5c8d-a728-9a6944871ef8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de la place du port dur le débarcadère."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138742.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "73adf65a-542f-51ed-8108-820315daff12",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 538,
+      "width": 640,
+      "items": [
+        {
+          "id": "b2f3e3a9-0195-523a-8344-80509aa231a8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "59c2289b-352c-5bfc-9667-ef14f214abbe",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138742.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 538,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138742.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "73adf65a-542f-51ed-8108-820315daff12"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f912d367-b90d-5b0d-a02d-864ee39e22fe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "be8571bf-bc1f-5ab7-83b3-8479d092ec03",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f5309bc5-b862-53b2-994c-187f03b78c52"
+                }
+              ],
+              "target": [
+                {
+                  "id": "73adf65a-542f-51ed-8108-820315daff12",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=138021",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

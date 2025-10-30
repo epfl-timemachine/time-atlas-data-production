@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a2b6321c-47bd-5397-b354-892aaafd5e6a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le Château d'Ouchy depuis le lac."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138710.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c67a2da7-6974-5f14-b0b8-b90dc2a07a9f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 530,
+      "width": 640,
+      "items": [
+        {
+          "id": "cf238a4b-ee54-5fb0-b190-7cd40886058c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a461b43d-9c0e-5e6c-a870-8d418c20c09b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138710.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 530,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138710.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c67a2da7-6974-5f14-b0b8-b90dc2a07a9f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6ef2ed0e-5be5-513b-a1d1-2e0b61fc9547",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a27e2594-5ff7-5a2a-81eb-f3eee4fab49f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eaca53b0-13d9-5553-9bad-934265b1d125"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c67a2da7-6974-5f14-b0b8-b90dc2a07a9f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=137989",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

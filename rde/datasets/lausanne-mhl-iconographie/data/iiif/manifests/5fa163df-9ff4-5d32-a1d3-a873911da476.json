@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5fa163df-9ff4-5d32-a1d3-a873911da476",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le quartier de St-Martin et la Cité."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170303.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5de97626-e62b-5940-ac4d-df4c7ca9550a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 514,
+      "width": 640,
+      "items": [
+        {
+          "id": "f7bbcbd3-d118-551e-9e69-d517994a82d3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3c504394-6388-5172-a2ab-2da2af965caa",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170303.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 514,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170303.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5de97626-e62b-5940-ac4d-df4c7ca9550a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e0b33041-f9de-5e89-bbe4-83c09a14c2aa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c2a3c3d9-4fa3-5147-b5f6-f9e1e9ca00b3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4526c8ea-d75c-52f6-8946-4c2c94906541"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5de97626-e62b-5940-ac4d-df4c7ca9550a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169557",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

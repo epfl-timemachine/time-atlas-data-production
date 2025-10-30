@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "247a7a31-fcaf-5e66-ab8e-fa8656c7053d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'Esplanade de Montbenon et les environs."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168215.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bc8cf55e-9774-522b-b7cd-45ca4d74cc48",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 378,
+      "width": 640,
+      "items": [
+        {
+          "id": "11d545bb-c791-5a8e-b572-a57f9f5b299c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8bddc2fc-5c7b-5a80-b551-2982d998dded",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168215.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 378,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168215.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bc8cf55e-9774-522b-b7cd-45ca4d74cc48"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ccfd2e4d-2f1a-5854-8f35-0e7fe726ab56",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dca24b60-8a0e-55e5-830b-9b9afd69ad31",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c12e141d-99f9-512b-b3eb-d8e2a8e4e5fc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bc8cf55e-9774-522b-b7cd-45ca4d74cc48",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167471",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

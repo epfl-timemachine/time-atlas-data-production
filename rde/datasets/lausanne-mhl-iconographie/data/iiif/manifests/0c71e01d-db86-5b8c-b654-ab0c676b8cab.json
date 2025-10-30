@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0c71e01d-db86-5b8c-b654-ab0c676b8cab",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le Flon, la tour Bel-Air et la Cathédrale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180416.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b0ff6c1f-f602-5633-90b3-a00292225c4a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 581,
+      "width": 640,
+      "items": [
+        {
+          "id": "61faf7e0-1ef7-5bc0-9d77-688f6fd6fab6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0d59d7ad-f8e4-55ee-98d5-47c527dcc48d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180416.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 581,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_180416.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b0ff6c1f-f602-5633-90b3-a00292225c4a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4b703f48-c6b5-52f0-82b7-9bcf57c04372",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a1e4db42-9a26-54b6-8136-b5ece22125ed",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2108c945-8dfd-573e-8e44-15420e465ef3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b0ff6c1f-f602-5633-90b3-a00292225c4a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=179662",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

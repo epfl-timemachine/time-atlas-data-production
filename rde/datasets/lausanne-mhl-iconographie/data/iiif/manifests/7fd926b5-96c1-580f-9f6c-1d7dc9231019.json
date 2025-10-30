@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7fd926b5-96c1-580f-9f6c-1d7dc9231019",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis l'avenue des Figuiers en direction de l'avenue de Cour."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166152.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ae95e939-6dec-5261-968e-2520a860c241",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 385,
+      "width": 640,
+      "items": [
+        {
+          "id": "0ba4a988-199d-5ebf-aaeb-d811cc5ee3e2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "265ea28c-e075-594b-8cc9-9e9fc517608d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166152.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 385,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166152.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ae95e939-6dec-5261-968e-2520a860c241"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a5daa85f-8d70-594b-8258-eb3a7372af4d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "be26b70e-bc96-533a-85d0-b09a5b841f02",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0931f30f-edd6-53b7-aedc-97a621ed49ff"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ae95e939-6dec-5261-968e-2520a860c241",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165409",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

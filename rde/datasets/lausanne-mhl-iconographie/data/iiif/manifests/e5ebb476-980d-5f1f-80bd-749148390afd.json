@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e5ebb476-980d-5f1f-80bd-749148390afd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue prise depuis l'arrière du bâtiment de l'ancien n° 16 (ancienne Innovation, actuel Globus) de la rue du Pont en direction de la rue de la Mercerie."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100282.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e25fe1bc-8310-515b-ae8f-5c2f4ece1f4e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 442,
+      "items": [
+        {
+          "id": "f5035b9f-f0e7-562c-80a8-35799972d76c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "12c4f300-b05e-5f73-aa2a-a75f21385386",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100282.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 442,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100282.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e25fe1bc-8310-515b-ae8f-5c2f4ece1f4e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "53cf2242-731a-5d6a-98d2-954a0864ea9e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9bf3eab9-45d2-5670-8697-ef9f83dedda9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f189d40d-d729-5ede-b016-cf5b5cf354f9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e25fe1bc-8310-515b-ae8f-5c2f4ece1f4e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100282",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

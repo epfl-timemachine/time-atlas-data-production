@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2d31cd96-60d2-543f-a14e-ba79f18e183d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Panorama composé de deux photographies sur l'église Saint-Paul à l'avenue de France 41bis."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167107.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "219d99bf-3eee-57c8-8a69-b1c45cdd7cd3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 341,
+      "width": 640,
+      "items": [
+        {
+          "id": "a6796df5-f828-5e7a-9e66-faf6719e1450",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "04ee0db1-8b44-57f4-afb7-97472eaaf3fa",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167107.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 341,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167107.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "219d99bf-3eee-57c8-8a69-b1c45cdd7cd3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "36c210c5-2fea-525e-9360-10def165877f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ba37f507-7222-5d68-9665-4abbfa1b7c14",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d93f4620-29e5-52e1-9fe6-269cdb19d225"
+                }
+              ],
+              "target": [
+                {
+                  "id": "219d99bf-3eee-57c8-8a69-b1c45cdd7cd3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166364",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d080d19e-2a59-5354-9113-c9fdcf7760ef",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue de la chapelle de la Maladière, avec à droite de l'édifice un grand noyer."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142976.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "75662832-c641-5ec7-82c6-1140786e0470",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 542,
+      "items": [
+        {
+          "id": "729e1264-53ad-5549-bf45-b46d2e22e5ec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b310a35f-cb88-513b-89c0-1444fa1acc51",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142976.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 542,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142976.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "75662832-c641-5ec7-82c6-1140786e0470"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "14ff1959-2118-50be-8cd0-6ec75e1be29d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8c134b1a-87a6-5603-a3de-18db257df7db",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "139ea86a-df6e-54d2-8a84-4e91a5d109a4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "75662832-c641-5ec7-82c6-1140786e0470",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=142255",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

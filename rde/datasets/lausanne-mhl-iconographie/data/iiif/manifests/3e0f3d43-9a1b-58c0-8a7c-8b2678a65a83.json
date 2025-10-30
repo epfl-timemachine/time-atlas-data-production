@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3e0f3d43-9a1b-58c0-8a7c-8b2678a65a83",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  vue générale sur la Sallaz depuis Pierre-de-Plan."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148937.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "73f82367-b6d1-595c-a1f8-960243b67564",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 500,
+      "width": 640,
+      "items": [
+        {
+          "id": "06be7f30-3050-5a88-987b-603e6412009e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e31218a1-55a1-548f-8e05-4bc1dc92994b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148937.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 500,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148937.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "73f82367-b6d1-595c-a1f8-960243b67564"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ecce392b-b0b1-5ca5-9ef9-f8ee161bdcdd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e16cae5-b4f9-52c4-afdc-0729912b5b6b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "88fc1f46-ab38-5225-a544-94edc5d52dda"
+                }
+              ],
+              "target": [
+                {
+                  "id": "73f82367-b6d1-595c-a1f8-960243b67564",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=148216",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8012cffe-10b4-5407-8572-a5d62b7f105d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue sur la porte de Couvaloup, côté intérieur de la ville. Une femme vêtue d'un manteau et d'un chapeau est représentée de dos. A droite, les vestiges des murs d'enceinte"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118904.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dc1d9ce0-cda8-586a-9ec1-00f9bc905cce",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 408,
+      "items": [
+        {
+          "id": "1a80a019-a88e-592d-9085-faabcf6272a6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3da85f93-65d1-5ba3-b668-5675b59d7d68",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118904.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 408,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118904.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dc1d9ce0-cda8-586a-9ec1-00f9bc905cce"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "821b4322-a184-50a6-8c52-3c3dfa87f08e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d40eb8ff-5ee8-584c-88d1-02ca4c119fe2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "01f4ca98-1a51-5908-a251-c91c2829bdac"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dc1d9ce0-cda8-586a-9ec1-00f9bc905cce",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=118808",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4e5b38d6-b320-5446-94ca-894ff3041925",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Les Printemps de Sévelin "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159164.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "20d9b0f7-2790-5422-99e6-9db1b873d29d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Les Printemps de Sévelin"
+        ]
+      },
+      "height": 640,
+      "width": 425,
+      "items": [
+        {
+          "id": "30654c84-2c09-5bc3-beb5-ec79bb23b48f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "353df592-a907-5d3c-8b28-428e725a3dd4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159164.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 425,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159164.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "20d9b0f7-2790-5422-99e6-9db1b873d29d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5c2910ae-ea19-567f-ac76-30697ee4408a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7cd016bd-68b1-5df8-90fb-f1c835e427ed",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Les Printemps de Sévelin"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "304a643a-e54e-5e99-89d9-9dd13be6cfc6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "20d9b0f7-2790-5422-99e6-9db1b873d29d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=158427",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

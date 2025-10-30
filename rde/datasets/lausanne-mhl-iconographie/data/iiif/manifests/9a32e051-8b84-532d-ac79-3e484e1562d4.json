@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9a32e051-8b84-532d-ac79-3e484e1562d4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le beffroi de la Cathédrale et le jardin de l'ancien évêché."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137325.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ac4bb8d1-c4a6-5cdc-91c9-ade688828dd2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 394,
+      "items": [
+        {
+          "id": "0886060d-d119-5de6-bd85-521565ba1bbc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "654e8f6b-7023-5a6e-be89-2910b4b2bc1f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137325.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 394,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137325.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ac4bb8d1-c4a6-5cdc-91c9-ade688828dd2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3bcb817e-5874-5c80-be47-4731136cf02d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c35d2afa-6c39-57bc-b23b-4dae54255499",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7415cd2e-8041-5b2d-a379-1a8508e47e98"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ac4bb8d1-c4a6-5cdc-91c9-ade688828dd2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=136605",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

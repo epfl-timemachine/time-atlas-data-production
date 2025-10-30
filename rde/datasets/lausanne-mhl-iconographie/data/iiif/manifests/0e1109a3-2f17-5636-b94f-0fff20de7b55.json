@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0e1109a3-2f17-5636-b94f-0fff20de7b55",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue générale d'Ouchy, depuis l'est. Au premier plan, il y a le chemin de halage qui longe le lac avec un petit pont en bois. Dans le lac, on voit un alignement de pierres (début de l'aménagement des quais); l'ancien débarcadère est détruit. A l'arrière-plan, on distingue le château d'Ouchy ainsi que le port."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97526.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "987e3b40-606f-59ed-b226-eda889bac248",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 630,
+      "width": 640,
+      "items": [
+        {
+          "id": "c6f6b476-8f7b-5e63-904c-51d968b86827",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0bf97e7f-f230-543e-bf2f-ceab82d870ee",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97526.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 630,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97526.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "987e3b40-606f-59ed-b226-eda889bac248"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1bd2bcea-52d5-5175-8151-acc67316fcd6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c8b68b34-b92d-5582-bf6e-c127c11dad45",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "988fd677-d297-5423-a652-d787609eaee1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "987e3b40-606f-59ed-b226-eda889bac248",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97526",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

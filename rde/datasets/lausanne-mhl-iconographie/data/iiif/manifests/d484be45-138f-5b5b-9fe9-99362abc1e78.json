@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d484be45-138f-5b5b-9fe9-99362abc1e78",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Terrasse du Beau-Rivage Palace avec tables, clients et serveurs."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143981.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b53f4f70-96ff-5687-9486-cf3abae5eb7f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 346,
+      "width": 640,
+      "items": [
+        {
+          "id": "a67be920-3d37-54f2-856f-7d1cc5c58e22",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "49c05bfa-3c8b-5122-8a4f-deacd172d651",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143981.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 346,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143981.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b53f4f70-96ff-5687-9486-cf3abae5eb7f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fd9ed6a8-8d7a-53dd-ae80-ddecce96fa0d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "87b54852-a527-5af5-a174-efd774f74455",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f8dfddf1-4d64-5b0b-abb3-294b86ce48f4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b53f4f70-96ff-5687-9486-cf3abae5eb7f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=143260",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

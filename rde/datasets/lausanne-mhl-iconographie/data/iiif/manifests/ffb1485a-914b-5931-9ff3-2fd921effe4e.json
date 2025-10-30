@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ffb1485a-914b-5931-9ff3-2fd921effe4e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue de la troisième gare en construction depuis la place."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102455.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "344802ae-8794-55f4-b09d-ab5535691058",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 452,
+      "width": 640,
+      "items": [
+        {
+          "id": "f0cf32d5-9d3c-54d2-9baf-7731a0762c21",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eda4f001-ba9c-5bbd-9e60-5d3e1152b1a8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102455.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 452,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102455.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "344802ae-8794-55f4-b09d-ab5535691058"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6738c5f5-b352-5be0-9f21-3988a79156e3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "44cb1338-038c-54be-9283-768088fc617f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eb5193ba-fac9-5e0b-a3dc-4dfaf27e30ca"
+                }
+              ],
+              "target": [
+                {
+                  "id": "344802ae-8794-55f4-b09d-ab5535691058",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102455",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

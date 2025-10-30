@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0a8e8bed-cde7-5e50-9893-db12a8d177e7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de l'intérieur de la brasserie La Bavaria."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136512.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b43c79e4-2fc9-5548-b313-29903940ca01",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 414,
+      "width": 640,
+      "items": [
+        {
+          "id": "36a179ec-3bb6-5cd4-ab4a-3c8b5c1b40f2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1491f265-5c12-584f-80cf-4c216ec91411",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136512.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 414,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136512.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b43c79e4-2fc9-5548-b313-29903940ca01"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1965fa98-2234-5c68-8d35-064ac9d15cb1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eb84faea-915d-5270-b4c7-4e643646ff63",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eeb4aa82-7d0d-5ed6-93f6-65d905ff50de"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b43c79e4-2fc9-5548-b313-29903940ca01",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=135792",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

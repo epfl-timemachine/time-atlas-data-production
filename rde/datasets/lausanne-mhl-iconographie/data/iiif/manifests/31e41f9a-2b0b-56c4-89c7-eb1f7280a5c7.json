@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "31e41f9a-2b0b-56c4-89c7-eb1f7280a5c7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur l'angle des maisons Perregaux : rue Pépinet-place Saint-François."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100019.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f757e7a1-6c64-528c-9013-ab2c88cc7b55",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 560,
+      "items": [
+        {
+          "id": "3436d74a-d57d-563e-977c-c0874ef20b1e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5a060db9-cbbf-59d4-96ba-6ebb8a242e4d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100019.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 560,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100019.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f757e7a1-6c64-528c-9013-ab2c88cc7b55"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "94924f27-ba06-5687-90b1-2af6f9215fec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "21ce35af-1f2d-5767-bc52-f65c467b89ae",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6f057fc9-e7a0-53b1-a9ac-411da1d52fca"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f757e7a1-6c64-528c-9013-ab2c88cc7b55",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100019",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

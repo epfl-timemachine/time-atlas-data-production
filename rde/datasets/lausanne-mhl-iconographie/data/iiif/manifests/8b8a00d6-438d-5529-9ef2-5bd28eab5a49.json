@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8b8a00d6-438d-5529-9ef2-5bd28eab5a49",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Notre Dame de Lausanne Sur fond blanc, reproduction en couleurs d'une photographie de la fresque de l'abside de Notre Dame de Lausanne, avec en premier plan un autel en marbre et des stalles. La fresque représente Marie en majesté, portant l'Enfant, entourée d'anges et de saints, ainsi que, dans la partie inférieure, les apôtres et la crucifixion."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112100.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4d09e11d-8eba-5c97-a79e-7c0c422d3900",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Notre Dame de Lausanne"
+        ]
+      },
+      "height": 640,
+      "width": 478,
+      "items": [
+        {
+          "id": "e03ececd-6e47-5bb0-8c35-f8d95c7fde4c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "01263b3e-fe50-5729-bd46-11475b234606",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112100.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 478,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112100.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4d09e11d-8eba-5c97-a79e-7c0c422d3900"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "39c33578-61f5-595e-98d9-c7439785f3fb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3c401e96-f34c-54c9-b3c1-222db8558696",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Notre Dame de Lausanne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b82e0cdf-7079-50f2-adef-ede78275d164"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4d09e11d-8eba-5c97-a79e-7c0c422d3900",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=112004",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

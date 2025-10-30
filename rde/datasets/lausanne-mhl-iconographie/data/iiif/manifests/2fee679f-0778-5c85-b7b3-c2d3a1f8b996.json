@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2fee679f-0778-5c85-b7b3-c2d3a1f8b996",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  emplacement des maisons du Péristyle et de l'Amandier"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103512.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0de28f0e-7f79-5ce8-9194-45088662857f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 434,
+      "width": 640,
+      "items": [
+        {
+          "id": "5b8a03f8-7c5e-57c0-a85c-b704d94922e0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e584178-1d39-533a-920b-4fe3d011a3e1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103512.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 434,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103512.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0de28f0e-7f79-5ce8-9194-45088662857f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "700b8162-a710-5db6-829c-4c212bbeb0b0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a3491775-25be-5eac-81de-747e1b31319c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d0d8cce6-8332-5e94-b47b-f4831d235860"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0de28f0e-7f79-5ce8-9194-45088662857f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=103512",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

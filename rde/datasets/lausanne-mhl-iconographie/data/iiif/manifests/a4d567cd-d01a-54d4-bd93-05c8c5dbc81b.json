@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a4d567cd-d01a-54d4-bd93-05c8c5dbc81b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne) Petit-Chêne Vue de la descente du Petit-Chêne, avec au premier plan le n° 11."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131305.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "57531c17-f1a4-5746-baf2-55c5b4e5deff",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne) Petit-Chêne"
+        ]
+      },
+      "height": 640,
+      "width": 467,
+      "items": [
+        {
+          "id": "1729186a-ae53-5e71-8679-56637f0e4bed",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "63acb59d-2193-53f4-bbdd-ed930aa59cf0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131305.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 467,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131305.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "57531c17-f1a4-5746-baf2-55c5b4e5deff"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c2f7d375-78d2-5959-a1bb-82f224903eea",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0dd44e46-4589-53f1-b0fd-39856c85a8d9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne) Petit-Chêne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fe4ad3e0-735d-50c9-b432-dc80511f0524"
+                }
+              ],
+              "target": [
+                {
+                  "id": "57531c17-f1a4-5746-baf2-55c5b4e5deff",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=130585",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

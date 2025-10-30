@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f39eb9a4-79c1-5c5f-a0ab-a6e9d0a84e9c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue de la place Saint-François en direction de l'avenue Benjamin-Constant, prise depuis la rue du Grand-Chêne"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170216.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dc4ab6e5-9305-54ce-9323-504c2b844188",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 390,
+      "width": 640,
+      "items": [
+        {
+          "id": "61cbe7a2-97d0-5dad-825a-9a28514aa6d6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ef463d06-150c-541f-9a6a-86e201defada",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170216.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 390,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170216.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dc4ab6e5-9305-54ce-9323-504c2b844188"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9cc43cbd-b16d-5680-899d-54f9605c3810",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "87111e8c-1d04-58e1-9744-531b738bccf7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "70a89e5f-1d0b-5444-85d2-1b6cfa526782"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dc4ab6e5-9305-54ce-9323-504c2b844188",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169470",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

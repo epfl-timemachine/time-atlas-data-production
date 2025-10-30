@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "32ed5cbc-61af-5f6c-9ce3-26c8a68de5a7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le quai de Belgique et la place du Port depuis l'ouest."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135126.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dc768d0f-5f41-57bc-9e37-1d62b5977749",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 534,
+      "width": 640,
+      "items": [
+        {
+          "id": "67c18bb6-b78c-553a-a8a3-44ea27164647",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f452cd77-2491-5b2c-8bb7-6a9da51b3722",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135126.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 534,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135126.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dc768d0f-5f41-57bc-9e37-1d62b5977749"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2c506d47-3938-5a23-b9c7-c7402db0ccf7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0e40b8b1-8826-526e-a100-074e58e4d527",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "aef58175-b335-58d8-bdcd-fd01d2765639"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dc768d0f-5f41-57bc-9e37-1d62b5977749",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134406",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

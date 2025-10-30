@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "52c98060-7bf0-577e-9030-4e9602fa6eae",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue partielle du chevet de la Cathédrale depuis la promenade Saint-Maur"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127222.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "76e1620d-4cb8-5f92-b3d1-64662203ce7c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 442,
+      "items": [
+        {
+          "id": "fa356351-ea42-5323-ada1-9356e83261ab",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2ff87cc9-1466-5b1f-af06-f31bff977bec",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127222.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 442,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127222.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "76e1620d-4cb8-5f92-b3d1-64662203ce7c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1b5f2b31-32e8-5c8c-8442-1e307959146b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "536f19d9-8a57-54e9-bedd-5bd5fc9c0e79",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6e2b4f1e-3047-5a3b-bfa0-8493fd270f60"
+                }
+              ],
+              "target": [
+                {
+                  "id": "76e1620d-4cb8-5f92-b3d1-64662203ce7c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=126552",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

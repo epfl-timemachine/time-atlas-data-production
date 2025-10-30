@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b3ace69b-971d-5c9b-bc15-36a5faf7a587",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue sur la maison Porta et le bas de la rue Cité-Derrière. Muret surmonté d'une barrière en fer à droite et grands arbres dans le jardin"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118266.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4d9a94b9-d6ee-587b-bd8f-256da751c859",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 473,
+      "items": [
+        {
+          "id": "04c1a601-2149-5439-b8cb-373fde9f1ed4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4993d036-2907-581e-b99e-3a391759a6d0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118266.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 473,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118266.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4d9a94b9-d6ee-587b-bd8f-256da751c859"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "47c8414a-5910-5ac0-8295-cf59735f26f1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fd3a52a1-b7b9-5fcf-80a6-18931c2bcc5e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "43cc1f5f-0013-554d-9fac-f56cff1eb2e6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4d9a94b9-d6ee-587b-bd8f-256da751c859",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=118170",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8a06437a-12a6-5fbd-9a38-3e6a98b900c7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.17, albums Vieux Lausanne)  Angle de la rue Caroline et de la rue de Bourg."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132203.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "aca83940-4be9-53f1-9079-283cb41d8941",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.17, albums Vieux Lausanne) "
+        ]
+      },
+      "height": 488,
+      "width": 640,
+      "items": [
+        {
+          "id": "6a2807c2-2728-59c0-9396-87c276d4e489",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eb361f11-8a19-59ac-ba37-6ebfbe251087",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132203.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 488,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132203.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "aca83940-4be9-53f1-9079-283cb41d8941"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "12f08797-0227-547d-9cb6-182dc2d3b9f0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eec8e081-1eba-524c-8101-c1aebd44b1c3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.17, albums Vieux Lausanne) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7b79e8b5-2de0-55e2-837f-97981677b922"
+                }
+              ],
+              "target": [
+                {
+                  "id": "aca83940-4be9-53f1-9079-283cb41d8941",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=131483",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c1aee006-6d6b-5d3d-9881-92e4ec7fbfbf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue générale sur la route cantonale avec le quartier de la Bourdonette."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171636.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "20aa7473-a891-5d70-bc67-cf7c219b62de",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 382,
+      "width": 640,
+      "items": [
+        {
+          "id": "b244ffd2-9fe0-5777-9a2d-8c59a9c39f4c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "39ca4548-79e5-51c9-b174-d0cf25810e0b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171636.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 382,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171636.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "20aa7473-a891-5d70-bc67-cf7c219b62de"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a445a449-1146-5baa-b661-541b66ee1164",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9e5c5f52-06e6-5c50-bfc8-4a40f0b2303e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "59ae4026-e567-50ce-9fd3-697e8fd4a276"
+                }
+              ],
+              "target": [
+                {
+                  "id": "20aa7473-a891-5d70-bc67-cf7c219b62de",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170890",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

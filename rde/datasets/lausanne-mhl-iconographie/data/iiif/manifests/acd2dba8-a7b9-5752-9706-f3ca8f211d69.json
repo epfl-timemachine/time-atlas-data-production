@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "acd2dba8-a7b9-5752-9706-f3ca8f211d69",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Intérieur de la Brasserie munichoise. Dans la salle on voit des tables, des chaises, un escalier en colimaçon qui mène à l'étage supérieur, un petit tonneau posé sur un gros tonneau , une banquette rouge qui fait l'angle, un grand miroir sur le mur du fond, des lustres au plafond."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136515.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0f514be7-9097-57ec-bb47-cb2d9069d7b6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 405,
+      "width": 640,
+      "items": [
+        {
+          "id": "de181c01-d698-5e2a-8379-24c49f383f70",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c5466533-f81f-58ec-8dbd-d8c387272e5d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136515.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 405,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136515.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0f514be7-9097-57ec-bb47-cb2d9069d7b6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "04020023-c084-5d32-aa91-b9652e1ef0ca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c6d6d1d0-bdf9-53e7-a38b-8a91933df493",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "292c8237-deda-5ce1-8124-4480d8634310"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0f514be7-9097-57ec-bb47-cb2d9069d7b6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=135795",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

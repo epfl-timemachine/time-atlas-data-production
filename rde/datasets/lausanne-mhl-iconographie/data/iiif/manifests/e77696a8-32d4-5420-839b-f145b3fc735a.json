@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e77696a8-32d4-5420-839b-f145b3fc735a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue générale prise de l'est du quai et de la baie d'Ouchy. Au premier plan, il y a le lac. Au second plan, très éloigné, on distingue l'hôtel du château, l'hôtel d'Angleterre et l'hôtel Beau-Rivage. On distingue également un bateau à vapeur."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97675.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "00ca52d4-42ea-5c04-89bf-0d6230a32d4c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 632,
+      "items": [
+        {
+          "id": "8164b21d-bff1-55e1-9e0f-4421d895c825",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "09350f11-0632-5fe1-b2cb-3d1ec5bf368b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97675.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 632,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97675.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "00ca52d4-42ea-5c04-89bf-0d6230a32d4c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "621209fd-65c3-592b-8f00-04b849357bc0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "21bd8b93-f804-55d0-b3a4-bd9fd8cf2261",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f30eb4d6-c4a4-52e0-8ee6-dc4fe0cd2c92"
+                }
+              ],
+              "target": [
+                {
+                  "id": "00ca52d4-42ea-5c04-89bf-0d6230a32d4c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97675",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d48d1a6d-5b6c-5887-b4c0-6de5cbff87f4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue plongeante depuis l'immeuble N°13 à l'avenue de Mont-Goulin."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171222.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b45ed201-dbd1-58de-8c4e-12fa71f4a75c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 426,
+      "width": 640,
+      "items": [
+        {
+          "id": "f1d6427e-6ba1-5d9c-9972-399300cf60d0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "35767cfb-bd22-5a4c-b31f-a4e30c812af3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171222.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 426,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171222.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b45ed201-dbd1-58de-8c4e-12fa71f4a75c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7dd81cbb-892a-55f1-97ee-246b7434323b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce67387a-9e42-5e8e-b2cf-2f51f8e55fee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0a05a6fe-69d3-592c-8e2d-0e3771eea833"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b45ed201-dbd1-58de-8c4e-12fa71f4a75c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170476",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1100f208-ac02-5326-988f-b56cc9b75393",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la route de Berne, en Marin"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140760.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6a001bc7-9528-5a10-854f-e95ac1bf0e94",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 531,
+      "width": 640,
+      "items": [
+        {
+          "id": "04b07d77-8dab-5ff9-bd92-7518fedb879a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bb12c395-f313-5262-ade8-290df53da21b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140760.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 531,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140760.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6a001bc7-9528-5a10-854f-e95ac1bf0e94"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9327045b-b402-52ca-835b-597aa69757f7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a0bc32d0-2904-5e8f-90cf-dc88658f9669",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "35e79d8b-5723-5298-a6ec-1b123f35e873"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6a001bc7-9528-5a10-854f-e95ac1bf0e94",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140039",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

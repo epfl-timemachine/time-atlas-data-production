@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6924ed5e-fd8d-5fb8-bdfa-575edecd2f26",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le début de la rue de L'Ale, prise depuis la rue Saint-Laurent."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165098.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1d5bef88-e784-5d98-8275-7bee109bef44",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 562,
+      "items": [
+        {
+          "id": "1d81bab9-7532-51f5-80b6-19a9ffd4e49d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d36a4103-247b-5a59-baaf-861bf70e50fe",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165098.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 562,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165098.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1d5bef88-e784-5d98-8275-7bee109bef44"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8cc44d20-3ab6-591c-a524-6c662ac679bf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e3decb94-a282-5449-8f14-8c656694d1b0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a974c93b-4510-5a10-8067-1a9934a70195"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1d5bef88-e784-5d98-8275-7bee109bef44",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164357",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

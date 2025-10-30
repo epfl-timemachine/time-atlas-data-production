@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b053c29e-ee7b-5d42-b287-ec8486b6cb0b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue intérieure du temple de Chailly, avant les transformations."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98806.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0d60f72c-a253-594b-889e-2b1dab1a3375",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 378,
+      "width": 640,
+      "items": [
+        {
+          "id": "e075c014-d815-591b-b5df-bd33415d2967",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2e79fca2-ce22-5644-8d2e-0ceea1c5e219",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98806.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 378,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98806.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0d60f72c-a253-594b-889e-2b1dab1a3375"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "204ddd2e-07c4-5f0f-baff-e04c59452014",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "db038a65-27eb-57c6-aa3b-53af12e2da77",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "55d9eaa5-4747-58e9-85e0-9679da271855"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0d60f72c-a253-594b-889e-2b1dab1a3375",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98806",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

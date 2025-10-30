@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "367dfa27-1b4a-5845-ae01-777e4fcf70a9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue du Château Saint-Maire depuis l'est avec les maisons de la Barre et les maisons de la Cité juste esquissées"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110593.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2ceabb0e-e137-581e-a02d-7c8adaa3fc7e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 626,
+      "width": 640,
+      "items": [
+        {
+          "id": "90bc1e5f-ec6b-5272-b723-92ca2b3558f7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f4222247-88a9-5ab6-a663-4b25dea7395b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110593.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 626,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110593.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2ceabb0e-e137-581e-a02d-7c8adaa3fc7e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fc265ba0-fb9c-5419-9340-ad83b6d12ad2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b5c3c11a-16b9-522d-8150-dbf0b62aa727",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "64f3edb6-d8ef-5fe9-aed2-c171fe29d392"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2ceabb0e-e137-581e-a02d-7c8adaa3fc7e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110497",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "de6b623e-1da1-5db4-9a7c-fa752bda6c5d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue de la maison se trouvant au croisement de l'avenue des Alpes et du chemin de la Longeraie."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102523.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4868d7c6-bcd4-56ea-a9dc-748fb0eb8013",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 470,
+      "width": 640,
+      "items": [
+        {
+          "id": "ac890850-328a-56be-9e30-45deeef16b44",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cfee943f-39ae-52dd-916f-cff557205730",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102523.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 470,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102523.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4868d7c6-bcd4-56ea-a9dc-748fb0eb8013"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8d713846-a029-5cac-8445-79bbdcce517c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "27bae7a6-7502-5a51-936c-cc85bdff1b6b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "42195e76-529c-502a-83c7-531ad1de5d76"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4868d7c6-bcd4-56ea-a9dc-748fb0eb8013",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102523",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

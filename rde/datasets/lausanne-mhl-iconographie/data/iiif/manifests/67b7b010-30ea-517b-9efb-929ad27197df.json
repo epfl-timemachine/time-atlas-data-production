@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "67b7b010-30ea-517b-9efb-929ad27197df",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la chapelle provisoire à l'avenue de Béthusy, actuellement démolie."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175120.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "16dc663d-b8af-560a-afc4-9758fc3d405d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 390,
+      "width": 640,
+      "items": [
+        {
+          "id": "31fea264-bc7d-57c8-a1c6-ae7304948a2b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0725edb9-d966-5d8a-9d2f-91ed718a050e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175120.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 390,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175120.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "16dc663d-b8af-560a-afc4-9758fc3d405d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f86c2606-c46a-51b8-b9da-20dc4993ffb7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4a45a473-eadb-5413-afcb-01d830bf774c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cc96eb78-c229-56c2-87c5-2d8c798c6090"
+                }
+              ],
+              "target": [
+                {
+                  "id": "16dc663d-b8af-560a-afc4-9758fc3d405d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=174372",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

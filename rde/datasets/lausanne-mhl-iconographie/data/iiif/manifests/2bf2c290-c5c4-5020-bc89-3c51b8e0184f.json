@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2bf2c290-c5c4-5020-bc89-3c51b8e0184f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue d'Echallens en direction du numéro 42."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167101.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b7c761da-2f3e-5f2a-84e3-38dfcd907217",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 514,
+      "width": 640,
+      "items": [
+        {
+          "id": "bc9785cc-dc76-5027-9ed4-c775886b27ff",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c2e507a5-e641-52f2-93f0-3f58ff860f67",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167101.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 514,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167101.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b7c761da-2f3e-5f2a-84e3-38dfcd907217"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b3804621-9da0-5f1f-8b52-358b5b431349",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d3f1033b-58b1-580b-bc1e-a2aeefb638f4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "164c1708-1f6e-55e0-a68b-9c1ac8cae9b3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b7c761da-2f3e-5f2a-84e3-38dfcd907217",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166358",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

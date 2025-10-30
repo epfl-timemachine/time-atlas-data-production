@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "aaa3024c-40ea-54aa-a6cc-487b5cb5689f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.17, albums Vieux Lausanne)  Rue Saint-Etienne lors du chantier de la rue Pierre Viret."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132363.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f4ba254d-913c-57ed-b335-9e4af2a8024f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.17, albums Vieux Lausanne) "
+        ]
+      },
+      "height": 640,
+      "width": 493,
+      "items": [
+        {
+          "id": "02cc4ef2-fcf7-529b-a125-cbb596b599ee",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eaa6f26b-df31-5563-904d-e5ffee28df81",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132363.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 493,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132363.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f4ba254d-913c-57ed-b335-9e4af2a8024f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e763ab88-0f9f-55a0-aeee-64c3710bc613",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cf2cbe5f-27aa-5ac9-a823-4c37afa56b56",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.17, albums Vieux Lausanne) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4d628450-16f2-51c9-8f9f-8d8a54c39812"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f4ba254d-913c-57ed-b335-9e4af2a8024f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=131643",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

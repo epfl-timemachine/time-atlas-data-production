@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cb36898c-73f6-5071-a55e-593d2108617b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(marsaff) Beau-Rivage, tournoi de ping-pong "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_116155.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e7b39733-51a5-55a2-9624-f51413ceb8c5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(marsaff) Beau-Rivage, tournoi de ping-pong"
+        ]
+      },
+      "height": 640,
+      "width": 477,
+      "items": [
+        {
+          "id": "ce32bc01-d4bd-5b75-8ccc-e69004e805f9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "50ccdeb5-aa1b-5300-a392-7b189dd11d04",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_116155.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 477,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_116155.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e7b39733-51a5-55a2-9624-f51413ceb8c5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "92836b32-df92-5f23-bddf-89470d63de76",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "759c2ada-1ec9-5821-8eb7-c1216a88f3ea",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(marsaff) Beau-Rivage, tournoi de ping-pong"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "67b4c246-0c95-5d88-8118-1df82b1fba73"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e7b39733-51a5-55a2-9624-f51413ceb8c5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=116059",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

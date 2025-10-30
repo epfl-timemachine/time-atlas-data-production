@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bf02a838-8ba6-518d-b986-c69c8b7b9b96",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur des immeubles locatifs à la route du Pavement depuis la route Aloys-Fauquez."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165073.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ca1cbcd7-e290-57c2-a6ed-935051131133",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 440,
+      "width": 640,
+      "items": [
+        {
+          "id": "e0a6c5f9-99bd-5b88-8654-e0115818b3c1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8eb569c3-0e7f-5c56-aab6-77144f0fc667",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165073.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 440,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165073.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ca1cbcd7-e290-57c2-a6ed-935051131133"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a8f48fbb-8de9-580b-b763-311845b9f773",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "278314a5-17dc-5503-9bb5-b7cd06e6b76b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "80dd6d25-85d3-531b-9fbb-d9482b715516"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ca1cbcd7-e290-57c2-a6ed-935051131133",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164332",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

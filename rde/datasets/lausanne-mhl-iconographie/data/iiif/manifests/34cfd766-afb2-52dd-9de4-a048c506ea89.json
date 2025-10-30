@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "34cfd766-afb2-52dd-9de4-a048c506ea89",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue du Pont de Chailly depuis l'école."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144297.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8d787632-b446-5a0e-9627-f920cd1b20df",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 534,
+      "width": 640,
+      "items": [
+        {
+          "id": "4232b30f-dd12-5856-882d-91563ae9937a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e5387e11-0f2a-530e-a887-9303f0133bd3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144297.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 534,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144297.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8d787632-b446-5a0e-9627-f920cd1b20df"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "62827b60-759d-5d33-9b57-2ee706c8f291",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "50671a3b-a7c5-53fd-9a4c-c574e0405b42",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ebe37c10-df9f-5b39-b695-400797458b5f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8d787632-b446-5a0e-9627-f920cd1b20df",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=143576",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

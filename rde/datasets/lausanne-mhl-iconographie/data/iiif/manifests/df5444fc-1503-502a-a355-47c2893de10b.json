@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "df5444fc-1503-502a-a355-47c2893de10b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la place de la Gare et l'avenue Ruchonnet."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134699.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ff40229e-d3d3-5712-afa2-729289477f1d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 540,
+      "width": 640,
+      "items": [
+        {
+          "id": "a36b2c49-7110-5720-a067-25e7d58a6ebd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3b2821d6-59ad-5ee5-8c73-fb1b8d8c2704",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134699.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 540,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134699.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ff40229e-d3d3-5712-afa2-729289477f1d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6518e4da-b8d3-5131-87e6-2efc68790b87",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "73368876-22d9-5997-b978-ec687df72ac1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0aaa2136-6a8b-5168-a8a0-49484dd934c3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ff40229e-d3d3-5712-afa2-729289477f1d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133979",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

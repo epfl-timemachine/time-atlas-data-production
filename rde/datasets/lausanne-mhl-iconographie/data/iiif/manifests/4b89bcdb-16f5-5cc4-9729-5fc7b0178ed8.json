@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4b89bcdb-16f5-5cc4-9729-5fc7b0178ed8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue sur l'ancien hôpital et la Cathédrale depuis la Caroline. A l'avant-plan on distingue un pré avec une maison  en bois et un chevrier avec moutons et chèvre"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_113460.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d3786dfb-f409-5065-9f9c-29ec59d91af5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 475,
+      "width": 640,
+      "items": [
+        {
+          "id": "d02f39d9-e660-54e2-8ca3-fe9fb5d56b6b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4d5da90f-9942-559c-b304-249ad102693b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_113460.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 475,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_113460.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d3786dfb-f409-5065-9f9c-29ec59d91af5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "678273e0-cb43-55e2-b39f-727d98e65bf9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "45d5b556-5c49-55da-a3da-8dfd51c08370",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1049d770-8787-54a6-8936-b70c264c620f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d3786dfb-f409-5065-9f9c-29ec59d91af5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=113364",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

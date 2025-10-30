@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d11dea01-550f-56f0-b806-9cb05683ab39",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue de la rue Mathurin-Cordier jusqu'à l'avenue de Béthusy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165649.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7ed1c0b0-4fbb-58b8-977e-5d792e740542",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 550,
+      "width": 640,
+      "items": [
+        {
+          "id": "cea078c8-86f1-5d26-b63c-2d55d0561543",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1fedb9eb-1e0a-5dbc-bc8c-13ed899b0018",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165649.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 550,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165649.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7ed1c0b0-4fbb-58b8-977e-5d792e740542"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "592edb9a-0d41-529f-9109-6d84fa4632c1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e20df0c1-8213-504f-949c-6cf3c7110185",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2f611f27-addc-50a6-b2f5-d773df4adec6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7ed1c0b0-4fbb-58b8-977e-5d792e740542",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164906",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

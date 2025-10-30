@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3821a38e-f349-5c57-856f-baca0f9adb91",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur la place de la Palud depuis rue de la Mercerie."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102618.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "20c2e53c-35e6-55d9-8421-19b43cdb9331",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 492,
+      "items": [
+        {
+          "id": "d9b1c7df-62d6-5004-afde-cc03813e197c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "70c1f95c-07fb-5f39-9701-054c5ef32c45",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102618.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 492,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102618.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "20c2e53c-35e6-55d9-8421-19b43cdb9331"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "70171d89-ce0d-5ca6-9cdd-64601326b848",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d953e7f5-345c-5467-8778-58d24cfa7324",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a8ff9205-cabb-5eff-8caf-db7c3def2328"
+                }
+              ],
+              "target": [
+                {
+                  "id": "20c2e53c-35e6-55d9-8421-19b43cdb9331",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102618",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

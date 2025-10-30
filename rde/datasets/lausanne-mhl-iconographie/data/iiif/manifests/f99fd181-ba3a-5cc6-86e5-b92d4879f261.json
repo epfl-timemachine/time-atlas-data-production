@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f99fd181-ba3a-5cc6-86e5-b92d4879f261",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le début du boulevard de Grancy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134710.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "766f88c7-c687-5964-8e4d-9a028e9c020c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 546,
+      "width": 640,
+      "items": [
+        {
+          "id": "7dc013ff-544c-58b4-b6d4-bfac9f6b3028",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "26680b51-bf7b-52d9-8919-dc427cc0f371",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134710.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 546,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134710.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "766f88c7-c687-5964-8e4d-9a028e9c020c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "81876bcb-4476-5aeb-90fd-3f8a6481662c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ac489397-430e-5c09-9fc8-996df65d029f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b3f6e7c7-e151-5fa2-8a6a-f570998df692"
+                }
+              ],
+              "target": [
+                {
+                  "id": "766f88c7-c687-5964-8e4d-9a028e9c020c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133990",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

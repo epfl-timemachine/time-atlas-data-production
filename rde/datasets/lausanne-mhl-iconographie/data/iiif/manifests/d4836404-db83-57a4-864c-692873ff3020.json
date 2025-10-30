@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d4836404-db83-57a4-864c-692873ff3020",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) dorothy "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111415.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "23e185cf-5186-5de7-b097-4f89a8c7cd20",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) dorothy"
+        ]
+      },
+      "height": 640,
+      "width": 420,
+      "items": [
+        {
+          "id": "c68c5b17-bb92-5aae-8d50-8347b1ec8250",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2084efad-f3fa-5782-b057-1cc36825ec01",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111415.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 420,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111415.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "23e185cf-5186-5de7-b097-4f89a8c7cd20"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ccf4c23d-3541-51d4-aab0-260cde069390",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "69ad6df4-fc61-51ba-b86b-63bdfb9a5a34",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) dorothy"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "07a8e526-e610-52f4-90cc-fcc2deda060a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "23e185cf-5186-5de7-b097-4f89a8c7cd20",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=111319",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

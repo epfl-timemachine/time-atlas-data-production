@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cbc9a713-e83f-5e7a-b2b9-53f2a5b3bf21",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Défilé d'enfants à la place du Château."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140793.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d1dd43f5-1c05-5137-83e6-1a2768308c16",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 600,
+      "width": 640,
+      "items": [
+        {
+          "id": "027d879e-d05a-576e-8e5b-c831f4e09508",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "17846491-fb3d-5a71-9bbe-5739890bfaa2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140793.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 600,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140793.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d1dd43f5-1c05-5137-83e6-1a2768308c16"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4ff2b1a9-f7fc-58d0-9c12-2e602e18a915",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce049c38-b1f7-551c-a856-c06f9f617a25",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "34cf92d2-6b96-5755-9805-cf63bca3b013"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d1dd43f5-1c05-5137-83e6-1a2768308c16",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140072",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

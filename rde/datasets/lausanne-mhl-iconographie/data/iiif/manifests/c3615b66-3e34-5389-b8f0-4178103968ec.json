@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c3615b66-3e34-5389-b8f0-4178103968ec",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le monument Ruchonnet à la place de la Madeleine."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134777.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7a62fcc0-62f9-5fbb-bd79-e115feb00948",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 570,
+      "items": [
+        {
+          "id": "32568b4a-9d7e-5206-a7d4-50fb7a05230a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d01c98af-de1b-5dbf-836f-caf7b77d7767",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134777.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 570,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134777.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7a62fcc0-62f9-5fbb-bd79-e115feb00948"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ed675850-0995-5d97-8187-d58d38d9fab1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8b6e9b52-cd53-542b-8ecb-4f0d2c555df6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0051dd43-5332-53cc-a0dc-ad8920f72a8e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7a62fcc0-62f9-5fbb-bd79-e115feb00948",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134057",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

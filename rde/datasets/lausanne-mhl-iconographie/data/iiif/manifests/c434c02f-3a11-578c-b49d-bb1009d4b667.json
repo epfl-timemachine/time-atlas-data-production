@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c434c02f-3a11-578c-b49d-bb1009d4b667",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Journées Mozart Lausanne 2009 "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159019.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cbd22b42-6318-55c4-8c35-68630827127e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Journées Mozart Lausanne 2009"
+        ]
+      },
+      "height": 640,
+      "width": 428,
+      "items": [
+        {
+          "id": "98e61b7a-52e5-509b-a727-d5b955e14b50",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1c33e6b2-0c0b-5f38-a741-9230a5c45056",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159019.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 428,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159019.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cbd22b42-6318-55c4-8c35-68630827127e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "21c45381-fa10-5e0b-a982-077ba73d0404",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "97ec2427-5dd8-5e37-ba68-5a7443178327",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Journées Mozart Lausanne 2009"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "57a0afb9-48c9-562d-b5a9-b5330ae34b49"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cbd22b42-6318-55c4-8c35-68630827127e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=158282",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

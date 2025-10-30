@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "434b6d69-ebb1-56e0-b238-ad6df3a0544d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'immeuble N°2 de l'avenue André-Schnetzler et ses alentours."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168693.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b60c108b-bf52-529e-9b07-2674ec47891f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 528,
+      "items": [
+        {
+          "id": "4beff2d8-2a28-5647-80b9-2cd6a6840299",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "48c894d8-05bf-5115-b7fd-33209bf18a7a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168693.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 528,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168693.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b60c108b-bf52-529e-9b07-2674ec47891f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a863b0e0-1faa-5953-a2b6-4dddefe20c0b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2425d1bf-1e0c-5012-b661-c81d319c83e7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ce557f45-a690-58df-aef8-b268e502f17f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b60c108b-bf52-529e-9b07-2674ec47891f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167948",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

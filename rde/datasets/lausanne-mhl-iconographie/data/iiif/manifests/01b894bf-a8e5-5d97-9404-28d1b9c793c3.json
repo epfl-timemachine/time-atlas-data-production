@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "01b894bf-a8e5-5d97-9404-28d1b9c793c3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue dus numéros 23 (maison Byse) et 25 (maison Hessenmüller) de la rue du Valentin"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133619.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0efd5ed6-35df-5122-82e5-28af62699fb8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 613,
+      "items": [
+        {
+          "id": "d673f60c-be42-526f-af99-8faba04a8f38",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5ef057cd-4ca4-5878-a6ce-b460a796e39d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133619.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 613,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133619.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0efd5ed6-35df-5122-82e5-28af62699fb8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d8d87560-01f4-5fd6-8373-2222ec6fc487",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8ddc8366-7b29-5cfa-8469-e0dea25d77a6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d57c1825-0494-510c-9081-d3c3b45af281"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0efd5ed6-35df-5122-82e5-28af62699fb8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=132899",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

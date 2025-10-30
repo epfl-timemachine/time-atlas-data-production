@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4e14f43e-21bf-5946-a60f-3c93a754616c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.18, album Lausanne et environs)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136978.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d437b3e9-82d3-56c1-90fe-e56f34044252",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.18, album Lausanne et environs) "
+        ]
+      },
+      "height": 640,
+      "width": 630,
+      "items": [
+        {
+          "id": "66147ade-d59d-56b2-894a-e7909734b47b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "be8da81f-44b9-5b4c-b25d-a454dd6d9cc0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136978.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 630,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136978.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d437b3e9-82d3-56c1-90fe-e56f34044252"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7ec3375c-da06-5068-b435-8d1c4f199bf5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "380af00e-40b3-5287-9693-e0d2313cf3e6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.18, album Lausanne et environs) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "49fc619b-08fe-50a4-9e81-ec07857676d8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d437b3e9-82d3-56c1-90fe-e56f34044252",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=136258",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

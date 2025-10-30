@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b17ad42c-fd6c-50d0-bfc2-fbd5a0cbecf5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis et sur la rue Cheneau-de-Bourg, ainsi que sur un bâtiment de la rue de Bourg."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165898.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "aee77824-8446-5fa0-956c-33d61d20ce68",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 409,
+      "width": 640,
+      "items": [
+        {
+          "id": "586c4688-7384-5855-b841-d95504870ea5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ee79e6f9-8c99-59c2-839d-f4950a3262db",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165898.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 409,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165898.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "aee77824-8446-5fa0-956c-33d61d20ce68"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "23c9b422-8b60-50ec-b203-81fedf721207",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "de78ac46-6a65-592f-b773-fefd53618c24",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ffc97543-40fb-56a1-ac22-21d4d948be8b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "aee77824-8446-5fa0-956c-33d61d20ce68",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165155",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

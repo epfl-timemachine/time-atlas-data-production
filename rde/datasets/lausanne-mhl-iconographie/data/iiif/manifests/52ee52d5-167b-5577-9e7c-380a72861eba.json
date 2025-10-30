@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "52ee52d5-167b-5577-9e7c-380a72861eba",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Le portail ouest ou portail de Montfalcon avant restauration"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128033.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "865a8590-b82c-5819-8a36-52eabe95e3e3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 417,
+      "items": [
+        {
+          "id": "9159fb55-e6bc-57d8-bd3f-3012590c3a69",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a407de52-2189-5ae2-8215-367a88c0eb86",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128033.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 417,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128033.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "865a8590-b82c-5819-8a36-52eabe95e3e3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4df5c421-da04-5b36-bed0-ba4761158098",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d26df662-8c6a-5fe1-90cb-7aab8b3e15d2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "01d6820d-46ef-5558-a2bb-d591a8077efc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "865a8590-b82c-5819-8a36-52eabe95e3e3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=127363",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

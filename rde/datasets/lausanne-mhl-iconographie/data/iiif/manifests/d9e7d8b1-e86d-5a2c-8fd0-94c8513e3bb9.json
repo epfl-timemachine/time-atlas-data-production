@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d9e7d8b1-e86d-5a2c-8fd0-94c8513e3bb9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un immeuble locatif à l'emplacement actuel du CHUV et ses environs."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170210.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e63d2971-377b-5171-8c3c-d1cf697c7955",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 349,
+      "width": 640,
+      "items": [
+        {
+          "id": "ff378189-8be5-5332-af91-f932d48cc1e7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "47a281dc-0805-5795-83d3-5dc893bc4227",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170210.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 349,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170210.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e63d2971-377b-5171-8c3c-d1cf697c7955"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3304c45d-fb5f-5780-8dcb-52b0767a63bc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "506728af-f549-5929-ab6a-31cc1031221a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "29aeb45e-208a-5335-b285-c18df4b73388"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e63d2971-377b-5171-8c3c-d1cf697c7955",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169464",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

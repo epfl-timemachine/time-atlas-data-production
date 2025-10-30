@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "496abf01-a31c-5e8d-a78f-a3c595ef663f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  le château Saint-Maire et la Barre avec le tunnel vus depuis la Solitude"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_113104.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "93bfbbcd-35cc-5b32-a162-366a878351dd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 409,
+      "width": 640,
+      "items": [
+        {
+          "id": "49d7fe8a-9acc-558d-81e8-65f780be9bd8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f0bf4a9e-fa46-5f11-8924-34f30562f726",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_113104.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 409,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_113104.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "93bfbbcd-35cc-5b32-a162-366a878351dd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "17f1ec56-a0d9-5b4a-b357-408d30aee65f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c1cdf848-819a-5e14-8771-4bd682876af5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "80532ed6-8cd4-51a1-b93a-3b629ff0f653"
+                }
+              ],
+              "target": [
+                {
+                  "id": "93bfbbcd-35cc-5b32-a162-366a878351dd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=113008",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

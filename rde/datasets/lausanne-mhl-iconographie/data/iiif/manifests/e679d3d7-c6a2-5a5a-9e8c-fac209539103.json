@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e679d3d7-c6a2-5a5a-9e8c-fac209539103",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Place du Crêt  vue de la place du Crêt avec ses vieilles maisons"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110579.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9745281a-0c66-5091-a378-625c8f17d365",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Place du Crêt "
+        ]
+      },
+      "height": 640,
+      "width": 449,
+      "items": [
+        {
+          "id": "e0763519-7ac8-53b9-8c24-e17806fd6567",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3a1437d1-27bb-5e32-a841-d5bb0230bd6b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110579.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 449,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110579.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9745281a-0c66-5091-a378-625c8f17d365"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cdb1aaba-3461-5ade-b375-62ec572a59b1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1b46354b-30ac-5f91-90a1-d5c053b01550",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Place du Crêt "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "92704885-e51f-53a8-ab22-31a2e6672962"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9745281a-0c66-5091-a378-625c8f17d365",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110483",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

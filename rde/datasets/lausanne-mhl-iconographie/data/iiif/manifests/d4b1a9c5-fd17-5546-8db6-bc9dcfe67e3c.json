@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d4b1a9c5-fd17-5546-8db6-bc9dcfe67e3c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis la rue Beau-Séjour sur une partie des bâtiments de l'avenue Beau-Séjour N°28,29 et sur le bâtiment de l'avenue Georgette N°1."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168449.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "deb1bbe9-6dd3-59bd-bd34-3756040cffd3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 446,
+      "width": 640,
+      "items": [
+        {
+          "id": "8eb3e1b3-b644-57ed-962a-7c1e8595584f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9736ebc1-652f-50cf-8d73-f77822cb2c3b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168449.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 446,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168449.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "deb1bbe9-6dd3-59bd-bd34-3756040cffd3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0f3547e4-4361-55b0-a73a-93ef71256de6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2a8c5f33-ffac-5702-b1f8-871f59ecdf98",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "647d18df-6145-50cc-956d-094e3d25a08a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "deb1bbe9-6dd3-59bd-bd34-3756040cffd3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167705",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

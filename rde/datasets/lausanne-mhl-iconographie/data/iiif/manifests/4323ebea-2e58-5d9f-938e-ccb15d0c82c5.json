@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4323ebea-2e58-5d9f-938e-ccb15d0c82c5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise, P.2.F.03, fonds négatifs A.C.L.)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100404.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d5aae218-4a24-5ace-aeef-b8e67314cd88",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise, P.2.F.03, fonds négatifs A.C.L.) "
+        ]
+      },
+      "height": 560,
+      "width": 640,
+      "items": [
+        {
+          "id": "4c4ed8bf-6a5f-59e8-8ec6-f9ea769ecc59",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "70597660-d72f-5ded-bbfe-88f873f33ae7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100404.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 560,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100404.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d5aae218-4a24-5ace-aeef-b8e67314cd88"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "572b3bd4-cf20-579c-9cdd-cd84352d569d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6c515324-bec5-54cf-92c2-61defb0c4b0b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise, P.2.F.03, fonds négatifs A.C.L.) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2bc1a496-b773-572e-9357-f4c055bf5fa2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d5aae218-4a24-5ace-aeef-b8e67314cd88",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100404",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4bf5edfb-410e-571f-9205-aebb3330db6b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  gros plan sur la porte vitrée du contrôle des habitants"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109889.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "29a834b9-42cf-5776-95a9-ee09adaf7208",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 482,
+      "items": [
+        {
+          "id": "d6db7c8d-242d-506c-89f5-67f8633d906e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8ebd26cd-98b2-578c-b275-8adc6442ab09",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109889.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 482,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109889.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "29a834b9-42cf-5776-95a9-ee09adaf7208"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0cfa5609-2221-598e-b1d0-722ce7f09438",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ded6a293-1e83-5884-b4c8-3216323031d2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c094b2db-cf15-51aa-abf8-13db0155af25"
+                }
+              ],
+              "target": [
+                {
+                  "id": "29a834b9-42cf-5776-95a9-ee09adaf7208",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=109793",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

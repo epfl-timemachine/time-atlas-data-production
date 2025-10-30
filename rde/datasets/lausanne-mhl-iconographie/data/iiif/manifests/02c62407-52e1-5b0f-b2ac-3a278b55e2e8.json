@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "02c62407-52e1-5b0f-b2ac-3a278b55e2e8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue sur la façade occidentale de l'église Saint-François à l'aube. La place est déserte, à l'exception d'un homme marchant à gauche"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118360.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a9ff0b77-58e8-578e-88f8-6454188c827e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 428,
+      "items": [
+        {
+          "id": "24bae015-04b5-5efd-b385-766dae9a6d6a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "38196f6a-508c-528c-b177-b6744a397bd5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118360.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 428,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118360.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a9ff0b77-58e8-578e-88f8-6454188c827e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fc664b2f-e9cc-5b60-8a12-e7913a70bcd8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "98ab4f1a-fbdd-5411-b60c-d2602d5cbc76",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "89c7d684-47cf-5c33-887a-31fde0f26b5f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a9ff0b77-58e8-578e-88f8-6454188c827e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=118264",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

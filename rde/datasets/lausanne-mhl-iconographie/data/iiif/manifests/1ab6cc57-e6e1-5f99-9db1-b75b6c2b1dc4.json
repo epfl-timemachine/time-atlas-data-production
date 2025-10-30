@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1ab6cc57-e6e1-5f99-9db1-b75b6c2b1dc4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue Mon-Repos, la rue Etraz et les environs."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168177.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "55f65cd2-b010-59aa-8d44-2bb42cb4bb54",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 382,
+      "width": 640,
+      "items": [
+        {
+          "id": "a82e17fc-e3ec-5dcd-b2ac-0847754905a4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "41c89927-9fa0-5a59-ac17-4e78a103fa1e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168177.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 382,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168177.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "55f65cd2-b010-59aa-8d44-2bb42cb4bb54"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "918587f2-1945-5166-9441-5e2bbd7e97a6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9fca8db7-a662-59f9-8bb6-4b7ef2746905",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f5d93d47-8b10-54a2-8a08-ec812134002e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "55f65cd2-b010-59aa-8d44-2bb42cb4bb54",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167433",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c4777bcf-24d4-5461-a790-b10ce7d045c8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'avenue des Bergières, avec un tram et une passante."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140756.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "158e153e-e960-58a8-afa7-a9b1284ca708",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 540,
+      "width": 640,
+      "items": [
+        {
+          "id": "5ab83576-dd15-58f3-8a96-22172a769409",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0ef8f879-5f60-591e-941b-2211fe54fd43",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140756.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 540,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140756.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "158e153e-e960-58a8-afa7-a9b1284ca708"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b40a5783-15f2-5d2e-a63c-2dca211b87b9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f2eeb3c9-9c3c-51e6-a625-d0d714d1625e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0395d912-6055-577b-9a6b-e9b427746283"
+                }
+              ],
+              "target": [
+                {
+                  "id": "158e153e-e960-58a8-afa7-a9b1284ca708",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140035",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

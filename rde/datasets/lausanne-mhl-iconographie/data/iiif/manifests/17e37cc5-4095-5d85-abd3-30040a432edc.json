@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "17e37cc5-4095-5d85-abd3-30040a432edc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Deux vues aériennes sur les abattoirs de Malley."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151321.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dc22a3be-5da3-58f8-a871-a078b0587b57",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 425,
+      "items": [
+        {
+          "id": "8538b7c8-e27d-5c22-950d-2e0ebec870bd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b059adf7-8ead-5252-83fd-8792968f71df",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151321.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 425,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151321.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dc22a3be-5da3-58f8-a871-a078b0587b57"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2258c4b0-bad3-53b9-bea5-bce860a4c9ee",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "522c2526-d6ec-5309-9802-df03c99525da",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "23c6a5bc-d360-590f-a575-afdd477bc338"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dc22a3be-5da3-58f8-a871-a078b0587b57",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=150600",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

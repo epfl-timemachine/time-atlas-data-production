@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e22bf8e4-f0cd-5fd5-97c3-ac15686b16c2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise, P.2.F.03, fonds négatifs A.C.L.)  Vue de la place Benjamin-Constant, avec la Villa Saint-Pierre en cours de démolition."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102409.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "af1d95fe-2439-5fa3-b3dc-81dfce168d7d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise, P.2.F.03, fonds négatifs A.C.L.) "
+        ]
+      },
+      "height": 453,
+      "width": 640,
+      "items": [
+        {
+          "id": "8cc87dd6-6fda-5d38-91b4-21f2d0844439",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ea1ba249-3674-5fbc-bdc8-7b7a3bc55ed7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102409.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 453,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102409.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "af1d95fe-2439-5fa3-b3dc-81dfce168d7d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8969d9bc-8961-5193-9ac6-c2a588c335a7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8e662206-baec-5c48-a0db-47960aba71d4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise, P.2.F.03, fonds négatifs A.C.L.) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b302bde2-f399-593e-90e1-86e692c5c5ff"
+                }
+              ],
+              "target": [
+                {
+                  "id": "af1d95fe-2439-5fa3-b3dc-81dfce168d7d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102409",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

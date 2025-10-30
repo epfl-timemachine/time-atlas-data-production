@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "73702c0e-c13d-57c2-b411-b33db2127481",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue du château de Vennes, au ch. de Praz-Berthoud 29, avec son entrée principale. Sur l'herbe devant le château se trouvent plusieurs personnages, un homme, une femme avec une ombrelle, six enfants dont deux sont assis sur un banc (devant l'arbre de gauche), deux servantes en tablier blanc et une poussette sur le chemin en gravier."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_96820.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dc8ef45c-d118-5cf3-8f1f-2cdd2def575b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 525,
+      "width": 640,
+      "items": [
+        {
+          "id": "655f5893-4230-5505-837a-ffb17a258561",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4d000d91-5127-5d2f-80ea-320c257781a7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_96820.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 525,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_96820.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dc8ef45c-d118-5cf3-8f1f-2cdd2def575b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0b8f8548-ad8e-51f3-81ff-a29eb9d1de54",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d8ef66ed-64a1-5e34-a7d5-e2208ce0aebd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "84966b15-1eee-5af5-ba96-1189901be134"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dc8ef45c-d118-5cf3-8f1f-2cdd2def575b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=96820",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

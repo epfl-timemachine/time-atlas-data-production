@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c903dcaf-8637-52ca-a3f7-67b05a73652f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue plongeante sur le Grand-Pont, sur un parking et sur un immeuble à la Place de l'Europe."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172852.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "db7aeaed-46ed-5c08-ab01-3ee50bc72861",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 393,
+      "width": 640,
+      "items": [
+        {
+          "id": "f2814709-3c31-5e61-aa48-dd6373316236",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "161df144-5f49-5ca7-92cc-3ea832a20208",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172852.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 393,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172852.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "db7aeaed-46ed-5c08-ab01-3ee50bc72861"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c23729a7-181e-5b20-b456-048e4d7c2db1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c500cc72-ded3-5ac2-808f-b7aaa32927f4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ddf29e74-4d13-5479-81a5-3ff16b948d2e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "db7aeaed-46ed-5c08-ab01-3ee50bc72861",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172105",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

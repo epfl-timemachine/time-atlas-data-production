@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "90724d1e-19eb-5b2f-8a23-b1b9d7df0e24",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue panoramique sur la rue du Grand-Chêne, le Lausanne Palace et les environs."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168200.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "130fbcf0-ad26-5d00-b128-796614ac26a1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 256,
+      "width": 640,
+      "items": [
+        {
+          "id": "95eae5f0-1151-5a8d-a516-71b9d194d339",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9651631e-d351-5dc4-9328-5b67840110cc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168200.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 256,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168200.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "130fbcf0-ad26-5d00-b128-796614ac26a1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "96941361-a549-5d25-bf08-0636f9a6d64d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ba2c1268-75a6-5039-9ad0-5c059b28f868",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c6ba7ff1-3e30-55de-a017-42d1196bb9e1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "130fbcf0-ad26-5d00-b128-796614ac26a1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167456",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

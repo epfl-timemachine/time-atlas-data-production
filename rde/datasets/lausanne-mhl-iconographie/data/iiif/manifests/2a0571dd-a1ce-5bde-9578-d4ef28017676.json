@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2a0571dd-a1ce-5bde-9578-d4ef28017676",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un immeuble locatif au chemin de Champ-Soleil 11."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166069.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "393b5ce0-cec2-56e9-8dba-154e5bf9759d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 382,
+      "width": 640,
+      "items": [
+        {
+          "id": "e51a2e36-9d69-5a22-989e-b365f02d4173",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "85f78aad-6fe0-5f1b-ba8c-815c78f4d49d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166069.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 382,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166069.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "393b5ce0-cec2-56e9-8dba-154e5bf9759d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ba04e006-a012-5a92-8a7a-952935da2408",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "615a0aea-538e-5c6a-847a-4cc402552d3f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2e636658-e51f-5acc-b422-60511116e124"
+                }
+              ],
+              "target": [
+                {
+                  "id": "393b5ce0-cec2-56e9-8dba-154e5bf9759d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165326",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

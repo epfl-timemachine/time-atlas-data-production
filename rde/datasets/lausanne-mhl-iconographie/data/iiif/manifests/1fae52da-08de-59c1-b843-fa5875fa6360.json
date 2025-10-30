@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1fae52da-08de-59c1-b843-fa5875fa6360",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Immeuble de l'avenue de la Gare 6."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102537.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a4a5cee3-7a42-5190-b6f2-beb1120aa71f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 496,
+      "items": [
+        {
+          "id": "a9777945-4e8e-5131-ab7c-10683cc79a2b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4d5a10c5-d12a-53cf-9a90-8f5187b1ab72",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102537.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 496,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102537.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a4a5cee3-7a42-5190-b6f2-beb1120aa71f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5218410b-8e6a-55dd-9fc2-d7c664906c6d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c837758e-4ad5-5929-9d17-8772c848aec7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "69ea53e7-f281-5315-9faf-5daea13a9f22"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a4a5cee3-7a42-5190-b6f2-beb1120aa71f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102537",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

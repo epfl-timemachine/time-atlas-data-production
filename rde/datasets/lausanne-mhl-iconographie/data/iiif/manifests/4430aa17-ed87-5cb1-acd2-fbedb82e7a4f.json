@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4430aa17-ed87-5cb1-acd2-fbedb82e7a4f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un immeuble locatif au chemin de Renens 56 et 58 à Malley."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170986.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "607d2366-864d-5755-b57b-06cb7ab73d41",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 400,
+      "width": 640,
+      "items": [
+        {
+          "id": "70c036ac-f485-5b65-8d86-b0993c16442b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aae081b6-07eb-564f-895b-b6f32dc5530c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170986.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 400,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170986.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "607d2366-864d-5755-b57b-06cb7ab73d41"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d25d1834-fca9-533d-b458-b6c50a496e29",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "664e7aae-a873-5314-ad59-3d6d32b55f17",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f05364b0-564d-55da-8114-645222843a0c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "607d2366-864d-5755-b57b-06cb7ab73d41",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170240",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

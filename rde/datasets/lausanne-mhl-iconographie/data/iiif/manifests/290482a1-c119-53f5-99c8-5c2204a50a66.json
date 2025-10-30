@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "290482a1-c119-53f5-99c8-5c2204a50a66",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Château de Lausanne vue du Château et de la porte Saint-Maire depuis la rue de la Barre, donc côté nord, avec des arbres. A l'avant-plan on distingue quelques personnages sur la rue de la Barre. A l'arrière-plan on distingue le beffroi de la Cathédrale, le lac et les montagnes"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110456.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "44691d6a-1d81-570d-b7af-63b8f73ebbe9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Château de Lausanne"
+        ]
+      },
+      "height": 513,
+      "width": 640,
+      "items": [
+        {
+          "id": "3cd2b53e-49bb-58fe-bc05-5b13076c660f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "51e6b9cb-8648-5921-a377-81807f62cc61",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110456.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 513,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110456.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "44691d6a-1d81-570d-b7af-63b8f73ebbe9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3dcea1e3-f172-5c05-b4f4-367e2066facb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e2db9f0a-0260-5d33-8753-8ca3ce0171d6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Château de Lausanne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4e320e11-d68f-5cf2-97e3-7557384c0fda"
+                }
+              ],
+              "target": [
+                {
+                  "id": "44691d6a-1d81-570d-b7af-63b8f73ebbe9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110360",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

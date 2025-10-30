@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d3860e98-7baf-5a31-8bb3-a28491ff4212",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de la Rose du XIIIe siècle dans le transept sud de la Cathédrale"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134526.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8af47af6-9857-5626-bf11-c2399760c3cf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 345,
+      "items": [
+        {
+          "id": "fba15c0f-6ca2-5f06-ada8-61df9058e30c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d176e1b1-3cd2-5bf9-8446-4529b478c614",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134526.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 345,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134526.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8af47af6-9857-5626-bf11-c2399760c3cf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fc32b96f-62e4-5e94-a6b7-c7034afdac7f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b706b474-aba9-568c-9da7-7989fc53720e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "aa9fe829-6281-5033-8c16-b7f43869a143"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8af47af6-9857-5626-bf11-c2399760c3cf",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133806",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

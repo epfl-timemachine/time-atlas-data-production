@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "56aa24c2-0a13-5cde-85a5-9b3e0edf567f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le haut de la rue de Bourg depuis Saint-Pierre."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134619.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "43f592ee-28a9-5583-914e-08011ff20ea9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 353,
+      "items": [
+        {
+          "id": "e2d4a246-ce72-5adf-ae29-58fd65c88957",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8a4fd6d1-25d6-5d48-b0eb-807b71ec27db",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134619.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 353,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134619.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "43f592ee-28a9-5583-914e-08011ff20ea9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b441af39-6eb3-5b77-8601-0271ec4804b3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0cc10560-22d4-5b76-8ac4-5ef63f9aee3e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a2d641f8-5364-53fa-83b5-899406472bf2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "43f592ee-28a9-5583-914e-08011ff20ea9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133899",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

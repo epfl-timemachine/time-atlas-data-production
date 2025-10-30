@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f999f030-1e10-5a22-aba1-31f50ff89408",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue Marterey et de l'Ancienne-Douane."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168094.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "117e4d8f-2a7b-526b-9716-cdca603d3dda",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 401,
+      "width": 640,
+      "items": [
+        {
+          "id": "9e4b4be4-6b75-5b27-ba88-da0896c84388",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bde54d2e-b965-5429-9dc7-d646a326597c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168094.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 401,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168094.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "117e4d8f-2a7b-526b-9716-cdca603d3dda"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "44b2b1cc-3267-5ce3-84cc-ef9052e16bda",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9785f759-c6e2-5151-866d-7b287600ca95",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dfd69c5c-582f-5150-851a-4269b689db05"
+                }
+              ],
+              "target": [
+                {
+                  "id": "117e4d8f-2a7b-526b-9716-cdca603d3dda",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167350",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

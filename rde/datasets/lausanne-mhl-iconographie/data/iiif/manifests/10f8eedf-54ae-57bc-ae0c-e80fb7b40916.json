@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "10f8eedf-54ae-57bc-ae0c-e80fb7b40916",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la route de Chavannes entre les numéros 1 et 5."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171577.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c790bac7-c839-5928-8c53-8829a53dbb31",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 531,
+      "items": [
+        {
+          "id": "53318420-116a-5e46-a601-3d0ea0b5cf97",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "814baf55-c364-58c8-99cf-23f7f9be6061",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171577.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 531,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171577.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c790bac7-c839-5928-8c53-8829a53dbb31"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8db98114-78a0-510c-a0d7-d8c5b377b636",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "980ab9da-c3a9-5824-aed8-a9c31682a4ee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b37e578f-d29f-5dcf-b159-7100ee86a212"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c790bac7-c839-5928-8c53-8829a53dbb31",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170831",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

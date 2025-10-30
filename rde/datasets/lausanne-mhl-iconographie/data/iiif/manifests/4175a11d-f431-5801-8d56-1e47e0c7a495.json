@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4175a11d-f431-5801-8d56-1e47e0c7a495",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue de la tour Haldimand depuis l'ouest. Au premier plan, il y a une plage. Au second plan, on voit la tour Haldimand. Deux hommes travaillent à la construction d'un muret."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98120.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fdc8e367-7fa2-56e7-b93c-d0e04b2a30b0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 558,
+      "width": 640,
+      "items": [
+        {
+          "id": "35ebf664-c42d-5237-a4f4-762baff7a362",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d3449d40-98a1-5fe8-90b9-2097a95467bb",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98120.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 558,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98120.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fdc8e367-7fa2-56e7-b93c-d0e04b2a30b0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "eda1508d-35de-54ca-8571-58f4e77c2ee7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3a6054df-c0cf-5a58-b1bb-095b32d8b1c8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5a9abe3c-6ef0-5e48-b325-ee7d3c93b9ef"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fdc8e367-7fa2-56e7-b93c-d0e04b2a30b0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98120",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

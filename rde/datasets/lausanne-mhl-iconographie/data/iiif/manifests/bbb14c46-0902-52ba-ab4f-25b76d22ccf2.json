@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bbb14c46-0902-52ba-ab4f-25b76d22ccf2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue du Grammont et sur ses immeubles locatifs."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167575.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a6a08275-8643-5b65-9218-7147bc12236c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 530,
+      "width": 640,
+      "items": [
+        {
+          "id": "642d0c0c-3aab-5dbc-a5d8-8640a69b2534",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5fc6fc75-1f4c-51c8-b8f7-ad4496cb9a93",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167575.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 530,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167575.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a6a08275-8643-5b65-9218-7147bc12236c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "082d3f77-76bf-530f-b841-f573cfd05b04",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "87da5e53-712e-5518-b1f7-dde6a7c331bd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4211c949-b4cb-5b58-b88d-b1ec2bce59ec"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a6a08275-8643-5b65-9218-7147bc12236c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166832",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

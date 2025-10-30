@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6a600ab7-e472-5d0e-8b03-385c2d87e07a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le château Saint-Maire et l'esplanade bordée d'arbres depuis le nord-ouest."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134715.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c0eff5b8-ad25-5c92-8fe8-dd708d65ab76",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 543,
+      "width": 640,
+      "items": [
+        {
+          "id": "52ca9ef8-bab0-54f1-9246-39dc2634a0cd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c5cec1ef-7f1b-5a8f-ba8e-91d86e506e00",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134715.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 543,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134715.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c0eff5b8-ad25-5c92-8fe8-dd708d65ab76"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "27edd982-e548-55e6-a13b-24e1a393d09e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "abc4757c-cf4d-5136-aec1-52578f5a4dc0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e5bbbe90-adda-52d2-9930-5227fa42d7df"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c0eff5b8-ad25-5c92-8fe8-dd708d65ab76",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133995",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

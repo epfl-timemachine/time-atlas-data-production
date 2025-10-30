@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1a310b5b-8cb9-5d3f-8ef7-74f908429258",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Le portail sud ou portail peint après sa restauration, vu de face."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127897.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6b9418ea-dee7-54bf-bf7e-976b71ab1f13",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 466,
+      "items": [
+        {
+          "id": "2066a248-0d2b-5853-ace0-c6749e8a41f9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "681d35f0-1a15-5a19-82ca-2525d7cca927",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127897.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 466,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127897.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6b9418ea-dee7-54bf-bf7e-976b71ab1f13"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ecf01c84-b90d-5879-8293-c3b3257e4577",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "74640a1d-2ee3-5366-82d9-c3c21bb4ac19",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ba4ebc81-ed79-5128-aac8-14f46f0039c9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6b9418ea-dee7-54bf-bf7e-976b71ab1f13",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=127227",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2106c78b-9de6-5280-9c0c-39993151a20f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue de la maison Duperrex; contre la façade et aux fenêtres, les habitants des lieux"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133611.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1f079e4c-2662-59f1-9e08-6421906e89d7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 595,
+      "items": [
+        {
+          "id": "f4d8b923-e747-5b5e-a097-bafa781595f4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d1b38031-d16a-519d-88f4-15e4d132cb5b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133611.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 595,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133611.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1f079e4c-2662-59f1-9e08-6421906e89d7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "71c31418-ab7a-5b73-a598-3fa8e7879855",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8b4f83bd-eb38-5802-ad95-1aeea8f564a3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "26ec811f-923f-5bb8-a1a1-440a7293054f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1f079e4c-2662-59f1-9e08-6421906e89d7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=132891",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

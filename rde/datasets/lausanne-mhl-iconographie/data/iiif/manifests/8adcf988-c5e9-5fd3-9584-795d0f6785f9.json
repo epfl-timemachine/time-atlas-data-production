@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8adcf988-c5e9-5fd3-9584-795d0f6785f9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le haut de la rue Cité-Derrière."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166743.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "82b81068-cdcf-5a87-b1b8-f2638ac187f5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 387,
+      "items": [
+        {
+          "id": "b8b23790-b69e-5071-a2dd-5f19c5f7ac4e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a2eca796-3528-5fd8-8ae6-8c0953378183",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166743.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 387,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166743.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "82b81068-cdcf-5a87-b1b8-f2638ac187f5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "77843299-a9b0-5d99-b30f-309565cdeb98",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7af05520-a6db-5c69-9950-b9e971c9ba17",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a4333541-5352-563c-b8b0-3b5f3ed7cbba"
+                }
+              ],
+              "target": [
+                {
+                  "id": "82b81068-cdcf-5a87-b1b8-f2638ac187f5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166000",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

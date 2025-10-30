@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b6998281-44a8-574a-b57f-9c10ab821828",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  vue de la terrasse du café-restaurant du Stade (Bornan 1)."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137491.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c19fbfa7-369b-5092-bf70-ce754ec24948",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 544,
+      "width": 640,
+      "items": [
+        {
+          "id": "9e16ec9e-59c7-5544-bd62-a626f2248a17",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "02c74101-b4a7-565f-a646-ce52e7574c11",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137491.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 544,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137491.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c19fbfa7-369b-5092-bf70-ce754ec24948"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "218091bf-3a4e-5ea3-82f5-fe2dcec6e4f2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9ff86ee4-8746-5c21-9332-5ad5c547e886",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a26b0abd-d278-52af-b6fa-d7c580a88e35"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c19fbfa7-369b-5092-bf70-ce754ec24948",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=136771",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

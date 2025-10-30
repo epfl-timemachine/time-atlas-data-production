@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f8829475-3abd-51be-9796-1626f83d2682",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue du chemin de Montmeillan."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171351.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d89e67f7-5ed2-5c77-a362-c1d724b511fd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 528,
+      "width": 640,
+      "items": [
+        {
+          "id": "7d510265-0544-5a1f-afce-da8d38543b20",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ca8f684e-3f18-5a30-922c-4315c8a16105",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171351.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 528,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171351.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d89e67f7-5ed2-5c77-a362-c1d724b511fd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "28601b42-fc1f-5ce7-8e9b-b57919c8c777",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "32b8b735-8a05-5e29-945b-3d354bb8840e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a880c39a-1c04-5215-b4e0-b471685b6b68"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d89e67f7-5ed2-5c77-a362-c1d724b511fd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170605",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "97cbbae7-e82d-5007-9149-9728f417e1ca",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  photographie prise depuis l'avenue du Tribunal Fédéral."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103390.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a0856243-c4a4-5985-84ac-0c797d4d763b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 488,
+      "width": 640,
+      "items": [
+        {
+          "id": "c49634ec-ff36-5add-87cc-f3c0da9f1482",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f7cd65e5-cb03-5a5b-a862-f95bd47956c8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103390.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 488,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103390.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a0856243-c4a4-5985-84ac-0c797d4d763b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8a92bc28-9878-53d0-a90c-005954538913",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d1b3027a-2c64-589c-84b6-a3d6d6a3567d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4b3d903b-64d4-537d-a818-f530b004cda4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a0856243-c4a4-5985-84ac-0c797d4d763b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=103390",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

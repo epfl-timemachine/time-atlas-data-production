@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d781dddf-62a0-5ca0-a87b-21519d0fd61f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  façade nord du château Saint-Maire vue depuis la rue de la Barre"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104903.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d040e888-5c91-5447-8312-8d7cf6d12129",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 506,
+      "width": 640,
+      "items": [
+        {
+          "id": "dfa76d71-bcf4-5690-92fd-c27884b9a8f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a43806c5-1b44-5cc2-945a-eec2f43522f4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104903.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 506,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104903.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d040e888-5c91-5447-8312-8d7cf6d12129"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "046ff0e9-b970-56b4-a8a1-9ce37038c4b1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f67ef5ec-6bf8-5b8a-ab56-be4b3aa7f27a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0aa793f4-8efc-543c-8332-6817df6f8bd3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d040e888-5c91-5447-8312-8d7cf6d12129",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=104903",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

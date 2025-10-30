@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "978f3938-c3b5-5dc7-9da5-7f0b02677de5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Opéra de Lausanne "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147485.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "47607ee8-5705-5616-8938-dbacbab85b2a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Opéra de Lausanne"
+        ]
+      },
+      "height": 640,
+      "width": 539,
+      "items": [
+        {
+          "id": "814a24d3-73b1-547a-84fa-29b5817a4d8e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e177559-57f7-5af2-acf3-e47ecb31eeb3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147485.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 539,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147485.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "47607ee8-5705-5616-8938-dbacbab85b2a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "28b2546c-33b0-52d2-bc7c-afb6ec8392cd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "17ce13e9-3e8d-5f8e-adb1-aa65c76cc42b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Opéra de Lausanne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "94ff427e-44c0-5fed-8a8b-1d2e02aed409"
+                }
+              ],
+              "target": [
+                {
+                  "id": "47607ee8-5705-5616-8938-dbacbab85b2a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=146764",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

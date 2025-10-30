@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ace22b08-8237-5b6e-bb26-d19088ded1a2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Le collège de Prélaz vu du sud-est."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143771.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "caaa903a-48a1-5972-a1f6-b2fbf970daa2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 486,
+      "width": 640,
+      "items": [
+        {
+          "id": "5eee10eb-b6b0-5fcf-9344-e2b4fd9c0484",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f33cca43-fd6b-536d-8b7c-aaaf2ae6fe5b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143771.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 486,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143771.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "caaa903a-48a1-5972-a1f6-b2fbf970daa2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "54918167-e33c-5a54-8064-62e431e05bbc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "13d480cc-010c-5344-a250-ee7c55c03ca1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "19c21f6e-e9ab-50e8-a84f-ff11a3a06d1d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "caaa903a-48a1-5972-a1f6-b2fbf970daa2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=143050",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
