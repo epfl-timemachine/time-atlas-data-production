@@ -113,7 +113,7 @@ tpe = 'photograph'
 
 recs = [produce_hr_obj(r.hr_uuid,\
                        DS_UUID,\
-                   [r.obs_uuid, 'street'],\
+                   [[r.obs_uuid, 'street']],\
                        (r.start_time, r.end_time),\
                        tpe, \
                    r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time']).to_dict(),

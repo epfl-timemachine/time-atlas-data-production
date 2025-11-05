@@ -226,11 +226,25 @@ structures = {}
 df_pages['page_obj'] = None
 df_pages['manifest_uid'] = None
 df_pages['canvas_id'] = None
+
+volume_number_to_cote = {
+"434": "Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, Catastico di San Marco, b. 434",
+"435": "Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, Catastico di Castello, b. 435",
+"436": "Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, Catastico di Castello, b. 436",
+"437": "Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, Catastico di San Polo, b. 437",
+"438": "Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, Catastico di Santa Croce, b. 438",
+"439": "Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, Catastico di Dorsoduro, b. 439",
+"440": "Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, Catastico di Ghetto, b. 440"
+}
+# fix typo that split the Santa Croce volume into two different ones.
+df_pages['volume'] = df_pages['volume'].replace('San Croce', 'Santa Croce')
+
 for g, group_df in df_pages.groupby(['volume_number', 'volume']):
     volume_number = g[0]
     volume_name = g[1]
     volume_title = f'{volume_number}-{volume_name}'
-    man_label = {"it": [f'Catastici di Venezia 1740 ({volume_title})'], "en": [f'Venice\'s civil registry from 1740 ({volume_title})'], "fr": [f'Registre civil de Venise en 1740 ({volume_title})']}
+    cote = volume_number_to_cote.get(str(volume_number), f'"Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, b. {volume_number}')
+    man_label = {"it": cote, "en": cote}
     manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}_{volume_title}'))
     
     for i, x in group_df.iterrows():
@@ -271,6 +285,10 @@ df['obs_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UU
 tqdm.pandas(desc="Generating hr uuid")
 df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx']), axis=1)
 
+# baking the citation on the level of the registry for each HR. 
+df['volume_number'] = df['tif_path_img'].apply(lambda x: str(int(tif_filename_to_subparts(x)[0])) if x is not None else None)
+df['bibliographic_reference'] = df.apply(lambda v: volume_number_to_cote.get(str(v['volume_number']), None), axis=1)
+
 # Generate Obs RDE
 tpe = 'parcel ownership'
 obs = [produce_obs_obj(r.obs_uuid, TR_OBJ, DS_UUID, r.hr_uuid, tpe, r.geometry, None) for _,r in df.iterrows()]
@@ -285,7 +303,8 @@ exclude_hr_labels = {
     'obs_uuid',
     'hr_uuid',
     'uidx',
-    'uid'
+    'uid',
+    'volume_number'
 }
 hr_metadata_cols = list(set(df.columns).difference(exclude_hr_labels))
 tpe = 'cadaster registry'
@@ -383,7 +402,8 @@ ds = produce_dataset_obj(
     len(df_iiif_links['canvas_id'].unique()),
     ds_conf,
     [venice_area_uuid],
-    publish_obj=(CONF["doi"],CONF["github_link"])
+    publish_obj=(CONF["doi"],CONF["github_link"]),
+    archival_reference='Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia'
 )
 
 save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], 'catastici_dataset', RDE.DATASET.value, is_dataset_obj=True)

@@ -24,7 +24,7 @@ DATA_SRC_PATH = Path(join(parent_dir, 'data-venice/1808_Sommarioni/'))
 # aribtrary namespace, just to generate reproducible UUIDv5 from the entries of the dataset.
 VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
-MAP_SLUG = f"{DS_SLUG}-map" # used for the map manifest, different from the map slug of the map itself.
+# MAP_SLUG = f"{DS_SLUG}-map" # used for the map manifest, different from the map slug of the map itself.
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
 MAP_FOLDER = '../../maps/venice-1808-sommarioni/'
@@ -50,9 +50,9 @@ df_imgs['manifest_uid'] = None
 for vol, sdf in df_imgs.groupby('volume'):
     manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}_{vol}'))
     registry_label = {
-                        "en": [f'Napoleonic cadaster\'s registry of 1808 ({vol})'],
-                        "fr": [f'Registre du cadastre napoléonien de 1808 ({vol})'],
-                        "it": [f'Registro catastale napoleonico del 1808 ({vol})']
+                        "en": [f'Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni, {vol}'],
+                        "fr": [f'Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni, {vol}'],
+                        "it": [f'Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni, {vol}']
                     }
     for _, x in sdf.iterrows():
         df_imgs.at[x['index'], 'page_obj'] = iiif.generate_page_object(VTM_UUID5_NS, DS_SLUG, x['index'], manifest_uid, \
@@ -68,27 +68,30 @@ for vol, sdf in df_imgs.groupby('volume'):
 # structures = iiif.ordered_dict_to_iiif_toc_structure(iiif.multiindex_to_nested_dict(groups), "it", "Sommarioni", range_id_pref)
 df_imgs['canvas_id'] = df_imgs['page_obj'].apply(lambda x: x['id'])
 
-#2. manifest for the map
-df_maps = pd.read_csv('src/maps_width_height_format.csv')
-df_maps['label'] = df_maps['filename'].str.replace('.jpg', '')
-df_maps = df_maps.reset_index() # to derive a canvas_idx value for page generation.
+#2. manifest for the map 
+# REMOVED BY REQUEST OF ISABELLA
+# df_maps = pd.read_csv('src/maps_width_height_format.csv')
+# df_maps['label'] = df_maps['filename'].str.replace('.jpg', '')
+# df_maps = df_maps.reset_index() # to derive a canvas_idx value for page generation.
 
-map_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{MAP_SLUG}'))
-map_label = {"en": ['Napoleonic\'s cadaster map of 1808'],
-            "fr": ['Carte du cadastre napoléonien de 1808'],
-            "it": ['Mappa del catastro napoleonico del 1808']
-            }
-df_maps['page_obj'] = df_maps.apply(lambda x:\
-                                    iiif.generate_page_object(VTM_UUID5_NS, MAP_SLUG, x['index'], map_manifest_uid, \
-                                                            x['label'], 'venice/sommarioni/cadastral_maps/'+x['filename'],\
-                                                            x['media_type'], x['width'], x['height'], 'it'), axis=1)
+# map_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{MAP_SLUG}'))
+# map_label = {"en": ['Napoleonic\'s cadaster map of 1808'],
+#             "fr": ['Carte du cadastre napoléonien de 1808'],
+#             "it": ['Mappa del catastro napoleonico del 1808']
+#             }
+# df_maps['page_obj'] = df_maps.apply(lambda x:\
+#                                     iiif.generate_page_object(VTM_UUID5_NS, MAP_SLUG, x['index'], map_manifest_uid, \
+#                                                             x['label'], 'venice/sommarioni/cadastral_maps/'+x['filename'],\
+#                                                             x['media_type'], x['width'], x['height'], 'it'), axis=1)
 
 
-collection[map_manifest_uid] = (map_label, df_maps['page_obj'].tolist()[0])
+# collection[map_manifest_uid] = (map_label, df_maps['page_obj'].tolist()[0])
 
-df_maps['canvas_id'] = df_maps['page_obj'].apply(lambda x: x['id'])
-with open(f'data/iiif/manifests/{map_manifest_uid}.json', 'w+', encoding='utf-8') as f:
-    json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, map_manifest_uid, map_label, 'en', df_maps['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
+# df_maps['canvas_id'] = df_maps['page_obj'].apply(lambda x: x['id'])
+
+
+# with open(f'data/iiif/manifests/{map_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+#     json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, map_manifest_uid, map_label, 'en', df_maps['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
 
 
 #3. the collection of manifests
@@ -281,7 +284,8 @@ ds = produce_dataset_obj(
     len(df_iiif_links['canvas_id'].unique()),
     ds_conf,
     [venice_area_uuid],
-    publish_obj=(CONF['doi'], CONF['github_link'])
+    publish_obj=(CONF['doi'], CONF['github_link']),
+    archival_reference='Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni'
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'sommarioni_dataset', RDE.DATASET.value, is_dataset_obj=True)

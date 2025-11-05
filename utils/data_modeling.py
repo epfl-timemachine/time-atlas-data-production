@@ -233,7 +233,8 @@ def produce_dataset_obj(
     transribed_pages_amount: int,
     configuration: dict,
     areas_ids: list[str],
-    publish_obj: tuple[str, str] = (None, None)
+    publish_obj: tuple[str, str] = (None, None),
+    archival_reference: str = None
     ) -> dict:  
     return {  
         "uuid": uuid,
@@ -250,7 +251,8 @@ def produce_dataset_obj(
         "end_time": time_range[1],
         "transcribed_pages_amount": transribed_pages_amount,
         "is_operationally_described_by": configuration,
-        "falls_within": areas_ids  
+        "falls_within": areas_ids,
+        "archival_reference": archival_reference
     }
 
 
