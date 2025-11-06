@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "66247e08-0358-532d-9265-5f064718ac5d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Rue Centrale en direction du Grand-Pont."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148953.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0d738ee7-f1f4-5ae8-b3f1-772215d23c3b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 522,
+      "width": 640,
+      "items": [
+        {
+          "id": "af5e3771-0448-5190-b83c-02b71b697c2a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c32a8928-a35a-51e8-a995-2cf2b1641551",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148953.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 522,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148953.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0d738ee7-f1f4-5ae8-b3f1-772215d23c3b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "272a1a43-7b38-5309-9c2b-85f9417d95b8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ca546bb9-3fc7-5a25-878e-9624f1087b0e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "642220cd-79ae-5a42-bb80-91b53efd4eff"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0d738ee7-f1f4-5ae8-b3f1-772215d23c3b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=148232",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

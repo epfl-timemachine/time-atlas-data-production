@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3d42ee42-215c-5e73-92a3-4805f60b5f9a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la place de la Palud un jour de marché."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134929.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2c6d63ab-de3c-5732-94b8-bd39cec44850",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 588,
+      "items": [
+        {
+          "id": "aa7792ea-8005-5d22-9996-25e669a3922f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2fc29c5a-41f4-562f-90fd-42a66fa994b2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134929.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 588,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134929.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2c6d63ab-de3c-5732-94b8-bd39cec44850"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bfc18501-b6a6-5ebe-89f7-7cf3fb514b5d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4c784d61-30ce-5da4-9bbe-be791db95a50",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2a898841-9d5c-5ba6-83d5-465c7b0e9d0f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2c6d63ab-de3c-5732-94b8-bd39cec44850",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134209",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

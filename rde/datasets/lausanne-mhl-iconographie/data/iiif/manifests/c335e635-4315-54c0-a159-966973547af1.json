@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c335e635-4315-54c0-a159-966973547af1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.8, fonds Würgler)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107650.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "758bd8c7-249b-591b-98c4-712960c1db30",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.8, fonds Würgler) "
+        ]
+      },
+      "height": 465,
+      "width": 640,
+      "items": [
+        {
+          "id": "4af5677a-139f-5e90-b0da-47c9046c0861",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c251da81-2526-5965-8e90-193ddd74acf6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107650.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 465,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107650.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "758bd8c7-249b-591b-98c4-712960c1db30"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "296b7f3d-21d5-5f98-9029-6a4237b9f052",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "71875834-82a0-5a5b-83d7-37d699762aa6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.8, fonds Würgler) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ffd5a4ff-6b0e-5077-95c2-6b9db1d2d0e2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "758bd8c7-249b-591b-98c4-712960c1db30",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=107650",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

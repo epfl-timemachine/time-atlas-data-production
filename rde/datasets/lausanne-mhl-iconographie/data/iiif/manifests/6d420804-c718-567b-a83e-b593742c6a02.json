@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6d420804-c718-567b-a83e-b593742c6a02",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'Abbaye de l'Arc à Montbenon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135058.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "931e4538-1d97-5826-bc88-93af1bb50345",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 582,
+      "width": 640,
+      "items": [
+        {
+          "id": "f442b912-966b-5234-9056-3881c9c95f6d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ee01bf84-1c9c-5901-862c-4012c5cb2260",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135058.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 582,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135058.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "931e4538-1d97-5826-bc88-93af1bb50345"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f3ca84f5-b15b-5bd8-910f-df6152481bb7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3d8f6b23-f3a1-5778-8136-714b1ec6d24e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "47de1f7d-f841-52c1-abda-eaa5ce6959f6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "931e4538-1d97-5826-bc88-93af1bb50345",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134338",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

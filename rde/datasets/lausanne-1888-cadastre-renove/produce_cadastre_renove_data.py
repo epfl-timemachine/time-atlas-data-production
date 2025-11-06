@@ -27,7 +27,9 @@ LTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(LTM_UUID5_NS, DS_SLUG))
 
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/lausanne-1888-cadastre-renove/layers', 'json'), 'vector')
+
+MAP_FOLDER = '../../maps/lausanne-1888-cadastre-renove/'
+cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'vector')
 lausanne_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
 DS_OBJ = (DS_UUID, DS_SLUG)
@@ -57,7 +59,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'lausanne_1888_cadastre_renove_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 
 txt_fp = get_filepath_like(os.path.join(DATA_SRC_PATH, "lausanne-1888-cadastre-renove-registre-"), 'csv')
 dfs = pd.read_csv(txt_fp)
@@ -114,23 +116,14 @@ obs_uuid_to_hr_uuid = dfs[['hr_uuid', 'obs_uuid']].explode('obs_uuid').set_index
 point_id_to_obs_uuid = pd.DataFrame(obs_uuid_to_point_id.items(), columns=['obs_uuid', 'point_id']).groupby('point_id').agg(list)['obs_uuid'].to_dict()
 point_gdf['obs_uuid'] = point_gdf['index'].map(point_id_to_obs_uuid)
 
-tqdm.pandas(desc="Generating uuid for poi")
-point_gdf['poi_uuid'] = point_gdf.progress_apply(lambda r: make_uuid_from_row_selection(LTM_UUID5_NS, r, ['geometry']), axis=1)
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry, v.obs_uuid) for _, v in point_gdf.reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
-gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-gdf_poi = gdf_poi.set_geometry('geometry')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'lausanne_1888_cadastre_renove_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
 
 obs_df = pd.DataFrame(obs_uuid_to_point_id.items(), columns=['uuid', 'point_id'])
 obs_df['hr_uuid'] = obs_df['uuid'].map(obs_uuid_to_hr_uuid)
 obs_df['coordinate'] = obs_df['point_id'].map(point_gdf.set_index('index')['geometry'])
 obs_df['has_geometry'] = obs_df['point_id'].map(point_gdf.set_index('index')['geom_uuid'])
-obs_df['poi_uuid'] = obs_df['point_id'].map(point_gdf.set_index('index')['poi_uuid'])
 
 tpe = 'parcel ownership'
-obs_from_row = lambda v: produce_obs_obj(v.uuid, TR_OBJ, DS_UUID, v.hr_uuid, tpe, v.coordinate, None if pd.isna(v.has_geometry) else [v.has_geometry], v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.uuid, TR_OBJ, DS_UUID, v.hr_uuid, tpe, v.coordinate, None if pd.isna(v.has_geometry) else [v.has_geometry])
 obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
@@ -147,7 +140,6 @@ exclude_hr_labels = {
     '*', 
     'has_geometry', 
     'coordinate',
-    'poi_uuid',
     'obs_uuid',
     'hr_uuid',
 }

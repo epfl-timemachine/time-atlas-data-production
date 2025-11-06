@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b9e3f589-151e-591b-8a2e-eee8c7aad824",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'immeuble locatif au chemin de la Fauvette 1."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167265.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5afa5f6f-5faa-5425-8b51-6894d6568baf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 381,
+      "width": 640,
+      "items": [
+        {
+          "id": "beaca223-6f17-5e04-bbb8-40d7f9dd6a1e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3a7b5c48-d5b7-500b-a4a7-552a8c15b534",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167265.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 381,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167265.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5afa5f6f-5faa-5425-8b51-6894d6568baf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "59bf31d2-e706-5994-85d1-6eb3fd57183c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9ff65028-a510-5167-88a0-59ad6ac1d1ff",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b5fa1678-3e6e-5835-816f-168a1308d733"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5afa5f6f-5faa-5425-8b51-6894d6568baf",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166522",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

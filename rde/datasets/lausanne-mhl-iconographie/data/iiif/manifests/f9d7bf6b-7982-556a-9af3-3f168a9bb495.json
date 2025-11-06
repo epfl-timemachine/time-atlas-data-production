@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f9d7bf6b-7982-556a-9af3-3f168a9bb495",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Vue de Lausanne et du grand pont  vue du Grand-Pont à deux rangs d'arches avec la ville et la Cité à l'arrière-plan depuis le bas des côtes de Montbenon. A l'avant-plan on distingue un groupe de trois hommes discutant et derrière eux deux femmes. A l'arrière-plan, on distingue le pénitencier de Béthusy"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112308.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a7880c24-0dc0-58f0-896a-51389d30ac93",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Vue de Lausanne et du grand pont "
+        ]
+      },
+      "height": 615,
+      "width": 640,
+      "items": [
+        {
+          "id": "eb72ddfd-b015-5e67-bf48-fd0024fd9564",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c2289840-cc7d-5079-86a0-7772165d7a25",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112308.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 615,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112308.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a7880c24-0dc0-58f0-896a-51389d30ac93"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d0c9a567-39ce-5776-b345-2173bca76557",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ac80dfda-91cd-52c2-9026-7b459f3fd411",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Vue de Lausanne et du grand pont "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dbc2dc65-0d0e-5912-8e3c-0a85350acc7c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a7880c24-0dc0-58f0-896a-51389d30ac93",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=112212",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

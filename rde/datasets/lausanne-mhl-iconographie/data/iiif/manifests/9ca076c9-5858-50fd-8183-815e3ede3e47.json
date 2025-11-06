@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9ca076c9-5858-50fd-8183-815e3ede3e47",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le quartier des Epinettes."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141725.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e10c876d-9647-5ae9-86e0-098b55d3b190",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 546,
+      "width": 640,
+      "items": [
+        {
+          "id": "e8ed4e90-3eca-556f-88b9-a903e7d4527f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f15838cb-c938-5b57-8e18-38afb83b46ae",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141725.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 546,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141725.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e10c876d-9647-5ae9-86e0-098b55d3b190"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "728bb7f0-261e-587e-93b3-e40290754070",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b100e091-0b5a-5e49-b2f8-8eb1371a44b4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "387b1975-0050-5576-8ec6-185a17cd63b9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e10c876d-9647-5ae9-86e0-098b55d3b190",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141004",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

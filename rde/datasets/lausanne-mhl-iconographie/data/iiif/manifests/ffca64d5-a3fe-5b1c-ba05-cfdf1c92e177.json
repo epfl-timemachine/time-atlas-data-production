@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ffca64d5-a3fe-5b1c-ba05-cfdf1c92e177",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le lac et le restaurant de Sauvabelin, ainsi que quelques biches et cerfs."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141071.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2d01f680-a00f-5283-ae0a-741e3313861d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 544,
+      "width": 640,
+      "items": [
+        {
+          "id": "aba4aa41-5c1b-55f6-a634-3387fc5b618b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "79bbc522-b3ef-5354-ab6e-173f1280078a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141071.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 544,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141071.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2d01f680-a00f-5283-ae0a-741e3313861d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "322d4708-41c7-512d-bb27-ec884ecda5a6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8de26a70-7960-55c4-b871-d680780912e1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "02ed80b0-38a3-5cb2-901c-0aa881ce7a1e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2d01f680-a00f-5283-ae0a-741e3313861d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140350",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

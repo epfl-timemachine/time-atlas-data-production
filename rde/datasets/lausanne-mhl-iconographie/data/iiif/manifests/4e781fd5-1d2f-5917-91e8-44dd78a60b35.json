@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4e781fd5-1d2f-5917-91e8-44dd78a60b35",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Rue du Pont n°5 (ancien n°22): chantier de rénovation du bâtiment."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100233.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6dc25bf1-4b9b-55ef-8a99-9d49c2a92d10",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 582,
+      "items": [
+        {
+          "id": "034a45c7-c32c-5afd-a2fa-6c2b84219317",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2d077dce-ca2a-5c17-a7d7-04c598806750",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100233.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 582,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100233.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6dc25bf1-4b9b-55ef-8a99-9d49c2a92d10"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "020bd1fc-f089-52d2-bf14-f0077ba36dc6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cb6f1785-128a-5b06-a1fe-6470ba3fc5ff",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dbf8f439-9493-5d23-9488-8a76b809703f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6dc25bf1-4b9b-55ef-8a99-9d49c2a92d10",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100233",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

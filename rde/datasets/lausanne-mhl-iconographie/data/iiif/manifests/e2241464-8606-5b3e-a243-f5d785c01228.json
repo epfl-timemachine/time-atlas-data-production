@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e2241464-8606-5b3e-a243-f5d785c01228",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Rue du Petit-Saint-Jean. Vue en direction de la fontaine du Petit-Saint-Jean."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100507.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "03298e74-caa5-5fa1-9837-c40703ee879c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 611,
+      "width": 640,
+      "items": [
+        {
+          "id": "91933589-50f6-5ffb-92d8-b344b0ba6c79",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "07552c17-045e-5aa9-b9e5-153c0b5625b9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100507.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 611,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100507.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "03298e74-caa5-5fa1-9837-c40703ee879c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7409ed75-f6e3-5876-ac70-4e8e10227179",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e9b23ca8-acd1-53ce-b4ce-693cd9297e04",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d4791322-792d-5bce-8bd3-5bb549b232dd"
+                }
+              ],
+              "target": [
+                {
+                  "id": "03298e74-caa5-5fa1-9837-c40703ee879c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100507",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

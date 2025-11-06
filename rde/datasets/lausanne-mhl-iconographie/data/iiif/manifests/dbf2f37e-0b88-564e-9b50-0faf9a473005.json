@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dbf2f37e-0b88-564e-9b50-0faf9a473005",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'avenue du Mont-Blanc."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142395.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e4bb5a44-1ce2-596a-9075-b02f1bd65958",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 529,
+      "width": 640,
+      "items": [
+        {
+          "id": "825c07df-6188-5c77-b6e5-fd18e644a5c0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e5852ab9-1777-5921-b9be-5d14df7a94b2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142395.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 529,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142395.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e4bb5a44-1ce2-596a-9075-b02f1bd65958"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "59d76119-2a8d-5ce8-b1ab-c91196b03c78",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "476c2e8e-e1ff-54ca-ba63-30398f4b4630",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a9a8a5ec-ddb8-5a5d-9fa9-407c622e30e1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e4bb5a44-1ce2-596a-9075-b02f1bd65958",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141674",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

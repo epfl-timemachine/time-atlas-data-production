@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ec3d2f89-41d4-5970-97cd-221b1d56a5cc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de la partie sud-est de l'esplanade de Montbenon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140521.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "560e45be-65a1-51fe-bb54-9f3521d6914a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 553,
+      "width": 640,
+      "items": [
+        {
+          "id": "febd9117-cc9c-542f-aee2-21f186102431",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "68658b40-7d4a-556e-b446-c397f1dd24f1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140521.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 553,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140521.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "560e45be-65a1-51fe-bb54-9f3521d6914a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "66b37d6e-a96d-56cf-85bc-464c0bb9f60f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d7788a73-22ec-5624-aa43-03b818d91e09",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "02e30e44-0f86-5666-b136-6a7d0624aab5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "560e45be-65a1-51fe-bb54-9f3521d6914a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=139800",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

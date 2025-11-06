@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a2b08637-da61-53fc-a658-f3765ea8c00e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le quartier de la Barre et le château Saint-Maire."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165265.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fdd01fc5-1b39-558c-9f48-2561a684bf20",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 440,
+      "width": 640,
+      "items": [
+        {
+          "id": "2e60f86d-b7e0-5425-8598-7e72a741a0d6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6799817e-0723-5271-ac52-149d7492e038",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165265.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 440,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165265.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fdd01fc5-1b39-558c-9f48-2561a684bf20"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f9a3055a-dc3b-590c-83ec-36ea45afcbe3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "02d524e3-9d26-5f54-b15a-45554e77dbb7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e817992b-b203-5b90-b080-2a8c6c3dd729"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fdd01fc5-1b39-558c-9f48-2561a684bf20",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164524",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

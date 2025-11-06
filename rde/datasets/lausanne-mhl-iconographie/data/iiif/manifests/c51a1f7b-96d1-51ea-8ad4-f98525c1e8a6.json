@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c51a1f7b-96d1-51ea-8ad4-f98525c1e8a6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le chemin de Mornex."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142261.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e4b6951a-6025-5711-8261-6f339ba9a0b4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 550,
+      "width": 640,
+      "items": [
+        {
+          "id": "7ee19f39-2c93-53ca-9436-d8daeef79953",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "77b31f4d-dda6-5d47-94ba-ba1cbbfdb0f7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142261.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 550,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142261.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e4b6951a-6025-5711-8261-6f339ba9a0b4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e367363e-f66b-5a8c-8b9f-9e1516686339",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f8407284-013e-5174-a8c0-c396e27f2481",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1d2febd7-103c-5868-8b10-bbdc4a86bd86"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e4b6951a-6025-5711-8261-6f339ba9a0b4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141540",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

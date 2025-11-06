@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "22a1cfc5-b61e-5613-9d33-8e57f1361e2e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise, P.2.D.3, fonds Schmid)  Vue d'ensemble sur le Vallon et la Cité, prise depuis le chemin de Montmeillan. Au premier plan, on voit le feuillage d'arbres. Au second plan sur la gauche, il y a le bas du Vallon, et à droite, la Cité avec la cathédrale. A l'arrière-plan, on devine une partie de la ville."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98065.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "323db3b4-93df-5fe3-b52c-7c5ebfcf32ea",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise, P.2.D.3, fonds Schmid) "
+        ]
+      },
+      "height": 480,
+      "width": 640,
+      "items": [
+        {
+          "id": "d3848b00-7a13-53f1-a744-5bb09900b36c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5001ea9b-2167-5776-b5ef-6b697363c6a4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98065.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 480,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98065.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "323db3b4-93df-5fe3-b52c-7c5ebfcf32ea"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ac7773d9-6877-53c3-b653-39b3a280ddd0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "964a78c4-2d8d-55d0-bfae-b50eff763d15",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise, P.2.D.3, fonds Schmid) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "08b61fec-7722-5e0b-bf2c-9a73da200456"
+                }
+              ],
+              "target": [
+                {
+                  "id": "323db3b4-93df-5fe3-b52c-7c5ebfcf32ea",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98065",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

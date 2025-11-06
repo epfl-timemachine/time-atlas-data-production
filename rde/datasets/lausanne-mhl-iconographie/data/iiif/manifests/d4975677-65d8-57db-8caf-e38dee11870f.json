@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d4975677-65d8-57db-8caf-e38dee11870f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'Hôtel de Ville et la place de la Palud."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134906.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "35998710-c24c-53ce-a56b-f3911c0f76d2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 351,
+      "items": [
+        {
+          "id": "c554ab82-2094-5fc1-a720-143b6c64ab9a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a641cd44-cddc-5a00-8e19-38744fc752bf",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134906.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 351,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134906.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "35998710-c24c-53ce-a56b-f3911c0f76d2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8fc8b6bf-7d09-5dfb-846a-5d777c099af0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "86363e69-faf4-5779-aee6-e35990c9dd1a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3823fbbc-30ab-5257-921c-93689dbc9cc4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "35998710-c24c-53ce-a56b-f3911c0f76d2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134186",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

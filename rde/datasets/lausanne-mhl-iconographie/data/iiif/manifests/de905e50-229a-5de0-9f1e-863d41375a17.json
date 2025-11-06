@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "de905e50-229a-5de0-9f1e-863d41375a17",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Toits rouges de Lausanne Vue de la Cathédrale et de l'ancienne Académie par-dessus les toits depuis le Grand-Pont"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110086.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b80ba6c7-7e41-53db-8479-a49f14593955",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Toits rouges de Lausanne"
+        ]
+      },
+      "height": 441,
+      "width": 640,
+      "items": [
+        {
+          "id": "187e6e9f-ce36-5c2a-b3d3-dd5f2e8f5b1d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d7a4025e-fb5b-5e1d-99b6-f3851dc69f8d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110086.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 441,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110086.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b80ba6c7-7e41-53db-8479-a49f14593955"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c8d597ea-0745-5b02-82ad-9b0ea3959c10",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b17bff15-2efa-59c1-8873-d0b07302061d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Toits rouges de Lausanne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3c344ad4-dd54-5933-a779-ad408c7f9abb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b80ba6c7-7e41-53db-8479-a49f14593955",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=109990",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

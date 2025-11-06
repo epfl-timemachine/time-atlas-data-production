@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7c974ecd-368b-5c0b-af0f-62601ce5ec04",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Prix de Lausanne "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159061.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "23149268-0aa7-5fea-b42d-dc85ebc4bffb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Prix de Lausanne"
+        ]
+      },
+      "height": 640,
+      "width": 420,
+      "items": [
+        {
+          "id": "449033f3-5ca9-5b97-b385-5e02c672c7a5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "93f09177-b6cd-550c-b5e4-b7481399615f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159061.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 420,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_159061.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "23149268-0aa7-5fea-b42d-dc85ebc4bffb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "45f67c16-be7e-5cde-9413-83002fca2ae1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3a3b2249-7b4e-546e-8896-d1436fbe9c16",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Prix de Lausanne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "233ddad0-5d13-5d7e-a8f0-1b63060aef63"
+                }
+              ],
+              "target": [
+                {
+                  "id": "23149268-0aa7-5fea-b42d-dc85ebc4bffb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=158324",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

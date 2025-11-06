@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f241e160-67c1-522d-b9c3-6e3176b157e2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis la rue Saint-François sur la rue du Pont et son carrefour avec la rue Centrale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165913.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8ca3200b-8810-50a9-b66e-bd884fa9a834",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 375,
+      "width": 640,
+      "items": [
+        {
+          "id": "1aa1cbec-e6c4-54b2-b990-65f7def8211d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "af5cd87b-3e13-57b6-85c1-f9105d4c2a1d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165913.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 375,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165913.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8ca3200b-8810-50a9-b66e-bd884fa9a834"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "241f16b3-4a59-582c-b7c3-aa01e636f201",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7aba1426-1671-5e84-a3af-ddc859c1bcf9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "003e5be5-76a8-5d77-bf68-98ae5121dcf4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8ca3200b-8810-50a9-b66e-bd884fa9a834",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165170",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

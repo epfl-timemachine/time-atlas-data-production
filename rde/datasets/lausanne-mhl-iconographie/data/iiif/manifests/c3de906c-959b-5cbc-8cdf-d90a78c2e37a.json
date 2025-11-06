@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c3de906c-959b-5cbc-8cdf-d90a78c2e37a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'immeuble locatif au N°8 de l'avenue du Temple."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173062.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b3c853bc-942f-5dac-a1f0-b165987a2921",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 392,
+      "width": 640,
+      "items": [
+        {
+          "id": "abb11357-a207-5a7e-a126-7b4183c5a84e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "065cb052-cec2-5799-a9d4-23b2de7893bf",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173062.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 392,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173062.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b3c853bc-942f-5dac-a1f0-b165987a2921"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9694d0cc-43a2-546f-a784-b5bfe4d4f3cd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4c1ff99c-2358-50fb-b69d-32cd6bab7804",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "000c36e8-3c21-59ae-8fe9-3c749e387951"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b3c853bc-942f-5dac-a1f0-b165987a2921",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172315",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

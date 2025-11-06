@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d5b683cb-6f9b-57ff-99bc-1389cbfd1d95",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue Pierre-Viret, prise en descendant à la hauteur de la place de la Madeleine, avec l'Hermitage en arrière-plan."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163871.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dd5ccb2c-8b44-5413-969f-5b97cb996520",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 390,
+      "items": [
+        {
+          "id": "f78dba0d-27c5-5f9f-b209-b5a5223b8076",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "87763a1c-9f99-57c9-bbed-2ee655d4ec40",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163871.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 390,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163871.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dd5ccb2c-8b44-5413-969f-5b97cb996520"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "56642077-3b6f-5a9f-b30e-5467e7404c9c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9011b1dd-730c-57e1-97d6-89d90ec1bc37",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7f0035f0-410d-5e5b-bd2c-d77eb957d41f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dd5ccb2c-8b44-5413-969f-5b97cb996520",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163130",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

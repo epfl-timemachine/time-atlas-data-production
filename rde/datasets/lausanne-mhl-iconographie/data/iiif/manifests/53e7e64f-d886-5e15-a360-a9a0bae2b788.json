@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "53e7e64f-d886-5e15-a360-a9a0bae2b788",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le pont Bessières et la cathédrale depuis Langallerie."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140782.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2aba7bf0-5379-5eef-b390-aa0637a571d7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 362,
+      "items": [
+        {
+          "id": "4588dc4d-52e0-500f-88f3-7993f91dacd1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ec78381b-a28a-5790-95b1-77d1d22311ea",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140782.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 362,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140782.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2aba7bf0-5379-5eef-b390-aa0637a571d7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ba951707-f94d-51b4-852a-624a1d8cd1ef",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "80444ec9-9c85-538e-830b-d468216916d3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8465a585-1441-5437-9bc3-65ab180a77c1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2aba7bf0-5379-5eef-b390-aa0637a571d7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140061",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

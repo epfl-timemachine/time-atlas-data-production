@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "af575dc9-f920-5ee2-ab65-cd3283449180",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue sur la rue Cité-Devant depuis le sud en direction du château. Un groupe de personnes est représenté à gauche et un char se trouve plus haut dans la rue. Au fond, la place du Château et le château Saint-Maire"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118273.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b36d8b40-369d-5a05-a74a-42512d3e75e5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 405,
+      "items": [
+        {
+          "id": "16722315-3045-5248-80b3-32c1fd349920",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6d02e5dd-0500-5530-a655-465b4b78c348",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118273.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 405,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118273.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b36d8b40-369d-5a05-a74a-42512d3e75e5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b7a7907a-2f11-5de3-9d42-03965f927f62",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce87b309-72bd-5b25-99fd-750451c078f7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cc725dc1-f380-5db7-9757-7529a65e438b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b36d8b40-369d-5a05-a74a-42512d3e75e5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=118177",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

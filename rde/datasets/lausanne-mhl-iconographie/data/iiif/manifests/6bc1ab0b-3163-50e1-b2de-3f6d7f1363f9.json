@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6bc1ab0b-3163-50e1-b2de-3f6d7f1363f9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le bâtiment de la Poste à la place Saint-François 15."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170080.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a2fad662-9789-55ef-9b4a-9ff103d55b20",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 429,
+      "items": [
+        {
+          "id": "99c0fcea-f342-52e8-87b5-b9cba4ac6aa1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1531de09-117b-5840-8efa-48650642cdac",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170080.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 429,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170080.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a2fad662-9789-55ef-9b4a-9ff103d55b20"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "92e88c92-15e4-5693-8f29-ced2840c19b8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "66bebc52-8eef-544d-b7c3-d2cc7c538f6d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5f320da9-42a3-5b35-8386-8a83ca41d85f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a2fad662-9789-55ef-9b4a-9ff103d55b20",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169334",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

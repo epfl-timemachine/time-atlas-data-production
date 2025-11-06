@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9f5b24e9-6cca-59f5-b2ba-fbb08fd16626",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) anne sylvestre En noir sur fond blanc, annonce d'un concert d'Anne Sylvestre à Lausanne, avec le portrait en couleur de la chanteuse."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_125360.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "10517b0e-edd2-5478-abcb-73d26b57ba41",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) anne sylvestre"
+        ]
+      },
+      "height": 640,
+      "width": 309,
+      "items": [
+        {
+          "id": "bb63e0ad-8365-56e2-b4f1-bf2410ad7673",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b9e96878-ad77-5e28-9b5f-ba9cbe93bf61",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_125360.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 309,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_125360.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "10517b0e-edd2-5478-abcb-73d26b57ba41"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3204ac76-f72b-53ed-be6b-f4e48d960f90",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c8180f2d-ff76-55b3-b1fb-d9498012cf9e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) anne sylvestre"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2609b2fc-da84-5ecf-a427-26155ceb84e6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "10517b0e-edd2-5478-abcb-73d26b57ba41",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=125264",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d98bdc78-ae5d-59d3-bbed-e31793640add",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'église Saint-François, le kiosque TL, les trams et au fond l'avenue Benjamin-Constant. Quelques fiacres attendent devant l'église."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_145765.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a323b639-67c6-520b-8d8e-072b3dd841b5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 357,
+      "items": [
+        {
+          "id": "dc6b7e49-88c4-5639-833f-56e7617c7ac0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ab32b869-8d7a-50fd-b52e-eed3259ab50c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_145765.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 357,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_145765.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a323b639-67c6-520b-8d8e-072b3dd841b5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8ec96d41-44fc-5cee-80f7-2229e0b2753a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3a53eae6-4101-52e9-9baa-8616758029a9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "98033cdf-6fbf-5d5f-b805-120ed98a6649"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a323b639-67c6-520b-8d8e-072b3dd841b5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=145044",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

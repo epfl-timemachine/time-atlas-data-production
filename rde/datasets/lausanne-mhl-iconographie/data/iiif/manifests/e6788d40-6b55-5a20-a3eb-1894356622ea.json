@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e6788d40-6b55-5a20-a3eb-1894356622ea",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur les immeubles de l'avenue de Tivoli N° 4,6,8."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170829.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "955b72d8-8089-5064-97a3-02b1d8777354",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 382,
+      "width": 640,
+      "items": [
+        {
+          "id": "7b8d97e5-70af-596d-bf87-c736c165bba7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "75195978-5a70-53c3-b14e-52b77d77ad72",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170829.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 382,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170829.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "955b72d8-8089-5064-97a3-02b1d8777354"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2c85e677-0c24-557c-a624-51e896882e3b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "09ccfdd2-7524-5d5c-98c6-b92acd835792",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1e457962-9c8a-5e9b-802d-b4b3ac959510"
+                }
+              ],
+              "target": [
+                {
+                  "id": "955b72d8-8089-5064-97a3-02b1d8777354",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170083",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

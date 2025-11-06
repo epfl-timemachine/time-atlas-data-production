@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "34c3d077-4f20-5357-9405-62429e6f4f38",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Chantier de construction de la tour Bel-Air."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_161344.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "69425e45-9c29-5549-98cc-4647be1d1762",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 493,
+      "items": [
+        {
+          "id": "5edd8664-21b9-59fa-b45f-125321053fdf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "db26903b-fd5f-544d-9f68-7e465cbb480a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_161344.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 493,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_161344.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "69425e45-9c29-5549-98cc-4647be1d1762"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dd2e5e6a-ab0c-572f-bef0-2a81c235b442",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f39e65d7-c2f7-5513-b096-ec439041714c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b9c569f6-9dfd-5fef-a67e-40e3aa269ad2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "69425e45-9c29-5549-98cc-4647be1d1762",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=160607",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

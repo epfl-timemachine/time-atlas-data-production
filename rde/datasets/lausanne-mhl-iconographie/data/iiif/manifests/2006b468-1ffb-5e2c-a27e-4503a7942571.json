@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2006b468-1ffb-5e2c-a27e-4503a7942571",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue d'une peinture se trouvant dans le salon du château de Beaulieu, situé à l'avenue des Bergières. Au premier plan on voit un tableau de Jendrick, d'après une oeuvre d'Antoine Watteau; on voit un couple d'amoureux, debout; sur la gauche on trouve un cygne; à l'arrière-plan au centre on distingue particulièrement cinq arbres"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98539.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1ef1314e-18bd-55c9-b723-1156ee75940c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 337,
+      "items": [
+        {
+          "id": "e7dd197c-a790-5577-85a8-3643763083c5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "73735f6d-335c-5040-acd4-8108a9026c5d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98539.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 337,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98539.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1ef1314e-18bd-55c9-b723-1156ee75940c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "23f4b87a-59b4-5be8-8a8f-053c66d09550",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dbf5675b-7e19-5896-954d-387d7681b83e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2182fb9b-3990-5de3-b6f1-1d7bba75c119"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1ef1314e-18bd-55c9-b723-1156ee75940c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98539",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

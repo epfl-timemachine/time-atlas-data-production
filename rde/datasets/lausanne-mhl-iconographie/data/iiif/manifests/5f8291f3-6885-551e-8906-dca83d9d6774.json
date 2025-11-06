@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5f8291f3-6885-551e-8906-dca83d9d6774",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le Restaurant du Signal."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146706.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "523ab4ed-00df-588e-a2a4-4da8753bd47c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 545,
+      "width": 640,
+      "items": [
+        {
+          "id": "9bcb6515-0b70-5068-8312-d6a125a8e07c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9d2f5ba6-fa9d-5f06-8374-4d28a92ba634",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146706.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 545,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146706.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "523ab4ed-00df-588e-a2a4-4da8753bd47c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6fd1f748-7bbf-5d4a-985b-045548eeff98",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3c89c165-dbd1-5259-a02b-5422e24e0258",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "68a46f54-077e-5e92-8d82-fb16ad5dc2b8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "523ab4ed-00df-588e-a2a4-4da8753bd47c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=145985",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

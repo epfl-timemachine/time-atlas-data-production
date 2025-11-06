@@ -44,7 +44,8 @@ gdf = gpd.read_file(geometries_fp, use_arrow=True).to_crs("EPSG:4326")
 gdf['start_time'] = pd.Series(data = [TR_OBJ[0]] * len(gdf), name='start_time')
 gdf['end_time'] = pd.Series(data = [TR_OBJ[1]] * len(gdf), name='end_time')
 
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/lausanne-1831-berney/layers', 'json'), 'cadaster')
+MAP_FOLDER = '../../maps/lausanne-1831-berney/'
+cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'cadaster')
 tqdm.pandas(desc="Generating uuid from geometry")
 gdf['uuid'] = gdf.progress_apply(lambda row: make_uuid_from_row_selection(VTM_UUID5_NS, row, ['geometry']), axis=1)
 
@@ -83,22 +84,16 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'lausanne_1831_berney_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 tqdm.pandas(desc="Generating uuid for hr")
 df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['identifier'], ad_hoc_seed='hr'), axis=1)
 
 tqdm.pandas(desc="Generating uuid for obs")
 df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
 
-tqdm.pandas(desc="Generating uuid for poi")
-df['poi_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='poi'), axis=1)
-
-
-obs_df = df[['obs_uuid','hr_uuid', 'poi_uuid', 'center', 'has_geometry']].copy().reset_index().set_index('obs_uuid')
-obs_df['poi_uuid'] = obs_df['poi_uuid'].apply(lambda v: v)
-# I have to do that because there is 7 obs. that have two historical sources recording it...
+obs_df = df[['obs_uuid','hr_uuid', 'center', 'has_geometry']].copy().reset_index().set_index('obs_uuid')
 tpe = 'parcel ownership'
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid, tpe, v.center, v.has_geometry, v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid, tpe, v.center, v.has_geometry)
 obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
@@ -110,27 +105,12 @@ obs_shorthand = 'lausanne_1831_berney_obs'
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
 QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
 
-
-# POI RDE Production
-df_poi = df[['center', 'poi_uuid', 'obs_uuid']].groupby(by=['poi_uuid']).agg(list)
-
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.center[0], v.obs_uuid) for _, v in df_poi.reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
-# when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
-gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-gdf_poi = gdf_poi.set_geometry('geometry')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'lausanne_1831_berney_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-
-QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
-
 hr_uuid_to_page_filename = df.set_index('hr_uuid')['page_filename'].to_dict()
 
 #HR RDE Production
 exclude_hr_labels = {
     'geometry_id', 
-    'has_geometry', 
-    'poi_uuid',
+    'has_geometry',
     'obs_uuid',
     'hr_uuid',
     'geometry',

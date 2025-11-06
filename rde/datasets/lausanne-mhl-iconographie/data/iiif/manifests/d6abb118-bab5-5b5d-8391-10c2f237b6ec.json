@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d6abb118-bab5-5b5d-8391-10c2f237b6ec",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le quartier de Montoie depuis le chemin de Bon-Abri."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166243.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6aeaf7d5-27cd-5be0-8836-35bb3c29aeee",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 373,
+      "width": 640,
+      "items": [
+        {
+          "id": "b2764273-9d24-51b0-97e7-c94c7222a1c1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "77e91d59-6bb1-5ee4-bf3c-e98a72da6548",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166243.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 373,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166243.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6aeaf7d5-27cd-5be0-8836-35bb3c29aeee"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "53b3fac6-0540-5ed5-80b5-a5e7f06aac25",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c083949a-7b93-59a7-a2a2-70ded05b5f29",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c91e9bb7-3b1f-5d66-9357-ca0c6e67ac66"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6aeaf7d5-27cd-5be0-8836-35bb3c29aeee",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165500",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

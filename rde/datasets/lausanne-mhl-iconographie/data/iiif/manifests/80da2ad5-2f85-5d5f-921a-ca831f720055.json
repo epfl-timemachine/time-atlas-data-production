@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "80da2ad5-2f85-5d5f-921a-ca831f720055",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Tour du beffroi: local de stockage pour les archives cantonales vaudoises"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_129768.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e7ca4b92-e58e-508f-a21e-81f2ac229a96",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 425,
+      "items": [
+        {
+          "id": "69cec193-4a83-59a2-a68c-b43b6b3641e1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b1f30e02-81d8-57de-8031-c54ccb329818",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_129768.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 425,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_129768.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e7ca4b92-e58e-508f-a21e-81f2ac229a96"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "335a76c6-4e7e-5027-92f1-375681860550",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c8adffe9-9b40-53d7-b7d3-58d6af074742",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "17430d3b-e1cd-5536-89bf-964677270953"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e7ca4b92-e58e-508f-a21e-81f2ac229a96",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=129048",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

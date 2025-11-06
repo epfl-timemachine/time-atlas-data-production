@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "91e97d45-1d02-50af-9e94-c8ff43a9fb58",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue d'une vieille maison à la Caroline, en bordure du ravin. Sur la gauche on distingue un groupe de personnages assis ou debout sur un talus faisant face à l'ancien Hôpital, à l'emplacement actuel du Pont Bessière. A l'arrière-plan on aperçoit l'église Saint-François, le lac et les montagnes"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111977.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c5e3aba6-015e-5f4b-a80b-7d12f72d45b2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 440,
+      "width": 640,
+      "items": [
+        {
+          "id": "61f5da91-60eb-59c1-9e07-51d8899b730e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f5b6395b-f808-55f1-93d4-32d908a024e0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111977.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 440,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111977.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c5e3aba6-015e-5f4b-a80b-7d12f72d45b2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2a52f047-47ed-5563-a12c-9c978c230257",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5111a314-2d52-55bd-959b-1628471b0388",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "df802ccf-8dc7-538e-ae37-0aaabe8b092e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c5e3aba6-015e-5f4b-a80b-7d12f72d45b2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=111881",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

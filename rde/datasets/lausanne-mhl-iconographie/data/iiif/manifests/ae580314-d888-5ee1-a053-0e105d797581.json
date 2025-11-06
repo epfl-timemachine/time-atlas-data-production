@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ae580314-d888-5ee1-a053-0e105d797581",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Première gare vue des quais."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102435.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ccc1231a-6218-5bc5-9f8e-ea264a3e9020",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 473,
+      "width": 640,
+      "items": [
+        {
+          "id": "6031b50d-3f2e-56a4-98ce-31151c0a5192",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a299ebce-fdf6-57ce-b743-9ccbb36b7288",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102435.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 473,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102435.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ccc1231a-6218-5bc5-9f8e-ea264a3e9020"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dc6f8d7e-ca5a-5fef-bbdb-d63be61c09ac",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e0be6b10-37d3-5ffc-939b-c4b740301d42",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4eefed6f-7e3f-580c-9023-8e6aa7682ae2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ccc1231a-6218-5bc5-9f8e-ea264a3e9020",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102435",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "079d1ba0-bf23-5054-bb78-10dbac58f9b8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue de Chailly depuis les numéros 17 et 20 jusqu'au Pont."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166374.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a12e1bfc-ff77-5726-9098-45e57dd47563",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 390,
+      "width": 640,
+      "items": [
+        {
+          "id": "1c62cf90-aea1-5a84-9b5e-67303f1afd4e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3ea7d16a-9f9d-5d3d-900c-14608ad50d48",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166374.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 390,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166374.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a12e1bfc-ff77-5726-9098-45e57dd47563"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1cf0a80e-fc3e-5868-ba5f-d7f016a06e94",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ebb03ec3-dbe2-52a2-a1ae-9be56b879b6a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6e0c39e1-3721-564e-9ac6-b407fcf1bdc8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a12e1bfc-ff77-5726-9098-45e57dd47563",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165631",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

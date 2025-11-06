@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "204ed370-156f-5313-986d-b4a5c24c9db3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(marsaff) Ligne du Simplon "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_116637.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d347dbea-8344-5d45-ae81-254b66d8dca0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(marsaff) Ligne du Simplon"
+        ]
+      },
+      "height": 640,
+      "width": 479,
+      "items": [
+        {
+          "id": "39a4a254-9b68-546a-b050-2c808723eedc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "45d2927d-3c11-54fe-862f-f9a6bcffc3d3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_116637.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 479,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_116637.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d347dbea-8344-5d45-ae81-254b66d8dca0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4e6e1f00-57bb-5573-816e-3f188bc3504c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "07e34d5e-743d-57ef-8ac1-50abcc868b88",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(marsaff) Ligne du Simplon"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cd078b4f-476b-5adb-8959-bddbdf065045"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d347dbea-8344-5d45-ae81-254b66d8dca0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=116541",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

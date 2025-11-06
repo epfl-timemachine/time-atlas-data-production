@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5cdc35ec-4623-5b65-9fb4-f090f7cd339e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue du buste du colonel Veillon"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134825.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7be96d5f-4c54-5c53-a379-2233fe3e9b1a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 356,
+      "items": [
+        {
+          "id": "cc93e2dc-a0e9-5ee0-bafb-15a0a5e5cbfe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eb41e90c-043f-5c3c-999a-1a82d7cf0600",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134825.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 356,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134825.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7be96d5f-4c54-5c53-a379-2233fe3e9b1a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bd9c91c0-95dd-56e3-a815-6c1966c1c64b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "48628214-b15d-5978-b7e9-b8220b713873",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d5203733-6614-5105-b673-1d3ca4006c0d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7be96d5f-4c54-5c53-a379-2233fe3e9b1a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134105",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

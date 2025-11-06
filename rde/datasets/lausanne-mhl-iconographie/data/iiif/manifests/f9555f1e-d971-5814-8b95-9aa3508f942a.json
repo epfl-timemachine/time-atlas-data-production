@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f9555f1e-d971-5814-8b95-9aa3508f942a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'hôtel Richemont et sur l'hôtel Beau-Site."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134951.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e88b1384-45d0-53c2-b471-8cbc45f40a1e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 413,
+      "width": 640,
+      "items": [
+        {
+          "id": "82ef4658-917e-59f0-8ad2-b87926cb3a64",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4ffd6655-d004-588d-b66a-0e10b20dc072",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134951.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 413,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134951.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e88b1384-45d0-53c2-b471-8cbc45f40a1e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "75b932ac-8d80-5d28-be74-153a8cf78e41",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2b70e9cf-fef5-5e2e-a07a-e0d55c3d3b4f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d1ef3ef8-85f1-59e7-926d-02ae4dc365c3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e88b1384-45d0-53c2-b471-8cbc45f40a1e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134231",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

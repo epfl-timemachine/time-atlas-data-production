@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a755cfb7-dda1-50ae-aa72-4b20fcc35081",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la caserne de la Pontaise avec le parc devant."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142771.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "14b38cc7-3234-553b-8288-c03270fe9250",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 586,
+      "width": 640,
+      "items": [
+        {
+          "id": "85dac9af-117b-512a-a00b-c35651b17599",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "96a3fc42-53c7-5b27-b82e-2e1ed72ca8e9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142771.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 586,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142771.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "14b38cc7-3234-553b-8288-c03270fe9250"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "aeef3d2b-5714-5d83-a76d-cf733387bcd6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "74e249be-edbd-5b5c-ae6c-701018c77376",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "94a697b0-0938-578f-90ea-5c3e4d665c4f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "14b38cc7-3234-553b-8288-c03270fe9250",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=142050",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

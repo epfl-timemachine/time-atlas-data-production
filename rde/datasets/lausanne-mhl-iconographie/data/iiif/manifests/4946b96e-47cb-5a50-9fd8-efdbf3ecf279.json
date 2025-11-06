@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4946b96e-47cb-5a50-9fd8-efdbf3ecf279",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.16, albums Mayor)  Ancien Evêché, tour Jacquemard, facade sud"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131138.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "541cebca-6d60-5f93-921c-f77f0956cf17",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.16, albums Mayor) "
+        ]
+      },
+      "height": 465,
+      "width": 640,
+      "items": [
+        {
+          "id": "3db14e4b-2228-53c1-ae05-ac0000f22f7d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "62403aba-d6a4-5542-b2f8-f92357f4a8e8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131138.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 465,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131138.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "541cebca-6d60-5f93-921c-f77f0956cf17"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dd257c96-bc1b-54f4-8e7f-ccb3beb38346",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "753fdd5d-63d2-5e02-ae7e-ca48511b279b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.16, albums Mayor) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "656ad56e-8a20-5041-b6d2-98f37ae415e4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "541cebca-6d60-5f93-921c-f77f0956cf17",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=130418",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

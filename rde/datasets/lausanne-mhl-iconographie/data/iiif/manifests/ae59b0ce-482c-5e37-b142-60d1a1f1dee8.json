@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ae59b0ce-482c-5e37-b142-60d1a1f1dee8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Le Café Vaudois à la place de la Riponne."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146200.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5d66824e-501f-5461-b815-2ed35dfc07b9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 550,
+      "width": 640,
+      "items": [
+        {
+          "id": "7487b124-6978-5917-ad19-2f873a974276",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "30461385-e482-5c5d-be56-449aacb91718",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146200.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 550,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146200.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5d66824e-501f-5461-b815-2ed35dfc07b9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0e655169-2932-52f0-a7e1-e778b35f9e12",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bb66ed8b-f658-5088-a00a-0f185bbde6ab",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5429e2cc-c4b5-533d-9af2-b85b20c4002e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5d66824e-501f-5461-b815-2ed35dfc07b9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=145479",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

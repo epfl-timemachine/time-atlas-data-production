@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9ee82371-0483-56c4-88ec-b28a8d939508",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue de la place du Port à Ouchy depuis le sud-est. Sur la place du port, il y a trois enfants qui posent. Derrière eux, on voit : l'hôtel d'Angleterre, quelques commerces et l'hôtel du Port."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97380.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "07fa2ccf-83fa-5653-9a1a-2584f15c43d7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 401,
+      "width": 640,
+      "items": [
+        {
+          "id": "3dfc31ca-9665-501f-9c64-94aa7a183858",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5f65d9e3-02c8-5700-83f8-e531ba38f7f1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97380.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 401,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97380.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "07fa2ccf-83fa-5653-9a1a-2584f15c43d7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6ca76d6d-1790-598a-a750-475f9577bacf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2a52a072-4c53-5a1e-9457-9673f3fc2c60",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5ec0cb4d-34b8-5ae9-818e-b4a4128fe2d7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "07fa2ccf-83fa-5653-9a1a-2584f15c43d7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97380",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

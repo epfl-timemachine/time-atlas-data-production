@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9c65bdd6-f145-5480-a2ab-a2a933851b8f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue sur la rue Curtat au niveau de l'escalier menant à l'avenue Menthon, à droite, et vue sur l'abside de la Cathédrale avec une partie de la tour-lanterne"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_119301.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9129b937-f1fc-51f7-b4e8-1728a86d160d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 481,
+      "items": [
+        {
+          "id": "ce517e33-5c3e-5394-8bd4-dd30c790b6ca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1262c53a-4af5-5641-a670-e00cfacb9273",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_119301.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 481,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_119301.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9129b937-f1fc-51f7-b4e8-1728a86d160d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8696b108-699d-560a-aea8-681d6914a627",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4b046aba-b65c-5f19-abac-b8aa1033c1ea",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c1982024-ce10-55b6-9fad-f696aa3707c4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9129b937-f1fc-51f7-b4e8-1728a86d160d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=119205",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e11e5dee-70ca-5610-bd8d-4b9ddcd5e765",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue du port d'Ouchy et de l'hôtel de l'Ancre, depuis le sud. Sur le lac, on peut voir quelques barques à rames, et quelques voiliers. Sur la rive, à gauche, il y a un gros tas de pierres. Au second plan, se trouve l'hôtel de l'Ancre et la douane fédérale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97377.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f4f9df08-14db-5897-82e0-39961b96b6eb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 585,
+      "width": 640,
+      "items": [
+        {
+          "id": "deb40e5b-cf66-55b6-b9b4-2a482b212c91",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "032fd3fc-2c32-5a0c-a299-2ac3a8be1cf6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97377.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 585,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97377.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f4f9df08-14db-5897-82e0-39961b96b6eb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8871bd38-6202-5369-8b88-10096ce75547",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "98498443-c0e8-50fe-9ef1-f2b97f026e97",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dbcdd289-a071-5b4a-9b63-abedd71c0d90"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f4f9df08-14db-5897-82e0-39961b96b6eb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97377",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

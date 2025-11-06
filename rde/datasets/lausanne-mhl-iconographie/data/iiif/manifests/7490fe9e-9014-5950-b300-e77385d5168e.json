@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7490fe9e-9014-5950-b300-e77385d5168e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur des immeubles locatifs au chemin du Bois-Gentil."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165802.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cdaecb07-bc1b-5d0b-a186-d9755ca28110",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 392,
+      "width": 640,
+      "items": [
+        {
+          "id": "8bb0dd13-a349-56d2-8ee6-bd055d7782b0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "40ec8eee-0ae4-56d1-b31f-a0a1771e57f0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165802.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 392,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165802.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cdaecb07-bc1b-5d0b-a186-d9755ca28110"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3f2bb485-e6de-56ec-856d-c9bcf0119a46",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5b5cf4c5-efbc-59eb-ba19-769f6b08eb9a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dc0027b2-a5f4-5ba2-abb6-a584796709ec"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cdaecb07-bc1b-5d0b-a186-d9755ca28110",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165059",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

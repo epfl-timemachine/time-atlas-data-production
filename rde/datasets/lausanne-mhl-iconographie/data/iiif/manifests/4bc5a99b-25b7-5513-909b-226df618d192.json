@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4bc5a99b-25b7-5513-909b-226df618d192",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur l'angle rue Saint-Etienne et rue Mercerie. Sur la gauche, le seul bâtiment en gros plan dans la photographie (sans compter l'ancien Evêché) qui ne sera pas touché par le percement de la rue Pierre Viret. A ce but les autres trois bâtiments seront ou démolis ou remaniés."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_101842.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "36e788be-1fe9-5dbb-95b7-46b7e4be2723",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 500,
+      "items": [
+        {
+          "id": "81f22713-b155-51f0-bebc-c9b21ce9bc6b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "64c308e7-4a46-5537-9445-c651781622e4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_101842.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_101842.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "36e788be-1fe9-5dbb-95b7-46b7e4be2723"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "203419f5-acb4-581b-8b66-f47461495c81",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7a4ab94f-aa18-5d02-8b36-1a76878d3898",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9ee5e463-611d-57d9-a9c7-ca5235de4129"
+                }
+              ],
+              "target": [
+                {
+                  "id": "36e788be-1fe9-5dbb-95b7-46b7e4be2723",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=101842",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

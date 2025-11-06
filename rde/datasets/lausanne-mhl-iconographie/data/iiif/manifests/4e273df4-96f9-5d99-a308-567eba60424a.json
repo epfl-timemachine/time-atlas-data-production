@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4e273df4-96f9-5d99-a308-567eba60424a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  vue sur le Comptoir suisse depuis l'entrée principale"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146300.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e50c306e-77c7-5527-b479-20a943049828",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 540,
+      "width": 640,
+      "items": [
+        {
+          "id": "3b1bac13-91a3-5a10-b261-2d1802335495",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "48145e7f-0b9a-5fbd-9223-773f79f6183f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146300.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 540,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146300.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e50c306e-77c7-5527-b479-20a943049828"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "caa0064f-fea3-53eb-b248-d7489d7cb556",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b59d4bb7-51f6-5dd6-8e79-2de8cd48b987",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "92d58c89-b2c0-58df-a0bd-cde21335d88b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e50c306e-77c7-5527-b479-20a943049828",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=145579",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

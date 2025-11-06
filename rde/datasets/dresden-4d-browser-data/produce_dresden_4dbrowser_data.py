@@ -36,9 +36,7 @@ with open('src/404_images.txt') as f:
     exclude_ids = f.read().splitlines()
 
 df = pd.read_json('src/dresden_4d_data.json')
-print(len(df))
 df = df[~df['id'].isin(exclude_ids)]
-print(len(df))
 
 df.rename(columns={'date': 'date_obj'}, inplace=True)
 df['geometry'] = df['camera'].apply(lambda v: Point(v['longitude'], v['latitude']))
@@ -55,14 +53,12 @@ tqdm.pandas(desc="Generating obs uuid")
 gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
 gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='hr'), axis=1)
-tqdm.pandas(desc="Generating poi uuid")
-gdf['poi_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['geometry']), axis=1)
 
 # Generating Obs RDE
 tpe='picture'
 
 obs = [produce_obs_obj(
-    v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None, v.poi_uuid
+    v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None
 ) for _,v in gdf.iterrows()]
 
 gdf_obs = gpd.GeoDataFrame(obs)
@@ -71,19 +67,10 @@ gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uui
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDE.OBS.value)
 
-# Generate PoI RDE
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.geometry[0], v.obs_uuid) for _, v in gdf.groupby('poi_uuid').agg(list).reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
-
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, f'dresden_pois', RDE.POI.value)
-
-
 # HR RDE Production
 # 1 to 1 relationship 
 hr_obs_df = gdf[['obs_uuid', 'hr_uuid']].groupby('hr_uuid').agg(list)
-hr_df = gdf.drop(columns=['id', 'poi_uuid', 'geometry', 'obs_uuid']).set_index('hr_uuid')
+hr_df = gdf.drop(columns=['id', 'geometry', 'obs_uuid']).set_index('hr_uuid')
 hr_df['obs_uuid'] = hr_obs_df['obs_uuid']
 hr_df = hr_df.reset_index()
 
@@ -167,7 +154,7 @@ def extract_image_name_from_id(image_id):
     return particle[1:] + post
 
 # Generating the IIIF manifests
-
+gdf['lat_lon'] = gdf['geometry'].apply(lambda geom: f'{geom.y},{geom.x}') # for "guessing" the 4d browser in context url
 img_base = 'dresden/4d_browser/{filename}'
 man_list = {}
 for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
@@ -175,7 +162,7 @@ for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifest
     filename = extract_image_name_from_id(row['id'])
     img_path = img_base.format(filename=filename)
     manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['id'], ad_hoc_seed='manifest')
-    original_source = 'https://4dbrowser.org/data/' + file_obj['path'] + filename
+    original_source = f"https://4dbrowser.urbanhistory4d.org/explore/{row['lat_lon']}/image/{row['id']}"
     width, height = file_obj['width'], file_obj['height']
     page_obj = generate_page_object(
         TM_UUID5_NS,

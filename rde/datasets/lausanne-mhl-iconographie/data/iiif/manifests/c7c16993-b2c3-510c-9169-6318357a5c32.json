@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c7c16993-b2c3-510c-9169-6318357a5c32",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.17, albums Vieux Lausanne)  Vue sur plusieurs quartiers de Lausanne depuis la Cathédrale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132494.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c3154b07-bede-57f8-b38b-d4f4fd704300",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.17, albums Vieux Lausanne) "
+        ]
+      },
+      "height": 476,
+      "width": 640,
+      "items": [
+        {
+          "id": "737e4dc5-81b5-5bf7-9728-ee54bdad47b8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "34591dc2-ea7b-5a13-aa46-90bb5f208b84",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132494.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 476,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132494.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c3154b07-bede-57f8-b38b-d4f4fd704300"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5cbd4d36-7c5d-5437-b599-cd1e4332a0c2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c407a34a-d566-54be-ae5f-51d1bf226e59",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.17, albums Vieux Lausanne) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7633d297-f9ae-50cf-9c6a-ccf9ba75ffb6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c3154b07-bede-57f8-b38b-d4f4fd704300",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=131774",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a4d80d36-e024-5435-bce4-2b0f24b53155",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur des immeubles locatifs au chemin de Montelly."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168298.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b28cbc6d-bbc3-5382-878c-f044ffb1939f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 520,
+      "width": 640,
+      "items": [
+        {
+          "id": "a23b4a55-3295-5393-bd79-153cabe8e4b0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "71d490b8-5775-5b93-93d1-4e3b59ec04aa",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168298.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 520,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168298.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b28cbc6d-bbc3-5382-878c-f044ffb1939f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7d57ab4b-74d4-5e3a-a79f-31df3b83c63e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d19fd879-5325-5b75-b502-2d24381ec065",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "10fe729c-8ba5-5ea5-9d19-c472dd3675fa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b28cbc6d-bbc3-5382-878c-f044ffb1939f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167554",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

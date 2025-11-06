@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1ddcd00b-4aae-5f53-917c-b5f727ed33f8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Cité-Derrière Cité-Derrière avec vue sur la Cathédrale"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110093.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d6da83c0-efb4-5196-815e-1d77071241eb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Cité-Derrière"
+        ]
+      },
+      "height": 640,
+      "width": 421,
+      "items": [
+        {
+          "id": "ac65322e-bad8-5693-8493-5e407013e2c7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5bd1d652-092f-55bb-806a-1de5a0965e20",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110093.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 421,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110093.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d6da83c0-efb4-5196-815e-1d77071241eb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0662d2ee-552f-52b4-818b-c4567cfaef98",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4f002de2-b08e-5948-85cd-9590c6b0401d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Cité-Derrière"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "60f1883e-8800-5bda-ba9f-b23de18923fc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d6da83c0-efb4-5196-815e-1d77071241eb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=109997",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "150610a4-4f20-5229-ac53-810ac31e3a53",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la place de l'Ours depuis la rue du Bugnon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142400.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8cec0994-395f-5d15-99a5-d727e5de9fe0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 545,
+      "width": 640,
+      "items": [
+        {
+          "id": "9ef5bedb-f620-5d9f-8a97-db1267431142",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e8fbf007-10ec-552f-b06c-ca1d177d1303",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142400.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 545,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142400.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8cec0994-395f-5d15-99a5-d727e5de9fe0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a70648ab-1cb0-5a7a-b83d-a2d9a9894dc8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1cd0b16e-97c5-58f1-951f-bc39a3eb57d8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9039397b-fa63-526c-adfd-acd6d5721a6d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8cec0994-395f-5d15-99a5-d727e5de9fe0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141679",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d42550ec-23f7-5704-84c4-47ff689856dd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue, depuis le sud, sur le kiosque des transports publics lausannois situé à la place Saint-François."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_155631.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "03e89a57-0099-5653-a471-b68b0061fdbb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 605,
+      "width": 640,
+      "items": [
+        {
+          "id": "21c56436-131b-5e59-8910-b29615229a03",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "48527816-f6a6-5538-936e-8f1766618275",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_155631.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 605,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_155631.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "03e89a57-0099-5653-a471-b68b0061fdbb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d47bb43d-ab20-5d8f-af52-15e3041b2364",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "68a1201d-de18-5fbb-86d1-49861f0531bd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a29e33d1-d427-5b0a-9a6d-55ad8e7acf25"
+                }
+              ],
+              "target": [
+                {
+                  "id": "03e89a57-0099-5653-a471-b68b0061fdbb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=154910",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

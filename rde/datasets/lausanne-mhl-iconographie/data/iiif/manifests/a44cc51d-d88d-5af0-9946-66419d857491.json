@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a44cc51d-d88d-5af0-9946-66419d857491",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  vue sur la Clinique Infantile"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141480.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d22443c0-d6f2-5af4-a8e8-e03a5876b9ba",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 527,
+      "width": 640,
+      "items": [
+        {
+          "id": "b9fbba10-2b19-545e-8509-85d689ff48d2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9636e23e-eeb3-50bb-9ce0-a26d1af00287",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141480.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 527,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141480.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d22443c0-d6f2-5af4-a8e8-e03a5876b9ba"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c2480d43-5c15-5e13-8abb-91612accbde3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d61e2b1e-0b9f-5249-ad14-d3531009e713",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4108da72-13ff-59e6-893e-233ec3c7823e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d22443c0-d6f2-5af4-a8e8-e03a5876b9ba",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140759",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "df843cfd-79d5-549b-847d-2e00dd958103",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Vue de Lausanne  vue de la Cité depuis la route du Signal. A l'avant-plan on distingue plusieurs personnages cueillant des fruits dans un verger. A l'arrière-plan on distingue la ville, le lac et les montagnes"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112860.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "326a1780-4080-5d29-8511-ec94b3aec120",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Vue de Lausanne "
+        ]
+      },
+      "height": 420,
+      "width": 640,
+      "items": [
+        {
+          "id": "e0e8962e-f2b9-5f98-bce0-ffc1faf1fde5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b899bd94-66ba-5def-8304-16256c397e12",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112860.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 420,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112860.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "326a1780-4080-5d29-8511-ec94b3aec120"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3b8f1261-2683-502b-89cd-07a13d1ce466",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "86b4887e-c43e-524e-94e9-59d5c5db81f4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Vue de Lausanne "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d66b6235-c0bc-5e7c-850b-edc4c4c478f8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "326a1780-4080-5d29-8511-ec94b3aec120",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=112764",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

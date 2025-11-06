@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "94dc4f18-d920-5b63-a2f4-ca0b44d6f7ce",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue d'ensemble de la tour Haldimand et du port d'Ouchy, depuis l'est. Au premier plan, il y a la tour; des deux côtés, il y a quelques arbres (feuillus); derrière, on voit le lac avec un voilier, le port, le château et la tour d'Ouchy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97614.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eb820dda-6af5-54f7-bfc8-b077a702fef0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 610,
+      "width": 640,
+      "items": [
+        {
+          "id": "9706da00-888d-5fec-a790-64db49d0a35d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "515024b4-6942-5632-8151-6826a455673d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97614.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 610,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97614.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eb820dda-6af5-54f7-bfc8-b077a702fef0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "35bd608e-fab3-587b-bb15-87d06cf5c02a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9a416d92-99aa-51d5-bb21-a5be203e950e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ebc218bf-0b95-5039-8b2c-e354deb37743"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eb820dda-6af5-54f7-bfc8-b077a702fef0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97614",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

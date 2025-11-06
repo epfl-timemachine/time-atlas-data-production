@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6df6115a-2cc4-50d9-9822-977c7e8e0fa7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le Pont de Chailly depuis l'avenue de Béthusy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166387.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fe7d8611-a33f-5d4f-8956-21ffe133d635",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 400,
+      "width": 640,
+      "items": [
+        {
+          "id": "bf096848-c622-51cb-9208-a342f5c6b71a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5475b98d-b43f-5df7-ae1d-a997283b8780",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166387.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 400,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166387.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fe7d8611-a33f-5d4f-8956-21ffe133d635"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cd33df00-6d13-5895-a471-f7464629a8dd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "38d2d01c-58d5-50b7-bfa9-421a27e85905",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e1dba759-71f6-533d-93f7-db05586bf40b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fe7d8611-a33f-5d4f-8956-21ffe133d635",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165644",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

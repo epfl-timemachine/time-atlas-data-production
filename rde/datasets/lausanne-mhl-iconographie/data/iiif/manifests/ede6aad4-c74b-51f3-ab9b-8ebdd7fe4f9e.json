@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ede6aad4-c74b-51f3-ab9b-8ebdd7fe4f9e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.16, albums Mayor)  Fontaine du parc du château de Valency"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131530.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c0863772-42d7-5fec-9fda-dd625494f2ac",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.16, albums Mayor) "
+        ]
+      },
+      "height": 640,
+      "width": 467,
+      "items": [
+        {
+          "id": "1bef1486-1ea1-5804-9188-cc26e95210f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fb36de47-2d6a-5f51-9436-3c9e55bacf60",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131530.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 467,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131530.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c0863772-42d7-5fec-9fda-dd625494f2ac"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c0ae489e-4d2f-50b0-8d2a-d142e43abbd9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8571f836-020e-52e9-adcb-f1a826da9738",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.16, albums Mayor) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5af88277-af34-59bc-baae-cc3651a22cf4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c0863772-42d7-5fec-9fda-dd625494f2ac",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=130810",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

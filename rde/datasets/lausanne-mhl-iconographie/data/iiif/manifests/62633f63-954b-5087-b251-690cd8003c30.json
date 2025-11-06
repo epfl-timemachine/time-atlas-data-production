@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "62633f63-954b-5087-b251-690cd8003c30",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la ligne de métro Lausanne-Ouchy et sur l'immeuble locatif à l'avenue d'Ouchy 64."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168069.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6f626b3e-c4b6-5555-ac06-106c11852bb6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 400,
+      "width": 640,
+      "items": [
+        {
+          "id": "d9a5b608-5d20-56ad-a411-1684d37edf4f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4106d84d-e253-5234-bbc5-2d1dd50c1bd7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168069.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 400,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168069.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6f626b3e-c4b6-5555-ac06-106c11852bb6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c559f047-4c20-5577-ac65-00f30c685596",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "708d79f5-7e77-55e2-ba7c-68210ed7d5d7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "89bfe324-a53b-592f-9bf6-072197e0be6f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6f626b3e-c4b6-5555-ac06-106c11852bb6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167325",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

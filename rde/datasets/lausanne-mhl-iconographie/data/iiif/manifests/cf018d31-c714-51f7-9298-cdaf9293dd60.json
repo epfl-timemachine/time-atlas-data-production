@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cf018d31-c714-51f7-9298-cdaf9293dd60",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Travaux de raccordement entre le Petit-Chêne et Ruchonnet."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102493.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d7e418e4-0746-51dc-8a02-ea94d3e8f1e9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 487,
+      "width": 640,
+      "items": [
+        {
+          "id": "96b4cabf-5a8b-5277-a183-26ea5f7e617e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0bcc156c-bb62-5092-a6c0-351e99684ac4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102493.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 487,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102493.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d7e418e4-0746-51dc-8a02-ea94d3e8f1e9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "aecbca53-163a-5642-89bb-a1864e21e997",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5fa75f38-c108-5fbf-9e15-cd49a33949a2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fafd84e6-c602-5f26-890f-e54f94c9c883"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d7e418e4-0746-51dc-8a02-ea94d3e8f1e9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102493",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

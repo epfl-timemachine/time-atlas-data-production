@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0ff83da7-ffdd-5d8b-9763-30be4071ea24",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Gd-St-Jean et Louve vus depuis la place Pépinet"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134195.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "22917966-d174-5f75-ae8c-34851c947239",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 322,
+      "items": [
+        {
+          "id": "1a6daa41-14ae-5f28-b4e0-5944972a4afd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ef9753d9-1a2c-562d-b948-7c100876b8ce",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134195.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 322,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134195.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "22917966-d174-5f75-ae8c-34851c947239"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fec94d00-2ce2-5dd6-8eaf-de651cccd028",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1ec103b2-880e-58c4-b6d2-980a3c233096",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "90ae600b-be4f-5c60-94d1-44fcb1baeba1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "22917966-d174-5f75-ae8c-34851c947239",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133475",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

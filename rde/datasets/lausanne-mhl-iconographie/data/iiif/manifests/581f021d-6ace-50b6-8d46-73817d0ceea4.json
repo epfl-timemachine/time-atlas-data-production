@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "581f021d-6ace-50b6-8d46-73817d0ceea4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue du Petit-Chêne et l'hôtel des Palmiers."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164011.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a0cfc88c-f67c-5d03-b475-0b16e894669a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 418,
+      "width": 640,
+      "items": [
+        {
+          "id": "d4fc6d9d-44ec-5362-abde-e0e0e208dca9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "565fcdff-8971-5fd0-a0df-6131339d1849",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164011.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 418,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164011.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a0cfc88c-f67c-5d03-b475-0b16e894669a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4e990c14-16e3-5de3-a49f-e231f3c5c891",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "55cf6448-966b-573e-9b96-5701b4331355",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "be151e70-66ca-5f32-991b-fdf2f38dfc97"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a0cfc88c-f67c-5d03-b475-0b16e894669a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163270",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

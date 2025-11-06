@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ead8f649-7614-5431-befa-58d2e3881f38",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur le sud de l'église Saint-François et sur le chantier de démolition du couvent des cordeliers attenant à l'église. À droite, les deux voûtes sur la paroi est de l'ancienne salle capitulaire. À gauche, on voit la partie nord avec son enfeu, épargnée de la démolition."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99996.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cd1a0413-3375-57d7-9283-832837c5e1b2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 434,
+      "width": 640,
+      "items": [
+        {
+          "id": "d378d73c-b912-5139-8605-e196a666dd4a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f54eb5ba-48a8-5c57-b4a7-b67ca4ebf35c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99996.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 434,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99996.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cd1a0413-3375-57d7-9283-832837c5e1b2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b2f4df33-26c7-5ca6-9c59-386f32cae303",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6985d2ce-d57a-5c1a-a226-ae9626997db4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0e52a925-fb00-501a-b3e6-7164306ed809"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cd1a0413-3375-57d7-9283-832837c5e1b2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99996",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

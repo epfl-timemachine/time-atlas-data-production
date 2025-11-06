@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ad9fa05a-48bd-527e-b23e-303e27d78d2a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Panorama composé de deux photographies documentant le quartier de Sévelin."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173097.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e2575ac3-8b42-5d86-adf3-5b1fcd51898a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 303,
+      "width": 640,
+      "items": [
+        {
+          "id": "dca7b8c2-9064-51d2-b4da-7e24b9edc1c2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "828d877f-5027-59c1-8dc6-526b189faeee",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173097.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 303,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173097.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e2575ac3-8b42-5d86-adf3-5b1fcd51898a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bfb45cb6-8199-57da-90dc-edce35e6fa3d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d022d2e8-bfce-5859-a663-2227fd0044c2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c7157c88-cec0-5d6d-a29d-6e177527f22d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e2575ac3-8b42-5d86-adf3-5b1fcd51898a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172350",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

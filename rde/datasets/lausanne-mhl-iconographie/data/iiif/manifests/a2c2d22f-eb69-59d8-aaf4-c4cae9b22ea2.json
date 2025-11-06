@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a2c2d22f-eb69-59d8-aaf4-c4cae9b22ea2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'avenue d'Ouchy, en direction du lac."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135095.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e8ff5de3-929d-5399-81ad-1dbce401d3d7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 534,
+      "width": 640,
+      "items": [
+        {
+          "id": "3335643d-b985-530e-823e-7a1042852a37",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "05aaeafb-3181-52a8-a6a0-862fc8c90ed9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135095.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 534,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135095.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e8ff5de3-929d-5399-81ad-1dbce401d3d7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8d68d56b-b95a-59ea-b6cd-4a5255ab971a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d3301cca-71fa-5ff1-8ebb-7b116fd94eb0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "88eec71f-be7d-5552-8d3e-68f4979a3737"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e8ff5de3-929d-5399-81ad-1dbce401d3d7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134375",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b92d7f00-6305-5d9d-b2d7-06b9ec8a52dc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'Hôtel de Ville depuis le bas de la Mercerie."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134905.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "6674b998-8d28-5689-a7ee-87ce56e05666",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 351,
+      "items": [
+        {
+          "id": "ce52381d-64c6-554a-9f79-ec4a095392ea",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d088cb14-c288-5e8e-9f07-d053c00b2522",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134905.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 351,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134905.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "6674b998-8d28-5689-a7ee-87ce56e05666"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b363b2d3-66aa-5200-ab74-b956f0598474",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cdd35747-35bc-550e-bd39-a5c5d3d2e226",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dd0d972e-9331-58b7-b9fb-47b62858bd73"
+                }
+              ],
+              "target": [
+                {
+                  "id": "6674b998-8d28-5689-a7ee-87ce56e05666",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134185",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

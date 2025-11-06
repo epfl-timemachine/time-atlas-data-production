@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "084777ee-de74-539f-851c-fab88d44f874",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue de la ferme de Verdonnet depuis la cour intérieure. On peut voir l'entrée principale avec le n°24 au-dessus de la porte."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98746.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "14d936e0-f652-55b2-b80e-5960c86333ed",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 444,
+      "items": [
+        {
+          "id": "da56cae3-fc29-55d6-9e40-9ed3d9705cfe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0f09b547-a720-5761-bfb4-683120d7fc43",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98746.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 444,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98746.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "14d936e0-f652-55b2-b80e-5960c86333ed"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dfb4c23e-7ce5-5369-96df-44463376f0af",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a328487e-d6c9-572c-814d-0fc85fce2715",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2d3527f9-3263-58c9-a15e-01f0af9f0dcf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "14d936e0-f652-55b2-b80e-5960c86333ed",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98746",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

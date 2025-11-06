@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "aaa59a28-6d83-506b-b5dd-dd5b9a973b12",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le quartier de Bochardon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165694.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fe70cdac-b1b6-573a-9477-04c324faf205",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 555,
+      "width": 640,
+      "items": [
+        {
+          "id": "834fb5ab-9bfd-5739-b847-0fd0cbc8797a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fdb35515-cd0c-535d-a6bb-89056042dda7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165694.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 555,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165694.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fe70cdac-b1b6-573a-9477-04c324faf205"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7c1c62dd-0fe6-5695-94ab-24e2779764c6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "50cc9bc6-46a6-565f-abe2-e3b3f72e5d72",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "979a01b8-11b7-55e3-b5f9-495608092700"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fe70cdac-b1b6-573a-9477-04c324faf205",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164951",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

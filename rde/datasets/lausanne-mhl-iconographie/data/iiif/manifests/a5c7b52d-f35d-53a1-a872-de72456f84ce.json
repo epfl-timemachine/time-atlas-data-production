@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a5c7b52d-f35d-53a1-a872-de72456f84ce",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la tour de l'Ale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141811.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "36129239-19a5-541b-b5ca-ff4134b5efcd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 351,
+      "items": [
+        {
+          "id": "1e6d5fde-b7f6-5622-8d0f-009fc15d0e9f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "74c454b3-a156-59d3-8e0f-7991590040f9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141811.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 351,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141811.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "36129239-19a5-541b-b5ca-ff4134b5efcd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3bd8841e-08a7-570c-b376-1843c98a2430",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4e3d48ab-ef8a-5014-8968-512f7be22da7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5ad4d78a-83d0-5cfd-b1da-c5444032deb1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "36129239-19a5-541b-b5ca-ff4134b5efcd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141090",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

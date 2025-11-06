@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d8045316-bb6b-5f34-9200-9ac4663f1a09",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue de l'avenue de Provence à hauteur du N° 84 avec à l'arrière plan le quartier du Martinet et le chemin de Malley."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173171.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "adca7e3b-6526-50bb-9f43-1e43a5007f97",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 424,
+      "width": 640,
+      "items": [
+        {
+          "id": "e1f4ee43-acaa-5cab-bb9c-b5effd73c828",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f850de80-3a02-5308-8062-faa9ebd88ee0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173171.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 424,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173171.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "adca7e3b-6526-50bb-9f43-1e43a5007f97"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "698fd357-c370-5502-8a91-bafd12e430ad",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e02661f3-8f6f-5fe1-b0cb-10bf0303d36e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4d92f07e-ff75-51a0-82dd-33433795d088"
+                }
+              ],
+              "target": [
+                {
+                  "id": "adca7e3b-6526-50bb-9f43-1e43a5007f97",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172424",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

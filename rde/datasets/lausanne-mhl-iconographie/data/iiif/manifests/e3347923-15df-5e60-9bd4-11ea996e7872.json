@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e3347923-15df-5e60-9bd4-11ea996e7872",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur des automobiles stationnées à la rue Caroline, sur la Cité, la cathédrale de Lausanne et une palissade de chantier."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165994.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "123d2ce7-a0ea-5211-a157-099bdabe9161",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 580,
+      "width": 640,
+      "items": [
+        {
+          "id": "10e2da58-51bc-5258-8fda-db808a6fe0d0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3b9bae60-deab-5352-840e-06f24d333290",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165994.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 580,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165994.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "123d2ce7-a0ea-5211-a157-099bdabe9161"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ad83083a-f3d8-57c9-9a93-2f710b6988dc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5c86db39-094a-56f5-8aba-3a1313b5f725",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "64700220-7283-57d8-88fa-b58171a10152"
+                }
+              ],
+              "target": [
+                {
+                  "id": "123d2ce7-a0ea-5211-a157-099bdabe9161",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165251",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

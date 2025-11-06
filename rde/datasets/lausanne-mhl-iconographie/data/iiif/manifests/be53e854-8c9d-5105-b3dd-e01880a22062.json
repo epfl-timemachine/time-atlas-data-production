@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "be53e854-8c9d-5105-b3dd-e01880a22062",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'avenue du Temple en direction de l'est. Au fond, les Alpes."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146812.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1e2a424a-9746-5347-8f6b-93d4cfd4e1d5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 554,
+      "width": 640,
+      "items": [
+        {
+          "id": "bfad82b1-05f7-5aff-8e37-fe685153f6fb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "21d9ca4b-6196-56fb-8773-a7643cc7cecd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146812.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 554,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146812.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1e2a424a-9746-5347-8f6b-93d4cfd4e1d5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "983b8d68-a93b-5d00-98ac-e8c15e7178fa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "485c144b-6dec-5867-8740-628d6943879c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "308f81a0-05b6-5594-a61d-be31ea85ec2c"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1e2a424a-9746-5347-8f6b-93d4cfd4e1d5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=146091",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c99bf19d-f72a-51a5-be81-419c0b5d5bec",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'avenue du Théâtre. Des arbres sur le trottoir et autour des immeubles. A l'arrière-plan, on a le lac Léman et les montagnes."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147794.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dad33155-db54-5edb-9763-527fd40f470c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 526,
+      "width": 640,
+      "items": [
+        {
+          "id": "8a5fde04-d456-5d4e-8194-70f44cac998d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "257f34f3-b655-5485-a50e-ce43a8e2ab01",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147794.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 526,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147794.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dad33155-db54-5edb-9763-527fd40f470c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5ce1a19e-68f9-5d9d-92c6-d1b0d5086d00",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "641d700a-73f9-5a6d-b406-64d75084b245",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c86b347e-877b-5352-a20b-94283178acf3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dad33155-db54-5edb-9763-527fd40f470c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=147073",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "647c72cd-2676-52bc-8fd7-40322b45196a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue d'Ouchy du nord au sud."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163673.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cdb47f70-8672-5cb7-911f-f521c811ae31",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 388,
+      "width": 640,
+      "items": [
+        {
+          "id": "e87229ea-2ede-5e18-b878-d9ddbc6a56d2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce1e9b45-338c-5bc8-ba7c-574b17bd5ad8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163673.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 388,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163673.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cdb47f70-8672-5cb7-911f-f521c811ae31"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6dea8afe-ccd4-581d-9fe2-3a09f4c473ad",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1fee4b51-3a2f-56e6-bd23-184ece5097df",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "205bb820-6fd0-5b6a-a838-02db9138f445"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cdb47f70-8672-5cb7-911f-f521c811ae31",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=162932",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

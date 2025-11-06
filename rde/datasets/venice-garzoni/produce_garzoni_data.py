@@ -37,8 +37,8 @@ man_id = str(uuid.uuid5(VTM_UUID5_NS, f"manifest_{DS_SLUG}"))
 PAR_TR_OBJ = (datetime_obj_from_int_time(17400101), datetime_obj_from_int_time(17401231, match_to_end=True))
 collection = {man_id: "Garzoni 3 page sample for testing annotations."}
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
-
-parish_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/venice-1740-parish/layers', 'json'), 'parish')
+MAP_FOLDER = '../../maps/venice-1740-parish/'
+parish_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'parish')
 venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
 # Geometry RDE production
@@ -67,7 +67,7 @@ gdf['rde_type'] = "geometry"
 
 save_gdf = gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']]
 
-save_data_file_if_different(DATA_FOLDER,'geometries', save_gdf, f'garzoni_geometries', RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER,'geometries', save_gdf, f'garzoni_geometries', RDE.GEOM.value)
 QA_check_uuid_are_unique(gdf)
 
 print('loading garzoni data into a dataframe, this may take a while.')
@@ -168,7 +168,8 @@ df_flat['img_path'] = df_flat['Contract ID'].apply(lambda v: contracts_ids_to_im
 
 grz_to_loc = pd.read_csv(join(GARZONI_DATA_SRC, 'grz_parish_to_geometry_id_and_church_coordinates.csv'))
 
-tqdm.pandas(desc="Generating uuid for PoIs")
+# note that poi are still generated here for legacy reasons, as the script was built with obs being derived for poi rather than the reverse. 
+# However they are not saved, and the poi from the merge_obs script are the one that will link the obs from this dataset.
 grz_to_loc['poi_uuid'] = grz_to_loc.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['church_coordinate']), axis=1)
 
 def parse_coordinates(coord:str) -> Point:
@@ -218,8 +219,7 @@ def produce_obs_from_uuid_geom_id_and_date(uuid:str, poi_uuid:str, hr_uuid: str,
         hr_uuid,
         "apprenticeship",
         coords=poi_uuid_to_coord[poi_uuid],
-        geometries_links=geom_uuid,
-        poi_link=poi_uuid
+        geometries_links=geom_uuid
     )
 
 obs = []
@@ -259,21 +259,6 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'garzoni_h
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
 
-# PoI RDE Production
-# geojson version
-
-poi_list = gdf_obs.reset_index().groupby('has_handle').agg(list)['uuid'].reset_index()
-
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(
-    v.has_handle,
-    poi_uuid_to_coord[v.has_handle],
-    v.uuid
-) for _, v in poi_list.iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_index('uuid').set_crs('EPSG:4326')
-
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, f'garzoni_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-QA_check_unique_uuid_in_uuid_array(gdf_poi, 'represents')
 
 # ad-hoc manifest and collection production for testing purposes
 ad_hoc_man_prod = False
@@ -315,8 +300,6 @@ if ad_hoc_man_prod:
     manifest = iiif.generate_manifest_object(VTM_UUID5_NS, man_id, {"en": ["Garzoni 3 page sample for testing annotations."], "fr": ["Garzoni, échantillon de 3 pages pour tester les annotations."], "it":["Garzoni 3 pagine, test."]}, 'en', pages, None)
     with open(f'data/iiif/manifests/{man_id}.json', 'w+', encoding='utf-8') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
-
-# dictionary production
 
 # parish dictionary, can also be used for catastici, so some more treatment are made, and the wikidata name is used as the "canon" value
 prof_vals = {v:v for v in df_flat['Profession - Standard Forms'].unique() if not pd.isna(v)}

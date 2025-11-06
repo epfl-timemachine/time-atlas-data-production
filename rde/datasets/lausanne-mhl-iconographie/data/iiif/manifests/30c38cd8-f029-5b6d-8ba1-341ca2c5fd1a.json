@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "30c38cd8-f029-5b6d-8ba1-341ca2c5fd1a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur un coffre-fort de la Société de Banque Suisse."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99906.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2c12d5e4-443c-57d9-be2e-953b0e94542a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 563,
+      "items": [
+        {
+          "id": "d6dedee4-4250-57a1-a6c3-835d3d37cb2b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8435f4d7-736a-59f7-9735-11b095a89f14",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99906.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 563,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99906.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2c12d5e4-443c-57d9-be2e-953b0e94542a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2dae9860-9707-5306-b621-6755a0d4911a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "19bab27f-3fa3-5b6a-868c-c1c6efff6518",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f0b87e58-c7ae-5220-97e0-af0562941ddd"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2c12d5e4-443c-57d9-be2e-953b0e94542a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99906",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3dfd2e6a-42ca-51c7-9d53-612926799a4f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue plongeante depuis la tour Bel-Air sur la place Chauderon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166568.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bd4ea79f-af66-551d-b451-0472583c517c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 378,
+      "width": 640,
+      "items": [
+        {
+          "id": "c32d58e3-ca0f-5f26-b237-70d475878e09",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8eb0b363-9adb-5d0f-9a56-62a3a6fbaf59",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166568.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 378,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166568.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bd4ea79f-af66-551d-b451-0472583c517c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8c18be31-c2e5-589b-91c0-76b81e945eb6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3a9c6965-93e7-5a7c-b677-d277ded7d4c6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5dcee4ab-ed9c-5bc0-9b51-970fb53c81de"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bd4ea79f-af66-551d-b451-0472583c517c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165825",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

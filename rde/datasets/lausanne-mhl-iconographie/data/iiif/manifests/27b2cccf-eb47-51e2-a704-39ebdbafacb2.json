@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "27b2cccf-eb47-51e2-a704-39ebdbafacb2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la rue du Pont depuis la rue Centrale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142785.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4844bc7e-997a-571c-a33a-0cbd55bf9d6c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 539,
+      "items": [
+        {
+          "id": "ab9dbb5e-f31f-56f7-b18f-4c21d1677f14",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0642c8d9-64e0-5de8-b86e-a17d4fa3c38a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142785.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 539,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142785.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4844bc7e-997a-571c-a33a-0cbd55bf9d6c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b603aff2-1d8c-5926-93ca-a88b17f4441b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cd7cedde-b5fc-52a3-bd26-582ca921e86f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "10689c20-e328-5e72-b2cb-21dd0b68f474"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4844bc7e-997a-571c-a33a-0cbd55bf9d6c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=142064",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

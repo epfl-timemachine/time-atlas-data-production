@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fc8ecb31-554e-51ec-b150-a7b7adc0c4da",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Construction du Tribunal Fédéral de Mon-Repos"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140803.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "732a12eb-d8e5-5372-bf83-f659eac981f3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 619,
+      "items": [
+        {
+          "id": "0808ead4-79c2-5e70-9a85-25b330c8b799",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0660fc14-d5e9-5795-ba8a-7b306dcfa37f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140803.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 619,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140803.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "732a12eb-d8e5-5372-bf83-f659eac981f3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d81fa7d2-a438-50b2-9a12-a54e51bfa2d5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e291d98-baa1-51a5-b194-c6b67018daaa",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "545f54cf-8c2c-5c31-a98f-563d70463809"
+                }
+              ],
+              "target": [
+                {
+                  "id": "732a12eb-d8e5-5372-bf83-f659eac981f3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140082",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

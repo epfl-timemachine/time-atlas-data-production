@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2e2c77cd-bb20-5758-a0c1-fb3419232f5a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Panorama composé de cinq photographies sur le quartier du Flon, de la place Chauderon au Grand-Pont."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165436.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a73a4d64-622b-5f39-8563-8f0ee389e16f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 155,
+      "width": 640,
+      "items": [
+        {
+          "id": "2264ddd6-6142-5e30-9250-3d3d5908c100",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "776dc5b5-b651-5417-a1e8-6f0b2a0d279f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165436.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 155,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165436.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a73a4d64-622b-5f39-8563-8f0ee389e16f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b9362b2d-ee1d-5cdc-b8df-c84c849227ff",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "56b92127-ab38-5444-88b7-2c3ec09a5a87",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "67a5db63-16db-5c63-9e07-a11e4710d144"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a73a4d64-622b-5f39-8563-8f0ee389e16f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164695",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2dd7f217-e499-5c40-ba8a-8eab5952e9ed",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le \"Café de l'Avenir\" à l'avenue de Chailly."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166417.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5606ccbc-219e-5cd7-b6a4-36c91b8aa22a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 380,
+      "width": 640,
+      "items": [
+        {
+          "id": "4e9e2351-572e-5998-985f-4f91193e9bd6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8416875f-c32c-56f0-ab3e-a00b2714a390",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166417.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 380,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166417.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5606ccbc-219e-5cd7-b6a4-36c91b8aa22a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "45761261-af07-5117-9e07-9cfdb3309230",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2b11590d-3cab-57bc-9a15-182d9882750b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4987fb73-56d6-5ba0-a542-c50f76c54fca"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5606ccbc-219e-5cd7-b6a4-36c91b8aa22a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165674",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

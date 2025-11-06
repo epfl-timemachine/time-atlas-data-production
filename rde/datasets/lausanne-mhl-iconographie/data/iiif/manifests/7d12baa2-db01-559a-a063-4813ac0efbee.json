@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7d12baa2-db01-559a-a063-4813ac0efbee",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la rue du Petit-Chêne, depuis la place de la Gare."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134949.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a540da63-679f-5bfc-bf78-0f2fd2d2f9a4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 536,
+      "width": 640,
+      "items": [
+        {
+          "id": "3fbd5580-9705-54f5-a0e7-2d1212c60ce2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "282eef0e-64a2-5eda-979f-ab68f99d9cd0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134949.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 536,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134949.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a540da63-679f-5bfc-bf78-0f2fd2d2f9a4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0662180b-3aa6-557a-b449-5b8efcd49b13",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "745ea67b-df5a-5b0e-896a-e0d94318cddd",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b95f05d5-a2ba-5c0b-8a3b-3351bc7d8ee1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a540da63-679f-5bfc-bf78-0f2fd2d2f9a4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134229",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

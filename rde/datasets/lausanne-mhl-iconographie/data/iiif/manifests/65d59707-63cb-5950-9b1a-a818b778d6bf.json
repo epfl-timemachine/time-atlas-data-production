@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "65d59707-63cb-5950-9b1a-a818b778d6bf",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(marsaff) Lausanne Ouchy "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_119082.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "85db0837-6581-5f23-a5f0-94a5923a74d0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(marsaff) Lausanne Ouchy"
+        ]
+      },
+      "height": 640,
+      "width": 458,
+      "items": [
+        {
+          "id": "a30c6804-706e-52f5-9743-92031d254a10",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d7bfcb00-6e5e-5106-b45c-6eba39a08f6a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_119082.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 458,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_119082.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "85db0837-6581-5f23-a5f0-94a5923a74d0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "21b83fe9-3fc0-5455-a94b-d5912fc8e892",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "096b0f91-6c31-508f-9e6f-c62c5824f210",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(marsaff) Lausanne Ouchy"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "558deb84-ef10-52bd-a044-06876130def4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "85db0837-6581-5f23-a5f0-94a5923a74d0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=118986",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "09a822fe-ce67-5be6-92f8-1702ac54b878",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le bâtiment placé sous le pont Bessières, au bout de la rue Centrale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166309.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "435f5269-2800-5aa0-9c36-c7b72098cccc",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 428,
+      "items": [
+        {
+          "id": "c6e1d99a-3205-5d63-aec9-807bae34f32e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "06e760fc-d0d1-5ffc-b9dd-bff8e97a90de",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166309.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 428,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166309.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "435f5269-2800-5aa0-9c36-c7b72098cccc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "786fdb45-fe4d-5bd3-878b-5ad43236a99e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c68eabe8-6500-5a06-a2d7-480dae70763a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "29a33336-1fe4-5094-a9ef-34690472363a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "435f5269-2800-5aa0-9c36-c7b72098cccc",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165566",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

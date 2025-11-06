@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8727beee-d73b-5742-906e-68c0d9ee669d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Portrait de groupe des employés de la poste de la gare à Lausanne."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_150827.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "009664fa-14cd-514d-b8e8-ab29aca1dde7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 483,
+      "width": 640,
+      "items": [
+        {
+          "id": "7a4ce3b9-c744-5190-a1ad-6b652bbb4477",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3e3556ee-4630-58cb-89c6-ae1fad363040",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_150827.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 483,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_150827.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "009664fa-14cd-514d-b8e8-ab29aca1dde7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dd718083-a529-5695-b167-455e76611218",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "32d9945b-8025-5eda-bf35-7e06d39c31b7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a4dce677-f6e9-52d8-a79c-3349c9742994"
+                }
+              ],
+              "target": [
+                {
+                  "id": "009664fa-14cd-514d-b8e8-ab29aca1dde7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=150106",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

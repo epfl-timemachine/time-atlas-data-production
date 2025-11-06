@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2f5e8a87-2541-5310-8280-fef8fd9ecc98",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le parc et la villa Mon-Repos."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138478.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "560d3f76-2c7a-52c5-9c40-ca857607138a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 533,
+      "width": 640,
+      "items": [
+        {
+          "id": "6b03ff54-b9c3-52c9-8bbf-7c9ea5a69474",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1db87837-9823-556f-9c97-30bbaf6bb94f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138478.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 533,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138478.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "560d3f76-2c7a-52c5-9c40-ca857607138a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9ecf769b-cfdf-59d3-8d61-0cd99071aa98",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "49f9f64b-b415-512a-b67e-f62744ca2291",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "47f0b430-f58a-5f7d-900a-d3e3d8aaaa81"
+                }
+              ],
+              "target": [
+                {
+                  "id": "560d3f76-2c7a-52c5-9c40-ca857607138a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=137757",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

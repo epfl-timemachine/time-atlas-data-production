@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b57b91e7-2009-594e-b2a2-c6e82547cfc1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise) Château de Vennes  Vue d'ensemble du château de Vennes, au ch. de Praz-Berthoud 29. Au premier plan, il y a plusieurs personnages posant sur l'herbe, un homme, des femmes et des enfants dont deux se trouvent dans un petit charriot, un sur un cheval à bascule, un autre dans une poussette et un tenant un cerceau à la main. A l'arrière-plan juste devant le château, on distingue trois femmes assises sur un banc et deux hommes discutant sous un arbre."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_96817.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "acf9c50c-aa33-58b4-8d11-87ec46245b32",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) Château de Vennes "
+        ]
+      },
+      "height": 525,
+      "width": 640,
+      "items": [
+        {
+          "id": "76ea23e8-07b6-5bfb-9c8b-d6711991a44f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "54085ca0-f11d-5e65-a487-4afe89bc1150",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_96817.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 525,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_96817.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "acf9c50c-aa33-58b4-8d11-87ec46245b32"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "772ec42c-3924-5302-b43f-dbdd700ae846",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4c4ff2ae-208c-586b-8fb3-cb5b5f9912a3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) Château de Vennes "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1ad06857-9fa4-5dc2-b320-ea9814b54f1f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "acf9c50c-aa33-58b4-8d11-87ec46245b32",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=96817",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

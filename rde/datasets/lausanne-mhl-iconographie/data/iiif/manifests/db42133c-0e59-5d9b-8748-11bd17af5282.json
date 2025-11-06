@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "db42133c-0e59-5d9b-8748-11bd17af5282",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue panoramique sur des bâtiments démolis à l'avenue d'Ouchy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165499.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d9b66bb2-8a13-53fd-8a0e-8971404b6835",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 230,
+      "width": 640,
+      "items": [
+        {
+          "id": "06a31b43-445a-52b7-9b87-9211475a7332",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "95681c1a-4ef9-5735-8ceb-410211a95fd9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165499.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 230,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165499.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d9b66bb2-8a13-53fd-8a0e-8971404b6835"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bafe9c0d-cb99-5dde-8ffb-e05bc9143aad",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "55460c2b-87ff-5ca8-a0f2-33c29edfb612",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "97491919-da1b-5be4-b721-4dcd8e7f709f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d9b66bb2-8a13-53fd-8a0e-8971404b6835",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164758",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

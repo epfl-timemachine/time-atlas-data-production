@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dbec7afb-ad2c-5a33-a734-09fd68424599",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue de l'intérieur de l'église du Sacré-Coeur, avec la nef et le maître autel."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140857.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8c3616e5-70c2-5ec8-9667-96397179eb90",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 352,
+      "items": [
+        {
+          "id": "2b027089-1279-5c07-b3d9-292494f48b84",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "360f7a7c-949c-5ab3-8844-2855baa2159e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140857.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 352,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140857.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8c3616e5-70c2-5ec8-9667-96397179eb90"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "21eb8b71-0661-52f3-a4b0-a0bde00a0ccd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bb509fb5-370f-5367-91cf-b48a99b5531d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "968a1c38-9628-5b67-b856-220345c8c4b3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8c3616e5-70c2-5ec8-9667-96397179eb90",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140136",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

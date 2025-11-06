@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "99443ddb-186e-526d-8364-f02ace6c8b60",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  rue Mercerie 1-7, 2-12\n escaliers du Marché 2"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100642.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "00e3ac6d-ec87-5b44-ab08-5bdbca4018dd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 554,
+      "items": [
+        {
+          "id": "1c1e88f3-771f-5525-850d-d63b3c5e8014",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f1aeb2ee-161d-57b5-9686-4e3c2ecf4529",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100642.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 554,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100642.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "00e3ac6d-ec87-5b44-ab08-5bdbca4018dd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "07c2217a-949f-58c8-a8a6-51385f22f64f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "91976721-d748-50ac-b0bd-3bc9c620a276",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f1be8ff7-a200-57de-a804-722f9341c9c7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "00e3ac6d-ec87-5b44-ab08-5bdbca4018dd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100642",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

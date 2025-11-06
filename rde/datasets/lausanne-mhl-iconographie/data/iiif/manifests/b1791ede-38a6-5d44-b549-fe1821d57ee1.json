@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b1791ede-38a6-5d44-b549-fe1821d57ee1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) La Cathédrale de Lausanne dessinée du quatrième étage de la maison no. de la place de la Palud. Vue de la tour du beffroi de la Cathédrale depuis la place de la Palud. Vue des toits de la Palud au premier plan"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110255.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0a3ea012-a819-55b3-81b6-40f8d0444c3d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) La Cathédrale de Lausanne dessinée du quatrième étage de la maison no. de la place de la Palud."
+        ]
+      },
+      "height": 640,
+      "width": 416,
+      "items": [
+        {
+          "id": "912c23ec-4e84-536e-9696-9d8280571476",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c970f6c1-93b8-5914-bd97-20f174a6b75a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110255.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 416,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110255.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0a3ea012-a819-55b3-81b6-40f8d0444c3d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "adf03378-5ada-5a16-9818-f3877bd08539",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1b7076b8-dfb7-52d3-868a-c701dc96af91",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) La Cathédrale de Lausanne dessinée du quatrième étage de la maison no. de la place de la Palud."
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7cbf956b-6269-54ad-bf1e-5553e9f9f77b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0a3ea012-a819-55b3-81b6-40f8d0444c3d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110159",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

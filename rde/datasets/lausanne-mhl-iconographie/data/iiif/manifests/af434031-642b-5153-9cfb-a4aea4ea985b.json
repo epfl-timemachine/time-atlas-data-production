@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "af434031-642b-5153-9cfb-a4aea4ea985b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la tour Bel-Air, la place Bel-Air et la passerelle du Flon avec simulation de la Tour Sarrasin."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165461.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1340de70-fded-52e8-a009-6d3be9faccfb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 300,
+      "width": 640,
+      "items": [
+        {
+          "id": "7caceb94-5e70-5104-9814-f1ead875e22a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a6b9711f-71a1-58a8-9c4e-a49d977bcecf",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165461.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 300,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165461.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1340de70-fded-52e8-a009-6d3be9faccfb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "11b25715-8dde-58d0-b0fc-c002afc94781",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "026246c7-84a1-523e-8843-e7bf81d64f7f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b9d63263-8efe-5c28-a004-68004c944f8d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1340de70-fded-52e8-a009-6d3be9faccfb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164720",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

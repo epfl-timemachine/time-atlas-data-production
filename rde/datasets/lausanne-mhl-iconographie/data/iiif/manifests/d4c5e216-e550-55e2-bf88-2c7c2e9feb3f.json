@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d4c5e216-e550-55e2-bf88-2c7c2e9feb3f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne)  Rue Jean-Louis-Galliard."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131464.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a5dd1441-b933-50b7-9e50-c742beab6f7b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne) "
+        ]
+      },
+      "height": 640,
+      "width": 466,
+      "items": [
+        {
+          "id": "21dcc42d-68d4-584a-ab7d-7314a60609ac",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1eb19e5a-3f5b-5d68-81cf-af12e757176a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131464.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 466,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131464.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a5dd1441-b933-50b7-9e50-c742beab6f7b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b6477568-90d8-5548-ac74-19968242b2fd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aebd8d85-bbc2-5a74-af4b-e341b80f3e96",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "05891e71-83b5-5256-b864-a86fc1b8415e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a5dd1441-b933-50b7-9e50-c742beab6f7b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=130744",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

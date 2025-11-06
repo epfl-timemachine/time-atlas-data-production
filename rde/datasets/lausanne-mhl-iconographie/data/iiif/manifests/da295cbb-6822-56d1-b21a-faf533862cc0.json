@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "da295cbb-6822-56d1-b21a-faf533862cc0",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le lac Léman, les montagnes et le débarcadère."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138735.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5160c2cd-fdba-5251-80d4-d6750a38bb30",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 572,
+      "width": 640,
+      "items": [
+        {
+          "id": "e8cafb23-abed-5c2c-b639-7444c97a4d35",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "40afba45-cc20-5e06-aa50-86837c2a69a6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138735.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 572,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_138735.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5160c2cd-fdba-5251-80d4-d6750a38bb30"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6e1d57a7-4e4a-56e6-bef7-17fab86f186d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7ad76a0a-b8a0-5c79-a4b6-e6dda9fad697",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "42437167-dc04-5e82-a0be-6f0a90116fc5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5160c2cd-fdba-5251-80d4-d6750a38bb30",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=138014",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

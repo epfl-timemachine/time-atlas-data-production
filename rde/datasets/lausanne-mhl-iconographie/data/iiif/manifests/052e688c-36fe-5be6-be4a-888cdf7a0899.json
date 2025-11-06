@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "052e688c-36fe-5be6-be4a-888cdf7a0899",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur les immeubles de la rue de la Tour et sur la tour de l'Ale depuis l'angle du préau du collège Saint-Roch."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170885.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e49b6b03-b589-507d-b5ea-76cf6922f51e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 343,
+      "width": 640,
+      "items": [
+        {
+          "id": "f224741a-3ba6-5eb2-b793-8bb73f01e19c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7d411b82-0542-5312-a1b2-54ea94932c84",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170885.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 343,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170885.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e49b6b03-b589-507d-b5ea-76cf6922f51e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d54bb465-5128-587b-a1b4-291d16126b41",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "43538e8e-4d8f-591c-88b5-e7bf7fd4135b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5d330609-c5a6-580c-bd04-b9cbf87daeaf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e49b6b03-b589-507d-b5ea-76cf6922f51e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170139",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

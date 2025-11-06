@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "55ff6707-68ff-5e0a-96e2-270e6dd52248",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis le chemin du Muveran sur l'avenue Victor Ruffy 8 et 10."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165363.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8eaad913-ee59-5666-8b43-05ef0c18201e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 375,
+      "width": 640,
+      "items": [
+        {
+          "id": "66f21ff4-4ba5-567d-a992-749ee57890b1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "00a3ca86-eeef-5ecc-94e4-6b9a0217270f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165363.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 375,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165363.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8eaad913-ee59-5666-8b43-05ef0c18201e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8c3b3b1f-d343-5236-8a06-cb7cd5dc00b3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e9d693c5-c4cd-5614-8e53-b127b6f438e6",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6a31202e-e536-53b6-b1db-1daf63083ba6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8eaad913-ee59-5666-8b43-05ef0c18201e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164622",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

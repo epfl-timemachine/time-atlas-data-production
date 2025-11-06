@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2eaa4006-7cd8-554a-9fc2-b80d18d4245c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur une camionnette au chemin des Mouettes."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168310.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "aa517e33-77b9-5050-8168-774f6ce25f36",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 396,
+      "width": 640,
+      "items": [
+        {
+          "id": "1c896d0c-385e-5e17-b8e3-41589fb45c81",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bd24d5ac-dfd7-5ee1-9b05-853c1d7952fd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168310.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 396,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168310.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "aa517e33-77b9-5050-8168-774f6ce25f36"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "102e0de1-6d3e-5a2c-919b-6c24b3fdbbb6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d233b36a-3dc2-5ba5-a467-032280a1c8ef",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "30c72327-1171-596a-a71e-177b6ea2b4d4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "aa517e33-77b9-5050-8168-774f6ce25f36",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167566",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

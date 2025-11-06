@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "27e2b361-3aed-5e10-afe5-a42cdaec93cd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur la rue Cheneau-de-Bourg depuis le pont Bessières."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107446.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d45e2944-fdd3-50e0-85ce-5e5d1c0e6afb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 465,
+      "width": 640,
+      "items": [
+        {
+          "id": "57529d11-b6c8-5f55-b1da-c57a06dbab89",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b2febf63-385c-516a-8bba-b3caa3c64f58",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107446.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 465,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107446.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d45e2944-fdd3-50e0-85ce-5e5d1c0e6afb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c9e412ee-ec2e-5611-ac8b-7f39c27401bb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d2151526-ddad-59cd-86a2-0174ec661f4f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eb4de9c4-ec76-5760-bb3b-7aaf6d31e590"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d45e2944-fdd3-50e0-85ce-5e5d1c0e6afb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=107446",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "32ab296e-9c0f-5db4-915b-de4baa8e325c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'immeuble locatif du chemin de Bellerive 1."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166816.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a8d52673-9370-5441-b98e-f1b9247d9cee",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 448,
+      "width": 640,
+      "items": [
+        {
+          "id": "b0dedc1d-75c2-5d3a-ae3f-24a8404f4cca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "86e74348-9d9f-5d8d-847d-53a77d2dea0a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166816.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 448,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166816.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a8d52673-9370-5441-b98e-f1b9247d9cee"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "87bbd59c-6911-5f56-ba18-f174da440c70",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "00d92563-ddff-57d2-88b2-a9c9d38cd9f7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "587c7d81-ca79-55dd-b387-9d7cd90d78b6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a8d52673-9370-5441-b98e-f1b9247d9cee",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166073",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

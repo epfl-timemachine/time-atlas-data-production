@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ff4b0e32-0901-5e07-9419-517cb7296c7d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Détail d'un ancien vitrail du temple de Chailly."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98813.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f138ca41-3ee1-53f4-ba61-ffcedcb5ecd9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 632,
+      "items": [
+        {
+          "id": "88bd87e5-7136-5172-acdf-d42d1ac534db",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aa23aef1-2023-5e41-bc3a-d2388db5bd9e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98813.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 632,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98813.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f138ca41-3ee1-53f4-ba61-ffcedcb5ecd9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "614f9d8a-cf26-5f6b-9ebd-26ebf08cc02d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "94199ce7-a88c-5891-8c54-7ec45e4009ea",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "621f4704-a76c-54ce-a117-bbd15b81d225"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f138ca41-3ee1-53f4-ba61-ffcedcb5ecd9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98813",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

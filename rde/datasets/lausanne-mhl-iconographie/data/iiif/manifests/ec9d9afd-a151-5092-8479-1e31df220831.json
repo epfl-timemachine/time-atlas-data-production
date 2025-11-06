@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ec9d9afd-a151-5092-8479-1e31df220831",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  deux petites filles posent devant l'entrée de la ferme."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103374.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3624385f-ca93-5a21-8e0d-f5e7b08cd50a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 455,
+      "width": 640,
+      "items": [
+        {
+          "id": "1c817e8e-696e-518b-a788-9dba19c425bf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "925d3035-69fe-513f-ae04-30b103dc0567",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103374.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 455,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103374.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3624385f-ca93-5a21-8e0d-f5e7b08cd50a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a2379d59-3ab4-5f57-9e2a-2b68c92d2730",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7e98d77b-6815-5af0-a598-be4581df206c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8de32bae-365f-59fb-b61c-7516d9aa8489"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3624385f-ca93-5a21-8e0d-f5e7b08cd50a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=103374",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "df3bd5d6-00ce-5cb3-a8ed-184dfa727659",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue Grand-Saint-Jean et sur l'Hôtel des Voyageurs au numéro 19."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167578.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0b72ff5a-bcbd-535e-afc4-f57de65e22d8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 431,
+      "items": [
+        {
+          "id": "234ccd40-d4b5-5045-bde3-9eb9ea514960",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7d061d8c-7a8f-583f-9a97-e44042391188",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167578.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 431,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167578.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0b72ff5a-bcbd-535e-afc4-f57de65e22d8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "be45b191-94a2-5f75-880a-0a89239bd109",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "cb5f159f-c611-5cd4-9056-bb5a0e189c52",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dc47fe96-0df5-59c3-9b67-56795db8340d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0b72ff5a-bcbd-535e-afc4-f57de65e22d8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166835",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

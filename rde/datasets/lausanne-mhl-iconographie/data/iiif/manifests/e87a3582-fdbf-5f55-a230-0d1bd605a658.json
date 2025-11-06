@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e87a3582-fdbf-5f55-a230-0d1bd605a658",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue des Amis 8 et la rue des Jardins 10, prise depuis le chemin des Jardins."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164378.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8dafcc30-cf9f-5033-9e0c-d7ad0568d706",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 428,
+      "width": 640,
+      "items": [
+        {
+          "id": "9bc40388-156e-5914-af6e-062608e1c18b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "73a2c340-681a-5f32-92a2-a40c547dc2a1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164378.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 428,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164378.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8dafcc30-cf9f-5033-9e0c-d7ad0568d706"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cdc55030-97b7-5efd-993e-fcbabb1f2313",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5ac392bd-451c-57db-8d5f-595f9d827051",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "306c70d5-8c1b-5faf-b0f3-5329168fd4fa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8dafcc30-cf9f-5033-9e0c-d7ad0568d706",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163637",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

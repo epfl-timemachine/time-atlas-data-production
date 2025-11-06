@@ -31,7 +31,8 @@ DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 MAP_SLUG = f"{DS_SLUG}-map" # used for the map manifest, different from the map slug of the map itself.
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 # cadastral layer uuid:
-cadaster_layer_uuid = get_layer_uuid('../../maps/venice-dorigo/layers.json', 'venice-dorigo-map-zones') 
+MAP_FOLDER = '../../maps/venice-dorigo/'
+cadaster_layer_uuid = get_layer_uuid(MAP_FOLDER+'layers.json', 'venice-dorigo-map-zones') 
 # so the same layer uuid is used between this dataset and the street network dataset
 BEGIN_TR = 9460101
 END_TR = 14081231
@@ -64,10 +65,9 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
     gdf['geometry'] = gdf['geometry'].apply(lambda g: g if g.is_valid else make_valid(g))
     QA_check_all_geometries_are_valid(gdf)
 
-
 geom_shorthand = 'dorigo_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 df = pd.read_json(list(DORIGO_DATA_PATH.rglob('*historical_records.json'))[0])
 
 # fix NaN being serialized as literal in JSON alongside "null"
@@ -109,21 +109,10 @@ tqdm.pandas(desc="Generating UUIDs")
 df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
 df['obs_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
 df['corrected_centroid_str'] = df['corrected_centroid'].progress_apply(lambda p: p.wkt)
-df['poi_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['corrected_centroid_str'], ad_hoc_seed='poi'), axis=1)
 
-# Producing PoIs
-poi_df = df.groupby('corrected_centroid_str').agg(list)[['corrected_centroid','obs_uuid', 'poi_uuid']].reset_index()
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v['poi_uuid'][0], v['corrected_centroid'][0], v['obs_uuid']) for _, v in poi_df.iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
-gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-gdf_poi = gdf_poi.set_geometry('geometry')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'dorigo_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-
-QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
 
 # Producing Obs.
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.corrected_centroid, v.has_geometry, v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.corrected_centroid, v.has_geometry)
 obs = [obs_from_row(v) for _, v in df.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')

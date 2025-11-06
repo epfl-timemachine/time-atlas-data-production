@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5be21d36-80cd-547e-b1f1-be8e7c34cd61",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis la route d'Oron sur la campagne de Rovéréaz."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172394.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ebdb55e9-209d-5cf3-b7ea-2920dcf973ad",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 395,
+      "width": 640,
+      "items": [
+        {
+          "id": "9b43c760-3d1a-5a2a-ba3f-02b754366c70",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fdc11b6e-1d27-556f-85db-c0b663586c47",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172394.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 395,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172394.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ebdb55e9-209d-5cf3-b7ea-2920dcf973ad"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4f910136-857e-5709-9048-aef66f60b4f3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "567e7961-20f6-5d46-9b35-68acc01a244c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c5054248-b64d-5147-9cf9-78984683f547"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ebdb55e9-209d-5cf3-b7ea-2920dcf973ad",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=171647",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

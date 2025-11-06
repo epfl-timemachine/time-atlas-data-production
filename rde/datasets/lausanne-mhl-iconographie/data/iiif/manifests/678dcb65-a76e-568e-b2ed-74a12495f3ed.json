@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "678dcb65-a76e-568e-b2ed-74a12495f3ed",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur l'aile de Prangins de l'ancien Evêché."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140691.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7896d7a4-25c4-5216-9660-43822e9286e9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 411,
+      "items": [
+        {
+          "id": "83ac2d6a-b747-5bee-a4e8-f67236df58e0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4c3f8b7f-434c-5624-b39b-3cd107cdcb96",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140691.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 411,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140691.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7896d7a4-25c4-5216-9660-43822e9286e9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c5af52e5-dabe-57c9-9d4f-0e42bc6f3cec",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f75e5ef2-acbf-5042-bbd1-fb3132ef23de",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bb534fa1-b914-5231-9b85-6ac8ecce5c92"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7896d7a4-25c4-5216-9660-43822e9286e9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=139970",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

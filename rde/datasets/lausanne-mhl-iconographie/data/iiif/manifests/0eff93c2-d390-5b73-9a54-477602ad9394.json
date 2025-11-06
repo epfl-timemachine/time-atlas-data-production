@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0eff93c2-d390-5b73-9a54-477602ad9394",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la chapelle de Villard."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141789.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "75b7d648-327c-5b83-9174-84e09af58dc2",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 551,
+      "width": 640,
+      "items": [
+        {
+          "id": "68dd1152-8a64-52e2-a540-ebf1b4b6a700",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fbbde686-07c4-55e1-93af-eddd6fb22084",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141789.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 551,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141789.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "75b7d648-327c-5b83-9174-84e09af58dc2"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ff7a6367-622a-5085-9661-a424b504cae8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "089f4998-978f-52b1-8ed7-41e75f22de5d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1be72e29-c0ad-5b85-828c-4a748aff809b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "75b7d648-327c-5b83-9174-84e09af58dc2",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141068",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f0ef1793-fb03-57d1-acca-3f5dd9c8e635",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la gare du Flon à la place de l'Europe."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172835.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eecddfeb-17bd-5139-a8e5-2a8cc092428a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 389,
+      "width": 640,
+      "items": [
+        {
+          "id": "6ba932a0-cb98-59e5-987d-e4d27ce478f6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e2d501c5-d0f2-59fb-b9b7-b4b2d467e6a1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172835.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 389,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172835.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eecddfeb-17bd-5139-a8e5-2a8cc092428a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a6ebc10f-f65b-581f-ad26-db6788cbef3d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eaf53f00-86d1-5871-992e-eadcb03e172f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bae0ebed-4fcc-5d5e-90e9-bc49ba533800"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eecddfeb-17bd-5139-a8e5-2a8cc092428a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172088",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

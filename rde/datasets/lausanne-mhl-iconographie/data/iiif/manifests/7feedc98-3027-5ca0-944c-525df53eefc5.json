@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7feedc98-3027-5ca0-944c-525df53eefc5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(marsaff) Floralies lausannoises "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112841.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cc8ef2ca-a81b-535b-98f4-0addde2be438",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(marsaff) Floralies lausannoises"
+        ]
+      },
+      "height": 640,
+      "width": 414,
+      "items": [
+        {
+          "id": "1aebf33f-6674-5dce-87fc-4c0f12309672",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "66c96568-5d03-516e-b4bc-35be5df9385d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112841.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 414,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112841.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cc8ef2ca-a81b-535b-98f4-0addde2be438"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2be5e6ff-6d61-504d-a6b8-e8586368ea92",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7a259643-f147-5a67-a8ea-827a15ed9a6b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(marsaff) Floralies lausannoises"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "34784e86-5ad9-5f61-8115-1cc8654708bf"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cc8ef2ca-a81b-535b-98f4-0addde2be438",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=112745",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

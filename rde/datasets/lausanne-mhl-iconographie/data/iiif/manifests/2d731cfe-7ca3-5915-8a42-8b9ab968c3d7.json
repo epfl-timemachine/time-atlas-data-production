@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2d731cfe-7ca3-5915-8a42-8b9ab968c3d7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis un parking sur l'avenue de Béthusy 81,83,85."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165655.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b4352643-7b07-5d1b-8deb-3067db1e7818",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 400,
+      "width": 640,
+      "items": [
+        {
+          "id": "dc4b4924-6e5b-5666-bdc1-2373b7cfec71",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c9f81a6b-046b-549a-b5ea-600cf0f13a5b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165655.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 400,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165655.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b4352643-7b07-5d1b-8deb-3067db1e7818"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f09f4f47-6d03-5911-86b9-182d6b490c45",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "083b18a7-5a84-55c5-99bc-513f2e8d1fab",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "13ddd9d9-de1f-57b2-904f-498327af5c31"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b4352643-7b07-5d1b-8deb-3067db1e7818",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164912",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8e85e014-33f3-511d-9c2d-ea1192b086a1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales) Lausanne - Le Sphynx de l'Université  Gros plan sur la statue du Sphinx, lion ailé à tête et buste de femme, situé devant le palais de Rumine."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143802.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "86410d6b-1e95-52b9-a215-2851cf4d8ee8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) Lausanne - Le Sphynx de l'Université "
+        ]
+      },
+      "height": 640,
+      "width": 350,
+      "items": [
+        {
+          "id": "13cca126-e5d5-540f-b728-2a0f6387c3eb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "237e79ad-8f3b-5468-8c2a-214cfe2da3ab",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143802.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 350,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143802.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "86410d6b-1e95-52b9-a215-2851cf4d8ee8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6b827c69-9678-51a5-b5df-10daa5ad76f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "347072d1-87c7-5457-b663-64357ddd85ea",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) Lausanne - Le Sphynx de l'Université "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1c3bec49-6ede-5e00-8fc3-bd92391d2b6d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "86410d6b-1e95-52b9-a215-2851cf4d8ee8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=143081",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

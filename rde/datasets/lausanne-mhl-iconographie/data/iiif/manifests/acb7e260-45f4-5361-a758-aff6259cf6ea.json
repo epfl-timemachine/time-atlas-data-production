@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "acb7e260-45f4-5361-a758-aff6259cf6ea",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la zone artisanale du chemin de la Colline et l'avenue de Provence."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173383.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c23af843-459a-50ec-87c2-ed9ecaf4e58a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 383,
+      "width": 640,
+      "items": [
+        {
+          "id": "583c8865-5e55-5715-bc8f-2651af06c730",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8a50cb73-0756-52af-bf35-1da38efb4b25",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173383.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 383,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173383.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c23af843-459a-50ec-87c2-ed9ecaf4e58a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a32c8315-1e6a-5764-b4dd-31cd4b70dd65",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8fb331b9-d8f7-54fa-8335-d6987d88aa05",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "577b917a-e63a-5ee0-8544-9ce26186d61a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c23af843-459a-50ec-87c2-ed9ecaf4e58a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172636",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d966929f-0bb9-5fe5-aa61-05407b7fd009",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le village de Vers-chez-les-Blanc et sa campagne."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141248.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3adce6a2-fe0a-5b65-8c44-8eeb568547dd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 535,
+      "width": 640,
+      "items": [
+        {
+          "id": "e0ae20d1-c0ca-56a3-b6b6-4a0fa276fd5a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce6f9401-1317-5ccc-abb1-166e69969832",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141248.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 535,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141248.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3adce6a2-fe0a-5b65-8c44-8eeb568547dd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f713bce3-fa3a-5b53-b9b4-8439d3e84f88",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d889bc82-9f18-51a0-8c2e-01896f475b48",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ee5c0de8-9e4a-5d94-8c08-eed34b28a8f8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3adce6a2-fe0a-5b65-8c44-8eeb568547dd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140527",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

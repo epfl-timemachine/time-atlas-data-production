@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1c7216e6-4c55-5616-a53d-30cd3e1f66cb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  La porte d'entrée de l'Hôtel de Ville"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109784.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "14fc6bb7-748b-54f8-80aa-6f5bd5468d5c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 478,
+      "items": [
+        {
+          "id": "0f37362b-576f-5207-8743-406cb454ca7a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5ba7b2ba-8475-52dd-a0a0-01cf9501ad8f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109784.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 478,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109784.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "14fc6bb7-748b-54f8-80aa-6f5bd5468d5c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "63b0e1ec-0233-5bc3-aa29-512c10ee1e07",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f3f10e8a-38f4-5cc5-a6c3-c9435e9e019d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b1753098-2ef9-51bb-a432-170b32476619"
+                }
+              ],
+              "target": [
+                {
+                  "id": "14fc6bb7-748b-54f8-80aa-6f5bd5468d5c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=109688",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

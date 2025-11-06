@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ca71ee60-8f43-5896-8c2f-2eca251c3483",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(grazaff) les Vêpres de Monteverdi "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_120155.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a07dce9c-11ed-547f-ad75-8117acc6a09d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(grazaff) les Vêpres de Monteverdi"
+        ]
+      },
+      "height": 640,
+      "width": 431,
+      "items": [
+        {
+          "id": "57db7916-6772-58f2-86c7-510f4f356c44",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "15d50209-400f-5310-b38f-542385eeeaa3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_120155.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 431,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_120155.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a07dce9c-11ed-547f-ad75-8117acc6a09d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ea4d3100-95d4-5f8d-a46f-e33bcad751b1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "af8d1756-e934-53f6-a32f-08919157e516",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(grazaff) les Vêpres de Monteverdi"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c03de8a6-6514-5683-8ddd-302f0b8e7ccc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a07dce9c-11ed-547f-ad75-8117acc6a09d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=120059",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

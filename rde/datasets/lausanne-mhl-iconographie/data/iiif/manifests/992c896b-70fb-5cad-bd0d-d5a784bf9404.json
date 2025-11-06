@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "992c896b-70fb-5cad-bd0d-d5a784bf9404",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Panorama composé de deux photographies sur les bâtiments du quartier de Malley."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173178.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8c4c1e9f-23ee-54bd-b098-0ddd8dc85062",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 219,
+      "width": 640,
+      "items": [
+        {
+          "id": "e459605e-641c-55c0-bc08-869e598c9477",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "98b8cc70-2ca2-5b2b-8da5-d545ea59e5dc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173178.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 219,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173178.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8c4c1e9f-23ee-54bd-b098-0ddd8dc85062"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "629a1980-85b2-5c82-8f33-be28c58e9ced",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c270585b-44f2-59fd-a135-3c1a51d77adb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "aa7f376c-24c2-526f-ae58-2bcd06b91ee9"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8c4c1e9f-23ee-54bd-b098-0ddd8dc85062",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172431",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

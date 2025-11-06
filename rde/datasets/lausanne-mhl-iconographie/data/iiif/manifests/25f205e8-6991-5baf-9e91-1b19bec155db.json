@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "25f205e8-6991-5baf-9e91-1b19bec155db",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue d'une pittoresque maison de vigne dite la Casquette du Diable, dans la partie nord-ouest de la campagne de M. Dapples à Montriond, coiffée d'un large toit à la Mansart, ouvert sur le côté nord. A l'avant-plan on distingue deux enfants, l'un assis, l'autre debout, de dos, face à la Casquette"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111147.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "24be0c69-6a80-5e30-9b1e-dc492d1cc14c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 459,
+      "items": [
+        {
+          "id": "6c5b51b0-33d5-5914-af0d-e55518b0c7d6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c4ec3922-551c-5b6b-b162-ef6ef344c872",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111147.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 459,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_111147.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "24be0c69-6a80-5e30-9b1e-dc492d1cc14c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3cdf8ad1-13c6-5976-a907-1792bcc1a379",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "29293d4b-6b30-5bbf-bab6-537a93db30a1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0d8f997a-51f1-5d1b-a201-f65089380270"
+                }
+              ],
+              "target": [
+                {
+                  "id": "24be0c69-6a80-5e30-9b1e-dc492d1cc14c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=111051",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

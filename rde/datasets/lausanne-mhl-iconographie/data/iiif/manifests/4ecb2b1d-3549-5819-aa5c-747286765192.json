@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4ecb2b1d-3549-5819-aa5c-747286765192",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue des bâtiments de l'ancienne brasserie du Valentin"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133597.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3d09dc3e-b031-52c4-8f01-0144c7c2fe3f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 617,
+      "items": [
+        {
+          "id": "5747d8a0-02d8-5ed1-ab3a-0f29cec7983b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9ed25fff-0fe4-55b2-a6fb-af3bd4952a91",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133597.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 617,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_133597.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3d09dc3e-b031-52c4-8f01-0144c7c2fe3f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a7e694a7-c449-5b7b-81fe-0b94709d5c5e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e4d9db53-bd15-5011-ab5e-114d37567629",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0530b31d-e30c-5e01-a4e9-b217117f238a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3d09dc3e-b031-52c4-8f01-0144c7c2fe3f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=132877",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

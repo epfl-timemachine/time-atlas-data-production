@@ -138,6 +138,17 @@
     "end_time": {
       "type": "string"
     },
+    "archival_reference": {
+      "oneOf":
+          [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+    },
     "transcribed_pages_amount": {
       "type": "integer"
     },
@@ -166,7 +177,8 @@
     "start_time",
     "transcribed_pages_amount",
     "rde_type",
-    "uuid"
+    "uuid",
+    "archival_reference"
   ],
   "additionalProperties": false
 }

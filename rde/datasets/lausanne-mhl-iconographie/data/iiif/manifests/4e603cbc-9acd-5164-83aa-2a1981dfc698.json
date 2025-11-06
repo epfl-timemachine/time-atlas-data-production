@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4e603cbc-9acd-5164-83aa-2a1981dfc698",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  gros plan sur la passerelle en bois au quai d'Ouchy. A l'arrière-plan le lac."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98118.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "172e586c-bf31-5c71-8d07-1c1ae4e0c644",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 359,
+      "items": [
+        {
+          "id": "4e267930-a064-55af-a46e-3d8e239fd536",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "18d29a18-7182-5ab2-a67b-210c271c9a89",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98118.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 359,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98118.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "172e586c-bf31-5c71-8d07-1c1ae4e0c644"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5a528120-41d7-51fb-bea7-d0aaab533bd6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce14fa33-d1c7-5212-934d-4f4e17a5d0ee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bf0879c4-fa1c-5090-9eb1-8c1484091064"
+                }
+              ],
+              "target": [
+                {
+                  "id": "172e586c-bf31-5c71-8d07-1c1ae4e0c644",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98118",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

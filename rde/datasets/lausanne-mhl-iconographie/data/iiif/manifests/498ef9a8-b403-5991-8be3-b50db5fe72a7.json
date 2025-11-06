@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "498ef9a8-b403-5991-8be3-b50db5fe72a7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.27, fonds Brandt)  Café du Grutli"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136633.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7403f3cb-1d9d-5695-9b29-ad6ba2b5d8ca",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.27, fonds Brandt) "
+        ]
+      },
+      "height": 640,
+      "width": 464,
+      "items": [
+        {
+          "id": "aecdf8ba-a605-50d6-8058-a449bcd10c33",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "276ec334-41c6-5d06-9e26-54fdd87df115",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136633.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 464,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_136633.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7403f3cb-1d9d-5695-9b29-ad6ba2b5d8ca"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b1950c92-15c9-5afe-bb82-cdf09b0c8318",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2f7a7d14-fbc6-5156-a6a4-6dc036a57cc7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.27, fonds Brandt) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3b2c756d-e7c4-5536-bbd1-6a9bf1f37790"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7403f3cb-1d9d-5695-9b29-ad6ba2b5d8ca",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=135913",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

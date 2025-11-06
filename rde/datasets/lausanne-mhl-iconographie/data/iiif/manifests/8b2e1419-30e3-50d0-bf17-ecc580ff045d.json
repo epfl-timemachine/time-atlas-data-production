@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8b2e1419-30e3-50d0-bf17-ecc580ff045d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  L'intérieur de la cathédrale: vue d'ensemble de la nef, avec les grandes arcades mérioniales, la chaire et l'entrée ouest."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_130112.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "96acdab3-55e0-5c35-8147-43c1d0970add",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 449,
+      "items": [
+        {
+          "id": "5aa639f0-e682-5668-8802-1bdcb6adcd21",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c9c607d9-c0dc-515d-abfc-29d5ed7aa7d2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_130112.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 449,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_130112.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "96acdab3-55e0-5c35-8147-43c1d0970add"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0e6a3f53-1abc-56fe-b15c-55c5af7a4e15",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "375f6629-8b2b-5503-b38d-be8a924305ce",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "db16eaec-c6ce-5c48-89eb-2f65f5ae3c19"
+                }
+              ],
+              "target": [
+                {
+                  "id": "96acdab3-55e0-5c35-8147-43c1d0970add",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=129392",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

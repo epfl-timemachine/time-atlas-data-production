@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9ac4bccc-363b-59e9-bb9e-3b2bd66964fa",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le lac et les montagnes depuis le crêt de Montriond."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142256.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "405f4cbb-ab20-584c-b0d3-0c7b71616e21",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 543,
+      "width": 640,
+      "items": [
+        {
+          "id": "2d17d694-dc7a-526a-a531-52143e2ee507",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "054f8677-4655-5a57-9dbb-f884c1e2b9b9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142256.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 543,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142256.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "405f4cbb-ab20-584c-b0d3-0c7b71616e21"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c1d58209-fcbf-5a76-ac98-ee941fbaad85",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eb4a6dd8-4ec3-51e1-b213-c87dc35f30ff",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0b3203e6-3726-556b-8485-f682df4eb95f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "405f4cbb-ab20-584c-b0d3-0c7b71616e21",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141535",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

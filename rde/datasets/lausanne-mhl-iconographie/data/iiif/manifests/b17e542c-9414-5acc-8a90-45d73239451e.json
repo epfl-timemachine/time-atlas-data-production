@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b17e542c-9414-5acc-8a90-45d73239451e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le château d'Ouchy prise depuis la place du Port."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164105.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eaf6a31a-4cf3-5c74-9280-79a3db915807",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 534,
+      "width": 640,
+      "items": [
+        {
+          "id": "bba03f5d-6655-572c-ad0e-4ebbf859868f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e77be8c7-2650-5d1b-b143-ab223541c6b5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164105.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 534,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164105.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eaf6a31a-4cf3-5c74-9280-79a3db915807"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f2d2d82d-c25e-5bd1-b7e1-5b025a4bee26",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "915b7c79-8a23-5441-95ec-37cf6e940d60",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8c0194ff-192f-5f09-8bd9-2bb3600208e8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eaf6a31a-4cf3-5c74-9280-79a3db915807",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163364",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

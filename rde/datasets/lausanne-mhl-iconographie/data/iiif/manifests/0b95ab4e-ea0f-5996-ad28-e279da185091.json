@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0b95ab4e-ea0f-5996-ad28-e279da185091",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue de la place du Vallon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171355.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fccac524-cd75-578e-9ea8-d567437dfece",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 523,
+      "width": 640,
+      "items": [
+        {
+          "id": "c15219db-b26c-5cb8-8e4f-20801bf87d45",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "67c41ff2-e1e0-5c45-a3e6-954a1568435c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171355.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 523,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171355.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fccac524-cd75-578e-9ea8-d567437dfece"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "07a1ba3a-501b-540d-940d-69600b68db5d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "20e0c61f-3732-59c1-ba53-3cabd0f92424",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "733e02ea-3c1e-50ff-ac04-e2d76f53d140"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fccac524-cd75-578e-9ea8-d567437dfece",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170609",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

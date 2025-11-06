@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2f3a2fe1-2bb3-595a-8ce6-88c626b7051e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Beaulieu près Lausanne vue de Beaulieu, ancienne grande maison Uttins depuis le sud-est avec jardin à la française à l'avant-plan et hautes frondaisons à l'arrière-plan.Sur la droite on distingue un muret avec un portail conduisant à un verger situé derrière la façade orientale.A l'arrière-plan à gauche on distingue le lac et les montagnes de Savoie"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110880.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "fb09542e-9cea-584b-bf92-0cde97eed3b0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Beaulieu près Lausanne"
+        ]
+      },
+      "height": 436,
+      "width": 640,
+      "items": [
+        {
+          "id": "c41472b6-1c2f-5dbe-a056-f731369aca73",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "32d11514-fa39-5001-a7ce-af99cdc74e40",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110880.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 436,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110880.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "fb09542e-9cea-584b-bf92-0cde97eed3b0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "472c3403-834c-55da-8801-40d84f5fab89",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e5914749-c64c-56f0-92ca-83ebb931b27a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Beaulieu près Lausanne"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e67f612e-ba86-5657-961e-2a215ce28ab3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "fb09542e-9cea-584b-bf92-0cde97eed3b0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110784",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

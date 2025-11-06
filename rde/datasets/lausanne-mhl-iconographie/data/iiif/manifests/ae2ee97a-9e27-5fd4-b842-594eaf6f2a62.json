@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ae2ee97a-9e27-5fd4-b842-594eaf6f2a62",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(marsaff) La Suisse française "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112902.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8e44c03f-9f96-59a0-bd46-8913931dd76d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(marsaff) La Suisse française"
+        ]
+      },
+      "height": 640,
+      "width": 413,
+      "items": [
+        {
+          "id": "f2e76f41-dfb1-5fb9-8e56-8c5d9910f243",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7105602a-1cf9-51f6-a148-d5028adf788c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112902.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 413,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112902.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8e44c03f-9f96-59a0-bd46-8913931dd76d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "00d11534-aa89-54b0-bb4c-97161ac6d4fb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7cf3126e-a764-5d8b-9c6a-d8d7824274d9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(marsaff) La Suisse française"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2523c2cb-ec90-5632-8611-21df2973df38"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8e44c03f-9f96-59a0-bd46-8913931dd76d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=112806",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

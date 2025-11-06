@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "714b9297-4a46-553a-968f-cc6a0c3e958a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la digue le long des quais d'Ouchy en direction du château d'Ouchy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171747.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ae803b55-2472-5bac-b512-f470662bcee7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 375,
+      "width": 640,
+      "items": [
+        {
+          "id": "8c1e7c0f-2fb8-555c-b78d-4e3ba875ae04",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b8e8dc88-b549-50c5-9c83-5e08d9f065b5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171747.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 375,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171747.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ae803b55-2472-5bac-b512-f470662bcee7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7a4d1ad5-0fa8-51c6-a96f-b19e90cc7717",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6909747a-1318-565e-8ebb-4c52b21dff1a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "92473976-7824-549a-b84e-3cf7026aa511"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ae803b55-2472-5bac-b512-f470662bcee7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=171001",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

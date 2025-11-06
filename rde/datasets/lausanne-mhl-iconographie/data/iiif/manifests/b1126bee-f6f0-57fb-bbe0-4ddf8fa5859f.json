@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b1126bee-f6f0-57fb-bbe0-4ddf8fa5859f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le bâtiment de l'avenue de-Rumine N°9,11."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168460.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "406fccf2-bd45-5419-a5b0-30e61c7f8edb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 531,
+      "items": [
+        {
+          "id": "e34fb823-4336-59b2-81b5-533d41566288",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6dc2b15f-de04-51c5-a3ff-76d57f31d85e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168460.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 531,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168460.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "406fccf2-bd45-5419-a5b0-30e61c7f8edb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d034ff4a-e626-5583-9d1d-88a1c5db4f05",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ae16ddac-352c-54ce-9e00-2dae2f8af1f2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bd0419ad-9e76-5016-947a-b3bcafdd07ee"
+                }
+              ],
+              "target": [
+                {
+                  "id": "406fccf2-bd45-5419-a5b0-30e61c7f8edb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167716",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

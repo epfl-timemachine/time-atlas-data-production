@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "30a8d6e4-9c8a-53e7-895b-3239e9660718",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis la route d'Oron sur la campagne du quartier de la Grangette."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172398.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "aa8c4645-edc1-5229-97da-cc5ccf96cb79",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 399,
+      "width": 640,
+      "items": [
+        {
+          "id": "2d7b9395-c2e1-5164-afab-8961ba4d61bc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "220c7fc1-e0dc-5dc5-9e50-fee7dbe7e957",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172398.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 399,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_172398.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "aa8c4645-edc1-5229-97da-cc5ccf96cb79"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f3f52c00-9ec8-517e-9c4f-7f5f767f6ff1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "abd6d06e-ecae-5814-afd7-bcf04ec6e426",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2feb5783-c572-5551-b10a-3116b8489207"
+                }
+              ],
+              "target": [
+                {
+                  "id": "aa8c4645-edc1-5229-97da-cc5ccf96cb79",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=171651",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

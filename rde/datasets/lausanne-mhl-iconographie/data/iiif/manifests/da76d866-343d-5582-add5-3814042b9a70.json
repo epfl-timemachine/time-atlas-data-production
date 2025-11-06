@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "da76d866-343d-5582-add5-3814042b9a70",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la place de l'ours. A gauche, l'école normale, à droite l'hôtel de l'Ours."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137008.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "11e2e964-a97c-5c5f-8282-9f4736bdb54f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 555,
+      "width": 640,
+      "items": [
+        {
+          "id": "bc5e80a2-53df-5e96-928c-991ce6c25c4e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d15efc8f-48df-5610-abd9-a0a8b0e5b1cb",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137008.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 555,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_137008.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "11e2e964-a97c-5c5f-8282-9f4736bdb54f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2dd8d5e3-48a9-5f9a-b39a-dbce1a64d5f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5b3d4cd3-34d1-52ab-b095-679ae27b34b5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "599a821a-f47a-55f5-ab71-b9537a5a9365"
+                }
+              ],
+              "target": [
+                {
+                  "id": "11e2e964-a97c-5c5f-8282-9f4736bdb54f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=136288",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

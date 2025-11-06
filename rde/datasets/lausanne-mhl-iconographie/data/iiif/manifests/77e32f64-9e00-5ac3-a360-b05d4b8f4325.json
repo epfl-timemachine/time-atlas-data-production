@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "77e32f64-9e00-5ac3-a360-b05d4b8f4325",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Un cygne et quelques canards dans le bassin de la grotte de Montbenon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140527.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "cfdf8819-85c3-5cae-9435-84015a28f1ae",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 347,
+      "items": [
+        {
+          "id": "1e0fa13d-fcd4-5b3c-bfcb-0803ca59b3cc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6e53f072-40f2-5d25-9c23-cf566f0dd001",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140527.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 347,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140527.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "cfdf8819-85c3-5cae-9435-84015a28f1ae"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dd2af6f4-12d6-543e-8de6-60447a48b596",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c00d120a-8c68-5b8d-9eee-d3eb6d79e141",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3b2a4819-afb5-5405-84d2-1674d614bbbd"
+                }
+              ],
+              "target": [
+                {
+                  "id": "cfdf8819-85c3-5cae-9435-84015a28f1ae",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=139806",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "89574dae-0716-55ea-ba9b-33e8dc067522",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Lausanne vue du Château et du Collège vue du Château Saint-Maire depuis le côté nord-est. A l'avant-plan on distingue quelques promeneurs sur la rue de la Barre bordée d'arbres ainsi que l'enceinte du Château et l'ancienne Académie.  A l'arrière-plan on aperçoit le beffroi et la tour de la Cathédrale"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110433.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "aeebc6ea-d39a-5c5b-85df-52885493ea55",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Lausanne vue du Château et du Collège"
+        ]
+      },
+      "height": 589,
+      "width": 640,
+      "items": [
+        {
+          "id": "3736f98b-79fc-56c7-bed6-75e9288b2e0c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "99262793-cbfd-53e0-a034-05bd43b24fb3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110433.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 589,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_110433.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "aeebc6ea-d39a-5c5b-85df-52885493ea55"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c57113e1-a8f7-53e8-8462-e6d04484e190",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "527ea2e4-e5c1-5267-a338-1efb65d756f7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Lausanne vue du Château et du Collège"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fa9d5681-f8fa-5d95-9182-08ed3902d4bb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "aeebc6ea-d39a-5c5b-85df-52885493ea55",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=110337",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

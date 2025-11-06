@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b0356527-fc7c-53b8-85f8-4223759af743",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  l'avenue du Théâtre, le Théâtre et l'avenue de Rumine"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102588.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d19f279e-218f-5a69-9567-21b369d80dea",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 471,
+      "width": 640,
+      "items": [
+        {
+          "id": "b5cc2d13-c189-5ace-af09-1a0d4014e793",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c0a863d8-5233-55cb-ad47-fce26fe621b2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102588.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 471,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102588.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d19f279e-218f-5a69-9567-21b369d80dea"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c9c7a416-9204-5c54-999f-92bb01cab011",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6336a1b4-c944-5c53-bdfa-23261560d3c0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "218523e9-5122-5c39-ae54-735067284878"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d19f279e-218f-5a69-9567-21b369d80dea",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102588",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

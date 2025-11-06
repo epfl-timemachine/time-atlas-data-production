@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c9742a0e-f781-5121-ad76-bf357fa13302",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis la rue Enning sur le bâtiment de la rue Caroline n°1."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166001.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "83e86731-b5c5-519e-b060-5f7d0dabef39",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 385,
+      "width": 640,
+      "items": [
+        {
+          "id": "b2a63677-22ed-599b-a6d3-2be4dbd7c886",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "03873491-1e74-59b7-a4d8-6c67c20dd42f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166001.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 385,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166001.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "83e86731-b5c5-519e-b060-5f7d0dabef39"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "daf9ff07-36f1-5e30-b805-ad5000d2b062",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ce4bea0d-d828-5e69-9839-61afc037adaa",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "84dc3cd8-3938-58a9-a0b1-a22ea7bc27ba"
+                }
+              ],
+              "target": [
+                {
+                  "id": "83e86731-b5c5-519e-b060-5f7d0dabef39",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165258",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

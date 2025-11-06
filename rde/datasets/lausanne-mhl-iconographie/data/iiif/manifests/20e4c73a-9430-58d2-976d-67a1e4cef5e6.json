@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "20e4c73a-9430-58d2-976d-67a1e4cef5e6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue en plongée sur le hall d'entrée de la Société de Banque Suisse. Au premier plan, il y a le hall entouré par des guichets. Au centre du hall, il y deux bancs avec tablette incorporée. En arrière plan, il y a des colonnes."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99903.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e98a3999-92ef-52d4-bb5a-6d32df5f43a0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 426,
+      "width": 640,
+      "items": [
+        {
+          "id": "4719e412-66e5-594e-abc5-41e59539c6d6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "03535018-4b55-51c1-94bc-34cb63cdcef1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99903.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 426,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99903.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e98a3999-92ef-52d4-bb5a-6d32df5f43a0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f25fbb4d-96d7-5633-848b-433e89c35b0d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "441e4336-951f-5f3c-87c6-df8faf28f58f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "86a171b9-d093-550b-b1ef-c67613aeb43a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e98a3999-92ef-52d4-bb5a-6d32df5f43a0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99903",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

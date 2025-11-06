@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dbc9f1c3-808a-526f-8370-c2b5cf93b616",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'église Saint-Paul."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134669.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7dc5c0b9-5434-5197-9ea1-36dcfd10e69a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 350,
+      "items": [
+        {
+          "id": "ecbe97a3-d10a-5404-93b1-3e1094f936d8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "489010f8-5fd6-5d05-9a83-3ba9d9078822",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134669.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 350,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134669.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7dc5c0b9-5434-5197-9ea1-36dcfd10e69a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f00d4f23-44a8-5759-9774-e4039133829a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f015a014-9ba1-5328-a5f1-36c88860e47e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "70484def-a00d-58ee-b1bd-60551ebd9ff4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7dc5c0b9-5434-5197-9ea1-36dcfd10e69a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=133949",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

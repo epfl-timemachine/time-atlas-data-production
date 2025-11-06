@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "834f4500-348d-5e5b-b5d6-390fd0664510",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Gros plan sur une petite fontaine, remplie de terre, adossée à un mur de pierres de taille cimentées."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100097.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c9305ca9-10f5-5f76-8daa-3893d83ecde3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 434,
+      "items": [
+        {
+          "id": "8405d237-ed1b-5787-b36a-105135f3688b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8b321130-104d-528b-88db-265b4ae91a8b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100097.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 434,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100097.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c9305ca9-10f5-5f76-8daa-3893d83ecde3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5027743f-0eca-53c0-8d1e-167d30580641",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2fedfd0d-ada5-58f8-98cc-04f5220db7a8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8f57e342-523a-50f8-b82b-66e07f086b68"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c9305ca9-10f5-5f76-8daa-3893d83ecde3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100097",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

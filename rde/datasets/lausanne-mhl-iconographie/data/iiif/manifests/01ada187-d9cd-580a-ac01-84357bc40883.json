@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "01ada187-d9cd-580a-ac01-84357bc40883",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur une villa à l'avenue de l'Esplanade 10."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167256.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0afb2559-4fb5-5089-b908-a6bdea1dce9b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 376,
+      "width": 640,
+      "items": [
+        {
+          "id": "4f51e08f-0920-5c72-a90b-a136f76beee3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "580b8606-4090-5873-b0e2-359f8bd010ac",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167256.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 376,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167256.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0afb2559-4fb5-5089-b908-a6bdea1dce9b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d9a864e8-36d6-545c-8b09-7faf9a605567",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0d6e9a2e-b2c7-5357-8adb-5b4ae6d6577b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "80fdef62-809b-5ba8-b1dc-383aa75447db"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0afb2559-4fb5-5089-b908-a6bdea1dce9b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166513",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

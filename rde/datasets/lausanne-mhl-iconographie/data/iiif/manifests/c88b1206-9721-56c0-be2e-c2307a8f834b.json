@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c88b1206-9721-56c0-be2e-c2307a8f834b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise) Lausanne Maupas 22-24, maison Roussy  vue générale de la maison Roussy. Au fond à gauche on voit le Signal de Sauvabelin, plus à droite l'Hermitage"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98309.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8548d179-d15d-5337-a598-1ce57af2c7fd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) Lausanne Maupas 22-24, maison Roussy "
+        ]
+      },
+      "height": 491,
+      "width": 640,
+      "items": [
+        {
+          "id": "23c6e8a1-ccc7-56be-9b58-4504c3f860db",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c56f5691-b11a-57fa-8b41-5fca880453f9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98309.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 491,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_98309.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8548d179-d15d-5337-a598-1ce57af2c7fd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fbb1c013-c962-5b4b-a95c-93b20487c728",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aa99cbc0-8751-5111-a309-66d2c4628dda",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) Lausanne Maupas 22-24, maison Roussy "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "97798d96-34be-5d5c-bb6f-6a467c5cf462"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8548d179-d15d-5337-a598-1ce57af2c7fd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=98309",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

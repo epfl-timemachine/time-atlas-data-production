@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a77bfa9d-fada-5ea4-875f-7071a9dfaf40",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue partielle sur la place et l'avenue de la Gare."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167478.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "699e9cf1-98c1-587d-aa31-9b267c89e4ac",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 396,
+      "width": 640,
+      "items": [
+        {
+          "id": "cec09e52-0a44-5e7e-9f79-e3312f8843c6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f0a8606b-7020-5b90-9293-fe179cb825d3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167478.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 396,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167478.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "699e9cf1-98c1-587d-aa31-9b267c89e4ac"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b456f126-4ac3-59d6-b635-4bbbffd61db0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "65d14c78-785f-5f5f-98c2-5a428c9991c1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7dc9408c-b383-5e88-ba04-28203fe39006"
+                }
+              ],
+              "target": [
+                {
+                  "id": "699e9cf1-98c1-587d-aa31-9b267c89e4ac",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166735",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

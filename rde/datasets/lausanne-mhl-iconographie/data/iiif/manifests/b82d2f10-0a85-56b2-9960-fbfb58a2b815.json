@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b82d2f10-0a85-56b2-9960-fbfb58a2b815",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie) Montricher  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_161868.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "00a841a2-0222-575c-9f13-bc5048e27020",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) Montricher "
+        ]
+      },
+      "height": 640,
+      "width": 498,
+      "items": [
+        {
+          "id": "d857479e-9c50-54ec-8eec-01935c1089e9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5f68894e-2b28-5562-be47-20dfe1cf63cc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_161868.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 498,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_161868.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "00a841a2-0222-575c-9f13-bc5048e27020"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8028a7cb-1f15-5463-a367-444a91289c49",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "68063fe3-821b-5493-9953-12a8d7c89faa",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) Montricher "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "871f0dbc-8cc0-517e-b5b2-3a30b23b61b5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "00a841a2-0222-575c-9f13-bc5048e27020",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=161131",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "87623e63-1ef8-5a24-83ef-99163db84204",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  vue sur l'immeuble à l'angle de l'avenue Villamont et la rue Etraz"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171481.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ce366f24-5b28-5a17-9111-288f3e7e15c3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 382,
+      "items": [
+        {
+          "id": "39890a5b-9c6b-54d0-8050-5a82ed9a1bb7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "017b1ce0-520e-5690-8f46-fc6968a35d0c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171481.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 382,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171481.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ce366f24-5b28-5a17-9111-288f3e7e15c3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "87cadada-eec7-5608-a4ca-fc6823ef3665",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "92496a44-e1c8-5d14-a69c-75ca2a67fe5b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "880bac57-83cb-5420-8a88-1036e3b7c526"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ce366f24-5b28-5a17-9111-288f3e7e15c3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170735",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

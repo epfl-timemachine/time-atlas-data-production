@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "289ba030-f3f4-50a6-9981-42f379007992",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Francine Brugger Peintures "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_158975.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5d99841b-b95f-5a90-80c2-708174b4cbc8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Francine Brugger Peintures"
+        ]
+      },
+      "height": 640,
+      "width": 295,
+      "items": [
+        {
+          "id": "418f93f9-3b65-54ac-972e-e0528a4fb1e7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bd175d7e-c961-5413-bc56-303c2b14d9ca",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_158975.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 295,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_158975.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5d99841b-b95f-5a90-80c2-708174b4cbc8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dcbba4d6-e146-5bc6-9695-a5b5a217c4c9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0b22d05e-a82d-5695-a3bf-176a4aca2a8d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Francine Brugger Peintures"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "49bfbbbe-5e5e-5e2c-b8da-2d9d18dd7044"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5d99841b-b95f-5a90-80c2-708174b4cbc8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=158238",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5024c348-5487-5b5c-bc37-66f3bf960de9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur l'ancienne Place Pépinet, ce qui correspond à l'actuelle rue Centrale."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99128.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2299ebbd-1067-5328-b895-4d70721794ac",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 551,
+      "width": 640,
+      "items": [
+        {
+          "id": "609881f5-30f1-5d53-8bba-67ce0fa5a1b3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "519d1b25-725b-5416-824a-0bb51d26850c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99128.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 551,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99128.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2299ebbd-1067-5328-b895-4d70721794ac"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ee5c3690-5c5a-5711-aaee-b41697846669",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "039ede99-6338-5551-b2ee-5411a86ac862",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1a047acd-7ad1-59ab-a719-caa2301a59fb"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2299ebbd-1067-5328-b895-4d70721794ac",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99128",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

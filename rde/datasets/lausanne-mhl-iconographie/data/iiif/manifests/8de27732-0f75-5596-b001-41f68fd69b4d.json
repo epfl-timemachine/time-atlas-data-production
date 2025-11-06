@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8de27732-0f75-5596-b001-41f68fd69b4d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis le pont Bessières sur les immeubles entre la rue Caroline et la rue Saint-Martin."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170310.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8faac00b-32dc-5654-8d95-83a6246450ad",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 525,
+      "width": 640,
+      "items": [
+        {
+          "id": "ce368b5d-7253-58d5-894a-19ac58c2bb72",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9b972e44-ca39-5c4f-bbb5-a866ed93a3f1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170310.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 525,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170310.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8faac00b-32dc-5654-8d95-83a6246450ad"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6aa69023-bbd9-5868-a7d0-b7cfdaa53494",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fd521b78-bb60-5279-9979-d13db3a5598b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f0ae578e-dcf5-5589-b92d-373f42ea7c47"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8faac00b-32dc-5654-8d95-83a6246450ad",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169564",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

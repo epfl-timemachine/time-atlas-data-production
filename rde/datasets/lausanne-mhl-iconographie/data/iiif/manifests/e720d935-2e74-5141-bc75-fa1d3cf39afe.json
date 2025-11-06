@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e720d935-2e74-5141-bc75-fa1d3cf39afe",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue de Chailly depuis la terrasse du bâtiment n°34."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166415.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "04e8e8e2-e935-58d1-9661-1de13ff9a25d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 380,
+      "width": 640,
+      "items": [
+        {
+          "id": "fc7116b3-2cef-5b5f-ac24-51c37a631e6e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "41602d5d-2c1f-57d1-b237-1c4deaea5569",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166415.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 380,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166415.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "04e8e8e2-e935-58d1-9661-1de13ff9a25d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "08125e04-0e3b-5d4f-b7d2-7040a83fe5f8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0b181053-59ed-5150-9de9-d64cd156a31c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "555326e6-b049-5d5c-81bf-5db8b76a1167"
+                }
+              ],
+              "target": [
+                {
+                  "id": "04e8e8e2-e935-58d1-9661-1de13ff9a25d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165672",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

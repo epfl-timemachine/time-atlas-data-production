@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9ec2ca92-d985-5d55-a6a7-12b594c8a2cb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Au premier plan, on voit la rue entourée d'une barrière, une charette et trois personnes (deux hommes et une femme) appuyés contre la barrière et regardant le paysage. Au deuxième plan, il y a de nombreux arbres et maisons."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102355.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "24ee95c4-4620-5972-bbc0-def19acfe090",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 445,
+      "width": 640,
+      "items": [
+        {
+          "id": "2659f4db-b6ab-5c60-98be-7dd08ab8ad56",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "908b267d-74af-5fbc-b2ac-d64b3b31460e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102355.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 445,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102355.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "24ee95c4-4620-5972-bbc0-def19acfe090"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0ac6a89c-22a7-5634-a4be-fe8f8b6a4303",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d78811f3-fa94-5ecf-a4b2-ffe8b37b93ee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c50fffb2-7a86-5a0f-9828-a2686256158d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "24ee95c4-4620-5972-bbc0-def19acfe090",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102355",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

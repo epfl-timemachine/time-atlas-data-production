@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ec2155e6-7b1c-5873-b6d2-e6399f61c8ff",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la rue de la Pontaise et l'avenue Druey."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142852.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "811adc0c-327e-5b71-9b5c-4ab4c61a4f6e",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 539,
+      "width": 640,
+      "items": [
+        {
+          "id": "c8fefa7b-f477-5b75-9e3b-604b8dd417dd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "91be155a-4535-5457-bf9a-b470b596cc9a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142852.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 539,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142852.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "811adc0c-327e-5b71-9b5c-4ab4c61a4f6e"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ffc56199-51ec-5457-b5f5-3e200f151795",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d047b5b5-a20f-5664-9646-49e40ea56f69",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3184ed43-bad3-5c67-9c19-04cef5180589"
+                }
+              ],
+              "target": [
+                {
+                  "id": "811adc0c-327e-5b71-9b5c-4ab4c61a4f6e",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=142131",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

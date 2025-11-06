@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "04e6c429-0a15-5b41-90bb-61f70ed9dac7",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Fontaine du square de Tivoli."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99491.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "280af612-328d-5e6a-ac90-899b3d2fafe7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 483,
+      "items": [
+        {
+          "id": "b7ccbec7-f753-50da-a811-45739f3f57d4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2f96163b-d058-5b0b-973a-373612102d83",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99491.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 483,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99491.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "280af612-328d-5e6a-ac90-899b3d2fafe7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "885c5851-8f1a-51cc-982e-a3bf1e10a680",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4620255e-030e-557e-9d9b-63072372b6a1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "468a4506-8251-51b8-bc7d-09bbc77ede93"
+                }
+              ],
+              "target": [
+                {
+                  "id": "280af612-328d-5e6a-ac90-899b3d2fafe7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99491",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

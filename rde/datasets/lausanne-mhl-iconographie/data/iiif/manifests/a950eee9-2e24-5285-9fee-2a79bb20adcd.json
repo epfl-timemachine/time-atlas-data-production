@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a950eee9-2e24-5285-9fee-2a79bb20adcd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Une colonne Morris à la place de la Palud"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109754.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b8919b67-7d98-5832-937a-1c151e6ed252",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 477,
+      "width": 640,
+      "items": [
+        {
+          "id": "b592ada6-787c-5d3e-a8b0-71e590b18de3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e4dd7c2e-64a0-5b50-91c2-4977731029df",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109754.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 477,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_109754.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b8919b67-7d98-5832-937a-1c151e6ed252"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "33024af4-6a18-51ac-8707-8092bbe165cc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "52ee1bfe-4916-5bbe-b379-872d403e9a6c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f2654d38-b07f-5dc5-b207-56ada751ab6b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b8919b67-7d98-5832-937a-1c151e6ed252",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=109658",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

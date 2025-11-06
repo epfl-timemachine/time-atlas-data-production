@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "52cf79be-e801-5e37-aa27-113b8a5e9d3c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise, P.2.D.16, albums Mayor)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100230.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a377674e-34cd-5e72-892b-cb66fa7f1679",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise, P.2.D.16, albums Mayor) "
+        ]
+      },
+      "height": 640,
+      "width": 500,
+      "items": [
+        {
+          "id": "58d99dee-3b95-5015-a9f7-4d5637d44697",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f9cb4fa4-8bf1-514e-b22e-095be4eb7cc7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100230.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 500,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100230.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a377674e-34cd-5e72-892b-cb66fa7f1679"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8ee3a360-356b-5b2c-a675-991c62e1f26c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "28308c7b-85fb-5f8c-b326-3ac186cc6bdb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise, P.2.D.16, albums Mayor) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "92d7d3c1-0fe5-5102-8f08-bce2fc9c2d36"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a377674e-34cd-5e72-892b-cb66fa7f1679",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100230",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

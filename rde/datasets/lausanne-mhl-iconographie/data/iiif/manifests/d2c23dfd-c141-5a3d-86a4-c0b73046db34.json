@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d2c23dfd-c141-5a3d-86a4-c0b73046db34",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.17, albums Vieux Lausanne)  Vue du café du Cygne, au commencement de rue du Maupas et de rue de la Tour."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132367.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "09bb3890-96e6-5236-8dd3-7d255ecb1818",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.17, albums Vieux Lausanne) "
+        ]
+      },
+      "height": 640,
+      "width": 520,
+      "items": [
+        {
+          "id": "7fda43f2-04f6-5030-82b1-780821f2c4b9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "75365cc1-09cd-576c-bc3d-b42dcebcad8f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132367.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 520,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_132367.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "09bb3890-96e6-5236-8dd3-7d255ecb1818"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "819fa9c7-b446-5295-80e8-926e7321d408",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bf672f73-d92e-53af-9af1-2afc59224aac",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.17, albums Vieux Lausanne) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "bed29d44-6784-5e1f-9a12-cfa685905e9a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "09bb3890-96e6-5236-8dd3-7d255ecb1818",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=131647",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

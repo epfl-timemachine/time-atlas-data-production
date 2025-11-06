@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f9a4a153-cee0-5bd3-b3f8-366f8d8395bd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le haut de la descente du Petit-Chêne"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170215.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9987697c-d7b6-5b89-8b83-17c162e93007",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 421,
+      "width": 640,
+      "items": [
+        {
+          "id": "94642ac9-1189-5bc5-a1fd-3241679acaa0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5484a681-5dcb-5f91-8b8a-1171ec74119f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170215.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 421,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170215.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9987697c-d7b6-5b89-8b83-17c162e93007"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "044043ad-3362-5ca5-80d8-1a4a57d77612",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7d1ceca4-6a8b-5463-9672-417cb978504a",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e368bcab-81cd-5101-9d49-2e00f32a7878"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9987697c-d7b6-5b89-8b83-17c162e93007",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169469",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

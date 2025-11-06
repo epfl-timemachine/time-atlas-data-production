@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "36c0aa4c-f38f-5115-85e9-c7085aade1b9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue générale du Léman. Il y a six barques du Léman, dont les voiles sont déployées. En arrière-plan, on distingue à peine les Alpes."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97320.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b11d614b-ed11-5d44-b45a-9a3188e04cdd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 600,
+      "width": 640,
+      "items": [
+        {
+          "id": "e8e721db-718d-569b-997d-b02c08681b7f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d1383dde-ffae-5783-9091-bec493d2f71a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97320.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 600,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97320.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b11d614b-ed11-5d44-b45a-9a3188e04cdd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "74a434f3-2d06-5fbc-ae88-33beea120a6d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1aa3f4e3-7dd9-5701-b901-71614212f456",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f39d79fb-7684-596c-8eeb-bbd5b4d1f057"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b11d614b-ed11-5d44-b45a-9a3188e04cdd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97320",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

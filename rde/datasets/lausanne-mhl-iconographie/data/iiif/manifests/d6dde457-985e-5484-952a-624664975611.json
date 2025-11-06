@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d6dde457-985e-5484-952a-624664975611",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(topographie)  vue sur l'église Saint-Laurent depuis le sud-est, en direction de la rue Chaucrau, rue Haldimand. Plusieurs personnages autour de l'église"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118571.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9d48e22f-f1a4-5461-86bb-e82d34a3dad7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(topographie) "
+        ]
+      },
+      "height": 640,
+      "width": 467,
+      "items": [
+        {
+          "id": "57a53c92-4ee3-560e-8085-d2a6b249740a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "64e96d46-af82-5cb2-a617-eb27d888893a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118571.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 467,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_118571.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9d48e22f-f1a4-5461-86bb-e82d34a3dad7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9dbec29d-1fda-56cc-87ed-c4ea7ede71b2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ec930786-9900-585c-b6e8-a091f7362214",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(topographie) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c9fb49f5-db51-56c0-93f7-1dc88aedc756"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9d48e22f-f1a4-5461-86bb-e82d34a3dad7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=118475",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

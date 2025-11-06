@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d8730486-eb6e-52a1-8a6a-f389efc40ab8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Construction de l'Eglise orthodoxe grecque."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102525.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5cc5fcf1-463e-571e-970a-7f72dc813038",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 479,
+      "items": [
+        {
+          "id": "d539c2d7-b7ad-516b-9c6b-df1da3075759",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "32c4b275-f276-5f84-bd69-ccc06d709899",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102525.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 479,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_102525.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5cc5fcf1-463e-571e-970a-7f72dc813038"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8edcbb4a-21ae-5ef5-98aa-2df17bff15ca",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "44ac2738-4397-580d-9b62-88ac49b0aaeb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d4e3770f-fb67-5403-9277-eb1344065e7d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5cc5fcf1-463e-571e-970a-7f72dc813038",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=102525",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

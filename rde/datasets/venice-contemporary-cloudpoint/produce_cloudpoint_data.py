@@ -24,7 +24,9 @@ DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
 min_time = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM'])
 max_time = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
-edifici_layer_uuid = get_layer_uuid('../../maps/venice-2024-contemporary/layers.json', 'venice-2024-contemporary-map-edifici')
+
+MAP_FOLDER = '../../maps/venice-2024-contemporary/'
+edifici_layer_uuid = get_layer_uuid(MAP_FOLDER+'layers.json', 'venice-2024-contemporary-map-edifici')
 DATA_VENICE_FOLDER = os.path.join(parent_dir, 'data-venice')
 
 # to note: all the geometries are expressde as multipolygon, but actually there is a single geometry in each. No need to do multiple geometries per obs a simple explode reduce them to single polygon.
@@ -49,24 +51,10 @@ df['aulic_name'] = df['aulic_name'].fillna('Unknown edifice name')
 
 df['hr_uuid'] = df.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['EDIFI_ID']), axis=1)
 df['obs_uuid'] = df.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['geometry'], ad_hoc_seed='obs'), axis=1)
-df['poi_uuid'] = df.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['geometry'], ad_hoc_seed='poi'), axis=1)
-# Generating PoIs
-poi_df = df.groupby('EDIFI_ID').agg(list)[['geometry', 'obs_uuid', 'poi_uuid']].reset_index()
-# this weird contraption to get the .centroid of the first geometry properly without getting the warning about no crs projected
-poi_rec = gpd.GeoDataFrame([[v['poi_uuid'][0], v['geometry'][0], v['obs_uuid']] for _, v in poi_df.iterrows()], columns=['poi_uuid', 'geometry', 'obs_uuid']).set_geometry('geometry').set_crs('EPSG:4326')
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v['poi_uuid'], v.geometry.centroid, v['obs_uuid']) for _, v in poi_rec.iterrows()]).set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
-# when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
-gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-gdf_poi.rename(columns={'poi_uuid': 'uuid'}, inplace=True)
-gdf_poi = gdf_poi.set_geometry('geometry')
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'mockup_3d_buildings_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-
-QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
 
 # Generating Obs
 df['type'] = '3d-structure'
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.geometry.centroid, v.has_geometry, v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.geometry.centroid, v.has_geometry)
 obs = [obs_from_row(v) for _, v in df.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
@@ -74,7 +62,7 @@ gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uui
 gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-obs_shorthand = 'mockup_3d_buildings_obs'
+obs_shorthand = 'cloudpoints_obs'
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
 
 #Produce HRs
@@ -83,7 +71,6 @@ cols_of_non_interest = [
     'centroid',
     'hr_uuid',
     'obs_uuid',
-    'poi_uuid',
     'has_geometry',
     'geometry_uuid',
     'start_date',
@@ -103,7 +90,7 @@ recs = [produce_hr_obj(r.hr_uuid,\
             for _, r in df.iterrows()
         ]
 
-hr_shorthand = 'mockup_3d_buildings_records'
+hr_shorthand = 'cloudpoints_historical_records'
 save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)

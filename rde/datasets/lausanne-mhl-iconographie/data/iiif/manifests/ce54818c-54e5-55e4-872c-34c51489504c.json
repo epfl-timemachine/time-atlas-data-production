@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ce54818c-54e5-55e4-872c-34c51489504c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.10, fonds Bridel)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107584.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "7073df8a-a209-59d5-83f5-0307c1f54c43",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.10, fonds Bridel) "
+        ]
+      },
+      "height": 640,
+      "width": 465,
+      "items": [
+        {
+          "id": "b61e8d9a-9616-595e-98ad-abc6d49f7bdf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2ba507ba-2bdf-58fb-ab4d-79e4b30a67a2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107584.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 465,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_107584.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "7073df8a-a209-59d5-83f5-0307c1f54c43"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b9b68bf0-f292-55bb-b9c4-ee7cd97880aa",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7dd596f5-db5c-5f38-a91a-d03bbc3baea7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.10, fonds Bridel) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8dd5eca3-5208-558f-a10e-7f0ef0802bf4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "7073df8a-a209-59d5-83f5-0307c1f54c43",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=107584",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

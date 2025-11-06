@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "7b86cf39-cbf4-510b-940a-109df32b867b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue Cité-Devant et le Château Saint-Maire."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166708.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "52559e18-7b55-5685-9a4d-932fda35b85d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 579,
+      "items": [
+        {
+          "id": "20cbf987-e757-52a9-8797-96d858adaa41",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dd1bfd47-54b6-5b69-b1a5-fe0b197a2e6d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166708.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 579,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166708.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "52559e18-7b55-5685-9a4d-932fda35b85d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6f6cfee6-3381-55e6-b46c-432d8ab7f751",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f14321a7-989c-589b-8f1f-332b372e49a4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "485c3f58-ab0f-5514-99a5-6c7f85dd7e2b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "52559e18-7b55-5685-9a4d-932fda35b85d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165965",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

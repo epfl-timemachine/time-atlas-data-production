@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3c6cdc29-6abf-5e5a-8581-340fec76f693",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  vue sur une barque de plaisance navigant sur le Léman"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146789.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d619183b-b081-5812-baaa-deee2c463b1a",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 495,
+      "width": 640,
+      "items": [
+        {
+          "id": "06bf948a-45c6-5c28-8af3-f55b30a7865b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "44a2c925-adfd-5244-9860-296d6dc923f5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146789.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 495,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_146789.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d619183b-b081-5812-baaa-deee2c463b1a"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5bbe62ae-a95e-515a-a7ab-93f041e9c8c0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "727f39ef-b742-5243-b09b-37fdfb3c59db",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a6e22fa2-80c8-5a5b-a922-8a57c2c05ead"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d619183b-b081-5812-baaa-deee2c463b1a",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=146068",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

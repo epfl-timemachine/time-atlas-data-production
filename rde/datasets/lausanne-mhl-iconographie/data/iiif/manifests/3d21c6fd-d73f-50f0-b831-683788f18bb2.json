@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3d21c6fd-d73f-50f0-b831-683788f18bb2",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue ascendante d'ouest en est, prise depuis un balcon en face de l'hôtel Bellevue."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103488.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "790cc109-7bf0-5824-bee4-1b5da49879b1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 465,
+      "width": 640,
+      "items": [
+        {
+          "id": "988a46dd-96e2-5b98-9efa-3b1fac8d2d29",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "31003939-950f-5aa4-8c10-f7a710e20b4e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103488.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 465,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103488.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "790cc109-7bf0-5824-bee4-1b5da49879b1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e6bd6902-5f15-5c64-91ab-5d55524f1da1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "11459491-23ee-5c2e-ac7d-52e704ff8f73",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fb4c03de-8acd-5409-861b-8091a5aea7c0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "790cc109-7bf0-5824-bee4-1b5da49879b1",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=103488",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

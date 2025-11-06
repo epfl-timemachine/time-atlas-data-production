@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "24ec9afa-6c1b-53fe-b77f-0eb26189bff6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_174250.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a9dec651-2f44-5e39-9746-da9749dd2456",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 540,
+      "items": [
+        {
+          "id": "ecf814c3-6307-55ab-b064-90e68d143582",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "49cf62fa-0a5a-596e-9246-33580146ed71",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_174250.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 540,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_174250.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a9dec651-2f44-5e39-9746-da9749dd2456"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cb9eb100-8304-5385-8585-1500f1dc3b1a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3d37d52b-6869-58bd-9f77-20d61d53b3f3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0bccb202-3382-59cd-b6dd-3aa9ba76e715"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a9dec651-2f44-5e39-9746-da9749dd2456",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=173503",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

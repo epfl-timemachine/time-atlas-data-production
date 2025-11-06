@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b2333484-f7d5-5f73-8e7a-c56a328eee00",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le bâtiment du chemin Messidor N°5."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168465.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1a17ced6-7c25-5a1d-99fc-0592bb7a9d85",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 431,
+      "items": [
+        {
+          "id": "b4d86f16-2415-56b4-8fe9-a8b6cdba70cd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "698c6ebc-e763-55e2-9562-9cabdaea769e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168465.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 431,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168465.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1a17ced6-7c25-5a1d-99fc-0592bb7a9d85"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "aa338af3-8044-546a-b96f-4adfa5c12f19",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "203872fa-62cb-5fda-a078-b431572dc1d5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3a84b5de-82f8-582f-91af-d3c9efdaa447"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1a17ced6-7c25-5a1d-99fc-0592bb7a9d85",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167721",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

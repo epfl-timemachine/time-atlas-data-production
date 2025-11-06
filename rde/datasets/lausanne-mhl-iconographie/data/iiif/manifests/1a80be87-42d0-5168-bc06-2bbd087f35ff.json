@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1a80be87-42d0-5168-bc06-2bbd087f35ff",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le château, l'école de chimie et un bout du quartier depuis le nord-est."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140866.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "4eb4afde-14d7-598c-982d-c575460575ee",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 542,
+      "width": 640,
+      "items": [
+        {
+          "id": "2506a6c2-4ec3-5b8f-b863-ef2b83cef01a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "28ca150d-b179-5a1a-876b-353152dc7dcd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140866.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 542,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140866.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "4eb4afde-14d7-598c-982d-c575460575ee"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a2488396-a072-564d-af7f-24a2cf5ba665",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c8b66a61-9cda-5ea4-abac-0e3dbf64204b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "7c33658c-e8c5-5876-8151-a16fee796ee6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "4eb4afde-14d7-598c-982d-c575460575ee",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140145",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

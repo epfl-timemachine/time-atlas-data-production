@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f2b4d22a-d70c-58d6-85eb-78e647a1fbeb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue d'une villa du chemin des Croix-Rouges, située à l'emplacement du numéro 7. En arrière-plan à gauche, la villa Médicis (n°9), et à droite la villa Albion (n°5). Entre les deux, on peut voir la cheminée de la Brasserie de Tivoli."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151586.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ee129a0c-9854-5d8f-9fc9-bc40db1c6900",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 466,
+      "width": 640,
+      "items": [
+        {
+          "id": "cf11cd09-9b90-5a34-9a54-55c6617fcfe0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f2e02fd8-088f-5821-8c79-9ab05f67b0f0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151586.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 466,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151586.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ee129a0c-9854-5d8f-9fc9-bc40db1c6900"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1a89c7c1-a5ae-5d2f-867c-5eb8d31329b8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a9377024-cc5b-57a8-a46e-638eeea7895e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5d13bb18-a048-5d64-8941-78241705392b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ee129a0c-9854-5d8f-9fc9-bc40db1c6900",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=150865",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

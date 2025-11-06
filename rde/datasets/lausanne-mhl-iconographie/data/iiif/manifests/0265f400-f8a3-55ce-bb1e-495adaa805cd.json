@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0265f400-f8a3-55ce-bb1e-495adaa805cd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.2, fonds de Constant-Rebecque)  Vue de la Cité et de la Cathédrale depuis la Caroline."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148703.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e76ea903-8bd2-53bd-884f-585f193ce5a6",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.2, fonds de Constant-Rebecque) "
+        ]
+      },
+      "height": 640,
+      "width": 554,
+      "items": [
+        {
+          "id": "fde93ca2-2601-5fbf-bebc-3c11723fedac",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bc63eb34-873f-5f23-ab1f-1a99446191b8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148703.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 554,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148703.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e76ea903-8bd2-53bd-884f-585f193ce5a6"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "841633f3-acf1-55ab-979b-8f8d288b0319",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8714f4c7-bb1b-5329-ab35-eaae90e7eaaf",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.2, fonds de Constant-Rebecque) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b5ca567d-b497-5598-bb97-6dab629f36a0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e76ea903-8bd2-53bd-884f-585f193ce5a6",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=147982",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "81336a9d-5538-58a5-8da1-676743802a28",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.98, fonds Schmid / Herrmann)  "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_101663.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "772e77f6-33b3-57d2-90d8-b47be7223350",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.98, fonds Schmid / Herrmann) "
+        ]
+      },
+      "height": 464,
+      "width": 640,
+      "items": [
+        {
+          "id": "ed57519c-1b66-530c-8f09-9ad1885898dc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "40ed3e5b-a869-5f15-9195-d3946bf9cee0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_101663.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 464,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_101663.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "772e77f6-33b3-57d2-90d8-b47be7223350"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "05c0b9e9-ac83-592c-84b6-0451db6b1d72",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fe4cb6fc-d97b-5ae3-adeb-accd7cd26cc9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.98, fonds Schmid / Herrmann) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f973de43-5dea-5fa8-a0fe-e9ff399f4826"
+                }
+              ],
+              "target": [
+                {
+                  "id": "772e77f6-33b3-57d2-90d8-b47be7223350",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=101663",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a8ff2e03-a2ac-52e1-9c26-f2fb69ca87a4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue plongeante sur la foule devant le consulat allemand, rue Pichard 3, à Lausanne le 27 janvier 1916."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144123.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3c59b992-a383-543f-a769-dbee5ceb4f68",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 550,
+      "width": 640,
+      "items": [
+        {
+          "id": "cb058657-96b3-5294-899b-e6e1ec845e23",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7b9d0815-d6aa-5bdf-a51a-95ec5740684e",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144123.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 550,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144123.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3c59b992-a383-543f-a769-dbee5ceb4f68"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e0e07874-4425-58cd-9e36-d217440aa1f2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "620e936e-ac55-59d3-a014-93dce4e90bb0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "34331740-a4da-54d2-ba67-6337b6b61a45"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3c59b992-a383-543f-a769-dbee5ceb4f68",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=143402",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6794067a-02b1-5d39-bc19-010a8980a1b1",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un chemin en terre battue dans les plaines de Vidy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171564.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "17d3685e-89a0-5dd1-bf04-4948c672a4ad",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 533,
+      "items": [
+        {
+          "id": "b0baab8e-3595-50aa-a8e3-820ab61c5db2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d8e8ae77-8ead-575c-8c87-1ecbd6b3573f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171564.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 533,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171564.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "17d3685e-89a0-5dd1-bf04-4948c672a4ad"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8091aa04-a68e-5786-a1a0-7c129af61e1e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "20fe61ce-a3ea-5baf-9b27-2e78db1512c0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c82b79f5-ff78-548a-9666-cf8122bca776"
+                }
+              ],
+              "target": [
+                {
+                  "id": "17d3685e-89a0-5dd1-bf04-4948c672a4ad",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170818",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

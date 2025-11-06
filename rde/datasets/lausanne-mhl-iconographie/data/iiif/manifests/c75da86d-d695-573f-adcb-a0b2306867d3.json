@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c75da86d-d695-573f-adcb-a0b2306867d3",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le croisement entre l'avenue de Cour et l'avenue Floréal."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166842.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "30527c62-78f7-5f95-be49-a7ca11780999",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 374,
+      "width": 640,
+      "items": [
+        {
+          "id": "b35b9594-9730-5ce1-b0c3-948db42dfdc0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2a775b3c-5ecd-577c-9a5e-5ad3d4a84198",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166842.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 374,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166842.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "30527c62-78f7-5f95-be49-a7ca11780999"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "55256daa-c983-521c-a9a8-6360a78e9ee3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "033785ee-85af-59fc-9635-2e16da96576f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e5e76b20-4229-512b-b216-f788eb2d451b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "30527c62-78f7-5f95-be49-a7ca11780999",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166099",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

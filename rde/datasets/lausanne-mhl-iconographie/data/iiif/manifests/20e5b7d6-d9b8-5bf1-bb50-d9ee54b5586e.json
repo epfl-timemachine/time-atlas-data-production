@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "20e5b7d6-d9b8-5bf1-bb50-d9ee54b5586e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue des immeubles de l'avenue de-Rumine entre l'avenue Villamont et le chemin des Trois-Rois."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171485.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "60e447b6-ed54-5812-8925-e0408ccf59f0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 401,
+      "width": 640,
+      "items": [
+        {
+          "id": "46e6de5f-5d6a-555d-8d97-17001a793c52",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "12bff9f3-c910-5a12-8efd-ce496210efa5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171485.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 401,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_171485.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "60e447b6-ed54-5812-8925-e0408ccf59f0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "2ba66ad2-fe09-564b-8529-59733ceb21a5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9353c0d0-fa43-52c3-9c6d-7713d5ff63db",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ea5f7fe6-1df3-5a09-ada2-32879e25de41"
+                }
+              ],
+              "target": [
+                {
+                  "id": "60e447b6-ed54-5812-8925-e0408ccf59f0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=170739",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "978df708-dfc6-5483-9bd6-38e5831593b4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Auberge de Jeunesse, jeunes gens sont dans le jardin ou apparaissent aux fenêtres de la maison"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104828.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9955b6c2-4dd8-5bc7-8f00-87ed01e5d193",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 450,
+      "width": 640,
+      "items": [
+        {
+          "id": "1b14c0d6-4d03-593a-afbd-621d97a3ef2f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0bfda32b-4c13-5f80-aa6b-72c4e84a6228",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104828.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 450,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104828.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9955b6c2-4dd8-5bc7-8f00-87ed01e5d193"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "434b4bf6-7d4d-5428-a544-5836d657ac7d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8d32a87c-ba00-5f94-b263-4a7608532b1d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e038f3c1-e9c4-5b1e-b959-43d32fd4ad36"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9955b6c2-4dd8-5bc7-8f00-87ed01e5d193",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=104828",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

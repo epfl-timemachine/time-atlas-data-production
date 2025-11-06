@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ef36d624-d528-5aed-8d95-3de861825cdc",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la Tour de l'Ale. A gauche, une partie de la maison d'angle du bout de la rue de la Tour, No 37, avec une laiterie et un café au rez-de-chaussée. Derrière la Tour, l'immeuble No 41, avec un magasin d'appareils de chauffage au rez. Deux personnes déambulent"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135308.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1d2a8b80-23c0-5fe2-8159-f915d648d935",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 364,
+      "items": [
+        {
+          "id": "8ee6277b-55c0-57f7-b515-dca315dab70c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9aef4103-d65a-5db3-9850-7384c296b913",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135308.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 364,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_135308.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1d2a8b80-23c0-5fe2-8159-f915d648d935"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7cb2c8bd-61b5-5cfc-b0c6-f5893872cb7f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f32c44d5-c968-59fa-92a8-f6938bf24fed",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3130253f-d017-5373-866d-14b384e7ff96"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1d2a8b80-23c0-5fe2-8159-f915d648d935",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134588",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

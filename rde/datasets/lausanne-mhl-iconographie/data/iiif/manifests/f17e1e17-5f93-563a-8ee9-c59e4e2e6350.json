@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f17e1e17-5f93-563a-8ee9-c59e4e2e6350",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue plongeante sur l'avenue Louis-Ruchonnet"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168699.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b2c7b62a-32c6-5a67-a51f-9070f0ffd00d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 380,
+      "items": [
+        {
+          "id": "dc311f92-bbc5-55e8-9a91-b2913d980fea",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0cd5fec1-0b76-562c-889d-ed099215cbba",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168699.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 380,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_168699.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b2c7b62a-32c6-5a67-a51f-9070f0ffd00d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4858a0c4-689d-55c2-a016-091fdca5b3cc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f50f02b3-5329-50a4-ac0f-6f938b587e33",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8f9d5eb7-2a03-52af-838c-612ca091bf22"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b2c7b62a-32c6-5a67-a51f-9070f0ffd00d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=167954",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

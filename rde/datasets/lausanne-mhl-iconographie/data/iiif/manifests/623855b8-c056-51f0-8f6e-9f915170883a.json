@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "623855b8-c056-51f0-8f6e-9f915170883a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la fontaine de la place de la Palud et la pharmacie."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134895.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bd7a2596-f56f-5951-9de8-309615385015",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 384,
+      "items": [
+        {
+          "id": "2317ac15-c752-54a9-8fe4-a2359abff72c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fb328082-5276-574e-94ac-ea5841bd3d75",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134895.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 384,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134895.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bd7a2596-f56f-5951-9de8-309615385015"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "a9ed5b44-5558-560b-9d37-f47ca15b8798",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dcd7f981-89ed-56d4-b0c6-5684a47521e8",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "efab7d11-03d2-5fe5-980d-7b05872a96b2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bd7a2596-f56f-5951-9de8-309615385015",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134175",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

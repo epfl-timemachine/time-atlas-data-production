@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d7486ee7-58fd-54f8-ae51-1be71241c359",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'hôtel du Léman."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147592.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a219d3bd-3d04-561b-bbcf-96d0938843a7",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 640,
+      "width": 358,
+      "items": [
+        {
+          "id": "f43e864f-62e9-5e3d-8d6e-9564e96b7004",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eaa46a53-73cb-5a41-afc0-0e6ad5b26deb",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147592.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 358,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147592.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a219d3bd-3d04-561b-bbcf-96d0938843a7"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b69d7b39-b55a-5c17-89cf-dca6c6a83a5f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "358c66dc-915b-5a8c-8c06-8e0579fb4c6e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "439d05b1-6545-5948-9cce-632fdfb89ac2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a219d3bd-3d04-561b-bbcf-96d0938843a7",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=146871",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

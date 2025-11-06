@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2f1d4170-3c9e-5041-89c4-6996a7e5ff78",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) Histoire de Jardins "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_158986.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "985381be-ae46-5421-b495-ec245373c051",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) Histoire de Jardins"
+        ]
+      },
+      "height": 640,
+      "width": 432,
+      "items": [
+        {
+          "id": "59770346-5a56-5b69-9e57-d047845d7a53",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "01f97271-a1f4-5521-bf9c-fe036ef07a85",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_158986.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 432,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_158986.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "985381be-ae46-5421-b495-ec245373c051"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9606a0ba-b8cc-52ce-bf8d-f27a1351b792",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "446fa7d4-5f4a-5d82-838c-7c70d50cf3df",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) Histoire de Jardins"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8426adf9-493f-5eb2-a937-8d305d04f52e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "985381be-ae46-5421-b495-ec245373c051",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=158249",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

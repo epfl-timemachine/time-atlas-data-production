@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b28fc6c2-2b0e-50c1-8781-daddcd2dfa5c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un immeuble locatif au chemin du Chasseron 5."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167404.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "dc8f12ad-e0d8-50af-bb8b-ab0ddd3e73ef",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 374,
+      "width": 640,
+      "items": [
+        {
+          "id": "b88063b9-031e-57a9-821c-6ac62a859b8e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "54589ccf-795e-5445-bd14-96c4238afb0a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167404.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 374,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167404.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "dc8f12ad-e0d8-50af-bb8b-ab0ddd3e73ef"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "4203277e-4668-54a2-b316-cbb7ec4fde7a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fba97e46-b9ac-5352-85f4-b904b47bf5e4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "eb5090f4-7d0e-5681-a5eb-675bc4b8d277"
+                }
+              ],
+              "target": [
+                {
+                  "id": "dc8f12ad-e0d8-50af-bb8b-ab0ddd3e73ef",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166661",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

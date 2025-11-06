@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "49f01374-6f83-5813-9f8d-e85a27832ff5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  La tour du beffroi vue depuis les escaliers de la Madeleine"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127377.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d968903c-39f8-5667-8543-b7f2d1fd80ed",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 604,
+      "items": [
+        {
+          "id": "7c770f72-ccd4-569a-a695-688e173485cd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d196912b-e1f5-565e-8bd6-ad7075389fb0",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127377.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 604,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_127377.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d968903c-39f8-5667-8543-b7f2d1fd80ed"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "25469fe0-12a9-5e24-820e-e1e375297f50",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "973fc2fc-8ac9-5129-9111-b967f5ef9b9e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d8f7a922-ae1d-5118-bae7-eb50664b0692"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d968903c-39f8-5667-8543-b7f2d1fd80ed",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=126707",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

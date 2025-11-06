@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "984f21f8-83f3-513c-bb14-71366027289c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue sur l'Hôpital cantonal depuis le nord"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103454.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5b9747dc-d09b-59be-9ced-3278bc61e6e3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 427,
+      "width": 640,
+      "items": [
+        {
+          "id": "8b4cdb80-7ba6-510e-a98c-6e0a115f4caf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d845a46b-d329-56f1-bfb9-2ea0a64ad62c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103454.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 427,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103454.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5b9747dc-d09b-59be-9ced-3278bc61e6e3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "73e61629-8bc4-5711-a1d9-23c3202a70e4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f9f7dcdc-30f5-5994-98e3-de6e9658e711",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "98e3d80b-ac06-56ff-9e00-7ef37b4947c3"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5b9747dc-d09b-59be-9ced-3278bc61e6e3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=103454",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

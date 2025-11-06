@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5a70f1fe-184d-5432-adbb-be4af84aa819",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'avenue Georgette."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141861.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e9a78e42-0e35-5d0b-97ad-bdd5266a89f8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 539,
+      "width": 640,
+      "items": [
+        {
+          "id": "4e34121a-6a2b-573e-93ce-f45a42c61f4f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eef19a32-8bd4-5ebc-8951-94dbd6058023",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141861.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 539,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141861.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e9a78e42-0e35-5d0b-97ad-bdd5266a89f8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "27134eb2-5f35-5997-a14a-e05cee41ab62",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "384e7ec2-1779-5edb-99bd-d2d418b44d55",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a610f476-60ee-59ac-aa06-ea15230203da"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e9a78e42-0e35-5d0b-97ad-bdd5266a89f8",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141140",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

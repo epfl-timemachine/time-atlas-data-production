@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b8757a46-2660-53dc-af17-a7c7dd6269f6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(marsaff) Lac Léman "
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112895.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "12c4c159-8ac4-52b7-809c-c86680e2f641",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(marsaff) Lac Léman"
+        ]
+      },
+      "height": 640,
+      "width": 411,
+      "items": [
+        {
+          "id": "0713a6a8-858a-526c-b4b8-a07bd3df8a80",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d5f0c276-9888-59ea-8393-9229494a4ed2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112895.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 411,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_112895.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "12c4c159-8ac4-52b7-809c-c86680e2f641"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5fd9e60a-ae2b-5d61-9695-03790ddbe63a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "582fb6f7-ff9a-527a-8c8a-f82205dfce35",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(marsaff) Lac Léman"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "52b86238-aebf-5af3-baa0-97476bdafab0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "12c4c159-8ac4-52b7-809c-c86680e2f641",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=112799",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

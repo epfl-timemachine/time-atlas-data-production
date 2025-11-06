@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0bb6a960-8a5b-58db-a052-e68e5e39c186",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue depuis la rue sur l'immeuble locatif de la rue du Jura 11."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167343.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "819213f8-8c4a-59e8-a35d-332667762dda",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 391,
+      "width": 640,
+      "items": [
+        {
+          "id": "eff5ce7b-2b98-52d2-9149-eed1d7f3a739",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "eeb3b73a-55f8-57e9-b98d-e0dc5e8beea1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167343.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 391,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167343.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "819213f8-8c4a-59e8-a35d-332667762dda"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b22935a7-9a60-50e8-b354-a2f1986a75a0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e53bb744-b5a9-57e8-bf97-1ff22cc54d7f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "f19617a3-1f2d-5b71-a44c-a65438fce64e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "819213f8-8c4a-59e8-a35d-332667762dda",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166600",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

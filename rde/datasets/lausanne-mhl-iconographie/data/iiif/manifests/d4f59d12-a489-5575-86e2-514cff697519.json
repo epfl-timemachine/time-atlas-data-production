@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d4f59d12-a489-5575-86e2-514cff697519",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(musaff) exposition visage d'Ouchy En blanc sur fond bleu, annonce d'une exposition à Ouchy, avec une gravure du vieil Ouchy, au bas de l'affiche."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128188.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "aa44c825-25b9-5c30-bb88-6b88e10d5390",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(musaff) exposition visage d'Ouchy"
+        ]
+      },
+      "height": 640,
+      "width": 408,
+      "items": [
+        {
+          "id": "a1663359-8222-5375-9bc7-9aaeaa62b073",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a73a48c4-7112-5989-b79c-f011790da9bd",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128188.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 408,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_128188.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "aa44c825-25b9-5c30-bb88-6b88e10d5390"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "3b53909e-e5b2-50b3-b28c-235d60b2c38d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "50abfc59-50b2-5d31-8b29-b3cf9f30f49f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(musaff) exposition visage d'Ouchy"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1b678863-a907-5328-9789-ed145307bc99"
+                }
+              ],
+              "target": [
+                {
+                  "id": "aa44c825-25b9-5c30-bb88-6b88e10d5390",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=127518",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

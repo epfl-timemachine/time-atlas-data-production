@@ -24,10 +24,11 @@ DATA_SRC_PATH = Path(join(parent_dir, 'data-venice/1808_Sommarioni/'))
 # aribtrary namespace, just to generate reproducible UUIDv5 from the entries of the dataset.
 VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
-MAP_SLUG = f"{DS_SLUG}-map" # used for the map manifest, different from the map slug of the map itself.
+# MAP_SLUG = f"{DS_SLUG}-map" # used for the map manifest, different from the map slug of the map itself.
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like('../../maps/venice-1808-sommarioni/layers', 'json'), 'cadaster')
+MAP_FOLDER = '../../maps/venice-1808-sommarioni/'
+cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'cadaster')
 venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
 
 DS_OBJ = (DS_UUID, DS_SLUG)
@@ -49,9 +50,9 @@ df_imgs['manifest_uid'] = None
 for vol, sdf in df_imgs.groupby('volume'):
     manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}_{vol}'))
     registry_label = {
-                        "en": [f'Napoleonic cadaster\'s registry of 1808 ({vol})'],
-                        "fr": [f'Registre du cadastre napoléonien de 1808 ({vol})'],
-                        "it": [f'Registro catastale napoleonico del 1808 ({vol})']
+                        "en": [f'Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni, {vol}'],
+                        "fr": [f'Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni, {vol}'],
+                        "it": [f'Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni, {vol}']
                     }
     for _, x in sdf.iterrows():
         df_imgs.at[x['index'], 'page_obj'] = iiif.generate_page_object(VTM_UUID5_NS, DS_SLUG, x['index'], manifest_uid, \
@@ -67,27 +68,30 @@ for vol, sdf in df_imgs.groupby('volume'):
 # structures = iiif.ordered_dict_to_iiif_toc_structure(iiif.multiindex_to_nested_dict(groups), "it", "Sommarioni", range_id_pref)
 df_imgs['canvas_id'] = df_imgs['page_obj'].apply(lambda x: x['id'])
 
-#2. manifest for the map
-df_maps = pd.read_csv('src/maps_width_height_format.csv')
-df_maps['label'] = df_maps['filename'].str.replace('.jpg', '')
-df_maps = df_maps.reset_index() # to derive a canvas_idx value for page generation.
+#2. manifest for the map 
+# REMOVED BY REQUEST OF ISABELLA
+# df_maps = pd.read_csv('src/maps_width_height_format.csv')
+# df_maps['label'] = df_maps['filename'].str.replace('.jpg', '')
+# df_maps = df_maps.reset_index() # to derive a canvas_idx value for page generation.
 
-map_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{MAP_SLUG}'))
-map_label = {"en": ['Napoleonic\'s cadaster map of 1808'],
-            "fr": ['Carte du cadastre napoléonien de 1808'],
-            "it": ['Mappa del catastro napoleonico del 1808']
-            }
-df_maps['page_obj'] = df_maps.apply(lambda x:\
-                                    iiif.generate_page_object(VTM_UUID5_NS, MAP_SLUG, x['index'], map_manifest_uid, \
-                                                            x['label'], 'venice/sommarioni/cadastral_maps/'+x['filename'],\
-                                                            x['media_type'], x['width'], x['height'], 'it'), axis=1)
+# map_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{MAP_SLUG}'))
+# map_label = {"en": ['Napoleonic\'s cadaster map of 1808'],
+#             "fr": ['Carte du cadastre napoléonien de 1808'],
+#             "it": ['Mappa del catastro napoleonico del 1808']
+#             }
+# df_maps['page_obj'] = df_maps.apply(lambda x:\
+#                                     iiif.generate_page_object(VTM_UUID5_NS, MAP_SLUG, x['index'], map_manifest_uid, \
+#                                                             x['label'], 'venice/sommarioni/cadastral_maps/'+x['filename'],\
+#                                                             x['media_type'], x['width'], x['height'], 'it'), axis=1)
 
 
-collection[map_manifest_uid] = (map_label, df_maps['page_obj'].tolist()[0])
+# collection[map_manifest_uid] = (map_label, df_maps['page_obj'].tolist()[0])
 
-df_maps['canvas_id'] = df_maps['page_obj'].apply(lambda x: x['id'])
-with open(f'data/iiif/manifests/{map_manifest_uid}.json', 'w+', encoding='utf-8') as f:
-    json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, map_manifest_uid, map_label, 'en', df_maps['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
+# df_maps['canvas_id'] = df_maps['page_obj'].apply(lambda x: x['id'])
+
+
+# with open(f'data/iiif/manifests/{map_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+#     json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, map_manifest_uid, map_label, 'en', df_maps['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
 
 
 #3. the collection of manifests
@@ -131,7 +135,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'sommarioni_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(DATA_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
 
 # storing in a single dataframe all the data that will be needed to add to the Obs objects. 
 geomid_uuid_list = gdf.groupby(by="geometry_id")['uuid'].apply(list).reset_index(name='has_geometry').set_index('geometry_id')
@@ -153,16 +157,11 @@ df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUI
 tqdm.pandas(desc="Generating uuid for obs")
 df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['parcel_id', 'place', 'hr_uuid']), axis=1)
 
-tqdm.pandas(desc="Generating uuid for poi")
-df['poi_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['coordinate']), axis=1)
-
 # Obs RDE Procution
-obs_df = df[['obs_uuid','hr_uuid', 'poi_uuid', 'coordinate']].groupby(by=['obs_uuid','coordinate']).agg(list).reset_index().set_index('obs_uuid')
-obs_df['poi_uuid'] = obs_df['poi_uuid'].apply(lambda v: v[0])
-# I have to do that because there is 7 obs. that have two historical sources recording it...
+obs_df = df[['obs_uuid','hr_uuid', 'coordinate']].groupby(by=['obs_uuid','coordinate']).agg(list).reset_index().set_index('obs_uuid')
 tpe = 'parcel ownership'
 obs_df['has_geometry'] = df[~df.duplicated('obs_uuid',keep='first')].set_index('obs_uuid')['has_geometry']
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid[0], tpe, v.coordinate, [r for r in v.has_geometry], v.poi_uuid)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid[0], tpe, v.coordinate, [r for r in v.has_geometry])
 obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
@@ -179,7 +178,6 @@ exclude_hr_labels = {
     'geometry_id', 
     'has_geometry', 
     'coordinate',
-    'poi_uuid',
     'obs_uuid',
     'hr_uuid',
     'parcel_id'
@@ -223,23 +221,6 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
 QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
-
-
-# POI RDE Production
-df_poi = df[['coordinate', 'poi_uuid', 'obs_uuid']].groupby(by=['poi_uuid']).agg(list)
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(v.poi_uuid, v.coordinate[0], v.obs_uuid) for _, v in df_poi.reset_index().iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
-# when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
-gdf_poi = gdf_poi.rename(columns={'coordinate': 'geometry'})
-gdf_poi = gdf_poi.set_geometry('geometry')
-# TODO: understand why there was this single PoI without a geometry.
-gdf_poi = gdf_poi[~gdf_poi.geometry.x.isna()]
-save_data_file_if_different(DATA_FOLDER, 'points_of_interest', gdf_poi, 'sommarioni_pois', RDE.POI.value)
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
-QA_check_unique_uuid_in_uuid_array(gdf_poi.reset_index(), 'represents')
-
 
 # Generating the manifest for the textual data
 # (now that all HR uuid were generated)
@@ -303,7 +284,8 @@ ds = produce_dataset_obj(
     len(df_iiif_links['canvas_id'].unique()),
     ds_conf,
     [venice_area_uuid],
-    publish_obj=(CONF['doi'], CONF['github_link'])
+    publish_obj=(CONF['doi'], CONF['github_link']),
+    archival_reference='Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni'
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'sommarioni_dataset', RDE.DATASET.value, is_dataset_obj=True)

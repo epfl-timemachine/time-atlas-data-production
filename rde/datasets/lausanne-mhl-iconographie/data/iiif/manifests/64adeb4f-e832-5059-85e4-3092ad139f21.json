@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "64adeb4f-e832-5059-85e4-3092ad139f21",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue depuis la rue de la Barrre, coté nord-ouest"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104924.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "45c38f0b-75fd-579b-bf0c-26550a8a088b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 479,
+      "width": 640,
+      "items": [
+        {
+          "id": "80b98e6a-2e2f-5f92-a812-492672085fb6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "29fee3b4-f203-5a5a-912b-1b397e11d383",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104924.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 479,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104924.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "45c38f0b-75fd-579b-bf0c-26550a8a088b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d92b2d23-3622-54de-9050-9686444b3c23",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d7963e0c-69f4-515f-81a6-07c02cd0a9b7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "072911d1-ec2f-53b6-8915-a9eb1f6cd344"
+                }
+              ],
+              "target": [
+                {
+                  "id": "45c38f0b-75fd-579b-bf0c-26550a8a088b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=104924",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

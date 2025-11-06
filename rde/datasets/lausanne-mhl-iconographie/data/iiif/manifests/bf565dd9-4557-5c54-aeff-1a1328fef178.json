@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bf565dd9-4557-5c54-aeff-1a1328fef178",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise, P.2.D.17, albums Vieux Lausanne)  Vue prise du Pont Bessières."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100308.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b1253378-15ab-5a6b-a98f-b02dc6000ec0",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise, P.2.D.17, albums Vieux Lausanne) "
+        ]
+      },
+      "height": 598,
+      "width": 640,
+      "items": [
+        {
+          "id": "c6a6619a-4755-5bf0-a9a8-f941fc2f8836",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b47c4a1a-731e-509d-a418-27d5c8caf808",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100308.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 598,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_100308.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b1253378-15ab-5a6b-a98f-b02dc6000ec0"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "daf685d5-7bce-556d-a07d-3e3390b2a992",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "fe7a77a9-3647-5afc-902b-f5f7b32cb7db",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise, P.2.D.17, albums Vieux Lausanne) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c06d3d18-f13a-5cac-b62a-7ae0f329afa7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b1253378-15ab-5a6b-a98f-b02dc6000ec0",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=100308",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

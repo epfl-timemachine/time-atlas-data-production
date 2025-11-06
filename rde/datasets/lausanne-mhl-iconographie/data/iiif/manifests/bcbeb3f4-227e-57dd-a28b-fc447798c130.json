@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "bcbeb3f4-227e-57dd-a28b-fc447798c130",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la place Saint-François depuis le haut du Petit-Chêne"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170258.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "1ee98c4c-d00d-50ad-bae5-cd757551fbcb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 453,
+      "width": 640,
+      "items": [
+        {
+          "id": "1c6f8d00-d13f-59f7-b847-727c529b9e65",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bbeb47f5-6eb9-5164-b284-b170c98c640a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170258.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 453,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170258.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "1ee98c4c-d00d-50ad-bae5-cd757551fbcb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f32e6631-636e-53eb-90f1-777642b1f664",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a35dec46-a596-5e7d-90dc-15812f73ef7d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b873b3cd-1bf9-5782-b4f2-293f3bb7b4e7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "1ee98c4c-d00d-50ad-bae5-cd757551fbcb",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169512",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

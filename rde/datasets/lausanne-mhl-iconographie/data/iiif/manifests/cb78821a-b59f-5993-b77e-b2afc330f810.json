@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cb78821a-b59f-5993-b77e-b2afc330f810",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur un immeuble situé à la rue de l'Académie 7 et sur un autre situé à la rue Cité-Derrière 16."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_176155.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9ab77a98-847e-5cbf-a5d9-eb66dc121b79",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 386,
+      "items": [
+        {
+          "id": "fb7f2d71-6d8f-560a-8e8b-26ad102c7d49",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3612da57-7273-5948-bc70-2e62dd350e13",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_176155.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 386,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_176155.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9ab77a98-847e-5cbf-a5d9-eb66dc121b79"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "222f3d99-3e26-5f07-84f7-5433da737d49",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bd0cda3f-f0dd-5846-9cd7-e83b6cf734c2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "09cfc35c-db1a-56b7-bbe8-bf204f914548"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9ab77a98-847e-5cbf-a5d9-eb66dc121b79",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=175403",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

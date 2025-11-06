@@ -168,7 +168,6 @@ def produce_hr_obj(uuid: str,
         "annotated_content": new_md
     }
 
-
 # so the order is displayed in the type annotation and linting.
 LAYER_UUID = str
 GEOMETRY_UUID = str
@@ -179,7 +178,7 @@ def produce_obs_obj(uuid:str,
                     tpe: str,
                     coords,
                     geometries_links: list[GEOMETRY_UUID],
-                    poi_link: str) -> dict:
+                    ) -> dict:
     '''
     Produces an observation object for the RDE from the given parameters.
     uuid: the UUID of the observation
@@ -188,6 +187,8 @@ def produce_obs_obj(uuid:str,
     tpe: the type of the observation
     time_range: a tuple of two strings representing the start and end time of the observation
     geometries_links: a list of the UUID of the geometries associated to the current observation
+
+    Note that no poi link are expected as they are patched later, by merging all observations based on their coordinates.
     '''
     return {
         "uuid": uuid,
@@ -199,11 +200,11 @@ def produce_obs_obj(uuid:str,
         "coordinate": coords,
         "has_geometry": geometries_links,
         "documented_in": hr_uuid,
-        "has_handle": poi_link
+        "has_handle": None
     }
 
 
-def produce_poi_obj(uuid:str, coordinate, obs_uuid:list[str]) -> dict:
+def produce_poi_obj(uuid:str, coordinate, height_data) -> dict:
     '''
     returns the geometry object created as a dictionary
     uuid: the UUID of the PoI
@@ -214,7 +215,7 @@ def produce_poi_obj(uuid:str, coordinate, obs_uuid:list[str]) -> dict:
         "uuid": uuid,
         "rde_type": RDE.POI.value,
         "coordinate": coordinate,
-        "represents": obs_uuid
+        "height": height_data
     }
 
 
@@ -232,7 +233,8 @@ def produce_dataset_obj(
     transribed_pages_amount: int,
     configuration: dict,
     areas_ids: list[str],
-    publish_obj: tuple[str, str] = (None, None)
+    publish_obj: tuple[str, str] = (None, None),
+    archival_reference: str = None
     ) -> dict:  
     return {  
         "uuid": uuid,
@@ -249,7 +251,8 @@ def produce_dataset_obj(
         "end_time": time_range[1],
         "transcribed_pages_amount": transribed_pages_amount,
         "is_operationally_described_by": configuration,
-        "falls_within": areas_ids  
+        "falls_within": areas_ids,
+        "archival_reference": archival_reference
     }
 
 
@@ -425,7 +428,7 @@ def save_data_file_if_different(fp:str,
     filename_with_ext = f'{filename}.json'
     filepath = os.path.join(fp, filename_with_ext)
     if isinstance(data, gpd.GeoDataFrame):
-        if tpe == RDE.POI.value or tpe == RDE.OBS.value:
+        if tpe == RDE.OBS.value:
             data = processing_points(data, format_rde=True)
         t_data = geodataframe_to_json(data)
         t_data = t_data['features']

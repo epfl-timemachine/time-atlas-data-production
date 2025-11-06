@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "628e3c9e-9419-53ba-a104-8adaa3a06191",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la rue Haldimand."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134755.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8ef44def-442d-55c5-8de8-36590bb7217f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 532,
+      "width": 640,
+      "items": [
+        {
+          "id": "604ec34d-5653-568a-9e77-6e1a39fb1fd8",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9e88e2b6-2f8c-582e-a1ad-09c65d401f8b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134755.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 532,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134755.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8ef44def-442d-55c5-8de8-36590bb7217f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "18ec85f9-8a17-52e9-922b-0958d21ff3fc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "272ed2fe-d6ea-5b79-81fd-bc17c268e3eb",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6722ad1f-a5a2-59c8-832c-5158ee99c00f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8ef44def-442d-55c5-8de8-36590bb7217f",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134035",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a54243fd-8e51-59fe-8278-2a9578ed202e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la promenade Derrière-Bourg et l'avenue du Théâtre."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167556.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eec18af2-ffdf-5d15-a78c-000269698add",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 428,
+      "items": [
+        {
+          "id": "c8564474-27b0-5427-9cb8-cb0fd8d37ba0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9415142f-67e9-5245-b24f-894cbed977df",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167556.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 428,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167556.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eec18af2-ffdf-5d15-a78c-000269698add"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "089450f2-e09c-5670-b7b6-2506ede1359f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "923b92f3-df07-5537-aa12-c4d964b32168",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "4c6324e7-7be9-5ca6-a54d-36c1652f3ce5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eec18af2-ffdf-5d15-a78c-000269698add",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166813",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

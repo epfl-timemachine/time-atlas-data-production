@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "77b5ec54-775b-511d-b15f-d5ab8484bd2f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le Palais de Justice au n°2 de l'Allée Ernest-Ansermet."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175655.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ebdc255f-4caa-5ed1-aedc-743d8fb38b06",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 480,
+      "items": [
+        {
+          "id": "4731db6a-239d-5e68-aed5-52ea2d3edf4e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d3f6e71d-885f-5ee1-9a78-e75132288707",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175655.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 480,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_175655.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ebdc255f-4caa-5ed1-aedc-743d8fb38b06"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b701090b-9b86-5e6a-8c64-5ae1042f0f0e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a2691d37-2636-5173-b7d3-e439e42176c4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "15777ffe-01d0-5b27-b39d-64da1f36eb35"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ebdc255f-4caa-5ed1-aedc-743d8fb38b06",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=174904",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

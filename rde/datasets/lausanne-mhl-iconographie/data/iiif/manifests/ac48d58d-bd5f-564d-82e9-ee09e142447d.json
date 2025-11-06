@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ac48d58d-bd5f-564d-82e9-ee09e142447d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur l'hôtel de la Paix depuis le sud."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103889.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "47bbfe9f-8b18-5256-a698-1cd108413aea",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 407,
+      "width": 640,
+      "items": [
+        {
+          "id": "91251e2a-089f-53d1-a9ff-f318777ff77b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "84341995-946e-572d-b1c8-167411b8a7c4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103889.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 407,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_103889.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "47bbfe9f-8b18-5256-a698-1cd108413aea"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "42ecbd18-ac98-5e63-a153-a31d92569ae9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c777b1f7-2ba4-5100-aba9-3db0464ed7ee",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "cd581a0e-0a8d-597a-8dba-17365205d40b"
+                }
+              ],
+              "target": [
+                {
+                  "id": "47bbfe9f-8b18-5256-a698-1cd108413aea",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=103889",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

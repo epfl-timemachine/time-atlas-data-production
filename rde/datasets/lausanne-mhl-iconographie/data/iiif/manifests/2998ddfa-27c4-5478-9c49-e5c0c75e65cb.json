@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2998ddfa-27c4-5478-9c49-e5c0c75e65cb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le collège à l'avenue de Montoie 19."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166221.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "54fd89ed-aa7b-57cb-a577-f026579e1d7c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 530,
+      "width": 640,
+      "items": [
+        {
+          "id": "49d37b72-ddbf-55e4-be9f-c1f187a52320",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b0355e91-8ebb-5d1a-ab4a-0c6ac40abad1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166221.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 530,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166221.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "54fd89ed-aa7b-57cb-a577-f026579e1d7c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0a5285a3-4f7e-5d99-8e33-f5ca634f10c7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a7b305e2-06c0-543e-aed0-a860852d6317",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3756704b-d034-57a7-aec4-353be22416a5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "54fd89ed-aa7b-57cb-a577-f026579e1d7c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165478",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

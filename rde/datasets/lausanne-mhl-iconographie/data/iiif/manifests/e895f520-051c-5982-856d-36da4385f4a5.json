@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e895f520-051c-5982-856d-36da4385f4a5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.38, album Pellis)  Place du Port vue du sud avec le château d'Ouchy et l'hôtel d'Angleterre. Tout à droite, la maison Panchaud."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147767.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c47581bb-9247-57ba-a847-211f996d3ca3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.38, album Pellis) "
+        ]
+      },
+      "height": 479,
+      "width": 640,
+      "items": [
+        {
+          "id": "f3d161c4-3c30-547d-b7c2-0c2c5d6598ad",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9a41660f-6e1c-5720-b2fa-427225522f77",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147767.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 479,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_147767.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c47581bb-9247-57ba-a847-211f996d3ca3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "55751572-974e-511a-82b4-bad169fbccd2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e957ef29-4cf7-5b62-86de-8827c9135850",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.38, album Pellis) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9974ca68-5a4a-5afe-a352-45249a6a03f1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c47581bb-9247-57ba-a847-211f996d3ca3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=147046",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

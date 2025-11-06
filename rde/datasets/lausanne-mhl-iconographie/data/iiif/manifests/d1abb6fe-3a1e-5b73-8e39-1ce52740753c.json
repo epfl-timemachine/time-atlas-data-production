@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d1abb6fe-3a1e-5b73-8e39-1ce52740753c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue de la rue Centrale depuis le pont Bessières."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148949.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ef8ca778-f5a0-50ef-b58f-bb4e3079d089",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 531,
+      "width": 640,
+      "items": [
+        {
+          "id": "f6e8d54c-cc48-504f-89ed-73ab23148e11",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4756f9f2-dae3-50cc-acde-0e9d787a93ce",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148949.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 531,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_148949.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ef8ca778-f5a0-50ef-b58f-bb4e3079d089"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d3cfcd81-6a6a-56e5-846d-b9e492b5e69e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "da3aaf8e-92e8-5697-bb9d-8f1c3ead10f3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "59d9dbf0-1760-56cf-b677-d29133afedc6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ef8ca778-f5a0-50ef-b58f-bb4e3079d089",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=148228",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

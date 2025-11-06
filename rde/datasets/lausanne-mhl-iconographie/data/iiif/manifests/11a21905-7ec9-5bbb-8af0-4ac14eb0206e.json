@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "11a21905-7ec9-5bbb-8af0-4ac14eb0206e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Gros plan sur l'entrée de la grotte de la Borde où se tient un personnage."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97175.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "15fa820b-f20f-5f1b-974a-d0ac26eb9472",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 640,
+      "width": 399,
+      "items": [
+        {
+          "id": "9c14d35f-e000-5759-891d-122e16ee0c10",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f7cab3cb-1ba4-5821-af8d-5822a50818d3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97175.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 399,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97175.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "15fa820b-f20f-5f1b-974a-d0ac26eb9472"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "46bc3fbe-6f66-5dcd-9128-0a73f8779675",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3599d8dd-fa6d-5cf1-a4ea-becd0ccaa15d",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ab8c9f10-8559-5a29-a60e-ab1f25b793ba"
+                }
+              ],
+              "target": [
+                {
+                  "id": "15fa820b-f20f-5f1b-974a-d0ac26eb9472",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97175",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

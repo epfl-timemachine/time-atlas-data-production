@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8fa7bd9a-ef96-5f6b-bb3e-19b622548788",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le N°30 du chemin des Plaines."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164673.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "0771cd42-cceb-5534-9124-abc09abdef64",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 428,
+      "width": 640,
+      "items": [
+        {
+          "id": "bf8c9f11-bf45-5a1c-97e1-103a1d0d9001",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "39096e09-a1cb-5749-ab6f-5c560f29bd35",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164673.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 428,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164673.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "0771cd42-cceb-5534-9124-abc09abdef64"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d03a53fc-85a2-57b8-ab92-9832d139dd60",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "28a233c5-dc3d-5865-829d-f3cd70dc94e1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d3eb562f-e37d-576f-97b2-2f63c9a08274"
+                }
+              ],
+              "target": [
+                {
+                  "id": "0771cd42-cceb-5534-9124-abc09abdef64",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163932",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

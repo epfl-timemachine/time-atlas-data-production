@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2ee66d5c-1e80-504d-956e-48414251250a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le haut de la rue du Petit-Chêne, avec l'immeuble abritant le Café Romand en arrière-plan."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164000.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "726ca0fd-42d0-5295-8fff-641490727943",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 419,
+      "items": [
+        {
+          "id": "dd42a64e-584d-57f2-985e-3718ba78b1eb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d6ec6bca-f0bb-5d85-8753-facd2a373d63",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164000.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 419,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164000.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "726ca0fd-42d0-5295-8fff-641490727943"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "272bc087-6ae7-5880-8619-32d0e5b05035",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2d4e3397-4386-51d8-b8b6-dbf24a61def3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "49b41bdf-a20e-59e0-b713-56a200aa3048"
+                }
+              ],
+              "target": [
+                {
+                  "id": "726ca0fd-42d0-5295-8fff-641490727943",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=163259",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

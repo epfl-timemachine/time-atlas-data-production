@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "dbcf5fc3-ee61-5dad-8cf4-20a27c56e07d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la Villa Albion, sise au chemin des Croix-Rouges 5"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141317.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c55227b8-0ea6-5916-9d6c-6fabeec796de",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 532,
+      "width": 640,
+      "items": [
+        {
+          "id": "8a620a7d-d71a-5b3d-a86f-56bec6e63b9f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "61849d65-b605-5379-a942-c41201e0392a",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141317.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 532,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141317.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c55227b8-0ea6-5916-9d6c-6fabeec796de"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dbf52527-b379-5f3d-ae2e-1d0ecd540e97",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0cdb0bd7-a364-52ce-8427-0bf4ab5cc3a1",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "fae0c409-eb3b-5ca8-abec-069a0d372241"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c55227b8-0ea6-5916-9d6c-6fabeec796de",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140596",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

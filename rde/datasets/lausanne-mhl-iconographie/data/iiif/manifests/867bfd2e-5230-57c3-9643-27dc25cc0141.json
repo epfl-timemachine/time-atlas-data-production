@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "867bfd2e-5230-57c3-9643-27dc25cc0141",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la place Arlaud prise depuis les escaliers"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165123.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "eb037135-3761-5609-a9f5-3dea78f026af",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 533,
+      "items": [
+        {
+          "id": "4e26dfa9-94cc-5950-a882-72c739cffaa1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a63e26b3-a458-505c-a33f-4a0f7e45b076",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165123.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 533,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_165123.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "eb037135-3761-5609-a9f5-3dea78f026af"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "61eef175-1226-51d5-821b-fd12f3f9e617",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c8716bcf-f755-51fb-82fd-f68bb5194f57",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b40bf269-1a85-52aa-81b2-a7472848a796"
+                }
+              ],
+              "target": [
+                {
+                  "id": "eb037135-3761-5609-a9f5-3dea78f026af",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164382",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

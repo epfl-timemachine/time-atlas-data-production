@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "fc390e11-4c95-5a10-8925-f161562ab34b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue plongeante sur la place Chauderon."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166529.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "41bd46e5-fbc2-5974-b046-3be5d7cc8adc",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 531,
+      "width": 640,
+      "items": [
+        {
+          "id": "3172dfc8-ef95-5901-9d4f-5ce0bd526adb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1f3743f3-ecf3-5db7-b0ee-bbc518cee0cc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166529.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 531,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166529.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "41bd46e5-fbc2-5974-b046-3be5d7cc8adc"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7d76aaeb-6652-5131-bb9e-55520ba71e1d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5389528d-1dc9-53c5-9e73-a147b81219c9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a638bc59-b031-5ed9-800d-8d51fe4ac628"
+                }
+              ],
+              "target": [
+                {
+                  "id": "41bd46e5-fbc2-5974-b046-3be5d7cc8adc",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165786",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

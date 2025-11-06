@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "accc1367-fde9-514c-898a-cccde76dbc89",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue panoramique sur le quartier de la Cité et ses alentours depuis l'ancien Hôpital Cantonal."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166970.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a1f02cfe-64c2-5b6a-bffe-fda41d5b55ab",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 310,
+      "width": 640,
+      "items": [
+        {
+          "id": "99f5415a-21d7-5ae3-9208-3a6a1f301bcd",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b024ce5a-e9c5-58f2-b5d7-0a89a9a19060",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166970.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 310,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166970.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a1f02cfe-64c2-5b6a-bffe-fda41d5b55ab"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e320519d-129f-541b-a07e-0a51351063fe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2e3d7088-af08-5e7e-9a94-2b5adba18319",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0d79c3ae-7643-5cb6-8441-a354ccb4439f"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a1f02cfe-64c2-5b6a-bffe-fda41d5b55ab",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166227",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

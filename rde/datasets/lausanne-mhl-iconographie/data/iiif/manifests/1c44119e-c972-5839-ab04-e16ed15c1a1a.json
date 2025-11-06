@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1c44119e-c972-5839-ab04-e16ed15c1a1a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le chemin de Boston."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166592.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e983b678-24b8-5a9d-bde7-12b059b9eab3",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 393,
+      "width": 640,
+      "items": [
+        {
+          "id": "cc76443c-fb89-51ea-b04f-b39fda700075",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a6142c4b-db0a-52de-b0e5-1535c12875a4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166592.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 393,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_166592.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e983b678-24b8-5a9d-bde7-12b059b9eab3"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ff02fa67-642f-5bca-aec9-2bde33e3e435",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "36775dfe-44f2-5150-8150-6eedd2106fba",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5681b198-9850-5aec-b404-93d51a9eb7f5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e983b678-24b8-5a9d-bde7-12b059b9eab3",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=165849",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2d707069-82b3-5a7e-840a-f141c3d7494d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Plan général du chantier de la Borde. En bas à gauche, on voit un bout de toit avec des cheminées et les toits des abattoirs. Devant, il y a le chantier (fossé, grue, matériel de construction)."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97129.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e9d99180-3bb9-51bb-9ed7-579359d76e38",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 314,
+      "width": 640,
+      "items": [
+        {
+          "id": "2d6b50a6-a7f6-57be-995b-4bd6fab1e2a5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a1d970de-774b-516d-86ba-a4c5d1014b95",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97129.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 314,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_97129.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e9d99180-3bb9-51bb-9ed7-579359d76e38"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fc955fa6-faf6-5856-81f7-10ec7cfb8721",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7d8bd1b6-6c4e-5e0f-9a11-cbdbe46e6bdf",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d7228acf-c3ee-5a55-aa15-30b532225ace"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e9d99180-3bb9-51bb-9ed7-579359d76e38",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=97129",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

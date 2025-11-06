@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e3ab17b3-d4d1-557b-ada1-386348eee243",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vues sur les Galeries du Commerce, actuel Conservatoire de Musique."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142083.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "49eaddb7-c2d5-56f9-be74-80716b611cc5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 343,
+      "width": 640,
+      "items": [
+        {
+          "id": "03f04343-0b85-56ef-b363-4f4362eeaddc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aa8b3486-d570-58e8-924d-8d0edfce135c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142083.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 343,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142083.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "49eaddb7-c2d5-56f9-be74-80716b611cc5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "cc0c2cb4-902c-55a9-afb3-7069f72ef163",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "aa96fa68-f56b-58f6-9474-5cc7856dd2fa",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "51749100-a42d-5d1a-bba0-0c711cf033da"
+                }
+              ],
+              "target": [
+                {
+                  "id": "49eaddb7-c2d5-56f9-be74-80716b611cc5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141362",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

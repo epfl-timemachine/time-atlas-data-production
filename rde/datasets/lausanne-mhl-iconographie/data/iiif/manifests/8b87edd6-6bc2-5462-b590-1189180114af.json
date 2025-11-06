@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "8b87edd6-6bc2-5462-b590-1189180114af",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le croisement de la rue de Genève et du chemin de Boston, ainsi que sur deux immeubles de l'avenue de Morges."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173048.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3cd38bce-ea88-545a-bae7-b550b0fd99dd",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 528,
+      "width": 640,
+      "items": [
+        {
+          "id": "9bd9ca35-a09e-55e9-b97f-c125c1d2d359",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b0ac7eaa-39ef-5893-b8d0-d5960d2566ba",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173048.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 528,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_173048.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3cd38bce-ea88-545a-bae7-b550b0fd99dd"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0631d97a-783f-500a-8355-c342ba58df4c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "206e30e1-c91a-578b-a974-41820133def5",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8953323b-7d45-580d-bd5b-a8cb9bcc4aa2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3cd38bce-ea88-545a-bae7-b550b0fd99dd",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=172301",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

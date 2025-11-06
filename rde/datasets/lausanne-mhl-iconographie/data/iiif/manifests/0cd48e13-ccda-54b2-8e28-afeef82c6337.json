@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0cd48e13-ccda-54b2-8e28-afeef82c6337",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  La cathédrale vue de nuit"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151634.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "42a9cef9-a349-5614-8bd3-af45d16564e5",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 512,
+      "width": 640,
+      "items": [
+        {
+          "id": "32aced17-725c-5ba7-9ca9-5ce8578b5275",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5059424c-db7c-575d-9843-df2514faa815",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151634.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 512,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_151634.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "42a9cef9-a349-5614-8bd3-af45d16564e5"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "02efdc4d-95eb-51c1-96d4-aa071506c638",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bb32637e-52c7-57aa-b06f-22ec948e8064",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "b759d381-f519-5efe-bfc2-43666445abb1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "42a9cef9-a349-5614-8bd3-af45d16564e5",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=150913",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

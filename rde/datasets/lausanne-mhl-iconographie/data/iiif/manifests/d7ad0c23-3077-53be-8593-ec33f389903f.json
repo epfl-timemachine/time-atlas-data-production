@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "d7ad0c23-3077-53be-8593-ec33f389903f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le Pont Chauderon depuis le nord (chemin de la Mine). Le pont est en court d'achèvement."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141182.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "26cf57a8-b496-5514-b211-37f07991efed",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 538,
+      "width": 640,
+      "items": [
+        {
+          "id": "36205e18-f3a1-57e4-bee1-96a56af5ad5d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "117d6515-b730-5fb7-9691-87de1bbc3520",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141182.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 538,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_141182.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "26cf57a8-b496-5514-b211-37f07991efed"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "1652f737-4b7d-556b-b08c-8b192596c9b3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "203cd2b5-a219-54da-ad05-15f2515e3bf0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8b3df310-0e9e-57e5-9206-964ead1cfccc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "26cf57a8-b496-5514-b211-37f07991efed",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140461",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

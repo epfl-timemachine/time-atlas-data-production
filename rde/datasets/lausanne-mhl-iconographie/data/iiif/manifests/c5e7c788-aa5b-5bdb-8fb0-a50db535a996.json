@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c5e7c788-aa5b-5bdb-8fb0-a50db535a996",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la rue de la Louve."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134772.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "454fbf73-a5d7-5a29-a6ab-fa04943af250",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 380,
+      "width": 640,
+      "items": [
+        {
+          "id": "2b772640-ded1-515a-b580-078bf535d6d7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3c36a4fc-3980-56fa-b05d-85dcaffc50c8",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134772.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 380,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_134772.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "454fbf73-a5d7-5a29-a6ab-fa04943af250"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "f170ab53-7339-5670-8342-80a73b91904b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c517f93e-41fe-5835-bcba-6e63bdd2dfd3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a565fab9-0585-5b87-ba33-19d1553d3baa"
+                }
+              ],
+              "target": [
+                {
+                  "id": "454fbf73-a5d7-5a29-a6ab-fa04943af250",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=134052",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

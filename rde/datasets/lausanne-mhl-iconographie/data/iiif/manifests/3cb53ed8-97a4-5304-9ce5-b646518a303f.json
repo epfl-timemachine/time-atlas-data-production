@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "3cb53ed8-97a4-5304-9ce5-b646518a303f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.16, albums Mayor)  Vue sur le chemin de Mornex depuis l'esplanade de Montbenon"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131159.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "562f49ab-cc48-5ec3-b774-8daaf14a6882",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.16, albums Mayor) "
+        ]
+      },
+      "height": 460,
+      "width": 640,
+      "items": [
+        {
+          "id": "f36ee923-c82b-5c16-862c-96bedf45f0d3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4f21cbc4-e02b-573f-a4da-76cd93b900b3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131159.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 460,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131159.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "562f49ab-cc48-5ec3-b774-8daaf14a6882"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "5a7b0239-5d8a-5535-9d37-4fe055c4c832",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7877fc0f-4930-525c-80a8-cacc39d404be",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.16, albums Mayor) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "037f27fb-bd7e-5c43-b4de-a430c6e09461"
+                }
+              ],
+              "target": [
+                {
+                  "id": "562f49ab-cc48-5ec3-b774-8daaf14a6882",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=130439",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

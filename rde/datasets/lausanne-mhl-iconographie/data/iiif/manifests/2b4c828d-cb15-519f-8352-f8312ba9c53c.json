@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2b4c828d-cb15-519f-8352-f8312ba9c53c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  L'esplanade de Montbenon avec le kiosque nouvellement renové."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140540.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5fe49ed3-9251-5b35-878e-e0d5960b50fa",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 539,
+      "width": 640,
+      "items": [
+        {
+          "id": "017cdecd-9930-5459-b4e0-4546eb1dade3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "4ba2b90f-38c5-5154-a412-d4c9f605c9ff",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140540.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 539,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140540.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5fe49ed3-9251-5b35-878e-e0d5960b50fa"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "296fbaca-5b32-52ee-933a-798dae3006f9",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "358c2e33-37b8-5db7-94d5-5f7489fd9a40",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2e66287d-c417-5843-986c-f556a45713c4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5fe49ed3-9251-5b35-878e-e0d5960b50fa",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=139819",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "1e4b6dc5-b32e-51be-9214-b2080250cf2f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(plans)  Reproduction par Charles Vuillermet d'une partie du plan de Lausanne, peint en 1638 par David Buttet. Il s'agit du quartier sis à l'ouest de l'église de Saint-François. Celui-ci est représenté dans une perspective cavalière prise depuis le sud."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_115604.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "f5652f63-6a22-587a-aa86-cfa026f73e94",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(plans) "
+        ]
+      },
+      "height": 503,
+      "width": 640,
+      "items": [
+        {
+          "id": "184b78c3-2489-5bec-95c7-494542f80910",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "595ec4e0-1c5f-55de-b6d0-aac55cbfdce3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_115604.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 503,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_115604.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "f5652f63-6a22-587a-aa86-cfa026f73e94"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "01d530f9-4f4c-5ebd-a462-c8779f8c1ea3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6327ff89-cb6c-5d7a-af0d-b2d1e05d4e1b",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(plans) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "87981821-493c-51a2-885f-fabd85ef1a13"
+                }
+              ],
+              "target": [
+                {
+                  "id": "f5652f63-6a22-587a-aa86-cfa026f73e94",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=115508",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

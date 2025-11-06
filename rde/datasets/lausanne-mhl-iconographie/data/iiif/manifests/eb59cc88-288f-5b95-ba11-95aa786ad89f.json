@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "eb59cc88-288f-5b95-ba11-95aa786ad89f",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne) Maison Payot, St-François Haut de la rue Saint-François"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131112.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bee6c154-b680-5ce1-9b7e-864086062aaf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne) Maison Payot, St-François"
+        ]
+      },
+      "height": 640,
+      "width": 461,
+      "items": [
+        {
+          "id": "ce1fddaa-9e35-5e20-bd83-c51b2ea5e2fe",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "94833603-31b2-5644-b435-d1fb44b32947",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131112.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 461,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_131112.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bee6c154-b680-5ce1-9b7e-864086062aaf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dfc44863-7ce0-5b53-a691-18a5752daf5f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b90d6220-11e4-5e3b-a42c-3f62f5ae0bb9",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.D.16, albums Mayor, P.2.D.17, albums Vieux Lausanne) Maison Payot, St-François"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2912bbb3-4e93-5efe-a56a-93dbabf8a986"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bee6c154-b680-5ce1-9b7e-864086062aaf",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=130392",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

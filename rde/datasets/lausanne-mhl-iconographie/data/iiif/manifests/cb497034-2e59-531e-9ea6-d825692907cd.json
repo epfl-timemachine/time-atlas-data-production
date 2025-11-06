@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "cb497034-2e59-531e-9ea6-d825692907cd",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur le Palais de Rumine."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170479.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "2f5f9466-3576-57aa-9a8c-2a9f0c88bffa",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 374,
+      "items": [
+        {
+          "id": "0f19ce4e-0dfa-5db3-9883-31cd7057e1a6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8a103f5b-82db-57a9-b3d4-9ad86ebc62c7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170479.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 374,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_170479.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "2f5f9466-3576-57aa-9a8c-2a9f0c88bffa"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b3856b9c-7250-5b6a-96be-79cc221db06c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a9a64e7c-d932-5fb3-bb39-66e7d8cd9bbc",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "e5cfc41b-c0a9-558d-bf2d-933f6e742627"
+                }
+              ],
+              "target": [
+                {
+                  "id": "2f5f9466-3576-57aa-9a8c-2a9f0c88bffa",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=169733",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

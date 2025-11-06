@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "12f11a0f-dd19-5c64-a2b9-900742d37846",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur l'avenue Tissot depuis l'avenue d'Ouchy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163597.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a0be91d6-4510-5337-a731-abeaa261824d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 384,
+      "width": 640,
+      "items": [
+        {
+          "id": "1a17f97b-8f68-5aa0-9dfe-bdedc9b973c7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5ed8e1b4-73a2-5bf8-9312-73ff48ac1254",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163597.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 384,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_163597.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a0be91d6-4510-5337-a731-abeaa261824d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "0579adc8-abbc-56fd-a56d-810c97055244",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1142b520-8a8c-52ed-99ef-b08c5a0c0de2",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "6e7bf047-82d6-5f72-8e9c-ee30f5be5ea1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a0be91d6-4510-5337-a731-abeaa261824d",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=162856",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

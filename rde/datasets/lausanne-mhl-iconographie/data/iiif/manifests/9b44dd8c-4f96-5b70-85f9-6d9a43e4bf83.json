@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "9b44dd8c-4f96-5b70-85f9-6d9a43e4bf83",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur la rue du Maupas."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142206.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "bd7d30e5-34a0-5622-afec-abd4da559b4b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 530,
+      "width": 640,
+      "items": [
+        {
+          "id": "0561ca29-9dd3-50c2-bc0c-220ae2b20f5a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a1d7ce53-a761-52d0-838b-88af50ea1cd5",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142206.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 530,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_142206.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "bd7d30e5-34a0-5622-afec-abd4da559b4b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7c84312a-f577-591a-95bb-498345982c6d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9d1311fe-76a0-5d83-90cf-52caac99bc19",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "289459b8-1a23-5e4c-9db8-930f2b5fa017"
+                }
+              ],
+              "target": [
+                {
+                  "id": "bd7d30e5-34a0-5622-afec-abd4da559b4b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=141485",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

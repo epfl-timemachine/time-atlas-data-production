@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "b5a16c25-3a31-53f3-9bf7-8ecbec7b639d",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  Vue sur le pavillon Dr. Bourget."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144321.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ddd564d4-b9d4-55f5-adf9-0c193154541b",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 531,
+      "width": 640,
+      "items": [
+        {
+          "id": "c88bdc6c-8316-5efb-936d-c2a24b8ee684",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1e4b6a40-a616-5274-adf5-a3038126adb2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144321.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 531,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_144321.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ddd564d4-b9d4-55f5-adf9-0c193154541b"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "053cffbf-27bd-5e96-8210-d19b4dcd0d43",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "f6a77279-419f-5d25-9f02-17b655df6ca3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3de085a9-6c74-5cfe-bd67-0796702831a1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ddd564d4-b9d4-55f5-adf9-0c193154541b",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=143600",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

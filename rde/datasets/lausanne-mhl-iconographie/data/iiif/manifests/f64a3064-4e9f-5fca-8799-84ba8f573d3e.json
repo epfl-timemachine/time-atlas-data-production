@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f64a3064-4e9f-5fca-8799-84ba8f573d3e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la rue Jean-Louis-Galliard et la rue Saint-Roch prise depuis le toit de la rue du Maupas No 6"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164843.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b17f055f-891a-5098-8fa7-4c359d7f181c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 424,
+      "width": 640,
+      "items": [
+        {
+          "id": "8975da36-f6ab-57a7-a16b-b60415b47277",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "0300fd59-88f3-5987-879c-63ab2e5d9cdc",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164843.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 424,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_164843.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b17f055f-891a-5098-8fa7-4c359d7f181c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "d52cac1d-3746-5f52-8021-fb4e2f7b7d04",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "49c1b59c-76b1-5163-a8cb-0fa5d54517e4",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "49d90e01-98a0-5a6f-b812-59563186a2a0"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b17f055f-891a-5098-8fa7-4c359d7f181c",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=164102",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

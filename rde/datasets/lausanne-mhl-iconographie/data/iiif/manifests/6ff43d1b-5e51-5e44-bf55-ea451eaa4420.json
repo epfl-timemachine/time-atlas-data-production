@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "6ff43d1b-5e51-5e44-bf55-ea451eaa4420",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  vue intérieure de l'église de la Croix-d'Ouchy"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143066.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "73748d5f-eec8-574d-b2a6-e4418ec5fcad",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 430,
+      "width": 640,
+      "items": [
+        {
+          "id": "068219ba-2b50-59c0-bd70-d09976e8c84a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "938d7d5d-151b-58f1-9fae-201e93db6628",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143066.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 430,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_143066.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "73748d5f-eec8-574d-b2a6-e4418ec5fcad"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7b9e69d9-7217-5297-88ce-601bb12b486a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8f3808eb-43d3-5257-87b4-87ed782f7119",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "50c18da8-9b57-559b-97ab-f50d78f3286a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "73748d5f-eec8-574d-b2a6-e4418ec5fcad",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=142345",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

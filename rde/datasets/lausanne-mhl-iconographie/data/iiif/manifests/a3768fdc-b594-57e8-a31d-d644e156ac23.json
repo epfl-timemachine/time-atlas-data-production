@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a3768fdc-b594-57e8-a31d-d644e156ac23",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Vue sur la rue du Grand-Pont depuis Montbenon, avec au premier plan un groupe de bâtiments situés le long du chemin du Pas-des-Anes (nommé plus tard rue des Moulins). Sur la cathédrale en arrière-plan à droite, la tour lanterne est en chantier."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99234.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "b7e190d2-c379-5a67-b0a1-79894e46d506",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 380,
+      "width": 640,
+      "items": [
+        {
+          "id": "82f70913-c7b8-541f-a6fc-be00baba4b9e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "dbd27e88-9de5-5e06-a446-fe88501b8e07",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99234.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 380,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_99234.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "b7e190d2-c379-5a67-b0a1-79894e46d506"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "7795a418-793f-58ab-94ff-26c20888796a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "c68fa6d0-63b2-5aca-af72-f122f1f19a6c",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "904d8f8d-203c-5367-98a0-72cd4e113ffc"
+                }
+              ],
+              "target": [
+                {
+                  "id": "b7e190d2-c379-5a67-b0a1-79894e46d506",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=99234",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0f6bd1d4-fb19-5c59-8e59-6d5bb04c3ec5",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.2.M, fonds cartes postales)  L'allée des Bacounis, à Ouchy, avec le Château d'Ouchy."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140823.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "5c93f090-173f-550f-be0b-79722d04eee4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.2.M, fonds cartes postales) "
+        ]
+      },
+      "height": 530,
+      "width": 640,
+      "items": [
+        {
+          "id": "c9157c2b-3b9c-5ae0-a800-e99b80d7d181",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "13b5dd40-96fa-568e-ae3b-d8a636d217d3",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140823.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 530,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_140823.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "5c93f090-173f-550f-be0b-79722d04eee4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b2ae74b7-52c0-5b39-a194-dade0b375f4b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "7e90e821-5c24-501e-94e5-5fda98080710",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.2.M, fonds cartes postales) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "84dea01a-b13d-5ec4-bf63-71f7d2cbc955"
+                }
+              ],
+              "target": [
+                {
+                  "id": "5c93f090-173f-550f-be0b-79722d04eee4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=140102",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

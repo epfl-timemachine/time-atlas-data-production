@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "25ebcefb-479f-5d59-a977-aa796a9f7776",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(P.1.A, fonds topographie lausannoise)  Ferme au n°77 de la rue du Maupas"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104848.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "813c79d6-4989-5f64-a71f-0eeb467bc4e9",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(P.1.A, fonds topographie lausannoise) "
+        ]
+      },
+      "height": 514,
+      "width": 640,
+      "items": [
+        {
+          "id": "6e78c6c2-1357-5e21-887a-d78612d9f224",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9599104c-142f-512b-be35-d16f0f9dfb34",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104848.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 514,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_104848.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "813c79d6-4989-5f64-a71f-0eeb467bc4e9"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "e3302a3a-6dda-5703-9205-c49a2e11a335",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "721db016-71fd-52bd-8cf0-9c08445ec082",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(P.1.A, fonds topographie lausannoise) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "94ecb5a2-d799-55d4-98b0-6f3405898787"
+                }
+              ],
+              "target": [
+                {
+                  "id": "813c79d6-4989-5f64-a71f-0eeb467bc4e9",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=104848",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

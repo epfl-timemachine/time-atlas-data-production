@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "240a0f55-989e-55f7-8314-e6dfa4f4a10c",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Panorama composé de cinq photographies documentant la campagne Le Désert."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167024.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "417d96ff-0aa9-5c4f-97d1-f316d5e583c4",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 110,
+      "width": 640,
+      "items": [
+        {
+          "id": "7529ab46-485a-55c4-8709-de63ee50503c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "857dfd32-fbba-5830-a294-74fced183ee9",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167024.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 110,
+                "width": 640,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167024.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "417d96ff-0aa9-5c4f-97d1-f316d5e583c4"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "276777dd-e8ee-5d16-a71d-41ccca496703",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bc0a4c24-3c55-53f7-84c7-4bbc21d2b904",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3e3dd3a4-b19f-52c1-8fab-a4a20c038cd7"
+                }
+              ],
+              "target": [
+                {
+                  "id": "417d96ff-0aa9-5c4f-97d1-f316d5e583c4",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166281",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

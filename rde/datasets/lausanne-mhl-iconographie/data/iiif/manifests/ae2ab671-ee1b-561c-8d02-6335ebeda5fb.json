@@ -1,0 +1,92 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ae2ab671-ee1b-561c-8d02-6335ebeda5fb",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "(vues anciennes alphabétiques)  Vue sur la Cathédrale depuis la rue Pierre-Viret."
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167127.jpg/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "092c783e-e68b-5d6d-916f-bd17b87113ed",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "(vues anciennes alphabétiques) "
+        ]
+      },
+      "height": 640,
+      "width": 540,
+      "items": [
+        {
+          "id": "92211e8e-eded-5258-801b-68bb0f536fac",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "1d3f0442-1cc9-5d58-88e4-2141d1a54792",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167127.jpg/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 640,
+                "width": 540,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fmhl_iconographie%2Fimage_167127.jpg",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "092c783e-e68b-5d6d-916f-bd17b87113ed"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b776a9ef-9544-5318-b272-38c041d47f2f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e057dcfd-92d2-5487-8f62-275b5123a05f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "(vues anciennes alphabétiques) "
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "3372ba8c-e51b-5f29-a228-33bcdca37a64"
+                }
+              ],
+              "target": [
+                {
+                  "id": "092c783e-e68b-5d6d-916f-bd17b87113ed",
+                  "type": "Canvas"
+                },
+                {
+                  "id": "https://museris.lausanne.ch/SGCM/Consultation.aspx?id=166384",
+                  "type": "ExternalResource"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
