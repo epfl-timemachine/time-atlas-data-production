@@ -244,7 +244,7 @@ for g, group_df in df_pages.groupby(['volume_number', 'volume']):
     volume_name = g[1]
     volume_title = f'{volume_number}-{volume_name}'
     cote = volume_number_to_cote.get(str(volume_number), f'"Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia, b. {volume_number}')
-    man_label = {"it": cote, "en": cote}
+    man_label = {"it": [cote], "fr": [cote], "en": [cote]}
     manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'manifest_{DS_SLUG}_{volume_title}'))
     
     for i, x in group_df.iterrows():
@@ -361,9 +361,9 @@ for manifest_uid, (man_label,_) in collection.items():
         data = df_pages[df_pages['manifest_uid'] == manifest_uid].copy()
         json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, man_label, 'it', data['page_obj'].tolist(), structures[manifest_uid]), f, indent=2, ensure_ascii=False)
 
-coll_mulilingual_label = {'en': ["Venice's civil registry from 1740"],
-  'fr': ['Registre civil de Venise en 1740'], 
-  'it': ['Catastici di Venezia 1740']
+coll_mulilingual_label = {'en': ["Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia"],
+  'fr': ['Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia'], 
+  'it': ['Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia']
 }
 
 with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:

@@ -96,9 +96,9 @@ df_imgs['canvas_id'] = df_imgs['page_obj'].apply(lambda x: x['id'])
 
 #3. the collection of manifests
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
-collection_label = {"en": ['Napoleonic cadaster of 1808'],
-                  "fr": ['Cadastre napoléonien de 1808'],
-                    "it": ['Catasto napoleonico del 1808']
+collection_label = {"en": ['Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni'],
+                  "fr": ['Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni'],
+                    "it": ['Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni']
                     }
 with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, collection), f, indent=2, ensure_ascii=False)
