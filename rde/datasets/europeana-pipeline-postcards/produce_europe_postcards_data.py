@@ -194,6 +194,12 @@ df['start_time'], df['end_time']= zip(*df['date'].apply(format_single_date_elem)
 tqdm.pandas(desc="Generating hr uuid")
 df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['record_id']), axis=1)
 
+remove_ids = [
+    'c9709bed-7a79-580a-acf3-f1fb3f521d1c', # that portugal one who ended up everywhere in englsih countries
+    '49ffe077-eb9e-5866-a422-9a2f11c12e33' # the Rome one. 
+]
+df = df[~df['hr_uuid'].isin(remove_ids)]
+
 def get_all_coordinates_from_row(row):
     coords = []
     if isinstance(row['landmarks_coordinates'], list):
@@ -228,7 +234,7 @@ gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'paris_postcards_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'europeana_postcards_obs', RDE.OBS.value)
 
 df = df.merge(df_wh, left_on='filename', right_on='filename', how='left')
 
@@ -273,13 +279,14 @@ remove_cols_from_hr = [
     'google_coordinates', # used for observation/PoIs placements
     'landmarks_coordinates', # used for observation/PoIs placements
     'filename', # for locating the files.
-    'record_id', # europeana internal id
+    # 'record_id', # europeana internal id
     'coordinates',
     "width",
     "height",
     "media_type",
     "image_fp"
 ]
+
 
 df_hr = df.copy().drop(columns=remove_cols_from_hr)
 
@@ -300,7 +307,7 @@ recs = [produce_hr_obj(r.hr_uuid,\
                    ) \
                    for _, r in df_hr.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'paris_postcards_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'europeana_postcards_hrs', RDE.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 
@@ -342,4 +349,4 @@ ds = produce_dataset_obj(
     publish_obj=(CONF['doi'], CONF['github_link'])
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'paris_postcards_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'europeana_postcards_dataset', RDE.DATASET.value, is_dataset_obj=True)
