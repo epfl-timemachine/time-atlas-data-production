@@ -10,18 +10,38 @@
             "en": ["1888 - Renovated cadastre"],
             "it": ["1888 - Catasto rinnovato"]
         },
-        "description": {
-            "en": ["Extract from the State Archive of Vaud. Semi-automated transcription from the renovated land registry and cadastral maps from around 1888. The dataset contains parcel identifiers, ownership, toponyms, and geolocation. Information geolocated by machine learning algorithms. Semi-automatic checking. Dataset created at EPFL."],
-            "fr": ["Extrait de l'Archives de l'Etat de Vaud. Transcription semi-automatique du cadastre rénové et des cartes cadastrales d'environ 1888. Le jeu de données contient des identifiants de parcelles, des propriétaires, des toponymes et une géolocalisation. Informations géolocalisées par des algorithmes d'apprentissage automatique. Vérification semi-automatique. Jeu de données créé à l'EPFL."],
-            "it": ["Estrazione dall'Archivio di Stato di Vaud. Trascrizione semi-automatica del catasto rinnovato e delle mappe catastali del 1888. Il dataset contiene identificatori di particelle, proprietà, toponimi e geolocalizzazione. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Controllo semi-automatico. Dataset creato presso l'EPFL."]
+        "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                    "en": ["Extract from the State Archive of Vaud. Semi-automated transcription from the renovated land registry and cadastral maps from around 1888. The dataset contains parcel identifiers, ownership, toponyms, and geolocation. Information geolocated by machine learning algorithms. Semi-automatic checking. Dataset created at EPFL."],
+                    "fr": ["Extrait de l'Archives de l'Etat de Vaud. Transcription semi-automatique du cadastre rénové et des cartes cadastrales d'environ 1888. Le jeu de données contient des identifiants de parcelles, des propriétaires, des toponymes et une géolocalisation. Informations géolocalisées par des algorithmes d'apprentissage automatique. Vérification semi-automatique. Jeu de données créé à l'EPFL."],
+                    "it": ["Estrazione dall'Archivio di Stato di Vaud. Trascrizione semi-automatica del catasto rinnovato e delle mappe catastali del 1888. Il dataset contiene identificatori di particelle, proprietà, toponimi e geolocalizzazione. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Controllo semi-automatico. Dataset creato presso l'EPFL."],
+                    "de": ["Auszug aus dem Staatsarchiv Waadt. Semi-automatisierte Transkription des renovierten Grundbuchs und der Katasterkarten von etwa 1888. Der Datensatz enthält Parzellenkennungen, Eigentümer, Toponyme und Geolokalisierung. Informationen, die durch maschinelle Lernalgorithmen geolokalisiert wurden. Semi-automatische Überprüfung. Datensatz erstellt an der EPFL."]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"],
+                    "de": ["Paradata"]
+                },
+                "value": {
+                     "en": ["The textual data from the register was manually transcribed, then semi-automatically cleaned and normalized by various researchers. The maps were vetcorized into geometries through computer vision techniques and then manually corrected and expanded."],
+                    "fr": ["Les données textuelles du registre ont été manuellement transcrites, puis nettoyées et normalisées semi-automatiquement par divers chercheurs. Les cartes ont été vectorisées en géométries grâce à des techniques de vision par ordinateur, puis corrigées et étendues manuellement."],    
+                    "it": ["I dati testuali del registro sono stati trascritti manualmente, quindi puliti e normalizzati semi-automaticamente da vari ricercatori. Le mappe sono state vettorializzate in geometrie attraverso tecniche di visione artificiale e quindi corrette ed espandere"],
+                    "de": ["Die textuellen Daten aus dem Register wurden manuell von verschiedenen Forschern transkribiert, dann semi-automatisch bereinigt und normalisiert. Die Karten wurden durch Techniken der Computer Vision in Geometrien umgewandelt und anschließend manuell korrigiert und erweitert."]
+                }
+            }
         },
-        "paradata": {
-            "en": ["The textual data from the register was manually transcribed, then semi-automatically cleaned and normalized by various researchers. The maps were vetcorized into geometries through computer vision techniques and then manually corrected and expanded."],
-            "fr": ["Les données textuelles du registre ont été manuellement transcrites, puis nettoyées et normalisées semi-automatiquement par divers chercheurs. Les cartes ont été vectorisées en géométries grâce à des techniques de vision par ordinateur, puis corrigées et étendues manuellement."],    
-            "it": ["I dati testuali del registro sono stati trascritti manualmente, quindi puliti e normalizzati semi-automaticamente da vari ricercatori. Le mappe sono state vettorializzate in geometrie attraverso tecniche di visione artificiale e quindi corrette ed espandere"]
-        },
-        "doi": null,
-        "github_link": "https://github.com/epfl-timemachine/lausanne-1888-cadastre-renove",
         "indexed": [
             "owner",
             "Noms locaux",

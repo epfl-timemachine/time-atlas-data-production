@@ -206,6 +206,7 @@ cols_of_interest_ordered = [
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,
     df[cols_of_interest_ordered],
+    CONF["dataset_metadata_config"],
     CONF["indexed"],
     CONF["short_display"],
     CONF["hidden"], 
@@ -222,14 +223,11 @@ ds = produce_dataset_obj(
     DS_SLUG,
     '1.0',
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [collection_manifest_uid],
     (min_time, max_time),
     0,
     ds_conf,
-    [venice_area_uuid],
-    publish_obj=(None, CONF['github_link']),
+    [venice_area_uuid]
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cini_dataset', RDE.DATASET.value, is_dataset_obj=True)

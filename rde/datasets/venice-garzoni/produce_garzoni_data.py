@@ -341,15 +341,17 @@ order = ['Apprentice',
 
 
 ds_conf = produce_configuration_file_from_metadata_df(
-    VTM_UUID5_NS, df_flat[order],
-     CONF["indexed"],
-     CONF["short_display"],
-     CONF["hidden"], 
-     dictionaries,
-     CONF['tagged_fields'],
-     CONF["labels"],
-     CONF["main_label"],
-     CONF["sub_label"]
+    VTM_UUID5_NS,
+    df_flat[order],
+    CONF['dataset_metadata_config'],
+    CONF["indexed"],
+    CONF["short_display"],
+    CONF["hidden"], 
+    dictionaries,
+    CONF['tagged_fields'],
+    CONF["labels"],
+    CONF["main_label"],
+    CONF["sub_label"]
 )
 
 ds = produce_dataset_obj(
@@ -357,14 +359,11 @@ ds = produce_dataset_obj(
     DS_SLUG,
     "1.0",
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [collection_manifest_uid],
     TR_OBJ,
     3,
     ds_conf,
-    [venice_area_uuid],
-    (CONF['doi'], CONF['github_link']),
+    [venice_area_uuid]
 )
 
 save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], f'garzoni_dataset', RDE.DATASET.value, is_dataset_obj=True)

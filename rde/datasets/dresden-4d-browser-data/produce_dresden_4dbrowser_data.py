@@ -199,6 +199,7 @@ order = labels.keys()
 ds_conf = produce_configuration_file_from_metadata_df(
     TM_UUID5_NS,
     filtered_df[order],
+    CONF['dataset_metadata_config'],
     CONF['indexed'],
     CONF['short_display'], 
     CONF['hidden'],
@@ -216,14 +217,11 @@ ds = produce_dataset_obj(
     DS_SLUG,
     "1.0",
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [collection_uuid],
     (min_date, max_date),
     0,
     ds_conf,
     [dresden_area_uuid],
-    publish_obj=(CONF['doi'], CONF['github_link'])
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'dresden_dataset', RDE.DATASET.value, is_dataset_obj=True)

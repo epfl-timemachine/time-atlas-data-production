@@ -11,17 +11,92 @@
             "fr": ["1740 - Données du recensement"]
         },
         "description": {
-            "en": ["Manual transcription of the census register of 1740 (Serie's index: https://asve.arianna4.cloud/patrimonio/3baac921-d821-4ca7-ae2e-5fed7b757d18/004-sotto-serie-catastici-di-venezia). The registers contain information regarding the owner, tenants, rental income, function of use, geolocation toponymy. Information geolocated manually through historical-archival heuristics. Semi-automatic checking. Dataset created at EPFL."], 
-            "it": ["Trascrizione manuale del reg distro del censimento del 1740 (https://asve.arianna4.cloud/patrimonio/3baac921-d821-4ca7-ae2e-5fed7b757d18/004-sotto-serie-catastici-di-venezia). I registri contengono informazioni riguardanti il proprietario, gli inquilini, il reddito da locazione, la funzione d'uso, la geolocalizzazione della toponomastica. Informazioni geolocalizzate manualmente attraverso indagini storico-archivistiche. Controllo semi-automatico. Dataset creato presso l'EPFL."],
-            "fr": ["Transcription manuelle du registre de recensement de 1740 (Indice de la série: https://asve.arianna4.cloud/patrimonio/3baac921-d821-4ca7-ae2e-5fed7b757d18/004-sotto-serie-catastici-di-venezia). Les registres contiennent des informations concernant le propriétaire, les locataires, le revenu locatif, la fonction d'utilisation, la toponymie de géolocalisation. Informations géolocalisées manuellement par le biais d'heuristiques historiques et archivistiques. Vérification semi-automatique. Jeu de données créé à l'EPFL."]
+            "en": ["Manual transcription of the census register of 1740. The registers contain information regarding the owner, tenants, rental income, function of use, geolocation toponymy. Information geolocated manually through historical-archival heuristics. Semi-automatic checking. Dataset created at EPFL."], 
+            "it": ["Trascrizione manuale del reg distro del censimento del 1740. I registri contengono informazioni riguardanti il proprietario, gli inquilini, il reddito da locazione, la funzione d'uso, la geolocalizzazione della toponomastica. Informazioni geolocalizzate manualmente attraverso indagini storico-archivistiche. Controllo semi-automatico. Dataset creato presso l'EPFL."],
+            "fr": ["Transcription manuelle du registre de recensement de 1740. Les registres contiennent des informations concernant le propriétaire, les locataires, le revenu locatif, la fonction d'utilisation, la toponymie de géolocalisation. Informations géolocalisées manuellement par le biais d'heuristiques historiques et archivistiques. Vérification semi-automatique. Jeu de données créé à l'EPFL."]
         },
         "paradata": {
             "en": ["The textual data from the registry was manually transcribed, then semi-automatically cleaned and normalized by various researchers. Analysis of the place name and adress written in the registry was conducted in order to geolocalize each entry of the cadaster on the contemporary map."],
             "fr": ["Les données textuelles du registre ont été transcrites manuellement, puis nettoyées et normalisées semi-automatiquement par divers chercheurs. Une analyse des noms de lieux et des adresses écrits dans le registre a été menée afin de géolocaliser chaque entrée du cadastre sur la carte contemporaine."],
             "it": ["I dati testuali del registro sono stati trascritti manualmente, quindi puliti e normalizzati semi-automaticamente da vari ricercatori. È stata condotta un'analisi del nome del luogo e dell'indirizzo scritti nel registro al fine di geolocalizzare ciascuna voce del catasto sulla mappa contemporanea."]
         },
-        "doi": null,
-        "github_link": "https://github.com/epfl-timemachine/venice-1740-landregister",
+        "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                    "en": ["Semi-automated transcription from the Napoleonic land registry and cadastral maps. The dataset contains parcel identifiers, ownership, land use, toponyms, geolocation, and area. Information geolocated by machine learning algorithms. Semi-automatic checking. Dataset created at EPFL."],
+                    "it": ["Trascrizione semi-automatica dal catasto fondiario napoleonico e dalle mappe catastali. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, toponimi, geolocalizzazione e area. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Controllo semi-automatico. Dataset creato presso l'EPFL."],
+                    "fr": ["Transcription semi-automatique du cadastre foncier napoléonien et des cartes cadastrales. Le jeu de données contient des identifiants de parcelles, des propriétés, un usage des terres, des toponymes, une géolocalisation et une superficie. Informations géolocalisées par des algorithmes d'apprentissage automatique. Vérification semi-automatique. Jeu de données créé à l'EPFL."],
+                    "de": ["Semi-automatisierte Transkription aus dem napoleonischen Grundbuch und den Katasterkarten. Der Datensatz enthält Parzellenkennungen, Eigentum, Landnutzung, Toponyme, Geolokalisierung und Fläche. Informationen, die durch maschinelle Lernalgorithmen geolokalisiert wurden. Semi-automatische Überprüfung. Datensatz erstellt an der EPFL."]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"],
+                    "de": ["Paradata"]
+                },
+                "value": {
+                    "en": ["The textual data from the register was manually transcribed, then semi-automatically cleaned and normalized by various researchers. The maps were vetcorized into geometries through computer vision techniques and then manually corrected and expanded."],
+                    "fr": ["Les données textuelles du registre ont été manuellement transcrites, puis nettoyées et normalisées semi-automatiquement par divers chercheurs. Les cartes ont été vectorisées en géométries grâce à des techniques de vision par ordinateur, puis corrigées et étendues manuellement."],    
+                    "it": ["I dati testuali del registro sono stati trascritti manualmente, quindi puliti e normalizzati semi-automaticamente da vari ricercatori. Le mappe sono state vettorializzate in geometrie attraverso tecniche di visione artificiale e quindi corrette ed espandere"],
+                    "de": ["Die textuellen Daten aus dem Register wurden manuell von verschiedenen Forschern transkribiert, dann semi-automatisch bereinigt und normalisiert. Die Karten wurden durch Techniken der Computer Vision in Geometrien umgewandelt und anschließend manuell korrigiert und erweitert."]
+                }
+            },
+            "archival reference": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Archival reference"],
+                    "fr": ["Côte d'archive"],
+                    "it": ["Riferimento archivistico"],
+                    "de": ["Archivreferenz"]
+                },
+                "value": {
+                    "en": ["Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia"],
+                    "fr": ["Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia"],
+                    "it": ["Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia"],
+                    "de": ["Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia"]
+                }
+            },
+            "url": {
+                "type": "URL",
+                "display_label": {
+                    "en": ["Archival index"],
+                    "fr": ["Indice d'archive"],
+                    "it": ["Indice archivistico"],
+                    "de": ["Archivindex"]
+                },
+                "value": {
+                    "en": ["https://asve.arianna4.cloud/patrimonio/3baac921-d821-4ca7-ae2e-5fed7b757d18/004-sotto-serie-catastici-di-venezia"],
+                    "fr": ["https://asve.arianna4.cloud/patrimonio/3baac921-d821-4ca7-ae2e-5fed7b757d18/004-sotto-serie-catastici-di-venezia"],
+                    "it": ["https://asve.arianna4.cloud/patrimonio/3baac921-d821-4ca7-ae2e-5fed7b757d18/004-sotto-serie-catastici-di-venezia"],
+                    "de": ["https://asve.arianna4.cloud/patrimonio/3baac921-d821-4ca7-ae2e-5fed7b757d18/004-sotto-serie-catastici-di-venezia"]
+                }
+            },
+            "github": {
+                "type": "URL",
+                "display_label": {
+                    "en": ["GitHub link"],
+                    "fr": ["Lien GitHub"],
+                    "it": ["GitHub"],
+                    "de": ["GitHub-Link"]
+                },
+                "value": {
+                    "en": ["https://github.com/epfl-timemachine/venice-1740-landregister"],
+                    "fr": ["https://github.com/epfl-timemachine/venice-1740-landregister"],
+                    "it": ["https://github.com/epfl-timemachine/venice-1740-landregister"],
+                    "de": ["https://github.com/epfl-timemachine/venice-1740-landregister"]
+                }
+            }
+        },
         "indexed": [
             "owner_name",
             "PP_Owner_FirstName",

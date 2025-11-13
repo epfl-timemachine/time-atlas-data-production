@@ -8,20 +8,41 @@
         "name": {
             "en": ["Digital Layer - Street Network of 1808 "],
             "it": ["Layer digitale - Rete stradale del 1808"],
-            "fr": ["Couche numérique - Réseau routier de 1808"]
+            "fr": ["Couche numérique - Réseau routier de 1808"],
+            "de": ["Digitale Ebene - Straßennetz von 1808"]
         },
-        "description": {
-            "en": ["Vector data extracted from the georeferenced facsimile maps of the Napoleonic cadastre. All road segments are represented as line features, with associated toponyms captured from the original map.  Information geolocated manually through historical-archival heuristics. Dataset created at EPFL"],
-            "it": ["Dati vettoriali estratti dalle mappe facsimili georeferenziate del catasto napoleonico. Tutti i segmenti stradali sono rappresentati come caratteristiche lineari, con toponimi associati catturati dalla mappa originale. Informazioni geolocalizzate manualmente attraverso indagini storico-archivistiche. Dataset creato presso l'EPFL"],
-            "fr": ["Données vectorielles extraites des cartes facsimilées géoréférencées du cadastre napoléonien. Tous les segments routiers sont représentés comme des caractéristiques linéaires, avec des toponymes associés capturés sur la carte originale. Informations géolocalisées manuellement par le biais d'heuristiques historiques et archivistiques. Jeu de données créé à l'EPFL"]
+        "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                    "en": ["Vector data extracted from the georeferenced facsimile maps of the Napoleonic cadastre. All road segments are represented as line features, with associated toponyms captured from the original map.  Information geolocated manually through historical-archival heuristics. Dataset created at EPFL"],
+                    "it": ["Dati vettoriali estratti dalle mappe facsimili georeferenziate del catasto napoleonico. Tutti i segmenti stradali sono rappresentati come caratteristiche lineari, con toponimi associati catturati dalla mappa originale. Informazioni geolocalizzate manualmente attraverso indagini storico-archivistiche. Dataset creato presso l'EPFL"],
+                    "fr": ["Données vectorielles extraites des cartes facsimilées géoréférencées du cadastre napoléonien. Tous les segments routiers sont représentés comme des caractéristiques linéaires, avec des toponymes associés capturés sur la carte originale. Informations géolocalisées manuellement par le biais d'heuristiques historiques et archivistiques. Jeu de données créé à l'EPFL"],
+                    "de": ["Vektordaten, die aus den georeferenzierten Faksimile-Karten des napoleonischen Katasteramts extrahiert wurden. Alle Straßenabschnitte sind als Linienmerkmale dargestellt, mit zugehörigen Toponymen, die von der Originalkarte erfasst wurden. Informationen wurden manuell durch historische und archivische Heuristiken geolokalisiert. Datensatz erstellt an der EPFL."]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"],
+                    "de": ["Paradata"]
+                },
+                "value": {
+                    "en": ["Both the geometries and toponyms were manually extracted from the maps of the Somarioni"],
+                    "fr": ["Les géométries et les toponymes ont été extraits manuellement des cartes des Somarioni"],
+                    "it": ["Le geometrie e i toponimi sono stati estratti manualmente dalle mappe dei Somarioni"],
+                    "de": ["Sowohl die Geometrien als auch die Toponyme wurden manuell aus den Karten der Somarioni extrahiert."]
+                }
+            }
         },
-        "paradata": {
-            "en": ["Both the geometries and toponyms were manually extracted from the maps of the Somarioni"],
-            "fr": ["Les géométries et les toponymes ont été extraits manuellement des cartes des Somarioni"],
-            "it": ["Le geometrie e i toponimi sono stati estratti manualmente dalle mappe dei Somarioni"]
-        },
-        "doi": null,
-        "github_link": "https://github.com/epfl-timemachine/venice-1808-sommarioni",
         "indexed": [
             "NAME"
         ],
@@ -36,8 +57,8 @@
             "NAME": "PLACE"
         },
         "labels": {
-            "NAME": {"en": ["Name"], "fr": ["Nom"], "it": ["Nome"]},
-            "length": {"en": ["length"], "fr": ["longueur"], "it": ["lunghezza"]}
+            "NAME": {"en": ["Name"], "fr": ["Nom"], "it": ["Nome"], "de": ["Name"]},
+            "length": {"en": ["length"], "fr": ["longueur"], "it": ["lunghezza"], "de": ["Länge"]}
         }
     }
 }

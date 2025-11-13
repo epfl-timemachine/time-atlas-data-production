@@ -11,20 +11,37 @@
             "de": ["Postkarten aus Europeana"],
             "it": ["Cartoline di Europeana"]
         },
-        "description": {
-            "en": ["Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."],
-            "fr": ["Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."],
-            "de": ["Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."],
-            "it": ["Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."]
+        "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                    "en": ["Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."],
+                    "fr": ["Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."],
+                    "de": ["Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."],
+                    "it": ["Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"]
+                },
+                "value": {
+                    "en": ["Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."],
+                    "fr": ["Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."],
+                    "de": ["Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."],
+                    "it": ["Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."]
+                }
+            }
         },
-        "paradata": {
-            "en": ["Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."],
-            "fr": ["Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."],
-            "de": ["Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."],
-            "it": ["Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."]
-        },
-        "doi": null,
-        "github_link": null,
         "indexed": [
             "final_place",
             "final_city",
