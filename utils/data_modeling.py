@@ -226,35 +226,26 @@ def produce_dataset_obj(
     slug: str,
     version: str,
     name: MultiLingualDesc,
-    description: MultiLingualDesc,
-    paradata: MultiLingualDesc,
     sources: list[str],
     time_range: tuple[str, str],
     transribed_pages_amount: int,
     configuration: dict,
     areas_ids: list[str],
-    publish_obj: tuple[str, str] = (None, None),
-    archival_reference: str = None
     ) -> dict:  
-    return {  
+    return {
         "uuid": uuid,
         "slug": slug,
         "version": version,
         "creation_time": now_ts(),
         "name": name,
         "rde_type": RDE.DATASET.value,
-        "publish": {"doi": publish_obj[0], "url": publish_obj[1]},
-        "description": description,
-        "paradata": paradata,
         "sources": sources,
         "start_time": time_range[0],
         "end_time": time_range[1],
         "transcribed_pages_amount": transribed_pages_amount,
         "is_operationally_described_by": configuration,
         "falls_within": areas_ids,
-        "archival_reference": archival_reference
     }
-
 
 def produce_map_obj(
     uuid: str,
@@ -535,6 +526,7 @@ def is_empty_or_null(x):
 def produce_configuration_file_from_metadata_df(
         uuid_ns: uuid.UUID,
         df: pd.DataFrame,
+        dataset_metadata_config: dict,
         indexable_array: list[str],
         short_display: list[str],
         hidden: list[str],
@@ -564,6 +556,9 @@ def produce_configuration_file_from_metadata_df(
         the configuration file as a dictionary
     '''
     base = {
+        "dataset_config": {
+            "metadata_field_config": []
+        },
         "hr_config": {
             "main_label": "",
             "sub_label": "",
@@ -583,7 +578,25 @@ def produce_configuration_file_from_metadata_df(
 
     if external_source:
         base['hr_config']['external_source'] = True
+    
+    ds_md_c = []
+    base_dmc = {
+        "id": "",
+        "type": None,
+        "display_label": None,
+        "value": None
+    }
+    for i, (k, v) in enumerate(dataset_metadata_config.items()):
+        curr_dmc = base_dmc.copy()
+        curr_dmc['id'] = k
+        curr_dmc['type'] = v['type']
+        curr_dmc['display_label'] = v['display_label']
+        curr_dmc['value'] = v['value']
+        curr_dmc['uuid'] = str(uuid.uuid5(uuid_ns, f'dataset_md_config_{k}'))
+        curr_dmc['display_order'] = i + 1
+        ds_md_c.append(curr_dmc)
 
+    base['dataset_config']['metadata_field_config'] = ds_md_c
     base["uuid"] = str(uuid.uuid5(uuid_ns, 'dataset_configuration'))
     field_template = {
         "id": "",

@@ -262,7 +262,9 @@ order = CONF['labels'].keys()
 
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS, 
-    filtered_df[order], CONF["indexed"], 
+    filtered_df[order], 
+    CONF['dataset_metadata_config'],
+    CONF["indexed"], 
     CONF["short_display"],
     CONF["hidden"], 
     {}, 
@@ -277,15 +279,11 @@ ds = produce_dataset_obj(
     DS_SLUG,
     '1.1',
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [collection_manifest_uid],
     TR_OBJ,
     len(df_iiif_links['canvas_id'].unique()),
     ds_conf,
-    [venice_area_uuid],
-    publish_obj=(CONF['doi'], CONF['github_link']),
-    archival_reference='Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni'
+    [venice_area_uuid]
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'sommarioni_dataset', RDE.DATASET.value, is_dataset_obj=True)
