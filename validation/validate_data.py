@@ -108,7 +108,7 @@ if __name__ == '__main__':
                 print(f'Validating {fp}')
                 validate_file(fp, validator)
 
-        AREA_ROOT = '../rde/areas'
+        AREA_ROOT = '../rde/areas/data'
         for a in list(Path(AREA_ROOT).rglob('*.json')):
             print(f'Validating {a}')
             validate_file(a, validator)

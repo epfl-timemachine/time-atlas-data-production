@@ -18,7 +18,7 @@ castello_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, castello_slug))
 basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 combatti_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -76,7 +76,7 @@ map_obj = produce_map_obj(MAP_UUID,
                               "1.0",
                               tuple_TR,
                               layer_ids,
-                              areas_id=[venice_area_uuid]
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [map_obj], '1846_combatti_map', RDE.MAP.value)

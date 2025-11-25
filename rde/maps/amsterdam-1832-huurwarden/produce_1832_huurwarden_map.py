@@ -14,7 +14,7 @@ MAP_SLUG = "amsterdam-1832-huurwarden-map"
 MAP_UUID = str(uuid.uuid5(LMAP_UUID5_NS, MAP_SLUG))
 vector_layer_slug = f"{MAP_SLUG}-vector-layer"
 vector_layer_uuid = str(uuid.uuid5(AMAP_UUID5_NS, vector_layer_slug))
-amsterdam_area_uuid = get_single_object_uuid('../../areas/amsterdam-area.json')
+amsterdam_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-amsterdam-area', 'country-kingdom-of-the-netherlands-area'])
 zoom_lvl= [11,21]
 
 layer_name = {"en": ["Cadastral vectors of 1888"], "fr": ["Vecteurs cadastraux de 1832"], "it": ["Vettori catastali del 1832"]}
@@ -52,7 +52,7 @@ map_1888 = produce_map_obj(
     "1.0",
     TR_OBJ,
     [vector_layer_uuid],
-    areas_id=[amsterdam_area_uuid]
+    areas_id=amsterdam_area_uuids
 )
 
 save_data_file_if_different('', 'map', [map_1888], 'amsterdam_huurwarden_1832_map', RDE.MAP.value)

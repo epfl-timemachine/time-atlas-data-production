@@ -15,7 +15,7 @@ MAP_UUID = str(uuid.uuid5(LMAP_UUID5_NS, MAP_SLUG))
 vector_layer_slug = f"{MAP_SLUG}-vector-layer"
 vector_layer_uuid = str(uuid.uuid5(LMAP_UUID5_NS, vector_layer_slug))
 
-lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
+lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-lausanne-area', 'country-switzerland-area'])
 # the list(map(list)) thing makes it so the result of the function compoisition is a list of list instead of tuples (prevents an issue when saving the file to json format)
 zoom_lvl= [11,21]
 
@@ -54,7 +54,7 @@ map_1888 = produce_map_obj(
     "1.0",
     TR_OBJ,
     [vector_layer_uuid],
-    areas_id=[lausanne_area_uuid]
+    areas_id=lausanne_area_uuids
 )
 
 save_data_file_if_different('', 'map', [map_1888], 'lausanne_cadastre_renove_1888_map', RDE.MAP.value)

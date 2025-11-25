@@ -26,7 +26,7 @@ VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
-amsterdam_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+amsterdam_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
@@ -152,7 +152,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
-    [amsterdam_area_uuid]
+    amsterdam_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'amsterdam_1832_huurwarden_dataset', RDE.DATASET.value, is_dataset_obj=True)

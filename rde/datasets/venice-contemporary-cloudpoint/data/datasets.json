@@ -3,7 +3,7 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-11-13T21:47:36.122311",
+ "creation_time": "2025-11-25T14:44:43.503912",
  "rde_objects": [
   {
    "uuid": "93d47eb8-f298-59c4-ab1d-9e6a217788f2",
@@ -144,61 +144,17 @@
      "external_source": false,
      "metadata_field_config": [
       {
-       "id": "typology",
+       "id": "style",
        "type": "STRING",
        "display_label": {
         "en": [
-         "Typology"
+         "Style"
         ],
         "it": [
-         "Tipologia"
+         "Stile"
         ],
         "fr": [
-         "Typologie"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 1,
-       "uuid": "15cecd40-3b83-59b6-8f25-eb5bdbaf1530"
-      },
-      {
-       "id": "aulic_name",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Aulic name"
-        ],
-        "it": [
-         "Nome aulico"
-        ],
-        "fr": [
-         "Nom aulique"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "short_display": true,
-       "hidden": false,
-       "tag": "PLACE",
-       "display_order": 2,
-       "uuid": "b56d3ac1-2f9e-54a1-a3cc-30bb7a394ca9"
-      },
-      {
-       "id": "area",
-       "type": "FLOAT",
-       "display_label": {
-        "en": [
-         "Area [m2]"
-        ],
-        "it": [
-         "Area [m2]"
-        ],
-        "fr": [
-         "Aire [m2]"
+         "Style"
         ]
        },
        "nullable": true,
@@ -206,8 +162,8 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 3,
-       "uuid": "ebe489fd-2d86-53e2-b9e6-4cd17dbc3e93"
+       "display_order": 1,
+       "uuid": "66b144e1-80c8-585a-a04d-82a97e6b50c7"
       },
       {
        "id": "EDIFI_ID",
@@ -228,8 +184,30 @@
        "short_display": true,
        "hidden": false,
        "tag": null,
-       "display_order": 4,
+       "display_order": 2,
        "uuid": "d467d2dc-8ad9-5ad3-9078-e924b7e39642"
+      },
+      {
+       "id": "SESTIERE",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "District"
+        ],
+        "it": [
+         "Sestiere"
+        ],
+        "fr": [
+         "Sestiere"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 3,
+       "uuid": "04e882b8-cc39-55d9-9dbb-9f82d8a4a38f"
       },
       {
        "id": "wikidata",
@@ -250,8 +228,30 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 5,
+       "display_order": 4,
        "uuid": "ce781c16-5fc7-5b04-9b2e-2d72ca44afb5"
+      },
+      {
+       "id": "nb_points",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Number of points"
+        ],
+        "it": [
+         "Numero di punti"
+        ],
+        "fr": [
+         "Nombre de points"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 5,
+       "uuid": "50413bf3-af64-5c94-a0d3-d4108c5d8080"
       },
       {
        "id": "volume",
@@ -320,26 +320,26 @@
        "uuid": "4a9466f7-1697-5fa5-b7fd-ca575c9caef9"
       },
       {
-       "id": "style",
+       "id": "typology",
        "type": "STRING",
        "display_label": {
         "en": [
-         "Style"
+         "Typology"
         ],
         "it": [
-         "Stile"
+         "Tipologia"
         ],
         "fr": [
-         "Style"
+         "Typologie"
         ]
        },
        "nullable": true,
-       "indexable": false,
+       "indexable": true,
        "short_display": false,
        "hidden": false,
        "tag": null,
        "display_order": 9,
-       "uuid": "66b144e1-80c8-585a-a04d-82a97e6b50c7"
+       "uuid": "15cecd40-3b83-59b6-8f25-eb5bdbaf1530"
       },
       {
        "id": "max_height",
@@ -364,6 +364,28 @@
        "uuid": "055b5a20-55af-5e3b-a724-4e5bbacbfc30"
       },
       {
+       "id": "area",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Area [m2]"
+        ],
+        "it": [
+         "Area [m2]"
+        ],
+        "fr": [
+         "Aire [m2]"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 11,
+       "uuid": "ebe489fd-2d86-53e2-b9e6-4cd17dbc3e93"
+      },
+      {
        "id": "points_density",
        "type": "FLOAT",
        "display_label": {
@@ -382,52 +404,8 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 11,
-       "uuid": "869090e6-4b8f-5af5-8a8b-89090c1e3891"
-      },
-      {
-       "id": "nb_points",
-       "type": "INTEGER",
-       "display_label": {
-        "en": [
-         "Number of points"
-        ],
-        "it": [
-         "Numero di punti"
-        ],
-        "fr": [
-         "Nombre de points"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
        "display_order": 12,
-       "uuid": "50413bf3-af64-5c94-a0d3-d4108c5d8080"
-      },
-      {
-       "id": "SESTIERE",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "District"
-        ],
-        "it": [
-         "Sestiere"
-        ],
-        "fr": [
-         "Sestiere"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 13,
-       "uuid": "04e882b8-cc39-55d9-9dbb-9f82d8a4a38f"
+       "uuid": "869090e6-4b8f-5af5-8a8b-89090c1e3891"
       },
       {
        "id": "mean_height",
@@ -448,17 +426,40 @@
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 14,
+       "display_order": 13,
        "uuid": "3b57ed71-d464-5132-9ea3-3f38454f7793"
+      },
+      {
+       "id": "aulic_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Aulic name"
+        ],
+        "it": [
+         "Nome aulico"
+        ],
+        "fr": [
+         "Nom aulique"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 14,
+       "uuid": "b56d3ac1-2f9e-54a1-a3cc-30bb7a394ca9"
       }
      ]
     },
     "uuid": "3a0dd461-9926-555f-b52a-4a86613f6100"
    },
    "falls_within": [
-    "620962bb-bb0d-50ed-b534-8903ad265932"
+    "ce22c093-3d47-56b8-bf06-0ab86bda0db4",
+    "ae0fb021-bbb4-5de7-bca2-afddad4b9d17"
    ],
-   "creation_time": "2025-11-13T21:47:36.119582"
+   "creation_time": "2025-11-25T14:44:43.503199"
   }
  ]
 }

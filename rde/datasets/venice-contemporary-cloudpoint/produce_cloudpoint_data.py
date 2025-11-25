@@ -40,7 +40,7 @@ df['start_time'] = min_time
 df['end_time'] = max_time
 DATA_FOLDER = 'data'
 
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 with open('../venice-cini-photographs/edifici_id_to_geom_uuid.json') as f:
     edifici_id_to_geom_uuid = json.load(f)
@@ -244,7 +244,7 @@ ds = produce_dataset_obj(
     (min_time, max_time),
     0,
     ds_conf,
-    [venice_area_uuid]
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cloudpoints_dataset', RDE.DATASET.value, is_dataset_obj=True)

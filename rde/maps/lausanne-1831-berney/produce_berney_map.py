@@ -22,7 +22,7 @@ basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 
 zoom_lvl= [11,21]
 
-lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
+lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-lausanne-area', 'country-switzerland-area'])
 
 cadastre_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -81,7 +81,7 @@ eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID,
                               "1.0",
                               sn_TR,
                               layer_ids,
-                              areas_id=[lausanne_area_uuid]
+                              areas_id=lausanne_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [eighteen_o_eight_map_obj], '1831_berney_map', RDE.MAP.value)

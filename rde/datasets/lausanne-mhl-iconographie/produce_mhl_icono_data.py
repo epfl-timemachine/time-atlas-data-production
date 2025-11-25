@@ -29,7 +29,7 @@ DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 
-lausanne_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 gdf = pd.read_json(list(DATA_SRC_PATH.glob('matched_records.json'))[0])
 gdf['geometry'] = gdf.apply(lambda x: Point(x['longitude'], x['latitude']), axis=1)
@@ -158,7 +158,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
-    [lausanne_area_uuid]
+    lausanne_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'lausanne_mhl_photographs_dataset', RDE.DATASET.value, is_dataset_obj=True)

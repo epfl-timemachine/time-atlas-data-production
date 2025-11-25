@@ -48,6 +48,19 @@ def find_closest_polygon(point: Point, polygon: MultiPolygon) -> Polygon:
             closest_polygon = p
     return closest_polygon
 
+
+def get_area_uuids_from_slugs(area_loc:str, area_slugs: list[str]) -> list[str]:
+    '''
+    Given a list of area slugs, returns the corresponding area uuids from the area file located at area_loc.
+    '''
+    area_loc = [os.path.join(area_loc, f)+'.json' for f in area_slugs]
+    area_uuids = []
+    for fp in area_loc:
+        if not os.path.exists(fp):
+            raise Exception(f'Area file located at {area_loc} does not exist.')
+        area_uuids.append(get_single_object_uuid(fp))
+    return area_uuids
+
 def constraint_point_to_center_of_one_polygon(point: Point, polygon: Union[Polygon, MultiPolygon]) -> Point:
     # if the point is not within the polygon, we move it to the center of the polygon.
     # code to visually test the function constraint_point_to_center_of_one_polygon, left here as debug:
@@ -322,18 +335,17 @@ def produce_layer_obj(
 
 def produce_area_obj(uuid: str,
     name: str,
-    geometry: Polygon,
+    geometry: dict,
     slug: str,
     version: str) -> gpd.GeoDataFrame:
-    gdf = gpd.GeoDataFrame([{
+    return {
         "uuid": uuid,
         "rde_type": RDE.AREA.value,
         "name": name,
         "geometry": geometry,
         "slug": slug,
         "version": version
-     }]).set_geometry('geometry').set_crs(UNIVERSAL_CRS)
-    return [{**f['properties'], **{"geometry": f['geometry']}} for f in geodataframe_to_json(gdf)['features']]
+    }
 
 def make_uuid_from_row_selection(uuid_ns: uuid.UUID, pandas_row:pd.Series, col_sel:list[str], ad_hoc_seed: str = '') -> str: 
     '''
@@ -427,6 +439,8 @@ def save_data_file_if_different(fp:str,
         t_data = [{**f['properties'], **{"geometry": f['geometry']}} for f in t_data]
     elif isinstance(data, list):
         t_data = data
+    elif isinstance(data, dict):
+        t_data = [data]
     else:
         raise ValueError(f'Data type not supported: {type(data)}')
     matching_files = list(map(str, Path(fp).glob("*"+filename_with_ext)))

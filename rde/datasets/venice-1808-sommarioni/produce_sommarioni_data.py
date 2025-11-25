@@ -29,7 +29,7 @@ DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
 MAP_FOLDER = '../../maps/venice-1808-sommarioni/'
 cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'cadaster')
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
@@ -283,7 +283,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     len(df_iiif_links['canvas_id'].unique()),
     ds_conf,
-    [venice_area_uuid]
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'sommarioni_dataset', RDE.DATASET.value, is_dataset_obj=True)

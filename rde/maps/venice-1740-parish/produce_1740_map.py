@@ -15,7 +15,7 @@ MAP_UUID = str(uuid.uuid5(VMAP_UUID5_NS, MAP_SLUG))
 parish_layer_slug = f"{MAP_SLUG}-parish-layer"
 parish_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, parish_layer_slug))
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 zoom_lvl= [11,21]
 layer_name = {"en": ["Parishes of 1740"], "fr": ["Paroisses de 1740"], "it": ["Parrocchie di 1740"]}
@@ -54,7 +54,7 @@ map_1740 = produce_map_obj(
     "1.0",
     TR_OBJ,
     [parish_layer_uuid],
-    areas_id=[venice_area_uuid]
+    areas_id=venice_area_uuids
 )
 
 save_data_file_if_different('', 'map', [map_1740], '1740_map', RDE.MAP.value)

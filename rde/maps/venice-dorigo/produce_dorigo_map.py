@@ -17,7 +17,7 @@ dorigo_zone_slug = f"{MAP_SLUG}-zones"
 zones_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, dorigo_zone_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
  
 contemporary_edifici_layer = produce_layer_obj(zones_layer_uuid, 
                                             dorigo_zone_slug,
@@ -55,7 +55,7 @@ contemporary_map = produce_map_obj(MAP_UUID,
                               "1.0",
                               TR,
                               layer_ids,
-                              areas_id=[venice_area_uuid]
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [contemporary_map], 'dorigo_map', RDE.MAP.value)

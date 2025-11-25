@@ -30,7 +30,7 @@ DS_OBJ = (DS_UUID, DS_SLUG)
 DATA_FOLDER = 'data'
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 MAP_FOLDER = '../../maps/venice-1808-sommarioni/'
 sn_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'street')
 
@@ -115,6 +115,6 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
-    [venice_area_uuid]
+    venice_area_uuids
 )
 save_data_file_if_different(DATA_FOLDER, 'dataset', [ds], f'1808_street_network_dataset', RDE.DATASET.value, is_dataset_obj=True)

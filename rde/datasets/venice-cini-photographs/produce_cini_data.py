@@ -50,7 +50,7 @@ geom_end = datetime_obj_from_int_time(20241231, match_to_end=True)
 gdf_geom = gdf[['geometry', 'EDIFI_ID']].groupby('EDIFI_ID').first().reset_index()
 DATA_FOLDER = 'data'
 
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 # Generating geometries
 gdf_edifici['start_time'] = geom_begin
@@ -227,7 +227,7 @@ ds = produce_dataset_obj(
     (min_time, max_time),
     0,
     ds_conf,
-    [venice_area_uuid]
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cini_dataset', RDE.DATASET.value, is_dataset_obj=True)

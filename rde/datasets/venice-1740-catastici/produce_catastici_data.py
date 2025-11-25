@@ -60,7 +60,7 @@ df['an_rendi'] = df['an_rendi'].replace({"nan": None})
 df['function'] = df['function'].replace({"nan": None})
 df['owner_name'] = df['owner_name'].replace({"nan": None})
 df['place'] = df['place'].replace({"nan": None})
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 gdf = gpd.GeoDataFrame(df).set_geometry('geometry')
 gdf = gdf.set_crs('EPSG:32633')
 gdf = gdf.to_crs('EPSG:4326')
@@ -400,7 +400,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     len(df_iiif_links['canvas_id'].unique()),
     ds_conf,
-    [venice_area_uuid]
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], 'catastici_dataset', RDE.DATASET.value, is_dataset_obj=True)

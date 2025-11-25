@@ -40,7 +40,7 @@ formatted_begin = datetime_obj_from_int_time(BEGIN_TR)
 formatted_end = datetime_obj_from_int_time(END_TR, match_to_end=True)
 TR_OBJ = [formatted_begin, formatted_end]
 DATA_FOLDER = 'data'
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 # Geometry RDE production
 raimund_fmt = "%Y/%m/%d %H:%M:%S"
@@ -186,7 +186,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
-    [venice_area_uuid]
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'dorigo_dataset', RDE.DATASET.value, is_dataset_obj=True)

@@ -39,7 +39,7 @@ collection = {man_id: "Garzoni 3 page sample for testing annotations."}
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
 MAP_FOLDER = '../../maps/venice-1740-parish/'
 parish_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'parish')
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 # Geometry RDE production
 gdf = gpd.read_file(join(VENICE_DATA_SRC, '1740_redrawn_parishes_cleaned_wikidata_standardised.geojson'))
@@ -363,7 +363,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     3,
     ds_conf,
-    [venice_area_uuid]
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], f'garzoni_dataset', RDE.DATASET.value, is_dataset_obj=True)
