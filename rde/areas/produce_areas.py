@@ -14,7 +14,7 @@ def produce_geometry_obj_from_two_corners(corners_array: list[float]) -> dict:
         raise ValueError("The corners_array must contain exactly four elements.")
     
     min_x, min_y, max_x, max_y = corners_array
-    poly = [[min_x, min_y], [min_x, max_y], [max_x, max_y], [max_x, min_y], [min_x, min_y]]
+    poly = [[[min_x, min_y], [min_x, max_y], [max_x, max_y], [max_x, min_y], [min_x, min_y]]]
 
     return {'type': 'Polygon', 'coordinates': poly}
 
