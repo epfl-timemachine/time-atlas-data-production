@@ -41,9 +41,9 @@ layers = [clarke_bm_layer]
 layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1838 – Digital Facsimile of Clarke’s Map of Venice"],
-                              "fr": ["1838 - Fac-similé numérique de la carte de Venise de Clarke"],
-                              "it": ["1838 - Facsimile digitale della mappa di Venezia di Clarke"]},
+                             {"en": ["Digital Facsimile of Clarke’s Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise de Clarke"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Clarke"]},
                              {"en": ["Digitized reproduction of the 1838 map of Venice by William Branwhite Clarke. Preserves original geographic and cartographic details for reference and comparison. Dataset created at EPFL."],
                              "fr": ["Reproduction numérisée de la carte de Venise de 1838 par William Branwhite Clarke. Préserve les détails géographiques et cartographiques originaux pour référence et comparaison. Jeu de données créé à l'EPFL."],
                              "it": ["Riproduzione digitalizzata della mappa di Venezia del 1838 di William Branwhite Clarke. Preserva i dettagli geografici e cartografici originali per riferimento e confronto. Dataset creato all'EPFL."]},

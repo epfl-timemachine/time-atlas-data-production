@@ -41,9 +41,9 @@ layers = [leventhal_bm_layer]
 layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1846 - Digital Facsimile of Leventhal’s Map of Venice"],
-                              "fr": ["1846 - Fac-similé numérique de la carte de Venise de Leventhal"],
-                              "it": ["1846 - Facsimile digitale della mappa di Venezia di Leventhal"]},
+                             {"en": ["Digital Facsimile of Leventhal’s Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise de Leventhal"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Leventhal"]},
                              {"en": ["Digitized reproduction of the 1846 map of Venice by Normal B. Leventhal. Preserves detailed cartographic features and historical place names. Dataset created at EPFLe"],
                               "fr": ["Reproduction numérisée de la carte de Venise de 1846 par Normal B. Leventhal. Préserve les caractéristiques cartographiques détaillées et les noms de lieux historiques. Jeu de données créé à l'EPFL."],
                               "it": ["Riproduzione digitalizzata della mappa di Venezia del 1846 di Normal B. Leventhal. Preserva le caratteristiche cartografiche dettagliate e i nomi dei luoghi storici. Dataset creato all'EPFL."]},

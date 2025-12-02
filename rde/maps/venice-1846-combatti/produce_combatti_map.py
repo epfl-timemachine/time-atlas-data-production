@@ -63,9 +63,9 @@ layers = [combatti_bm_layer, castello_bm_layer]
 layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1846 – Digital Facsimile of the Combatti Map of Venice"],
-                              "fr": ["1846 - Fac-similé numérique de la carte de Venise de Combatti"],
-                              "it": ["1846 - Facsimile digitale della mappa di Venezia di Combatti"]},
+                             {"en": ["Digital Facsimile of the Combatti Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise de Combatti"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Combatti"]},
                              {"en": ["Digitized reproduction of the 1846 map of Venice by Bernardo and Gaetano Combatti. Preserves detailed cartographic features and historical place names. Dataset created at EPFL."],
                              "fr": ["Reproduction numérisée de la carte de Venise de 1846 par Bernardo et Gaetano Combatti. Préserve les caractéristiques cartographiques détaillées et les noms de lieux historiques. Jeu de données créé à l'EPFL."],
                              "it": ["Riproduzione digitalizzata della mappa di Venezia del 1846 di Bernardo e Gaetano Combatti. Preserva le caratteristiche cartografiche dettagliate e i nomi dei luoghi storici. Dataset creato all'EPFL."]},

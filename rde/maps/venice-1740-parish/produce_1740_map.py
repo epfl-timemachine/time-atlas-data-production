@@ -36,9 +36,9 @@ parish_layer = produce_layer_obj(
     )]
 )
 
-map_name = {"en":["Digital Layer – 1740 Parish Boundaries"],
-            "fr":["Couche numérique - Limites des paroisses de 1740"],
-            "it":["Layer digitale - Confini parrocchiali del 1740"]
+map_name = {"en":["Digital Layer – Parish Boundaries"],
+            "fr":["Couche numérique - Limites des paroisses"],
+            "it":["Layer digitale - Confini parrocchiali"]
             }
 map_description = {"en":["Vector data manually extracted and realigned from the parishes mentioned in the 1740 Catastici dataset. Provides spatial representations of parish areas based on historical references. Dataset created at EPFL."],
                     "fr":["Données vectorielles extraites et réalignées manuellement à partir des paroisses mentionnées dans le jeu de données Catastici de 1740. Fournit des représentations spatiales des zones paroissiales basées sur des références historiques. Jeu de données créé à l'EPFL."],

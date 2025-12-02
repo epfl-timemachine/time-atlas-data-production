@@ -41,9 +41,9 @@ layers = [ughi_bm_layer]
 layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1729 – Digital Facsimile of Ughi’s Map of Venice"],
-                              "fr": ["1729 - Fac-similé numérique de la carte de Venise d'Ughi"],
-                              "it": ["1729 - Facsimile digitale della mappa di Venezia di Ughi"]},
+                             {"en": ["Digital Facsimile of Ughi’s Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise d'Ughi"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Ughi"]},
                              {"en": ["Digitized reproduction of Ludovico Ughi’s map of Venice, dated around 1729. Preserves the original cartographic detail and historical toponyms. Dataset created at EPFL."],
                               "fr": ["Reproduction numérisée de la carte de Venise de Ludovico Ughi, datée vers 1729. Préserve le détail cartographique original et les toponymes historiques. Jeu de données créé à l'EPFL."],
                               "it": ["Riproduzione digitalizzata della mappa di Venezia di Ludovico Ughi, datata intorno al 1729. Preserva il dettaglio cartografico originale e i toponimi storici. Dataset creato all'EPFL."]},

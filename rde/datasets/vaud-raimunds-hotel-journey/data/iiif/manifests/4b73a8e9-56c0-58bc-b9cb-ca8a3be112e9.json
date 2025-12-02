@@ -1,0 +1,91 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4b73a8e9-56c0-58bc-b9cb-ca8a3be112e9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Lying anteater fountain"
+    ],
+    "de": [
+      "Liegender Ameisenbär-Brunnen"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F27.JPG/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "41c8ae16-abac-5096-9cab-8438cfcc6eae",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Hôtel Maison Blanche"
+        ]
+      },
+      "height": 3000,
+      "width": 4000,
+      "items": [
+        {
+          "id": "096b6e01-6fa3-5b77-85f9-543d3656d337",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "54d3cd0c-1d1e-53e4-bbd2-2b3b757cfa02",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F27.JPG/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3000,
+                "width": 4000,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F27.JPG",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "41c8ae16-abac-5096-9cab-8438cfcc6eae"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "9051fa36-af82-50e8-9467-13afefd472dc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "e44e4b7b-0606-5718-bfcb-5e718ba45102",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "fr",
+                  "format": "text/html",
+                  "value": "Lying anteater fountain"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ee7f64b9-9b5f-54db-896c-1e1debb55d2e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "41c8ae16-abac-5096-9cab-8438cfcc6eae",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

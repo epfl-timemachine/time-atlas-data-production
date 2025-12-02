@@ -42,9 +42,9 @@ layers = [contemporary_edifici_layer]
 layer_ids = [l['uuid'] for l in layers]
 contemporary_map = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["Digital Layer - 1000–1414 – Virtual Zoning from Secondary Sources"],
-                              "fr": ["Couche numérique - 1000–1414 - Zonage virtuel à partir de sources secondaires"],
-                              "it": ["Strato digitale - 1000–1414 - Zonizzazione virtuale da fonti secondarie"]},
+                             {"en": ["Digital Layer - Virtual Zoning from Secondary Sources"],
+                              "fr": ["Couche numérique - Zonage virtuel à partir de sources secondaires"],
+                              "it": ["Strato digitale - Zonizzazione virtuale da fonti secondarie"]},
                              {"en": ["Vector layer representing zones of property ownership in medieval Venice, based on interpretations from Dorigo’s study Venezia Romanica. Digitally reconstructed from textual analysis of historical sources. Information geolocated by machine learning algorithms. Automatic checking.  Dataset created at EPFL."],
                               "fr": ["Couche vectorielle représentant les zones de propriété à Venise médiévale, basée sur des interprétations de l'étude de Dorigo Venezia Romanica. Reconstruit numériquement à partir d'une analyse textuelle de sources historiques. Informations géolocalisées par des algorithmes d'apprentissage automatique. Vérification automatique. Jeu de données créé à l'EPFL."],
                               "it": ["Layer vettoriale che rappresenta le zone di proprietà a Venezia medievale, basata su interpretazioni dello studio di Dorigo Venezia Romanica. Ricostruito digitalmente da un'analisi testuale di fonti storiche. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Verifica automatica. Dataset creato all'EPFL."]},

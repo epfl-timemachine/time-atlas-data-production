@@ -37,9 +37,9 @@ vector_layer = produce_layer_obj(
     )]
 )
 
-map_name = {"en":["Digital Layer – 1808 Cadastral Footprints"],
-            "fr":["Couche numérique - Empreintes cadastrales de 1808"],
-            "it":["Layer digitale - Impronte catastali del 1808"]}
+map_name = {"en":["Digital Layer – Lausanne Cadastral Footprints"],
+            "fr":["Couche numérique - Empreintes cadastrales de Lausanne"],
+            "it":["Layer digitale - Impronte catastali di Losanna"]}
 map_description = {"en":["Vector data extracted from the cadastral map of Lausanne, dated 1888. Dataset created at EPFL."],
                     "fr":["Données vectorielles extraites de la carte cadastrale de Lausanne, datée de 1888. Jeu de données créé à l'EPFL."],
                     "it":["Dati vettoriali estratti dalla mappa catastale di Losanna, datata 1888. Dataset creato all'EPFL."]}

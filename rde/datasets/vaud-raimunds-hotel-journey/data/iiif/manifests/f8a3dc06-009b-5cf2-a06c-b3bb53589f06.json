@@ -1,0 +1,91 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "f8a3dc06-009b-5cf2-a06c-b3bb53589f06",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "The nice garden"
+    ],
+    "de": [
+      "Der schöne Garten"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F1.JPG/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8e2ce5ad-a27c-5347-ac61-7212d65f7544",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Individual house free parking wifi Netflix Disney next to EPFL Lausanne"
+        ]
+      },
+      "height": 3000,
+      "width": 4000,
+      "items": [
+        {
+          "id": "1683befc-4db4-5941-a2f8-6a71ba52cc5d",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "304ed5e2-756a-5601-8036-1dc09f2bc39c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F1.JPG/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3000,
+                "width": 4000,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F1.JPG",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8e2ce5ad-a27c-5347-ac61-7212d65f7544"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "66650dcf-64fa-551f-bc3d-3b61442eb875",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "ede4475b-e6b9-585c-ada0-414d098378e3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "fr",
+                  "format": "text/html",
+                  "value": "The nice garden"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "52acbbdf-6871-5aee-8971-053e8c687216"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8e2ce5ad-a27c-5347-ac61-7212d65f7544",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

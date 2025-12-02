@@ -35,9 +35,9 @@ vector_layer = produce_layer_obj(
     )]
 )
 
-map_name = {"en":["Digital Layer – 1832 Cadastral Footprints"],
-            "fr":["Couche numérique - Empreintes cadastrales de 1832"],
-            "it":["Layer digitale - Impronte catastali del 1832"]}
+map_name = {"en":["Digital Layer – Amsterdam Cadastral Footprints"],
+            "fr":["Couche numérique - Empreintes cadastrales d'Amsterdam"],
+            "it":["Layer digitale - Impronte catastali di Amsterdam"]}
 map_description = {"en":["Vector data extracted from the cadastral map of Amsterdam, dated 1832. Dataset created at EPFL."],
                     "fr":["Données vectorielles extraites de la carte cadastrale d'Amsterdam, datée de 1832. Jeu de données créé à l'EPFL."],
                     "it":["Dati vettoriali estratti dalla mappa catastale di Amsterdam, datata 1832. Dataset creato all'EPFL."]}

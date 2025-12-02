@@ -27,6 +27,7 @@ def img_extension_to_media_type(ext:str) -> str:
     """
     This function returns the media type of the image extension.
     """
+    ext = ext.lower()
     if ext == 'jpg':
         return 'image/jpeg'
     elif ext == 'png':

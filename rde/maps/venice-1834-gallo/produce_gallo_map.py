@@ -41,9 +41,9 @@ layers = [gallo_bm_layer]
 layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1834 – Digital Facsimile of Bertoja’s Map of Venice"],
-                              "fr": ["1834 - Fac-similé numérique de la carte de Venise de Bertoja"],
-                              "it": ["1834 - Facsimile digitale della mappa di Venezia di Bertoja"]},
+                             {"en": ["Digital Facsimile of Bertoja’s Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise de Bertoja"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Bertoja"]},
                              {"en": ["Digitized reproduction of the 1834 map of Venice, drawn by Bertoja, engraved by A. Lazzari, and published by D. Gallo in 1831. Preserves the original cartographic detail and historical references. Dataset created at EPFL."],
                              "fr": ["Reproduction numérisée de la carte de Venise de 1834, dessinée par Bertoja, gravée par A. Lazzari et publiée par D. Gallo en 1831. Préserve le détail cartographique original et les références historiques. Jeu de données créé à l'EPFL."],
                              "it": ["Riproduzione digitalizzata della mappa di Venezia del 1834, disegnata da Bertoja, incisa da A. Lazzari e pubblicata da D. Gallo nel 1831. Preserva il dettaglio cartografico originale e i riferimenti storici. Dataset creato all'EPFL."]},

@@ -42,9 +42,9 @@ layers = [contemporary_edifici_layer]
 layer_ids = [l['uuid'] for l in layers]
 contemporary_map = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["Digital Layer - 2024 Contemporary Building Footprints"],
-                              "fr": ["Couche numérique - 2024 Empreintes de bâtiments contemporains"],
-                              "it": ["Strato digitale - 2024 Impronte di edifici contemporanei"]},
+                             {"en": ["Digital Layer - Contemporary Building Footprints"],
+                              "fr": ["Couche numérique - Empreintes de bâtiments contemporains"],
+                              "it": ["Strato digitale - Impronte di edifici contemporanei"]},
                              {"en": ["Vector layer of current building footprints in Venice, based on 2024 data. Serves as a reference for comparing historical and present-day urban fabric. Dataset created at EPFL."],
                              "fr": ["Couche vectorielle des empreintes de bâtiments actuels à Venise, basée sur des données de 2024. Sert de référence pour comparer le tissu urbain historique et contemporain. Jeu de données créé à l'EPFL."],
                              "it": ["Layer vettoriale delle impronte degli edifici attuali a Venezia, basato su dati del 2024. Serve come riferimento per confrontare il tessuto urbano storico e contemporaneo. Dataset creato all'EPFL."]},
