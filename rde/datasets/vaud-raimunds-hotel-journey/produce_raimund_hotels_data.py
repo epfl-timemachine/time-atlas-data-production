@@ -60,7 +60,7 @@ gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'raimund_hotels_obs', RDE.OBS.value)
 df_wh = pd.read_csv('src/images_width_height.csv')
 
 
@@ -118,7 +118,7 @@ recs = [produce_hr_obj(r.hr_uuid,\
                    ) \
                    for _, r in hr_df.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'dresden_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'raimund_hotels_hrs', RDE.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 
@@ -158,4 +158,4 @@ ds = produce_dataset_obj(
     area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'dresden_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'raimund_hotel_dataset', RDE.DATASET.value, is_dataset_obj=True)
