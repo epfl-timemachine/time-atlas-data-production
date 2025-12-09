@@ -504,8 +504,9 @@ def python_type_to_ad_hoc_conf_type(tpe: type) -> str:
         return "STRING"
     if tpe == float or str(tpe).startswith('float'):
         return "FLOAT"
-    if tpe == list:
+    if tpe == list or tpe == np.darray:
         return "LIST"
+    
     return str(tpe)
     #TODO: add CATEGORY; also the type of the list, URL and timedate entities. 
 
@@ -513,7 +514,6 @@ def quick_display_label(label:str) -> str:
     vs = label.replace('_', ' ').replace('-', '').split(' ')
     capitalized_vs = [v[0].upper() + v[1:] for v in vs]
     return ' '.join(capitalized_vs) 
-
 
 def all_caps_val(v:str) -> bool:
     return reduce(lambda a, b: a and (not b.isalnum() or b.isupper()), v, True)
@@ -540,17 +540,7 @@ def is_empty_or_null(x):
 def produce_configuration_file_from_metadata_df(
         uuid_ns: uuid.UUID,
         df: pd.DataFrame,
-        dataset_metadata_config: dict,
-        indexable_array: list[str],
-        short_display: list[str],
-        hidden: list[str],
-        dictionaries: dict[str, str],
-        tagged_fields: dict[str, str],
-        labels: dict[str,str],
-        main_label: str = '',
-        sub_label: str = '',
-        display_thumbnail: bool = False,
-        external_source: bool = False) -> dict:
+        config: dict) -> dict:
     '''
     Returns a configuration file for the dataset based on the values from the dataframe and 
     various configuration object given as parameters.
@@ -558,17 +548,59 @@ def produce_configuration_file_from_metadata_df(
     Parameters:
         uuid_ns: the namespace to use to generate the UUIDs
         df: the dataframe containing the metadata, the order of the columns directly impacts the display order in the configuration file
-        indexable_array: an array of the columns that should be indexed
-        short_display: an array of the columns that should be displayed in a short version of the data entry
-        hidden: an array of the columns that should be hidden in the frontend
-        dictionaries: a dictionary of the columns and the dictionaries they should be associated with
-        tagged_fields: a dictionary of the columns and the tags they should be associated with
-        labels: a dictionary of the columns and the labels they should have in the configuration file
-        main_label: a formatting string indicating how for each data entry, its main label should be formatted on the frontend using the values of the dataset.
-        sub_label: a formatting string indicating how for each data entry, its sub label should be formatted on the frontend using the values of the dataset.
+        config: a dictionary containing various configuration parameters, see below for the expected keys
+            indexable_array: an array of the columns that should be indexed
+            short_display: an array of the columns that should be displayed in a short version of the data entry
+            hidden: an array of the columns that should be hidden in the frontend
+            dictionaries: a dictionary of the columns and the dictionaries they should be associated with
+            tagged_fields: a dictionary of the columns and the tags they should be associated with
+            labels: a dictionary of the columns and the labels they should have in the configuration file
+            main_label: a formatting string indicating how for each data entry, its main label should be formatted on the frontend using the values of the dataset.
+            sub_label: a formatting string indicating how for each data entry, its sub label should be formatted on the frontend using the values of the dataset.
     Returns:
         the configuration file as a dictionary
     '''
+
+    dataset_metadata_config: dict = config['dataset_metadata_config'],
+    indexable_array: list[str] = config["indexed"], 
+    short_display: list[str] = config["short_display"],
+    hidden: list[str] = config["hidden"], 
+    automatic_fields: list[str] = config["automatic_fields"],
+    semi_automatic_fields: list[str] = config["semi_automatic_fields"],
+    manual_fields: list[str] = config["manual_fields"],
+    ai_fields: list[str] = config["ai_fields"],
+    tagged_fields: dict[str, str] = config["tagged_fields"], 
+    labels: dict[str,str] = config["labels"],
+    main_label: str = config["main_label"], 
+    sub_label: str = config["sub_label"],
+    display_thumbnail: bool = config["display_thumbnail"] if "display_thumbnail" in config else False,
+    external_source: bool = config["external_source"] if "external_source" in config else False,
+
+    # checking no overlap between automatic, semi-automatic and manual fields
+    overlap_automatic_semi_automatic = set(automatic_fields).intersection(set(semi_automatic_fields))
+    overlap_automatic_manual = set(automatic_fields).intersection(set(manual_fields))
+    overlap_semi_automatic_manual = set(semi_automatic_fields).intersection(set(manual_fields))
+    overlap_automatic_ai = set(automatic_fields).intersection(set(ai_fields))
+    overlap_semi_automatic_ai = set(semi_automatic_fields).intersection(set(ai_fields))
+    overlap_manual_ai = set(manual_fields).intersection(set(ai_fields))
+    if len(overlap_automatic_ai) > 0:
+        raise Exception(f'The following fields are both in automatic and ai fields: {overlap_automatic_ai}')
+    if len(overlap_semi_automatic_ai) > 0:
+        raise Exception(f'The following fields are both in semi-automatic and ai fields: {overlap_semi_automatic_ai}')
+    if len(overlap_manual_ai) > 0:
+        raise Exception(f'The following fields are both in manual and ai fields: {overlap_manual_ai}')
+    if len(overlap_automatic_semi_automatic) > 0:
+        raise Exception(f'The following fields are both in automatic and semi-automatic fields: {overlap_automatic_semi_automatic}')
+    if len(overlap_automatic_manual) > 0:
+        raise Exception(f'The following fields are both in automatic and manual fields: {overlap_automatic_manual}')
+    if len(overlap_semi_automatic_manual) > 0:
+        raise Exception(f'The following fields are both in semi-automatic and manual fields: {overlap_semi_automatic_manual}')
+    
+    # checking no overlap between hidden and short display fields
+    overlap_hidden_short_display = set(hidden).intersection(set(short_display))
+    if len(overlap_hidden_short_display) > 0:
+        raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
+
     base = {
         "dataset_config": {
             "metadata_field_config": []
@@ -586,12 +618,9 @@ def produce_configuration_file_from_metadata_df(
 
     if sub_label:
         base['hr_config']['sub_label'] = sub_label
-    
-    if display_thumbnail:
-        base['hr_config']['display_thumbnail'] = True
 
-    if external_source:
-        base['hr_config']['external_source'] = True
+    base['hr_config']['display_thumbnail'] = display_thumbnail
+    base['hr_config']['external_source'] = external_source
     
     ds_md_c = []
     base_dmc = {
@@ -618,6 +647,7 @@ def produce_configuration_file_from_metadata_df(
         "display_label": "",
         "nullable": True,
         "indexable": False,
+        "paradata": None,
         "short_display": False,
         "hidden": False,
         "tag": None,
@@ -640,10 +670,19 @@ def produce_configuration_file_from_metadata_df(
                 curr_conf['short_display'] = True
             if col in tagged_fields:
                 curr_conf['tag'] = tagged_fields[col]
+            if col in automatic_fields:
+                curr_conf['paradata'] = 'a'
+            elif col in semi_automatic_fields:
+                curr_conf['paradata'] = 's'
+            elif col in manual_fields:
+                curr_conf['paradata'] = 'm'
+            elif col in ai_fields:
+                curr_conf['paradata'] = 'i'
             curr_conf["type"] = python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))
-            if col in dictionaries:
-                curr_conf['dictionary'] = dictionaries[col] 
-                curr_conf["type"] = "LIST[CATEGORY]" if curr_conf["type"].startswith("LIST") else "CATEGORY"
+            # removed as unused for now.
+            # if col in dictionaries:
+            #     curr_conf['dictionary'] = dictionaries[col] 
+            #     curr_conf["type"] = "LIST[CATEGORY]" if curr_conf["type"].startswith("LIST") else "CATEGORY"
             curr_conf["display_order"] = (display_order := display_order + 1)
             curr_conf["display_label"] = labels[col] if col in labels else quick_display_label(col)
             base["hr_config"]["metadata_field_config"].append(curr_conf)
