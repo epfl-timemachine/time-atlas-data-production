@@ -15,22 +15,49 @@ missing_country_code = [
     1213, # Mexico
     1214, # Mexico
     1215, # Guatemala
-    1216, # Canada
+    1216 # Canada
 ]
 
 remove_country_codes = [
     171, # israel
     173, # syria, single point version (real version is 173)
     80, # egypt
-    69, # sudan
+    69 # sudan
 ]
+
+osm_urls_wd_id = {
+    "https://nominatim.openstreetmap.org/search?q=Gaza Strip&polygon_geojson=1&format=jsonv2": "Q39760", # gaza strip
+    "https://nominatim.openstreetmap.org/search?q=Israel&polygon_geojson=1&format=jsonv2": "Q801", # israel
+    "https://nominatim.openstreetmap.org/search?q=Cisjordania&polygon_geojson=1&format=jsonv2": "Q36678", # west bank
+    "https://nominatim.openstreetmap.org/search?q=Syria&polygon_geojson=1&format=jsonv2": "Q858",  # syria
+    "https://nominatim.openstreetmap.org/search?q=Egypt&polygon_geojson=1&format=jsonv2": "Q79", # egypt
+    "https://nominatim.openstreetmap.org/search?q=Sudan&polygon_geojson=1&format=jsonv2": "Q1049"  # sudan
+}
+
+
+def osm_url_to_geojson_feature(osm_url: str) -> dict:
+    response = requests.get(osm_url, headers={'User-Agent': 'TimeAtlasDataProductionBot/1.0'})
+    if response.status_code == 200:
+        data = response.json()[0]
+        id = data['place_id']
+        geom = data['geojson']
+    return geom, id
 
 save_folder = 'src'
 with open('maptiler_key.txt', 'r') as f:
     api_key = f.read().strip()
 
 all_ranges = list(set(range(1, country_max_code + 1)).difference(set(remove_country_codes))) + missing_country_code
- 
+
+for osm_id, wd_id in osm_urls_wd_id.items():
+    geometry, place_id = osm_url_to_geojson_feature(osm_id)
+    if geometry:
+        with open(f'{save_folder}/country_{place_id}.json', 'w', encoding='utf-8') as f:
+            json.dump({'type': 'FeatureCollection',
+                       'features': [{"type": "Feature", "properties": {"wikidata": wd_id}, "geometry": geometry }]}, f, ensure_ascii=False, indent=2)
+    else:
+        print(f'Failed to fetch data for OSM ID {osm_id}')
+
 for i in all_ranges:
     country_code = f'{i:03}'
     endpoint = endpoint_wkey.format(country_code=country_code, api_key=api_key)
@@ -43,9 +70,6 @@ for i in all_ranges:
             print(f'Successfully fetched data for country code {country_code}')
     else:
         print(f'Failed to fetch data for country code {country_code}, Status Code: {response.status_code}')
-
-with open('src/country_201.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
 
 def language_dict_from_wikidata_id(wikidata_id):
     endpoint_url = "https://query.wikidata.org/sparql"
