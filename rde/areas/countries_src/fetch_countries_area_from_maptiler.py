@@ -4,11 +4,34 @@ import os
 
 endpoint_wkey = 'https://api.maptiler.com/geocoding/country.{country_code}.json?limit=3&key={api_key}'
 country_max_code = 206
+
+missing_country_code = [
+    1207, # Nicaragua
+    1208, # Costa Rica
+    1209, # Panama
+    1210, # Honduras
+    1211, # Belize
+    1212, # USA
+    1213, # Mexico
+    1214, # Mexico
+    1215, # Guatemala
+    1216, # Canada
+]
+
+remove_country_codes = [
+    171, # israel
+    173, # syria, single point version (real version is 173)
+    80, # egypt
+    69, # sudan
+]
+
 save_folder = 'src'
 with open('maptiler_key.txt', 'r') as f:
     api_key = f.read().strip()
 
-for i in range(1, country_max_code + 1):
+all_ranges = list(set(range(1, country_max_code + 1)).difference(set(remove_country_codes))) + missing_country_code
+ 
+for i in all_ranges:
     country_code = f'{i:03}'
     endpoint = endpoint_wkey.format(country_code=country_code, api_key=api_key)
     response = requests.get(endpoint)

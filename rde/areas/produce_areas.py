@@ -4,6 +4,7 @@ import os
 import uuid
 from typing import Union
 import json 
+from unidecode import unidecode
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
@@ -18,6 +19,11 @@ def produce_geometry_obj_from_two_corners(corners_array: list[float]) -> dict:
 
     return {'type': 'Polygon', 'coordinates': poly}
 
+def remove_weird_characters(input_str: str) -> str:
+    input_str = unidecode(input_str)
+    # remove punctation as well:
+    input_str = ''.join(char for char in input_str if char.isalnum() or char == '-' or char == '_')
+    return input_str
 
 varea_min = [12.290776992, 45.373579637]
 varea_max = [12.469331224, 45.497617311]
@@ -83,13 +89,28 @@ save_data_file_if_different('data', earea_slug, earea_data, earea_slug, RDE.AREA
 with open('countries_src/country_code_to_labels.json', 'r', encoding='utf-8') as f:
     code_to_country_labels = json.load(f)
 
+
+def select_feature_that_is_a_polygon_or_multipolygon(features: list[dict]) -> Union[dict, None]:
+    for feature in features:
+        geom_type = feature.get('geometry', {}).get('type', '')
+        if geom_type in ['Polygon', 'MultiPolygon']:
+            return feature
+    return None
+
 for file in os.listdir('countries_src/src'):
-        with open(os.path.join('countries_src/src', file), 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            if file in code_to_country_labels:
-                country_name_dict = {k: [v] for k, v in code_to_country_labels[file].items()}
-                en_label = country_name_dict.get('en')[0].replace(' ', '-').lower()
-                country_slug = f"country-{en_label}-area"
-                country_uuid = str(uuid.uuid5(AREA_UUID5_NS, country_slug))
-                country_area_data = produce_area_obj(country_uuid, country_name_dict, data['features'][0]['geometry'], country_slug, '1.0')
-                save_data_file_if_different('data', country_slug, country_area_data, country_slug, RDE.AREA.value)
+    with open(os.path.join('countries_src/src', file), 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        if file in code_to_country_labels:
+            country_name_dict = {k: [v] for k, v in code_to_country_labels[file].items()}
+            en_label = country_name_dict.get('en')[0].replace(' ', '-').lower()
+            country_slug = remove_weird_characters(f"country-{en_label}-area")
+            country_uuid = str(uuid.uuid5(AREA_UUID5_NS, country_slug))
+            if len(data['features']) > 1:
+                geometry = select_feature_that_is_a_polygon_or_multipolygon(data['features'])
+            elif len(data['features']) == 1:
+                geometry = data['features'][0]['geometry']
+            else:
+                print(f"No features found in file {file}, skipping...")
+                continue
+            country_area_data = produce_area_obj(country_uuid, country_name_dict, geometry, country_slug, '1.0')
+            save_data_file_if_different('data', country_slug, country_area_data, country_slug, RDE.AREA.value)
