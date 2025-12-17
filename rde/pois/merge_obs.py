@@ -55,7 +55,7 @@ for _, row in df_obs_grouped.iterrows():
     for obs_uuid in row.obs_uuids:
         obs_uuid_to_poi_uuid[obs_uuid] = row.new_poi_uuid
 
-def update_obs_file(obs_fp:str, osb_uuid_to_poi_uuid: dict[str, str]) -> None:
+def update_obs_file(obs_fp:str, obs_uuid_to_poi_uuid: dict[str, str]) -> None:
     with open(obs_fp, 'r', encoding='utf-8') as f:
         data = json.load(f)
         for obs in data['rde_objects']:

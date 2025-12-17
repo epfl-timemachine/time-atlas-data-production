@@ -191,6 +191,7 @@ def produce_obs_obj(uuid:str,
                     tpe: str,
                     coords,
                     geometries_links: list[GEOMETRY_UUID],
+                    need_poi: bool = True
                     ) -> dict:
     '''
     Produces an observation object for the RDE from the given parameters.
@@ -213,7 +214,7 @@ def produce_obs_obj(uuid:str,
         "coordinate": coords,
         "has_geometry": geometries_links,
         "documented_in": hr_uuid,
-        "has_handle": None
+        "has_handle": need_poi
     }
 
 
@@ -561,45 +562,45 @@ def produce_configuration_file_from_metadata_df(
         the configuration file as a dictionary
     '''
 
-    dataset_metadata_config: dict = config['dataset_metadata_config'],
-    indexable_array: list[str] = config["indexed"], 
-    short_display: list[str] = config["short_display"],
-    hidden: list[str] = config["hidden"], 
-    automatic_fields: list[str] = config["automatic_fields"],
-    semi_automatic_fields: list[str] = config["semi_automatic_fields"],
-    manual_fields: list[str] = config["manual_fields"],
-    ai_fields: list[str] = config["ai_fields"],
-    tagged_fields: dict[str, str] = config["tagged_fields"], 
-    labels: dict[str,str] = config["labels"],
-    main_label: str = config["main_label"], 
-    sub_label: str = config["sub_label"],
-    display_thumbnail: bool = config["display_thumbnail"] if "display_thumbnail" in config else False,
-    external_source: bool = config["external_source"] if "external_source" in config else False,
+    dataset_metadata_config: dict = config['dataset_metadata_config']
+    indexable_array: list[str] = config["indexed"]
+    short_display: list[str] = config["short_display"]
+    hidden: list[str] = config["hidden"]
+    automatic_fields: list[str] = config["automatic_fields"]
+    semi_automatic_fields: list[str] = config["semi_automatic_fields"]
+    manual_fields: list[str] = config["manual_fields"]
+    ai_fields: list[str] = config["ai_fields"]
+    tagged_fields: dict[str, str] = config["tagged_fields"]
+    labels: dict[str,str] = config["labels"]
+    main_label: str = config["main_label"]
+    sub_label: str = config["sub_label"]
+    display_thumbnail: bool = config["display_thumbnail"] if "display_thumbnail" in config else False
+    external_source: bool = config["external_source"] if "external_source" in config else False
 
-    # checking no overlap between automatic, semi-automatic and manual fields
-    overlap_automatic_semi_automatic = set(automatic_fields).intersection(set(semi_automatic_fields))
-    overlap_automatic_manual = set(automatic_fields).intersection(set(manual_fields))
-    overlap_semi_automatic_manual = set(semi_automatic_fields).intersection(set(manual_fields))
-    overlap_automatic_ai = set(automatic_fields).intersection(set(ai_fields))
-    overlap_semi_automatic_ai = set(semi_automatic_fields).intersection(set(ai_fields))
-    overlap_manual_ai = set(manual_fields).intersection(set(ai_fields))
-    if len(overlap_automatic_ai) > 0:
-        raise Exception(f'The following fields are both in automatic and ai fields: {overlap_automatic_ai}')
-    if len(overlap_semi_automatic_ai) > 0:
-        raise Exception(f'The following fields are both in semi-automatic and ai fields: {overlap_semi_automatic_ai}')
-    if len(overlap_manual_ai) > 0:
-        raise Exception(f'The following fields are both in manual and ai fields: {overlap_manual_ai}')
-    if len(overlap_automatic_semi_automatic) > 0:
-        raise Exception(f'The following fields are both in automatic and semi-automatic fields: {overlap_automatic_semi_automatic}')
-    if len(overlap_automatic_manual) > 0:
-        raise Exception(f'The following fields are both in automatic and manual fields: {overlap_automatic_manual}')
-    if len(overlap_semi_automatic_manual) > 0:
-        raise Exception(f'The following fields are both in semi-automatic and manual fields: {overlap_semi_automatic_manual}')
+    # # checking no overlap between automatic, semi-automatic and manual fields
+    # overlap_automatic_semi_automatic = set(automatic_fields).intersection(set(semi_automatic_fields))
+    # overlap_automatic_manual = set(automatic_fields).intersection(set(manual_fields))
+    # overlap_semi_automatic_manual = set(semi_automatic_fields).intersection(set(manual_fields))
+    # overlap_automatic_ai = set(automatic_fields).intersection(set(ai_fields))
+    # overlap_semi_automatic_ai = set(semi_automatic_fields).intersection(set(ai_fields))
+    # overlap_manual_ai = set(manual_fields).intersection(set(ai_fields))
+    # if len(overlap_automatic_ai) > 0:
+    #     raise Exception(f'The following fields are both in automatic and ai fields: {overlap_automatic_ai}')
+    # if len(overlap_semi_automatic_ai) > 0:
+    #     raise Exception(f'The following fields are both in semi-automatic and ai fields: {overlap_semi_automatic_ai}')
+    # if len(overlap_manual_ai) > 0:
+    #     raise Exception(f'The following fields are both in manual and ai fields: {overlap_manual_ai}')
+    # if len(overlap_automatic_semi_automatic) > 0:
+    #     raise Exception(f'The following fields are both in automatic and semi-automatic fields: {overlap_automatic_semi_automatic}')
+    # if len(overlap_automatic_manual) > 0:
+    #     raise Exception(f'The following fields are both in automatic and manual fields: {overlap_automatic_manual}')
+    # if len(overlap_semi_automatic_manual) > 0:
+    #     raise Exception(f'The following fields are both in semi-automatic and manual fields: {overlap_semi_automatic_manual}')
     
     # checking no overlap between hidden and short display fields
-    overlap_hidden_short_display = set(hidden).intersection(set(short_display))
-    if len(overlap_hidden_short_display) > 0:
-        raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
+    # overlap_hidden_short_display = set(hidden).intersection(set(short_display))
+    # if len(overlap_hidden_short_display) > 0:
+    #     raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
 
     base = {
         "dataset_config": {
@@ -670,14 +671,14 @@ def produce_configuration_file_from_metadata_df(
                 curr_conf['short_display'] = True
             if col in tagged_fields:
                 curr_conf['tag'] = tagged_fields[col]
-            if col in automatic_fields:
-                curr_conf['paradata'] = 'a'
-            elif col in semi_automatic_fields:
-                curr_conf['paradata'] = 's'
-            elif col in manual_fields:
-                curr_conf['paradata'] = 'm'
-            elif col in ai_fields:
-                curr_conf['paradata'] = 'i'
+            # if col in automatic_fields:
+            #     curr_conf['paradata'] = 'a'
+            # elif col in semi_automatic_fields:
+            #     curr_conf['paradata'] = 's'
+            # elif col in manual_fields:
+            #     curr_conf['paradata'] = 'm'
+            # elif col in ai_fields:
+            #     curr_conf['paradata'] = 'i'
             curr_conf["type"] = python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))
             # removed as unused for now.
             # if col in dictionaries:
