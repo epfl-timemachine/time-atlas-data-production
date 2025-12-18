@@ -381,15 +381,7 @@ filtered_df = df.drop(columns=exclude_hr_labels)
 order = CONF['labels'].keys()
 ds_conf = produce_configuration_file_from_metadata_df(VTM_UUID5_NS, 
                                                       filtered_df[order],
-                                                      CONF['dataset_metadata_config'],
-                                                      CONF['indexed'],
-                                                      CONF["short_display"],
-                                                      CONF["hidden"], 
-                                                      dictionaries,
-                                                      CONF["tagged_fields"],
-                                                      CONF["labels"], 
-                                                      CONF["main_label"],
-                                                      CONF["sub_label"])
+                                                      CONF)
 
 ds = produce_dataset_obj(
     DS_UUID,

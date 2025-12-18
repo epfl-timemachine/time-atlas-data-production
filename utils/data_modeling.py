@@ -505,7 +505,7 @@ def python_type_to_ad_hoc_conf_type(tpe: type) -> str:
         return "STRING"
     if tpe == float or str(tpe).startswith('float'):
         return "FLOAT"
-    if tpe == list or tpe == np.darray:
+    if tpe == list or tpe == np.ndarray:
         return "LIST"
     
     return str(tpe)

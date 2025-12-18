@@ -37,7 +37,7 @@ from datetime import datetime
 def date_parser(date_field:str) -> tuple[str, str]:
     lines = date_field.split(',')
     fl = lines[0]
-    first_date = datetime(year = 2000+int(fl[-2:]), month = int(fl.split('.')[1]), day = int(fl.split('.')[1]))
+    first_date = datetime(year = 2000+int(fl[-2:]), month = int(fl.split('.')[1]), day = int(fl.split('.')[0]))
     lv = lines[-1].split('/')[-1]
     last_date = datetime.strptime(lv, '%d.%m.%y')
     return (first_date.isoformat(), last_date.replace(hour=23, minute=59, second=59).isoformat())
@@ -133,17 +133,7 @@ order = labels.keys()
 ds_conf = produce_configuration_file_from_metadata_df(
     TM_UUID5_NS,
     filtered_df[order],
-    CONF['dataset_metadata_config'],
-    CONF['indexed'],
-    CONF['short_display'], 
-    CONF['hidden'],
-    {},
-    CONF['tagged_fields'],
-    labels,
-    CONF['main_label'],
-    CONF['sub_label'],
-    True,
-    True
+    CONF
 )
 
 ds = produce_dataset_obj(

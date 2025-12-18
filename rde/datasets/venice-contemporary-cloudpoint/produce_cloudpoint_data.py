@@ -223,16 +223,7 @@ cols_of_interest = list(set(df.columns).difference(set(cols_of_non_interest)))
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,
     df[cols_of_interest],
-    CONF['dataset_metadata_config'],
-    CONF["indexed"],
-    CONF["short_display"],
-    CONF["hidden"], 
-    {},
-    CONF["tagged_fields"],
-    CONF["labels"],
-    CONF["main_label"],
-    CONF["sub_label"],
-    display_thumbnail=True
+    CONF
 )
 
 ds = produce_dataset_obj(

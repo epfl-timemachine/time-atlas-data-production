@@ -95,15 +95,7 @@ order = labels.keys()
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_SN_UUID5_NS,
     gdf[order], 
-    CONF['dataset_metadata_config'],
-    CONF['indexed'], 
-    CONF['short_display'],
-    CONF['hidden'],
-    {},
-    CONF['tagged_fields'],
-    labels,
-    CONF['main_label'],
-    CONF['sub_label']
+    CONF
 )
 
 ds = produce_dataset_obj(

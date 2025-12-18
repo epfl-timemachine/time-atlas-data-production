@@ -177,15 +177,7 @@ order = CONF['labels'].keys()
 ds_conf = produce_configuration_file_from_metadata_df(
     LTM_UUID5_NS, 
     filtered_df[order], 
-    CONF['dataset_metadata_config'],
-    CONF["indexed"], 
-    CONF["short_display"],
-    CONF["hidden"], 
-    {}, 
-    CONF["tagged_fields"], 
-    CONF["labels"],
-    main_label=CONF["main_label"], 
-    sub_label=CONF["sub_label"]
+    CONF
 )
 
 ds = produce_dataset_obj(
