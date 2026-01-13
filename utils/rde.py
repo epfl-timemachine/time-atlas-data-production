@@ -9,4 +9,3 @@ class RDE(Enum):
     MAP = 'map'
     LAYER = 'layer'
     AREA = 'area'
-    DICT = 'dictionary'
