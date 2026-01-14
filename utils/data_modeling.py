@@ -245,10 +245,14 @@ def produce_dataset_obj(
     transribed_pages_amount: int,
     configuration: dict,
     areas_ids: list[str],
-    ) -> dict:  
+    ) -> dict: 
+    metadata = configuration.get('metadata', {})
+    # remove the metadata from the configuration to avoid duplication
+    configuration.pop('metadata', None) 
     return {
         "uuid": uuid,
         "slug": slug,
+        "metadata": metadata,
         "version": version,
         "creation_time": now_ts(),
         "name": name,
@@ -256,7 +260,6 @@ def produce_dataset_obj(
         "sources": sources,
         "start_time": time_range[0],
         "end_time": time_range[1],
-        "transcribed_pages_amount": transribed_pages_amount,
         "is_operationally_described_by": configuration,
         "falls_within": areas_ids,
     }
@@ -473,21 +476,6 @@ def save_data_file_if_different(fp:str,
     # saving the file if no other point of termination happened.
     saving_routine(t_data, filepath)
 
-dictionary_template = {
-    "uuid": "",
-    "rde_type": RDE.DICT.value,
-    "slug": "",
-    "name": None,
-    "entries": None
-}
-
-def save_dictionary(fp_prefix:str, uuid:str, slug: str, name:MultiLingualDesc, vals:dict) -> None:
-    d = dictionary_template.copy()
-    d['entries'] = vals
-    d['slug'] = slug
-    d['name'] = name
-    d['uuid'] = uuid
-    save_data_file_if_different(fp_prefix, slug, [d], slug, RDE.DICT.value)
 
 def get_likely_type_of_series(s:pd.Series) -> str:
     tpe = str(s.dtype)
@@ -612,6 +600,8 @@ def produce_configuration_file_from_metadata_df(
             "display_thumbnail": False,
             "external_source": False,
             "metadata_field_config": []
+        },
+        "metadata": {
         }
     }
     if main_label:
@@ -627,15 +617,14 @@ def produce_configuration_file_from_metadata_df(
     base_dmc = {
         "id": "",
         "type": None,
-        "display_label": None,
-        "value": None
+        "display_label": None
     }
     for i, (k, v) in enumerate(dataset_metadata_config.items()):
         curr_dmc = base_dmc.copy()
         curr_dmc['id'] = k
         curr_dmc['type'] = v['type']
         curr_dmc['display_label'] = v['display_label']
-        curr_dmc['value'] = v['value']
+        base['metadata'][k] = v['value']
         curr_dmc['uuid'] = str(uuid.uuid5(uuid_ns, f'dataset_md_config_{k}'))
         curr_dmc['display_order'] = i + 1
         ds_md_c.append(curr_dmc)
