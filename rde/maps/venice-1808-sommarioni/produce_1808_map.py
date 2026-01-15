@@ -40,6 +40,7 @@ sommarioni_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.3065061 45.4522034)','POINT (12.3698376 45.4241568)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/www/tilesets/venice/sommarioni/{z}/{x}/{y}.png",
                                           format='xyz'
                                           )]
@@ -59,6 +60,7 @@ sommarioni_parcel_layer = produce_layer_obj(cadaster_layer_uuid,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{cadaster_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
+                                              extent=['POINT (12.30650520324707 45.452205657958984)','POINT (12.369837760925293 45.424156188964844)'],
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{cadaster_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]
@@ -78,6 +80,7 @@ sommarioni_sn_layer = produce_layer_obj(streetnetwork_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{streetnetwork_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
+                                              extent=['POINT (12.30650520324707 45.452205657958984)','POINT (12.369837760925293 45.424156188964844)'],
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{streetnetwork_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]

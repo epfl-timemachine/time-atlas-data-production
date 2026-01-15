@@ -291,10 +291,13 @@ def produce_map_obj(
         "falls_within": areas_id
     }
 
+from shapely.wkt import loads as wkt_loads
+
 def produce_layer_config(
     uuid: str,
     zoom_lvl: tuple[int, int],
     format: str,
+    extent: tuple[Point, Point],
     access_url: str,
 ) -> dict:
     lo_zoom, hi_zoom = zoom_lvl
@@ -304,8 +307,10 @@ def produce_layer_config(
         raise Exception(f'Zoom levels should be positive numbers')
     if hi_zoom > 23:
         raise Exception(f'Zoom levels should not exceed 23')
+    conv_extent = [wkt_loads(extent[0]), wkt_loads(extent[1])]
     return {  
         "uuid": uuid,
+        "extent": [conv_extent[0].x, conv_extent[0].y, conv_extent[1].x, conv_extent[1].y],
         "zoom_lvl": zoom_lvl,
         "service": {
             "url": access_url,

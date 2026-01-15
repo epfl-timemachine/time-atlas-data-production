@@ -31,6 +31,7 @@ parish_layer = produce_layer_obj(
     layer_configs=[produce_layer_config(
         str(uuid.uuid5(VMAP_UUID5_NS, f'{parish_layer_slug}-config-1')),
         zoom_lvl=zoom_lvl,
+        extent=['POINT (12.310304758139957 45.44955643150202)','POINT (12.361389671133239 45.42305311608875)'],
         format='mvt',
         access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{parish_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf"
     )]

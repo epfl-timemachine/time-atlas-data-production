@@ -32,6 +32,7 @@ hlibrary_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent = ['POINT (12.297567191857944 45.45624144839759)','POINT (12.37309062309471 45.40757193753827)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1729-hlibrary/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]

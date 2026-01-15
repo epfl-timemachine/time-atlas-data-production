@@ -31,6 +31,7 @@ gallo_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          is_vector=False,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
+                                          extent = ['POINT (12.305245805397046 45.452385260466166)','POINT (12.365777548871057 45.41804260044283)'],
                                           zoom_lvl=zoom_lvl,
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1834-bggallo/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'

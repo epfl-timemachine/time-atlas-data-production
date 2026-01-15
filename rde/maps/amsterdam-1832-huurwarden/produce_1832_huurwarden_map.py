@@ -30,6 +30,7 @@ vector_layer = produce_layer_obj(
     layer_configs=[produce_layer_config(
         str(uuid.uuid5(LMAP_UUID5_NS, f'{vector_layer_slug}-config-1')),
         zoom_lvl=zoom_lvl,
+        extent=['POINT (4.76151909680581 52.44411863756021)', 'POINT (5.078830875630967 52.24253392900561)'],
         format='mvt',
         access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{vector_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf"
     )]

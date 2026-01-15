@@ -32,6 +32,7 @@ contemporary_edifici_layer = produce_layer_obj(zones_layer_uuid,
                                             is_vector=True,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{dorigo_zone_slug}-config-1')),
+                                              extent=['POINT (12.312619619493589 45.44708222894171)','POINT (12.360561504866213 45.423808296691575)'],
                                               zoom_lvl=zoom_lvl,
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{zones_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'

@@ -34,6 +34,7 @@ combatti_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.334515001558735 45.43990832316747)', 'POINT (12.365788130999428 45.42445410021895)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1846-begcombatti/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
@@ -53,6 +54,7 @@ castello_bm_layer =  produce_layer_obj(castello_layer_uuid,
                                         layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{castello_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.334515001558735 45.43990832316747)', 'POINT (12.365788130999428 45.42445410021895)'],  
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1846-begcombatti2/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]

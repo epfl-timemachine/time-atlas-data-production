@@ -38,6 +38,7 @@ cadastre_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent= ['POINT (6.5820318420316335 46.60342159950106)','POINT (6.722700332883975 46.5047438639178)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:1831_Berney/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
@@ -57,6 +58,7 @@ berney_parcel_layer = produce_layer_obj(cadaster_layer_uuid,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{cadaster_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
+                                              extent= ['POINT (6.58255360972122 46.60286672962382)', 'POINT (6.721715790231707 46.504844903558364)'],
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{cadaster_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]

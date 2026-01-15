@@ -33,6 +33,7 @@ contemporary_edifici_layer = produce_layer_obj(edifici_layer_uuid,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{edifici_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
+                                              extent=['POINT (12.303245677759824 45.46170713452107)','POINT (12.366490271915978 45.399634477179454)'],
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{edifici_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]

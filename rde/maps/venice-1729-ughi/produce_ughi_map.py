@@ -32,6 +32,7 @@ ughi_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.29960873939344 45.45578743012642)','POINT (12.371319068712321 45.41554116969911)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1729-lughi/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
