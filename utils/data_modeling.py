@@ -265,7 +265,7 @@ def produce_dataset_obj(
     }
 
 def produce_map_obj(
-    uuid: str,
+    map_uuid: str,
     map_slug: str,
     name: MultiLingualDesc,
     description: MultiLingualDesc,
@@ -277,13 +277,57 @@ def produce_map_obj(
     areas_id: list[str],
     ) -> dict:  
     return {  
-        "uuid": uuid,
+        "uuid": map_uuid,
         "slug": map_slug,
         "rde_type": RDE.MAP.value,
         "name": name,
-        "description": description,
+        "metadata": {
+            "description": description,
+            "paradata": paradata,
+        },
+        "metadata_field_config":[
+         {
+            "uuid": str(uuid.uuid5(VMAP_UUID5_NS, map_slug+'_description')),
+            "id": "description",
+            "type": "STRING",
+            "display_label": {
+                "en": [
+                    "Description"
+                ],
+                "fr": [
+                    "Description"
+                ],
+                "it": [
+                    "Descrizione"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ],
+                "de": [
+                    "Beschreibung"
+                ]
+            },
+            "display_order": 1
+        },
+        {
+            "uuid": str(uuid.uuid5(VMAP_UUID5_NS, map_slug+'_paradata')),
+            "id": "paradata",
+            "type": "STRING",
+            "display_label": {
+                "en": [
+                "Paradata"
+                ],
+                "fr": [
+                "Paradata"
+                ],
+                "it": [
+                "Paradata"
+                ]
+            },
+            "display_order": 2
+        }
+        ],
         "thumbnail": thumbnail,
-        "paradata": paradata,
         "version": version,
         "start_time": time_range[0],
         "end_time": time_range[1],
@@ -530,6 +574,14 @@ def is_empty_or_null(x):
         return x.strip() == ""
     else:
         return np.any(pd.isna(x))
+    
+
+def test_field_intersection(field_list_1: list[str], field_list_2: list[str], field_list_1_name: str, field_list_2_name: str) -> None:
+    overlap = set(field_list_1).intersection(set(field_list_2))
+    if len(overlap) > 0:
+        raise Exception(f'The following fields are both in {field_list_1_name} and {field_list_2_name}: {overlap}')
+
+
 
 def produce_configuration_file_from_metadata_df(
         uuid_ns: uuid.UUID,
@@ -571,29 +623,17 @@ def produce_configuration_file_from_metadata_df(
     external_source: bool = config["external_source"] if "external_source" in config else False
 
     # # checking no overlap between automatic, semi-automatic and manual fields
-    # overlap_automatic_semi_automatic = set(automatic_fields).intersection(set(semi_automatic_fields))
-    # overlap_automatic_manual = set(automatic_fields).intersection(set(manual_fields))
-    # overlap_semi_automatic_manual = set(semi_automatic_fields).intersection(set(manual_fields))
-    # overlap_automatic_ai = set(automatic_fields).intersection(set(ai_fields))
-    # overlap_semi_automatic_ai = set(semi_automatic_fields).intersection(set(ai_fields))
-    # overlap_manual_ai = set(manual_fields).intersection(set(ai_fields))
-    # if len(overlap_automatic_ai) > 0:
-    #     raise Exception(f'The following fields are both in automatic and ai fields: {overlap_automatic_ai}')
-    # if len(overlap_semi_automatic_ai) > 0:
-    #     raise Exception(f'The following fields are both in semi-automatic and ai fields: {overlap_semi_automatic_ai}')
-    # if len(overlap_manual_ai) > 0:
-    #     raise Exception(f'The following fields are both in manual and ai fields: {overlap_manual_ai}')
-    # if len(overlap_automatic_semi_automatic) > 0:
-    #     raise Exception(f'The following fields are both in automatic and semi-automatic fields: {overlap_automatic_semi_automatic}')
-    # if len(overlap_automatic_manual) > 0:
-    #     raise Exception(f'The following fields are both in automatic and manual fields: {overlap_automatic_manual}')
-    # if len(overlap_semi_automatic_manual) > 0:
-    #     raise Exception(f'The following fields are both in semi-automatic and manual fields: {overlap_semi_automatic_manual}')
+    test_field_intersection(automatic_fields, semi_automatic_fields, 'automatic_fields', 'semi_automatic_fields')
+    test_field_intersection(automatic_fields, manual_fields, 'automatic_fields', 'manual_fields')
+    test_field_intersection(automatic_fields, ai_fields, 'automatic_fields', 'ai_fields')
+    test_field_intersection(semi_automatic_fields, manual_fields, 'semi_automatic_fields', 'manual_fields')
+    test_field_intersection(semi_automatic_fields, ai_fields, 'semi_automatic_fields', 'ai_fields')
+    test_field_intersection(manual_fields, ai_fields, 'manual_fields', 'ai_fields')
     
     # checking no overlap between hidden and short display fields
-    # overlap_hidden_short_display = set(hidden).intersection(set(short_display))
-    # if len(overlap_hidden_short_display) > 0:
-    #     raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
+    overlap_hidden_short_display = set(hidden).intersection(set(short_display))
+    if len(overlap_hidden_short_display) > 0:
+        raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
 
     base = {
         "dataset_config": {
@@ -665,14 +705,14 @@ def produce_configuration_file_from_metadata_df(
                 curr_conf['short_display'] = True
             if col in tagged_fields:
                 curr_conf['tag'] = tagged_fields[col]
-            # if col in automatic_fields:
-            #     curr_conf['paradata'] = 'a'
-            # elif col in semi_automatic_fields:
-            #     curr_conf['paradata'] = 's'
-            # elif col in manual_fields:
-            #     curr_conf['paradata'] = 'm'
-            # elif col in ai_fields:
-            #     curr_conf['paradata'] = 'i'
+            if col in automatic_fields:
+                curr_conf['paradata'] = 'a'
+            elif col in semi_automatic_fields:
+                curr_conf['paradata'] = 's'
+            elif col in manual_fields:
+                curr_conf['paradata'] = 'm'
+            elif col in ai_fields:
+                curr_conf['paradata'] = 'i'
             curr_conf["type"] = python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))
             # removed as unused for now.
             # if col in dictionaries:
