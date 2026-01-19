@@ -88,7 +88,6 @@ sommarioni_sn_layer = produce_layer_obj(streetnetwork_layer_uuid,
                                          
 
 layers = [sommarioni_bm_layer, sommarioni_parcel_layer, sommarioni_sn_layer]
-layer_ids = [l['uuid'] for l in layers]
 eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
                              {"en": ["Digital Facsimile of the Cadastral Map"],
@@ -103,7 +102,7 @@ eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Fsommarioni_rialto.png/full/max/0/default.jpg",
                               "1.0",
                               sn_TR,
-                              layer_ids,
+                              layers,
                               areas_id=venice_area_uuids
                              )
 

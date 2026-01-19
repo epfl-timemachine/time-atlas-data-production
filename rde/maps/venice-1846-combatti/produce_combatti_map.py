@@ -62,7 +62,6 @@ castello_bm_layer =  produce_layer_obj(castello_layer_uuid,
                                          
 
 layers = [combatti_bm_layer, castello_bm_layer]
-layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
                              {"en": ["Digital Facsimile of the Combatti Map of Venice"],
@@ -77,7 +76,7 @@ map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2F1846_BeGCombatti.png/full/max/0/default.jpg",
                               "1.0",
                               tuple_TR,
-                              layer_ids,
+                              layers,
                               areas_id=venice_area_uuids
                              )
 

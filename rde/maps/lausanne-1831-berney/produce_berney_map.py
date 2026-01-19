@@ -67,7 +67,6 @@ berney_parcel_layer = produce_layer_obj(cadaster_layer_uuid,
                                          
 
 layers = [cadastre_bm_layer, berney_parcel_layer]
-layer_ids = [l['uuid'] for l in layers]
 eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
                              {"en": ["Digital Facsimile of the Cadastral Map"],
@@ -82,7 +81,7 @@ eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Flayer_thumbnails%2Flausanne_berney.png/full/max/0/default.jpg",
                               "1.0",
                               sn_TR,
-                              layer_ids,
+                              layers,
                               areas_id=lausanne_area_uuids
                              )
 

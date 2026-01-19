@@ -264,6 +264,13 @@ def produce_dataset_obj(
         "falls_within": areas_ids,
     }
 
+def maximal_extent_from_extent_list(extent_list: list[list[float]]) -> tuple[Point, Point]:
+    min_x = min([ext[0] for ext in extent_list])
+    min_y = min([ext[1] for ext in extent_list])
+    max_x = max([ext[2] for ext in extent_list])
+    max_y = max([ext[3] for ext in extent_list])
+    return [min_x, min_y, max_x, max_y]
+
 def produce_map_obj(
     map_uuid: str,
     map_slug: str,
@@ -273,9 +280,10 @@ def produce_map_obj(
     thumbnail: str,
     version: str,
     time_range: tuple[str, str],
-    layer_id_list: list[str],
+    layer_list: list[dict],
     areas_id: list[str],
     ) -> dict:  
+    extent_list = [layer['is_operationally_described_by'][0]['extent'] for layer in layer_list if 'is_operationally_described_by' in layer and 'extent' in layer['is_operationally_described_by'][0]]
     return {  
         "uuid": map_uuid,
         "slug": map_slug,
@@ -331,7 +339,8 @@ def produce_map_obj(
         "version": version,
         "start_time": time_range[0],
         "end_time": time_range[1],
-        "contains": layer_id_list,
+        "extent": maximal_extent_from_extent_list(extent_list),
+        "contains": [layer['uuid'] for layer in layer_list],
         "falls_within": areas_id
     }
 

@@ -54,7 +54,7 @@ map_1888 = produce_map_obj(
     "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Flayer_thumbnails%2Flausanne-1888-cadastre-vector.png/full/max/0/default.jpg",
     "1.0",
     TR_OBJ,
-    [vector_layer_uuid],
+    [vector_layer],
     areas_id=lausanne_area_uuids
 )
 

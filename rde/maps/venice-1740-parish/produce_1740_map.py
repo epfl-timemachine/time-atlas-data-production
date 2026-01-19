@@ -54,7 +54,7 @@ map_1740 = produce_map_obj(
     "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Fparish_rialto.png/full/max/0/default.jpg",
     "1.0",
     TR_OBJ,
-    [parish_layer_uuid],
+    [parish_layer],
     areas_id=venice_area_uuids
 )
 

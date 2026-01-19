@@ -40,7 +40,6 @@ contemporary_edifici_layer = produce_layer_obj(zones_layer_uuid,
                                             )
 
 layers = [contemporary_edifici_layer]
-layer_ids = [l['uuid'] for l in layers]
 contemporary_map = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
                              {"en": ["Digital Layer - Virtual Zoning from Secondary Sources"],
@@ -55,7 +54,7 @@ contemporary_map = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Fdorigo_zones.png/full/max/0/default.jpg",
                               "1.0",
                               TR,
-                              layer_ids,
+                              layers,
                               areas_id=venice_area_uuids
                              )
 
