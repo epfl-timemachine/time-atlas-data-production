@@ -306,23 +306,14 @@ prof_vals = {v:v for v in df_flat['Profession - Standard Forms'].unique() if not
 gdf['canon_name'] = gdf.apply(lambda v: v['wd_italian_name'] if v['wd_italian_name'] else v['NAME'], axis=1)
 parish_vals = gdf.set_index('NAME')['canon_name'].to_dict()
 
-church_n = 'venice-garzoni-church-dictionary'
-church_name = {"en": ["Venice Garzoni Church Dictionary"], "it": ["Venezia Garzoni Dizionario delle Chiese"], 'fr': ["Venise Dictionnaire des églises"]}
-church_uuid = str(uuid.uuid5(VTM_UUID5_NS, church_n))
-save_dictionary('../../dictionaries/',church_uuid, church_n, church_name, parish_vals)
-prof_n = 'venice-garzoni-profession-dictionary'
-prof_name = {"en": ["Venice Garzoni Profession Dictionary"], "it": ["Venezia Garzoni Dizionario delle Professioni"], 'fr': ["Venise Dictionnaire des professions"]}
-prof_uuid = str(uuid.uuid5(VTM_UUID5_NS, prof_n))
-save_dictionary('../../dictionaries/', prof_uuid ,prof_n, prof_name, prof_vals)
-
 # Dataset object production
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']
-dictionaries = {
-    "Profession - Standard Forms": prof_uuid,
-    'Master Workshop - Parish': church_uuid,
-    'Guarantor Workshop - Parish': church_uuid,
-    'Other Workshop - Parish': church_uuid,
-}
+# dictionaries = {
+#     "Profession - Standard Forms": prof_uuid,
+#     'Master Workshop - Parish': church_uuid,
+#     'Guarantor Workshop - Parish': church_uuid,
+#     'Other Workshop - Parish': church_uuid,
+# }
 
 order = ['Apprentice',
  'Master',
