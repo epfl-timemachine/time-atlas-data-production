@@ -3,11 +3,47 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-11-05T16:48:14.895778",
+ "creation_time": "2026-01-19T14:26:47.409584",
  "rde_objects": [
   {
    "uuid": "6644937d-ecae-5a67-98b5-6ba5fb690f51",
    "slug": "lausanne-1831-berney",
+   "metadata": {
+    "description": {
+     "en": [
+      "Transcription of the land registry and cadastral maps from the city of Lausanne in 1831. The dataset contains parcel identifiers, ownership, land use, geolocation, and area. Dataset created at EPFL."
+     ],
+     "it": [
+      "Trascrizione del registro fondiario e delle mappe catastali della città di Lausanne nel 1831. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, geolocalizzazione e area. Dataset creato presso l'EPFL."
+     ],
+     "fr": [
+      "Transcription du registre foncier et des cartes cadastrales de la ville de Lausanne en 1831. Le jeu de données contient des identifiants de parcelles, de propriété, d'utilisation des terres, de géolocalisation et de superficie. Jeu de données créé à l'EPFL."
+     ],
+     "nl": [
+      "Transcriptie van het landregister en de kadastrale kaarten van de stad Lausanne in 1831. De dataset bevat perceelidentificaties, eigendom, landgebruik, geolocatie en oppervlakte. Dataset gemaakt aan de EPFL."
+     ],
+     "de": [
+      "Transkription des Grundbuchs und der Katasterkarten der Stadt Lausanne im Jahr 1831. Der Datensatz enthält Parzellenkennungen, Eigentum, Landnutzung, Geolokalisierung und Fläche. Datensatz erstellt an der EPFL."
+     ]
+    },
+    "paradata": {
+     "en": [
+      "The textual data from the register was manually transcribed by various researchers."
+     ],
+     "fr": [
+      "Les données textuelles du registre ont été transcrites manuellement par divers chercheurs."
+     ],
+     "it": [
+      "I dati testuali del registro sono stati trascritti manualmente da vari ricercatori."
+     ],
+     "nl": [
+      "De tekstuele gegevens uit het register zijn handmatig getranscribeerd door verschillende onderzoekers."
+     ],
+     "de": [
+      "Die textuellen Daten aus dem Register wurden von verschiedenen Forschern manuell transkribiert."
+     ]
+    }
+   },
    "version": "1.0",
    "name": {
     "en": [
@@ -24,45 +60,53 @@
     ]
    },
    "rde_type": "dataset",
-   "publish": {
-    "doi": null,
-    "url": null
-   },
-   "description": {
-    "en": [
-     "Transcription of the land registry and cadastral maps from the city of Lausanne in 1831. The dataset contains parcel identifiers, ownership, land use, geolocation, and area. Dataset created at EPFL."
-    ],
-    "it": [
-     "Trascrizione del registro fondiario e delle mappe catastali della città di Lausanne nel 1831. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, geolocalizzazione e area. Dataset creato presso l'EPFL."
-    ],
-    "fr": [
-     "Transcription du registre foncier et des cartes cadastrales de la ville de Lausanne en 1831. Le jeu de données contient des identifiants de parcelles, de propriété, d'utilisation des terres, de géolocalisation et de superficie. Jeu de données créé à l'EPFL."
-    ],
-    "nl": [
-     "Transcriptie van het landregister en de kadastrale kaarten van de stad Lausanne in 1831. De dataset bevat perceelidentificaties, eigendom, landgebruik, geolocatie en oppervlakte. Dataset gemaakt aan de EPFL."
-    ]
-   },
-   "paradata": {
-    "en": [
-     "The textual data from the register was manually transcribed by various researchers."
-    ],
-    "fr": [
-     "Les données textuelles du registre ont été transcrites manuellement par divers chercheurs."
-    ],
-    "it": [
-     "I dati testuali del registro sono stati trascritti manualmente da vari ricercatori."
-    ],
-    "nl": [
-     "De tekstuele gegevens uit het register zijn handmatig getranscribeerd door verschillende onderzoekers."
-    ]
-   },
    "sources": [
     "3fd30342-5253-5231-83a6-606b6be73eee"
    ],
    "start_time": "1831-01-01T00:00:00",
    "end_time": "1831-12-31T23:59:59",
-   "transcribed_pages_amount": 0,
    "is_operationally_described_by": {
+    "dataset_config": {
+     "metadata_field_config": [
+      {
+       "id": "description",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Description"
+        ],
+        "fr": [
+         "Description"
+        ],
+        "it": [
+         "Descrizione"
+        ],
+        "de": [
+         "Beschreibung"
+        ]
+       },
+       "uuid": "2c9db10d-7a32-5643-8cb4-1aa93f803adc",
+       "display_order": 1
+      },
+      {
+       "id": "paradata",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Paradata"
+        ],
+        "fr": [
+         "Paradata"
+        ],
+        "it": [
+         "Paradata"
+        ]
+       },
+       "uuid": "11baf3f0-0d04-56a1-9798-97054f528e99",
+       "display_order": 2
+      }
+     ]
+    },
     "hr_config": {
      "main_label": "${own_name} ${own_surnam}, ${own_type}",
      "sub_label": "${own_desc}",
@@ -91,6 +135,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": "PEOPLE",
@@ -119,6 +164,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": "PEOPLE",
@@ -147,6 +193,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": "PLACE",
@@ -175,6 +222,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": null,
@@ -203,6 +251,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -229,8 +278,9 @@
          "Symbol"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
+       "paradata": "a",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -257,8 +307,9 @@
          "Kategorie"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": false,
+       "paradata": "a",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -287,6 +338,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -315,6 +367,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "s",
        "short_display": false,
        "hidden": false,
        "tag": "LAND_USE",
@@ -343,6 +396,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "s",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -351,7 +405,7 @@
       },
       {
        "id": "use",
-       "type": "<class 'numpy.ndarray'>",
+       "type": "LIST",
        "display_label": {
         "en": [
          "Land Uses"
@@ -371,6 +425,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": "LAND_USE",
@@ -397,8 +452,9 @@
          "Hauptnutzung des Landes"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": "LAND_USE",
@@ -425,8 +481,9 @@
          "Hauptnutzung des Landes (auf Englisch)"
         ]
        },
-       "nullable": false,
+       "nullable": true,
        "indexable": true,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -455,6 +512,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "s",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -483,6 +541,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "a",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -511,6 +570,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "a",
        "short_display": false,
        "hidden": true,
        "tag": null,
@@ -539,6 +599,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "a",
        "short_display": false,
        "hidden": true,
        "tag": null,
@@ -550,10 +611,10 @@
     "uuid": "495f0497-9089-5c8b-8e4c-d487808e5528"
    },
    "falls_within": [
-    "2fb11154-c70f-5e34-9f6e-c2cf16832a1d"
+    "e50f6137-c572-5402-80bf-1c27d19cd7c9",
+    "17832f26-8470-57e5-951d-324df69a653b"
    ],
-   "archival_reference": null,
-   "creation_time": "2025-11-05T16:48:14.893348"
+   "creation_time": "2026-01-19T14:26:47.408421"
   }
  ]
 }

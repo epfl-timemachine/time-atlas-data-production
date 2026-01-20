@@ -1,0 +1,91 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e27613a9-4aa5-5dd8-980d-1644b6286f75",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "While walking in the vineyard, I saw a camper van from Berlin"
+    ],
+    "de": [
+      "Beim Spaziergang im Weinberg sah ich einen Campingwagen aus Berlin"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F17.JPG/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c4263045-925d-5343-a87b-b9987ea2e3c8",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "La Tourelle"
+        ]
+      },
+      "height": 1728,
+      "width": 4032,
+      "items": [
+        {
+          "id": "a0def9a0-6cac-5c1d-bb01-c248f36bf78e",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "67381edf-271b-529c-8a14-3b2ea6853437",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F17.JPG/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1728,
+                "width": 4032,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F17.JPG",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c4263045-925d-5343-a87b-b9987ea2e3c8"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c39bde16-2190-502b-9fa5-28958c4b16a0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "22882033-231a-50ab-8771-721183237310",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "fr",
+                  "format": "text/html",
+                  "value": "While walking in the vineyard, I saw a camper van from Berlin"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "d2166c41-9ffc-5eab-8158-b92c2ea31342"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c4263045-925d-5343-a87b-b9987ea2e3c8",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

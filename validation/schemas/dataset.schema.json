@@ -15,116 +15,10 @@
       "type": "string"
     },
     "name": {
-      "type": "object",
-      "properties": {
-        "en": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "fr": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "it": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "en"
-      ]
+      "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
     },
     "rde_type": {
       "type": "string"
-    },
-    "publish": {
-      "type": "object",
-      "properties": {
-        "doi": {
-          "oneOf":
-          [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "url": {
-          "oneOf":
-          [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        }
-      },
-      "required": [
-        "doi",
-        "url"
-      ]
-    },
-    "description": {
-      "type": "object",
-      "properties": {
-        "en": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "fr": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "it": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "en"
-      ]
-    },
-    "paradata": {
-      "type": "object",
-      "properties": {
-        "en": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "fr": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "it": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "en"
-      ]
     },
     "sources": {
       "type": "array",
@@ -138,19 +32,11 @@
     "end_time": {
       "type": "string"
     },
-    "archival_reference": {
-      "oneOf":
-          [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ]
-    },
-    "transcribed_pages_amount": {
-      "type": "integer"
+    "metadata": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
+      }
     },
     "is_operationally_described_by": {
       "$ref": "https://timeatlas.eu/rde/dataset_configuration.schema.json"
@@ -165,20 +51,15 @@
   "required": [
     "is_operationally_described_by",
     "creation_time",
-    "description",
     "end_time",
     "falls_within",
     "name",
-    "paradata",
-    "publish",
     "version",
     "slug",
     "sources",
     "start_time",
-    "transcribed_pages_amount",
     "rde_type",
-    "uuid",
-    "archival_reference"
+    "uuid"
   ],
   "additionalProperties": false
 }

@@ -1,0 +1,271 @@
+{
+ "name": "raimund_hotel_dataset",
+ "type_in_file": [
+  "dataset"
+ ],
+ "creation_time": "2026-01-19T14:28:44.169288",
+ "rde_objects": [
+  {
+   "uuid": "2014d365-56fb-573c-bbd8-c41d41fec1a2",
+   "slug": "vaud-raimunds-hotel-journey",
+   "metadata": {
+    "description": {
+     "en": [
+      "For the duration of his tenure at EPFL, Raimund Schnurer would often book different hotel or accomodation around the canton of Vaud, and has produced a ranking and short description of each of his stay. As a tribute to Raimund's dedication and contribution to the TimeAtlas, we immortalized his journey as an easter egg dataset on the platform."
+     ],
+     "fr": [
+      "Pendant la durée de son mandat à l'EPFL, Raimund Schnurer réservait souvent différents hôtels ou hébergements dans le canton de Vaud, et a produit un classement et une courte description de chacun de ses séjours. En hommage au dévouement et à la contribution de Raimund au TimeAtlas, nous avons immortalisé son voyage en tant que dataset easter egg sur la plateforme."
+     ],
+     "de": [
+      "Während seiner Amtszeit an der EPFL buchte Raimund Schnurer oft verschiedene Hotels oder Unterkünfte im Kanton Waadt und erstellte eine Rangliste und eine kurze Beschreibung jedes seiner Aufenthalte. Als Tribut an Raimunds Engagement und Beitrag zum TimeAtlas haben wir seine Reise als Easter-Egg-Datensatz auf der Plattform verewigt."
+     ],
+     "it": [
+      "Durante il suo mandato all'EPFL, Raimund Schnurer prenotava spesso diversi hotel o alloggi nel cantone di Vaud e ha prodotto una classifica e una breve descrizione di ciascuno dei suoi soggiorni. In omaggio alla dedizione e al contributo di Raimund al TimeAtlas, abbiamo immortalato il suo viaggio come dataset easter egg sulla piattaforma."
+     ]
+    }
+   },
+   "version": "1.0",
+   "name": {
+    "en": [
+     "Raimund's Hotel Journey around Lausanne"
+    ],
+    "fr": [
+     "Le voyage hôtelier de Raimund autour de Lausanne"
+    ],
+    "de": [
+     "Raimunds Hotelreise rund um Lausanne"
+    ],
+    "it": [
+     "Il viaggio alberghiero di Raimund intorno a Losanna"
+    ]
+   },
+   "rde_type": "dataset",
+   "sources": [
+    "bcb65991-1953-5882-a7a0-b4498bb04b10"
+   ],
+   "start_time": "2024-04-01T00:00:00",
+   "end_time": "2025-12-01T23:59:59",
+   "is_operationally_described_by": {
+    "dataset_config": {
+     "metadata_field_config": [
+      {
+       "id": "description",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Description"
+        ],
+        "fr": [
+         "Description"
+        ],
+        "it": [
+         "Descrizione"
+        ],
+        "de": [
+         "Beschreibung"
+        ]
+       },
+       "uuid": "e5a65402-ab08-5d3b-99b8-57b67bdf0bb3",
+       "display_order": 1
+      }
+     ]
+    },
+    "hr_config": {
+     "main_label": "${name}",
+     "sub_label": "${photo_comment_en}",
+     "display_thumbnail": true,
+     "external_source": false,
+     "metadata_field_config": [
+      {
+       "id": "name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Hotel Name"
+        ],
+        "fr": [
+         "Nom de l'hôtel"
+        ],
+        "de": [
+         "Hotelname"
+        ],
+        "it": [
+         "Nome dell'hotel"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "m",
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 1,
+       "uuid": "af0be19b-cb21-51a9-8401-6b450ce2fd5b"
+      },
+      {
+       "id": "night_stays",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Number of Night Stays"
+        ],
+        "fr": [
+         "Nombre de nuits"
+        ],
+        "de": [
+         "Anzahl der Übernachtungen"
+        ],
+        "it": [
+         "Numero di pernottamenti"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "m",
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 2,
+       "uuid": "25d23ad0-388e-573b-9006-dee8f7dc7b39"
+      },
+      {
+       "id": "dates",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Stay Dates"
+        ],
+        "fr": [
+         "Dates du séjour"
+        ],
+        "de": [
+         "Aufenthaltsdaten"
+        ],
+        "it": [
+         "Date del soggiorno"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "m",
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 3,
+       "uuid": "6e902ef5-5160-5a55-a3d9-a2e64db8ed51"
+      },
+      {
+       "id": "comment_en",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Comment"
+        ],
+        "fr": [
+         "Commentaire"
+        ],
+        "de": [
+         "Kommentar"
+        ],
+        "it": [
+         "Commento"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "m",
+       "short_display": true,
+       "hidden": false,
+       "tag": null,
+       "display_order": 4,
+       "uuid": "ae4d8db1-2559-58f2-a684-abcbf37d3495"
+      },
+      {
+       "id": "photo_comment_en",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Photo Comment"
+        ],
+        "fr": [
+         "Commentaire de la photo"
+        ],
+        "de": [
+         "Fotokommentar"
+        ],
+        "it": [
+         "Commento alla foto"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "m",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 5,
+       "uuid": "031847ac-355c-5871-b068-f3a83472e96d"
+      },
+      {
+       "id": "comment_de",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Comment (DE)"
+        ],
+        "fr": [
+         "Commentaire (DE)"
+        ],
+        "de": [
+         "Kommentar (DE)"
+        ],
+        "it": [
+         "Commento (DE)"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "m",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 6,
+       "uuid": "6ccfa7cd-bcb7-5d52-9b5f-63b9fa0bae46"
+      },
+      {
+       "id": "photo_comment_de",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Photo Comment (DE)"
+        ],
+        "fr": [
+         "Commentaire de la photo (DE)"
+        ],
+        "de": [
+         "Fotokommentar (DE)"
+        ],
+        "it": [
+         "Commento alla foto (DE)"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "m",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 7,
+       "uuid": "1d5e02bb-5035-5490-8e4a-60550956661c"
+      }
+     ]
+    },
+    "uuid": "7c946019-f9cf-519a-aa62-25adfb4a12ae"
+   },
+   "falls_within": [
+    "17832f26-8470-57e5-951d-324df69a653b"
+   ],
+   "creation_time": "2026-01-19T14:28:44.167905"
+  }
+ ]
+}

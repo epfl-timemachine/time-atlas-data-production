@@ -22,7 +22,7 @@ basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 
 zoom_lvl= [11,21]
 
-lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
+lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-lausanne-area', 'country-switzerland-area'])
 
 cadastre_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -38,6 +38,7 @@ cadastre_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent= ['POINT (6.5820318420316335 46.60342159950106)','POINT (6.722700332883975 46.5047438639178)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:1831_Berney/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
@@ -57,6 +58,7 @@ berney_parcel_layer = produce_layer_obj(cadaster_layer_uuid,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{cadaster_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
+                                              extent= ['POINT (6.58255360972122 46.60286672962382)', 'POINT (6.721715790231707 46.504844903558364)'],
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{cadaster_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]
@@ -65,12 +67,11 @@ berney_parcel_layer = produce_layer_obj(cadaster_layer_uuid,
                                          
 
 layers = [cadastre_bm_layer, berney_parcel_layer]
-layer_ids = [l['uuid'] for l in layers]
 eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1831 – Digital Facsimile of the Cadastral Map"],
-                              "fr": ["1831 - Fac-similé numérique de la carte cadastrale"],
-                              "it": ["1831 - Facsimile digitale della mappa catastale"]},
+                             {"en": ["Digital Facsimile of the Cadastral Map"],
+                              "fr": ["Fac-similé numérique de la carte cadastrale"],
+                              "it": ["Facsimile digitale della mappa catastale"]},
                              {"en": ["Digitized version of the cadastral map dated around 1831, commonly referred to as the “Napoleonic Cadaster.” Preserves the original visual structure and toponyms for reference and alignment. Dataset created at EPFL."],
                               "fr": ["Version numérisée de la carte cadastrale datée vers 1831, communément appelée « Cadastre napoléonien ». Préserve la structure visuelle originale et les toponymes pour référence et alignement. Jeu de données créé à l'EPFL."],
                               "it": ["Version digitalizzata della mappa catastale datata intorno al 1831, comunemente chiamata « Catasto napoleonico ». Preserva la struttura visiva originale e i toponimi per riferimento e allineamento. Dataset creato all'EPFL."]},
@@ -80,8 +81,8 @@ eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Flayer_thumbnails%2Flausanne_berney.png/full/max/0/default.jpg",
                               "1.0",
                               sn_TR,
-                              layer_ids,
-                              areas_id=[lausanne_area_uuid]
+                              layers,
+                              areas_id=lausanne_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [eighteen_o_eight_map_obj], '1831_berney_map', RDE.MAP.value)

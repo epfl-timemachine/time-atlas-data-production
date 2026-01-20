@@ -3,11 +3,41 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-11-05T16:51:26.118556",
+ "creation_time": "2026-01-19T14:34:27.702616",
  "rde_objects": [
   {
    "uuid": "4aa29abc-6557-514a-9616-d2dcd0eebb28",
    "slug": "venice-europeana-postcards",
+   "metadata": {
+    "description": {
+     "en": [
+      "Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."
+     ],
+     "fr": [
+      "Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."
+     ],
+     "de": [
+      "Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."
+     ],
+     "it": [
+      "Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."
+     ]
+    },
+    "paradata": {
+     "en": [
+      "Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."
+     ],
+     "fr": [
+      "Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."
+     ],
+     "de": [
+      "Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."
+     ],
+     "it": [
+      "Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."
+     ]
+    }
+   },
    "version": "1.0",
    "name": {
     "en": [
@@ -24,45 +54,53 @@
     ]
    },
    "rde_type": "dataset",
-   "publish": {
-    "doi": null,
-    "url": null
-   },
-   "description": {
-    "en": [
-     "Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."
-    ],
-    "fr": [
-     "Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."
-    ],
-    "de": [
-     "Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."
-    ],
-    "it": [
-     "Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."
-    ]
-   },
-   "paradata": {
-    "en": [
-     "Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."
-    ],
-    "fr": [
-     "Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."
-    ],
-    "de": [
-     "Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."
-    ],
-    "it": [
-     "Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."
-    ]
-   },
    "sources": [
     "bf7b82f1-4f90-5e7f-b1b2-e6be568394d7"
    ],
    "start_time": "1890-01-01T00:00:00",
    "end_time": "2024-12-31T23:59:59",
-   "transcribed_pages_amount": 0,
    "is_operationally_described_by": {
+    "dataset_config": {
+     "metadata_field_config": [
+      {
+       "id": "description",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Description"
+        ],
+        "fr": [
+         "Description"
+        ],
+        "it": [
+         "Descrizione"
+        ],
+        "de": [
+         "Beschreibung"
+        ]
+       },
+       "uuid": "646d886e-04d2-5b56-a2de-951bc32f46ab",
+       "display_order": 1
+      },
+      {
+       "id": "paradata",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Paradata"
+        ],
+        "fr": [
+         "Paradata"
+        ],
+        "it": [
+         "Paradata"
+        ]
+       },
+       "uuid": "d9033c06-9c4c-518b-8d6b-bd915311ac4b",
+       "display_order": 2
+      }
+     ]
+    },
     "hr_config": {
      "main_label": "${Monument}, ${date}",
      "sub_label": "${description}",
@@ -88,6 +126,7 @@
        },
        "nullable": true,
        "indexable": true,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": "PLACE",
@@ -113,6 +152,7 @@
        },
        "nullable": true,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -138,6 +178,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "i",
        "short_display": true,
        "hidden": false,
        "tag": "PLACE",
@@ -163,6 +204,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "a",
        "short_display": true,
        "hidden": false,
        "tag": null,
@@ -188,6 +230,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": null,
        "short_display": false,
        "hidden": true,
        "tag": null,
@@ -199,10 +242,10 @@
     "uuid": "d69c6a5e-7bed-5717-bdff-9b9d1e930e13"
    },
    "falls_within": [
-    "620962bb-bb0d-50ed-b534-8903ad265932"
+    "ce22c093-3d47-56b8-bf06-0ab86bda0db4",
+    "ae0fb021-bbb4-5de7-bca2-afddad4b9d17"
    ],
-   "archival_reference": null,
-   "creation_time": "2025-11-05T16:51:26.117022"
+   "creation_time": "2026-01-19T14:34:27.701097"
   }
  ]
 }

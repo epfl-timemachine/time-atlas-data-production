@@ -1,0 +1,91 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "392e099b-c32f-5546-a1b8-176e6deb35d4",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "View of Mont-Pélerin"
+    ],
+    "de": [
+      "Blick auf Mont-Pélerin"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F24.JPG/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "9fd84356-24ad-5331-b87e-17a13a4c7edb",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "VISIONAPARTMENTS Vevey"
+        ]
+      },
+      "height": 3000,
+      "width": 4000,
+      "items": [
+        {
+          "id": "ce2bec62-5324-5d48-8769-e2216037de50",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "bde14522-304d-57de-b024-c0a8550b4a40",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F24.JPG/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3000,
+                "width": 4000,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F24.JPG",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "9fd84356-24ad-5331-b87e-17a13a4c7edb"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ec45013a-5f1f-5904-acbf-fb0525fc596f",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3f613bb4-254e-5afc-b0cf-262ab9e2d819",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "fr",
+                  "format": "text/html",
+                  "value": "View of Mont-Pélerin"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9a8d88d2-c9ed-5655-85f4-c27e169da238"
+                }
+              ],
+              "target": [
+                {
+                  "id": "9fd84356-24ad-5331-b87e-17a13a4c7edb",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
     "UUID_NAMESPACE": "https://timemachine.epfl.ch/lausanne/mhl_iconographie",
     "TIMERANGE_MINIMUM": 15840101,
     "TIMERANGE_MAXIMUM": 20121231,
-    "AREA_FILE_LOC": "../../areas/lausanne-area.json",
+    "AREA_SLUGS": ["city-lausanne-area", "country-switzerland-area"],
     "DATASET_CONFIGURATION": {
         "slug": "lausanne-mhl-iconographie",
         "name": {
@@ -11,20 +11,55 @@
             "de": ["Fotografien des Historischen Museums Lausanne"],
             "it": ["Fotografie del Museo Storico di Losanna"]
         },
-        "description": {
-            "fr": ["Extrait de Museris, la base de donnée du MHL. Jeu de données créé à l'EPFL."],
-            "en": ["Extract from Museris, the database of the Historical Museum of Lausanne. Dataset created at EPFL."],
-            "de": ["Auszug aus Museris, der Datenbank des Historischen Museums Lausanne. Datensatz erstellt an der EPFL."],
-            "it": ["Estratto da Museris, il database del Museo Storico di Losanna. Dataset creato presso l'EPFL."]
+        "display_thumbnail": true,
+        "external_source": true,
+        "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                    "fr": ["Extrait de Museris, la base de donnée du MHL. Jeu de données créé à l'EPFL."],
+                    "en": ["Extract from Museris, the database of the Historical Museum of Lausanne. Dataset created at EPFL."],
+                    "de": ["Auszug aus Museris, der Datenbank des Historischen Museums Lausanne. Datensatz erstellt an der EPFL."],
+                    "it": ["Estratto da Museris, il database del Museo Storico di Losanna. Dataset creato presso l'EPFL."]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"],
+                    "de": ["Paradata"]
+                },
+                "value": {
+                    "fr": ["Données produites et numérisées par le Musée Historique de Lausanne."],
+                    "en": ["Data produced and digitized by the Historical Museum of Lausanne."],
+                    "de": ["Daten produziert und digitalisiert vom Historischen Museum Lausanne."],
+                    "it": ["Dati prodotti e digitalizzati dal Museo Storico di Losanna."]
+                }
+            },
+            "url": {
+                "type": "URL",
+                "display_label": {
+                    "en": ["Project's website"],
+                    "fr": ["Site du projet"],
+                    "it": ["Sito del progetto"],
+                    "de": ["Webseite des Projekts"]
+                },
+                "value": {
+                    "en": ["https://museris.lausanne.ch/"],
+                    "fr": ["https://museris.lausanne.ch/"],
+                    "it": ["https://museris.lausanne.ch/"],
+                    "de": ["https://museris.lausanne.ch/"]
+                }
+            }
         },
-        "paradata": {
-            "fr": ["Données produites et numérisées par le Musée Historique de Lausanne."],
-            "en": ["Data produced and digitized by the Historical Museum of Lausanne."],
-            "de": ["Daten produziert und digitalisiert vom Historischen Museum Lausanne."],
-            "it": ["Dati prodotti e digitalizzati dal Museo Storico di Losanna."]
-        },
-        "doi": null,
-        "github_link": null,
         "indexed": [
             "Keywords",
             "keywords_secondary",
@@ -43,6 +78,36 @@
         ],
         "hidden": [
             "id"
+        ],
+        "automatic_fields": [
+        ],
+        "manual_fields": [
+            "titre",
+            "description",
+            "keywords",
+            "keywords_secondary",
+            "photographer",
+            "technique",
+            "technique_details",
+            "author",
+            "city",
+            "country",
+            "street",
+            "postal_code",
+            "fabrication_date",
+            "reference_date",
+            "fabrication_notes",
+            "author_inscriptions",
+            "other_inscriptions",
+            "dimensions",
+            "mounting",
+            "technical_notes",
+            "institution",
+            "historical_notes"
+        ],
+        "semi_automatic_fields": [
+        ],
+        "ai_fields": [
         ],
         "main_label": "${description} ${titre}",
         "sub_label": "${file_reference}",

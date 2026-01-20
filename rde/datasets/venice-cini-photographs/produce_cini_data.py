@@ -50,7 +50,7 @@ geom_end = datetime_obj_from_int_time(20241231, match_to_end=True)
 gdf_geom = gdf[['geometry', 'EDIFI_ID']].groupby('EDIFI_ID').first().reset_index()
 DATA_FOLDER = 'data'
 
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 # Generating geometries
 gdf_edifici['start_time'] = geom_begin
@@ -206,15 +206,7 @@ cols_of_interest_ordered = [
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,
     df[cols_of_interest_ordered],
-    CONF["indexed"],
-    CONF["short_display"],
-    CONF["hidden"], 
-    {},
-    CONF["tagged_fields"],
-    CONF["labels"],
-    CONF["main_label"],
-    CONF["sub_label"],
-    display_thumbnail=True
+    CONF
 )
 
 ds = produce_dataset_obj(
@@ -222,14 +214,11 @@ ds = produce_dataset_obj(
     DS_SLUG,
     '1.0',
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [collection_manifest_uid],
     (min_time, max_time),
     0,
     ds_conf,
-    [venice_area_uuid],
-    publish_obj=(None, CONF['github_link']),
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cini_dataset', RDE.DATASET.value, is_dataset_obj=True)

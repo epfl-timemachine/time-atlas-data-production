@@ -2,6 +2,9 @@
   "$id": "https://timeatlas.eu/rde/dataset_configuration.schema.json",
   "type": "object",
   "properties": {
+    "uuid": {
+      "type": "string"
+    },
     "hr_config": {
       "type": "object",
       "properties": {
@@ -31,30 +34,7 @@
                 ]
               },
               "display_label": {
-                "type": "object",
-                "properties": {
-                  "en": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "fr": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "it": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "required": [
-                  "en"
-                ]
+                "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
               },
               "nullable": {
                 "type": "boolean"
@@ -106,13 +86,49 @@
         "display_thumbnail"
       ]
     },
-    "uuid": {
-      "type": "string"
+    "dataset_config": {
+      "type": "object",
+      "properties": {
+        "metadata_field_config": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "display_label": {
+                "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
+              },
+              "uuid": {
+                "type": "string"
+              },
+              "display_order": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "display_label",
+              "uuid",
+              "display_order"
+            ]
+          }
+        }
+      },
+      "required": [
+        "metadata_field_config"
+      ]
     }
   },
   "required": [
     "hr_config",
-    "uuid"
+    "uuid",
+    "dataset_config"
   ],
   "additionalProperties": false
 }

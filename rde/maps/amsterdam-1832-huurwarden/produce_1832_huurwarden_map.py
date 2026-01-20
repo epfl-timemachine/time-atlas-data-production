@@ -14,7 +14,7 @@ MAP_SLUG = "amsterdam-1832-huurwarden-map"
 MAP_UUID = str(uuid.uuid5(LMAP_UUID5_NS, MAP_SLUG))
 vector_layer_slug = f"{MAP_SLUG}-vector-layer"
 vector_layer_uuid = str(uuid.uuid5(AMAP_UUID5_NS, vector_layer_slug))
-amsterdam_area_uuid = get_single_object_uuid('../../areas/amsterdam-area.json')
+amsterdam_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-amsterdam-area', 'country-kingdom-of-the-netherlands-area'])
 zoom_lvl= [11,21]
 
 layer_name = {"en": ["Cadastral vectors of 1888"], "fr": ["Vecteurs cadastraux de 1832"], "it": ["Vettori catastali del 1832"]}
@@ -30,14 +30,15 @@ vector_layer = produce_layer_obj(
     layer_configs=[produce_layer_config(
         str(uuid.uuid5(LMAP_UUID5_NS, f'{vector_layer_slug}-config-1')),
         zoom_lvl=zoom_lvl,
+        extent=['POINT (4.76151909680581 52.44411863756021)', 'POINT (5.078830875630967 52.24253392900561)'],
         format='mvt',
         access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{vector_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf"
     )]
 )
 
-map_name = {"en":["Digital Layer – 1832 Cadastral Footprints"],
-            "fr":["Couche numérique - Empreintes cadastrales de 1832"],
-            "it":["Layer digitale - Impronte catastali del 1832"]}
+map_name = {"en":["Digital Layer – Amsterdam Cadastral Footprints"],
+            "fr":["Couche numérique - Empreintes cadastrales d'Amsterdam"],
+            "it":["Layer digitale - Impronte catastali di Amsterdam"]}
 map_description = {"en":["Vector data extracted from the cadastral map of Amsterdam, dated 1832. Dataset created at EPFL."],
                     "fr":["Données vectorielles extraites de la carte cadastrale d'Amsterdam, datée de 1832. Jeu de données créé à l'EPFL."],
                     "it":["Dati vettoriali estratti dalla mappa catastale di Amsterdam, datata 1832. Dataset creato all'EPFL."]}
@@ -51,8 +52,8 @@ map_1888 = produce_map_obj(
     "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Flausanne-1888-cadastre-vector.png/full/max/0/default.jpg",
     "1.0",
     TR_OBJ,
-    [vector_layer_uuid],
-    areas_id=[amsterdam_area_uuid]
+    [vector_layer],
+    areas_id=amsterdam_area_uuids
 )
 
 save_data_file_if_different('', 'map', [map_1888], 'amsterdam_huurwarden_1832_map', RDE.MAP.value)

@@ -2,26 +2,47 @@
     "UUID_NAMESPACE": "https://timemachine.epfl.ch/venice/dorigo",
     "TIMERANGE_MINIMUM": 9460101,
     "TIMERANGE_MAXIMUM": 14081231,
-    "AREA_FILE_LOC": "../../areas/venice-area.json",
+    "AREA_SLUGS": ["city-venice-area", "country-italy-area"],
     "DATASET_CONFIGURATION": {
         "slug": "venice-dorigo",
         "name": {
             "en": ["Ownership data from Secondary Sources"],
             "it": ["Dati di proprietà da fonti secondarie"],
-            "fr": ["Données de propriété provenant de sources secondaires"]
+            "fr": ["Données de propriété provenant de sources secondaires"],
+            "de": ["Eigentumsdaten aus Sekundärquellen"]
         },
-        "description": {
-            "en": ["Extracted from Venezia Romanica (W. Dorigo, 2003) and created at EPFL. Selected information from the index — including ownership, land use, and toponyms originally drawn from historical sources — has been transcribed and geographically realigned. Information geolocated by machine learning algorithms. Semi-automatic checking. For technical details, see the corresponding datasheet."],
-            "it": ["Estratti da Venezia Romanica (W. Dorigo, 2003) e creati presso l'EPFL. Informazioni selezionate dall'indice - inclusi proprietà, uso del suolo e toponimi originariamente tratti da fonti storiche - sono stati trascritti e riallineati geograficamente. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Controllo semi-automatico. Per dettagli tecnici, vedere il foglio informativo corrispondente."],
-            "fr": ["Extraits de Venezia Romanica (W. Dorigo, 2003) et créés à l'EPFL. Des informations sélectionnées dans l'index - y compris la propriété, l'utilisation des terres et les toponymes initialement tirés de sources historiques - ont été transcrites et réalignées géographiquement. Informations géolocalisées par des algorithmes d'apprentissage automatique. Vérification semi-automatique. Pour plus de détails techniques, voir la fiche technique correspondante."]
+        "dataset_metadata_config": {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                     "en": ["Extracted from Venezia Romanica (W. Dorigo, 2003) and created at EPFL. Selected information from the index — including ownership, land use, and toponyms originally drawn from historical sources — has been transcribed and geographically realigned. Information geolocated by machine learning algorithms. Semi-automatic checking. For technical details, see the corresponding datasheet."],
+                    "it": ["Estratti da Venezia Romanica (W. Dorigo, 2003) e creati presso l'EPFL. Informazioni selezionate dall'indice - inclusi proprietà, uso del suolo e toponimi originariamente tratti da fonti storiche - sono stati trascritti e riallineati geograficamente. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Controllo semi-automatico. Per dettagli tecnici, vedere il foglio informativo corrispondente."],
+                    "fr": ["Extraits de Venezia Romanica (W. Dorigo, 2003) et créés à l'EPFL. Des informations sélectionnées dans l'index - y compris la propriété, l'utilisation des terres et les toponymes initialement tirés de sources historiques - ont été transcrites et réalignées géographiquement. Informations géolocalisées par des algorithmes d'apprentissage automatique. Vérification semi-automatique. Pour plus de détails techniques, voir la fiche technique correspondante."],
+                    "de": ["Aus Venezia Romanica (W. Dorigo, 2003) extrahiert und an der EPFL erstellt. Ausgewählte Informationen aus dem Index - einschließlich Eigentum, Landnutzung und Toponyme, die ursprünglich aus historischen Quellen stammen - wurden transkribiert und geografisch neu ausgerichtet. Informationen, die durch maschinelle Lernalgorithmen geolokalisiert wurden. Semi-automatische Überprüfung. Für technische Details siehe das entsprechende Datenblatt."]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"],
+                    "de": ["Paradata"]
+                },
+                "value": {     
+                    "en": ["The maps with zones were manually georeferenced and automatically digitised using computer vision techniques. The table cells were detected by an optimization-based approach due to the curvature of the pages. The text within the table cells was recognized by an OCR library and entities were extracted by string matching from index pages."],
+                    "fr": ["Les cartes avec les zones ont été géoréférencées manuellement et numérisées automatiquement à l’aide de techniques de vision par ordinateur. Les cellules des tableaux ont été détectées par une approche basée sur l’optimisation en raison de la courbure des pages. Le texte à l’intérieur des cellules des tableaux a été reconnu par une bibliothèque OCR et les entités ont été extraites par correspondance de chaînes à partir des pages d’index."],
+                    "it": ["Le mappe con le zone sono state georeferenziate manualmente e digitalizzate automaticamente utilizzando tecniche di visione artificiale. Le celle delle tabelle sono state rilevate da un approccio basato sull’ottimizzazione a causa della curvatura delle pagine. Il testo all’interno delle celle delle tabelle è stato riconosciuto da una libreria OCR e le entità sono state estratte tramite corrispondenza di stringhe dalle pagine di indice."],
+                    "de": ["Die Karten mit den Zonen wurden manuell georeferenziert und mithilfe von Techniken der Computer Vision automatisch digitalisiert. Die Tabellenzellen wurden aufgrund der Krümmung der Seiten durch einen optimierungsbasierten Ansatz erkannt. Der Text innerhalb der Tabellenzellen wurde von einer OCR-Bibliothek erkannt und die Entitäten wurden durch String-Matching aus Indexseiten extrahiert."]
+                }
+            }
         },
-        "paradata": {
-            "en": ["The maps with zones were manually georeferenced and automatically digitised using computer vision techniques. The table cells were detected by an optimization-based approach due to the curvature of the pages. The text within the table cells was recognized by an OCR library and entities were extracted by string matching from index pages."],
-            "fr": ["Les cartes avec les zones ont été géoréférencées manuellement et numérisées automatiquement à l’aide de techniques de vision par ordinateur. Les cellules des tableaux ont été détectées par une approche basée sur l’optimisation en raison de la courbure des pages. Le texte à l’intérieur des cellules des tableaux a été reconnu par une bibliothèque OCR et les entités ont été extraites par correspondance de chaînes à partir des pages d’index."],
-            "it": ["Le mappe con le zone sono state georeferenziate manualmente e digitalizzate automaticamente utilizzando tecniche di visione artificiale. Le celle delle tabelle sono state rilevate da un approccio basato sull’ottimizzazione a causa della curvatura delle pagine. Il testo all’interno delle celle delle tabelle è stato riconosciuto da una libreria OCR e le entità sono state estratte tramite corrispondenza di stringhe dalle pagine di indice."]
-        },
-        "doi": null,
-        "github_link": "https://github.com/epfl-timemachine/dorigo",
         "indexed": [
             "place_name",
             "owner_name",
@@ -41,6 +62,26 @@
             "owner_title"
         ],
         "hidden": [
+        ],
+        "automatic_fields": [
+            "bibliographic_citation"
+        ],
+        "manual_fields": [
+            "place_name",
+            "owner_name",
+            "owner_name_appendix",
+            "owner_title"
+        ],
+        "semi_automatic_fields": [
+            "owner_last_name",
+            "owner_first_name",
+            "date_comment",
+            "owner_ocr",
+            "place_ocr",
+            "source_ocr",
+            "source"
+        ],
+        "ai_fields": [
         ],
         "main_label": "${owner_name}",
         "sub_label": "${place_name}",

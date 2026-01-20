@@ -16,7 +16,7 @@ bm_slug = f"{MAP_SLUG}-base"
 basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 leventhal_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -32,18 +32,18 @@ leventhal_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.302482953972664 45.45393912615501)','POINT (12.369334576161961 45.41611755547026)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1846-nbleventhal/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
                                         )
 
 layers = [leventhal_bm_layer]
-layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1846 - Digital Facsimile of Leventhal’s Map of Venice"],
-                              "fr": ["1846 - Fac-similé numérique de la carte de Venise de Leventhal"],
-                              "it": ["1846 - Facsimile digitale della mappa di Venezia di Leventhal"]},
+                             {"en": ["Digital Facsimile of Leventhal’s Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise de Leventhal"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Leventhal"]},
                              {"en": ["Digitized reproduction of the 1846 map of Venice by Normal B. Leventhal. Preserves detailed cartographic features and historical place names. Dataset created at EPFLe"],
                               "fr": ["Reproduction numérisée de la carte de Venise de 1846 par Normal B. Leventhal. Préserve les caractéristiques cartographiques détaillées et les noms de lieux historiques. Jeu de données créé à l'EPFL."],
                               "it": ["Riproduzione digitalizzata della mappa di Venezia del 1846 di Normal B. Leventhal. Preserva le caratteristiche cartografiche dettagliate e i nomi dei luoghi storici. Dataset creato all'EPFL."]},
@@ -53,8 +53,8 @@ map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2F1846_NBLeventhal.png/full/max/0/default.jpg",
                               "1.0",
                               tuple_TR,
-                              layer_ids,
-                              areas_id=[venice_area_uuid]
+                              layers,
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [map_obj], '1846_leventhal_map', RDE.MAP.value)

@@ -15,7 +15,7 @@ MAP_UUID = str(uuid.uuid5(VMAP_UUID5_NS, MAP_SLUG))
 parish_layer_slug = f"{MAP_SLUG}-parish-layer"
 parish_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, parish_layer_slug))
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 zoom_lvl= [11,21]
 layer_name = {"en": ["Parishes of 1740"], "fr": ["Paroisses de 1740"], "it": ["Parrocchie di 1740"]}
@@ -31,14 +31,15 @@ parish_layer = produce_layer_obj(
     layer_configs=[produce_layer_config(
         str(uuid.uuid5(VMAP_UUID5_NS, f'{parish_layer_slug}-config-1')),
         zoom_lvl=zoom_lvl,
+        extent=['POINT (12.310304758139957 45.44955643150202)','POINT (12.361389671133239 45.42305311608875)'],
         format='mvt',
         access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{parish_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf"
     )]
 )
 
-map_name = {"en":["Digital Layer – 1740 Parish Boundaries"],
-            "fr":["Couche numérique - Limites des paroisses de 1740"],
-            "it":["Layer digitale - Confini parrocchiali del 1740"]
+map_name = {"en":["Digital Layer – Parish Boundaries"],
+            "fr":["Couche numérique - Limites des paroisses"],
+            "it":["Layer digitale - Confini parrocchiali"]
             }
 map_description = {"en":["Vector data manually extracted and realigned from the parishes mentioned in the 1740 Catastici dataset. Provides spatial representations of parish areas based on historical references. Dataset created at EPFL."],
                     "fr":["Données vectorielles extraites et réalignées manuellement à partir des paroisses mentionnées dans le jeu de données Catastici de 1740. Fournit des représentations spatiales des zones paroissiales basées sur des références historiques. Jeu de données créé à l'EPFL."],
@@ -53,8 +54,8 @@ map_1740 = produce_map_obj(
     "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Fparish_rialto.png/full/max/0/default.jpg",
     "1.0",
     TR_OBJ,
-    [parish_layer_uuid],
-    areas_id=[venice_area_uuid]
+    [parish_layer],
+    areas_id=venice_area_uuids
 )
 
 save_data_file_if_different('', 'map', [map_1740], '1740_map', RDE.MAP.value)

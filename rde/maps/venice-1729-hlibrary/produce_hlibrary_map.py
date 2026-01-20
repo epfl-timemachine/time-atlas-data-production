@@ -16,7 +16,7 @@ bm_slug = f"{MAP_SLUG}-base"
 basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 hlibrary_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -32,18 +32,18 @@ hlibrary_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent = ['POINT (12.297567191857944 45.45624144839759)','POINT (12.37309062309471 45.40757193753827)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1729-hlibrary/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
                                         )
 
 layers = [hlibrary_bm_layer]
-layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1729 – Digital Facsimile of a Map of Venice from Harvard’s Library"],
-                              "fr": ["1729 - Fac-similé numérique d'une carte de Venise de la bibliothèque de Harvard"],
-                              "it": ["1729 - Facsimile digitale di una mappa di Venezia della biblioteca di Harvard"]},
+                             {"en": ["Digital Facsimile of a Map of Venice from Harvard’s Library"],
+                              "fr": ["Fac-similé numérique d'une carte de Venise de la bibliothèque de Harvard"],
+                              "it": ["Facsimile digitale di una mappa di Venezia della biblioteca di Harvard"]},
                              {"en": ["Digitized reproduction of a map of Venice conserved at the Library of Harvard’s University, dated around 1729. Preserves the original cartographic detail and historical toponyms. Dataset created at EPFL."],
                               "fr": ["Reproduction numérisée d'une carte de Venise conservée à la bibliothèque de l'université de Harvard, datée vers 1729. Préserve le détail cartographique original et les toponymes historiques. Jeu de données créé à l'EPFL."],
                               "it": ["Riproduzione digitalizzata di una mappa di Venezia conservata presso la biblioteca dell'università di Harvard, datata intorno al 1729. Preserva il dettaglio cartografico originale e i toponimi storici. Dataset creato all'EPFL."]},
@@ -53,8 +53,8 @@ map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2F1729_HLibrary.png/full/max/0/default.jpg",
                               "1.0",
                               tuple_TR,
-                              layer_ids,
-                              areas_id=[venice_area_uuid]
+                              layers,
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [map_obj], '1729_hlibrary_map', RDE.MAP.value)

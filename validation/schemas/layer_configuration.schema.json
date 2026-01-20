@@ -5,10 +5,18 @@
         "uuid": {
             "type": "string"
         },
+        "extent": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 4,
+            "maxItems": 4
+        },
         "zoom_lvl": {
             "type": "array",
             "items": {
-            "type": "integer"
+                "type": "integer"
             }
         },
         "service": {
@@ -25,12 +33,13 @@
                 "url",
                 "media_type"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
         }
     },
     "required": [
         "service",
         "uuid",
+        "extent",
         "zoom_lvl"
     ],
     "additionalProperties": false

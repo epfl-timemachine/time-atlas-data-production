@@ -18,7 +18,7 @@ castello_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, castello_slug))
 basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 combatti_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -34,6 +34,7 @@ combatti_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.334515001558735 45.43990832316747)', 'POINT (12.365788130999428 45.42445410021895)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1846-begcombatti/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
@@ -53,6 +54,7 @@ castello_bm_layer =  produce_layer_obj(castello_layer_uuid,
                                         layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{castello_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.334515001558735 45.43990832316747)', 'POINT (12.365788130999428 45.42445410021895)'],  
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1846-begcombatti2/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
@@ -60,12 +62,11 @@ castello_bm_layer =  produce_layer_obj(castello_layer_uuid,
                                          
 
 layers = [combatti_bm_layer, castello_bm_layer]
-layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1846 – Digital Facsimile of the Combatti Map of Venice"],
-                              "fr": ["1846 - Fac-similé numérique de la carte de Venise de Combatti"],
-                              "it": ["1846 - Facsimile digitale della mappa di Venezia di Combatti"]},
+                             {"en": ["Digital Facsimile of the Combatti Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise de Combatti"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Combatti"]},
                              {"en": ["Digitized reproduction of the 1846 map of Venice by Bernardo and Gaetano Combatti. Preserves detailed cartographic features and historical place names. Dataset created at EPFL."],
                              "fr": ["Reproduction numérisée de la carte de Venise de 1846 par Bernardo et Gaetano Combatti. Préserve les caractéristiques cartographiques détaillées et les noms de lieux historiques. Jeu de données créé à l'EPFL."],
                              "it": ["Riproduzione digitalizzata della mappa di Venezia del 1846 di Bernardo e Gaetano Combatti. Preserva le caratteristiche cartografiche dettagliate e i nomi dei luoghi storici. Dataset creato all'EPFL."]},
@@ -75,8 +76,8 @@ map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2F1846_BeGCombatti.png/full/max/0/default.jpg",
                               "1.0",
                               tuple_TR,
-                              layer_ids,
-                              areas_id=[venice_area_uuid]
+                              layers,
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [map_obj], '1846_combatti_map', RDE.MAP.value)
