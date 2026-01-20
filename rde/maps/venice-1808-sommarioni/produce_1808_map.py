@@ -24,7 +24,7 @@ streetnetwork_slug = f"{BASE_SLUG}-streetnetwork"
 streetnetwork_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, streetnetwork_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 sommarioni_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -40,6 +40,7 @@ sommarioni_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.3065061 45.4522034)','POINT (12.3698376 45.4241568)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/www/tilesets/venice/sommarioni/{z}/{x}/{y}.png",
                                           format='xyz'
                                           )]
@@ -59,6 +60,7 @@ sommarioni_parcel_layer = produce_layer_obj(cadaster_layer_uuid,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{cadaster_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
+                                              extent=['POINT (12.30650520324707 45.452205657958984)','POINT (12.369837760925293 45.424156188964844)'],
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{cadaster_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]
@@ -78,6 +80,7 @@ sommarioni_sn_layer = produce_layer_obj(streetnetwork_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{streetnetwork_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
+                                              extent=['POINT (12.30650520324707 45.452205657958984)','POINT (12.369837760925293 45.424156188964844)'],
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{streetnetwork_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]
@@ -85,12 +88,11 @@ sommarioni_sn_layer = produce_layer_obj(streetnetwork_layer_uuid,
                                          
 
 layers = [sommarioni_bm_layer, sommarioni_parcel_layer, sommarioni_sn_layer]
-layer_ids = [l['uuid'] for l in layers]
 eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1808 – Digital Facsimile of the Cadastral Map"],
-                              "fr": ["1808 - Fac-similé numérique de la carte cadastrale"],
-                              "it": ["1808 - Facsimile digitale della mappa catastale"]},
+                             {"en": ["Digital Facsimile of the Cadastral Map"],
+                              "fr": ["Fac-similé numérique de la carte cadastrale"],
+                              "it": ["Facsimile digitale della mappa catastale"]},
                              {"en": ["Digitized version of the cadastral map dated around 1808, commonly referred to as the “Napoleonic Cadaster.” Preserves the original visual structure and toponyms for reference and alignment. Dataset created at EPFL."],
                               "fr": ["Version numérisée de la carte cadastrale datée vers 1808, communément appelée « Cadastre napoléonien ». Préserve la structure visuelle originale et les toponymes pour référence et alignement. Jeu de données créé à l'EPFL."],
                               "it": ["Version digitalizzata della mappa catastale datata intorno al 1808, comunemente chiamata « Catasto napoleonico ». Preserva la struttura visiva originale e i toponimi per riferimento e allineamento. Dataset creato all'EPFL."]},
@@ -100,8 +102,8 @@ eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Fsommarioni_rialto.png/full/max/0/default.jpg",
                               "1.0",
                               sn_TR,
-                              layer_ids,
-                              areas_id=[venice_area_uuid]
+                              layers,
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [eighteen_o_eight_map_obj], '1808_sommarioni_map', RDE.MAP.value)

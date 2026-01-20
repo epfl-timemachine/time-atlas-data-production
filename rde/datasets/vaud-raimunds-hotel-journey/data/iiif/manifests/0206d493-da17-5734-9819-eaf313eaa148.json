@@ -1,0 +1,91 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "0206d493-da17-5734-9819-eaf313eaa148",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "The inside of the lift"
+    ],
+    "de": [
+      "So sieht es im Fahrstuhl aus"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F13.JPG/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "3dc6247b-bc7a-592b-9142-40931bb19eb1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Swiss Chocolate by Fassbind Lausanne"
+        ]
+      },
+      "height": 2272,
+      "width": 4032,
+      "items": [
+        {
+          "id": "bc72bf81-dcad-5be9-8d88-8c5da2675103",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "8f530e80-a24e-585a-8a43-b183cf8c5dc2",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F13.JPG/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 2272,
+                "width": 4032,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F13.JPG",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "3dc6247b-bc7a-592b-9142-40931bb19eb1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8f3745f5-da03-5832-9433-1f2e586917f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "5bd6342f-78fd-549f-8ac1-4d51478e4528",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "fr",
+                  "format": "text/html",
+                  "value": "The inside of the lift"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "0c963e85-81db-5a46-905c-7007e0faa8f5"
+                }
+              ],
+              "target": [
+                {
+                  "id": "3dc6247b-bc7a-592b-9142-40931bb19eb1",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

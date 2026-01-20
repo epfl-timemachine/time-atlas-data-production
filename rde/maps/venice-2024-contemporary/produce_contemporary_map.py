@@ -17,7 +17,7 @@ edifici_slug = f"{MAP_SLUG}-edifici"
 edifici_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, edifici_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
  
 contemporary_edifici_layer = produce_layer_obj(edifici_layer_uuid, 
                                             edifici_slug,
@@ -33,18 +33,18 @@ contemporary_edifici_layer = produce_layer_obj(edifici_layer_uuid,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{edifici_slug}-config-1')),
                                               zoom_lvl=zoom_lvl,
+                                              extent=['POINT (12.303245677759824 45.46170713452107)','POINT (12.366490271915978 45.399634477179454)'],
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{edifici_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
                                               )]
                                             )
 
 layers = [contemporary_edifici_layer]
-layer_ids = [l['uuid'] for l in layers]
 contemporary_map = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["Digital Layer - 2024 Contemporary Building Footprints"],
-                              "fr": ["Couche numérique - 2024 Empreintes de bâtiments contemporains"],
-                              "it": ["Strato digitale - 2024 Impronte di edifici contemporanei"]},
+                             {"en": ["Digital Layer - Contemporary Building Footprints"],
+                              "fr": ["Couche numérique - Empreintes de bâtiments contemporains"],
+                              "it": ["Strato digitale - Impronte di edifici contemporanei"]},
                              {"en": ["Vector layer of current building footprints in Venice, based on 2024 data. Serves as a reference for comparing historical and present-day urban fabric. Dataset created at EPFL."],
                              "fr": ["Couche vectorielle des empreintes de bâtiments actuels à Venise, basée sur des données de 2024. Sert de référence pour comparer le tissu urbain historique et contemporain. Jeu de données créé à l'EPFL."],
                              "it": ["Layer vettoriale delle impronte degli edifici attuali a Venezia, basato su dati del 2024. Serve come riferimento per confrontare il tessuto urbano storico e contemporaneo. Dataset creato all'EPFL."]},
@@ -54,8 +54,8 @@ contemporary_map = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Fedifici_rialto.png/full/max/0/default.jpg",
                               "1.0",
                               TR,
-                              layer_ids,
-                              areas_id=[venice_area_uuid]
+                              layers,
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [contemporary_map], 'contemporary_map', RDE.MAP.value)

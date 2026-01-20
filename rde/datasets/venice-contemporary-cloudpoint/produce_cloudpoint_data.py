@@ -40,7 +40,7 @@ df['start_time'] = min_time
 df['end_time'] = max_time
 DATA_FOLDER = 'data'
 
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 with open('../venice-cini-photographs/edifici_id_to_geom_uuid.json') as f:
     edifici_id_to_geom_uuid = json.load(f)
@@ -223,15 +223,7 @@ cols_of_interest = list(set(df.columns).difference(set(cols_of_non_interest)))
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,
     df[cols_of_interest],
-    CONF["indexed"],
-    CONF["short_display"],
-    CONF["hidden"], 
-    {},
-    CONF["tagged_fields"],
-    CONF["labels"],
-    CONF["main_label"],
-    CONF["sub_label"],
-    display_thumbnail=True
+    CONF
 )
 
 ds = produce_dataset_obj(
@@ -239,14 +231,11 @@ ds = produce_dataset_obj(
     DS_SLUG,
     '1.0',
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [collection_manifest_uid],
     (min_time, max_time),
     0,
     ds_conf,
-    [venice_area_uuid],
-    publish_obj=(None, CONF['github_link']),
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cloudpoints_dataset', RDE.DATASET.value, is_dataset_obj=True)

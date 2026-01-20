@@ -1,0 +1,91 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "da5bd5fe-60c5-5236-8982-c37c128f8f9b",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Sunset on a warm evening"
+    ],
+    "de": [
+      "Sonnenuntergang an einem warmen Abend"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F9.JPG/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "53942b54-2d03-50dd-b47b-c8bba01a733c",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Galion Hôtel & Restaurant"
+        ]
+      },
+      "height": 3000,
+      "width": 4000,
+      "items": [
+        {
+          "id": "e49fde25-2306-5612-921d-42a1c5e2023c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "037e2c14-6635-537b-896b-2edacf8b5be6",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F9.JPG/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3000,
+                "width": 4000,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F9.JPG",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "53942b54-2d03-50dd-b47b-c8bba01a733c"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "6091d5bb-d32d-5193-a786-9ab40b59b59c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "a87e9d68-2ab4-57a8-96d4-57dabd3f94a0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "fr",
+                  "format": "text/html",
+                  "value": "Sunset on a warm evening"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ee3fea39-6b1d-5c10-bbc1-df542f8b9660"
+                }
+              ],
+              "target": [
+                {
+                  "id": "53942b54-2d03-50dd-b47b-c8bba01a733c",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

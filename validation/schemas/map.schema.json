@@ -12,82 +12,37 @@
       "type": "string"
     },
     "name": {
-      "type": "object",
-      "properties": {
-        "en": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "fr": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "it": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "en"
-      ]
+      "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
     },
-    "description": {
+    "metadata": {
       "type": "object",
-      "properties": {
-        "en": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "fr": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "it": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "en"
-      ]
+      "additionalProperties": {
+        "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
+      }
     },
-    "paradata": {
-      "type": "object",
-      "properties": {
-        "en": {
-          "type": "array",
-          "items": {
+    "metadata_field_config": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
             "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "display_label": {
+            "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
+          },
+          "display_order": {
+            "type": "number"
           }
         },
-        "fr": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "it": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "en"
-      ]
+        "required": ["uuid", "id", "type", "display_label", "display_order"]
+      }
     },
     "thumbnail": {
       "type": "string"
@@ -100,6 +55,14 @@
     },
     "end_time": {
       "type": "string"
+    },
+    "extent": {
+        "type": "array",
+        "items": {
+            "type": "number"
+        },
+        "minItems": 4,
+        "maxItems": 4
     },
     "contains": {
       "type": "array",
@@ -116,12 +79,11 @@
   },
   "required": [
     "contains",
-    "description",
     "end_time",
     "falls_within",
     "name",
+    "extent",
     "version",
-    "paradata",
     "thumbnail",
     "rde_type",
     "slug",

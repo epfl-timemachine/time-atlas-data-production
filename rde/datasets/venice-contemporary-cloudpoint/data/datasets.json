@@ -3,11 +3,55 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-11-05T16:52:13.194269",
+ "creation_time": "2026-01-19T14:33:06.366643",
  "rde_objects": [
   {
    "uuid": "93d47eb8-f298-59c4-ab1d-9e6a217788f2",
    "slug": "venice-contemporary-cloudpoints",
+   "metadata": {
+    "description": {
+     "en": [
+      "Data derived from a cloupoint acquisition from a flyover of the city of Venice. Building were identified and segmented, resulting in more than 8000 3d models accompanied by facade and panoramic extractions."
+     ],
+     "fr": [
+      "Les données proviennent d'une acquisition de nuages de points lors d'un survol de la ville de Venise. Les bâtiments ont été identifiés et segmentés, ce qui a permis d'obtenir plus de 8000 modèles 3D accompagnés d'extractions de façades et de panoramas."
+     ],
+     "it": [
+      "I dati derivano da un'acquisizione di nuvole di punti durante un sorvolo della città di Venezia. Gli edifici sono stati identificati e segmentati, ottenendo oltre 8000 modelli 3D accompagnati da estrazioni di facci e e panorami."
+     ],
+     "de": [
+      "Die Daten stammen aus einer Punktwolkenaufnahme bei einem Überflug der Stadt Venedig. Gebäude wurden identifiziert und segmentiert, was zu mehr als 8000 3D-Modellen mit Fassaden- und Panoramaausschnitten führte."
+     ]
+    },
+    "paradata": {
+     "en": [
+      "Paul Guhennec segemented the cloudpoints of the building from a general flyover cloud points data acquisition of the city."
+     ],
+     "fr": [
+      "Paul Guhennec a segmenté le nuage de points de l'immeuble à partir d'une acquisition de données de nuages de points en survol général de la ville."
+     ],
+     "it": [
+      "Paul Guhennec ha segmentato il nuvola di punti dell'edificio a partire da un'acquisizione di dati di nuvole di punti in volo generale della città."
+     ],
+     "de": [
+      "Paul Guhennec segmentierte die Punktwolke des Gebäudes aus einer allgemeinen Punktwolken-Datenerfassung der Stadt bei einem Überflug."
+     ]
+    },
+    "doi": {
+     "en": [
+      "doi.org/10.5075/epfl-thesis-11172"
+     ],
+     "fr": [
+      "doi.org/10.5075/epfl-thesis-11172"
+     ],
+     "de": [
+      "doi.org/10.5075/epfl-thesis-11172"
+     ],
+     "it": [
+      "doi.org/10.5075/epfl-thesis-11172"
+     ]
+    }
+   },
    "version": "1.0",
    "name": {
     "en": [
@@ -18,92 +62,88 @@
     ],
     "it": [
      "Nuvola di punti contemporanei di Venezia"
+    ],
+    "de": [
+     "Zeitgenössische Punktwolken von Venedig"
     ]
    },
    "rde_type": "dataset",
-   "publish": {
-    "doi": null,
-    "url": null
-   },
-   "description": {
-    "en": [
-     "Data derived from a cloupoint acquisition from a flyover of the city of Venice. Building were identified and segmented, resulting in more than 8000 3d models accompanied by facade and panoramic extractions."
-    ],
-    "fr": [
-     "Les données proviennent d'une acquisition de nuages de points lors d'un survol de la ville de Venise. Les bâtiments ont été identifiés et segmentés, ce qui a permis d'obtenir plus de 8000 modèles 3D accompagnés d'extractions de façades et de panoramas."
-    ],
-    "it": [
-     "I dati derivano da un'acquisizione di nuvole di punti durante un sorvolo della città di Venezia. Gli edifici sono stati identificati e segmentati, ottenendo oltre 8000 modelli 3D accompagnati da estrazioni di facci e e panorami."
-    ]
-   },
-   "paradata": {
-    "en": [
-     "Paul Guhennec segemented the cloudpoints of the building from a general flyover cloud points data acquisition of the city."
-    ],
-    "fr": [
-     "Paul Guhennec a segmenté le nuage de points de l'immeuble à partir d'une acquisition de données de nuages de points en survol général de la ville."
-    ],
-    "it": [
-     "Paul Guhennec ha segmentato il nuvola di punti dell'edificio a partire da un'acquisizione di dati di nuvole di punti in volo generale della città."
-    ]
-   },
    "sources": [
     "572ce6ed-f4cd-5445-b8d4-36b8dfa85d94"
    ],
    "start_time": "2024-01-01T00:00:00",
    "end_time": "2024-12-31T23:59:59",
-   "transcribed_pages_amount": 0,
    "is_operationally_described_by": {
+    "dataset_config": {
+     "metadata_field_config": [
+      {
+       "id": "description",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Description"
+        ],
+        "fr": [
+         "Description"
+        ],
+        "it": [
+         "Descrizione"
+        ],
+        "de": [
+         "Beschreibung"
+        ]
+       },
+       "uuid": "a69292fc-8ccf-57ee-8fe1-d9c4ad9a6a7e",
+       "display_order": 1
+      },
+      {
+       "id": "paradata",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Paradata"
+        ],
+        "fr": [
+         "Paradata"
+        ],
+        "it": [
+         "Paradata"
+        ],
+        "de": [
+         "Paradata"
+        ]
+       },
+       "uuid": "e4f5a1b9-a52e-5081-ba44-4785cdcbdb9c",
+       "display_order": 2
+      },
+      {
+       "id": "doi",
+       "type": "URL",
+       "display_label": {
+        "en": [
+         "DOI"
+        ],
+        "fr": [
+         "DOI"
+        ],
+        "de": [
+         "DOI"
+        ],
+        "it": [
+         "DOI"
+        ]
+       },
+       "uuid": "9be80622-fd25-5978-8a3b-ff35463580d1",
+       "display_order": 3
+      }
+     ]
+    },
     "hr_config": {
-     "main_label": "${aulic_name}, ${EDIFI_ID}",
-     "sub_label": "${CIVICI}",
+     "main_label": "${aulic_name}",
+     "sub_label": "${EDIFI_ID}",
      "display_thumbnail": true,
      "external_source": false,
      "metadata_field_config": [
-      {
-       "id": "style",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Style"
-        ],
-        "it": [
-         "Stile"
-        ],
-        "fr": [
-         "Style"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 1,
-       "uuid": "66b144e1-80c8-585a-a04d-82a97e6b50c7"
-      },
-      {
-       "id": "typology",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Typology"
-        ],
-        "it": [
-         "Tipologia"
-        ],
-        "fr": [
-         "Typologie"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 2,
-       "uuid": "15cecd40-3b83-59b6-8f25-eb5bdbaf1530"
-      },
       {
        "id": "volume",
        "type": "FLOAT",
@@ -120,33 +160,12 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "a",
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 3,
+       "display_order": 1,
        "uuid": "67eeb99f-9754-55d1-9f9d-311e52f1cf61"
-      },
-      {
-       "id": "SESTIERE",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "District"
-        ],
-        "it": [
-         "Sestiere"
-        ],
-        "fr": [
-         "Sestiere"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 4,
-       "uuid": "04e882b8-cc39-55d9-9dbb-9f82d8a4a38f"
       },
       {
        "id": "EDIFI_ID",
@@ -164,55 +183,12 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "s",
        "short_display": true,
        "hidden": false,
        "tag": null,
-       "display_order": 5,
+       "display_order": 2,
        "uuid": "d467d2dc-8ad9-5ad3-9078-e924b7e39642"
-      },
-      {
-       "id": "aulic_name",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Aulic name"
-        ],
-        "it": [
-         "Nome aulico"
-        ],
-        "fr": [
-         "Nom aulique"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "short_display": true,
-       "hidden": false,
-       "tag": "PLACE",
-       "display_order": 6,
-       "uuid": "b56d3ac1-2f9e-54a1-a3cc-30bb7a394ca9"
-      },
-      {
-       "id": "nb_points",
-       "type": "INTEGER",
-       "display_label": {
-        "en": [
-         "Number of points"
-        ],
-        "it": [
-         "Numero di punti"
-        ],
-        "fr": [
-         "Nombre de points"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 7,
-       "uuid": "50413bf3-af64-5c94-a0d3-d4108c5d8080"
       },
       {
        "id": "ISOLA",
@@ -230,99 +206,35 @@
        },
        "nullable": true,
        "indexable": false,
+       "paradata": "s",
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 8,
+       "display_order": 3,
        "uuid": "4a9466f7-1697-5fa5-b7fd-ca575c9caef9"
       },
       {
-       "id": "wikidata",
+       "id": "typology",
        "type": "STRING",
        "display_label": {
         "en": [
-         "Wikidata"
+         "Typology"
         ],
         "it": [
-         "Wikidata"
+         "Tipologia"
         ],
         "fr": [
-         "Wikidata"
+         "Typologie"
         ]
        },
        "nullable": true,
-       "indexable": false,
+       "indexable": true,
+       "paradata": null,
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 9,
-       "uuid": "ce781c16-5fc7-5b04-9b2e-2d72ca44afb5"
-      },
-      {
-       "id": "area",
-       "type": "FLOAT",
-       "display_label": {
-        "en": [
-         "Area [m2]"
-        ],
-        "it": [
-         "Area [m2]"
-        ],
-        "fr": [
-         "Aire [m2]"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 10,
-       "uuid": "ebe489fd-2d86-53e2-b9e6-4cd17dbc3e93"
-      },
-      {
-       "id": "max_height",
-       "type": "FLOAT",
-       "display_label": {
-        "en": [
-         "Max height"
-        ],
-        "it": [
-         "Altezza massima"
-        ],
-        "fr": [
-         "Hauteur maximale"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 11,
-       "uuid": "055b5a20-55af-5e3b-a724-4e5bbacbfc30"
-      },
-      {
-       "id": "CIVICI",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Civic number"
-        ],
-        "it": [
-         "Civic number"
-        ],
-        "fr": [
-         "Civic number"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 12,
-       "uuid": "87460022-bd60-5cef-a9a1-35a8bd2fa2f8"
+       "display_order": 4,
+       "uuid": "15cecd40-3b83-59b6-8f25-eb5bdbaf1530"
       },
       {
        "id": "points_density",
@@ -340,10 +252,11 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "a",
        "short_display": false,
        "hidden": false,
        "tag": null,
-       "display_order": 13,
+       "display_order": 5,
        "uuid": "869090e6-4b8f-5af5-8a8b-89090c1e3891"
       },
       {
@@ -362,21 +275,206 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "a",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 6,
+       "uuid": "3b57ed71-d464-5132-9ea3-3f38454f7793"
+      },
+      {
+       "id": "wikidata",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Wikidata"
+        ],
+        "it": [
+         "Wikidata"
+        ],
+        "fr": [
+         "Wikidata"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "paradata": "s",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 7,
+       "uuid": "ce781c16-5fc7-5b04-9b2e-2d72ca44afb5"
+      },
+      {
+       "id": "style",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Style"
+        ],
+        "it": [
+         "Stile"
+        ],
+        "fr": [
+         "Style"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "paradata": "m",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 8,
+       "uuid": "66b144e1-80c8-585a-a04d-82a97e6b50c7"
+      },
+      {
+       "id": "max_height",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Max height"
+        ],
+        "it": [
+         "Altezza massima"
+        ],
+        "fr": [
+         "Hauteur maximale"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "a",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 9,
+       "uuid": "055b5a20-55af-5e3b-a724-4e5bbacbfc30"
+      },
+      {
+       "id": "CIVICI",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Civic number"
+        ],
+        "it": [
+         "Civic number"
+        ],
+        "fr": [
+         "Civic number"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "s",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 10,
+       "uuid": "87460022-bd60-5cef-a9a1-35a8bd2fa2f8"
+      },
+      {
+       "id": "aulic_name",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Aulic name"
+        ],
+        "it": [
+         "Nome aulico"
+        ],
+        "fr": [
+         "Nom aulique"
+        ]
+       },
+       "nullable": false,
+       "indexable": true,
+       "paradata": "m",
+       "short_display": true,
+       "hidden": false,
+       "tag": "PLACE",
+       "display_order": 11,
+       "uuid": "b56d3ac1-2f9e-54a1-a3cc-30bb7a394ca9"
+      },
+      {
+       "id": "SESTIERE",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "District"
+        ],
+        "it": [
+         "Sestiere"
+        ],
+        "fr": [
+         "Sestiere"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "s",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 12,
+       "uuid": "04e882b8-cc39-55d9-9dbb-9f82d8a4a38f"
+      },
+      {
+       "id": "nb_points",
+       "type": "INTEGER",
+       "display_label": {
+        "en": [
+         "Number of points"
+        ],
+        "it": [
+         "Numero di punti"
+        ],
+        "fr": [
+         "Nombre de points"
+        ]
+       },
+       "nullable": false,
+       "indexable": false,
+       "paradata": "a",
+       "short_display": false,
+       "hidden": false,
+       "tag": null,
+       "display_order": 13,
+       "uuid": "50413bf3-af64-5c94-a0d3-d4108c5d8080"
+      },
+      {
+       "id": "area",
+       "type": "FLOAT",
+       "display_label": {
+        "en": [
+         "Area [m2]"
+        ],
+        "it": [
+         "Area [m2]"
+        ],
+        "fr": [
+         "Aire [m2]"
+        ]
+       },
+       "nullable": true,
+       "indexable": false,
+       "paradata": "a",
        "short_display": false,
        "hidden": false,
        "tag": null,
        "display_order": 14,
-       "uuid": "3b57ed71-d464-5132-9ea3-3f38454f7793"
+       "uuid": "ebe489fd-2d86-53e2-b9e6-4cd17dbc3e93"
       }
      ]
     },
     "uuid": "3a0dd461-9926-555f-b52a-4a86613f6100"
    },
    "falls_within": [
-    "620962bb-bb0d-50ed-b534-8903ad265932"
+    "ce22c093-3d47-56b8-bf06-0ab86bda0db4",
+    "ae0fb021-bbb4-5de7-bca2-afddad4b9d17"
    ],
-   "archival_reference": null,
-   "creation_time": "2025-11-05T16:52:13.192611"
+   "creation_time": "2026-01-19T14:33:06.365009"
   }
  ]
 }

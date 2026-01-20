@@ -39,6 +39,7 @@ all_resources_name = ["file",
                 RDE.GEOM.value, 
                 RDE.DATASET.value,
                 RDE.DATASET.value + '_configuration',
+                "multilingual_data",
                 RDE.AREA.value,
                 RDE.LAYER.value,
                 RDE.LAYER.value + '_configuration',
@@ -82,6 +83,7 @@ if __name__ == '__main__':
     args.add_argument('-d', '--dataset', default=None, help='Dataset to validate (does no support maps and areas)')
     args.add_argument('--only_iiif', default=False, action=BooleanOptionalAction, help='Only validate IIIF files')
     args.add_argument('--error_interrupt', default=False, action=BooleanOptionalAction, help='Interrupts the script if any validation fails')
+    args.add_argument('--m', default=False, action=BooleanOptionalAction, help='Only validate maps')
     args = args.parse_args()
 
     DATASET_ROOT = '../rde/datasets'
@@ -93,12 +95,13 @@ if __name__ == '__main__':
             sys.exit(1)
         dataset_list = new_dataset_list
     if not args.only_iiif:
-        for d in dataset_list:
-            # not validating pois, as they will be validated separately.
-            all_files_to_validate = [v for v in list(Path(join(DATASET_ROOT, d, 'data')).rglob('*.json')) if 'iiif' not in str(v) and 'points_of_interest.json' not in str(v)]
-            for fp in all_files_to_validate:
-                print(f'Validating {fp}')
-                validate_file(fp, validator, raise_error=args.error_interrupt)
+        if not args.m:
+            for d in dataset_list:
+                # not validating pois, as they will be validated separately.
+                all_files_to_validate = [v for v in list(Path(join(DATASET_ROOT, d, 'data')).rglob('*.json')) if 'iiif' not in str(v) and 'points_of_interest.json' not in str(v)]
+                for fp in all_files_to_validate:
+                    print(f'Validating {fp}')
+                    validate_file(fp, validator, raise_error=args.error_interrupt)
         
         MAP_ROOT = '../rde/maps'
         map_list = os.listdir(MAP_ROOT)
@@ -108,15 +111,16 @@ if __name__ == '__main__':
                 print(f'Validating {fp}')
                 validate_file(fp, validator)
 
-        AREA_ROOT = '../rde/areas'
-        for a in list(Path(AREA_ROOT).rglob('*.json')):
-            print(f'Validating {a}')
-            validate_file(a, validator)
+        if not args.m:
+            AREA_ROOT = '../rde/areas/data'
+            for a in list(Path(AREA_ROOT).rglob('*.json')):
+                print(f'Validating {a}')
+                validate_file(a, validator)
 
-        POIS_ROOT = '../rde/pois'
-        for p in list(Path(POIS_ROOT).rglob('*.json')):
-            print(f'Validating {p}')
-            validate_file(p, validator)
+            POIS_ROOT = '../rde/pois'
+            for p in list(Path(POIS_ROOT).rglob('*.json')):
+                print(f'Validating {p}')
+                validate_file(p, validator)
 
     print('Checking unicity of UUIDs')
     uuid_file = {}
@@ -129,24 +133,25 @@ if __name__ == '__main__':
                 if args.error_interrupt:
                     raise Exception(f'UUID {v} found in multiple files: {uuid_file[v]} and {k}')
 
-    for ds in dataset_list:
-        if 'catastici' in ds:
-            continue
-        iiif_loc_path = os.path.join(DATASET_ROOT, ds, 'data', 'iiif')
-        if os.path.exists(iiif_loc_path):
-            coll_list = [f for f in  os.listdir(os.path.join(iiif_loc_path, 'collections')) if f.endswith('.json')]
-            if len(coll_list) > 1:
-                print('Multiple collections found in', ds, ' is this expected?')
-                print('Validating collection manifests of', ds)
-            else:
-                print('Validating collection manifest of', ds)
-            for c in coll_list:
-                validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'collections', c))
-            man_list = os.listdir(os.path.join(iiif_loc_path, 'manifests'))
-            print('Validating ', len(man_list), ' manifests of ', ds)
-            man_list = [m for m in man_list if m.endswith('.json')]
-            for m in man_list:
-                try:
-                    validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'manifests', m))
-                except Exception as e:
-                    print(f"Error validating {m}: {e}")
+    if not args.m:
+        for ds in dataset_list:
+            if 'catastici' in ds:
+                continue
+            iiif_loc_path = os.path.join(DATASET_ROOT, ds, 'data', 'iiif')
+            if os.path.exists(iiif_loc_path):
+                coll_list = [f for f in  os.listdir(os.path.join(iiif_loc_path, 'collections')) if f.endswith('.json')]
+                if len(coll_list) > 1:
+                    print('Multiple collections found in', ds, ' is this expected?')
+                    print('Validating collection manifests of', ds)
+                else:
+                    print('Validating collection manifest of', ds)
+                for c in coll_list:
+                    validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'collections', c))
+                man_list = os.listdir(os.path.join(iiif_loc_path, 'manifests'))
+                print('Validating ', len(man_list), ' manifests of ', ds)
+                man_list = [m for m in man_list if m.endswith('.json')]
+                for m in man_list:
+                    try:
+                        validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'manifests', m))
+                    except Exception as e:
+                        print(f"Error validating {m}: {e}")

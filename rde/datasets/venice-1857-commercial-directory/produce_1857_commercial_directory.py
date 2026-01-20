@@ -41,7 +41,7 @@ df = df.replace({np.nan: None})
 # creating ad-hoc full name field
 df['name'] = df['FIRST_N'].str.replace(',', '') + ' ' + df['LAST_N']
 
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 df['geometry'] = df['geometry'].apply(wkt.loads)
 gdf = gpd.GeoDataFrame(df).set_geometry('geometry')
 gdf = gdf.set_crs('EPSG:4326')
@@ -149,28 +149,18 @@ sub_label = "${profession_eng}"
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS, 
     filtered_df[order],
-    CONF["indexed"],
-    CONF["short_display"],
-    CONF["hidden"],
-    {},
-    CONF["tagged_fields"],
-    CONF["labels"], 
-    CONF["main_label"],
-    CONF["sub_label"]
+    CONF
 )
 
 ds = produce_dataset_obj(DS_UUID,
     DS_SLUG,
     "1.0",
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [],
     TR_OBJ,
     0,
     ds_conf,
-    [venice_area_uuid],
-    publish_obj=(CONF['doi'], CONF['github_link'])
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], '1857_gc_dataset', RDE.DATASET.value, is_dataset_obj=True)

@@ -2,26 +2,48 @@
     "UUID_NAMESPACE": "https://timemachine.epfl.ch/venice/cini",
     "TIMERANGE_MINIMUM": 14000101,
     "TIMERANGE_MAXIMUM": 18131231,
-    "AREA_FILE_LOC": "../../areas/venice-area.json",
+    "AREA_SLUGS": ["city-venice-area", "country-italy-area"],
     "DATASET_CONFIGURATION": {
         "slug": "venice-cini-photographs",
         "name": {
             "en": ["Urban Iconography"],
             "it": ["Iconografia urbana"],
-            "fr": ["Iconographie urbaine"]
+            "fr": ["Iconographie urbaine"],
+            "de": ["Städtische Ikonographie"]
         },
-        "description": {
-            "en": ["Extract from the Giorgio Cini Foundation’s photo library, digitized within the international “Replica” project. Historical metadata for each image has been structured in a database and realigned with corresponding toponyms. Information geolocated by machine learning algorithms. Dataset created at EPFL."],
-            "it": ["Estrazione dalla fototeca della Fondazione Giorgio Cini, digitalizzata nell'ambito del progetto internazionale Replica. I metadati storici di ciascuna immagine sono stati strutturati in un database e riallineati con i toponimi corrispondenti. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Dataset creato presso l'EPFL."],
-            "fr": ["Extrait de la photothèque de la Fondation Giorgio Cini, numérisé dans le cadre du projet international Replica. Les métadonnées historiques de chaque image ont été structurées dans une base de données et réalignées avec les toponymes correspondants. Informations géolocalisées par des algorithmes d'apprentissage automatique. Jeu de données créé à l'EPFL."]
+        "display_thumbnail": true,
+        "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                    "en": ["Extract from the Giorgio Cini Foundation’s photo library, digitized within the international “Replica” project. Historical metadata for each image has been structured in a database and realigned with corresponding toponyms. Information geolocated by machine learning algorithms. Dataset created at EPFL."],
+                    "it": ["Estrazione dalla fototeca della Fondazione Giorgio Cini, digitalizzata nell'ambito del progetto internazionale Replica. I metadati storici di ciascuna immagine sono stati strutturati in un database e riallineati con i toponimi corrispondenti. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Dataset creato presso l'EPFL."],
+                    "fr": ["Extrait de la photothèque de la Fondation Giorgio Cini, numérisé dans le cadre du projet international Replica. Les métadonnées historiques de chaque image ont été structurées dans une base de données et réalignées avec les toponymes correspondants. Informations géolocalisées par des algorithmes d'apprentissage automatique. Jeu de données créé à l'EPFL."],
+                    "de": ["Auszug aus der Fotobibliothek der Giorgio Cini Stiftung, die im Rahmen des internationalen Replica-Projekts digitalisiert wurde. Die historischen Metadaten jedes Bildes wurden in einer Datenbank strukturiert und mit den entsprechenden Toponymen neu ausgerichtet. Informationen, die durch maschinelle Lernalgorithmen geolokalisiert wurden. Datensatz erstellt an der EPFL."]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"],
+                    "de": ["Paradata"]
+                },
+                "value": {
+                    "en": ["The geometries are the footprints of contemporary buildings from a 2024 census, that have been matched to the location where the photographs are stored."],
+                    "fr": ["Les géométries sont les empreintes des bâtiments contemporains d'un recensement de 2024, qui ont été associées à l'emplacement où les photographies sont stockées."],
+                    "it": ["Le geometrie sono le impronte degli edifici contemporanei di un censimento del 2024, che sono state abbinate à l'emplacement où les photographies sont stockées."],
+                    "de": ["Die Geometrien sind die Grundrisse zeitgenössischer Gebäude aus einer Volkszählung von 2024, die mit dem Speicherort der Fotografien abgeglichen wurden."]
+                }
+            }
         },
-        "paradata": {
-            "en": ["The geometries are the footprints of contemporary buildings from a 2024 census, that have been matched to the location where the photographs are stored."],
-            "fr": ["Les géométries sont les empreintes des bâtiments contemporains d'un recensement de 2024, qui ont été associées à l'emplacement où les photographies sont stockées."],
-            "it": ["Le geometrie sono le impronte degli edifici contemporanei di un censimento del 2024, che sono state abbinate à l'emplacement où les photographies sont stockées."]
-        },
-        "doi": null,
-        "github_link": "https://github.com/epfl-timemachine/venice-cini-photographs",
         "indexed": [
             "BUILDING_NAME",
             "Author",
@@ -34,6 +56,16 @@
         ],
         "hidden": [
             "CINI_ID"
+        ],
+        "automatic_fields": [
+        ],
+        "manual_fields": [
+            "Institution",
+            "Description"
+        ],
+        "semi_automatic_fields": [
+        ],
+        "ai_fields": [
         ],
         "main_label": "${BUILDING_NAME}",
         "sub_label": "${Description}",

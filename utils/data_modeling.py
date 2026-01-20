@@ -48,6 +48,19 @@ def find_closest_polygon(point: Point, polygon: MultiPolygon) -> Polygon:
             closest_polygon = p
     return closest_polygon
 
+
+def get_area_uuids_from_slugs(area_loc:str, area_slugs: list[str]) -> list[str]:
+    '''
+    Given a list of area slugs, returns the corresponding area uuids from the area file located at area_loc.
+    '''
+    area_loc = [os.path.join(area_loc, f)+'.json' for f in area_slugs]
+    area_uuids = []
+    for fp in area_loc:
+        if not os.path.exists(fp):
+            raise Exception(f'Area file located at {area_loc} does not exist.')
+        area_uuids.append(get_single_object_uuid(fp))
+    return area_uuids
+
 def constraint_point_to_center_of_one_polygon(point: Point, polygon: Union[Polygon, MultiPolygon]) -> Point:
     # if the point is not within the polygon, we move it to the center of the polygon.
     # code to visually test the function constraint_point_to_center_of_one_polygon, left here as debug:
@@ -178,6 +191,7 @@ def produce_obs_obj(uuid:str,
                     tpe: str,
                     coords,
                     geometries_links: list[GEOMETRY_UUID],
+                    need_poi: bool = True
                     ) -> dict:
     '''
     Produces an observation object for the RDE from the given parameters.
@@ -200,7 +214,7 @@ def produce_obs_obj(uuid:str,
         "coordinate": coords,
         "has_geometry": geometries_links,
         "documented_in": hr_uuid,
-        "has_handle": None
+        "has_handle": need_poi
     }
 
 
@@ -226,38 +240,39 @@ def produce_dataset_obj(
     slug: str,
     version: str,
     name: MultiLingualDesc,
-    description: MultiLingualDesc,
-    paradata: MultiLingualDesc,
     sources: list[str],
     time_range: tuple[str, str],
     transribed_pages_amount: int,
     configuration: dict,
     areas_ids: list[str],
-    publish_obj: tuple[str, str] = (None, None),
-    archival_reference: str = None
-    ) -> dict:  
-    return {  
+    ) -> dict: 
+    metadata = configuration.get('metadata', {})
+    # remove the metadata from the configuration to avoid duplication
+    configuration.pop('metadata', None) 
+    return {
         "uuid": uuid,
         "slug": slug,
+        "metadata": metadata,
         "version": version,
         "creation_time": now_ts(),
         "name": name,
         "rde_type": RDE.DATASET.value,
-        "publish": {"doi": publish_obj[0], "url": publish_obj[1]},
-        "description": description,
-        "paradata": paradata,
         "sources": sources,
         "start_time": time_range[0],
         "end_time": time_range[1],
-        "transcribed_pages_amount": transribed_pages_amount,
         "is_operationally_described_by": configuration,
         "falls_within": areas_ids,
-        "archival_reference": archival_reference
     }
 
+def maximal_extent_from_extent_list(extent_list: list[list[float]]) -> tuple[Point, Point]:
+    min_x = min([ext[0] for ext in extent_list])
+    min_y = min([ext[1] for ext in extent_list])
+    max_x = max([ext[2] for ext in extent_list])
+    max_y = max([ext[3] for ext in extent_list])
+    return [min_x, min_y, max_x, max_y]
 
 def produce_map_obj(
-    uuid: str,
+    map_uuid: str,
     map_slug: str,
     name: MultiLingualDesc,
     description: MultiLingualDesc,
@@ -265,28 +280,77 @@ def produce_map_obj(
     thumbnail: str,
     version: str,
     time_range: tuple[str, str],
-    layer_id_list: list[str],
+    layer_list: list[dict],
     areas_id: list[str],
     ) -> dict:  
+    extent_list = [layer['is_operationally_described_by'][0]['extent'] for layer in layer_list if 'is_operationally_described_by' in layer and 'extent' in layer['is_operationally_described_by'][0]]
     return {  
-        "uuid": uuid,
+        "uuid": map_uuid,
         "slug": map_slug,
         "rde_type": RDE.MAP.value,
         "name": name,
-        "description": description,
+        "metadata": {
+            "description": description,
+            "paradata": paradata,
+        },
+        "metadata_field_config":[
+         {
+            "uuid": str(uuid.uuid5(VMAP_UUID5_NS, map_slug+'_description')),
+            "id": "description",
+            "type": "STRING",
+            "display_label": {
+                "en": [
+                    "Description"
+                ],
+                "fr": [
+                    "Description"
+                ],
+                "it": [
+                    "Descrizione"
+                ],
+                "nl": [
+                    "Beschrijving"
+                ],
+                "de": [
+                    "Beschreibung"
+                ]
+            },
+            "display_order": 1
+        },
+        {
+            "uuid": str(uuid.uuid5(VMAP_UUID5_NS, map_slug+'_paradata')),
+            "id": "paradata",
+            "type": "STRING",
+            "display_label": {
+                "en": [
+                "Paradata"
+                ],
+                "fr": [
+                "Paradata"
+                ],
+                "it": [
+                "Paradata"
+                ]
+            },
+            "display_order": 2
+        }
+        ],
         "thumbnail": thumbnail,
-        "paradata": paradata,
         "version": version,
         "start_time": time_range[0],
         "end_time": time_range[1],
-        "contains": layer_id_list,
+        "extent": maximal_extent_from_extent_list(extent_list),
+        "contains": [layer['uuid'] for layer in layer_list],
         "falls_within": areas_id
     }
+
+from shapely.wkt import loads as wkt_loads
 
 def produce_layer_config(
     uuid: str,
     zoom_lvl: tuple[int, int],
     format: str,
+    extent: tuple[Point, Point],
     access_url: str,
 ) -> dict:
     lo_zoom, hi_zoom = zoom_lvl
@@ -296,8 +360,10 @@ def produce_layer_config(
         raise Exception(f'Zoom levels should be positive numbers')
     if hi_zoom > 23:
         raise Exception(f'Zoom levels should not exceed 23')
+    conv_extent = [wkt_loads(extent[0]), wkt_loads(extent[1])]
     return {  
         "uuid": uuid,
+        "extent": [conv_extent[0].x, conv_extent[0].y, conv_extent[1].x, conv_extent[1].y],
         "zoom_lvl": zoom_lvl,
         "service": {
             "url": access_url,
@@ -331,18 +397,17 @@ def produce_layer_obj(
 
 def produce_area_obj(uuid: str,
     name: str,
-    geometry: Polygon,
+    geometry: dict,
     slug: str,
     version: str) -> gpd.GeoDataFrame:
-    gdf = gpd.GeoDataFrame([{
+    return {
         "uuid": uuid,
         "rde_type": RDE.AREA.value,
         "name": name,
         "geometry": geometry,
         "slug": slug,
         "version": version
-     }]).set_geometry('geometry').set_crs(UNIVERSAL_CRS)
-    return [{**f['properties'], **{"geometry": f['geometry']}} for f in geodataframe_to_json(gdf)['features']]
+    }
 
 def make_uuid_from_row_selection(uuid_ns: uuid.UUID, pandas_row:pd.Series, col_sel:list[str], ad_hoc_seed: str = '') -> str: 
     '''
@@ -436,6 +501,8 @@ def save_data_file_if_different(fp:str,
         t_data = [{**f['properties'], **{"geometry": f['geometry']}} for f in t_data]
     elif isinstance(data, list):
         t_data = data
+    elif isinstance(data, dict):
+        t_data = [data]
     else:
         raise ValueError(f'Data type not supported: {type(data)}')
     matching_files = list(map(str, Path(fp).glob("*"+filename_with_ext)))
@@ -467,21 +534,6 @@ def save_data_file_if_different(fp:str,
     # saving the file if no other point of termination happened.
     saving_routine(t_data, filepath)
 
-dictionary_template = {
-    "uuid": "",
-    "rde_type": RDE.DICT.value,
-    "slug": "",
-    "name": None,
-    "entries": None
-}
-
-def save_dictionary(fp_prefix:str, uuid:str, slug: str, name:MultiLingualDesc, vals:dict) -> None:
-    d = dictionary_template.copy()
-    d['entries'] = vals
-    d['slug'] = slug
-    d['name'] = name
-    d['uuid'] = uuid
-    save_data_file_if_different(fp_prefix, slug, [d], slug, RDE.DICT.value)
 
 def get_likely_type_of_series(s:pd.Series) -> str:
     tpe = str(s.dtype)
@@ -499,8 +551,9 @@ def python_type_to_ad_hoc_conf_type(tpe: type) -> str:
         return "STRING"
     if tpe == float or str(tpe).startswith('float'):
         return "FLOAT"
-    if tpe == list:
+    if tpe == list or tpe == np.ndarray:
         return "LIST"
+    
     return str(tpe)
     #TODO: add CATEGORY; also the type of the list, URL and timedate entities. 
 
@@ -508,7 +561,6 @@ def quick_display_label(label:str) -> str:
     vs = label.replace('_', ' ').replace('-', '').split(' ')
     capitalized_vs = [v[0].upper() + v[1:] for v in vs]
     return ' '.join(capitalized_vs) 
-
 
 def all_caps_val(v:str) -> bool:
     return reduce(lambda a, b: a and (not b.isalnum() or b.isupper()), v, True)
@@ -531,20 +583,19 @@ def is_empty_or_null(x):
         return x.strip() == ""
     else:
         return np.any(pd.isna(x))
+    
+
+def test_field_intersection(field_list_1: list[str], field_list_2: list[str], field_list_1_name: str, field_list_2_name: str) -> None:
+    overlap = set(field_list_1).intersection(set(field_list_2))
+    if len(overlap) > 0:
+        raise Exception(f'The following fields are both in {field_list_1_name} and {field_list_2_name}: {overlap}')
+
+
 
 def produce_configuration_file_from_metadata_df(
         uuid_ns: uuid.UUID,
         df: pd.DataFrame,
-        indexable_array: list[str],
-        short_display: list[str],
-        hidden: list[str],
-        dictionaries: dict[str, str],
-        tagged_fields: dict[str, str],
-        labels: dict[str,str],
-        main_label: str = '',
-        sub_label: str = '',
-        display_thumbnail: bool = False,
-        external_source: bool = False) -> dict:
+        config: dict) -> dict:
     '''
     Returns a configuration file for the dataset based on the values from the dataframe and 
     various configuration object given as parameters.
@@ -552,24 +603,59 @@ def produce_configuration_file_from_metadata_df(
     Parameters:
         uuid_ns: the namespace to use to generate the UUIDs
         df: the dataframe containing the metadata, the order of the columns directly impacts the display order in the configuration file
-        indexable_array: an array of the columns that should be indexed
-        short_display: an array of the columns that should be displayed in a short version of the data entry
-        hidden: an array of the columns that should be hidden in the frontend
-        dictionaries: a dictionary of the columns and the dictionaries they should be associated with
-        tagged_fields: a dictionary of the columns and the tags they should be associated with
-        labels: a dictionary of the columns and the labels they should have in the configuration file
-        main_label: a formatting string indicating how for each data entry, its main label should be formatted on the frontend using the values of the dataset.
-        sub_label: a formatting string indicating how for each data entry, its sub label should be formatted on the frontend using the values of the dataset.
+        config: a dictionary containing various configuration parameters, see below for the expected keys
+            indexable_array: an array of the columns that should be indexed
+            short_display: an array of the columns that should be displayed in a short version of the data entry
+            hidden: an array of the columns that should be hidden in the frontend
+            dictionaries: a dictionary of the columns and the dictionaries they should be associated with
+            tagged_fields: a dictionary of the columns and the tags they should be associated with
+            labels: a dictionary of the columns and the labels they should have in the configuration file
+            main_label: a formatting string indicating how for each data entry, its main label should be formatted on the frontend using the values of the dataset.
+            sub_label: a formatting string indicating how for each data entry, its sub label should be formatted on the frontend using the values of the dataset.
     Returns:
         the configuration file as a dictionary
     '''
+
+    dataset_metadata_config: dict = config['dataset_metadata_config']
+    indexable_array: list[str] = config["indexed"]
+    short_display: list[str] = config["short_display"]
+    hidden: list[str] = config["hidden"]
+    automatic_fields: list[str] = config["automatic_fields"]
+    semi_automatic_fields: list[str] = config["semi_automatic_fields"]
+    manual_fields: list[str] = config["manual_fields"]
+    ai_fields: list[str] = config["ai_fields"]
+    tagged_fields: dict[str, str] = config["tagged_fields"]
+    labels: dict[str,str] = config["labels"]
+    main_label: str = config["main_label"]
+    sub_label: str = config["sub_label"]
+    display_thumbnail: bool = config["display_thumbnail"] if "display_thumbnail" in config else False
+    external_source: bool = config["external_source"] if "external_source" in config else False
+
+    # # checking no overlap between automatic, semi-automatic and manual fields
+    test_field_intersection(automatic_fields, semi_automatic_fields, 'automatic_fields', 'semi_automatic_fields')
+    test_field_intersection(automatic_fields, manual_fields, 'automatic_fields', 'manual_fields')
+    test_field_intersection(automatic_fields, ai_fields, 'automatic_fields', 'ai_fields')
+    test_field_intersection(semi_automatic_fields, manual_fields, 'semi_automatic_fields', 'manual_fields')
+    test_field_intersection(semi_automatic_fields, ai_fields, 'semi_automatic_fields', 'ai_fields')
+    test_field_intersection(manual_fields, ai_fields, 'manual_fields', 'ai_fields')
+    
+    # checking no overlap between hidden and short display fields
+    overlap_hidden_short_display = set(hidden).intersection(set(short_display))
+    if len(overlap_hidden_short_display) > 0:
+        raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
+
     base = {
+        "dataset_config": {
+            "metadata_field_config": []
+        },
         "hr_config": {
             "main_label": "",
             "sub_label": "",
             "display_thumbnail": False,
             "external_source": False,
             "metadata_field_config": []
+        },
+        "metadata": {
         }
     }
     if main_label:
@@ -577,13 +663,27 @@ def produce_configuration_file_from_metadata_df(
 
     if sub_label:
         base['hr_config']['sub_label'] = sub_label
+
+    base['hr_config']['display_thumbnail'] = display_thumbnail
+    base['hr_config']['external_source'] = external_source
     
-    if display_thumbnail:
-        base['hr_config']['display_thumbnail'] = True
+    ds_md_c = []
+    base_dmc = {
+        "id": "",
+        "type": None,
+        "display_label": None
+    }
+    for i, (k, v) in enumerate(dataset_metadata_config.items()):
+        curr_dmc = base_dmc.copy()
+        curr_dmc['id'] = k
+        curr_dmc['type'] = v['type']
+        curr_dmc['display_label'] = v['display_label']
+        base['metadata'][k] = v['value']
+        curr_dmc['uuid'] = str(uuid.uuid5(uuid_ns, f'dataset_md_config_{k}'))
+        curr_dmc['display_order'] = i + 1
+        ds_md_c.append(curr_dmc)
 
-    if external_source:
-        base['hr_config']['external_source'] = True
-
+    base['dataset_config']['metadata_field_config'] = ds_md_c
     base["uuid"] = str(uuid.uuid5(uuid_ns, 'dataset_configuration'))
     field_template = {
         "id": "",
@@ -591,6 +691,7 @@ def produce_configuration_file_from_metadata_df(
         "display_label": "",
         "nullable": True,
         "indexable": False,
+        "paradata": None,
         "short_display": False,
         "hidden": False,
         "tag": None,
@@ -613,10 +714,19 @@ def produce_configuration_file_from_metadata_df(
                 curr_conf['short_display'] = True
             if col in tagged_fields:
                 curr_conf['tag'] = tagged_fields[col]
+            if col in automatic_fields:
+                curr_conf['paradata'] = 'a'
+            elif col in semi_automatic_fields:
+                curr_conf['paradata'] = 's'
+            elif col in manual_fields:
+                curr_conf['paradata'] = 'm'
+            elif col in ai_fields:
+                curr_conf['paradata'] = 'i'
             curr_conf["type"] = python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))
-            if col in dictionaries:
-                curr_conf['dictionary'] = dictionaries[col] 
-                curr_conf["type"] = "LIST[CATEGORY]" if curr_conf["type"].startswith("LIST") else "CATEGORY"
+            # removed as unused for now.
+            # if col in dictionaries:
+            #     curr_conf['dictionary'] = dictionaries[col] 
+            #     curr_conf["type"] = "LIST[CATEGORY]" if curr_conf["type"].startswith("LIST") else "CATEGORY"
             curr_conf["display_order"] = (display_order := display_order + 1)
             curr_conf["display_label"] = labels[col] if col in labels else quick_display_label(col)
             base["hr_config"]["metadata_field_config"].append(curr_conf)

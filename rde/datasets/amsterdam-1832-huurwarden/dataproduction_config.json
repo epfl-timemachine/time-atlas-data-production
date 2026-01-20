@@ -2,29 +2,67 @@
     "UUID_NAMESPACE": "https://timemachine.epfl.ch/amsterdam/1832-huurwarden",
     "TIMERANGE_MINIMUM": 18320101,
     "TIMERANGE_MAXIMUM": 18321231,
-    "AREA_FILE_LOC": "../../areas/amsterdam-area.json",
+    "AREA_SLUGS": ["city-amsterdam-area", "country-kingdom-of-the-netherlands-area"],
     "DATASET_CONFIGURATION": {
         "slug": "amsterdam-1832-huurwarden",
         "name": {
             "en": ["1832 – Land Registers"],
             "it": ["1832 – Registri fondiari"],
             "fr": ["1832 – Registres fonciers"],
-            "nl": ["1832 - Huurwarden"]
+            "nl": ["1832 - Huurwarden"],
+            "de": ["1832 – Grundregister"]
         },
-        "description": {
-            "en": ["Transcription of the land registry and cadastral maps from the city of Amsterdam in 1832. The dataset contains parcel identifiers, ownership, land use, geolocation, and area. Dataset created at the University of Amsterdam."],
-            "it": ["Trascrizione del registro fondiario e delle mappe catastali della città di Amsterdam nel 1832. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, geolocalizzazione e area. Dataset creato presso l'Università di Amsterdam."],
-            "fr": ["Transcription du registre foncier et des cartes cadastrales de la ville d'Amsterdam en 1832. Le jeu de données contient des identifiants de parcelles, de propriété, d'utilisation des terres, de géolocalisation et de superficie. Jeu de données créé à l'Université d'Amsterdam."],
-            "nl": ["Transcriptie van het landregister en de kadastrale kaarten van de stad Amsterdam in 1832. De dataset bevat perceelidentificaties, eigendom, landgebruik, geolocatie en oppervlakte. Dataset gemaakt aan de Universiteit van Amsterdam."]
+        "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "nl": ["Beschrijving"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {       
+                    "en": ["Transcription of the land registry and cadastral maps from the city of Amsterdam in 1832. The dataset contains parcel identifiers, ownership, land use, geolocation, and area. Dataset created at the University of Amsterdam."],
+                    "it": ["Trascrizione del registro fondiario e delle mappe catastali della città di Amsterdam nel 1832. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, geolocalizzazione e area. Dataset creato presso l'Università di Amsterdam."],
+                    "fr": ["Transcription du registre foncier et des cartes cadastrales de la ville d'Amsterdam en 1832. Le jeu de données contient des identifiants de parcelles, de propriété, d'utilisation des terres, de géolocalisation et de superficie. Jeu de données créé à l'Université d'Amsterdam."],
+                    "nl": ["Transcriptie van het landregister en de kadastrale kaarten van de stad Amsterdam in 1832. De dataset bevat perceelidentificaties, eigendom, landgebruik, geolocatie en oppervlakte. Dataset gemaakt aan de Universiteit van Amsterdam."],
+                    "de": ["Transkription des Grundbuchs und der Katasterkarten der Stadt Amsterdam im Jahr 1832. Der Datensatz enthält Parzellenkennungen, Eigentum, Landnutzung, Geolokalisierung und Fläche. Datensatz erstellt an der Universität von Amsterdam."]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"]
+                },
+                "value": {
+                    "en": ["The textual data from the register was manually transcribed by various researchers."],
+                    "fr": ["Les données textuelles du registre ont été transcrites manuellement par divers chercheurs."],
+                    "it": ["I dati testuali del registro sono stati trascritti manualmente da vari ricercatori."],
+                    "nl": ["De tekstuele gegevens uit het register zijn handmatig getranscribeerd door verschillende onderzoekers."],
+                    "de": ["Die textuellen Daten aus dem Register wurden von verschiedenen Forschern manuell transkribiert."]
+                }
+            },
+            "doi": {
+                "type": "URL",
+                "display_label": {
+                    "en": ["DOI"],
+                    "fr": ["DOI"],
+                    "it": ["DOI"],
+                    "nl": ["DOI"],
+                    "de": ["DOI"]
+                },
+                "value": {
+                    "en": ["https://doi.org/10.5281/zenodo.6949127"],
+                    "fr": ["https://doi.org/10.5281/zenodo.6949127"],
+                    "it": ["https://doi.org/10.5281/zenodo.6949127"],
+                    "de": ["https://doi.org/10.5281/zenodo.6949127"],
+                    "nl": ["https://doi.org/10.5281/zenodo.6949127"]
+                }
+            }
         },
-        "paradata": {
-            "en": ["The textual data from the register was manually transcribed by various researchers."],
-            "fr": ["Les données textuelles du registre ont été transcrites manuellement par divers chercheurs."],
-            "it": ["I dati testuali del registro sono stati trascritti manualmente da vari ricercatori."],
-            "nl": ["De tekstuele gegevens uit het register zijn handmatig getranscribeerd door verschillende onderzoekers."]
-        },
-        "doi": "https://doi.org/10.5281/zenodo.6949127", 
-        "github_link": null,
         "indexed": [
             "Naam",
             "Voornaam",
@@ -36,6 +74,19 @@
             "Naam", 
             "Voornaam", 
             "Beroep"
+        ],
+        "automatic_fields": [
+        ],
+        "manual_fields": [
+            "Perceel",
+            "Naam",
+            "Voornaam",
+            "Beroep",
+            "Huurwaarde"
+        ],
+        "semi_automatic_fields": [
+        ],
+        "ai_fields": [
         ],
         "hidden": [
             "Klasse_geb"

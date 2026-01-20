@@ -29,7 +29,7 @@ DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 
-dresden_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+dresden_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 # some pictures could not be downloaded. Removing them from the dataset
 with open('src/404_images.txt') as f:
@@ -199,16 +199,7 @@ order = labels.keys()
 ds_conf = produce_configuration_file_from_metadata_df(
     TM_UUID5_NS,
     filtered_df[order],
-    CONF['indexed'],
-    CONF['short_display'], 
-    CONF['hidden'],
-    {},
-    CONF['tagged_fields'],
-    labels,
-    CONF['main_label'],
-    CONF['sub_label'],
-    True,
-    True
+    CONF
 )
 
 ds = produce_dataset_obj(
@@ -216,14 +207,11 @@ ds = produce_dataset_obj(
     DS_SLUG,
     "1.0",
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [collection_uuid],
     (min_date, max_date),
     0,
     ds_conf,
-    [dresden_area_uuid],
-    publish_obj=(CONF['doi'], CONF['github_link'])
+    dresden_area_uuids,
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'dresden_dataset', RDE.DATASET.value, is_dataset_obj=True)

@@ -16,7 +16,7 @@ bm_slug = f"{MAP_SLUG}-base"
 basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 ughi_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -32,18 +32,18 @@ ughi_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.29960873939344 45.45578743012642)','POINT (12.371319068712321 45.41554116969911)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1729-lughi/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
                                         )
 
 layers = [ughi_bm_layer]
-layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1729 – Digital Facsimile of Ughi’s Map of Venice"],
-                              "fr": ["1729 - Fac-similé numérique de la carte de Venise d'Ughi"],
-                              "it": ["1729 - Facsimile digitale della mappa di Venezia di Ughi"]},
+                             {"en": ["Digital Facsimile of Ughi’s Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise d'Ughi"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Ughi"]},
                              {"en": ["Digitized reproduction of Ludovico Ughi’s map of Venice, dated around 1729. Preserves the original cartographic detail and historical toponyms. Dataset created at EPFL."],
                               "fr": ["Reproduction numérisée de la carte de Venise de Ludovico Ughi, datée vers 1729. Préserve le détail cartographique original et les toponymes historiques. Jeu de données créé à l'EPFL."],
                               "it": ["Riproduzione digitalizzata della mappa di Venezia di Ludovico Ughi, datata intorno al 1729. Preserva il dettaglio cartografico originale e i toponimi storici. Dataset creato all'EPFL."]},
@@ -53,8 +53,8 @@ map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2F1729_LUghi.png/full/max/0/default.jpg",
                               "1.0",
                               tuple_TR,
-                              layer_ids,
-                              areas_id=[venice_area_uuid]
+                              layers,
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [map_obj], '1729_ughi_map', RDE.MAP.value)

@@ -16,7 +16,7 @@ bm_slug = f"{MAP_SLUG}-base"
 basemap_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, bm_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
 
 clarke_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                         bm_slug,
@@ -32,18 +32,18 @@ clarke_bm_layer = produce_layer_obj(basemap_layer_uuid,
                                          layer_configs=[produce_layer_config(
                                           str(uuid.uuid5(VMAP_UUID5_NS, f'{bm_slug}-config-1')),
                                           zoom_lvl=zoom_lvl,
+                                          extent=['POINT (12.297074785251981 45.457446319469895)','POINT (12.373503870241608 45.414572854101785)'],
                                           access_url="https://geo-timemachine.epfl.ch/geoserver/gwc/service/wmts/rest/TimeMachine:venice-1838-wbclarke/raster/EPSG:900913x2/EPSG:900913x2:{z}/{y}/{x}?format=image/png",
                                           format='wmts'
                                           )]
                                         )
 
 layers = [clarke_bm_layer]
-layer_ids = [l['uuid'] for l in layers]
 map_obj = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["1838 – Digital Facsimile of Clarke’s Map of Venice"],
-                              "fr": ["1838 - Fac-similé numérique de la carte de Venise de Clarke"],
-                              "it": ["1838 - Facsimile digitale della mappa di Venezia di Clarke"]},
+                             {"en": ["Digital Facsimile of Clarke’s Map of Venice"],
+                              "fr": ["Fac-similé numérique de la carte de Venise de Clarke"],
+                              "it": ["Facsimile digitale della mappa di Venezia di Clarke"]},
                              {"en": ["Digitized reproduction of the 1838 map of Venice by William Branwhite Clarke. Preserves original geographic and cartographic details for reference and comparison. Dataset created at EPFL."],
                              "fr": ["Reproduction numérisée de la carte de Venise de 1838 par William Branwhite Clarke. Préserve les détails géographiques et cartographiques originaux pour référence et comparaison. Jeu de données créé à l'EPFL."],
                              "it": ["Riproduzione digitalizzata della mappa di Venezia del 1838 di William Branwhite Clarke. Preserva i dettagli geografici e cartografici originali per riferimento e confronto. Dataset creato all'EPFL."]},
@@ -53,8 +53,8 @@ map_obj = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2F1838_WBClarke.png/full/max/0/default.jpg",
                               "1.0",
                               tuple_TR,
-                              layer_ids,
-                              areas_id=[venice_area_uuid]
+                              layers,
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [map_obj], '1838_clarke_map', RDE.MAP.value)

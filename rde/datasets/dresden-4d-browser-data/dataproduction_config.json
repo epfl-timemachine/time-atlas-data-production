@@ -2,7 +2,7 @@
     "UUID_NAMESPACE": "https://timemachine.epfl.ch/dresden/4d-browser-data",
     "TIMERANGE_MINIMUM": 18900101,
     "TIMERANGE_MAXIMUM": 20241231,
-    "AREA_FILE_LOC": "../../areas/dresden-area.json",
+    "AREA_SLUGS": ["city-dresden-area", "country-germany-area"],
     "DATASET_CONFIGURATION": {
         "slug": "dresden-4d-browser-data",
         "name": {
@@ -11,20 +11,38 @@
             "de": ["4D-Browserdaten aus Dresden"],
             "it": ["Dati del browser 4D di Dresda"]
         },
-        "description": {
-            "en": ["TODO."],
-            "fr": ["TODO."],
-            "de": ["TODO."],
-            "it": ["TODO."]
+        "display_thumbnail": true,
+        "external_source": true,
+        "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                    "en": ["Data from the project \"4D Browser\" of the Time Machine Organisaiton"],
+                    "it": ["Dati del progetto \"4D Browser\" dell'organizzazione Time Machine"],
+                    "fr": ["Données du projet \"4D Browser\" de l'organisation Time Machine"],
+                    "de": ["Daten aus dem Projekt \"4D Browser\" der Time Machine Organisation"]
+                }
+            },
+            "url": {
+                "type": "URL",
+                "display_label": {
+                    "en": ["Project's website"],
+                    "fr": ["Site du projet"],
+                    "it": ["Sito del progetto"]
+                },
+                "value": {
+                    "en": ["https://4dbrowser.org/"],
+                    "fr": ["https://4dbrowser.org/"],
+                    "it": ["https://4dbrowser.org/"]
+                }
+            }
         },
-        "paradata": {
-            "en": ["TODO."],
-            "fr": ["TODO."],
-            "de": ["TODO."],
-            "it": ["TODO."]
-        },
-        "doi": null,
-        "github_link": null,
         "indexed": [
             "title"
         ],
@@ -34,6 +52,17 @@
             "owner"
         ],
         "hidden": [
+        ],
+        "automatic_fields": [
+        ],
+        "manual_fields": [
+            "title",
+            "author",
+            "owner"
+        ],
+        "semi_automatic_fields": [
+        ],
+        "ai_fields": [
         ],
         "main_label": "${title}",
         "sub_label": "${author}, ${owner}",

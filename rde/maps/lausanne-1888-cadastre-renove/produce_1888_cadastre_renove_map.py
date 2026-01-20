@@ -15,7 +15,7 @@ MAP_UUID = str(uuid.uuid5(LMAP_UUID5_NS, MAP_SLUG))
 vector_layer_slug = f"{MAP_SLUG}-vector-layer"
 vector_layer_uuid = str(uuid.uuid5(LMAP_UUID5_NS, vector_layer_slug))
 
-lausanne_area_uuid = get_single_object_uuid('../../areas/lausanne-area.json')
+lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-lausanne-area', 'country-switzerland-area'])
 # the list(map(list)) thing makes it so the result of the function compoisition is a list of list instead of tuples (prevents an issue when saving the file to json format)
 zoom_lvl= [11,21]
 
@@ -32,14 +32,15 @@ vector_layer = produce_layer_obj(
     layer_configs=[produce_layer_config(
         str(uuid.uuid5(LMAP_UUID5_NS, f'{vector_layer_slug}-config-1')),
         zoom_lvl=zoom_lvl,
+        extent=['POINT (6.583401698049918 46.60252143415481)', 'POINT (6.720685680717361 46.50489228135105)'],
         format='mvt',
         access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{vector_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf"
     )]
 )
 
-map_name = {"en":["Digital Layer – 1808 Cadastral Footprints"],
-            "fr":["Couche numérique - Empreintes cadastrales de 1808"],
-            "it":["Layer digitale - Impronte catastali del 1808"]}
+map_name = {"en":["Digital Layer – Lausanne Cadastral Footprints"],
+            "fr":["Couche numérique - Empreintes cadastrales de Lausanne"],
+            "it":["Layer digitale - Impronte catastali di Losanna"]}
 map_description = {"en":["Vector data extracted from the cadastral map of Lausanne, dated 1888. Dataset created at EPFL."],
                     "fr":["Données vectorielles extraites de la carte cadastrale de Lausanne, datée de 1888. Jeu de données créé à l'EPFL."],
                     "it":["Dati vettoriali estratti dalla mappa catastale di Losanna, datata 1888. Dataset creato all'EPFL."]}
@@ -53,8 +54,8 @@ map_1888 = produce_map_obj(
     "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Flayer_thumbnails%2Flausanne-1888-cadastre-vector.png/full/max/0/default.jpg",
     "1.0",
     TR_OBJ,
-    [vector_layer_uuid],
-    areas_id=[lausanne_area_uuid]
+    [vector_layer],
+    areas_id=lausanne_area_uuids
 )
 
 save_data_file_if_different('', 'map', [map_1888], 'lausanne_cadastre_renove_1888_map', RDE.MAP.value)

@@ -17,7 +17,7 @@ dorigo_zone_slug = f"{MAP_SLUG}-zones"
 zones_layer_uuid = str(uuid.uuid5(VMAP_UUID5_NS, dorigo_zone_slug))
 zoom_lvl= [11,21]
 
-venice_area_uuid = get_single_object_uuid('../../areas/venice-area.json')
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-venice-area', 'country-italy-area'])
  
 contemporary_edifici_layer = produce_layer_obj(zones_layer_uuid, 
                                             dorigo_zone_slug,
@@ -32,6 +32,7 @@ contemporary_edifici_layer = produce_layer_obj(zones_layer_uuid,
                                             is_vector=True,
                                             layer_configs=[produce_layer_config(
                                               str(uuid.uuid5(VMAP_UUID5_NS, f'{dorigo_zone_slug}-config-1')),
+                                              extent=['POINT (12.312619619493589 45.44708222894171)','POINT (12.360561504866213 45.423808296691575)'],
                                               zoom_lvl=zoom_lvl,
                                               access_url=f"https://geo-timemachine.epfl.ch/geoserver/TimeMachine/gwc/service/tms/1.0.0/TimeMachine:{zones_layer_uuid}@EPSG:900913@pbf/{{z}}/{{x}}/{{-y}}.pbf",
                                               format='mvt'
@@ -39,12 +40,11 @@ contemporary_edifici_layer = produce_layer_obj(zones_layer_uuid,
                                             )
 
 layers = [contemporary_edifici_layer]
-layer_ids = [l['uuid'] for l in layers]
 contemporary_map = produce_map_obj(MAP_UUID, 
                              MAP_SLUG,
-                             {"en": ["Digital Layer - 1000–1414 – Virtual Zoning from Secondary Sources"],
-                              "fr": ["Couche numérique - 1000–1414 - Zonage virtuel à partir de sources secondaires"],
-                              "it": ["Strato digitale - 1000–1414 - Zonizzazione virtuale da fonti secondarie"]},
+                             {"en": ["Digital Layer - Virtual Zoning from Secondary Sources"],
+                              "fr": ["Couche numérique - Zonage virtuel à partir de sources secondaires"],
+                              "it": ["Strato digitale - Zonizzazione virtuale da fonti secondarie"]},
                              {"en": ["Vector layer representing zones of property ownership in medieval Venice, based on interpretations from Dorigo’s study Venezia Romanica. Digitally reconstructed from textual analysis of historical sources. Information geolocated by machine learning algorithms. Automatic checking.  Dataset created at EPFL."],
                               "fr": ["Couche vectorielle représentant les zones de propriété à Venise médiévale, basée sur des interprétations de l'étude de Dorigo Venezia Romanica. Reconstruit numériquement à partir d'une analyse textuelle de sources historiques. Informations géolocalisées par des algorithmes d'apprentissage automatique. Vérification automatique. Jeu de données créé à l'EPFL."],
                               "it": ["Layer vettoriale che rappresenta le zone di proprietà a Venezia medievale, basata su interpretazioni dello studio di Dorigo Venezia Romanica. Ricostruito digitalmente da un'analisi testuale di fonti storiche. Informazioni geolocalizzate da algoritmi di apprendimento automatico. Verifica automatica. Dataset creato all'EPFL."]},
@@ -54,8 +54,8 @@ contemporary_map = produce_map_obj(MAP_UUID,
                               "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Fdorigo_zones.png/full/max/0/default.jpg",
                               "1.0",
                               TR,
-                              layer_ids,
-                              areas_id=[venice_area_uuid]
+                              layers,
+                              areas_id=venice_area_uuids
                              )
 
 save_data_file_if_different('', 'map', [contemporary_map], 'dorigo_map', RDE.MAP.value)

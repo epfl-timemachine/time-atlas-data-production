@@ -3,11 +3,55 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2025-11-05T16:49:49.145149",
+ "creation_time": "2026-01-19T14:28:34.519950",
  "rde_objects": [
   {
    "uuid": "56e12b90-6ce2-5d2d-a98e-b99fd675075c",
    "slug": "lausanne-mhl-iconographie",
+   "metadata": {
+    "description": {
+     "fr": [
+      "Extrait de Museris, la base de donnée du MHL. Jeu de données créé à l'EPFL."
+     ],
+     "en": [
+      "Extract from Museris, the database of the Historical Museum of Lausanne. Dataset created at EPFL."
+     ],
+     "de": [
+      "Auszug aus Museris, der Datenbank des Historischen Museums Lausanne. Datensatz erstellt an der EPFL."
+     ],
+     "it": [
+      "Estratto da Museris, il database del Museo Storico di Losanna. Dataset creato presso l'EPFL."
+     ]
+    },
+    "paradata": {
+     "fr": [
+      "Données produites et numérisées par le Musée Historique de Lausanne."
+     ],
+     "en": [
+      "Data produced and digitized by the Historical Museum of Lausanne."
+     ],
+     "de": [
+      "Daten produziert und digitalisiert vom Historischen Museum Lausanne."
+     ],
+     "it": [
+      "Dati prodotti e digitalizzati dal Museo Storico di Losanna."
+     ]
+    },
+    "url": {
+     "en": [
+      "https://museris.lausanne.ch/"
+     ],
+     "fr": [
+      "https://museris.lausanne.ch/"
+     ],
+     "it": [
+      "https://museris.lausanne.ch/"
+     ],
+     "de": [
+      "https://museris.lausanne.ch/"
+     ]
+    }
+   },
    "version": "1.0",
    "name": {
     "fr": [
@@ -24,45 +68,76 @@
     ]
    },
    "rde_type": "dataset",
-   "publish": {
-    "doi": null,
-    "url": null
-   },
-   "description": {
-    "fr": [
-     "Extrait de Museris, la base de donnée du MHL. Jeu de données créé à l'EPFL."
-    ],
-    "en": [
-     "Extract from Museris, the database of the Historical Museum of Lausanne. Dataset created at EPFL."
-    ],
-    "de": [
-     "Auszug aus Museris, der Datenbank des Historischen Museums Lausanne. Datensatz erstellt an der EPFL."
-    ],
-    "it": [
-     "Estratto da Museris, il database del Museo Storico di Losanna. Dataset creato presso l'EPFL."
-    ]
-   },
-   "paradata": {
-    "fr": [
-     "Données produites et numérisées par le Musée Historique de Lausanne."
-    ],
-    "en": [
-     "Data produced and digitized by the Historical Museum of Lausanne."
-    ],
-    "de": [
-     "Daten produziert und digitalisiert vom Historischen Museum Lausanne."
-    ],
-    "it": [
-     "Dati prodotti e digitalizzati dal Museo Storico di Losanna."
-    ]
-   },
    "sources": [
     "ecfea005-d7e4-5d79-b986-5bac1f92a82d"
    ],
    "start_time": "1584-01-01T00:00:00",
    "end_time": "2012-12-31T23:59:59",
-   "transcribed_pages_amount": 0,
    "is_operationally_described_by": {
+    "dataset_config": {
+     "metadata_field_config": [
+      {
+       "id": "description",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Description"
+        ],
+        "fr": [
+         "Description"
+        ],
+        "it": [
+         "Descrizione"
+        ],
+        "de": [
+         "Beschreibung"
+        ]
+       },
+       "uuid": "c3979705-4917-5729-9f22-27a430704552",
+       "display_order": 1
+      },
+      {
+       "id": "paradata",
+       "type": "STRING",
+       "display_label": {
+        "en": [
+         "Paradata"
+        ],
+        "fr": [
+         "Paradata"
+        ],
+        "it": [
+         "Paradata"
+        ],
+        "de": [
+         "Paradata"
+        ]
+       },
+       "uuid": "a757d82d-3f84-5f55-89f9-4114eca25da8",
+       "display_order": 2
+      },
+      {
+       "id": "url",
+       "type": "URL",
+       "display_label": {
+        "en": [
+         "Project's website"
+        ],
+        "fr": [
+         "Site du projet"
+        ],
+        "it": [
+         "Sito del progetto"
+        ],
+        "de": [
+         "Webseite des Projekts"
+        ]
+       },
+       "uuid": "25103c5e-7210-51e8-b63f-f343637586d6",
+       "display_order": 3
+      }
+     ]
+    },
     "hr_config": {
      "main_label": "${description} ${titre}",
      "sub_label": "${file_reference}",
@@ -88,6 +163,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": null,
        "short_display": false,
        "hidden": true,
        "tag": null,
@@ -113,6 +189,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": null,
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -138,6 +215,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": null,
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -163,6 +241,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": null,
@@ -188,6 +267,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": null,
@@ -213,6 +293,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -238,6 +319,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -263,6 +345,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -288,6 +371,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -313,6 +397,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -338,6 +423,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": "PEOPLE",
@@ -363,6 +449,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -388,6 +475,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -413,6 +501,7 @@
        },
        "nullable": false,
        "indexable": true,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": "PLACE",
@@ -438,6 +527,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -463,6 +553,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -488,6 +579,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -513,6 +605,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -538,6 +631,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -563,6 +657,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -588,6 +683,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -613,6 +709,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -638,6 +735,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -663,6 +761,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -688,6 +787,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": null,
        "short_display": false,
        "hidden": false,
        "tag": null,
@@ -713,6 +813,7 @@
        },
        "nullable": false,
        "indexable": false,
+       "paradata": "m",
        "short_display": true,
        "hidden": false,
        "tag": null,
@@ -724,10 +825,10 @@
     "uuid": "7395a084-d529-573b-83c7-881900877ae8"
    },
    "falls_within": [
-    "2fb11154-c70f-5e34-9f6e-c2cf16832a1d"
+    "e50f6137-c572-5402-80bf-1c27d19cd7c9",
+    "17832f26-8470-57e5-951d-324df69a653b"
    ],
-   "archival_reference": null,
-   "creation_time": "2025-11-05T16:49:49.142460"
+   "creation_time": "2026-01-19T14:28:34.518437"
   }
  ]
 }

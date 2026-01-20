@@ -1,0 +1,91 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "2ed820a7-c8aa-5f67-a798-d02a3a710f55",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "It rained quite heavily when I arrived"
+    ],
+    "de": [
+      "Bei meiner Ankunft hat es ziemlich geregnet"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F6.JPG/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ec990d83-412d-5ee7-bfec-9b4fc9c17575",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Au Major Davel"
+        ]
+      },
+      "height": 1728,
+      "width": 4032,
+      "items": [
+        {
+          "id": "80be74be-2dae-50c5-afe3-193c30e64a0a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3bcde200-00ed-5b0a-af7a-97d12e62b55b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F6.JPG/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1728,
+                "width": 4032,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Fraimund_hotels%2F6.JPG",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ec990d83-412d-5ee7-bfec-9b4fc9c17575"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "004f23bb-8e5b-52c2-9abf-49cc0263cedc",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "02e50e5f-d275-5bc1-9e68-37d4f04f5587",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "fr",
+                  "format": "text/html",
+                  "value": "It rained quite heavily when I arrived"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "ec22a749-60c8-5dbc-bb5f-27bf75acd0ed"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ec990d83-412d-5ee7-bfec-9b4fc9c17575",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

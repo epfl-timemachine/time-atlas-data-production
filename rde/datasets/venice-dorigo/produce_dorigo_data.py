@@ -34,18 +34,26 @@ DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 MAP_FOLDER = '../../maps/venice-dorigo/'
 cadaster_layer_uuid = get_layer_uuid(MAP_FOLDER+'layers.json', 'venice-dorigo-map-zones') 
 # so the same layer uuid is used between this dataset and the street network dataset
-BEGIN_TR = 9460101
-END_TR = 14081231
-formatted_begin = datetime_obj_from_int_time(BEGIN_TR)
-formatted_end = datetime_obj_from_int_time(END_TR, match_to_end=True)
+
+formatted_begin = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM'])
+formatted_end = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
 TR_OBJ = [formatted_begin, formatted_end]
 DATA_FOLDER = 'data'
-venice_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 # Geometry RDE production
-raimund_fmt = "%Y/%m/%d %H:%M:%S"
+# 1241-01-01T00:00:00Z
+raimund_fmt = "%Y-%m-%dT%H:%M:%SZ"
+alt_fmt = "%Y/%m/%d %H:%M:"
 def format_raimund_dt(dt_str: str) -> str:
-    return datetime.strptime(dt_str[:-3], raimund_fmt).isoformat() if dt_str and not pd.isnull(str) else dt_str
+    try:
+        return datetime.strptime(dt_str, raimund_fmt).isoformat() if dt_str and not pd.isnull(str) else dt_str
+    except ValueError:
+        try:
+            return datetime.strptime(dt_str, alt_fmt).isoformat() if dt_str and not pd.isnull(str) else dt_str
+        except ValueError:
+            print(f"Could not parse date: {dt_str}")
+            return None
 
 geometries_fp = list(DORIGO_DATA_PATH.rglob('*geometries.geojson'))[0]
 # sample for testing uuid_gen
@@ -79,6 +87,7 @@ df = process_source_acronym(df)
 df.rename(columns={'source': 'source_ocr', 'source_resolved': 'source'}, inplace=True)
 df['start_time'] = df['date_start'].astype(int).apply(datetime_obj_from_int_time)
 
+
 def try_to_parse_date_end(date_end):
     try:
         return datetime_obj_from_int_time(date_end, match_to_end=True)
@@ -86,8 +95,10 @@ def try_to_parse_date_end(date_end):
         print(f"Could not parse date_end: {date_end}")
 
 df['end_time'] = df['date_end'].astype(int).apply(try_to_parse_date_end)
+
+
 # direct IIIF sources with Dorigo is currently not advised as the data is under some rights limitation, instead we baked a bibliographical citation to the book in the data. 
-with open(join(DORIGO_DATA_SRC, 'tables_manifest.json'), 'r') as f:
+with open(join(DORIGO_DATA_SRC, 'ownerships_and_places/tables_manifest.json'), 'r') as f:
     tables_manifest = json.load(f)
 tables_manifest
 
@@ -167,28 +178,18 @@ order = labels.keys()
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,
     filtered_df[order],
-    CONF["indexed"],
-    CONF["short_display"],
-    CONF["hidden"], 
-    {},
-    CONF["tagged_fields"],
-    labels,
-    main_label=CONF["main_label"],
-    sub_label=CONF["sub_label"]
+    CONF
 )
 ds = produce_dataset_obj(
     DS_UUID,
     DS_SLUG,
     '1.1',
     CONF["name"],
-    CONF["description"],
-    CONF["paradata"],
     [],
     TR_OBJ,
     0,
     ds_conf,
-    [venice_area_uuid],
-    publish_obj=(CONF["doi"], CONF["github_link"])
+    venice_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'dorigo_dataset', RDE.DATASET.value, is_dataset_obj=True)

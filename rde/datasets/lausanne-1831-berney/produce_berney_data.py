@@ -28,7 +28,7 @@ VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
-lausanne_area_uuid = get_single_object_uuid(DATA_CONFIG['AREA_FILE_LOC'])
+lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
@@ -215,14 +215,8 @@ order = CONF['labels'].keys()
 
 ds_conf = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS, 
-    filtered_df[order], CONF["indexed"], 
-    CONF["short_display"],
-    CONF["hidden"], 
-    {}, 
-    CONF["tagged_fields"], 
-    CONF["labels"],
-    main_label=CONF["main_label"], 
-    sub_label=CONF["sub_label"]
+    filtered_df[order], 
+    CONF
 )
 
 ds = produce_dataset_obj(
@@ -230,14 +224,11 @@ ds = produce_dataset_obj(
     DS_SLUG,
     '1.0',
     CONF['name'],
-    CONF['description'],
-    CONF['paradata'],
     [collection_manifest_uid],
     TR_OBJ,
     0,
     ds_conf,
-    [lausanne_area_uuid],
-    publish_obj=(CONF['doi'], CONF['github_link'])
+    lausanne_area_uuids
 )
 
 save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'lausanne_1831_berney_dataset', RDE.DATASET.value, is_dataset_obj=True)
