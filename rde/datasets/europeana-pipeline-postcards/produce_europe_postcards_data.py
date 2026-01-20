@@ -214,25 +214,30 @@ df['coordinates'] = df['coordinates'].apply(lambda v: pd.Series(v).drop_duplicat
 def quick_uuid(hr_uuid:str, coords:str) -> str: 
     return str(uuid.uuid5(TM_UUID5_NS, f'{hr_uuid}-{coords}'))  
 
-tqdm.pandas(desc="Generating obs uuid")
-df['obs_data'] = df.progress_apply(lambda r: [(c, quick_uuid(r['hr_uuid'], c)) for c in r['coordinates']], axis=1)
-df_obs = df[['obs_data', 'hr_uuid', 'start_time', 'end_time']].copy().explode('obs_data')
-df_obs['lat_lon'], df_obs['obs_uuid'] = df_obs['obs_data'].apply(lambda x: x[0]), df_obs['obs_data'].apply(lambda x: x[1])
-df_obs = df_obs.drop(columns=['obs_data'])
-df_obs['geometry'] = df_obs['lat_lon'].apply(lambda v: Point(v[1], v[0]))
-gdf = gpd.GeoDataFrame(df_obs.drop('lat_lon', axis=1)).set_geometry('geometry')
-gdf = gdf.set_crs('EPSG:4326').reset_index()
+# need to split between obs that actually have street level geolocatin, and as such will have POIs. 
+df_precise_coords = df[df['coordinates'].apply(len) > 0].copy()
+df_precise_coords.to_csv('geolocated_postcards.csv', index=False)
+# the "no precise coords" are the ones that will only have the city level geolocation, will still have observations ang get triggered by reserach, but no POIs.s
+df_no_precise_coords = df[df['coordinates'].apply(len) == 0].copy()
+df_no_precise_coords['coordinates'] = df_no_precise_coords['country_city_coordinates'].apply(lambda v: [v])
 
 tpe='landmark'
 
-# Generating Obs RDE
-obs = [produce_obs_obj(
-    v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None
-) for _,v in gdf.iterrows()]
+def produce_obs_gdf(df: pd.DataFrame, need_poi: bool = True) -> gpd.GeoDataFrame:
+    tqdm.pandas(desc="Generating obs uuid")
+    # Generating Obs RDE
+    obs = [produce_obs_obj(
+        v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None, need_poi=need_poi
+    ) for _,v in df.iterrows()]
 
-gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+    gdf_obs = gpd.GeoDataFrame(obs)
+    gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+    return gdf_obs
 
+gdf_obs_precise = produce_obs_gdf(df_precise_coords)
+gdf_obs_no_precise = produce_obs_gdf(df_no_precise_coords, need_poi=False)
+gdf_obs = pd.concat([gdf_obs_precise, gdf_obs_no_precise], ignore_index=False)
+print(f'Total number of observations generated: {len(gdf_obs)}')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'europeana_postcards_obs', RDE.OBS.value)
 
