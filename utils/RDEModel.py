@@ -139,7 +139,7 @@ class HR(RDE):
             paradata=json_obj.get('paradata', ''),
             type=json_obj.get('type', ''),
             documents=json_obj.get('documents', []),
-            annotated_content=json_obj.get('annotated_content', {}),
+            annotated_content=json_obj.get('metadata', {}),
             rights_attribution=json_obj.get('rights_attribution')
         )
     
@@ -222,14 +222,14 @@ class Layer(RDE):
     name: MultiLingualValue
     description: MultiLingualValue
     time_range: RDETimeRange
-    map_uuid: UUID
+    map_uuid: Map
     is_vector: bool
     layer_configs: list[dict] = field(default_factory=list)
 
 @dataclass
 class Geometry(RDE):
     geometry: GeometryType
-    layer: Optional[UUID] = None
+    layer: Optional[LayerReference] = None
 
     @staticmethod
     def constructor_from_json_obj(json_obj: dict) -> 'Geometry':

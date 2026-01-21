@@ -44,7 +44,6 @@ class RDEFactory:
         while True:
             resp = requests.get(f'{self.api_url}/{endpoint}', params={'page': page, 'per_page': per_page}, headers={'Accept': 'application/json'})
             # checking the url of the request for debugging
-            print(resp.url)
             resp.raise_for_status()
             data = resp.json()
             results.extend(data['items'])
