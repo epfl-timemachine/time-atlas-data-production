@@ -1,8 +1,10 @@
 from dataclasses import dataclass, field
+from enum import Enum
 from shapely.geometry import Point, LineString, Polygon, MultiLineString, MultiPolygon
+import shapely
+import json
 from typing import Union, Optional
 from datetime import datetime
-from rde import CLASS_NAME_TO_RDE
 
 type GeometryType = Union[Point, LineString, Polygon, MultiLineString, MultiPolygon]
 type UUID = str
@@ -12,6 +14,31 @@ type DatasetReference = Dataset | UUID
 type POIReference = POI | UUID
 type GeometryReference = Geometry | UUID
 type AreaReference = Area | UUID
+type LayerReference = Layer | UUID
+type MapReference = Map | UUID
+
+
+class RDEType(Enum):
+    HR = 'historical_record'
+    OBS = 'observation'
+    POI = 'point_of_interest'
+    GEOM = 'geometry'
+    DATASET = 'dataset'
+    MAP = 'map'
+    LAYER = 'layer'
+    AREA = 'area'
+
+
+CLASS_NAME_TO_RDE = {
+    'hr': RDEType.HR,
+    'obs': RDEType.OBS,
+    'poi': RDEType.POI,
+    'geometry': RDEType.GEOM,
+    'dataset': RDEType.DATASET,
+    'map': RDEType.MAP,
+    'layer': RDEType.LAYER,
+    'area': RDEType.AREA
+}
 
 @dataclass
 class RDE:
@@ -38,6 +65,10 @@ class RDE:
     
     def get_ref(self) -> str:
         return self.uuid
+    
+    @staticmethod
+    def constructor_from_json_obj(json_obj: dict) -> 'RDE':
+        raise NotImplementedError('This method should be implemented in subclasses')
 
 @dataclass
 class RDETimeRange:
@@ -122,8 +153,6 @@ class POI(RDE):
     coordinate: list[float]
     height: HeightInfo
 
-
-
 @dataclass
 class Obs(RDE):
     dataset: DatasetReference
@@ -153,11 +182,65 @@ class Obs(RDE):
             has_geometry=json_obj.get('has_geometry', []),
             has_handle=json_obj.get('has_handle')
         )
+    
+@dataclass
+class GeographicalExtent:
+    coordinates: list[float]
+
+    def __post_init__(self):
+        assert len(self.coordinates) == 4, "Extent must have four coordinates: [min_x, min_y, max_x, max_y]"
+        assert self.coordinates[0] < self.coordinates[2], "min_x must be less than max_x"
+        assert self.coordinates[1] < self.coordinates[3], "min_y must be less than max_y"
+        # note that the two asserts above would faile on map that are exactly on limits of the negative latitude (-0.0) or longitude (-0.0), it is unlikey we ingest map from such zones (and most GIS software specially avoid it: https://en.wikipedia.org/wiki/180th_meridian)
+
+@dataclass
+class Map(RDE):
+    name: MultiLingualValue
+    time_range: RDETimeRange
+    contains: list[LayerReference] = field(default_factory=list)
+    metadata: dict = field(default_factory=dict)
+    thumbnail: Optional[str] = None
+    version: Optional[str] = None
+    falls_within: list[AreaReference] = field(default_factory=list)
+
+    def constructor_from_json_obj(json_obj: dict) -> 'Map':
+        return Map(
+            uuid=json_obj['uuid'],
+            name=MultiLingualValue(values=json_obj['name']),
+            contains=json_obj.get('contains', []),
+            metadata=json_obj.get('metadata', {}),
+            thumbnail=json_obj.get('thumbnail'),
+            extent=GeographicalExtent(json_obj.get('extent', [])),
+            version=json_obj.get('version'),
+            time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
+            falls_within=json_obj.get('falls_within', [])
+        )
+
+@dataclass 
+class Layer(RDE):
+    slug: str
+    name: MultiLingualValue
+    description: MultiLingualValue
+    time_range: RDETimeRange
+    map_uuid: UUID
+    is_vector: bool
+    layer_configs: list[dict] = field(default_factory=list)
 
 @dataclass
 class Geometry(RDE):
     geometry: GeometryType
     layer: Optional[UUID] = None
+
+    @staticmethod
+    def constructor_from_json_obj(json_obj: dict) -> 'Geometry':
+        # to note, the JSON object is a GeoJSON Feature object
+        props = json_obj.get('properties', {})
+        geometry = json_obj.get('geometry', {})
+        return Geometry(
+            uuid=props.get('uuid', json_obj.get('uuid')),
+            layer=props.get('layer_uuid'),
+            geometry=shapely.from_geojson(json.dumps(geometry)),
+        )
 
 @dataclass
 class Area(RDE):
