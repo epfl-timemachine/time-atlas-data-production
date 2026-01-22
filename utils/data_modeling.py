@@ -168,13 +168,14 @@ def produce_hr_obj(uuid: str,
                 new_md[k] = v
         else:
             new_md[k] = None
+    
     return {
         "uuid": uuid,
         "dataset": ds,
         "rde_type": RDE.HR.value,
         "paradata": paradata,
         "type": tpe,
-        "documents": obs_uid_list,
+        "documents": [v[0] for v in obs_uid_list],
         "start_time": time_range[0],
         "end_time": time_range[1],
         "rights_attribution": rights_attribution,
@@ -260,7 +261,7 @@ def produce_dataset_obj(
         "sources": sources,
         "start_time": time_range[0],
         "end_time": time_range[1],
-        "is_operationally_described_by": configuration,
+        "hr_config": configuration['hr_config'],
         "falls_within": areas_ids,
     }
 
@@ -289,16 +290,11 @@ def produce_map_obj(
         "slug": map_slug,
         "rde_type": RDE.MAP.value,
         "name": name,
-        "metadata": {
-            "description": description,
-            "paradata": paradata,
-        },
-        "metadata_field_config":[
-         {
+        "metadata": [{
             "uuid": str(uuid.uuid5(VMAP_UUID5_NS, map_slug+'_description')),
-            "id": "description",
             "type": "STRING",
-            "display_label": {
+            "value": description,
+            "label": {
                 "en": [
                     "Description"
                 ],
@@ -319,21 +315,27 @@ def produce_map_obj(
         },
         {
             "uuid": str(uuid.uuid5(VMAP_UUID5_NS, map_slug+'_paradata')),
-            "id": "paradata",
             "type": "STRING",
-            "display_label": {
+            "value": paradata,
+            "label": {
                 "en": [
-                "Paradata"
+                    "Paradata"
                 ],
                 "fr": [
-                "Paradata"
+                    "Paradata"
                 ],
                 "it": [
-                "Paradata"
+                    "Paradata"
+                ],
+                "nl": [
+                    "Paradata"
+                ],
+                "de": [
+                    "Paradata"
                 ]
             },
             "display_order": 2
-        }
+            }
         ],
         "thumbnail": thumbnail,
         "version": version,
@@ -370,7 +372,6 @@ def produce_layer_config(
             "media_type": format
         }
     }
-
 
 def produce_layer_obj(
     uuid: str,
@@ -645,9 +646,6 @@ def produce_configuration_file_from_metadata_df(
         raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
 
     base = {
-        "dataset_config": {
-            "metadata_field_config": []
-        },
         "hr_config": {
             "main_label": "",
             "sub_label": "",
@@ -655,8 +653,7 @@ def produce_configuration_file_from_metadata_df(
             "external_source": False,
             "metadata_field_config": []
         },
-        "metadata": {
-        }
+        "metadata": [],
     }
     if main_label:
         base['hr_config']['main_label'] = main_label
@@ -669,21 +666,20 @@ def produce_configuration_file_from_metadata_df(
     
     ds_md_c = []
     base_dmc = {
-        "id": "",
         "type": None,
-        "display_label": None
+        "label": None,
+        "value": None,
     }
     for i, (k, v) in enumerate(dataset_metadata_config.items()):
         curr_dmc = base_dmc.copy()
-        curr_dmc['id'] = k
         curr_dmc['type'] = v['type']
-        curr_dmc['display_label'] = v['display_label']
-        base['metadata'][k] = v['value']
+        curr_dmc['label'] = v['display_label']
+        curr_dmc['value'] = v['value']
         curr_dmc['uuid'] = str(uuid.uuid5(uuid_ns, f'dataset_md_config_{k}'))
         curr_dmc['display_order'] = i + 1
         ds_md_c.append(curr_dmc)
 
-    base['dataset_config']['metadata_field_config'] = ds_md_c
+    base['metadata'] = ds_md_c
     base["uuid"] = str(uuid.uuid5(uuid_ns, 'dataset_configuration'))
     field_template = {
         "id": "",

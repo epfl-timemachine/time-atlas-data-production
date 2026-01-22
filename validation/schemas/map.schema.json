@@ -15,34 +15,7 @@
       "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
     },
     "metadata": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
-      }
-    },
-    "metadata_field_config": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "display_label": {
-            "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
-          },
-          "display_order": {
-            "type": "number"
-          }
-        },
-        "required": ["uuid", "id", "type", "display_label", "display_order"]
-      }
+      "$ref": "https://timeatlas.eu/rde/metadata.schema.json"
     },
     "thumbnail": {
       "type": "string"
@@ -82,6 +55,7 @@
     "end_time",
     "falls_within",
     "name",
+    "metadata",
     "extent",
     "version",
     "thumbnail",
