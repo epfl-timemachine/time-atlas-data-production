@@ -33,13 +33,10 @@
       "type": "string"
     },
     "metadata": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "https://timeatlas.eu/rde/multilingual_data.schema.json"
-      }
+        "$ref": "https://timeatlas.eu/rde/metadata.schema.json"
     },
-    "is_operationally_described_by": {
-      "$ref": "https://timeatlas.eu/rde/dataset_configuration.schema.json"
+    "hr_config": {
+      "$ref": "https://timeatlas.eu/rde/hr_config.schema.json"
     },
     "falls_within": {
       "type": "array",
@@ -49,12 +46,13 @@
     }
   },
   "required": [
-    "is_operationally_described_by",
     "creation_time",
     "end_time",
     "falls_within",
     "name",
     "version",
+    "metadata",
+    "hr_config",
     "slug",
     "sources",
     "start_time",

@@ -3,41 +3,76 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2026-01-19T14:34:27.702616",
+ "creation_time": "2026-01-21T16:10:14.710732",
  "rde_objects": [
   {
    "uuid": "4aa29abc-6557-514a-9616-d2dcd0eebb28",
    "slug": "venice-europeana-postcards",
-   "metadata": {
-    "description": {
-     "en": [
-      "Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."
-     ],
-     "fr": [
-      "Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."
-     ],
-     "de": [
-      "Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."
-     ],
-     "it": [
-      "Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."
-     ]
+   "metadata": [
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Description"
+      ],
+      "fr": [
+       "Description"
+      ],
+      "it": [
+       "Descrizione"
+      ],
+      "de": [
+       "Beschreibung"
+      ]
+     },
+     "value": {
+      "en": [
+       "Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."
+      ],
+      "fr": [
+       "Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."
+      ],
+      "de": [
+       "Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."
+      ],
+      "it": [
+       "Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."
+      ]
+     },
+     "uuid": "646d886e-04d2-5b56-a2de-951bc32f46ab",
+     "display_order": 1
     },
-    "paradata": {
-     "en": [
-      "Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."
-     ],
-     "fr": [
-      "Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."
-     ],
-     "de": [
-      "Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."
-     ],
-     "it": [
-      "Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."
-     ]
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Paradata"
+      ],
+      "fr": [
+       "Paradata"
+      ],
+      "it": [
+       "Paradata"
+      ]
+     },
+     "value": {
+      "en": [
+       "Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."
+      ],
+      "fr": [
+       "Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."
+      ],
+      "de": [
+       "Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."
+      ],
+      "it": [
+       "Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."
+      ]
+     },
+     "uuid": "d9033c06-9c4c-518b-8d6b-bd915311ac4b",
+     "display_order": 2
     }
-   },
+   ],
    "version": "1.0",
    "name": {
     "en": [
@@ -59,193 +94,149 @@
    ],
    "start_time": "1890-01-01T00:00:00",
    "end_time": "2024-12-31T23:59:59",
-   "is_operationally_described_by": {
-    "dataset_config": {
-     "metadata_field_config": [
-      {
-       "id": "description",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Description"
-        ],
-        "fr": [
-         "Description"
-        ],
-        "it": [
-         "Descrizione"
-        ],
-        "de": [
-         "Beschreibung"
-        ]
-       },
-       "uuid": "646d886e-04d2-5b56-a2de-951bc32f46ab",
-       "display_order": 1
+   "hr_config": {
+    "main_label": "${Monument}, ${date}",
+    "sub_label": "${description}",
+    "display_thumbnail": true,
+    "external_source": true,
+    "metadata_field_config": [
+     {
+      "id": "description",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Description"
+       ],
+       "fr": [
+        "Description"
+       ],
+       "de": [
+        "Beschreibung"
+       ],
+       "it": [
+        "Descrizione"
+       ]
       },
-      {
-       "id": "paradata",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Paradata"
-        ],
-        "fr": [
-         "Paradata"
-        ],
-        "it": [
-         "Paradata"
-        ]
-       },
-       "uuid": "d9033c06-9c4c-518b-8d6b-bd915311ac4b",
-       "display_order": 2
-      }
-     ]
-    },
-    "hr_config": {
-     "main_label": "${Monument}, ${date}",
-     "sub_label": "${description}",
-     "display_thumbnail": true,
-     "external_source": true,
-     "metadata_field_config": [
-      {
-       "id": "description",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Description"
-        ],
-        "fr": [
-         "Description"
-        ],
-        "de": [
-         "Beschreibung"
-        ],
-        "it": [
-         "Descrizione"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": "PLACE",
-       "display_order": 1,
-       "uuid": "a091ab53-d5c5-5866-a5bc-f34482b0ad3d"
+      "nullable": true,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": "PLACE",
+      "display_order": 1,
+      "uuid": "a091ab53-d5c5-5866-a5bc-f34482b0ad3d"
+     },
+     {
+      "id": "date",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Date from the postcard"
+       ],
+       "fr": [
+        "Date de la carte postale"
+       ],
+       "de": [
+        "Datum der Postkarte"
+       ],
+       "it": [
+        "Data della cartolina"
+       ]
       },
-      {
-       "id": "date",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Date from the postcard"
-        ],
-        "fr": [
-         "Date de la carte postale"
-        ],
-        "de": [
-         "Datum der Postkarte"
-        ],
-        "it": [
-         "Data della cartolina"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 2,
-       "uuid": "390ed417-4b38-52b5-b962-bdc7471fbd2a"
+      "nullable": true,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 2,
+      "uuid": "390ed417-4b38-52b5-b962-bdc7471fbd2a"
+     },
+     {
+      "id": "Monument",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Monument identified by the AI"
+       ],
+       "fr": [
+        "Monument identifié par l'IA"
+       ],
+       "de": [
+        "Monument identifiziert durch KI"
+       ],
+       "it": [
+        "Monumento identificato dall'IA"
+       ]
       },
-      {
-       "id": "Monument",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Monument identified by the AI"
-        ],
-        "fr": [
-         "Monument identifié par l'IA"
-        ],
-        "de": [
-         "Monument identifiziert durch KI"
-        ],
-        "it": [
-         "Monumento identificato dall'IA"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "i",
-       "short_display": true,
-       "hidden": false,
-       "tag": "PLACE",
-       "display_order": 3,
-       "uuid": "a0620c82-5266-50f7-a15b-8257fafeea17"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "i",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PLACE",
+      "display_order": 3,
+      "uuid": "a0620c82-5266-50f7-a15b-8257fafeea17"
+     },
+     {
+      "id": "wd_id",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Wikidata ID"
+       ],
+       "fr": [
+        "ID Wikidata"
+       ],
+       "de": [
+        "Wikidata ID"
+       ],
+       "it": [
+        "ID Wikidata"
+       ]
       },
-      {
-       "id": "wd_id",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Wikidata ID"
-        ],
-        "fr": [
-         "ID Wikidata"
-        ],
-        "de": [
-         "Wikidata ID"
-        ],
-        "it": [
-         "ID Wikidata"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 4,
-       "uuid": "7ac30d8f-58ce-5d35-8b27-b65fde7499aa"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 4,
+      "uuid": "7ac30d8f-58ce-5d35-8b27-b65fde7499aa"
+     },
+     {
+      "id": "Image Name",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Image Name"
+       ],
+       "fr": [
+        "Nom de l'image"
+       ],
+       "de": [
+        "Bildname"
+       ],
+       "it": [
+        "Nome dell'immagine"
+       ]
       },
-      {
-       "id": "Image Name",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Image Name"
-        ],
-        "fr": [
-         "Nom de l'image"
-        ],
-        "de": [
-         "Bildname"
-        ],
-        "it": [
-         "Nome dell'immagine"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": null,
-       "short_display": false,
-       "hidden": true,
-       "tag": null,
-       "display_order": 5,
-       "uuid": "4a8b8f22-640c-5907-b459-d5ddc2fb42fe"
-      }
-     ]
-    },
-    "uuid": "d69c6a5e-7bed-5717-bdff-9b9d1e930e13"
+      "nullable": false,
+      "indexable": false,
+      "paradata": null,
+      "short_display": false,
+      "hidden": true,
+      "tag": null,
+      "display_order": 5,
+      "uuid": "4a8b8f22-640c-5907-b459-d5ddc2fb42fe"
+     }
+    ]
    },
    "falls_within": [
     "ce22c093-3d47-56b8-bf06-0ab86bda0db4",
     "ae0fb021-bbb4-5de7-bca2-afddad4b9d17"
    ],
-   "creation_time": "2026-01-19T14:34:27.701097"
+   "creation_time": "2026-01-21T16:10:14.709872"
   }
  ]
 }

@@ -97,11 +97,13 @@ def select_feature_that_is_a_polygon_or_multipolygon(features: list[dict]) -> Un
             return feature
     return None
 
+language_codes = ['en', 'fr', 'de', 'it', 'nl']
+
 for file in os.listdir('countries_src/src'):
     with open(os.path.join('countries_src/src', file), 'r', encoding='utf-8') as f:
         data = json.load(f)
         if file in code_to_country_labels:
-            country_name_dict = {k: [v] for k, v in code_to_country_labels[file].items()}
+            country_name_dict = {k: [v] for k, v in code_to_country_labels[file].items() if k in language_codes}
             en_label = country_name_dict.get('en')[0].replace(' ', '-').lower()
             country_slug = remove_weird_characters(f"country-{en_label}-area")
             country_uuid = str(uuid.uuid5(AREA_UUID5_NS, country_slug))

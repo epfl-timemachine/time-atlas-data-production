@@ -3,41 +3,79 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2026-01-19T13:35:45.279324",
+ "creation_time": "2026-01-21T16:07:20.162087",
  "rde_objects": [
   {
    "uuid": "dd80ed1f-9be9-5980-989c-b5f0e4a7b810",
    "slug": "venice-1808-streetnetwork",
-   "metadata": {
-    "description": {
-     "en": [
-      "Vector data extracted from the georeferenced facsimile maps of the Napoleonic cadastre. All road segments are represented as line features, with associated toponyms captured from the original map.  Information geolocated manually through historical-archival heuristics. Dataset created at EPFL"
-     ],
-     "it": [
-      "Dati vettoriali estratti dalle mappe facsimili georeferenziate del catasto napoleonico. Tutti i segmenti stradali sono rappresentati come caratteristiche lineari, con toponimi associati catturati dalla mappa originale. Informazioni geolocalizzate manualmente attraverso indagini storico-archivistiche. Dataset creato presso l'EPFL"
-     ],
-     "fr": [
-      "Données vectorielles extraites des cartes facsimilées géoréférencées du cadastre napoléonien. Tous les segments routiers sont représentés comme des caractéristiques linéaires, avec des toponymes associés capturés sur la carte originale. Informations géolocalisées manuellement par le biais d'heuristiques historiques et archivistiques. Jeu de données créé à l'EPFL"
-     ],
-     "de": [
-      "Vektordaten, die aus den georeferenzierten Faksimile-Karten des napoleonischen Katasteramts extrahiert wurden. Alle Straßenabschnitte sind als Linienmerkmale dargestellt, mit zugehörigen Toponymen, die von der Originalkarte erfasst wurden. Informationen wurden manuell durch historische und archivische Heuristiken geolokalisiert. Datensatz erstellt an der EPFL."
-     ]
+   "metadata": [
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Description"
+      ],
+      "fr": [
+       "Description"
+      ],
+      "it": [
+       "Descrizione"
+      ],
+      "de": [
+       "Beschreibung"
+      ]
+     },
+     "value": {
+      "en": [
+       "Vector data extracted from the georeferenced facsimile maps of the Napoleonic cadastre. All road segments are represented as line features, with associated toponyms captured from the original map.  Information geolocated manually through historical-archival heuristics. Dataset created at EPFL"
+      ],
+      "it": [
+       "Dati vettoriali estratti dalle mappe facsimili georeferenziate del catasto napoleonico. Tutti i segmenti stradali sono rappresentati come caratteristiche lineari, con toponimi associati catturati dalla mappa originale. Informazioni geolocalizzate manualmente attraverso indagini storico-archivistiche. Dataset creato presso l'EPFL"
+      ],
+      "fr": [
+       "Données vectorielles extraites des cartes facsimilées géoréférencées du cadastre napoléonien. Tous les segments routiers sont représentés comme des caractéristiques linéaires, avec des toponymes associés capturés sur la carte originale. Informations géolocalisées manuellement par le biais d'heuristiques historiques et archivistiques. Jeu de données créé à l'EPFL"
+      ],
+      "de": [
+       "Vektordaten, die aus den georeferenzierten Faksimile-Karten des napoleonischen Katasteramts extrahiert wurden. Alle Straßenabschnitte sind als Linienmerkmale dargestellt, mit zugehörigen Toponymen, die von der Originalkarte erfasst wurden. Informationen wurden manuell durch historische und archivische Heuristiken geolokalisiert. Datensatz erstellt an der EPFL."
+      ]
+     },
+     "uuid": "69a99fbd-0873-58f2-b82b-df4572c023de",
+     "display_order": 1
     },
-    "paradata": {
-     "en": [
-      "Both the geometries and toponyms were manually extracted from the maps of the Somarioni"
-     ],
-     "fr": [
-      "Les géométries et les toponymes ont été extraits manuellement des cartes des Somarioni"
-     ],
-     "it": [
-      "Le geometrie e i toponimi sono stati estratti manualmente dalle mappe dei Somarioni"
-     ],
-     "de": [
-      "Sowohl die Geometrien als auch die Toponyme wurden manuell aus den Karten der Somarioni extrahiert."
-     ]
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Paradata"
+      ],
+      "fr": [
+       "Paradata"
+      ],
+      "it": [
+       "Paradata"
+      ],
+      "de": [
+       "Paradata"
+      ]
+     },
+     "value": {
+      "en": [
+       "Both the geometries and toponyms were manually extracted from the maps of the Somarioni"
+      ],
+      "fr": [
+       "Les géométries et les toponymes ont été extraits manuellement des cartes des Somarioni"
+      ],
+      "it": [
+       "Le geometrie e i toponimi sono stati estratti manualmente dalle mappe dei Somarioni"
+      ],
+      "de": [
+       "Sowohl die Geometrien als auch die Toponyme wurden manuell aus den Karten der Somarioni extrahiert."
+      ]
+     },
+     "uuid": "83ba7581-0bac-53e8-9a31-2c955e3e0d95",
+     "display_order": 2
     }
-   },
+   ],
    "version": "1.0",
    "name": {
     "en": [
@@ -57,118 +95,71 @@
    "sources": [],
    "start_time": "1808-01-01T00:00:00",
    "end_time": "1848-12-31T23:59:59",
-   "is_operationally_described_by": {
-    "dataset_config": {
-     "metadata_field_config": [
-      {
-       "id": "description",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Description"
-        ],
-        "fr": [
-         "Description"
-        ],
-        "it": [
-         "Descrizione"
-        ],
-        "de": [
-         "Beschreibung"
-        ]
-       },
-       "uuid": "69a99fbd-0873-58f2-b82b-df4572c023de",
-       "display_order": 1
+   "hr_config": {
+    "main_label": "${NAME}",
+    "sub_label": "${length}",
+    "display_thumbnail": false,
+    "external_source": false,
+    "metadata_field_config": [
+     {
+      "id": "NAME",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Name"
+       ],
+       "fr": [
+        "Nom"
+       ],
+       "it": [
+        "Nome"
+       ],
+       "de": [
+        "Name"
+       ]
       },
-      {
-       "id": "paradata",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Paradata"
-        ],
-        "fr": [
-         "Paradata"
-        ],
-        "it": [
-         "Paradata"
-        ],
-        "de": [
-         "Paradata"
-        ]
-       },
-       "uuid": "83ba7581-0bac-53e8-9a31-2c955e3e0d95",
-       "display_order": 2
-      }
-     ]
-    },
-    "hr_config": {
-     "main_label": "${NAME}",
-     "sub_label": "${length}",
-     "display_thumbnail": false,
-     "external_source": false,
-     "metadata_field_config": [
-      {
-       "id": "NAME",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Name"
-        ],
-        "fr": [
-         "Nom"
-        ],
-        "it": [
-         "Nome"
-        ],
-        "de": [
-         "Name"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": "PLACE",
-       "display_order": 1,
-       "uuid": "1eca321a-ac2d-5992-bc61-ddd0a743d7b4"
+      "nullable": true,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PLACE",
+      "display_order": 1,
+      "uuid": "1eca321a-ac2d-5992-bc61-ddd0a743d7b4"
+     },
+     {
+      "id": "length",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "length"
+       ],
+       "fr": [
+        "longueur"
+       ],
+       "it": [
+        "lunghezza"
+       ],
+       "de": [
+        "Länge"
+       ]
       },
-      {
-       "id": "length",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "length"
-        ],
-        "fr": [
-         "longueur"
-        ],
-        "it": [
-         "lunghezza"
-        ],
-        "de": [
-         "Länge"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 2,
-       "uuid": "534cbf23-82dc-5ff3-8b5f-7788366a1efa"
-      }
-     ]
-    },
-    "uuid": "3eed3d1f-2d27-5783-bb39-eb59599ebafd"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 2,
+      "uuid": "534cbf23-82dc-5ff3-8b5f-7788366a1efa"
+     }
+    ]
    },
    "falls_within": [
     "ce22c093-3d47-56b8-bf06-0ab86bda0db4",
     "ae0fb021-bbb4-5de7-bca2-afddad4b9d17"
    ],
-   "creation_time": "2026-01-19T13:35:45.278058"
+   "creation_time": "2026-01-21T16:07:20.161311"
   }
  ]
 }

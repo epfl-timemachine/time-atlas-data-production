@@ -371,10 +371,6 @@ with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encodin
 
 # Dataset RDE Production
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']
-dictionaries = {
-    "sestiere": get_single_object_uuid('../../dictionaries/venice-district-dictionary.json'),
-    "parish_std": get_single_object_uuid('../../dictionaries/venice-garzoni-church-dictionary.json')
-}
 
 filtered_df = df.drop(columns=exclude_hr_labels)
 # the columns of the df needs to be ordered the way we want them to be ordered then in the configuration file.

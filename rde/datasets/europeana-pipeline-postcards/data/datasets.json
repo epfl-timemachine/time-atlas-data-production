@@ -3,41 +3,76 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2026-01-19T14:26:06.697111",
+ "creation_time": "2026-01-21T16:01:10.555937",
  "rde_objects": [
   {
    "uuid": "0fb8efbf-70ce-5fd4-9815-29871b167b70",
    "slug": "europeana-pipeline-postcards",
-   "metadata": {
-    "description": {
-     "en": [
-      "Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."
-     ],
-     "fr": [
-      "Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."
-     ],
-     "de": [
-      "Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."
-     ],
-     "it": [
-      "Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."
-     ]
+   "metadata": [
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Description"
+      ],
+      "fr": [
+       "Description"
+      ],
+      "it": [
+       "Descrizione"
+      ],
+      "de": [
+       "Beschreibung"
+      ]
+     },
+     "value": {
+      "en": [
+       "Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."
+      ],
+      "fr": [
+       "Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."
+      ],
+      "de": [
+       "Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."
+      ],
+      "it": [
+       "Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."
+      ]
+     },
+     "uuid": "024689d4-c691-56d1-a497-87bd1eb11e39",
+     "display_order": 1
     },
-    "paradata": {
-     "en": [
-      "Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."
-     ],
-     "fr": [
-      "Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."
-     ],
-     "de": [
-      "Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."
-     ],
-     "it": [
-      "Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."
-     ]
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Paradata"
+      ],
+      "fr": [
+       "Paradata"
+      ],
+      "it": [
+       "Paradata"
+      ]
+     },
+     "value": {
+      "en": [
+       "Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."
+      ],
+      "fr": [
+       "Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."
+      ],
+      "de": [
+       "Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."
+      ],
+      "it": [
+       "Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."
+      ]
+     },
+     "uuid": "afade290-bb34-5600-9147-b9a6f0f1996a",
+     "display_order": 2
     }
-   },
+   ],
    "version": "1.0",
    "name": {
     "en": [
@@ -59,348 +94,304 @@
    ],
    "start_time": "1890-01-01T00:00:00",
    "end_time": "2024-12-31T23:59:59",
-   "is_operationally_described_by": {
-    "dataset_config": {
-     "metadata_field_config": [
-      {
-       "id": "description",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Description"
-        ],
-        "fr": [
-         "Description"
-        ],
-        "it": [
-         "Descrizione"
-        ],
-        "de": [
-         "Beschreibung"
-        ]
-       },
-       "uuid": "024689d4-c691-56d1-a497-87bd1eb11e39",
-       "display_order": 1
+   "hr_config": {
+    "main_label": "${final_country}, ${final_city}",
+    "sub_label": "${final_place}, ${date}",
+    "display_thumbnail": true,
+    "external_source": true,
+    "metadata_field_config": [
+     {
+      "id": "final_place",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Final Place"
+       ],
+       "fr": [
+        "Lieu final"
+       ],
+       "de": [
+        "Endort"
+       ],
+       "it": [
+        "Luogo finale"
+       ]
       },
-      {
-       "id": "paradata",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Paradata"
-        ],
-        "fr": [
-         "Paradata"
-        ],
-        "it": [
-         "Paradata"
-        ]
-       },
-       "uuid": "afade290-bb34-5600-9147-b9a6f0f1996a",
-       "display_order": 2
-      }
-     ]
-    },
-    "hr_config": {
-     "main_label": "${final_country}, ${final_city}",
-     "sub_label": "${final_place}, ${date}",
-     "display_thumbnail": true,
-     "external_source": true,
-     "metadata_field_config": [
-      {
-       "id": "final_place",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Final Place"
-        ],
-        "fr": [
-         "Lieu final"
-        ],
-        "de": [
-         "Endort"
-        ],
-        "it": [
-         "Luogo finale"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "paradata": "i",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 1,
-       "uuid": "357eaa33-2478-5489-b2a1-f226afdf1681"
+      "nullable": true,
+      "indexable": true,
+      "paradata": "i",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 1,
+      "uuid": "357eaa33-2478-5489-b2a1-f226afdf1681"
+     },
+     {
+      "id": "final_country",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Final Country"
+       ],
+       "fr": [
+        "Pays final"
+       ],
+       "de": [
+        "Endland"
+       ],
+       "it": [
+        "Paese finale"
+       ]
       },
-      {
-       "id": "final_country",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Final Country"
-        ],
-        "fr": [
-         "Pays final"
-        ],
-        "de": [
-         "Endland"
-        ],
-        "it": [
-         "Paese finale"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": null,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 2,
-       "uuid": "ae24812c-ad80-5362-863b-e91145becbbc"
+      "nullable": false,
+      "indexable": false,
+      "paradata": null,
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 2,
+      "uuid": "ae24812c-ad80-5362-863b-e91145becbbc"
+     },
+     {
+      "id": "final_city",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Final City"
+       ],
+       "fr": [
+        "Ville finale"
+       ],
+       "de": [
+        "Endstadt"
+       ],
+       "it": [
+        "Città finale"
+       ]
       },
-      {
-       "id": "final_city",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Final City"
-        ],
-        "fr": [
-         "Ville finale"
-        ],
-        "de": [
-         "Endstadt"
-        ],
-        "it": [
-         "Città finale"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "i",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 3,
-       "uuid": "16028479-9eb9-5d0a-862e-ff8a7d912fa3"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "i",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 3,
+      "uuid": "16028479-9eb9-5d0a-862e-ff8a7d912fa3"
+     },
+     {
+      "id": "description",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Description"
+       ],
+       "fr": [
+        "Description"
+       ],
+       "de": [
+        "Beschreibung"
+       ],
+       "it": [
+        "Descrizione"
+       ]
       },
-      {
-       "id": "description",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Description"
-        ],
-        "fr": [
-         "Description"
-        ],
-        "de": [
-         "Beschreibung"
-        ],
-        "it": [
-         "Descrizione"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "i",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 4,
-       "uuid": "d363db2c-b2e0-5fc4-be35-da625a821b72"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "i",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 4,
+      "uuid": "d363db2c-b2e0-5fc4-be35-da625a821b72"
+     },
+     {
+      "id": "transcription",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Transcription"
+       ],
+       "fr": [
+        "Transcription"
+       ],
+       "de": [
+        "Transkription"
+       ],
+       "it": [
+        "Trascrizione"
+       ]
       },
-      {
-       "id": "transcription",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Transcription"
-        ],
-        "fr": [
-         "Transcription"
-        ],
-        "de": [
-         "Transkription"
-        ],
-        "it": [
-         "Trascrizione"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "paradata": "i",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 5,
-       "uuid": "e26e2aa7-94b1-50ec-be75-86c69e64f3fa"
+      "nullable": true,
+      "indexable": false,
+      "paradata": "i",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 5,
+      "uuid": "e26e2aa7-94b1-50ec-be75-86c69e64f3fa"
+     },
+     {
+      "id": "date",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Date estimation"
+       ],
+       "fr": [
+        "Estimation de la date"
+       ],
+       "de": [
+        "Datumsabschätzung"
+       ],
+       "it": [
+        "Stima della data"
+       ]
       },
-      {
-       "id": "date",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Date estimation"
-        ],
-        "fr": [
-         "Estimation de la date"
-        ],
-        "de": [
-         "Datumsabschätzung"
-        ],
-        "it": [
-         "Stima della data"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "i",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 6,
-       "uuid": "2721c3f4-febc-5f3b-b5f0-a03ee3c9f7ed"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "i",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 6,
+      "uuid": "2721c3f4-febc-5f3b-b5f0-a03ee3c9f7ed"
+     },
+     {
+      "id": "reason",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Reason"
+       ],
+       "fr": [
+        "Raison"
+       ],
+       "de": [
+        "Grund"
+       ],
+       "it": [
+        "Motivo"
+       ]
       },
-      {
-       "id": "reason",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Reason"
-        ],
-        "fr": [
-         "Raison"
-        ],
-        "de": [
-         "Grund"
-        ],
-        "it": [
-         "Motivo"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "i",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 7,
-       "uuid": "aa8ab267-b2f5-5782-940f-906a647f36da"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "i",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 7,
+      "uuid": "aa8ab267-b2f5-5782-940f-906a647f36da"
+     },
+     {
+      "id": "img_src",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Image Source"
+       ],
+       "fr": [
+        "Source de l'image"
+       ],
+       "de": [
+        "Bildquelle"
+       ],
+       "it": [
+        "Fonte dell'immagine"
+       ]
       },
-      {
-       "id": "img_src",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Image Source"
-        ],
-        "fr": [
-         "Source de l'image"
-        ],
-        "de": [
-         "Bildquelle"
-        ],
-        "it": [
-         "Fonte dell'immagine"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": true,
-       "tag": null,
-       "display_order": 8,
-       "uuid": "7f8c13b2-7455-58f8-92ae-c60b735d6f6c"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": true,
+      "tag": null,
+      "display_order": 8,
+      "uuid": "7f8c13b2-7455-58f8-92ae-c60b735d6f6c"
+     },
+     {
+      "id": "record_id",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Europeana Record ID"
+       ],
+       "fr": [
+        "ID d'enregistrement Europeana"
+       ],
+       "de": [
+        "Europeana-Datensatz-ID"
+       ],
+       "it": [
+        "ID record Europeana"
+       ]
       },
-      {
-       "id": "record_id",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Europeana Record ID"
-        ],
-        "fr": [
-         "ID d'enregistrement Europeana"
-        ],
-        "de": [
-         "Europeana-Datensatz-ID"
-        ],
-        "it": [
-         "ID record Europeana"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": true,
-       "tag": null,
-       "display_order": 9,
-       "uuid": "6179c0e5-ee86-5000-9d54-39998523e87b"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": true,
+      "tag": null,
+      "display_order": 9,
+      "uuid": "6179c0e5-ee86-5000-9d54-39998523e87b"
+     },
+     {
+      "id": "google_search",
+      "type": "LIST",
+      "display_label": {
+       "en": [
+        "Google Search"
+       ],
+       "fr": [
+        "Recherche Google"
+       ],
+       "de": [
+        "Google-Suche"
+       ],
+       "it": [
+        "Ricerca Google"
+       ]
       },
-      {
-       "id": "google_search",
-       "type": "LIST",
-       "display_label": {
-        "en": [
-         "Google Search"
-        ],
-        "fr": [
-         "Recherche Google"
-        ],
-        "de": [
-         "Google-Suche"
-        ],
-        "it": [
-         "Ricerca Google"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 10,
-       "uuid": "54c8b2ca-7d35-58df-bbf0-443d67589f8e"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 10,
+      "uuid": "54c8b2ca-7d35-58df-bbf0-443d67589f8e"
+     },
+     {
+      "id": "landmarks_identified",
+      "type": "LIST",
+      "display_label": {
+       "en": [
+        "Landmarks Identified"
+       ],
+       "fr": [
+        "Monuments identifiés"
+       ],
+       "de": [
+        "Identifizierte Wahrzeichen"
+       ],
+       "it": [
+        "Monumenti identificati"
+       ]
       },
-      {
-       "id": "landmarks_identified",
-       "type": "LIST",
-       "display_label": {
-        "en": [
-         "Landmarks Identified"
-        ],
-        "fr": [
-         "Monuments identifiés"
-        ],
-        "de": [
-         "Identifizierte Wahrzeichen"
-        ],
-        "it": [
-         "Monumenti identificati"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "i",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 11,
-       "uuid": "f7a5913c-aba5-5167-adb2-9a349edb9889"
-      }
-     ]
-    },
-    "uuid": "308d4bfe-3d55-5cc2-a480-36384a33b4f2"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "i",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 11,
+      "uuid": "f7a5913c-aba5-5167-adb2-9a349edb9889"
+     }
+    ]
    },
    "falls_within": [
     "b369f71c-65a0-5fa5-9a8c-c881c46d9524"
    ],
-   "creation_time": "2026-01-19T14:26:06.695303"
+   "creation_time": "2026-01-21T16:01:10.554612"
   }
  ]
 }

@@ -3,55 +3,112 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2026-01-19T14:28:34.519950",
+ "creation_time": "2026-01-21T16:03:40.387312",
  "rde_objects": [
   {
    "uuid": "56e12b90-6ce2-5d2d-a98e-b99fd675075c",
    "slug": "lausanne-mhl-iconographie",
-   "metadata": {
-    "description": {
-     "fr": [
-      "Extrait de Museris, la base de donnée du MHL. Jeu de données créé à l'EPFL."
-     ],
-     "en": [
-      "Extract from Museris, the database of the Historical Museum of Lausanne. Dataset created at EPFL."
-     ],
-     "de": [
-      "Auszug aus Museris, der Datenbank des Historischen Museums Lausanne. Datensatz erstellt an der EPFL."
-     ],
-     "it": [
-      "Estratto da Museris, il database del Museo Storico di Losanna. Dataset creato presso l'EPFL."
-     ]
+   "metadata": [
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Description"
+      ],
+      "fr": [
+       "Description"
+      ],
+      "it": [
+       "Descrizione"
+      ],
+      "de": [
+       "Beschreibung"
+      ]
+     },
+     "value": {
+      "fr": [
+       "Extrait de Museris, la base de donnée du MHL. Jeu de données créé à l'EPFL."
+      ],
+      "en": [
+       "Extract from Museris, the database of the Historical Museum of Lausanne. Dataset created at EPFL."
+      ],
+      "de": [
+       "Auszug aus Museris, der Datenbank des Historischen Museums Lausanne. Datensatz erstellt an der EPFL."
+      ],
+      "it": [
+       "Estratto da Museris, il database del Museo Storico di Losanna. Dataset creato presso l'EPFL."
+      ]
+     },
+     "uuid": "c3979705-4917-5729-9f22-27a430704552",
+     "display_order": 1
     },
-    "paradata": {
-     "fr": [
-      "Données produites et numérisées par le Musée Historique de Lausanne."
-     ],
-     "en": [
-      "Data produced and digitized by the Historical Museum of Lausanne."
-     ],
-     "de": [
-      "Daten produziert und digitalisiert vom Historischen Museum Lausanne."
-     ],
-     "it": [
-      "Dati prodotti e digitalizzati dal Museo Storico di Losanna."
-     ]
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Paradata"
+      ],
+      "fr": [
+       "Paradata"
+      ],
+      "it": [
+       "Paradata"
+      ],
+      "de": [
+       "Paradata"
+      ]
+     },
+     "value": {
+      "fr": [
+       "Données produites et numérisées par le Musée Historique de Lausanne."
+      ],
+      "en": [
+       "Data produced and digitized by the Historical Museum of Lausanne."
+      ],
+      "de": [
+       "Daten produziert und digitalisiert vom Historischen Museum Lausanne."
+      ],
+      "it": [
+       "Dati prodotti e digitalizzati dal Museo Storico di Losanna."
+      ]
+     },
+     "uuid": "a757d82d-3f84-5f55-89f9-4114eca25da8",
+     "display_order": 2
     },
-    "url": {
-     "en": [
-      "https://museris.lausanne.ch/"
-     ],
-     "fr": [
-      "https://museris.lausanne.ch/"
-     ],
-     "it": [
-      "https://museris.lausanne.ch/"
-     ],
-     "de": [
-      "https://museris.lausanne.ch/"
-     ]
+    {
+     "type": "URL",
+     "label": {
+      "en": [
+       "Project's website"
+      ],
+      "fr": [
+       "Site du projet"
+      ],
+      "it": [
+       "Sito del progetto"
+      ],
+      "de": [
+       "Webseite des Projekts"
+      ]
+     },
+     "value": {
+      "en": [
+       "https://museris.lausanne.ch/"
+      ],
+      "fr": [
+       "https://museris.lausanne.ch/"
+      ],
+      "it": [
+       "https://museris.lausanne.ch/"
+      ],
+      "de": [
+       "https://museris.lausanne.ch/"
+      ]
+     },
+     "uuid": "25103c5e-7210-51e8-b63f-f343637586d6",
+     "display_order": 3
     }
-   },
+   ],
    "version": "1.0",
    "name": {
     "fr": [
@@ -73,762 +130,695 @@
    ],
    "start_time": "1584-01-01T00:00:00",
    "end_time": "2012-12-31T23:59:59",
-   "is_operationally_described_by": {
-    "dataset_config": {
-     "metadata_field_config": [
-      {
-       "id": "description",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Description"
-        ],
-        "fr": [
-         "Description"
-        ],
-        "it": [
-         "Descrizione"
-        ],
-        "de": [
-         "Beschreibung"
-        ]
-       },
-       "uuid": "c3979705-4917-5729-9f22-27a430704552",
-       "display_order": 1
+   "hr_config": {
+    "main_label": "${description} ${titre}",
+    "sub_label": "${file_reference}",
+    "display_thumbnail": true,
+    "external_source": true,
+    "metadata_field_config": [
+     {
+      "id": "id",
+      "type": "INTEGER",
+      "display_label": {
+       "en": [
+        "Identifier"
+       ],
+       "fr": [
+        "Identifiant"
+       ],
+       "de": [
+        "Kennung"
+       ],
+       "it": [
+        "Identificatore"
+       ]
       },
-      {
-       "id": "paradata",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Paradata"
-        ],
-        "fr": [
-         "Paradata"
-        ],
-        "it": [
-         "Paradata"
-        ],
-        "de": [
-         "Paradata"
-        ]
-       },
-       "uuid": "a757d82d-3f84-5f55-89f9-4114eca25da8",
-       "display_order": 2
+      "nullable": false,
+      "indexable": false,
+      "paradata": null,
+      "short_display": false,
+      "hidden": true,
+      "tag": null,
+      "display_order": 1,
+      "uuid": "63ea3fc1-6a1e-547e-ae54-ed70d9f24c3a"
+     },
+     {
+      "id": "record_url",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Record URL"
+       ],
+       "fr": [
+        "URL de la notice"
+       ],
+       "de": [
+        "Datensatz-URL"
+       ],
+       "it": [
+        "URL del record"
+       ]
       },
-      {
-       "id": "url",
-       "type": "URL",
-       "display_label": {
-        "en": [
-         "Project's website"
-        ],
-        "fr": [
-         "Site du projet"
-        ],
-        "it": [
-         "Sito del progetto"
-        ],
-        "de": [
-         "Webseite des Projekts"
-        ]
-       },
-       "uuid": "25103c5e-7210-51e8-b63f-f343637586d6",
-       "display_order": 3
-      }
-     ]
-    },
-    "hr_config": {
-     "main_label": "${description} ${titre}",
-     "sub_label": "${file_reference}",
-     "display_thumbnail": true,
-     "external_source": true,
-     "metadata_field_config": [
-      {
-       "id": "id",
-       "type": "INTEGER",
-       "display_label": {
-        "en": [
-         "Identifier"
-        ],
-        "fr": [
-         "Identifiant"
-        ],
-        "de": [
-         "Kennung"
-        ],
-        "it": [
-         "Identificatore"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": null,
-       "short_display": false,
-       "hidden": true,
-       "tag": null,
-       "display_order": 1,
-       "uuid": "63ea3fc1-6a1e-547e-ae54-ed70d9f24c3a"
+      "nullable": false,
+      "indexable": false,
+      "paradata": null,
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 2,
+      "uuid": "c924937a-8a68-59a0-b0e1-5bdd76c02d21"
+     },
+     {
+      "id": "image_url",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Image URL"
+       ],
+       "fr": [
+        "URL de l'image"
+       ],
+       "de": [
+        "Bild-URL"
+       ],
+       "it": [
+        "URL dell'immagine"
+       ]
       },
-      {
-       "id": "record_url",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Record URL"
-        ],
-        "fr": [
-         "URL de la notice"
-        ],
-        "de": [
-         "Datensatz-URL"
-        ],
-        "it": [
-         "URL del record"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": null,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 2,
-       "uuid": "c924937a-8a68-59a0-b0e1-5bdd76c02d21"
+      "nullable": false,
+      "indexable": false,
+      "paradata": null,
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 3,
+      "uuid": "19f5bacf-d690-5fa9-95c0-fbb999c5d551"
+     },
+     {
+      "id": "titre",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Title"
+       ],
+       "fr": [
+        "Titre"
+       ],
+       "de": [
+        "Titel"
+       ],
+       "it": [
+        "Titolo"
+       ]
       },
-      {
-       "id": "image_url",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Image URL"
-        ],
-        "fr": [
-         "URL de l'image"
-        ],
-        "de": [
-         "Bild-URL"
-        ],
-        "it": [
-         "URL dell'immagine"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": null,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 3,
-       "uuid": "19f5bacf-d690-5fa9-95c0-fbb999c5d551"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 4,
+      "uuid": "1d8549b0-637a-5b59-a333-fc63317050df"
+     },
+     {
+      "id": "description",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Description"
+       ],
+       "fr": [
+        "Description"
+       ],
+       "de": [
+        "Beschreibung"
+       ],
+       "it": [
+        "Descrizione"
+       ]
       },
-      {
-       "id": "titre",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Title"
-        ],
-        "fr": [
-         "Titre"
-        ],
-        "de": [
-         "Titel"
-        ],
-        "it": [
-         "Titolo"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 4,
-       "uuid": "1d8549b0-637a-5b59-a333-fc63317050df"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 5,
+      "uuid": "6c33171e-a51c-5721-83bf-554edd9c3fe1"
+     },
+     {
+      "id": "keywords",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Keywords"
+       ],
+       "fr": [
+        "Mots-clés"
+       ],
+       "de": [
+        "Stichwörter"
+       ],
+       "it": [
+        "Parole chiave"
+       ]
       },
-      {
-       "id": "description",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Description"
-        ],
-        "fr": [
-         "Description"
-        ],
-        "de": [
-         "Beschreibung"
-        ],
-        "it": [
-         "Descrizione"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 5,
-       "uuid": "6c33171e-a51c-5721-83bf-554edd9c3fe1"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 6,
+      "uuid": "b05124ce-d408-562d-b1e6-a15734fe0238"
+     },
+     {
+      "id": "keywords_secondary",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Secondary Keywords"
+       ],
+       "fr": [
+        "Mots-clés secondaires"
+       ],
+       "de": [
+        "Sekundäre Stichwörter"
+       ],
+       "it": [
+        "Parole chiave secondarie"
+       ]
       },
-      {
-       "id": "keywords",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Keywords"
-        ],
-        "fr": [
-         "Mots-clés"
-        ],
-        "de": [
-         "Stichwörter"
-        ],
-        "it": [
-         "Parole chiave"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 6,
-       "uuid": "b05124ce-d408-562d-b1e6-a15734fe0238"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 7,
+      "uuid": "8179b8c8-36b2-553d-a4a7-5092c59ddba2"
+     },
+     {
+      "id": "photographer",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Photographer"
+       ],
+       "fr": [
+        "Photographe"
+       ],
+       "de": [
+        "Fotograf"
+       ],
+       "it": [
+        "Fotografo"
+       ]
       },
-      {
-       "id": "keywords_secondary",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Secondary Keywords"
-        ],
-        "fr": [
-         "Mots-clés secondaires"
-        ],
-        "de": [
-         "Sekundäre Stichwörter"
-        ],
-        "it": [
-         "Parole chiave secondarie"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 7,
-       "uuid": "8179b8c8-36b2-553d-a4a7-5092c59ddba2"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 8,
+      "uuid": "806af236-fe02-5daf-bfe7-3a62cb242cac"
+     },
+     {
+      "id": "technique",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Technique"
+       ],
+       "fr": [
+        "Technique"
+       ],
+       "de": [
+        "Technik"
+       ],
+       "it": [
+        "Tecnica"
+       ]
       },
-      {
-       "id": "photographer",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Photographer"
-        ],
-        "fr": [
-         "Photographe"
-        ],
-        "de": [
-         "Fotograf"
-        ],
-        "it": [
-         "Fotografo"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 8,
-       "uuid": "806af236-fe02-5daf-bfe7-3a62cb242cac"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 9,
+      "uuid": "1ae28b43-693b-56ba-9c94-1a73f0af8969"
+     },
+     {
+      "id": "technique_details",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Technique details"
+       ],
+       "fr": [
+        "Détails de la technique"
+       ],
+       "de": [
+        "Details zur Technik"
+       ],
+       "it": [
+        "Dettagli della tecnica"
+       ]
       },
-      {
-       "id": "technique",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Technique"
-        ],
-        "fr": [
-         "Technique"
-        ],
-        "de": [
-         "Technik"
-        ],
-        "it": [
-         "Tecnica"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 9,
-       "uuid": "1ae28b43-693b-56ba-9c94-1a73f0af8969"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 10,
+      "uuid": "c139ef5e-2490-5caf-94f5-bdc7141d8d64"
+     },
+     {
+      "id": "author",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Author"
+       ],
+       "fr": [
+        "Auteur"
+       ],
+       "de": [
+        "Autor"
+       ],
+       "it": [
+        "Autore"
+       ]
       },
-      {
-       "id": "technique_details",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Technique details"
-        ],
-        "fr": [
-         "Détails de la technique"
-        ],
-        "de": [
-         "Details zur Technik"
-        ],
-        "it": [
-         "Dettagli della tecnica"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 10,
-       "uuid": "c139ef5e-2490-5caf-94f5-bdc7141d8d64"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PEOPLE",
+      "display_order": 11,
+      "uuid": "f06a313a-72d3-569c-9648-e3ab8c469cbc"
+     },
+     {
+      "id": "city",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "City"
+       ],
+       "fr": [
+        "Ville"
+       ],
+       "de": [
+        "Stadt"
+       ],
+       "it": [
+        "Città"
+       ]
       },
-      {
-       "id": "author",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Author"
-        ],
-        "fr": [
-         "Auteur"
-        ],
-        "de": [
-         "Autor"
-        ],
-        "it": [
-         "Autore"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": "PEOPLE",
-       "display_order": 11,
-       "uuid": "f06a313a-72d3-569c-9648-e3ab8c469cbc"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 12,
+      "uuid": "ee4ad052-644c-56c7-8ec9-f17a032be6e0"
+     },
+     {
+      "id": "country",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Country"
+       ],
+       "fr": [
+        "Pays"
+       ],
+       "de": [
+        "Land"
+       ],
+       "it": [
+        "Paese"
+       ]
       },
-      {
-       "id": "city",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "City"
-        ],
-        "fr": [
-         "Ville"
-        ],
-        "de": [
-         "Stadt"
-        ],
-        "it": [
-         "Città"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 12,
-       "uuid": "ee4ad052-644c-56c7-8ec9-f17a032be6e0"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 13,
+      "uuid": "230a75b0-b411-5b3e-a013-683f0cc69073"
+     },
+     {
+      "id": "street",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Street"
+       ],
+       "fr": [
+        "Rue"
+       ],
+       "de": [
+        "Straße"
+       ],
+       "it": [
+        "Via"
+       ]
       },
-      {
-       "id": "country",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Country"
-        ],
-        "fr": [
-         "Pays"
-        ],
-        "de": [
-         "Land"
-        ],
-        "it": [
-         "Paese"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 13,
-       "uuid": "230a75b0-b411-5b3e-a013-683f0cc69073"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PLACE",
+      "display_order": 14,
+      "uuid": "12bf84f3-2b4f-5f6f-b26f-d07a76f85594"
+     },
+     {
+      "id": "postal_code",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Postal code"
+       ],
+       "fr": [
+        "Code postal"
+       ],
+       "de": [
+        "Postleitzahl"
+       ],
+       "it": [
+        "Codice postale"
+       ]
       },
-      {
-       "id": "street",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Street"
-        ],
-        "fr": [
-         "Rue"
-        ],
-        "de": [
-         "Straße"
-        ],
-        "it": [
-         "Via"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": "PLACE",
-       "display_order": 14,
-       "uuid": "12bf84f3-2b4f-5f6f-b26f-d07a76f85594"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 15,
+      "uuid": "42c47b27-ab85-5a93-8bc5-991148ead2a4"
+     },
+     {
+      "id": "fabrication_date",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Fabrication date"
+       ],
+       "fr": [
+        "Date de fabrication"
+       ],
+       "de": [
+        "Herstellungsdatum"
+       ],
+       "it": [
+        "Data di fabbricazione"
+       ]
       },
-      {
-       "id": "postal_code",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Postal code"
-        ],
-        "fr": [
-         "Code postal"
-        ],
-        "de": [
-         "Postleitzahl"
-        ],
-        "it": [
-         "Codice postale"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 15,
-       "uuid": "42c47b27-ab85-5a93-8bc5-991148ead2a4"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 16,
+      "uuid": "58a098c0-1e35-5c67-9dbe-598c154fe773"
+     },
+     {
+      "id": "reference_date",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Reference date"
+       ],
+       "fr": [
+        "Date de référence"
+       ],
+       "de": [
+        "Referenzdatum"
+       ],
+       "it": [
+        "Data di riferimento"
+       ]
       },
-      {
-       "id": "fabrication_date",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Fabrication date"
-        ],
-        "fr": [
-         "Date de fabrication"
-        ],
-        "de": [
-         "Herstellungsdatum"
-        ],
-        "it": [
-         "Data di fabbricazione"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 16,
-       "uuid": "58a098c0-1e35-5c67-9dbe-598c154fe773"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 17,
+      "uuid": "de827460-6f18-54f0-ac4a-975cd9aba0f8"
+     },
+     {
+      "id": "fabrication_notes",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Fabrication notes"
+       ],
+       "fr": [
+        "Notes de fabrication"
+       ],
+       "de": [
+        "Herstellungsnotizen"
+       ],
+       "it": [
+        "Note di fabbricazione"
+       ]
       },
-      {
-       "id": "reference_date",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Reference date"
-        ],
-        "fr": [
-         "Date de référence"
-        ],
-        "de": [
-         "Referenzdatum"
-        ],
-        "it": [
-         "Data di riferimento"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 17,
-       "uuid": "de827460-6f18-54f0-ac4a-975cd9aba0f8"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 18,
+      "uuid": "e4346148-43c2-5fd9-8126-a27cb0460bcd"
+     },
+     {
+      "id": "author_inscriptions",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Author inscriptions"
+       ],
+       "fr": [
+        "Inscriptions de l'auteur"
+       ],
+       "de": [
+        "Autoreninschriften"
+       ],
+       "it": [
+        "Iscrizioni dell'autore"
+       ]
       },
-      {
-       "id": "fabrication_notes",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Fabrication notes"
-        ],
-        "fr": [
-         "Notes de fabrication"
-        ],
-        "de": [
-         "Herstellungsnotizen"
-        ],
-        "it": [
-         "Note di fabbricazione"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 18,
-       "uuid": "e4346148-43c2-5fd9-8126-a27cb0460bcd"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 19,
+      "uuid": "1d9f52f8-4065-5179-986d-3109d47c5bdb"
+     },
+     {
+      "id": "other_inscriptions",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Other inscriptions"
+       ],
+       "fr": [
+        "Autres inscriptions"
+       ],
+       "de": [
+        "Weitere Inschriften"
+       ],
+       "it": [
+        "Altre iscrizioni"
+       ]
       },
-      {
-       "id": "author_inscriptions",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Author inscriptions"
-        ],
-        "fr": [
-         "Inscriptions de l'auteur"
-        ],
-        "de": [
-         "Autoreninschriften"
-        ],
-        "it": [
-         "Iscrizioni dell'autore"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 19,
-       "uuid": "1d9f52f8-4065-5179-986d-3109d47c5bdb"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 20,
+      "uuid": "ff8196c3-8094-5356-8a1c-b4df3b85b145"
+     },
+     {
+      "id": "dimensions",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Dimensions"
+       ],
+       "fr": [
+        "Dimensions"
+       ],
+       "de": [
+        "Abmessungen"
+       ],
+       "it": [
+        "Dimensioni"
+       ]
       },
-      {
-       "id": "other_inscriptions",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Other inscriptions"
-        ],
-        "fr": [
-         "Autres inscriptions"
-        ],
-        "de": [
-         "Weitere Inschriften"
-        ],
-        "it": [
-         "Altre iscrizioni"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 20,
-       "uuid": "ff8196c3-8094-5356-8a1c-b4df3b85b145"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 21,
+      "uuid": "6780ec6a-7cdd-5fcf-aee5-df57d7680bea"
+     },
+     {
+      "id": "mounting",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Mounting"
+       ],
+       "fr": [
+        "Montage"
+       ],
+       "de": [
+        "Montage"
+       ],
+       "it": [
+        "Montaggio"
+       ]
       },
-      {
-       "id": "dimensions",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Dimensions"
-        ],
-        "fr": [
-         "Dimensions"
-        ],
-        "de": [
-         "Abmessungen"
-        ],
-        "it": [
-         "Dimensioni"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 21,
-       "uuid": "6780ec6a-7cdd-5fcf-aee5-df57d7680bea"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 22,
+      "uuid": "617723d6-ea4b-5e05-a7a9-a3402442c152"
+     },
+     {
+      "id": "technical_notes",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Technical notes"
+       ],
+       "fr": [
+        "Notes techniques"
+       ],
+       "de": [
+        "Technische Notizen"
+       ],
+       "it": [
+        "Note tecniche"
+       ]
       },
-      {
-       "id": "mounting",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Mounting"
-        ],
-        "fr": [
-         "Montage"
-        ],
-        "de": [
-         "Montage"
-        ],
-        "it": [
-         "Montaggio"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 22,
-       "uuid": "617723d6-ea4b-5e05-a7a9-a3402442c152"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 23,
+      "uuid": "ad54dee1-80a0-5983-984d-f68c2db17d93"
+     },
+     {
+      "id": "institution",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Institution"
+       ],
+       "fr": [
+        "Institution"
+       ],
+       "de": [
+        "Institution"
+       ],
+       "it": [
+        "Istituzione"
+       ]
       },
-      {
-       "id": "technical_notes",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Technical notes"
-        ],
-        "fr": [
-         "Notes techniques"
-        ],
-        "de": [
-         "Technische Notizen"
-        ],
-        "it": [
-         "Note tecniche"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 23,
-       "uuid": "ad54dee1-80a0-5983-984d-f68c2db17d93"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 24,
+      "uuid": "5db34d14-681d-5cb9-ba9f-4994ee44b9fb"
+     },
+     {
+      "id": "file_reference",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "File reference"
+       ],
+       "fr": [
+        "Référence de fichier"
+       ],
+       "de": [
+        "Dateireferenz"
+       ],
+       "it": [
+        "Riferimento al file"
+       ]
       },
-      {
-       "id": "institution",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Institution"
-        ],
-        "fr": [
-         "Institution"
-        ],
-        "de": [
-         "Institution"
-        ],
-        "it": [
-         "Istituzione"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 24,
-       "uuid": "5db34d14-681d-5cb9-ba9f-4994ee44b9fb"
+      "nullable": false,
+      "indexable": false,
+      "paradata": null,
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 25,
+      "uuid": "422c78a8-4515-5fd7-bf1d-4af7925864ad"
+     },
+     {
+      "id": "historical_notes",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Historical notes"
+       ],
+       "fr": [
+        "Notes historiques"
+       ],
+       "de": [
+        "Historische Notizen"
+       ],
+       "it": [
+        "Note storiche"
+       ]
       },
-      {
-       "id": "file_reference",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "File reference"
-        ],
-        "fr": [
-         "Référence de fichier"
-        ],
-        "de": [
-         "Dateireferenz"
-        ],
-        "it": [
-         "Riferimento al file"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": null,
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 25,
-       "uuid": "422c78a8-4515-5fd7-bf1d-4af7925864ad"
-      },
-      {
-       "id": "historical_notes",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Historical notes"
-        ],
-        "fr": [
-         "Notes historiques"
-        ],
-        "de": [
-         "Historische Notizen"
-        ],
-        "it": [
-         "Note storiche"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 26,
-       "uuid": "33843036-5081-570a-bcae-cb78ab5b9ae6"
-      }
-     ]
-    },
-    "uuid": "7395a084-d529-573b-83c7-881900877ae8"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 26,
+      "uuid": "33843036-5081-570a-bcae-cb78ab5b9ae6"
+     }
+    ]
    },
    "falls_within": [
     "e50f6137-c572-5402-80bf-1c27d19cd7c9",
     "17832f26-8470-57e5-951d-324df69a653b"
    ],
-   "creation_time": "2026-01-19T14:28:34.518437"
+   "creation_time": "2026-01-21T16:03:40.385822"
   }
  ]
 }

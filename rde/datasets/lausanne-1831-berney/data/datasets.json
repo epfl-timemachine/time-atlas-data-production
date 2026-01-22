@@ -3,47 +3,82 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2026-01-19T14:26:47.409584",
+ "creation_time": "2026-01-21T16:01:50.996440",
  "rde_objects": [
   {
    "uuid": "6644937d-ecae-5a67-98b5-6ba5fb690f51",
    "slug": "lausanne-1831-berney",
-   "metadata": {
-    "description": {
-     "en": [
-      "Transcription of the land registry and cadastral maps from the city of Lausanne in 1831. The dataset contains parcel identifiers, ownership, land use, geolocation, and area. Dataset created at EPFL."
-     ],
-     "it": [
-      "Trascrizione del registro fondiario e delle mappe catastali della città di Lausanne nel 1831. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, geolocalizzazione e area. Dataset creato presso l'EPFL."
-     ],
-     "fr": [
-      "Transcription du registre foncier et des cartes cadastrales de la ville de Lausanne en 1831. Le jeu de données contient des identifiants de parcelles, de propriété, d'utilisation des terres, de géolocalisation et de superficie. Jeu de données créé à l'EPFL."
-     ],
-     "nl": [
-      "Transcriptie van het landregister en de kadastrale kaarten van de stad Lausanne in 1831. De dataset bevat perceelidentificaties, eigendom, landgebruik, geolocatie en oppervlakte. Dataset gemaakt aan de EPFL."
-     ],
-     "de": [
-      "Transkription des Grundbuchs und der Katasterkarten der Stadt Lausanne im Jahr 1831. Der Datensatz enthält Parzellenkennungen, Eigentum, Landnutzung, Geolokalisierung und Fläche. Datensatz erstellt an der EPFL."
-     ]
+   "metadata": [
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Description"
+      ],
+      "fr": [
+       "Description"
+      ],
+      "it": [
+       "Descrizione"
+      ],
+      "de": [
+       "Beschreibung"
+      ]
+     },
+     "value": {
+      "en": [
+       "Transcription of the land registry and cadastral maps from the city of Lausanne in 1831. The dataset contains parcel identifiers, ownership, land use, geolocation, and area. Dataset created at EPFL."
+      ],
+      "it": [
+       "Trascrizione del registro fondiario e delle mappe catastali della città di Lausanne nel 1831. Il dataset contiene identificatori di particelle, proprietà, uso del suolo, geolocalizzazione e area. Dataset creato presso l'EPFL."
+      ],
+      "fr": [
+       "Transcription du registre foncier et des cartes cadastrales de la ville de Lausanne en 1831. Le jeu de données contient des identifiants de parcelles, de propriété, d'utilisation des terres, de géolocalisation et de superficie. Jeu de données créé à l'EPFL."
+      ],
+      "nl": [
+       "Transcriptie van het landregister en de kadastrale kaarten van de stad Lausanne in 1831. De dataset bevat perceelidentificaties, eigendom, landgebruik, geolocatie en oppervlakte. Dataset gemaakt aan de EPFL."
+      ],
+      "de": [
+       "Transkription des Grundbuchs und der Katasterkarten der Stadt Lausanne im Jahr 1831. Der Datensatz enthält Parzellenkennungen, Eigentum, Landnutzung, Geolokalisierung und Fläche. Datensatz erstellt an der EPFL."
+      ]
+     },
+     "uuid": "2c9db10d-7a32-5643-8cb4-1aa93f803adc",
+     "display_order": 1
     },
-    "paradata": {
-     "en": [
-      "The textual data from the register was manually transcribed by various researchers."
-     ],
-     "fr": [
-      "Les données textuelles du registre ont été transcrites manuellement par divers chercheurs."
-     ],
-     "it": [
-      "I dati testuali del registro sono stati trascritti manualmente da vari ricercatori."
-     ],
-     "nl": [
-      "De tekstuele gegevens uit het register zijn handmatig getranscribeerd door verschillende onderzoekers."
-     ],
-     "de": [
-      "Die textuellen Daten aus dem Register wurden von verschiedenen Forschern manuell transkribiert."
-     ]
+    {
+     "type": "STRING",
+     "label": {
+      "en": [
+       "Paradata"
+      ],
+      "fr": [
+       "Paradata"
+      ],
+      "it": [
+       "Paradata"
+      ]
+     },
+     "value": {
+      "en": [
+       "The textual data from the register was manually transcribed by various researchers."
+      ],
+      "fr": [
+       "Les données textuelles du registre ont été transcrites manuellement par divers chercheurs."
+      ],
+      "it": [
+       "I dati testuali del registro sono stati trascritti manualmente da vari ricercatori."
+      ],
+      "nl": [
+       "De tekstuele gegevens uit het register zijn handmatig getranscribeerd door verschillende onderzoekers."
+      ],
+      "de": [
+       "Die textuellen Daten aus dem Register wurden von verschiedenen Forschern manuell transkribiert."
+      ]
+     },
+     "uuid": "11baf3f0-0d04-56a1-9798-97054f528e99",
+     "display_order": 2
     }
-   },
+   ],
    "version": "1.0",
    "name": {
     "en": [
@@ -65,556 +100,512 @@
    ],
    "start_time": "1831-01-01T00:00:00",
    "end_time": "1831-12-31T23:59:59",
-   "is_operationally_described_by": {
-    "dataset_config": {
-     "metadata_field_config": [
-      {
-       "id": "description",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Description"
-        ],
-        "fr": [
-         "Description"
-        ],
-        "it": [
-         "Descrizione"
-        ],
-        "de": [
-         "Beschreibung"
-        ]
-       },
-       "uuid": "2c9db10d-7a32-5643-8cb4-1aa93f803adc",
-       "display_order": 1
+   "hr_config": {
+    "main_label": "${own_name} ${own_surnam}, ${own_type}",
+    "sub_label": "${own_desc}",
+    "display_thumbnail": false,
+    "external_source": false,
+    "metadata_field_config": [
+     {
+      "id": "own_surnam",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Owner Surname"
+       ],
+       "fr": [
+        "Nom de famille du propriétaire"
+       ],
+       "it": [
+        "Cognome del proprietario"
+       ],
+       "nl": [
+        "Achternaam Eigenaar"
+       ],
+       "de": [
+        "Nachname des Eigentümers"
+       ]
       },
-      {
-       "id": "paradata",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Paradata"
-        ],
-        "fr": [
-         "Paradata"
-        ],
-        "it": [
-         "Paradata"
-        ]
-       },
-       "uuid": "11baf3f0-0d04-56a1-9798-97054f528e99",
-       "display_order": 2
-      }
-     ]
-    },
-    "hr_config": {
-     "main_label": "${own_name} ${own_surnam}, ${own_type}",
-     "sub_label": "${own_desc}",
-     "display_thumbnail": false,
-     "external_source": false,
-     "metadata_field_config": [
-      {
-       "id": "own_surnam",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner Surname"
-        ],
-        "fr": [
-         "Nom de famille du propriétaire"
-        ],
-        "it": [
-         "Cognome del proprietario"
-        ],
-        "nl": [
-         "Achternaam Eigenaar"
-        ],
-        "de": [
-         "Nachname des Eigentümers"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": "PEOPLE",
-       "display_order": 1,
-       "uuid": "85aea1b2-c380-557c-979f-c69780786fa9"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PEOPLE",
+      "display_order": 1,
+      "uuid": "85aea1b2-c380-557c-979f-c69780786fa9"
+     },
+     {
+      "id": "own_name",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Owner Name"
+       ],
+       "fr": [
+        "Nom du propriétaire"
+       ],
+       "it": [
+        "Nome del proprietario"
+       ],
+       "nl": [
+        "Naam Eigenaar"
+       ],
+       "de": [
+        "Name des Eigentümers"
+       ]
       },
-      {
-       "id": "own_name",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Owner Name"
-        ],
-        "fr": [
-         "Nom du propriétaire"
-        ],
-        "it": [
-         "Nome del proprietario"
-        ],
-        "nl": [
-         "Naam Eigenaar"
-        ],
-        "de": [
-         "Name des Eigentümers"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": "PEOPLE",
-       "display_order": 2,
-       "uuid": "75ba8584-ce37-5003-b6f4-b4e5e63ccb43"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PEOPLE",
+      "display_order": 2,
+      "uuid": "75ba8584-ce37-5003-b6f4-b4e5e63ccb43"
+     },
+     {
+      "id": "own_desc",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Ownership Description"
+       ],
+       "fr": [
+        "Description de la propriété"
+       ],
+       "it": [
+        "Descrizione della proprietà"
+       ],
+       "nl": [
+        "Eigendom Beschrijving"
+       ],
+       "de": [
+        "Beschreibung des Eigentums"
+       ]
       },
-      {
-       "id": "own_desc",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Ownership Description"
-        ],
-        "fr": [
-         "Description de la propriété"
-        ],
-        "it": [
-         "Descrizione della proprietà"
-        ],
-        "nl": [
-         "Eigendom Beschrijving"
-        ],
-        "de": [
-         "Beschreibung des Eigentums"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": "PLACE",
-       "display_order": 3,
-       "uuid": "ccc72cb8-41cd-526f-b422-61d923f2a370"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PLACE",
+      "display_order": 3,
+      "uuid": "ccc72cb8-41cd-526f-b422-61d923f2a370"
+     },
+     {
+      "id": "own_type",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Ownership Type"
+       ],
+       "fr": [
+        "Type de propriété"
+       ],
+       "it": [
+        "Tipo di proprietà"
+       ],
+       "nl": [
+        "Type Eigendom"
+       ],
+       "de": [
+        "Eigentumstyp"
+       ]
       },
-      {
-       "id": "own_type",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Ownership Type"
-        ],
-        "fr": [
-         "Type de propriété"
-        ],
-        "it": [
-         "Tipo di proprietà"
-        ],
-        "nl": [
-         "Type Eigendom"
-        ],
-        "de": [
-         "Eigentumstyp"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": true,
-       "hidden": false,
-       "tag": null,
-       "display_order": 4,
-       "uuid": "ad7c498b-cfc9-52ff-9251-fffb1d2e83e1"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": null,
+      "display_order": 4,
+      "uuid": "ad7c498b-cfc9-52ff-9251-fffb1d2e83e1"
+     },
+     {
+      "id": "own_compl",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Ownership Complement"
+       ],
+       "fr": [
+        "Complément de propriété"
+       ],
+       "it": [
+        "Complemento di proprietà"
+       ],
+       "nl": [
+        "Eigendom Complement"
+       ],
+       "de": [
+        "Eigenschaftsergänzung"
+       ]
       },
-      {
-       "id": "own_compl",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Ownership Complement"
-        ],
-        "fr": [
-         "Complément de propriété"
-        ],
-        "it": [
-         "Complemento di proprietà"
-        ],
-        "nl": [
-         "Eigendom Complement"
-        ],
-        "de": [
-         "Eigenschaftsergänzung"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 5,
-       "uuid": "d10d0253-b6c1-5d51-b3e4-0373490e8647"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 5,
+      "uuid": "d10d0253-b6c1-5d51-b3e4-0373490e8647"
+     },
+     {
+      "id": "symbol",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Symbol"
+       ],
+       "fr": [
+        "Symbole"
+       ],
+       "it": [
+        "Simbolo"
+       ],
+       "nl": [
+        "Symbool"
+       ],
+       "de": [
+        "Symbol"
+       ]
       },
-      {
-       "id": "symbol",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Symbol"
-        ],
-        "fr": [
-         "Symbole"
-        ],
-        "it": [
-         "Simbolo"
-        ],
-        "nl": [
-         "Symbool"
-        ],
-        "de": [
-         "Symbol"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 6,
-       "uuid": "2d82cd0b-d43f-571e-8f56-ad253ee5d282"
+      "nullable": true,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 6,
+      "uuid": "2d82cd0b-d43f-571e-8f56-ad253ee5d282"
+     },
+     {
+      "id": "category",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Category"
+       ],
+       "fr": [
+        "Catégorie"
+       ],
+       "it": [
+        "Categoria"
+       ],
+       "nl": [
+        "Categorie"
+       ],
+       "de": [
+        "Kategorie"
+       ]
       },
-      {
-       "id": "category",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Category"
-        ],
-        "fr": [
-         "Catégorie"
-        ],
-        "it": [
-         "Categoria"
-        ],
-        "nl": [
-         "Categorie"
-        ],
-        "de": [
-         "Kategorie"
-        ]
-       },
-       "nullable": true,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 7,
-       "uuid": "a468bc22-e39d-511f-bbdd-bbee07fe0760"
+      "nullable": true,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 7,
+      "uuid": "a468bc22-e39d-511f-bbdd-bbee07fe0760"
+     },
+     {
+      "id": "own_share",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Rights of use"
+       ],
+       "fr": [
+        "Droits d'utilisation"
+       ],
+       "it": [
+        "Diritti d'uso"
+       ],
+       "nl": [
+        "Gebruiksrechten"
+       ],
+       "de": [
+        "Nutzungsrechte"
+       ]
       },
-      {
-       "id": "own_share",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Rights of use"
-        ],
-        "fr": [
-         "Droits d'utilisation"
-        ],
-        "it": [
-         "Diritti d'uso"
-        ],
-        "nl": [
-         "Gebruiksrechten"
-        ],
-        "de": [
-         "Nutzungsrechte"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 8,
-       "uuid": "652e9bdb-1a5e-5b51-b27c-db669c50ae91"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 8,
+      "uuid": "652e9bdb-1a5e-5b51-b27c-db669c50ae91"
+     },
+     {
+      "id": "class",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Land Use Class"
+       ],
+       "fr": [
+        "Classe d'utilisation des terres"
+       ],
+       "it": [
+        "Classe di utilizzo del suolo"
+       ],
+       "nl": [
+        "Klasse Landgebruik"
+       ],
+       "de": [
+        "Landnutzungsklasse"
+       ]
       },
-      {
-       "id": "class",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Land Use Class"
-        ],
-        "fr": [
-         "Classe d'utilisation des terres"
-        ],
-        "it": [
-         "Classe di utilizzo del suolo"
-        ],
-        "nl": [
-         "Klasse Landgebruik"
-        ],
-        "de": [
-         "Landnutzungsklasse"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "s",
-       "short_display": false,
-       "hidden": false,
-       "tag": "LAND_USE",
-       "display_order": 9,
-       "uuid": "f4b190ff-a7bb-536e-805d-06a38b8591e4"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "s",
+      "short_display": false,
+      "hidden": false,
+      "tag": "LAND_USE",
+      "display_order": 9,
+      "uuid": "f4b190ff-a7bb-536e-805d-06a38b8591e4"
+     },
+     {
+      "id": "subclass",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Land Use Subclass"
+       ],
+       "fr": [
+        "Sous-classe d'utilisation des terres"
+       ],
+       "it": [
+        "Sottoclasse di utilizzo del suolo"
+       ],
+       "nl": [
+        "Subklasse Landgebruik"
+       ],
+       "de": [
+        "Unterklasse der Landnutzung"
+       ]
       },
-      {
-       "id": "subclass",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Land Use Subclass"
-        ],
-        "fr": [
-         "Sous-classe d'utilisation des terres"
-        ],
-        "it": [
-         "Sottoclasse di utilizzo del suolo"
-        ],
-        "nl": [
-         "Subklasse Landgebruik"
-        ],
-        "de": [
-         "Unterklasse der Landnutzung"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "s",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 10,
-       "uuid": "9fed9be7-3223-5288-adb6-7f1553d13564"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "s",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 10,
+      "uuid": "9fed9be7-3223-5288-adb6-7f1553d13564"
+     },
+     {
+      "id": "use",
+      "type": "LIST",
+      "display_label": {
+       "en": [
+        "Land Uses"
+       ],
+       "fr": [
+        "Utilisations des terres"
+       ],
+       "it": [
+        "Usi del suolo"
+       ],
+       "nl": [
+        "Landgebruik"
+       ],
+       "de": [
+        "Landnutzungen"
+       ]
       },
-      {
-       "id": "use",
-       "type": "LIST",
-       "display_label": {
-        "en": [
-         "Land Uses"
-        ],
-        "fr": [
-         "Utilisations des terres"
-        ],
-        "it": [
-         "Usi del suolo"
-        ],
-        "nl": [
-         "Landgebruik"
-        ],
-        "de": [
-         "Landnutzungen"
-        ]
-       },
-       "nullable": false,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": "LAND_USE",
-       "display_order": 11,
-       "uuid": "3bb92b2a-6b24-5e42-aaae-9b24fe406479"
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": "LAND_USE",
+      "display_order": 11,
+      "uuid": "3bb92b2a-6b24-5e42-aaae-9b24fe406479"
+     },
+     {
+      "id": "main_use",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Main Land Use"
+       ],
+       "fr": [
+        "Utilisation principale des terres"
+       ],
+       "it": [
+        "Uso principale del suolo"
+       ],
+       "nl": [
+        "Hoofdlandgebruik"
+       ],
+       "de": [
+        "Hauptnutzung des Landes"
+       ]
       },
-      {
-       "id": "main_use",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Main Land Use"
-        ],
-        "fr": [
-         "Utilisation principale des terres"
-        ],
-        "it": [
-         "Uso principale del suolo"
-        ],
-        "nl": [
-         "Hoofdlandgebruik"
-        ],
-        "de": [
-         "Hauptnutzung des Landes"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": "LAND_USE",
-       "display_order": 12,
-       "uuid": "5f5393c0-df98-5cf3-a32b-e4e3bdc0abbd"
+      "nullable": true,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": "LAND_USE",
+      "display_order": 12,
+      "uuid": "5f5393c0-df98-5cf3-a32b-e4e3bdc0abbd"
+     },
+     {
+      "id": "translation",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Main Land Use (in english)"
+       ],
+       "fr": [
+        "Utilisation principale des terres (en anglais)"
+       ],
+       "it": [
+        "Uso principale del suolo (in inglese)"
+       ],
+       "nl": [
+        "Hoofdlandgebruik (in het Engels)"
+       ],
+       "de": [
+        "Hauptnutzung des Landes (auf Englisch)"
+       ]
       },
-      {
-       "id": "translation",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Main Land Use (in english)"
-        ],
-        "fr": [
-         "Utilisation principale des terres (en anglais)"
-        ],
-        "it": [
-         "Uso principale del suolo (in inglese)"
-        ],
-        "nl": [
-         "Hoofdlandgebruik (in het Engels)"
-        ],
-        "de": [
-         "Hauptnutzung des Landes (auf Englisch)"
-        ]
-       },
-       "nullable": true,
-       "indexable": true,
-       "paradata": "m",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 13,
-       "uuid": "8b375fc7-7fc0-5d27-b5ef-075ccf0811ff"
+      "nullable": true,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 13,
+      "uuid": "8b375fc7-7fc0-5d27-b5ef-075ccf0811ff"
+     },
+     {
+      "id": "own_col_ty",
+      "type": "STRING",
+      "display_label": {
+       "fr": [
+        "Type de succession"
+       ],
+       "en": [
+        "Type of Inheritance"
+       ],
+       "it": [
+        "Tipo di eredità"
+       ],
+       "nl": [
+        "Type Erfenis"
+       ],
+       "de": [
+        "Art der Erbschaft"
+       ]
       },
-      {
-       "id": "own_col_ty",
-       "type": "STRING",
-       "display_label": {
-        "fr": [
-         "Type de succession"
-        ],
-        "en": [
-         "Type of Inheritance"
-        ],
-        "it": [
-         "Tipo di eredità"
-        ],
-        "nl": [
-         "Type Erfenis"
-        ],
-        "de": [
-         "Art der Erbschaft"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "s",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 14,
-       "uuid": "dd64d325-1c94-58cf-97e1-59f0db2f27ae"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "s",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 14,
+      "uuid": "dd64d325-1c94-58cf-97e1-59f0db2f27ae"
+     },
+     {
+      "id": "area",
+      "type": "FLOAT",
+      "display_label": {
+       "en": [
+        "Area (m²)"
+       ],
+       "fr": [
+        "Surface (m²)"
+       ],
+       "it": [
+        "Area (m²)"
+       ],
+       "nl": [
+        "Oppervlakte (m²)"
+       ],
+       "de": [
+        "Fläche (m²)"
+       ]
       },
-      {
-       "id": "area",
-       "type": "FLOAT",
-       "display_label": {
-        "en": [
-         "Area (m²)"
-        ],
-        "fr": [
-         "Surface (m²)"
-        ],
-        "it": [
-         "Area (m²)"
-        ],
-        "nl": [
-         "Oppervlakte (m²)"
-        ],
-        "de": [
-         "Fläche (m²)"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": false,
-       "tag": null,
-       "display_order": 15,
-       "uuid": "3593b94a-3d85-5293-acd6-1e708207d01f"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": false,
+      "tag": null,
+      "display_order": 15,
+      "uuid": "3593b94a-3d85-5293-acd6-1e708207d01f"
+     },
+     {
+      "id": "identifier",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Identifier"
+       ],
+       "fr": [
+        "Identifiant"
+       ],
+       "it": [
+        "Identificatore"
+       ],
+       "nl": [
+        "Identificatie"
+       ],
+       "de": [
+        "Kennung"
+       ]
       },
-      {
-       "id": "identifier",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Identifier"
-        ],
-        "fr": [
-         "Identifiant"
-        ],
-        "it": [
-         "Identificatore"
-        ],
-        "nl": [
-         "Identificatie"
-        ],
-        "de": [
-         "Kennung"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": true,
-       "tag": null,
-       "display_order": 16,
-       "uuid": "4bca3080-2e35-5e33-a3e3-6db9570edfae"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": true,
+      "tag": null,
+      "display_order": 16,
+      "uuid": "4bca3080-2e35-5e33-a3e3-6db9570edfae"
+     },
+     {
+      "id": "layer",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Layer"
+       ],
+       "fr": [
+        "Couche"
+       ],
+       "it": [
+        "Strato"
+       ],
+       "nl": [
+        "Laag"
+       ],
+       "de": [
+        "Schicht"
+       ]
       },
-      {
-       "id": "layer",
-       "type": "STRING",
-       "display_label": {
-        "en": [
-         "Layer"
-        ],
-        "fr": [
-         "Couche"
-        ],
-        "it": [
-         "Strato"
-        ],
-        "nl": [
-         "Laag"
-        ],
-        "de": [
-         "Schicht"
-        ]
-       },
-       "nullable": false,
-       "indexable": false,
-       "paradata": "a",
-       "short_display": false,
-       "hidden": true,
-       "tag": null,
-       "display_order": 17,
-       "uuid": "b14d7e3c-32dc-5b84-9334-81408b7c3d4d"
-      }
-     ]
-    },
-    "uuid": "495f0497-9089-5c8b-8e4c-d487808e5528"
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": true,
+      "tag": null,
+      "display_order": 17,
+      "uuid": "b14d7e3c-32dc-5b84-9334-81408b7c3d4d"
+     }
+    ]
    },
    "falls_within": [
     "e50f6137-c572-5402-80bf-1c27d19cd7c9",
     "17832f26-8470-57e5-951d-324df69a653b"
    ],
-   "creation_time": "2026-01-19T14:26:47.408421"
+   "creation_time": "2026-01-21T16:01:50.995371"
   }
  ]
 }
