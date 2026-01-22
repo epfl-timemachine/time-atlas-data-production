@@ -363,9 +363,10 @@ def produce_layer_config(
     if hi_zoom > 23:
         raise Exception(f'Zoom levels should not exceed 23')
     conv_extent = [wkt_loads(extent[0]), wkt_loads(extent[1])]
+    # extent is expressed in the order North Western corner, South Eastern corner, we need to change if to South Western corner, North Eastern corner:
     return {  
         "uuid": uuid,
-        "extent": [conv_extent[0].x, conv_extent[0].y, conv_extent[1].x, conv_extent[1].y],
+        "extent": [conv_extent[0].x, conv_extent[1].y, conv_extent[1].x, conv_extent[0].y],
         "zoom_lvl": zoom_lvl,
         "service": {
             "url": access_url,
