@@ -291,7 +291,6 @@ def produce_map_obj(
         "rde_type": RDE.MAP.value,
         "name": name,
         "metadata": [{
-            "uuid": str(uuid.uuid5(VMAP_UUID5_NS, map_slug+'_description')),
             "type": "STRING",
             "value": description,
             "label": {
@@ -310,11 +309,9 @@ def produce_map_obj(
                 "de": [
                     "Beschreibung"
                 ]
-            },
-            "display_order": 1
+            }
         },
         {
-            "uuid": str(uuid.uuid5(VMAP_UUID5_NS, map_slug+'_paradata')),
             "type": "STRING",
             "value": paradata,
             "label": {
@@ -334,9 +331,7 @@ def produce_map_obj(
                     "Paradata"
                 ]
             },
-            "display_order": 2
-            }
-        ],
+        }],
         "thumbnail": thumbnail,
         "version": version,
         "start_time": time_range[0],
@@ -676,12 +671,11 @@ def produce_configuration_file_from_metadata_df(
         curr_dmc['type'] = v['type']
         curr_dmc['label'] = v['display_label']
         curr_dmc['value'] = v['value']
-        curr_dmc['uuid'] = str(uuid.uuid5(uuid_ns, f'dataset_md_config_{k}'))
-        curr_dmc['display_order'] = i + 1
+        # curr_dmc['uuid'] = str(uuid.uuid5(uuid_ns, f'dataset_md_config_{k}'))
+        # curr_dmc['display_order'] = i + 1
         ds_md_c.append(curr_dmc)
 
     base['metadata'] = ds_md_c
-    base["uuid"] = str(uuid.uuid5(uuid_ns, 'dataset_configuration'))
     field_template = {
         "id": "",
         "type": None,
@@ -692,14 +686,11 @@ def produce_configuration_file_from_metadata_df(
         "short_display": False,
         "hidden": False,
         "tag": None,
-        "display_order": -1
     }
-    display_order = 0
     for col in df.columns:
         if not 'uid' in col:
             vals = df[col]
             curr_conf = field_template.copy()
-            curr_conf['uuid'] = str(uuid.uuid5(uuid_ns, col))
             curr_conf["id"] = col
             nullable = is_empty_or_null(vals)
             curr_conf["nullable"] = bool(nullable)
@@ -724,7 +715,7 @@ def produce_configuration_file_from_metadata_df(
             # if col in dictionaries:
             #     curr_conf['dictionary'] = dictionaries[col] 
             #     curr_conf["type"] = "LIST[CATEGORY]" if curr_conf["type"].startswith("LIST") else "CATEGORY"
-            curr_conf["display_order"] = (display_order := display_order + 1)
+            # curr_conf["display_order"] = (display_order := display_order + 1)
             curr_conf["display_label"] = labels[col] if col in labels else quick_display_label(col)
             base["hr_config"]["metadata_field_config"].append(curr_conf)
     return base

@@ -10,11 +10,26 @@ pip install -r requirements.txt
 # Function to run Python scripts in a directory
 run_scripts_in_directory() {
     local dir=$1
+    shift
+    local exception_array=("$@")
     data_type=$(basename "$dir")
     echo "Generating data for $data_type"
     data_type=${data_type%?} # Remove the trailing 's'
     for folder in "$dir"/*; do
         if [ -d "$folder" ]; then
+            folder_name=$(basename "$folder")
+            # Check if folder is in exception array
+            skip=false
+            for exception in "${exception_array[@]}"; do
+                if [ "$folder_name" = "$exception" ]; then
+                    skip=true
+                    echo "Skipping $folder_name (in exception list)"
+                    break
+                fi
+            done
+            if [ "$skip" = true ]; then
+                continue
+            fi
             cd "$folder"
             script=$(ls *.py 2>/dev/null)
             if [ -n "$script" ]; then
@@ -38,7 +53,7 @@ run_scripts_in_directory() {
 run_scripts_in_directory "rde/maps"
 
 # Step 3: Run scripts in rde/datasets
-run_scripts_in_directory "rde/datasets"
+run_scripts_in_directory "rde/datasets" "amsterdam-1832-huurwarden" "europeana-pipeline-postcards" "venice-1740-catastici" "venice-1808-sommarioni" "dresden-4d-browser-data" "lausanne-mhl-iconographie" "lausanne-1888-cadastre-renove" "venice-contemporary-cloudpoint"
 
 # Step 4: Run scripts in rde/areas
 cd rde/areas
