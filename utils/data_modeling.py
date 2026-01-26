@@ -711,11 +711,6 @@ def produce_configuration_file_from_metadata_df(
             elif col in ai_fields:
                 curr_conf['paradata'] = 'i'
             curr_conf["type"] = python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))
-            # removed as unused for now.
-            # if col in dictionaries:
-            #     curr_conf['dictionary'] = dictionaries[col] 
-            #     curr_conf["type"] = "LIST[CATEGORY]" if curr_conf["type"].startswith("LIST") else "CATEGORY"
-            # curr_conf["display_order"] = (display_order := display_order + 1)
             curr_conf["display_label"] = labels[col] if col in labels else quick_display_label(col)
             base["hr_config"]["metadata_field_config"].append(curr_conf)
     return base
