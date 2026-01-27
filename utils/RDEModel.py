@@ -146,6 +146,15 @@ class HR(RDE):
     def actualize_observations_references(self, entity_list: dict[UUID, RDE]) -> None:
         self.documents = [entity_list[obs_ref] if isinstance(obs_ref, str) and obs_ref in entity_list else obs_ref for obs_ref in self.documents]
 
+    def to_dict(self) -> dict:
+        result = super().to_dict()
+        # HR specific serialization for documents
+        result['documents'] = [doc.get_ref() if isinstance(doc, RDE) else doc for doc in self.documents]
+        for k,v in self.annotated_content.items():
+            result[k] = v
+        result.pop('annotated_content', None)
+        return result
+
 @dataclass
 class HeightInfo:
     terrain: Optional[float] = None
@@ -165,8 +174,8 @@ class POI(RDE):
             uuid=json_obj['uuid'],
             geometry=shapely.from_geojson(json.dumps(geom)) if geom else None,
             height=HeightInfo(
-                terrain=json_obj.get('height', {}).get('terrain'),
-                building=json_obj.get('height', {}).get('building')
+                terrain=json_obj.get('terrain_height'),
+                building=json_obj.get('building_height')
             ),
             contains=json_obj.get('contains', [])
         )
@@ -182,6 +191,11 @@ class Obs(RDE):
     height: HeightInfo
     has_geometry: list[GeometryReference] = field(default_factory=list)
     has_handle: Optional[POIReference] = None
+
+
+    def actualize_references(self, entity_list: dict[UUID, RDE]) -> None:
+        self.has_geometry = [entity_list[geom_ref] if isinstance(geom_ref, str) and geom_ref in entity_list else geom_ref for geom_ref in self.has_geometry]
+        self.has_handle = entity_list[self.has_handle] if isinstance(self.has_handle, str) and self.has_handle in entity_list else self.has_handle
 
     @staticmethod
     def constructor_from_json_obj(json_obj: dict) -> 'Obs':

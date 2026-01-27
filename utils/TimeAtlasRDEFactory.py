@@ -1,6 +1,10 @@
+import os
+from turtle import pd
 from RDEModel import *
 import requests
 from tqdm import tqdm
+import pickle
+import pandas as pd
 
 
 RDE_TYPE_TO_STATIC_CLASS_DEF = {
@@ -17,6 +21,7 @@ RDE_TYPE_TO_STATIC_CLASS_DEF = {
 class RDEFactory:
 
     entity_cache = {}
+    default_save_cache_filepath = 'rde_entity_cache.pkl'
 
     def __init__(self, api_url: str):
         self.api_url = api_url
@@ -31,8 +36,18 @@ class RDEFactory:
         resp = requests.get(f'{self.api_url}/health')
         if resp.status_code != 200:
             raise ConnectionError(f'Could not connect to TimeAtlas API at {self.api_url}. Status code: {resp.status_code}')
+        if os.path.exists(self.default_save_cache_filepath):
+            with open(self.default_save_cache_filepath, 'rb') as f:
+                self.entity_cache = pickle.load(f)
+        else:
+            self.entity_cache = {}
+
+    def save_entity_cache_to_file(self, filepath: str = None):
+        if filepath is None:
+            filepath = self.default_save_cache_filepath
         
-        self.entity_cache = {}
+        with open(filepath, 'wb') as f:
+            pickle.dump(self.entity_cache, f)
 
     def get_single_rde_object(self, endpoint: str, uuid: str) -> RDE:
         if uuid in self.entity_cache:
@@ -127,6 +142,31 @@ class RDEFactory:
         for poi_uuid in tqdm(poi_uuids, desc='Fetching POIs'):
             poi_list.append(self.get_single_rde_object('poi', poi_uuid))
         return poi_list
+    
+    def materialize_all_rde_from_dataset_obj(self, dataset: Dataset) -> list[RDE]:
+        hrs = self.generate_all_hr_from_dataset(dataset)
+        obs = self.generate_obs_from_list_of_hr(hrs)
+        geoms = self.generate_geoms_from_list_of_obs(obs)
+        pois = self.generate_pois_from_list_of_obs(obs)
+        for o in obs: o.actualize_references(self.entity_cache)
+        for h in hrs: h.actualize_observations_references(self.entity_cache)
+        return hrs + obs + geoms + pois
+    
+
+    def materialize_all_rde_from_dataset_slug(self, dataset_slug: str) -> list[RDE]:
+        ds = self.get_dataset_by_slug(dataset_slug)
+        return self.materialize_all_rde_from_dataset_obj(ds)
+
+    @staticmethod
+    def hr_list_to_dataframe(hr_list: list[HR]) -> pd.DataFrame:    
+        hr_dicts = []
+        for hr in hr_list:
+            hr_dict = hr.to_dict()
+            hr_dict['obj'] = hr
+            hr_dicts.append(hr_dict)
+        return pd.DataFrame(hr_dicts)
+    
+
     # def generate_all_obs_from_dataset(self, dataset: Dataset) -> list[Obs]:
     #     # TODO: change the endpoint once I understand how to filter obs by dataset info
     #     obs_jsons = self.get_all_results_from_endpoint('obs/search?query=&dataset_id=' + dataset.uuid, per_page=100)
