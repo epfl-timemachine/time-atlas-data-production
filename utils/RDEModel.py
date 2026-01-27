@@ -21,7 +21,7 @@ type MapReference = Map | UUID
 class RDEType(Enum):
     HR = 'historical_record'
     OBS = 'obs'
-    POI = 'point_of_interest'
+    POI = 'poi'
     GEOM = 'geometry'
     DATASET = 'dataset'
     MAP = 'map'
@@ -153,8 +153,23 @@ class HeightInfo:
 
 @dataclass
 class POI(RDE):
-    coordinate: list[float]
+    geometry: Point
     height: HeightInfo
+    contains: list[ObsReference] = field(default_factory=list)
+
+    @staticmethod
+    def constructor_from_json_obj(json_obj: dict) -> 'POI':
+        geom = json_obj.get('geometry')
+        json_obj = json_obj.get('properties', json_obj)  # in case the JSON object is a GeoJSON Feature object
+        return POI(
+            uuid=json_obj['uuid'],
+            geometry=shapely.from_geojson(json.dumps(geom)) if geom else None,
+            height=HeightInfo(
+                terrain=json_obj.get('height', {}).get('terrain'),
+                building=json_obj.get('height', {}).get('building')
+            ),
+            contains=json_obj.get('contains', [])
+        )
 
 @dataclass
 class Obs(RDE):
@@ -179,14 +194,14 @@ class Obs(RDE):
             time_range=RDETimeRange(json_obj['start_date'], json_obj['end_date']),
             hr_uuid=json_obj.get('hr_uuid'),
             type=json_obj.get('type', ''),
-            documented_in=json_obj.get('documented_in'),
+            documented_in=json_obj.get('documented_in')[0] if isinstance(json_obj.get('documented_in'), list) and len(json_obj.get('documented_in')) > 0 else None,
             geometry=shapely.from_geojson(json.dumps(geom)) if geom else None,
             height=HeightInfo(
                 terrain=json_obj.get('height', {}).get('terrain'),
                 building=json_obj.get('height', {}).get('building')
             ),
             has_geometry=json_obj.get('has_geometry', []),
-            has_handle=json_obj.get('part_of')
+            has_handle=json_obj.get('part_of')[0] if isinstance(json_obj.get('part_of'), list) and len(json_obj.get('part_of')) > 0 else None
         )
     
 @dataclass

@@ -100,7 +100,33 @@ class RDEFactory:
         for obs_uuid in tqdm(obs_uuids, desc='Fetching observations'):
             obs_list.append(self.get_single_rde_object('obs', obs_uuid))
         return obs_list
+    
+    def generate_geoms_from_list_of_obs(self, obs_list: list[Obs]) -> list[Geometry]:
+        geom_uuids = set()
+        for obs in obs_list:
+            for geom_ref in obs.has_geometry:
+                if isinstance(geom_ref, str):
+                    geom_uuids.add(geom_ref)
+                elif isinstance(geom_ref, Geometry):
+                    geom_uuids.add(geom_ref.uuid)
+        geom_list = []
+        for geom_uuid in tqdm(geom_uuids, desc='Fetching geometries'):
+            geom_list.append(self.get_single_rde_object('geometries', geom_uuid))
+        return geom_list
 
+
+    def generate_pois_from_list_of_obs(self, obs_list: list[Obs]) -> list[POI]:
+        poi_uuids = set()
+        for obs in obs_list:
+            poi_ref = obs.has_handle
+            if isinstance(poi_ref, str):
+                poi_uuids.add(poi_ref)
+            elif isinstance(poi_ref, POI):
+                poi_uuids.add(poi_ref.uuid)
+        poi_list = []
+        for poi_uuid in tqdm(poi_uuids, desc='Fetching POIs'):
+            poi_list.append(self.get_single_rde_object('poi', poi_uuid))
+        return poi_list
     # def generate_all_obs_from_dataset(self, dataset: Dataset) -> list[Obs]:
     #     # TODO: change the endpoint once I understand how to filter obs by dataset info
     #     obs_jsons = self.get_all_results_from_endpoint('obs/search?query=&dataset_id=' + dataset.uuid, per_page=100)
