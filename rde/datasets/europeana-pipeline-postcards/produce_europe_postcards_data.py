@@ -255,7 +255,7 @@ df_no_dup['filename'] = df_no_dup['filename'].apply(lambda s: [s])
 df = pd.concat([df_no_dup, df_dup_processed], ignore_index=True)
 
 tqdm.pandas(desc="Generating hr uuid")
-df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['record_id']), axis=1)
+df['hr_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['record_id']), axis=1)
 
 remove_rec_id = [
     'bib_rnod_278752', # that portugal one who ended up everywhere in englsih countries
@@ -283,23 +283,19 @@ df_precise_coords.to_csv('geolocated_postcards.csv', index=False)
 # the "no precise coords" are the ones that will only have the city level geolocation, will still have observations ang get triggered by reserach, but no POIs.s
 df_no_precise_coords = df[df['coordinates'].apply(len) == 0].copy()
 df_no_precise_coords['coordinates'] = df_no_precise_coords['country_city_coordinates'].apply(lambda v: [v])
-
+tpe='postcard'
 def produce_obs_gdf(df:pd.DataFrame, need_poi:bool=True) -> gpd.GeoDataFrame:
     tqdm.pandas(desc="Generating obs uuid")
-    df['obs_data'] = df.progress_apply(lambda r: [(c, quick_uuid(r['hr_uuid'], c)) for c in r['coordinates']], axis=1)
+    df['obs_data'] = df.apply(lambda r: [(c, quick_uuid(r['hr_uuid'], c)) for c in r['coordinates']], axis=1)
     df_obs = df[['obs_data', 'hr_uuid', 'start_time', 'end_time']].copy().explode('obs_data')
     df_obs['lat_lon'], df_obs['obs_uuid'] = df_obs['obs_data'].apply(lambda x: x[0]), df_obs['obs_data'].apply(lambda x: x[1])
     df_obs = df_obs.drop(columns=['obs_data'])
     df_obs['geometry'] = df_obs['lat_lon'].apply(lambda v: Point(v[1], v[0]))
     gdf = gpd.GeoDataFrame(df_obs.drop('lat_lon', axis=1)).set_geometry('geometry')
     gdf = gdf.set_crs('EPSG:4326').reset_index()
-
-def produce_obs_gdf(df: pd.DataFrame, need_poi: bool = True) -> gpd.GeoDataFrame:
-    tqdm.pandas(desc="Generating obs uuid")
-    # Generating Obs RDE
     obs = [produce_obs_obj(
         v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, tpe, v.geometry, None, need_poi=need_poi
-    ) for _,v in df.iterrows()]
+    ) for _,v in gdf.iterrows()]
 
     gdf_obs = gpd.GeoDataFrame(obs)
     gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
