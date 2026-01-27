@@ -20,7 +20,7 @@ type MapReference = Map | UUID
 
 class RDEType(Enum):
     HR = 'historical_record'
-    OBS = 'observation'
+    OBS = 'obs'
     POI = 'point_of_interest'
     GEOM = 'geometry'
     DATASET = 'dataset'
@@ -143,6 +143,9 @@ class HR(RDE):
             rights_attribution=json_obj.get('rights_attribution')
         )
     
+    def actualize_observations_references(self, entity_list: dict[UUID, RDE]) -> None:
+        self.documents = [entity_list[obs_ref] if isinstance(obs_ref, str) and obs_ref in entity_list else obs_ref for obs_ref in self.documents]
+
 @dataclass
 class HeightInfo:
     terrain: Optional[float] = None
@@ -167,20 +170,23 @@ class Obs(RDE):
 
     @staticmethod
     def constructor_from_json_obj(json_obj: dict) -> 'Obs':
+        geom = json_obj.get('geometry')
+        json_obj = json_obj.get('properties', json_obj)  # in case the JSON object is a GeoJSON Feature object
+        # print(json_obj)
         return Obs(
             uuid=json_obj['uuid'],
             dataset=json_obj['dataset']['uuid'],
-            time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
+            time_range=RDETimeRange(json_obj['start_date'], json_obj['end_date']),
             hr_uuid=json_obj.get('hr_uuid'),
             type=json_obj.get('type', ''),
             documented_in=json_obj.get('documented_in'),
-            geometry=json_obj.get('geometry'),
+            geometry=shapely.from_geojson(json.dumps(geom)) if geom else None,
             height=HeightInfo(
                 terrain=json_obj.get('height', {}).get('terrain'),
                 building=json_obj.get('height', {}).get('building')
             ),
             has_geometry=json_obj.get('has_geometry', []),
-            has_handle=json_obj.get('has_handle')
+            has_handle=json_obj.get('part_of')
         )
     
 @dataclass
