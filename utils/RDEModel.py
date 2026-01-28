@@ -106,6 +106,11 @@ class Dataset(RDE):
     sources: list[str] = field(default_factory=list)
     falls_within: Optional[list[UUID]] = field(default_factory=list)
 
+    # fields that do not exist in the RDE data model, only there to make python processing easiers:
+    hrs: list['HR'] = field(default_factory=list)
+    obs: list['Obs'] = field(default_factory=list)
+    geometries: list['Geometry'] = field(default_factory=list)
+
     @staticmethod
     def constructor_from_json_obj(json_obj: dict) -> 'Dataset':
         config_data = json_obj.get('configuration')
@@ -119,6 +124,16 @@ class Dataset(RDE):
             sources=json_obj.get('sources', []),
             falls_within=json_obj.get('falls_within', [])
         )
+    
+    def instantiate_all_rde_members(self, rde_list: list[RDE]) -> None:
+        for rde in rde_list:
+            if rde.uuid == self.uuid:
+                if isinstance(rde, HR):
+                    self.hrs.append(rde)
+                elif isinstance(rde, Obs):
+                    self.obs.append(rde)
+                elif isinstance(rde, Geometry):
+                    self.geometries.append(rde)
 
 @dataclass
 class HR(RDE):
@@ -146,13 +161,14 @@ class HR(RDE):
     def actualize_observations_references(self, entity_list: dict[UUID, RDE]) -> None:
         self.documents = [entity_list[obs_ref] if isinstance(obs_ref, str) and obs_ref in entity_list else obs_ref for obs_ref in self.documents]
 
-    def to_dict(self) -> dict:
+    def to_dict(self, flatten_metadata:bool = True) -> dict:
         result = super().to_dict()
         # HR specific serialization for documents
         result['documents'] = [doc.get_ref() if isinstance(doc, RDE) else doc for doc in self.documents]
-        for k,v in self.annotated_content.items():
-            result[k] = v
-        result.pop('annotated_content', None)
+        if flatten_metadata:
+            for k,v in self.annotated_content.items():
+                result[k] = v
+            result.pop('annotated_content', None)
         return result
 
 @dataclass

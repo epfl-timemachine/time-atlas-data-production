@@ -15,8 +15,8 @@ from functools import reduce
 import typing
 from collections import Counter
 from datetime import datetime as dt
-from .rde import RDE
-from .get_terrain_and_building_heights import processing_points
+from RDEModel import RDEType
+from get_terrain_and_building_heights import processing_points
 
 UNIVERSAL_CRS = "EPSG:4326"
 
@@ -172,7 +172,7 @@ def produce_hr_obj(uuid: str,
     return {
         "uuid": uuid,
         "dataset": ds,
-        "rde_type": RDE.HR.value,
+        "rde_type": RDEType.HR.value,
         "paradata": paradata,
         "type": tpe,
         "documents": [v[0] for v in obs_uid_list],
@@ -208,7 +208,7 @@ def produce_obs_obj(uuid:str,
     return {
         "uuid": uuid,
         "dataset": ds, 
-        "rde_type": RDE.OBS.value,
+        "rde_type": RDEType.OBS.value,
         "type": tpe,
         "start_time": time_range[0], 
         "end_time": time_range[1],
@@ -228,7 +228,7 @@ def produce_poi_obj(uuid:str, coordinate, height_data) -> dict:
     '''
     return {
         "uuid": uuid,
-        "rde_type": RDE.POI.value,
+        "rde_type": RDEType.POI.value,
         "coordinate": coordinate,
         "height": height_data
     }
@@ -257,7 +257,7 @@ def produce_dataset_obj(
         "version": version,
         "creation_time": now_ts(),
         "name": name,
-        "rde_type": RDE.DATASET.value,
+        "rde_type": RDEType.DATASET.value,
         "sources": sources,
         "start_time": time_range[0],
         "end_time": time_range[1],
@@ -288,7 +288,7 @@ def produce_map_obj(
     return {  
         "uuid": map_uuid,
         "slug": map_slug,
-        "rde_type": RDE.MAP.value,
+        "rde_type": RDEType.MAP.value,
         "name": name,
         "metadata": [{
             "type": "STRING",
@@ -386,7 +386,7 @@ def produce_layer_obj(
         "slug": layer_slug,
         "map_uuid": map_uuid,
         "type": "vector" if is_vector else "raster",
-        "rde_type": RDE.LAYER.value,
+        "rde_type": RDEType.LAYER.value,
         "start_time": time_range[0],
         "end_time": time_range[1],
         "is_operationally_described_by": layer_configs
@@ -399,7 +399,7 @@ def produce_area_obj(uuid: str,
     version: str) -> gpd.GeoDataFrame:
     return {
         "uuid": uuid,
-        "rde_type": RDE.AREA.value,
+        "rde_type": RDEType.AREA.value,
         "name": name,
         "geometry": geometry,
         "slug": slug,
@@ -490,7 +490,7 @@ def save_data_file_if_different(fp:str,
     filename_with_ext = f'{filename}.json'
     filepath = os.path.join(fp, filename_with_ext)
     if isinstance(data, gpd.GeoDataFrame):
-        if tpe == RDE.OBS.value:
+        if tpe == RDEType.OBS.value:
             data = processing_points(data, format_rde=True)
         t_data = geodataframe_to_json(data)
         t_data = t_data['features']

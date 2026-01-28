@@ -6,6 +6,12 @@ from tqdm import tqdm
 import pickle
 import pandas as pd
 
+from data_modeling import (
+    QA_check_uuid_are_unique,
+    QA_check_unique_uuid_in_uuid_array,
+    save_data_file_if_different
+)
+
 
 RDE_TYPE_TO_STATIC_CLASS_DEF = {
     RDEType.HR.value: HR,
@@ -171,3 +177,9 @@ class RDEFactory:
     #     # TODO: change the endpoint once I understand how to filter obs by dataset info
     #     obs_jsons = self.get_all_results_from_endpoint('obs/search?query=&dataset_id=' + dataset.uuid, per_page=100)
     #     return [Obs.constructor_from_json_obj(obs_json) for obs_json in obs_jsons]
+
+def save_list_of_hr_as_ingestion_file(ls: list[HR], save_folder:str, name:str)->None:
+    df_of_hr = RDEFactory.hr_list_to_dataframe(ls)
+    QA_check_uuid_are_unique(df_of_hr)
+    QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+    save_data_file_if_different(save_folder, 'historical_records',  [l.to_dict(flatten_metadata=False) for l in ls], name, RDEType.HR.value)
