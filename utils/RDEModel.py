@@ -106,10 +106,9 @@ class Dataset(RDE):
     sources: list[str] = field(default_factory=list)
     falls_within: Optional[list[UUID]] = field(default_factory=list)
 
-    # fields that do not exist in the RDE data model, only there to make python processing easiers:
+    # fields that do not exist in the RDE data model, only there to make python processing easier:
     hrs: list['HR'] = field(default_factory=list)
     obs: list['Obs'] = field(default_factory=list)
-    geometries: list['Geometry'] = field(default_factory=list)
 
     @staticmethod
     def constructor_from_json_obj(json_obj: dict) -> 'Dataset':
@@ -127,13 +126,11 @@ class Dataset(RDE):
     
     def instantiate_all_rde_members(self, rde_list: list[RDE]) -> None:
         for rde in rde_list:
-            if rde.uuid == self.uuid:
+            if hasattr(rde, "dataset") and rde.dataset == self.uuid:
                 if isinstance(rde, HR):
                     self.hrs.append(rde)
                 elif isinstance(rde, Obs):
                     self.obs.append(rde)
-                elif isinstance(rde, Geometry):
-                    self.geometries.append(rde)
 
 @dataclass
 class HR(RDE):
@@ -242,7 +239,9 @@ class GeographicalExtent:
         assert len(self.coordinates) == 4, "Extent must have four coordinates: [min_x, min_y, max_x, max_y]"
         assert self.coordinates[0] < self.coordinates[2], "min_x must be less than max_x"
         assert self.coordinates[1] < self.coordinates[3], "min_y must be less than max_y"
-        # note that the two asserts above would faile on map that are exactly on limits of the negative latitude (-0.0) or longitude (-0.0), it is unlikey we ingest map from such zones (and most GIS software specially avoid it: https://en.wikipedia.org/wiki/180th_meridian)
+        # note that the two asserts above would faile on map that are exactly on limits of the negative 
+        # latitude (-0.0) or longitude (-0.0), it is unlikey we ingest map from such zones (and most GIS 
+        # software specially avoid it: https://en.wikipedia.org/wiki/180th_meridian)
 
 @dataclass
 class Map(RDE):
