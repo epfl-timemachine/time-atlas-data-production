@@ -261,7 +261,7 @@ def produce_dataset_obj(
         "sources": sources,
         "start_time": time_range[0],
         "end_time": time_range[1],
-        "hr_config": configuration['hr_config'],
+        "configuration": configuration['configuration'],
         "falls_within": areas_ids,
     }
 
@@ -642,7 +642,7 @@ def produce_configuration_file_from_metadata_df(
         raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
 
     base = {
-        "hr_config": {
+        "configuration": {
             "main_label": "",
             "sub_label": "",
             "display_thumbnail": False,
@@ -652,13 +652,13 @@ def produce_configuration_file_from_metadata_df(
         "metadata": [],
     }
     if main_label:
-        base['hr_config']['main_label'] = main_label
+        base['configuration']['main_label'] = main_label
 
     if sub_label:
-        base['hr_config']['sub_label'] = sub_label
+        base['configuration']['sub_label'] = sub_label
 
-    base['hr_config']['display_thumbnail'] = display_thumbnail
-    base['hr_config']['external_source'] = external_source
+    base['configuration']['display_thumbnail'] = display_thumbnail
+    base['configuration']['external_source'] = external_source
     
     ds_md_c = []
     base_dmc = {
@@ -712,7 +712,7 @@ def produce_configuration_file_from_metadata_df(
                 curr_conf['paradata'] = 'i'
             curr_conf["type"] = python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))
             curr_conf["display_label"] = labels[col] if col in labels else quick_display_label(col)
-            base["hr_config"]["metadata_field_config"].append(curr_conf)
+            base["configuration"]["metadata_field_config"].append(curr_conf)
     return base
 
 
