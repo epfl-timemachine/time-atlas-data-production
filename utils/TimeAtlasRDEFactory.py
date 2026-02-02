@@ -12,7 +12,6 @@ from data_modeling import (
     save_data_file_if_different
 )
 
-
 RDE_TYPE_TO_STATIC_CLASS_DEF = {
     RDEType.HR.value: HR,
     RDEType.OBS.value: Obs,
@@ -118,7 +117,8 @@ class RDEFactory:
                 elif isinstance(obs_ref, Obs):
                     obs_uuids.add(obs_ref.uuid)
         obs_list = []
-        for obs_uuid in tqdm(obs_uuids, desc='Fetching observations'):
+        # for obs_uuid in tqdm(obs_uuids, desc='Fetching observations'):
+        for obs_uuid in obs_uuids:
             obs_list.append(self.get_single_rde_object('obs', obs_uuid))
         return obs_list
     
@@ -131,7 +131,8 @@ class RDEFactory:
                 elif isinstance(geom_ref, Geometry):
                     geom_uuids.add(geom_ref.uuid)
         geom_list = []
-        for geom_uuid in tqdm(geom_uuids, desc='Fetching geometries'):
+        # for geom_uuid in tqdm(geom_uuids, desc='Fetching geometries'):
+        for geom_uuid in geom_uuids:
             geom_list.append(self.get_single_rde_object('geometries', geom_uuid))
         return geom_list
 
@@ -145,7 +146,8 @@ class RDEFactory:
             elif isinstance(poi_ref, POI):
                 poi_uuids.add(poi_ref.uuid)
         poi_list = []
-        for poi_uuid in tqdm(poi_uuids, desc='Fetching POIs'):
+        # for poi_uuid in tqdm(poi_uuids, desc='Fetching POIs'):
+        for poi_uuid in poi_uuids:
             poi_list.append(self.get_single_rde_object('poi', poi_uuid))
         return poi_list
     

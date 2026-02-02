@@ -5,6 +5,7 @@ import shapely
 import json
 from typing import Union, Optional
 from datetime import datetime
+import pandas as pd
 
 type GeometryType = Union[Point, LineString, Polygon, MultiLineString, MultiPolygon]
 type UUID = str
@@ -167,6 +168,21 @@ class HR(RDE):
                 result[k] = v
             result.pop('annotated_content', None)
         return result
+
+    @staticmethod
+    def constructor_from_dataframe_row(row:pd.Series) -> 'HR':
+        metadata_keys = set(row.index).difference({'uuid', 'dataset', 'start_time', 'end_time', 'paradata', 'type', 'documents', 'rights_attribution'})
+        metadata = {k: row[k] for k in metadata_keys}
+        return HR(
+            uuid=row['uuid'],
+            dataset=row['dataset'],
+            time_range=RDETimeRange(row['start_time'], row['end_time']),
+            paradata=row.get('paradata', ''),
+            type=row.get('type', ''),
+            documents=row.get('documents', []),
+            annotated_content=metadata,
+            rights_attribution=row.get('rights_attribution')
+        )
 
 @dataclass
 class HeightInfo:
