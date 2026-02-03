@@ -48,15 +48,16 @@ class RDE:
     def to_dict(self) -> dict:
         result = {}
         for field_name, field_value in self.__dict__.items():
-            if isinstance(field_value, RDETimeRange):
-                result['start_time'] = field_value.start_time
-                result['end_time'] = field_value.end_time
-            elif isinstance(field_value, RDE):
-                result[field_name] = field_value.get_ref()
-            elif isinstance(field_value, list):
-                result[field_name] = [item.get_ref() if isinstance(item, RDE) else item for item in field_value]
-            else:
-                result[field_name] = field_value
+            match field_value:
+                case RDETimeRange():
+                    result['start_time'] = field_value.start_time
+                    result['end_time'] = field_value.end_time
+                case RDE():
+                    result[field_name] = field_value.get_ref()
+                case list():
+                    result[field_name] = [item.get_ref() if isinstance(item, RDE) else item for item in field_value]
+                case _:
+                    result[field_name] = field_value
 
         # dataset configuration and other special cases have no rde_type field, only doing it for main RDE types
         rde_name = self.__class__.__name__.lower()

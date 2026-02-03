@@ -6,7 +6,7 @@ from tqdm import tqdm
 import pickle
 import pandas as pd
 
-from utils.data_modeling import (
+from data_modeling import (
     QA_check_uuid_are_unique,
     QA_check_unique_uuid_in_uuid_array,
     save_data_file_if_different
@@ -112,10 +112,11 @@ class TimeAtlas:
         obs_uuids = set()
         for hr in hr_list:
             for obs_ref in hr.documents:
-                if isinstance(obs_ref, str):
-                    obs_uuids.add(obs_ref)
-                elif isinstance(obs_ref, Obs):
-                    obs_uuids.add(obs_ref.uuid)
+                match obs_ref:
+                    case str():
+                        obs_uuids.add(obs_ref)
+                    case Obs():
+                        obs_uuids.add(obs_ref.uuid)
         obs_list = []
         # for obs_uuid in tqdm(obs_uuids, desc='Fetching observations'):
         for obs_uuid in obs_uuids:
@@ -126,10 +127,11 @@ class TimeAtlas:
         geom_uuids = set()
         for obs in obs_list:
             for geom_ref in obs.has_geometry:
-                if isinstance(geom_ref, str):
-                    geom_uuids.add(geom_ref)
-                elif isinstance(geom_ref, Geometry):
-                    geom_uuids.add(geom_ref.uuid)
+                match geom_ref:
+                    case str():
+                        geom_uuids.add(geom_ref)
+                    case Geometry():
+                        geom_uuids.add(geom_ref.uuid)
         geom_list = []
         # for geom_uuid in tqdm(geom_uuids, desc='Fetching geometries'):
         for geom_uuid in geom_uuids:
@@ -141,10 +143,11 @@ class TimeAtlas:
         poi_uuids = set()
         for obs in obs_list:
             poi_ref = obs.has_handle
-            if isinstance(poi_ref, str):
-                poi_uuids.add(poi_ref)
-            elif isinstance(poi_ref, POI):
-                poi_uuids.add(poi_ref.uuid)
+            match poi_ref:
+                case str():
+                    poi_uuids.add(poi_ref)
+                case POI():
+                    poi_uuids.add(poi_ref.uuid)
         poi_list = []
         # for poi_uuid in tqdm(poi_uuids, desc='Fetching POIs'):
         for poi_uuid in poi_uuids:
@@ -181,7 +184,7 @@ class TimeAtlas:
     #     return [Obs.constructor_from_json_obj(obs_json) for obs_json in obs_jsons]
 
 def save_list_of_hr_as_ingestion_file(ls: list[HR], save_folder:str, name:str)->None:
-    df_of_hr = RDEFactory.hr_list_to_dataframe(ls)
+    df_of_hr = TimeAtlas.hr_list_to_dataframe(ls)
     QA_check_uuid_are_unique(df_of_hr)
     QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
     save_data_file_if_different(save_folder, 'historical_records',  [l.to_dict(flatten_metadata=False) for l in ls], name, RDEType.HR.value)
