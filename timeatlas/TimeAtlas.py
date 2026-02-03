@@ -6,7 +6,7 @@ from tqdm import tqdm
 import pickle
 import pandas as pd
 
-from data_modeling import (
+from utils.data_modeling import (
     QA_check_uuid_are_unique,
     QA_check_unique_uuid_in_uuid_array,
     save_data_file_if_different
@@ -23,7 +23,7 @@ RDE_TYPE_TO_STATIC_CLASS_DEF = {
     RDEType.AREA.value: Area
 }
 
-class RDEFactory:
+class TimeAtlas:
 
     entity_cache = {}
     default_save_cache_filepath = 'rde_entity_cache.pkl'
