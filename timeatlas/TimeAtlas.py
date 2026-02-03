@@ -1,12 +1,11 @@
 import os
 from turtle import pd
-from RDEModel import *
+from .RDEModel import *
 import requests
-from tqdm import tqdm
 import pickle
 import pandas as pd
 
-from data_modeling import (
+from .data_modeling import (
     QA_check_uuid_are_unique,
     QA_check_unique_uuid_in_uuid_array,
     save_data_file_if_different

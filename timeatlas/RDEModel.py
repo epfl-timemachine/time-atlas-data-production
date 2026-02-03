@@ -29,9 +29,9 @@ class RDEType(Enum):
     LAYER = 'layer'
     AREA = 'area'
 
-
 CLASS_NAME_TO_RDE = {
     'hr': RDEType.HR,
+    'historical_record': RDEType.HR,
     'obs': RDEType.OBS,
     'poi': RDEType.POI,
     'geometry': RDEType.GEOM,
@@ -141,7 +141,7 @@ class HR(RDE):
     paradata: str
     type: str
     documents: list[ObsReference]
-    annotated_content: dict = field(default_factory=dict)
+    metadata: dict = field(default_factory=dict)
     rights_attribution: Optional[str] = None
 
     @staticmethod
@@ -153,7 +153,7 @@ class HR(RDE):
             paradata=json_obj.get('paradata', ''),
             type=json_obj.get('type', ''),
             documents=json_obj.get('documents', []),
-            annotated_content=json_obj.get('metadata', {}),
+            metadata=json_obj.get('metadata', {}),
             rights_attribution=json_obj.get('rights_attribution')
         )
     
@@ -165,9 +165,9 @@ class HR(RDE):
         # HR specific serialization for documents
         result['documents'] = [doc.get_ref() if isinstance(doc, RDE) else doc for doc in self.documents]
         if flatten_metadata:
-            for k,v in self.annotated_content.items():
+            for k,v in self.metadata.items():
                 result[k] = v
-            result.pop('annotated_content', None)
+            result.pop('metadata', None)
         return result
 
     @staticmethod
@@ -181,7 +181,7 @@ class HR(RDE):
             paradata=row.get('paradata', ''),
             type=row.get('type', ''),
             documents=row.get('documents', []),
-            annotated_content=metadata,
+            metadata=metadata,
             rights_attribution=row.get('rights_attribution')
         )
 

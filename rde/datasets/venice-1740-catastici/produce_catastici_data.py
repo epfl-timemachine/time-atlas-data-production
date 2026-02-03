@@ -15,9 +15,9 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 from utils import iiif
-from utils.rde import RDE
 from pathlib import Path
 
 # this holds all main parameters of the data production process
@@ -295,7 +295,7 @@ obs = [produce_obs_obj(r.obs_uuid, TR_OBJ, DS_UUID, r.hr_uuid, tpe, r.geometry, 
 gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_crs('EPSG:32633').to_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, 'catastici_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, 'catastici_obs', RDEType.OBS.value)
 
 # Generate HR RDE
 exclude_hr_labels = {
@@ -313,10 +313,10 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        [[r.obs_uuid, 'place']],\
                        TR_OBJ,\
                        tpe,\
-                   r[hr_metadata_cols].to_dict()) \
+                   r[hr_metadata_cols].to_dict()).to_dict(flatten_metadata=False) \
                    for _, r in df.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'catastici_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'catastici_hrs', RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 
@@ -335,7 +335,7 @@ def retrieve_canvas_id_from_filename(metada_obj:str) -> str:
     filename = x['tif_path_img'] if x['tif_path_img'] and is_man_tif else x['path_img']
     return filename_to_canvas_id.get(filename, '')
 
-df_iiif_links['canvas_id'] = df_iiif_links['annotated_content'].apply(retrieve_canvas_id_from_filename)
+df_iiif_links['canvas_id'] = df_iiif_links['metadata'].apply(retrieve_canvas_id_from_filename)
 
 def catastici_metadata_object_to_string_representation(metadata: dict) -> str:
     quick_check = lambda x: x if not pd.isna(x) and (type(x) is str and x.lower() != 'nan' and len(x) > 0) else ''
@@ -350,7 +350,7 @@ def catastici_metadata_object_to_string_representation(metadata: dict) -> str:
         rendi = ''
     return ' | '.join([v for v in vals + [rendi] if len(v) > 0])
 
-df_iiif_links['iiif_display_string'] = df_iiif_links['annotated_content'].apply(catastici_metadata_object_to_string_representation)
+df_iiif_links['iiif_display_string'] = df_iiif_links['metadata'].apply(catastici_metadata_object_to_string_representation)
 df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
 iiif_links = df_iiif_links[['canvas_id', 'iiif_metadata_obj']].groupby('canvas_id').agg(list).reset_index().set_index('canvas_id')['iiif_metadata_obj'].to_dict()
 df_pages['page_obj'] = df_pages['page_obj'].apply(lambda x: dict(x, metadata = iiif_links.get(x['id'], '')))
@@ -391,4 +391,4 @@ ds = produce_dataset_obj(
     venice_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], 'catastici_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], 'catastici_dataset', RDEType.DATASET.value, is_dataset_obj=True)

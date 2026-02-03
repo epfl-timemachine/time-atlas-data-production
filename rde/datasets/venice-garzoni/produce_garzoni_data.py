@@ -13,8 +13,8 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 from utils import iiif
 
 gpd.options.io_engine = "pyogrio"
@@ -67,7 +67,7 @@ gdf['rde_type'] = "geometry"
 
 save_gdf = gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']]
 
-save_data_file_if_different(MAP_FOLDER,'geometries', save_gdf, f'garzoni_geometries', RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER,'geometries', save_gdf, f'garzoni_geometries', RDEType.GEOM.value)
 QA_check_uuid_are_unique(gdf)
 
 print('loading garzoni data into a dataframe, this may take a while.')
@@ -232,7 +232,7 @@ for _, r in df_flat.iterrows():
 
 
 gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_index('uuid').set_crs('EPSG:4326')
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, f'garzoni_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, f'garzoni_obs', RDEType.OBS.value)
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 
 # HR RDE Production
@@ -250,11 +250,11 @@ def produce_hr_from_contract_row(r: pd.Series) -> dict:
         (r.start_time, r.end_time),
         "contract",
         r[hr_metadata_cols].to_dict()
-    )
+    ).to_dict(flatten_metadata=False)
 
 recs = [produce_hr_from_contract_row(r) for _, r in df_flat.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'garzoni_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'garzoni_hrs', RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
@@ -349,4 +349,4 @@ ds = produce_dataset_obj(
     venice_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], f'garzoni_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], f'garzoni_dataset', RDEType.DATASET.value, is_dataset_obj=True)

@@ -195,7 +195,8 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 from pathlib import Path
 
 gpd.options.io_engine = "pyogrio"
@@ -283,6 +284,7 @@ df_precise_coords.to_csv('geolocated_postcards.csv', index=False)
 # the "no precise coords" are the ones that will only have the city level geolocation, will still have observations ang get triggered by reserach, but no POIs.s
 df_no_precise_coords = df[df['coordinates'].apply(len) == 0].copy()
 df_no_precise_coords['coordinates'] = df_no_precise_coords['country_city_coordinates'].apply(lambda v: [v])
+
 tpe='postcard'
 def produce_obs_gdf(df:pd.DataFrame, need_poi:bool=True) -> gpd.GeoDataFrame:
     tqdm.pandas(desc="Generating obs uuid")
@@ -306,7 +308,7 @@ gdf_obs_no_precise = produce_obs_gdf(df_no_precise_coords, need_poi=False)
 gdf_obs = pd.concat([gdf_obs_precise, gdf_obs_no_precise], ignore_index=False)
 print(f'Total number of observations generated: {len(gdf_obs)}')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'europeana_postcards_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'europeana_postcards_obs', RDEType.OBS.value)
 
 filename_to_wh_infos = {}
 for idx, row in df_wh.iterrows():
@@ -398,10 +400,10 @@ recs = [produce_hr_obj(r.hr_uuid,\
                    r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time', 'rights_attribution']).to_dict(),
                    r['rights_attribution'],
                    'a'
-                   ) \
+                   ).to_dict(flatten_metadata=False) \
                    for _, r in df_hr.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'europeana_postcards_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'europeana_postcards_hrs', RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 
@@ -430,4 +432,4 @@ ds = produce_dataset_obj(
     europeana_area_uuids,
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'europeana_postcards_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'europeana_postcards_dataset', RDEType.DATASET.value, is_dataset_obj=True)

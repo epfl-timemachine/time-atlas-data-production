@@ -15,8 +15,8 @@ from functools import reduce
 import typing
 from collections import Counter
 from datetime import datetime as dt
-from RDEModel import RDEType
-from get_terrain_and_building_heights import processing_points
+from .RDEModel import RDEType, HR, RDETimeRange
+from .get_terrain_and_building_heights import processing_points
 
 UNIVERSAL_CRS = "EPSG:4326"
 
@@ -157,7 +157,7 @@ def produce_hr_obj(uuid: str,
                tpe: str,
                metadata: dict,
                rights_attribution: str = None,
-               paradata: str = 'm') -> tuple[str, dict]:
+               paradata: str = 'm') -> dict:
     # replace all "NaN" values by None in metadata:
     new_md = {}
     for k, v in metadata.items():
@@ -169,18 +169,16 @@ def produce_hr_obj(uuid: str,
         else:
             new_md[k] = None
     
-    return {
-        "uuid": uuid,
-        "dataset": ds,
-        "rde_type": RDEType.HR.value,
-        "paradata": paradata,
-        "type": tpe,
-        "documents": [v[0] for v in obs_uid_list],
-        "start_time": time_range[0],
-        "end_time": time_range[1],
-        "rights_attribution": rights_attribution,
-        "annotated_content": new_md
-    }
+    return HR(
+        uuid=uuid,
+        dataset=ds,
+        type=tpe,
+        time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
+        paradata=paradata,
+        rights_attribution=rights_attribution,
+        documents=[v[0] for v in obs_uid_list],
+        metadata=new_md
+    )
 
 # so the order is displayed in the type annotation and linting.
 LAYER_UUID = str

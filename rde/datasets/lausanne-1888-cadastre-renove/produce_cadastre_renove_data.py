@@ -17,8 +17,8 @@ with open('dataproduction_config.json') as f:
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 
 DATA_SRC_PATH = Path(join(parent_dir, 'data-lausanne/1888-cadastre-renove'))
 
@@ -59,7 +59,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'lausanne_1888_cadastre_renove_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
 
 txt_fp = get_filepath_like(os.path.join(DATA_SRC_PATH, "lausanne-1888-cadastre-renove-registre-"), 'csv')
 dfs = pd.read_csv(txt_fp)
@@ -132,7 +132,7 @@ gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'lausanne_1888_cadastre_renove_observations'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
 QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
 
 #HR RDE Production
@@ -157,12 +157,12 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        r['obs_uuid'],\
                        TR_OBJ,\
                        tpe,\
-                       r[hr_metadata_cols].to_dict()) \
+                       r[hr_metadata_cols].to_dict()).to_dict(flatten_metadata=False) \
             for _, r in dfs.iterrows()
         ]
 
 hr_shorthand = 'lausanne_1888_cadastre_renove_historical_records'
-save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
@@ -192,4 +192,4 @@ ds = produce_dataset_obj(
     lausanne_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'lausanne_1888_cadastre_renove_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'lausanne_1888_cadastre_renove_dataset', RDEType.DATASET.value, is_dataset_obj=True)

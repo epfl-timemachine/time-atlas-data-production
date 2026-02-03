@@ -16,8 +16,8 @@ with open('dataproduction_config.json') as f:
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 
 DATA_SRC_PATH = Path(join(parent_dir, 'data-venice/1808_Sommarioni/'))
 
@@ -135,7 +135,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'sommarioni_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
 
 # storing in a single dataframe all the data that will be needed to add to the Obs objects. 
 geomid_uuid_list = gdf.groupby(by="geometry_id")['uuid'].apply(list).reset_index(name='has_geometry').set_index('geometry_id')
@@ -170,7 +170,7 @@ gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'sommarioni_obs'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
 QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
 
 #HR RDE Production
@@ -211,12 +211,12 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        [[r['obs_uuid'], 'parcel_number']],\
                        TR_OBJ,\
                        tpe,\
-                       r[hr_metadata_cols].to_dict()) \
+                       r[hr_metadata_cols].to_dict()).to_dict(flatten_metadata=False) \
             for _, r in df.iterrows()
         ]
 
 hr_shorthand = 'sommarioni_historical_records'
-save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
@@ -225,10 +225,10 @@ QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
 # Generating the manifest for the textual data
 # (now that all HR uuid were generated)
 
-df_of_hr['page'] = df_of_hr['annotated_content'].apply(lambda v: v['page_number'])
+df_of_hr['page'] = df_of_hr['metadata_content'].apply(lambda v: v['page_number'])
 # only for reordering purpose. (note that parcel number should likely be casted to int, the ordering is not perfect)
-df_of_hr['parcel_number'] = df_of_hr['annotated_content'].apply(lambda v: v['parcel_number'])
-df_of_hr['sub_parcel_number'] = df_of_hr['annotated_content'].apply(lambda v: v['sub_parcel_number'])
+df_of_hr['parcel_number'] = df_of_hr['metadata_content'].apply(lambda v: v['parcel_number'])
+df_of_hr['sub_parcel_number'] = df_of_hr['metadata_content'].apply(lambda v: v['sub_parcel_number'])
 page_to_canvas = df_imgs[['label', 'canvas_id']].set_index('label').to_dict()['canvas_id']
 # preparing the data to insert in the canvas of the manifest.
 df_iiif_links = df_of_hr[df_of_hr['page'].notnull()].copy().sort_values(by=['parcel_number', 'sub_parcel_number'])
@@ -238,7 +238,7 @@ def sommarioni_metadata_object_to_string_representation(metadata: dict) -> str:
     vals = [quick_check(metadata.get(v, '')) for v in ['parcel_number', 'sub_parcel_number', 'owner', 'qualities']]
     return ' | '.join([v for v in vals if len(v) > 0])
 
-df_iiif_links['iiif_display_string'] = df_iiif_links['annotated_content'].apply(sommarioni_metadata_object_to_string_representation)
+df_iiif_links['iiif_display_string'] = df_iiif_links['metadata_content'].apply(sommarioni_metadata_object_to_string_representation)
 df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
 # applying the page to canvas mapping.
 df_iiif_links['canvas_id'] = df_iiif_links['page'].apply(lambda v: page_to_canvas.get(v, None))
@@ -278,4 +278,4 @@ ds = produce_dataset_obj(
     venice_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'sommarioni_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'sommarioni_dataset', RDEType.DATASET.value, is_dataset_obj=True)

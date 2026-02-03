@@ -11,9 +11,9 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
+from timeatlas.data_modeling import *
 from utils import iiif
-from utils.rde import RDE
+from timeatlas.RDEModel import RDEType
 
 with open('dataproduction_config_edifici.json') as f:
     DATA_CONFIG = json.load(f)
@@ -63,7 +63,7 @@ gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'cloudpoints_obs'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
 
 #Produce HRs
 cols_of_non_interest = [
@@ -86,12 +86,12 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        [[r['obs_uuid'], 'EDIFI_ID']],\
                        (r.start_time, r.end_time),\
                        r.type,\
-                       r[df.columns.difference(cols_of_non_interest)].to_dict()) \
+                       r[df.columns.difference(cols_of_non_interest)].to_dict()).to_dict(flatten_metadata=False) \
             for _, r in df.iterrows()
         ]
 
 hr_shorthand = 'cloudpoints_historical_records'
-save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
@@ -153,8 +153,8 @@ df_img['type'] = df_img['folder'].apply(lambda x: 'edifici' if 'edifici' in x el
 # apply the order per grouped by edifi id according to the types:
 df_man = df_img.groupby(['uid', 'type']).apply(lambda x: x.sort_values('folder', key=lambda x: x.map(lambda y: edificies_order.index(y) if y in edificies_order else streets_order.index(y))))
 df_man_edifici = df_man[df_man['type'] == 'edifici'].drop(columns=['uid'])
-df_of_hr['EDIFI_ID'] = df_of_hr['annotated_content'].apply(lambda x: str(x['EDIFI_ID']).zfill(4) if 'EDIFI_ID' in x else None)
-df_of_hr['label_txt'] = df_of_hr['annotated_content'].apply(lambda x: f"{x['aulic_name']}, {x['EDIFI_ID']} - {x['CIVICI']}")
+df_of_hr['EDIFI_ID'] = df_of_hr['metadata_content'].apply(lambda x: str(x['EDIFI_ID']).zfill(4) if 'EDIFI_ID' in x else None)
+df_of_hr['label_txt'] = df_of_hr['metadata_content'].apply(lambda x: f"{x['aulic_name']}, {x['EDIFI_ID']} - {x['CIVICI']}")
 
 # Source Production
 url_prefix = 'https://image-timemachine.epfl.ch/iiif/3/venice%2F3Dbuilding%2Ffigures%2F{folder}/{file_name}.png/full/max/0/default.jpg'
@@ -191,10 +191,10 @@ with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encodin
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, man_list), f, indent=2, ensure_ascii=False)
 
 format = "application/vnd.las"
-df_of_hr['3d_filename'] = df_of_hr['annotated_content'].apply(lambda x: f"edifici_{x['EDIFI_ID']}.las")
+df_of_hr['3d_filename'] = df_of_hr['metadata_content'].apply(lambda x: f"edifici_{x['EDIFI_ID']}.las")
 man_3d_list = {}
 for _, row in df_of_hr.iterrows():
-    content = row['annotated_content']
+    content = row['metadata_content']
     label = f"{content['aulic_name']}, {content['EDIFI_ID']} - {content['CIVICI']}"
     filename = row['3d_filename']
     man_uuid = str(uuid.uuid5(VTM_UUID5_NS, filename))
@@ -238,4 +238,4 @@ ds = produce_dataset_obj(
     venice_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cloudpoints_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cloudpoints_dataset', RDEType.DATASET.value, is_dataset_obj=True)

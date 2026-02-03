@@ -13,8 +13,8 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 
 with open('dataproduction_config.json') as f:
     DATA_CONFIG = json.load(f)
@@ -65,7 +65,7 @@ gdf['end_time'] = gdf['end_date'].apply(format_raimund_dt).fillna(TR_OBJ[1])
 tqdm.pandas(desc="Generating uuid from geometry")
 gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
 gdf['layer_uuid'] = cadaster_layer_uuid
-gdf['rde_type'] = RDE.GEOM.value
+gdf['rde_type'] = RDEType.GEOM.value
 QA_check_uuid_are_unique(gdf)
 
 if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
@@ -75,7 +75,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'dorigo_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
 df = pd.read_json(list(DORIGO_DATA_PATH.rglob('*historical_records.json'))[0])
 
 # fix NaN being serialized as literal in JSON alongside "null"
@@ -132,7 +132,7 @@ gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'dorigo_obs'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
 
 # Producing HRs
 hr_metadata_cols = [
@@ -156,12 +156,12 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        [[r['obs_uuid'], 'place_name']],\
                        (r.start_time, r.end_time),\
                        r.type,\
-                       r[hr_metadata_cols].to_dict()) \
+                       r[hr_metadata_cols].to_dict()).to_dict(flatten_metadata=False) \
             for _, r in df.iterrows()
         ]
 
 hr_shorthand = 'dorigo_historical_records'
-save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
@@ -192,4 +192,4 @@ ds = produce_dataset_obj(
     venice_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'dorigo_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'dorigo_dataset', RDEType.DATASET.value, is_dataset_obj=True)

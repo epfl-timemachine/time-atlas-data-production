@@ -13,7 +13,8 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 from pathlib import Path
 
 gpd.options.io_engine = "pyogrio"
@@ -58,7 +59,7 @@ gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDEType.OBS.value)
 
 from utils.iiif import *
 # Generating the IIIF manifests
@@ -111,10 +112,10 @@ recs = [produce_hr_obj(r.hr_uuid,\
                    r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time'] + drop_cols).to_dict(),
                    r['rights_attribution'],
                    'a'
-                   ) \
+                   ).to_dict(flatten_metadata=False) \
                    for _, r in hr_df.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'dresden_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'dresden_hrs', RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 
@@ -144,4 +145,4 @@ ds = produce_dataset_obj(
     dresden_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'dresden_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'dresden_dataset', RDEType.DATASET.value, is_dataset_obj=True)
