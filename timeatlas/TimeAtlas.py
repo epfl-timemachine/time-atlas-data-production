@@ -11,8 +11,10 @@ from .data_modeling import (
     save_data_file_if_different
 )
 
+#TODO: fix discrepencies on how "hr" are written between the data and the API.
 RDE_TYPE_TO_STATIC_CLASS_DEF = {
     RDEType.HR.value: HR,
+    'hr': HR,
     RDEType.OBS.value: Obs,
     RDEType.POI.value: POI,
     RDEType.GEOM.value: Geometry,

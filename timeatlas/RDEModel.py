@@ -3,7 +3,7 @@ from enum import Enum
 from shapely.geometry import Point, LineString, Polygon, MultiLineString, MultiPolygon
 import shapely
 import json
-from typing import Union, Optional
+from typing import Union, Optional, Self
 from datetime import datetime
 import pandas as pd
 
@@ -68,8 +68,8 @@ class RDE:
     def get_ref(self) -> str:
         return self.uuid
     
-    @staticmethod
-    def constructor_from_json_obj(json_obj: dict) -> 'RDE':
+    @classmethod
+    def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         raise NotImplementedError('This method should be implemented in subclasses')
 
 @dataclass
@@ -92,8 +92,9 @@ class DSConfiguration(RDE):
     metadata_field_config: list[dict] = field(default_factory=list)
     hr_config: list[dict] = field(default_factory=list)
 
-    def constructor_from_json_obj(json_obj: dict) -> 'Dataset':
-        return DSConfiguration(
+    @classmethod
+    def constructor_from_json_obj(cls, json_obj: dict) -> Self:
+        return cls(
             uuid=json_obj['uuid'],
             metadata_field_config=json_obj['dataset_config'].get('metadata_field_config', []),
             hr_config=json_obj.get('hr_config', [])
@@ -112,11 +113,11 @@ class Dataset(RDE):
     hrs: list['HR'] = field(default_factory=list)
     obs: list['Obs'] = field(default_factory=list)
 
-    @staticmethod
-    def constructor_from_json_obj(json_obj: dict) -> 'Dataset':
+    @classmethod
+    def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         config_data = json_obj.get('configuration')
         configuration = DSConfiguration.constructor_from_json_obj(config_data) if config_data else None
-        return Dataset(
+        return cls(
             uuid=json_obj['uuid'],
             slug=json_obj['slug'],
             name=MultiLingualValue(values=json_obj['name']),
@@ -129,10 +130,9 @@ class Dataset(RDE):
     def instantiate_all_rde_members(self, rde_list: list[RDE]) -> None:
         for rde in rde_list:
             if hasattr(rde, "dataset") and rde.dataset == self.uuid:
-                if isinstance(rde, HR):
-                    self.hrs.append(rde)
-                elif isinstance(rde, Obs):
-                    self.obs.append(rde)
+                match rde:
+                    case HR(): self.hrs.append(rde)
+                    case Obs(): self.obs.append(rde)
 
 @dataclass
 class HR(RDE):
@@ -144,9 +144,9 @@ class HR(RDE):
     metadata: dict = field(default_factory=dict)
     rights_attribution: Optional[str] = None
 
-    @staticmethod
-    def constructor_from_json_obj(json_obj: dict) -> 'HR':
-        return HR(
+    @classmethod
+    def constructor_from_json_obj(cls, json_obj: dict) -> Self:
+        return cls(
             uuid=json_obj['uuid'],
             dataset=json_obj['dataset']['uuid'],
             time_range=RDETimeRange(json_obj['start_date'], json_obj['end_date']),
@@ -170,11 +170,11 @@ class HR(RDE):
             result.pop('metadata', None)
         return result
 
-    @staticmethod
-    def constructor_from_dataframe_row(row:pd.Series) -> 'HR':
+    @classmethod
+    def constructor_from_dataframe_row(cls, row:pd.Series) -> Self:
         metadata_keys = set(row.index).difference({'uuid', 'dataset', 'start_time', 'end_time', 'paradata', 'type', 'documents', 'rights_attribution'})
         metadata = {k: row[k] for k in metadata_keys}
-        return HR(
+        return cls(
             uuid=row['uuid'],
             dataset=row['dataset'],
             time_range=RDETimeRange(row['start_time'], row['end_time']),
@@ -196,11 +196,11 @@ class POI(RDE):
     height: HeightInfo
     contains: list[ObsReference] = field(default_factory=list)
 
-    @staticmethod
-    def constructor_from_json_obj(json_obj: dict) -> 'POI':
+    @classmethod
+    def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         geom = json_obj.get('geometry')
         json_obj = json_obj.get('properties', json_obj)  # in case the JSON object is a GeoJSON Feature object
-        return POI(
+        return cls(
             uuid=json_obj['uuid'],
             geometry=shapely.from_geojson(json.dumps(geom)) if geom else None,
             height=HeightInfo(
@@ -227,12 +227,11 @@ class Obs(RDE):
         self.has_geometry = [entity_list[geom_ref] if isinstance(geom_ref, str) and geom_ref in entity_list else geom_ref for geom_ref in self.has_geometry]
         self.has_handle = entity_list[self.has_handle] if isinstance(self.has_handle, str) and self.has_handle in entity_list else self.has_handle
 
-    @staticmethod
-    def constructor_from_json_obj(json_obj: dict) -> 'Obs':
+    @classmethod
+    def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         geom = json_obj.get('geometry')
         json_obj = json_obj.get('properties', json_obj)  # in case the JSON object is a GeoJSON Feature object
-        # print(json_obj)
-        return Obs(
+        return cls(
             uuid=json_obj['uuid'],
             dataset=json_obj['dataset']['uuid'],
             time_range=RDETimeRange(json_obj['start_date'], json_obj['end_date']),
@@ -270,8 +269,9 @@ class Map(RDE):
     version: Optional[str] = None
     falls_within: list[AreaReference] = field(default_factory=list)
 
-    def constructor_from_json_obj(json_obj: dict) -> 'Map':
-        return Map(
+    @classmethod
+    def constructor_from_json_obj(cls, json_obj: dict) -> Self:
+        return cls(
             uuid=json_obj['uuid'],
             name=MultiLingualValue(values=json_obj['name']),
             contains=json_obj.get('contains', []),
@@ -298,12 +298,12 @@ class Geometry(RDE):
     geometry: GeometryType
     layer: Optional[LayerReference] = None
 
-    @staticmethod
-    def constructor_from_json_obj(json_obj: dict) -> 'Geometry':
+    @classmethod
+    def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         # to note, the JSON object is a GeoJSON Feature object
         props = json_obj.get('properties', {})
         geometry = json_obj.get('geometry', {})
-        return Geometry(
+        return cls(
             uuid=props.get('uuid', json_obj.get('uuid')),
             layer=props.get('layer_uuid'),
             geometry=shapely.from_geojson(json.dumps(geometry)),
