@@ -3,11 +3,11 @@ from enum import Enum
 from shapely.geometry import Point, LineString, Polygon, MultiLineString, MultiPolygon
 import shapely
 import json
-from typing import Union, Optional, Self
+from typing import Optional, Self
 from datetime import datetime
 import pandas as pd
 
-type GeometryType = Union[Point, LineString, Polygon, MultiLineString, MultiPolygon]
+type GeometryType = Point | LineString | Polygon | MultiLineString | MultiPolygon
 type UUID = str
 type ObsReference = Obs | UUID
 type HRReference = HR | UUID
@@ -17,7 +17,6 @@ type GeometryReference = Geometry | UUID
 type AreaReference = Area | UUID
 type LayerReference = Layer | UUID
 type MapReference = Map | UUID
-
 
 class RDEType(Enum):
     HR = 'historical_record'
@@ -214,7 +213,6 @@ class POI(RDE):
 class Obs(RDE):
     dataset: DatasetReference
     time_range: RDETimeRange
-    hr_uuid: HRReference
     type: str
     documented_in: HRReference
     geometry: GeometryType
@@ -235,7 +233,6 @@ class Obs(RDE):
             uuid=json_obj['uuid'],
             dataset=json_obj['dataset']['uuid'],
             time_range=RDETimeRange(json_obj['start_date'], json_obj['end_date']),
-            hr_uuid=json_obj.get('hr_uuid'),
             type=json_obj.get('type', ''),
             documented_in=json_obj.get('documented_in')[0] if isinstance(json_obj.get('documented_in'), list) and len(json_obj.get('documented_in')) > 0 else None,
             geometry=shapely.from_geojson(json.dumps(geom)) if geom else None,
