@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e4d1b892-fdfd-5d01-8928-344505c6cff9",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "1898626 - Commercial, Boiler, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1898626.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e77f8ece-71dc-53bf-939a-a68415504946",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "783ceb02-6969-552f-9b70-95eb71111645",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "16c63177-7df1-50d8-8418-b74a30a85385",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1898626.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1898626.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e77f8ece-71dc-53bf-939a-a68415504946"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "8e33d511-46a7-58c2-b9d0-2c34a7c006a0",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "2f883bd8-01a0-5f3b-976b-de91985867f0",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "1898626 - Commercial, Boiler, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5ec7b134-82fe-516c-97b8-515bbe19ff93"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e77f8ece-71dc-53bf-939a-a68415504946",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

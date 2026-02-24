@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "4be8ea95-b3cf-5c0e-80b4-8a2c68c8c976",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "1903811 - Administrative, No heat generator, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1903811.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "c976a64c-6738-5b52-9b6c-91bcc33acaba",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "1ef69efb-87c7-54c8-909e-2ff095c3ceb3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b277cc7b-f6dc-54ae-bc38-f996cef77e4d",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1903811.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1903811.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "c976a64c-6738-5b52-9b6c-91bcc33acaba"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "bc94732c-2521-51a9-8a7a-564d9e33e4a1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "d1c75959-b374-5d42-9d2a-3e7bf16f8ec7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "1903811 - Administrative, No heat generator, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "a224e4bd-6a3e-5807-8db2-fb75454f58f4"
+                }
+              ],
+              "target": [
+                {
+                  "id": "c976a64c-6738-5b52-9b6c-91bcc33acaba",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "5baae833-776f-522d-aab9-c6b8bbf30bb8",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "758730 - Industrial, Boiler, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_758730.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "d90dc5fd-6f8e-5cad-9a10-ef59ed72d72f",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "960155b5-3e8b-59f1-bc69-a31fac1c8aef",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "9a723b8a-3b3f-54e7-8775-cf46d258b72f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_758730.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_758730.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "d90dc5fd-6f8e-5cad-9a10-ef59ed72d72f"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fb051d44-b64e-58ea-b831-e881f6eccf02",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "64211467-8e65-523c-ab23-ca51168b8662",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "758730 - Industrial, Boiler, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "5a5cc497-b9b3-587a-b2f5-39b6fc4824e1"
+                }
+              ],
+              "target": [
+                {
+                  "id": "d90dc5fd-6f8e-5cad-9a10-ef59ed72d72f",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -132,6 +132,27 @@ QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
 
 from utils import iiif
 
+
+# manifest for 2d thumbnails generation
+man_list = {}
+for _, row in df_of_hr.iterrows():
+    content = row['annotated_content']
+    man_label = f"{content['id_building']} - {content['class']}, {content['system_hotwater']}, {content['system_heating']}"
+    hr_uuid = row['uuid']
+    man_uuid = str(uuid.uuid5(VTM_UUID5_NS, man_label))
+    annots = []
+    pages = []
+    building_id = content['id_building']
+    # putting the thumbnail of the 3d vision of the model as the first page:
+    page_0 = iiif.generate_page_object(VTM_UUID5_NS, DS_UUID, 0, man_uuid,  "Thumbnail of the cloudpoint model", \
+                                                f'lausanne/3Dbuilding/thumbnails/qbuilding_{int(building_id)}.png', "image/png", 512, 1024, 'en')
+    pages.append(dict(page_0, metadata = [(hr_uuid, man_label)]))
+    man_cont = iiif.generate_manifest_object(VTM_UUID5_NS, man_uuid, {'en': [man_label]}, 'en', pages, None)
+    man_list[man_uuid] = (man_label, pages[0])
+    with open(f'data/iiif/manifests/{man_uuid}.json', 'w+', encoding='utf-8') as f:
+        json.dump(man_cont, f, indent=2, ensure_ascii=False)
+
+# 3d manifest generation
 format = "application/vnd.las"
 df_of_hr['3d_filename'] = df_of_hr['annotated_content'].apply(lambda x: f"qbuilding_{x['id_building']}.las")
 man_3d_list = {}
@@ -154,7 +175,6 @@ collection_3d_label = {"en": ['Cloudpoints models in LAS format from all lausann
 
 with open(f'data/iiif/collections/{collection_3d_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest_no_thumbnail(collection_3d_manifest_uid, collection_3d_label, man_3d_list), f, indent=2, ensure_ascii=False)
-
 
 # Dataset RDE Production
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']

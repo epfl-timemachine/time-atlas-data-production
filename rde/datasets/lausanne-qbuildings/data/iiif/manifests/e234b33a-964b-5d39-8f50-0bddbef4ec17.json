@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e234b33a-964b-5d39-8f50-0bddbef4ec17",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "773761 - Administrative, Boiler, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_773761.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "55b07151-a203-568b-bb74-0b46cf157e93",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "d0574404-8f00-5a5d-b436-3126b713edf6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "11f21341-adb8-5f43-bd3e-d6c8ca95ac4b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_773761.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_773761.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "55b07151-a203-568b-bb74-0b46cf157e93"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "008f6c09-7278-5e4a-9a5b-8c2b75a7994c",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "47ca8fb9-b0ac-57f1-b99c-b9f2b720443e",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "773761 - Administrative, Boiler, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "88df712e-b203-5e41-b9a1-71b5c38389f8"
+                }
+              ],
+              "target": [
+                {
+                  "id": "55b07151-a203-568b-bb74-0b46cf157e93",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

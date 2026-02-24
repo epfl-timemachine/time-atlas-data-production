@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ab9d17d1-2c73-5ebe-ae3b-9acc50abf825",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "993 - Residential, Boiler, Wood stove"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_993.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "70e876e8-a772-5150-891d-251caa4b3fbf",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "8f0678d3-0de3-51b1-89f2-0f1a4e343caf",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "714b8be2-75c1-5e0c-987d-89a03a32ed02",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_993.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_993.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "70e876e8-a772-5150-891d-251caa4b3fbf"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "ec6d0d81-6043-5db4-87c0-15e7a4b0ef31",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "b1c21b17-7fa3-5237-b7fd-7c0bd12714b3",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "993 - Residential, Boiler, Wood stove"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "1d1e0974-f3f5-5255-9405-dc8cf05ca863"
+                }
+              ],
+              "target": [
+                {
+                  "id": "70e876e8-a772-5150-891d-251caa4b3fbf",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
