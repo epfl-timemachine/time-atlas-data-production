@@ -43,7 +43,7 @@ def all_possible_file_for_curr_bounds(north:float, east:float, south:float, west
 gdf['filenames'] = gdf.apply(lambda r: all_possible_file_for_curr_bounds(r.north, r.east, r.south, r.west),axis=1)
 
 
-def segment_las_cloudpoint_from_polygon(polygon: Polygon, las: laspy.lasdata.LasData, buffer: int = 1) -> laspy.lasdata.LasData:
+def segment_single_las_from_polygon(polygon: Polygon, las: laspy.lasdata.LasData, buffer: int = 1) -> laspy.lasdata.LasData:
     # first segment by the bounds of the polygon:
     polygon = polygon.buffer(buffer) # add a buffer of n meter to the polygon to be sure to include all the points that are close to the border of the polygon
     mask = (las.x >= polygon.bounds[0]-buffer) & (las.x <= polygon.bounds[2]+buffer) & (las.y >= polygon.bounds[1]-buffer) & (las.y <= polygon.bounds[3]+buffer)
@@ -82,14 +82,12 @@ def segment_cloudpoint_from_polygon(polygon: Polygon, las_files: list[str], buil
     if len(las_files) > 1:
         fused_filename = produce_output_filename(las_files)
         fused_filepath = os.path.join(input_folder, fused_filename)
-        if os.path.exists(fused_filepath):
-            las = laspy.read(fused_filepath)
-        else:
+        if not os.path.exists(fused_filepath):
             fusion_las_files(input_folder, las_files, fused_filename)
-            las = laspy.read(fused_filepath)
+        las = laspy.read(fused_filepath)
     else:
         las = laspy.read(os.path.join(input_folder, las_files[0]))
-    segmented = segment_las_cloudpoint_from_polygon(polygon, las)
+    segmented = segment_single_las_from_polygon(polygon, las)
     segmented.write(output_filename)
 
 gdf.progress_apply(lambda r: segment_cloudpoint_from_polygon(r['geometry_lv95'], r['filenames'], r['id_building'], las_files_folder, output_folder), axis=1)
