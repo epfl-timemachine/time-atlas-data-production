@@ -458,8 +458,28 @@ def geodataframe_to_json(gdf: gpd.GeoDataFrame) -> dict:
     os.remove(tmp_fn)
     return g
 
-
 DATA = Union[gpd.GeoDataFrame, list]
+
+def saving_routine(d:list[dict], f:str, name:str, tpe: Union[str, list]) -> None:
+    obj = {
+        "name": name,
+        "type_in_file": tpe if type(tpe) is list else [tpe],
+        "creation_time": now_ts(),
+        "rde_objects": d
+    }
+    with open(f, 'w+', encoding='utf-8') as f:
+        f.write(json.dumps(obj, indent=1, ensure_ascii=False))
+
+def get_data_footprint_in_memory(data: DATA) -> int:
+    '''
+    Returns the size in bytes of the data given as argument, by saving it in a temporary file and getting the size of the file. The temporary file is then deleted.
+    '''
+    tmp_fn = 'tmp_data_file.json'
+    saving_routine(data, tmp_fn, name='tmp', tpe='tmp')
+    size = os.path.getsize(tmp_fn)
+    os.remove(tmp_fn)
+    return size
+
 def save_data_file_if_different(fp:str,
                                 filename:str, 
                                 data:DATA,
@@ -478,15 +498,7 @@ def save_data_file_if_different(fp:str,
         tpe: the type of the data. Will appear in the file name. 
         is_dataset_obj: a boolean indicating whether the data is a dataset object or not. If it is, the function has to remove the "creation_time" field from the object before making the comparison
     '''
-    def saving_routine(d:list[dict], f:str):
-        obj = {
-            "name": name,
-            "type_in_file": tpe if type(tpe) is list else [tpe],
-            "creation_time": now_ts(),
-            "rde_objects": d
-        }
-        with open(f, 'w+', encoding='utf-8') as f:
-            f.write(json.dumps(obj, indent=1, ensure_ascii=False))
+
     filename_with_ext = f'{filename}.json'
     filepath = os.path.join(fp, filename_with_ext)
     if isinstance(data, gpd.GeoDataFrame):
@@ -528,9 +540,14 @@ def save_data_file_if_different(fp:str,
     elif len(matching_files) > 1:
         raise ValueError(f'Multiple files found with the same prefix: {matching_files}')
     #it no matching file, directly saving the new file.
-    # saving the file if no other point of termination happened.
-    saving_routine(t_data, filepath)
-
+    
+    if get_data_footprint_in_memory(t_data) > 100000000: # if the data is bigger than 100MB, we split it into two smaller files to avoid issues with saving and reading large files. The two files are saved with the same name but with a suffix "_part1" and "_part2".
+        mid_point = len(t_data) // 2
+        saving_routine(t_data[:mid_point], filepath.replace('.json', '_part1.json'), name=name+'_part1', tpe=tpe)
+        saving_routine(t_data[mid_point:], filepath.replace('.json', '_part2.json'), name=name+'_part2', tpe=tpe)
+    else:   
+        # saving the file if no other point of termination happened.
+        saving_routine(t_data, filepath, name=name, tpe=tpe)
 
 def get_likely_type_of_series(s:pd.Series) -> str:
     tpe = str(s.dtype)
