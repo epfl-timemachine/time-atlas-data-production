@@ -39,10 +39,15 @@ CLASS_NAME_TO_RDE = {
     'layer': RDEType.LAYER,
     'area': RDEType.AREA
 }
+@dataclass
+class UUIDEntity:
+    uuid: UUID
+
+    def get_ref(self) -> str:
+        return self.uuid
 
 @dataclass
 class RDE:
-    uuid: UUID
 
     def to_dict(self) -> dict:
         result = {}
@@ -63,9 +68,6 @@ class RDE:
         if rde_name in CLASS_NAME_TO_RDE:
             result['rde_type'] = CLASS_NAME_TO_RDE[rde_name].value
         return result
-    
-    def get_ref(self) -> str:
-        return self.uuid
     
     @classmethod
     def constructor_from_json_obj(cls, json_obj: dict) -> Self:
@@ -89,18 +91,23 @@ class MultiLingualValue:
 @dataclass
 class DSConfiguration(RDE):
     metadata_field_config: list[dict] = field(default_factory=list)
-    hr_config: list[dict] = field(default_factory=list)
+    main_label: str = ''
+    sub_label: str = ''
+    display_thumbnail: bool = False
+    external_source: bool = False
 
     @classmethod
     def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         return cls(
-            uuid=json_obj['uuid'],
-            metadata_field_config=json_obj['dataset_config'].get('metadata_field_config', []),
-            hr_config=json_obj.get('hr_config', [])
+            metadata_field_config=json_obj.get('metadata_field_config', []),
+            main_label=json_obj.get('dataset_config', {}).get('main_label', ''),
+            sub_label=json_obj.get('dataset_config', {}).get('sub_label', ''),
+            display_thumbnail=json_obj.get('dataset_config', {}).get('display_thumbnail', False),
+            external_source=json_obj.get('dataset_config', {}).get('external_source', False)
         )
 
 @dataclass
-class Dataset(RDE):
+class Dataset(RDE, UUIDEntity):
     slug: str
     name: MultiLingualValue
     time_range: RDETimeRange
@@ -134,7 +141,7 @@ class Dataset(RDE):
                     case Obs(): self.obs.append(rde)
 
 @dataclass
-class HR(RDE):
+class HR(RDE, UUIDEntity):
     dataset: DatasetReference
     time_range: RDETimeRange
     paradata: str
@@ -190,7 +197,7 @@ class HeightInfo:
     building: Optional[float] = None
 
 @dataclass
-class POI(RDE):
+class POI(RDE, UUIDEntity):
     geometry: Point
     height: HeightInfo
     contains: list[ObsReference] = field(default_factory=list)
@@ -210,7 +217,7 @@ class POI(RDE):
         )
 
 @dataclass
-class Obs(RDE):
+class Obs(RDE, UUIDEntity):
     dataset: DatasetReference
     time_range: RDETimeRange
     type: str
@@ -257,7 +264,7 @@ class GeographicalExtent:
         # software specially avoid it: https://en.wikipedia.org/wiki/180th_meridian)
 
 @dataclass
-class Map(RDE):
+class Map(RDE, UUIDEntity):
     name: MultiLingualValue
     time_range: RDETimeRange
     contains: list[LayerReference] = field(default_factory=list)
@@ -281,7 +288,7 @@ class Map(RDE):
         )
 
 @dataclass 
-class Layer(RDE):
+class Layer(RDE, UUIDEntity):
     slug: str
     name: MultiLingualValue
     description: MultiLingualValue
@@ -291,7 +298,7 @@ class Layer(RDE):
     layer_configs: list[dict] = field(default_factory=list)
 
 @dataclass
-class Geometry(RDE):
+class Geometry(RDE, UUIDEntity):
     geometry: GeometryType
     layer: Optional[LayerReference] = None
 
@@ -307,7 +314,7 @@ class Geometry(RDE):
         )
 
 @dataclass
-class Area(RDE):
+class Area(RDE, UUIDEntity):
     name: MultiLingualValue
     geometry: GeometryType
 
