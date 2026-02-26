@@ -7,8 +7,8 @@ if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
 from utils.data_modeling import *
 from utils.rde import RDE
 
-BEGIN_TR = 18320101
-END_TR = 18881231
+BEGIN_TR = 20240101
+END_TR = 20251231
 TR_OBJ = (datetime_obj_from_int_time(BEGIN_TR), datetime_obj_from_int_time(END_TR, match_to_end=True))
 MAP_SLUG = "lausanne-qbuildings-map"
 MAP_UUID = str(uuid.uuid5(LMAP_UUID5_NS, MAP_SLUG))
@@ -47,7 +47,7 @@ map_1888 = produce_map_obj(
     map_name,
     map_description,
     map_paradata,
-    "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Flausanne-1888-cadastre-vector.png/full/max/0/default.jpg",
+    "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Flausanne-qbuildings-vector.png/full/max/0/default.jpg",
     "1.0",
     TR_OBJ,
     [vector_layer],
