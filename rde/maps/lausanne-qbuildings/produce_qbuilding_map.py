@@ -17,8 +17,8 @@ vector_layer_uuid = str(uuid.uuid5(LMAP_UUID5_NS, vector_layer_slug))
 lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-lausanne-area', 'country-switzerland-area'])
 zoom_lvl= [11,21]
 
-layer_name = {"en": ["Footprints of Q buildings"], "fr": ["Empreintes des bâtiments Q"], "it": ["Impronte degli edifici Q"]}
-layer_description = {"en": ["Footprints of the Q buildings in the city of Lausanne."], "fr": ["Empreintes des bâtiments Q dans la ville de Lausanne."], "it": ["Impronte degli edifici Q nella città di Losanna."]}
+layer_name = {"en": ["Footprints of buildings from the Qbuildings project"], "fr": ["Empreintes des bâtiments du projet Qbuildings"], "it": ["Impronte degli edifici del progetto Qbuildings"]}
+layer_description = {"en": ["Footprints of the buildings from the Qbuildings project for the city of Lausanne."], "fr": ["Empreintes des bâtiments du projet Qbuildings pour la ville de Lausanne."], "it": ["Impronte degli edifici del progetto Qbuildings per la città di Losanna."]}
 vector_layer = produce_layer_obj(
     vector_layer_uuid,
     vector_layer_slug,
