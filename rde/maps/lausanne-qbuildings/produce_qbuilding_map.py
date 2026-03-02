@@ -47,7 +47,7 @@ map_1888 = produce_map_obj(
     map_name,
     map_description,
     map_paradata,
-    "https://image-timemachine.epfl.ch/iiif/3/venice%2Flayer_thumbnails%2Flausanne-qbuildings-vector.png/full/max/0/default.jpg",
+    "https://image-timemachine.epfl.ch/iiif/3/lausanne%2Flayer_thumbnails%2Flausanne-qbuildings-vector.png/full/max/0/default.jpg",
     "1.0",
     TR_OBJ,
     [vector_layer],
