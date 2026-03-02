@@ -45,8 +45,12 @@ TR_OBJ = (formatted_begin, formatted_end)
 old_df = pd.read_json(list(CATASTICI_DATA_PATH.rglob('catastici_text_data_*.json'))[-1])
 df = gpd.read_file(list(Path('src').rglob('1740_Catastici_*.geojson'))[-1])
 df = df.drop(columns=['tif_path_img'])
-df['tif_path_img'] = old_df['tif_path_img']
-df['path_img'] = old_df['path_img']
+
+# the order of lines between the new and old version of the dataset have changed.
+old_uid_to_tif_path_img = old_df.set_index('uid')['tif_path_img'].to_dict()
+old_uid_to_path_img = old_df.set_index('uid')['path_img'].to_dict()
+df['tif_path_img'] = df['uid'].map(old_uid_to_tif_path_img)
+df['path_img'] = df['uid'].map(old_uid_to_path_img)
 
 drop_cols = [
     'owner_code' # because it is redundant with PP_OwnerCode_SIMPL
