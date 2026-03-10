@@ -3,7 +3,7 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2026-01-26T13:42:49.698200",
+ "creation_time": "2026-02-24T18:12:05.493604",
  "rde_objects": [
   {
    "uuid": "93d47eb8-f298-59c4-ab1d-9e6a217788f2",
@@ -124,7 +124,7 @@
    ],
    "start_time": "2024-01-01T00:00:00",
    "end_time": "2024-12-31T23:59:59",
-   "hr_config": {
+   "configuration": {
     "main_label": "${aulic_name}",
     "sub_label": "${EDIFI_ID}",
     "display_thumbnail": true,
@@ -152,43 +152,22 @@
       "tag": null
      },
      {
-      "id": "points_density",
-      "type": "FLOAT",
+      "id": "SESTIERE",
+      "type": "STRING",
       "display_label": {
        "en": [
-        "Points density"
+        "District"
        ],
        "it": [
-        "Densità di punti"
+        "Sestiere"
        ],
        "fr": [
-        "Densité de points"
+        "Sestiere"
        ]
       },
       "nullable": false,
       "indexable": false,
-      "paradata": "a",
-      "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "style",
-      "type": "STRING",
-      "display_label": {
-       "en": [
-        "Style"
-       ],
-       "it": [
-        "Stile"
-       ],
-       "fr": [
-        "Style"
-       ]
-      },
-      "nullable": true,
-      "indexable": false,
-      "paradata": "m",
+      "paradata": "s",
       "short_display": false,
       "hidden": false,
       "tag": null
@@ -215,6 +194,90 @@
       "tag": null
      },
      {
+      "id": "aulic_name",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Aulic name"
+       ],
+       "it": [
+        "Nome aulico"
+       ],
+       "fr": [
+        "Nom aulique"
+       ]
+      },
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PLACE"
+     },
+     {
+      "id": "style",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Style"
+       ],
+       "it": [
+        "Stile"
+       ],
+       "fr": [
+        "Style"
+       ]
+      },
+      "nullable": true,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null
+     },
+     {
+      "id": "EDIFI_ID",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "EDIFICI ID"
+       ],
+       "it": [
+        "EDIFICI ID"
+       ],
+       "fr": [
+        "EDIFICI ID"
+       ]
+      },
+      "nullable": false,
+      "indexable": false,
+      "paradata": "s",
+      "short_display": true,
+      "hidden": false,
+      "tag": null
+     },
+     {
+      "id": "points_density",
+      "type": "FLOAT",
+      "display_label": {
+       "en": [
+        "Points density"
+       ],
+       "it": [
+        "Densità di punti"
+       ],
+       "fr": [
+        "Densité de points"
+       ]
+      },
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": false,
+      "tag": null
+     },
+     {
       "id": "max_height",
       "type": "FLOAT",
       "display_label": {
@@ -226,6 +289,27 @@
        ],
        "fr": [
         "Hauteur maximale"
+       ]
+      },
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": false,
+      "tag": null
+     },
+     {
+      "id": "volume",
+      "type": "FLOAT",
+      "display_label": {
+       "en": [
+        "Volume [m3]"
+       ],
+       "it": [
+        "Volume [m3]"
+       ],
+       "fr": [
+        "Volume [m3]"
        ]
       },
       "nullable": false,
@@ -257,20 +341,41 @@
       "tag": null
      },
      {
-      "id": "nb_points",
-      "type": "INTEGER",
+      "id": "typology",
+      "type": "STRING",
       "display_label": {
        "en": [
-        "Number of points"
+        "Typology"
        ],
        "it": [
-        "Numero di punti"
+        "Tipologia"
        ],
        "fr": [
-        "Nombre de points"
+        "Typologie"
        ]
       },
-      "nullable": false,
+      "nullable": true,
+      "indexable": true,
+      "paradata": null,
+      "short_display": false,
+      "hidden": false,
+      "tag": null
+     },
+     {
+      "id": "area",
+      "type": "FLOAT",
+      "display_label": {
+       "en": [
+        "Area [m2]"
+       ],
+       "it": [
+        "Area [m2]"
+       ],
+       "fr": [
+        "Aire [m2]"
+       ]
+      },
+      "nullable": true,
       "indexable": false,
       "paradata": "a",
       "short_display": false,
@@ -299,38 +404,17 @@
       "tag": null
      },
      {
-      "id": "typology",
-      "type": "STRING",
+      "id": "nb_points",
+      "type": "INTEGER",
       "display_label": {
        "en": [
-        "Typology"
+        "Number of points"
        ],
        "it": [
-        "Tipologia"
+        "Numero di punti"
        ],
        "fr": [
-        "Typologie"
-       ]
-      },
-      "nullable": true,
-      "indexable": true,
-      "paradata": null,
-      "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "volume",
-      "type": "FLOAT",
-      "display_label": {
-       "en": [
-        "Volume [m3]"
-       ],
-       "it": [
-        "Volume [m3]"
-       ],
-       "fr": [
-        "Volume [m3]"
+        "Nombre de points"
        ]
       },
       "nullable": false,
@@ -339,90 +423,6 @@
       "short_display": false,
       "hidden": false,
       "tag": null
-     },
-     {
-      "id": "EDIFI_ID",
-      "type": "STRING",
-      "display_label": {
-       "en": [
-        "EDIFICI ID"
-       ],
-       "it": [
-        "EDIFICI ID"
-       ],
-       "fr": [
-        "EDIFICI ID"
-       ]
-      },
-      "nullable": false,
-      "indexable": false,
-      "paradata": "s",
-      "short_display": true,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "area",
-      "type": "FLOAT",
-      "display_label": {
-       "en": [
-        "Area [m2]"
-       ],
-       "it": [
-        "Area [m2]"
-       ],
-       "fr": [
-        "Aire [m2]"
-       ]
-      },
-      "nullable": true,
-      "indexable": false,
-      "paradata": "a",
-      "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "SESTIERE",
-      "type": "STRING",
-      "display_label": {
-       "en": [
-        "District"
-       ],
-       "it": [
-        "Sestiere"
-       ],
-       "fr": [
-        "Sestiere"
-       ]
-      },
-      "nullable": false,
-      "indexable": false,
-      "paradata": "s",
-      "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "aulic_name",
-      "type": "STRING",
-      "display_label": {
-       "en": [
-        "Aulic name"
-       ],
-       "it": [
-        "Nome aulico"
-       ],
-       "fr": [
-        "Nom aulique"
-       ]
-      },
-      "nullable": false,
-      "indexable": true,
-      "paradata": "m",
-      "short_display": true,
-      "hidden": false,
-      "tag": "PLACE"
      }
     ]
    },
@@ -430,7 +430,7 @@
     "ce22c093-3d47-56b8-bf06-0ab86bda0db4",
     "ae0fb021-bbb4-5de7-bca2-afddad4b9d17"
    ],
-   "creation_time": "2026-01-26T13:42:49.697126"
+   "creation_time": "2026-02-24T18:12:05.489991"
   }
  ]
 }

@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "be04f01c-6fad-54ac-a1d5-5101706caa55",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "1899405 - Residential, Other, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1899405.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ada27dea-8715-539a-acd3-86f0d6f8ed54",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "17f3ead5-7374-59b9-87a0-4efbfda295f6",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "51e16470-efde-53a1-8549-693cd8245023",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1899405.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1899405.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ada27dea-8715-539a-acd3-86f0d6f8ed54"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "99fcde90-9fd6-5041-b456-3f6ebaed29ff",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "668deb90-33ce-5b44-88dd-89c12d6bc3e7",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "1899405 - Residential, Other, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "2840cb39-9c82-5b12-a49b-8498e573d55e"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ada27dea-8715-539a-acd3-86f0d6f8ed54",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

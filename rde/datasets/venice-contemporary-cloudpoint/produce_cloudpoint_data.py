@@ -170,15 +170,15 @@ for group, sdf in df_man_edifici.groupby('uid'):
     man_uuid = str(uuid.uuid5(VTM_UUID5_NS, man_label))
     annots = []
     pages = []
+    # putting the thumbnail of the 3d vision of the model as the first page:
+    page_0 = iiif.generate_page_object(VTM_UUID5_NS, DS_UUID, 0, man_uuid,  "Thumbnail of the cloudpoint model", \
+                                                f'venice/3Dbuilding/thumbnails/edifici_{int(group)}.png', "image/png", 512, 1024, 'en')
+    pages.append(dict(page_0, metadata = [(hr_uuid, man_label)]))
     for i, (num, r) in enumerate(sdf.iterrows()):
         canvas_uuid = str(uuid.uuid5(VTM_UUID5_NS, r['filename']))
-        page_obj = iiif.generate_page_object(VTM_UUID5_NS, DS_UUID, i, man_uuid,  r['filename'].replace('/', '').replace('.png', ''), \
+        page_obj = iiif.generate_page_object(VTM_UUID5_NS, DS_UUID, i+1, man_uuid,  r['filename'].replace('/', '').replace('.png', ''), \
                                                 'venice/3Dbuilding/figures/' + r['folder'].replace('/', '') + '/' + r['filename'].replace('/', ''), r['media_type'], r['height'], r['width'], 'en')
-
-        if i == 0:
-            pages.append(dict(page_obj, metadata = [(hr_uuid, man_label)]))
-        else:
-            pages.append(page_obj)
+        pages.append(page_obj)
     man_cont = iiif.generate_manifest_object(VTM_UUID5_NS, man_uuid, {'en': [man_label]}, 'en', pages, None)
     man_list[man_uuid] = (man_label, pages[0])
     with open(f'data/iiif/manifests/{man_uuid}.json', 'w+', encoding='utf-8') as f:

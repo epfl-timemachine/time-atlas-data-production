@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "05cc4dd1-d98d-5918-b637-aa2e9516652a",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "1118 - Residential, Boiler, Boiler for multiple buildings"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1118.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "e610c133-720b-5ff1-8861-cf794bead335",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "9a271f99-2fb2-5c0b-a564-734e7af034ef",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "99ad3656-1e81-53af-a9c4-ee3c86d1a888",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1118.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_1118.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "e610c133-720b-5ff1-8861-cf794bead335"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "c049acb6-913e-54fc-82fc-65faac8ad195",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "730d312b-1706-5281-af2d-43afb06b1954",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "1118 - Residential, Boiler, Boiler for multiple buildings"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "8d306d27-be9c-545a-a262-3072d73d337d"
+                }
+              ],
+              "target": [
+                {
+                  "id": "e610c133-720b-5ff1-8861-cf794bead335",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

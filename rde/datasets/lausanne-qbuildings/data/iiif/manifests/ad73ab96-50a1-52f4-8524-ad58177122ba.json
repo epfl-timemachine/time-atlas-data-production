@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "ad73ab96-50a1-52f4-8524-ad58177122ba",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "754798 - Residential, Boiler, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_754798.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8d98cf61-373f-5794-8b97-adeefd09344d",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "448f8d0c-6036-5602-b6b1-2c52037e9d69",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "055a0daf-cd5b-5a0a-bfab-28b93bba0f7f",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_754798.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_754798.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8d98cf61-373f-5794-8b97-adeefd09344d"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "dfc51bbf-a9c2-55c1-a9b0-4dbc067d5c7a",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "69370718-435e-56c9-b2d3-cd6123dd57aa",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "754798 - Residential, Boiler, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "c17e1661-4908-5af2-bcd7-9236a6fd453a"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8d98cf61-373f-5794-8b97-adeefd09344d",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

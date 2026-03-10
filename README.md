@@ -328,7 +328,7 @@ Whenever a RDE has a field that can be expressed in multiple language (like its 
 {
     "id": "<ad-hoc label>",
     "dataset": "<dataset_uuid>",
-    "hr_config": {
+    "configuration": {
         "main_label": "<formatted>",
         "sub_label": "<formatted>",
         "metadata_field_config": [
@@ -345,7 +345,7 @@ Whenever a RDE has a field that can be expressed in multiple language (like its 
 * `main_label`: A formatting string, similar purpose as the `main_label`, only for a potential sub label.
 * `metadata_field_config`: List of JSON object of set form, describes how the frontend and/or the backend should manipulate the values recorded in the HR's `metadata` property. Consult the next section for documentation regarding this property.
 
-**NOTE**:  It might be possible that other RDE types than the HR might require some specific per-dataset configuration. If that is the case, a similar parametre as `hr_config` will contain a new configuration dict which will be described in this document.
+**NOTE**:  It might be possible that other RDE types than the HR might require some specific per-dataset configuration. If that is the case, a similar parametre as `configuration` will contain a new configuration dict which will be described in this document.
 
 
 #### RDE Metadata configuration

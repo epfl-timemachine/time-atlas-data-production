@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "c85c3bd8-b7fc-5efe-832d-a09e4515d50e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "755800 - Residential, Other, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_755800.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "8fa440ea-6b6c-5e13-bd45-b20d9124c717",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "f8db456e-eea5-50b4-93b9-e3cab4c17231",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "3057ffdc-4372-5e83-bb80-da4302bf7eaf",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_755800.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_755800.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "8fa440ea-6b6c-5e13-bd45-b20d9124c717"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "fc16181c-f1d3-53fb-a3f3-1acab77ee297",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "96b5e0f7-99af-5f38-8389-c28998dc5a35",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "755800 - Residential, Other, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "9172491b-7818-5e87-bc7c-7c044a98e3e6"
+                }
+              ],
+              "target": [
+                {
+                  "id": "8fa440ea-6b6c-5e13-bd45-b20d9124c717",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

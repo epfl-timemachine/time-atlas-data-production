@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "e6c19cc6-59a9-5c0a-a9a7-a314dd4ebbf6",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "756150 - Education, Boiler, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_756150.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "a0f420c1-cc41-59b4-b4ea-f43edc7de3a1",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "b1bfbf54-b1b6-5df8-b54b-67b0170abc54",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "6d1123eb-da28-54ae-828b-734f3f566330",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_756150.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_756150.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "a0f420c1-cc41-59b4-b4ea-f43edc7de3a1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "97874e00-9fee-5d96-84f2-d4df31af15f5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "180a3365-e421-5918-99e3-788467853acc",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "756150 - Education, Boiler, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "231d6633-9bcb-56b2-b278-0e687b1a38ac"
+                }
+              ],
+              "target": [
+                {
+                  "id": "a0f420c1-cc41-59b4-b4ea-f43edc7de3a1",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

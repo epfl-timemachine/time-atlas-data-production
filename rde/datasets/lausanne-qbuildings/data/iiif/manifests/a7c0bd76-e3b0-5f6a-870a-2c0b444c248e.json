@@ -1,0 +1,88 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "a7c0bd76-e3b0-5f6a-870a-2c0b444c248e",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "778595 - Other, Boiler, Not documented"
+    ]
+  },
+  "thumbnail": [
+    {
+      "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_778595.png/full/300,/0/default.jpg",
+      "type": "Image"
+    }
+  ],
+  "items": [
+    {
+      "id": "ea0cb33e-dc95-557e-b207-76555b326bec",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Thumbnail of the cloudpoint model"
+        ]
+      },
+      "height": 512,
+      "width": 1024,
+      "items": [
+        {
+          "id": "91880121-cb1e-5e7e-8f57-8ef20962fda2",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "371322c9-a199-52df-a50f-eb42d5858b72",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_778595.png/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/png",
+                "height": 512,
+                "width": 1024,
+                "service": [
+                  {
+                    "id": "https://image-timemachine.epfl.ch/iiif/3/lausanne%2F3Dbuilding%2Fthumbnails%2Fqbuilding_778595.png",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "ea0cb33e-dc95-557e-b207-76555b326bec"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "b5c3f260-2839-50a2-8537-32d428e263b3",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "734b88c6-ec06-51c8-8fcc-d08f3ba9597f",
+              "type": "Annotation",
+              "motivation": "commenting",
+              "body": [
+                {
+                  "type": "TextualBody",
+                  "language": "en",
+                  "format": "text/html",
+                  "value": "778595 - Other, Boiler, Not documented"
+                },
+                {
+                  "type": "rde:HistoricalRecord",
+                  "id": "dc978296-07f1-50e8-be79-16ec9b9c37c2"
+                }
+              ],
+              "target": [
+                {
+                  "id": "ea0cb33e-dc95-557e-b207-76555b326bec",
+                  "type": "Canvas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
