@@ -3,8 +3,8 @@ import os
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 
 BASE_SLUG = 'venice-dorigo'
 MAP_SLUG = f"{BASE_SLUG}-map"
@@ -58,5 +58,5 @@ contemporary_map = produce_map_obj(MAP_UUID,
                               areas_id=venice_area_uuids
                              )
 
-save_data_file_if_different('', 'map', [contemporary_map], 'dorigo_map', RDE.MAP.value)
-save_data_file_if_different('', 'layers', layers, 'dorigo_layers', RDE.LAYER.value)
+save_data_file_if_different('', 'map', [contemporary_map], 'dorigo_map', RDEType.MAP.value)
+save_data_file_if_different('', 'layers', layers, 'dorigo_layers', RDEType.LAYER.value)

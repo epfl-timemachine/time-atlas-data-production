@@ -123,7 +123,7 @@ gdf['start_time'] = pd.Series(data = [TR_OBJ[0]] * len(gdf), name='start_time')
 gdf['end_time'] = pd.Series(data = [TR_OBJ[1]] * len(gdf), name='end_time')
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
+gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
 gdf['layer_uuid'] = cadaster_layer_uuid
 gdf['rde_type'] = "geometry"
 QA_check_uuid_are_unique(gdf)
@@ -152,10 +152,10 @@ df['owner_transcription'] = df['owner_transcription'].fillna('Unknown owner')
 cols_for_hr_uuid_prod = sorted(set(df.columns).difference({'geometry_id', 'has_geometry', 'coordinate', 'parcel_id'}))
 
 tqdm.pandas(desc="Generating uuid for hr")
-df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['unique_id']), axis=1)
+df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['unique_id']), axis=1)
 
 tqdm.pandas(desc="Generating uuid for obs")
-df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['parcel_id', 'place', 'hr_uuid']), axis=1)
+df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['parcel_id', 'place', 'hr_uuid']), axis=1)
 
 # Obs RDE Procution
 obs_df = df[['obs_uuid','hr_uuid', 'coordinate']].groupby(by=['obs_uuid','coordinate']).agg(list).reset_index().set_index('obs_uuid')
@@ -225,10 +225,10 @@ QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
 # Generating the manifest for the textual data
 # (now that all HR uuid were generated)
 
-df_of_hr['page'] = df_of_hr['metadata_content'].apply(lambda v: v['page_number'])
+df_of_hr['page'] = df_of_hr['metadata'].apply(lambda v: v['page_number'])
 # only for reordering purpose. (note that parcel number should likely be casted to int, the ordering is not perfect)
-df_of_hr['parcel_number'] = df_of_hr['metadata_content'].apply(lambda v: v['parcel_number'])
-df_of_hr['sub_parcel_number'] = df_of_hr['metadata_content'].apply(lambda v: v['sub_parcel_number'])
+df_of_hr['parcel_number'] = df_of_hr['metadata'].apply(lambda v: v['parcel_number'])
+df_of_hr['sub_parcel_number'] = df_of_hr['metadata'].apply(lambda v: v['sub_parcel_number'])
 page_to_canvas = df_imgs[['label', 'canvas_id']].set_index('label').to_dict()['canvas_id']
 # preparing the data to insert in the canvas of the manifest.
 df_iiif_links = df_of_hr[df_of_hr['page'].notnull()].copy().sort_values(by=['parcel_number', 'sub_parcel_number'])
@@ -238,7 +238,7 @@ def sommarioni_metadata_object_to_string_representation(metadata: dict) -> str:
     vals = [quick_check(metadata.get(v, '')) for v in ['parcel_number', 'sub_parcel_number', 'owner', 'qualities']]
     return ' | '.join([v for v in vals if len(v) > 0])
 
-df_iiif_links['iiif_display_string'] = df_iiif_links['metadata_content'].apply(sommarioni_metadata_object_to_string_representation)
+df_iiif_links['iiif_display_string'] = df_iiif_links['metadata'].apply(sommarioni_metadata_object_to_string_representation)
 df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
 # applying the page to canvas mapping.
 df_iiif_links['canvas_id'] = df_iiif_links['page'].apply(lambda v: page_to_canvas.get(v, None))

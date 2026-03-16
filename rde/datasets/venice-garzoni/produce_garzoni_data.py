@@ -61,7 +61,7 @@ gdf['start_time'] = pd.Series(data = [PAR_TR_OBJ[0]] * len(gdf), name='start_tim
 gdf['end_time'] = pd.Series(data = [PAR_TR_OBJ[1]] * len(gdf), name='end_time')
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['geometry']), axis=1)
+gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['geometry']), axis=1)
 gdf['layer_uuid'] = parish_layer_uuid
 gdf['rde_type'] = "geometry"
 
@@ -170,7 +170,7 @@ grz_to_loc = pd.read_csv(join(GARZONI_DATA_SRC, 'grz_parish_to_geometry_id_and_c
 
 # note that poi are still generated here for legacy reasons, as the script was built with obs being derived for poi rather than the reverse. 
 # However they are not saved, and the poi from the merge_obs script are the one that will link the obs from this dataset.
-grz_to_loc['poi_uuid'] = grz_to_loc.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['church_coordinate']), axis=1)
+grz_to_loc['poi_uuid'] = grz_to_loc.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['church_coordinate']), axis=1)
 
 def parse_coordinates(coord:str) -> Point:
     c1, c2 = coord.split(' ')
@@ -202,7 +202,7 @@ for l in parish_loc_cols:
     df_flat[s] = df_flat.apply(lambda v: (make_uuid_from_row_selection(VTM_UUID5_NS, v, ["Contract ID"], l), v[s]) if v[s] else None, axis=1)
 
 tqdm.pandas(desc="Generating uuid for HRs")
-df_flat['hr_uuid'] = df_flat.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['Contract ID']), axis=1)
+df_flat['hr_uuid'] = df_flat.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['Contract ID']), axis=1)
 
 # Obs. RDE Production
 # because of the cardinality of the different links between all data, we need to prepare dictionnary of uuid and generate the obs in two steps.

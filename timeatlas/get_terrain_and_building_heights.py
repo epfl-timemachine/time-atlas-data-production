@@ -112,7 +112,7 @@ def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd
     Assigns terrain and building heights to point features.
     Args:
         points (gpd.GeoDataFrame): GeoDataFrame containing point features.
-        format_rde (bool): If True, format the output for RDE. (storing building and terrain height in a single column)
+        format_rde (bool): If True, format the output for RDEType. (storing building and terrain height in a single column)
     Returns:
         gpd.GeoDataFrame: GeoDataFrame with terrain and building heights assigned to point features.
     '''

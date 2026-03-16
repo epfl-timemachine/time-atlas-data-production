@@ -45,9 +45,9 @@ gdf['end_time'] = gdf['end_year'].apply(lambda y: datetime_obj_from_int_time(y*1
 df_wh['image_id'] = df_wh.image_url.apply(lambda x: f"image_{x.split('id=')[1]}.jpg")
 
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='hr'), axis=1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='hr'), axis=1)
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
 
 tpe='photograph'
 

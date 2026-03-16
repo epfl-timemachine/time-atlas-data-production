@@ -34,7 +34,7 @@ run_scripts_in_directory() {
             script=$(ls *.py 2>/dev/null)
             if [ -n "$script" ]; then
                 echo "Running script for $data_type: $folder"
-                python "$script"
+                python3 "$script"
                 if [ $? -ne 0 ]; then
                     echo "Error: Script $script in $folder failed."
                     deactivate
@@ -53,19 +53,19 @@ run_scripts_in_directory() {
 run_scripts_in_directory "rde/maps"
 
 # Step 3: Run scripts in rde/datasets
-run_scripts_in_directory "rde/datasets" "amsterdam-1832-huurwarden" "europeana-pipeline-postcards" "venice-1740-catastici" "venice-1808-sommarioni" "dresden-4d-browser-data" "lausanne-mhl-iconographie" "lausanne-1888-cadastre-renove" "venice-contemporary-cloudpoint"
+run_scripts_in_directory "rde/datasets" "europeana-pipeline-postcards" "venice-1740-catastici" "venice-1808-sommarioni" "venice-contemporary-cloudpoint" "venice-dorigo" "ludus-data"
 
 # Step 4: Run scripts in rde/areas
 cd rde/areas
 echo "Generating data for areas"
-python produce_areas.py
+python3 produce_areas.py
 echo ""
 cd - > /dev/null
 
 # Step 4: Run script in rde/pois
 cd rde/pois
 echo "Generating Points of Interests object from the observations"
-python merge_obs.py
+python3 merge_obs.py
 echo ""
 cd - > /dev/null
 
@@ -75,7 +75,7 @@ echo "Data generation completed successfully."
 # Step 5: Validate data
 pip install -r validation/requirements.txt
 cd validation
-python validate_data.py
+python3 validate_data.py
 
 # Deactivate and remove the virtual environment
 cd - > /dev/null

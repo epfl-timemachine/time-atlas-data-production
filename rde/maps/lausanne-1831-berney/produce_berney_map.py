@@ -3,8 +3,8 @@ import os
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 
 BASE_SLUG = 'lausanne-1831'
 MAP_SLUG = f"{BASE_SLUG}-map"
@@ -85,5 +85,5 @@ eighteen_o_eight_map_obj = produce_map_obj(MAP_UUID,
                               areas_id=lausanne_area_uuids
                              )
 
-save_data_file_if_different('', 'map', [eighteen_o_eight_map_obj], '1831_berney_map', RDE.MAP.value)
-save_data_file_if_different('', 'layers', layers, '1831_berney_layers', RDE.LAYER.value)
+save_data_file_if_different('', 'map', [eighteen_o_eight_map_obj], '1831_berney_map', RDEType.MAP.value)
+save_data_file_if_different('', 'layers', layers, '1831_berney_layers', RDEType.LAYER.value)

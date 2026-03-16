@@ -57,9 +57,9 @@ QA_check_uuid_are_unique(gdf)
 save_data_file_if_different(MAP_FOLDER, 'geometries_street_network', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], '1808_street_network_geometries', RDEType.GEOM.value)
 gdf['coordinate'] = gdf['geometry'].apply(lambda v: v.centroid)
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['coordinate']), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['coordinate']), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['index']), axis = 1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['index']), axis = 1)
 
 # HR RDE Production
 tpe = "street toponym"

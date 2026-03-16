@@ -57,7 +57,7 @@ gdf_edifici['start_time'] = geom_begin
 gdf_edifici['end_time'] = geom_end
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf_edifici['uuid'] = gdf_edifici.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['EDIFI_ID']), axis=1)
+gdf_edifici['uuid'] = gdf_edifici.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['EDIFI_ID']), axis=1)
 # fetching only the uuid that matters for the current sample version of the dataset.
 gdf_geom = gdf_geom.merge(gdf_edifici[['uuid', 'EDIFI_ID']], on='EDIFI_ID')
 gdf_edifici['layer_uuid'] = edifici_layer_uuid

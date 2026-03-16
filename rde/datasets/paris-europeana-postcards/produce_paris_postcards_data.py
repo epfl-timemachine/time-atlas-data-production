@@ -96,13 +96,13 @@ df['Monuments'] = df['Monuments'].apply(literal_eval)
 
 df['start_time'], df['end_time']= zip(*df['date'].apply(start_end_date_from_paris_postcards_date_value))
 tqdm.pandas(desc="Generating hr uuid")
-df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['Image Name']), axis=1)
+df['hr_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['Image Name']), axis=1)
 
 def quick_uuid(hr_uuid:str, monument:str) -> str: 
     return str(uuid.uuid5(TM_UUID5_NS, f'{hr_uuid}-{monument}'))  
 
 tqdm.pandas(desc="Generating obs uuid")
-df['obs_data'] = df.progress_apply(lambda r: [(m,c, quick_uuid(r['hr_uuid'], m)) for m,c in zip(r['Monuments'], r['Monuments_lat_lon'])], axis=1)
+df['obs_data'] = df.apply(lambda r: [(m,c, quick_uuid(r['hr_uuid'], m)) for m,c in zip(r['Monuments'], r['Monuments_lat_lon'])], axis=1)
 df_obs = df[['obs_data', 'hr_uuid', 'start_time', 'end_time']].copy().explode('obs_data')
 df_obs['lat_lon'], df_obs['obs_uuid'] = df_obs['obs_data'].apply(lambda x: x[1]), df_obs['obs_data'].apply(lambda x: x[2])
 df_obs = df_obs.drop(columns=['obs_data'])

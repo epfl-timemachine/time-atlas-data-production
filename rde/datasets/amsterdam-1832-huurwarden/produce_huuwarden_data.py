@@ -46,7 +46,7 @@ MAP_FOLDER = '../../maps/amsterdam-1832-huurwarden/'
 cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'huurwarden')
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['OBJECTID']), axis=1)
+gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['OBJECTID']), axis=1)
 object_id_to_uuid = gdf.set_index('OBJECTID')['uuid'].to_dict()
 df['has_geometry'] = df['OBJECTID'].apply(lambda r: object_id_to_uuid[r])
 gdf['layer_uuid'] = cadaster_layer_uuid
@@ -65,10 +65,10 @@ save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', '
 cols_for_hr_uuid_prod = sorted(set(df.columns).difference({'geometry_id', 'has_geometry', 'coordinate', 'parcel_id'}))
 
 tqdm.pandas(desc="Generating uuid for hr")
-df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='hr'), axis=1)
+df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='hr'), axis=1)
 
 tqdm.pandas(desc="Generating uuid for obs")
-df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='obs'), axis=1)
+df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='obs'), axis=1)
 
 obs_df = df[['obs_uuid','hr_uuid', 'geometry']].groupby(by=['obs_uuid','geometry']).agg(list).reset_index().set_index('obs_uuid')
 # I have to do that because there is 7 obs. that have two historical sources recording it...

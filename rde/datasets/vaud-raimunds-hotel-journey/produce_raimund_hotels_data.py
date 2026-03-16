@@ -47,9 +47,9 @@ def date_parser(date_field:str) -> tuple[str, str]:
 gdf['start_time'], gdf['end_time'] = zip(*gdf['dates'].apply(date_parser))
 gdf['night_stays'] = gdf['dates'].apply(lambda dates: len(dates.split('/')) - 1)
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['photo_name'], ad_hoc_seed='obs'), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['photo_name'], ad_hoc_seed='obs'), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['photo_name'], ad_hoc_seed='hr'), axis=1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['photo_name'], ad_hoc_seed='hr'), axis=1)
 
 tpe='hotel'
 

@@ -63,7 +63,7 @@ gdf['start_time'] = gdf['start_date'].apply(format_raimund_dt).fillna(TR_OBJ[0])
 gdf['end_time'] = gdf['end_date'].apply(format_raimund_dt).fillna(TR_OBJ[1])
 # TODO: allow for multipolygon??
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
+gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
 gdf['layer_uuid'] = cadaster_layer_uuid
 gdf['rde_type'] = RDEType.GEOM.value
 QA_check_uuid_are_unique(gdf)
@@ -108,18 +108,18 @@ df['bibliographic_citation'] = df['pages'].apply(lambda pgs: CITATION_FMT + '-'.
 
 # likely not the most optimized way to do it, but I had trouble wrapping my head around how to do it purely with pandas operations.
 tqdm.pandas(desc="Merging geometries")
-df['geometries'] = df['geometry_ids'].progress_apply(lambda vs: union_geom_from_geometry_ids_list(vs, gdf))
+df['geometries'] = df['geometry_ids'].apply(lambda vs: union_geom_from_geometry_ids_list(vs, gdf))
 df['centroid'] = df['geometries'].apply(lambda g: g.centroid)
 df['corrected_centroid'] = df.apply(lambda row: constraint_point_to_center_of_one_polygon(row['centroid'], row['geometries']), axis=1)
 def find_uuid_in_gdf(id_list: list[str], gdf: gpd.GeoDataFrame) -> list[str]:
     return gdf[gdf['id'].isin(id_list)]['uuid'].tolist()
 
 tqdm.pandas(desc="Propagating geometry uuid")
-df['has_geometry'] = df['geometry_ids'].progress_apply(lambda ids: find_uuid_in_gdf(ids, gdf))
+df['has_geometry'] = df['geometry_ids'].apply(lambda ids: find_uuid_in_gdf(ids, gdf))
 tqdm.pandas(desc="Generating UUIDs")
-df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
-df['obs_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
-df['corrected_centroid_str'] = df['corrected_centroid'].progress_apply(lambda p: p.wkt)
+df['hr_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
+df['obs_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
+df['corrected_centroid_str'] = df['corrected_centroid'].apply(lambda p: p.wkt)
 
 
 # Producing Obs.

@@ -47,7 +47,7 @@ gdf['start_time'] = TR_OBJ[0]
 gdf['end_time'] = TR_OBJ[1]
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(LTM_UUID5_NS, r, ['geom_id']), axis=1)
+gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(LTM_UUID5_NS, r, ['geom_id']), axis=1)
 gdf['layer_uuid'] = cadaster_layer_uuid
 gdf['rde_type'] = "geometry"
 QA_check_uuid_are_unique(gdf)
@@ -104,10 +104,10 @@ def obs_uuid_and_point_id_gen(r: pd.Series) -> list[tuple[str, int]]:
     return [(str(uuid.uuid5(LTM_UUID5_NS, f"{r['*']}_{v}")), v) for v in r['index']]
     
 tqdm.pandas(desc="Generating uuid for obs")
-merge_df['obs_uuid_point_id'] = merge_df.progress_apply(obs_uuid_and_point_id_gen, axis=1)
+merge_df['obs_uuid_point_id'] = merge_df.apply(obs_uuid_and_point_id_gen, axis=1)
 
 tqdm.pandas(desc="Generating uuid for hr")
-dfs['hr_uuid'] = dfs.progress_apply(lambda v: make_uuid_from_row_selection(LTM_UUID5_NS, v, ['*']), axis=1)
+dfs['hr_uuid'] = dfs.apply(lambda v: make_uuid_from_row_selection(LTM_UUID5_NS, v, ['*']), axis=1)
 
 obs_uuid_to_point_id = dict(reduce(lambda a,b: a + b[0], merge_df[['obs_uuid_point_id']].values, []))
 registry_id_to_obs_uuid = {k: [v[0] for v in l] for k,l in merge_df.set_index('*')['obs_uuid_point_id'].items()}

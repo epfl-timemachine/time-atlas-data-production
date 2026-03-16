@@ -67,9 +67,9 @@ gdf = gpd.GeoDataFrame(df.drop('lat_lon', axis=1)).set_geometry('geometry')
 gdf = gdf.set_crs('EPSG:4326').reset_index()
 
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['index']), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['index']), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['Image Name']), axis=1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['Image Name']), axis=1)
 
 tpe='monument'
 

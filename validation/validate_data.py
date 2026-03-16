@@ -30,21 +30,21 @@ def validate_iiif_file_and_report(fp:str, raise_error=False):
 
 parent_dir = os.path.abspath('../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.rde import RDE
+from timeatlas.RDEModel import RDEType
 
 all_resources_name = ["file", 
-                RDE.HR.value,
-                RDE.OBS.value,
-                RDE.POI.value,
-                RDE.GEOM.value, 
-                RDE.DATASET.value,
+                RDEType.HR.value,
+                RDEType.OBS.value,
+                RDEType.POI.value,
+                RDEType.GEOM.value, 
+                RDEType.DATASET.value,
                 'configuration',
                 "metadata",
                 "multilingual_data",
-                RDE.AREA.value,
-                RDE.LAYER.value,
-                RDE.LAYER.value + '_configuration',
-                RDE.MAP.value]
+                RDEType.AREA.value,
+                RDEType.LAYER.value,
+                RDEType.LAYER.value + '_configuration',
+                RDEType.MAP.value]
 all_schemas = {k: json.load(open(f'schemas/{k}.schema.json')) for k in all_resources_name}
 schema_store = [(s['$id'], DRAFT202012.create_resource(s)) for _,s in all_schemas.items()]
 

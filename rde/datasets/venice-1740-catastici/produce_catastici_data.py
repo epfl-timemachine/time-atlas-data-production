@@ -285,9 +285,9 @@ if not is_man_tif:
 df['uidx'] = df.index
 
 tqdm.pandas(desc="Generating obs uuid")
-df['obs_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx', 'uid']), axis=1)
+df['obs_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx', 'uid']), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-df['hr_uuid'] = df.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx']), axis=1)
+df['hr_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx']), axis=1)
 
 # baking the citation on the level of the registry for each HR. 
 df['volume_number'] = df['tif_path_img'].apply(lambda x: str(int(tif_filename_to_subparts(x)[0])) if x is not None else None)

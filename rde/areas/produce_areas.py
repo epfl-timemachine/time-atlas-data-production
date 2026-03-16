@@ -33,7 +33,7 @@ varea_slug = 'city-venice-area'
 
 varea_uuid = str(uuid.uuid5(AREA_UUID5_NS, varea_slug))
 varea_data = produce_area_obj(varea_uuid, varea_name, produce_geometry_obj_from_two_corners(varea_min + varea_max), varea_slug, '1.0')
-save_data_file_if_different('data', varea_slug, varea_data, varea_slug, RDE.AREA.value)
+save_data_file_if_different('data', varea_slug, varea_data, varea_slug, RDEType.AREA.value)
 
 darea_min = [13.301703273382266, 50.816405027956586]
 darea_max = [13.971978610336509, 51.25046323137894]
@@ -43,7 +43,7 @@ darea_slug = 'city-dresden-area'
 
 darea_uuid = str(uuid.uuid5(AREA_UUID5_NS, darea_slug))
 darea_data = produce_area_obj(darea_uuid, darea_name, produce_geometry_obj_from_two_corners(darea_min+darea_max), darea_slug, '1.0')
-save_data_file_if_different('data', darea_slug, darea_data, darea_slug, RDE.AREA.value)
+save_data_file_if_different('data', darea_slug, darea_data, darea_slug, RDEType.AREA.value)
 
 larea_min = [6.501622899, 46.470149236]
 larea_max = [6.790137624, 46.642692356]
@@ -53,7 +53,7 @@ larea_slug = 'city-lausanne-area'
 
 larea_uuid = str(uuid.uuid5(AREA_UUID5_NS, larea_slug))
 larea_data = produce_area_obj(larea_uuid, larea_name, produce_geometry_obj_from_two_corners(larea_min+larea_max), larea_slug, '1.0')
-save_data_file_if_different('data', larea_slug, larea_data, larea_slug, RDE.AREA.value)
+save_data_file_if_different('data', larea_slug, larea_data, larea_slug, RDEType.AREA.value)
 
 parea_min = [2.038020217, 49.206699347]
 parea_max = [2.808018574, 48.595439112]
@@ -63,7 +63,7 @@ parea_slug = 'city-paris-area'
 
 parea_uuid = str(uuid.uuid5(AREA_UUID5_NS, parea_slug))
 parea_data = produce_area_obj(parea_uuid, parea_name, produce_geometry_obj_from_two_corners(parea_min+parea_max), parea_slug, '1.0')
-save_data_file_if_different('data', parea_slug, parea_data, parea_slug, RDE.AREA.value)
+save_data_file_if_different('data', parea_slug, parea_data, parea_slug, RDEType.AREA.value)
 
 aarea_min = [4.629740525, 52.150125547]
 aarea_max = [5.205523267, 52.550109077]
@@ -73,7 +73,7 @@ aarea_slug = 'city-amsterdam-area'
 
 aarea_uid = str(uuid.uuid5(AREA_UUID5_NS, aarea_slug))
 aarea_data = produce_area_obj(aarea_uid, aarea_name, produce_geometry_obj_from_two_corners(aarea_min+aarea_max), aarea_slug, '1.0')
-save_data_file_if_different('data', aarea_slug, aarea_data, aarea_slug, RDE.AREA.value)
+save_data_file_if_different('data', aarea_slug, aarea_data, aarea_slug, RDEType.AREA.value)
 
 earea_max = [126.48944444444444, 62.390556]
 earea_min = [-135.0, 14.917119]
@@ -83,7 +83,7 @@ earea_slug = 'europeana-postcards-area'
 
 earea_uuid = str(uuid.uuid5(AREA_UUID5_NS, earea_slug))
 earea_data = produce_area_obj(earea_uuid, earea_name, produce_geometry_obj_from_two_corners(earea_min+earea_max), earea_slug, '1.0')
-save_data_file_if_different('data', earea_slug, earea_data, earea_slug, RDE.AREA.value)
+save_data_file_if_different('data', earea_slug, earea_data, earea_slug, RDEType.AREA.value)
 
 # producing all areas from the countries fetched in MapTiler. 
 with open('countries_src/country_code_to_labels.json', 'r', encoding='utf-8') as f:
@@ -115,4 +115,4 @@ for file in os.listdir('countries_src/src'):
                 print(f"No features found in file {file}, skipping...")
                 continue
             country_area_data = produce_area_obj(country_uuid, country_name_dict, geometry, country_slug, '1.0')
-            save_data_file_if_different('data', country_slug, country_area_data, country_slug, RDE.AREA.value)
+            save_data_file_if_different('data', country_slug, country_area_data, country_slug, RDEType.AREA.value)

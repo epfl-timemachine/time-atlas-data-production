@@ -90,4 +90,4 @@ def segment_cloudpoint_from_polygon(polygon: Polygon, las_files: list[str], buil
     segmented = segment_single_las_from_polygon(polygon, las)
     segmented.write(output_filename)
 
-gdf.progress_apply(lambda r: segment_cloudpoint_from_polygon(r['geometry_lv95'], r['filenames'], r['id_building'], las_files_folder, output_folder), axis=1)
+gdf.apply(lambda r: segment_cloudpoint_from_polygon(r['geometry_lv95'], r['filenames'], r['id_building'], las_files_folder, output_folder), axis=1)

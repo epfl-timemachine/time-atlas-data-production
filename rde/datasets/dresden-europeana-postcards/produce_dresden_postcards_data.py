@@ -41,9 +41,9 @@ gdf['date'] = gdf['date'].apply(lambda v: str(v)[:4]) # keep only the year
 gdf = gdf.set_crs('EPSG:4326').reset_index()
 
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['index']), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['index']), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['Image Name']), axis=1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['Image Name']), axis=1)
 
 # Generating Obs RDE
 gdf['dt_time'] = gdf['date'].apply(lambda v: dt.strptime(v, '%Y'))

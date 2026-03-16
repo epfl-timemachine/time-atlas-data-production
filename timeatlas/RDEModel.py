@@ -135,7 +135,7 @@ class Dataset(RDE, UUIDEntity):
     
     def instantiate_all_rde_members(self, rde_list: list[RDE]) -> None:
         for rde in rde_list:
-            if hasattr(rde, "dataset") and rde.dataset == self.uuid:
+            if hasattr(rde, "dataset") and RDEType.dataset == self.uuid:
                 match rde:
                     case HR(): self.hrs.append(rde)
                     case Obs(): self.obs.append(rde)

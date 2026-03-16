@@ -47,9 +47,9 @@ gdf = gpd.GeoDataFrame(df).set_geometry('geometry')
 gdf = gdf.set_crs('EPSG:4326')
 
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['index'], ad_hoc_seed='obs'), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['index'], ad_hoc_seed='obs'), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['index'], ad_hoc_seed='hr'), axis=1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['index'], ad_hoc_seed='hr'), axis=1)
 
 # Produce HR RDE
 tpe = 'commerce location'
@@ -98,7 +98,7 @@ for i, x in df_pages.iterrows():
                                                                 x['media_type'], x['width'], x['height'], 'it')
     
 df_pages['canvas_id'] = df_pages['page_obj'].apply(lambda x: x['id'])
-df_of_hr['page'] = df_of_hr['metadata_content'].apply(lambda v: v['PAGE_NUM'])
+df_of_hr['page'] = df_of_hr['metadata'].apply(lambda v: v['PAGE_NUM'])
 page_to_canvas = df_pages[['page_num', 'canvas_id']].set_index('page_num').to_dict()['canvas_id']
 # preparing the data to insert in the canvas of the manifest.
 df_iiif_links = df_of_hr[df_of_hr['page'].notnull()]
@@ -124,7 +124,7 @@ def cg_1857_metadata_object_to_string_representation(metadata: dict) -> str:
     vals = [quick_check(metadata.get(v, '')) for v in col_in_order]
     return ' '.join([v for v in vals if len(v) > 0])
 
-df_iiif_links['iiif_display_string'] = df_iiif_links['metadata_content'].apply(cg_1857_metadata_object_to_string_representation)
+df_iiif_links['iiif_display_string'] = df_iiif_links['metadata'].apply(cg_1857_metadata_object_to_string_representation)
 df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
 # applying the page to canvas mapping.
 df_iiif_links['canvas_id'] = df_iiif_links['page'].apply(lambda v: page_to_canvas.get(v, None))

@@ -47,7 +47,7 @@ gdf['end_time'] = pd.Series(data = [TR_OBJ[1]] * len(gdf), name='end_time')
 MAP_FOLDER = '../../maps/lausanne-1831-berney/'
 cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'cadaster')
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda row: make_uuid_from_row_selection(VTM_UUID5_NS, row, ['geometry']), axis=1)
+gdf['uuid'] = gdf.apply(lambda row: make_uuid_from_row_selection(VTM_UUID5_NS, row, ['geometry']), axis=1)
 
 # entries without identifier only relate to geometric features without information from the registry, they don't make sense as Historical Record
 df = gdf[gdf['identifier'] != ''].copy()
@@ -86,10 +86,10 @@ geom_shorthand = 'lausanne_1831_berney_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
 save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
 tqdm.pandas(desc="Generating uuid for hr")
-df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['identifier'], ad_hoc_seed='hr'), axis=1)
+df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['identifier'], ad_hoc_seed='hr'), axis=1)
 
 tqdm.pandas(desc="Generating uuid for obs")
-df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
+df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
 
 obs_df = df[['obs_uuid','hr_uuid', 'center', 'has_geometry']].copy().reset_index().set_index('obs_uuid')
 tpe = 'parcel ownership'

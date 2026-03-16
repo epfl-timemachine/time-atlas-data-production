@@ -51,9 +51,9 @@ df['end_time'] = df['date_obj'].apply(lambda d: dt.strptime(d['to'], '%Y-%m-%d')
 gdf = gpd.GeoDataFrame(df).set_geometry('geometry')
 
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='obs'), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='hr'), axis=1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['id'], ad_hoc_seed='hr'), axis=1)
 
 # Generating Obs RDE
 tpe='picture'
