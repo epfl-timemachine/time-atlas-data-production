@@ -234,7 +234,9 @@ df_dup = df[df.duplicated(subset=['record_id'], keep=False)].sort_values(by=['re
 # splitting the dataset from any entries that had a duplicate:
 df_no_dup = df[~df['record_id'].isin(df_dup['record_id'].unique())].copy()
 df_dup_grouped = df_dup.groupby('record_id')
-def generate_single_row_from_postcard_group(rows: pd.DataFrame) -> pd.Series:
+
+# there has been a change in pandas vers 3, where the groupby no longer keep a copy of the value used to group in the subdataframe, so we need to provide it ourselves to the function that will process the group.
+def generate_single_row_from_postcard_group(group_key:str, rows: pd.DataFrame) -> pd.Series:
     # taking the postcard that is not a back postcard as the main entry
     first_entry = rows[rows['back_postcard'] == 'no'].iloc[0].copy()
     country_city_coords = first_entry['country_city_coordinates']
@@ -249,12 +251,12 @@ def generate_single_row_from_postcard_group(rows: pd.DataFrame) -> pd.Series:
     first_entry['country_city_coordinates'] = country_city_coords
     filenames = rows.sort_values(by=['back_postcard'])['filename'].unique().tolist()
     first_entry['filename'] = filenames
+    first_entry['record_id'] = group_key
     return first_entry
 
-df_dup_processed = df_dup_grouped.apply(generate_single_row_from_postcard_group).reset_index(drop=True)
+df_dup_processed = df_dup_grouped.apply(lambda g: generate_single_row_from_postcard_group(g.name, g)).reset_index(drop=True)
 df_no_dup['filename'] = df_no_dup['filename'].apply(lambda s: [s])
 df = pd.concat([df_no_dup, df_dup_processed], ignore_index=True)
-
 tqdm.pandas(desc="Generating hr uuid")
 df['hr_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['record_id']), axis=1)
 

@@ -41,26 +41,15 @@ TR_OBJ = [formatted_begin, formatted_end]
 DATA_FOLDER = 'data'
 venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
-# Geometry RDE production
-# 1241-01-01T00:00:00Z
-raimund_fmt = "%Y-%m-%dT%H:%M:%SZ"
-alt_fmt = "%Y/%m/%d %H:%M:"
-def format_raimund_dt(dt_str: str) -> str:
-    try:
-        return datetime.strptime(dt_str, raimund_fmt).isoformat() if dt_str and not pd.isnull(str) else dt_str
-    except ValueError:
-        try:
-            return datetime.strptime(dt_str, alt_fmt).isoformat() if dt_str and not pd.isnull(str) else dt_str
-        except ValueError:
-            print(f"Could not parse date: {dt_str}")
-            return None
-
 geometries_fp = list(DORIGO_DATA_PATH.rglob('*geometries.geojson'))[0]
 # sample for testing uuid_gen
 gdf = gpd.read_file(geometries_fp)
 gdf = gdf.to_crs(UNIVERSAL_CRS)
-gdf['start_time'] = gdf['start_date'].apply(format_raimund_dt).fillna(TR_OBJ[0])
-gdf['end_time'] = gdf['end_date'].apply(format_raimund_dt).fillna(TR_OBJ[1])
+
+# latest data from raimund has this data expressed as native Timestamp object, so we can directly convert it to ISO format string
+gdf['start_time'] = gdf['start_date'].apply(lambda v: v.isoformat() if v and not pd.isnull(v) else None).fillna(TR_OBJ[0])
+gdf['end_time'] = gdf['end_date'].apply(lambda v: v.isoformat() if v and not pd.isnull(v) else None).fillna(TR_OBJ[1])
+
 # TODO: allow for multipolygon??
 tqdm.pandas(desc="Generating uuid from geometry")
 gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)

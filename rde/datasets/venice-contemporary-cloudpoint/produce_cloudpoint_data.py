@@ -42,7 +42,8 @@ DATA_FOLDER = 'data'
 
 venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
-with open('../venice-cini-photographs/edifici_id_to_geom_uuid.json') as f:
+edific_id_fp = '../venice-cini-photographs/edifici_id_to_geom_uuid.json'
+with open(edific_id_fp) as f:
     edifici_id_to_geom_uuid = json.load(f)
 
 df['geometry_uuid'] = df['EDIFI_ID'].map(edifici_id_to_geom_uuid)
@@ -150,8 +151,23 @@ streets_order = [
 ]
 
 df_img['type'] = df_img['folder'].apply(lambda x: 'edifici' if 'edifici' in x else 'street')
+
+def sorting_key(folder):
+    if folder in edificies_order:
+        return edificies_order.index(folder)
+    elif folder in streets_order:
+        return streets_order.index(folder)
+    else:
+        return len(edificies_order) + len(streets_order) # if the folder is not in any of the two lists, put it at the end
+
+def sort_group(df, df_group: tuple):
+    dfi = df.sort_values('folder', key=lambda x: x.map(sorting_key))
+    dfi['uid'] = df_group[0] # putting the uid back in the sorted dataframe, as it is lost during the groupby apply
+    dfi['type'] = df_group[1]
+    return dfi
+    
 # apply the order per grouped by edifi id according to the types:
-df_man = df_img.groupby(['uid', 'type']).apply(lambda x: x.sort_values('folder', key=lambda x: x.map(lambda y: edificies_order.index(y) if y in edificies_order else streets_order.index(y))))
+df_man = df_img.groupby(['uid', 'type']).apply(lambda v: sort_group(v, v.name))
 df_man_edifici = df_man[df_man['type'] == 'edifici'].drop(columns=['uid'])
 df_of_hr['EDIFI_ID'] = df_of_hr['metadata'].apply(lambda x: str(x['EDIFI_ID']).zfill(4) if 'EDIFI_ID' in x else None)
 df_of_hr['label_txt'] = df_of_hr['metadata'].apply(lambda x: f"{x['aulic_name']}, {x['EDIFI_ID']} - {x['CIVICI']}")

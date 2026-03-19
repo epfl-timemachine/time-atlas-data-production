@@ -92,7 +92,7 @@ manuals_leftovers = {
 
 replace_dict = {**smarco_replace_dict, **castello_replace_dict, **canna_replace_dict, **scroce_replace_dict, **spolo_replace_dict, **dorso_replace_dict, **manuals_leftovers}
 
-gdf['path_img'] = gdf['path_img'].apply(lambda x: x.replace('Beneto', 'Benetto').replace('Basegio', 'Baseggio') if x is not None else None)
+gdf['path_img'] = gdf['path_img'].apply(lambda x: x.replace('Beneto', 'Benetto').replace('Basegio', 'Baseggio') if x is not None and not pd.isna(x) else None)
 gdf['path_img'] = gdf['path_img'].apply(lambda x: replace_dict.get(x, x))
 
 def technical_name_to_natural_name(t:str) -> str:
@@ -137,7 +137,7 @@ def filename_to_label(filename:str) -> tuple[int, str, int, str, int]:
 
 # the file below was produced by the script "images_width_height_format_extrator.py" on the images of the dataset.
 df_wh = pd.read_csv('src/imgs_width_height_format.csv')
-df_wh['filename'] = df_wh['filename'].apply(lambda x: x.replace('434_SanMarco', '434_SMarco') if x is not None else x)
+df_wh['filename'] = df_wh['filename'].apply(lambda x: x.replace('434_SanMarco', '434_SMarco') if x is not None and not pd.isna(x) else x)
 # cooking all the data I need to build a ToC and individual ordered pages.
 df_wh['volume_number'], df_wh['volume'], df_wh['parish_number'], df_wh['parish'], df_wh['page_index'] = zip(*df_wh['filename'].apply(filename_to_label))
 
@@ -290,7 +290,7 @@ tqdm.pandas(desc="Generating hr uuid")
 df['hr_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['uidx']), axis=1)
 
 # baking the citation on the level of the registry for each HR. 
-df['volume_number'] = df['tif_path_img'].apply(lambda x: str(int(tif_filename_to_subparts(x)[0])) if x is not None else None)
+df['volume_number'] = df['tif_path_img'].apply(lambda x: str(int(tif_filename_to_subparts(x)[0])) if x is not None and not pd.isna(x) else None)
 df['bibliographic_reference'] = df.apply(lambda v: volume_number_to_cote.get(str(v['volume_number']), None), axis=1)
 
 # Generate Obs RDE

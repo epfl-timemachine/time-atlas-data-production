@@ -144,7 +144,7 @@ geomid_uuid_list['coordinate'] = centre_gdf['coordinate']
 geomid_uuid_list['parish_standardised'] = centre_gdf['parish_standardised']
 
 # so we have obs. of specific subparcels.
-dfs['parcel_id'] = dfs[["parcel_number", "sub_parcel_number"]].apply(lambda v:  ", ".join(e for e in v if e), axis=1) # merci arnaud
+dfs['parcel_id'] = dfs[["parcel_number", "sub_parcel_number"]].apply(lambda v:  ", ".join(e for e in v if e and not pd.isna(e)), axis=1) # merci arnaud
 df = dfs.join(geomid_uuid_list, on='geometry_id')
 
 df['owner_transcription'] = df['owner_transcription'].fillna('Unknown owner')
