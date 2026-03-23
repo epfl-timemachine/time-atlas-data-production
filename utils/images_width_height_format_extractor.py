@@ -3,6 +3,7 @@ from PIL import Image
 import os
 import sys
 import pandas as pd
+from typing import Optional
 from tqdm import tqdm
 
 def is_extension_an_img(ext:str) -> bool:
@@ -47,7 +48,7 @@ def img_extension_to_media_type(ext:str) -> str:
     else:
         return 'image'
 
-def filepath_format_and_width_height_of_imgs(folder_path:str) -> pd.DataFrame:
+def filepath_format_and_width_height_of_imgs(folder_path:str, current_dataframe: Optional[pd.DataFrame] = None) -> pd.DataFrame:
     """
     This function returns a DataFrame with the format of the file path of the images in the folder and the width and height of the images.
     """
@@ -56,10 +57,16 @@ def filepath_format_and_width_height_of_imgs(folder_path:str) -> pd.DataFrame:
     for f, sf, fs in tqdm(files):
         for file in fs:
             curr_img_fp = os.path.join(f, file)
+            filename_to_save = curr_img_fp.replace(folder_path, '')
+            if current_dataframe is not None and filename_to_save in current_dataframe['filename'].values:
+                continue
             if is_filepath_an_img(curr_img_fp):
                 img = Image.open(curr_img_fp)
-                data.append([curr_img_fp.replace(folder_path, ''), img.size[0], img.size[1], img_extension_to_media_type(curr_img_fp.split('.')[-1])])
-    return pd.DataFrame(data, columns=['filename', 'width', 'height', 'media_type'])
+                data.append([filename_to_save, img.size[0], img.size[1], img_extension_to_media_type(curr_img_fp.split('.')[-1])])
+    res = pd.DataFrame(data, columns=['filename', 'width', 'height', 'media_type'])
+    if current_dataframe is not None:
+        res = pd.concat([current_dataframe, res], ignore_index=True)
+    return res
 
 
 if __name__ == '__main__':
@@ -69,6 +76,7 @@ if __name__ == '__main__':
     
     path_base = sys.argv[1]
     output_csv = sys.argv[2]
+    current_df = None
     if not os.path.exists(path_base):
         print(f'The path "{path_base}" does not exist.')
         sys.exit(1)
@@ -81,6 +89,8 @@ if __name__ == '__main__':
     if os.path.exists(output_csv):
         print(f'The output filename "{output_csv}" already exists.')
         sys.exit(1)
-    
-    df_wh = filepath_format_and_width_height_of_imgs(path_base)
+    if os.path.exists(output_csv):
+        current_df = pd.read_csv(output_csv)
+
+    df_wh = filepath_format_and_width_height_of_imgs(path_base, current_dataframe=current_df)
     df_wh.sort_values(by='filename').to_csv(output_csv, index=False)

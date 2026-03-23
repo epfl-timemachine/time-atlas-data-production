@@ -18,8 +18,8 @@ DATA_SRC_PATH = Path('src')
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 
 # aribtrary namespace, just to generate reproducible UUIDv5 from the entries of the dataset.
 VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
@@ -46,7 +46,7 @@ MAP_FOLDER = '../../maps/amsterdam-1832-huurwarden/'
 cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'huurwarden')
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['OBJECTID']), axis=1)
+gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['OBJECTID']), axis=1)
 object_id_to_uuid = gdf.set_index('OBJECTID')['uuid'].to_dict()
 df['has_geometry'] = df['OBJECTID'].apply(lambda r: object_id_to_uuid[r])
 gdf['layer_uuid'] = cadaster_layer_uuid
@@ -60,15 +60,15 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'amsterdam_1832_huurwarden_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
 
 cols_for_hr_uuid_prod = sorted(set(df.columns).difference({'geometry_id', 'has_geometry', 'coordinate', 'parcel_id'}))
 
 tqdm.pandas(desc="Generating uuid for hr")
-df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='hr'), axis=1)
+df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='hr'), axis=1)
 
 tqdm.pandas(desc="Generating uuid for obs")
-df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='obs'), axis=1)
+df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['OBJECTID'], ad_hoc_seed='obs'), axis=1)
 
 obs_df = df[['obs_uuid','hr_uuid', 'geometry']].groupby(by=['obs_uuid','geometry']).agg(list).reset_index().set_index('obs_uuid')
 # I have to do that because there is 7 obs. that have two historical sources recording it...
@@ -83,7 +83,7 @@ gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'amsterdam_1832_huurwarden_obs'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
 QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
 
 #HR RDE Production
@@ -110,12 +110,12 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        [[r['obs_uuid'], 'parcel_number']],\
                        TR_OBJ,\
                        tpe,\
-                       r[hr_metadata_cols].to_dict()) \
+                       r[hr_metadata_cols].to_dict()).to_dict(flatten_metadata=False) \
             for _, r in df.iterrows()
         ]
 
 hr_shorthand = 'amsterdam_1832_huurwarden_historical_records'
-save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
@@ -147,4 +147,4 @@ ds = produce_dataset_obj(
     amsterdam_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'amsterdam_1832_huurwarden_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'amsterdam_1832_huurwarden_dataset', RDEType.DATASET.value, is_dataset_obj=True)

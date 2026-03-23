@@ -12,8 +12,8 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 
 gpd.options.io_engine = "pyogrio"
 
@@ -54,12 +54,12 @@ gdf['layer_uuid'] = sn_layer_uuid
 gdf = gdf.set_geometry('geometry').to_crs('EPSG:4326')
 QA_check_uuid_are_unique(gdf)
 # "NAME" was removed for consistency with the other datasets.
-save_data_file_if_different(MAP_FOLDER, 'geometries_street_network', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], '1808_street_network_geometries', RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries_street_network', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], '1808_street_network_geometries', RDEType.GEOM.value)
 gdf['coordinate'] = gdf['geometry'].apply(lambda v: v.centroid)
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['coordinate']), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['coordinate']), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['index']), axis = 1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_SN_UUID5_NS, r, ['index']), axis = 1)
 
 # HR RDE Production
 tpe = "street toponym"
@@ -68,13 +68,13 @@ recs = [produce_hr_obj(r.hr_uuid,\
                    [[r.obs_uuid, 'NAME']],\
                    TR_OBJ,\
                    tpe,\
-                   r[['NAME', 'length']].to_dict()) \
+                   r[['NAME', 'length']].to_dict()).to_dict(flatten_metadata=False) \
                    for _, r in gdf.iterrows()]
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
 QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
-save_data_file_if_different(DATA_FOLDER, 'historical_records',  recs, f'1808_street_network_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',  recs, f'1808_street_network_hrs', RDEType.HR.value)
 
 # Obs RDE Production
 tpe = "street toponym"
@@ -84,7 +84,7 @@ gdf_obs = gpd.GeoDataFrame([produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uu
 gdf_obs = gdf_obs.set_geometry('coordinate').set_index('uuid').set_crs('EPSG:4326')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 QA_check_unique_uuid_in_uuid_array(gdf_obs, 'has_geometry')
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, f'1808_street_network_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, f'1808_street_network_obs', RDEType.OBS.value)
 
 # Dataset Object Production
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']
@@ -109,4 +109,4 @@ ds = produce_dataset_obj(
     ds_conf,
     venice_area_uuids
 )
-save_data_file_if_different(DATA_FOLDER, 'dataset', [ds], f'1808_street_network_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER, 'dataset', [ds], f'1808_street_network_dataset', RDEType.DATASET.value, is_dataset_obj=True)

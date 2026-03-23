@@ -1,0 +1,52 @@
+{
+  "$id": "https://timeatlas.eu/rde/poi.schema.json",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "rde_type": {
+      "type": "string"
+    },
+    "height": {
+      "type": "object",
+      "building": {
+        "type": {
+          "type": "number"
+        },
+        "terrain": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "building",
+        "terrain"
+      ]
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ]
+    }
+  },
+  "required": [
+    "rde_type",
+    "uuid",
+    "geometry",
+    "height"
+  ],
+  "additionalProperties": true
+}

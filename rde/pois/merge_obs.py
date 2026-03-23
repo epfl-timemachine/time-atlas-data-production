@@ -9,7 +9,7 @@ import sys
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
+from timeatlas.data_modeling import *
 
 all_datasets = [f for f in os.listdir('../datasets') if os.path.isdir(os.path.join('../datasets', f))]
 dobs_suffix = 'data/observations.json'
@@ -54,7 +54,7 @@ gdf_poi = gpd.GeoDataFrame([produce_poi_obj(row.new_poi_uuid, Point(row['lon'], 
 gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
 
 QA_check_uuid_are_unique(gdf_poi.reset_index())
-save_data_file_if_different('', 'points_of_interest', gdf_poi, f'all_pois', RDE.POI.value)
+save_data_file_if_different('', 'points_of_interest', gdf_poi, f'all_pois', RDEType.POI.value)
 print(f"Produced {len(gdf_poi)} PoIs from {original_count} Obs (aggregation rate of {(original_count - new_count) / original_count * 100:.2f}%) by aggregating Obs based on rounded coordinates.")
 
 obs_uuid_to_poi_uuid = {}

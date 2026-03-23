@@ -10,9 +10,9 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
+from timeatlas.data_modeling import *
 from utils import iiif
-from utils.rde import RDE
+from timeatlas.RDEModel import RDEType
 
 with open('dataproduction_config.json') as f:
     DATA_CONFIG = json.load(f)
@@ -57,11 +57,11 @@ gdf_edifici['start_time'] = geom_begin
 gdf_edifici['end_time'] = geom_end
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf_edifici['uuid'] = gdf_edifici.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['EDIFI_ID']), axis=1)
+gdf_edifici['uuid'] = gdf_edifici.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['EDIFI_ID']), axis=1)
 # fetching only the uuid that matters for the current sample version of the dataset.
 gdf_geom = gdf_geom.merge(gdf_edifici[['uuid', 'EDIFI_ID']], on='EDIFI_ID')
 gdf_edifici['layer_uuid'] = edifici_layer_uuid
-gdf_edifici['rde_type'] = RDE.GEOM.value
+gdf_edifici['rde_type'] = RDEType.GEOM.value
 with open('edifici_id_to_geom_uuid.json', 'w+') as f:
     #if other dataset might need to point to the same geometries, this file can be used to correctly reference the uuids.
     json.dump(gdf_edifici.set_index('EDIFI_ID')['uuid'].to_dict(), f)
@@ -74,7 +74,7 @@ if not QA_check_all_geometries_are_valid(gdf_edifici, raise_exception=False):
 
 geom_shorthand = 'cini-photographs_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf_edifici[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']].set_crs('EPSG:4326'), geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf_edifici[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']].set_crs('EPSG:4326'), geom_shorthand, RDEType.GEOM.value)
 gdf['hr_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['ImageNumber']), axis=1)
 gdf['obs_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['ImageNumber'], ad_hoc_seed='obs'), axis=1)
 
@@ -90,7 +90,7 @@ gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'cini_obs'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
 
 #Produce HRs
 cols_of_non_interest = [
@@ -142,12 +142,12 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        [[r['obs_uuid'], 'place_name']],\
                        (r.start_time, r.end_time),\
                        r.type,\
-                       r[gdf.columns.difference(cols_of_non_interest)].to_dict()) \
+                       r[gdf.columns.difference(cols_of_non_interest)].to_dict()).to_dict(flatten_metadata=False) \
             for _, r in gdf.iterrows()
         ]
 
 hr_shorthand = 'cini_historical_records'
-save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
@@ -221,4 +221,4 @@ ds = produce_dataset_obj(
     venice_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cini_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'cini_dataset', RDEType.DATASET.value, is_dataset_obj=True)

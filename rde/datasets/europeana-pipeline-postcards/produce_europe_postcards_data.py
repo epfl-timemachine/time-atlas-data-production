@@ -195,7 +195,8 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 from pathlib import Path
 
 gpd.options.io_engine = "pyogrio"
@@ -233,7 +234,9 @@ df_dup = df[df.duplicated(subset=['record_id'], keep=False)].sort_values(by=['re
 # splitting the dataset from any entries that had a duplicate:
 df_no_dup = df[~df['record_id'].isin(df_dup['record_id'].unique())].copy()
 df_dup_grouped = df_dup.groupby('record_id')
-def generate_single_row_from_postcard_group(rows: pd.DataFrame) -> pd.Series:
+
+# there has been a change in pandas vers 3, where the groupby no longer keep a copy of the value used to group in the subdataframe, so we need to provide it ourselves to the function that will process the group.
+def generate_single_row_from_postcard_group(group_key:str, rows: pd.DataFrame) -> pd.Series:
     # taking the postcard that is not a back postcard as the main entry
     first_entry = rows[rows['back_postcard'] == 'no'].iloc[0].copy()
     country_city_coords = first_entry['country_city_coordinates']
@@ -248,12 +251,12 @@ def generate_single_row_from_postcard_group(rows: pd.DataFrame) -> pd.Series:
     first_entry['country_city_coordinates'] = country_city_coords
     filenames = rows.sort_values(by=['back_postcard'])['filename'].unique().tolist()
     first_entry['filename'] = filenames
+    first_entry['record_id'] = group_key
     return first_entry
 
-df_dup_processed = df_dup_grouped.apply(generate_single_row_from_postcard_group).reset_index(drop=True)
+df_dup_processed = df_dup_grouped.apply(lambda g: generate_single_row_from_postcard_group(g.name, g)).reset_index(drop=True)
 df_no_dup['filename'] = df_no_dup['filename'].apply(lambda s: [s])
 df = pd.concat([df_no_dup, df_dup_processed], ignore_index=True)
-
 tqdm.pandas(desc="Generating hr uuid")
 df['hr_uuid'] = df.apply(lambda r: make_uuid_from_row_selection(TM_UUID5_NS, r, ['record_id']), axis=1)
 
@@ -279,7 +282,6 @@ def quick_uuid(hr_uuid:str, coords:str) -> str:
 
 # need to split between obs that actually have street level geolocatin, and as such will have POIs. 
 df_precise_coords = df[df['coordinates'].apply(len) > 0].copy()
-df_precise_coords.to_csv('geolocated_postcards.csv', index=False)
 df = df_precise_coords.copy() # TODO: REMOVE once the Obs/Poi switch has been done in frontend
 # the "no precise coords" are the ones that will only have the city level geolocation, will still have observations ang get triggered by reserach, but no POIs.s
 # df_no_precise_coords = df[df['coordinates'].apply(len) == 0].copy() # TODO: restablish once the Obs/Poi switch has been done in frontend
@@ -308,7 +310,7 @@ gdf_obs_precise = produce_obs_gdf(df_precise_coords)
 gdf_obs = gdf_obs_precise.copy() # TODO: REMOVE once the Obs/Poi switch has been done in frontend
 print(f'Total number of observations generated: {len(gdf_obs)}')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'europeana_postcards_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'europeana_postcards_obs', RDEType.OBS.value)
 
 filename_to_wh_infos = {}
 for idx, row in df_wh.iterrows():
@@ -401,10 +403,10 @@ recs = [produce_hr_obj(r.hr_uuid,\
                    r.drop(labels = ['hr_uuid', 'obs_uuid', 'start_time', 'end_time', 'rights_attribution']).to_dict(),
                    r['rights_attribution'],
                    'a'
-                   ) \
+                   ).to_dict(flatten_metadata=False) \
                    for _, r in df_hr.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'europeana_postcards_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'europeana_postcards_hrs', RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 
@@ -433,4 +435,4 @@ ds = produce_dataset_obj(
     europeana_area_uuids,
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'europeana_postcards_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets',[ds], f'europeana_postcards_dataset', RDEType.DATASET.value, is_dataset_obj=True)

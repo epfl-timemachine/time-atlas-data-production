@@ -17,8 +17,8 @@ with open('dataproduction_config.json') as f:
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from timeatlas.RDEModel import RDEType
 
 DATA_SRC_PATH = Path(join(parent_dir, 'data-lausanne/1888-cadastre-renove'))
 
@@ -47,7 +47,7 @@ gdf['start_time'] = TR_OBJ[0]
 gdf['end_time'] = TR_OBJ[1]
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(LTM_UUID5_NS, r, ['geom_id']), axis=1)
+gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(LTM_UUID5_NS, r, ['geom_id']), axis=1)
 gdf['layer_uuid'] = cadaster_layer_uuid
 gdf['rde_type'] = "geometry"
 QA_check_uuid_are_unique(gdf)
@@ -59,7 +59,7 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'lausanne_1888_cadastre_renove_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
 
 txt_fp = get_filepath_like(os.path.join(DATA_SRC_PATH, "lausanne-1888-cadastre-renove-registre-"), 'csv')
 dfs = pd.read_csv(txt_fp)
@@ -104,10 +104,10 @@ def obs_uuid_and_point_id_gen(r: pd.Series) -> list[tuple[str, int]]:
     return [(str(uuid.uuid5(LTM_UUID5_NS, f"{r['*']}_{v}")), v) for v in r['index']]
     
 tqdm.pandas(desc="Generating uuid for obs")
-merge_df['obs_uuid_point_id'] = merge_df.progress_apply(obs_uuid_and_point_id_gen, axis=1)
+merge_df['obs_uuid_point_id'] = merge_df.apply(obs_uuid_and_point_id_gen, axis=1)
 
 tqdm.pandas(desc="Generating uuid for hr")
-dfs['hr_uuid'] = dfs.progress_apply(lambda v: make_uuid_from_row_selection(LTM_UUID5_NS, v, ['*']), axis=1)
+dfs['hr_uuid'] = dfs.apply(lambda v: make_uuid_from_row_selection(LTM_UUID5_NS, v, ['*']), axis=1)
 
 obs_uuid_to_point_id = dict(reduce(lambda a,b: a + b[0], merge_df[['obs_uuid_point_id']].values, []))
 registry_id_to_obs_uuid = {k: [v[0] for v in l] for k,l in merge_df.set_index('*')['obs_uuid_point_id'].items()}
@@ -132,7 +132,7 @@ gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'lausanne_1888_cadastre_renove_observations'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
 QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
 
 #HR RDE Production
@@ -157,12 +157,12 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        r['obs_uuid'],\
                        TR_OBJ,\
                        tpe,\
-                       r[hr_metadata_cols].to_dict()) \
+                       r[hr_metadata_cols].to_dict()).to_dict(flatten_metadata=False) \
             for _, r in dfs.iterrows()
         ]
 
 hr_shorthand = 'lausanne_1888_cadastre_renove_historical_records'
-save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
@@ -192,4 +192,4 @@ ds = produce_dataset_obj(
     lausanne_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'lausanne_1888_cadastre_renove_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'lausanne_1888_cadastre_renove_dataset', RDEType.DATASET.value, is_dataset_obj=True)

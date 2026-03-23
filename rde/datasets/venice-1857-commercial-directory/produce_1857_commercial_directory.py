@@ -12,9 +12,9 @@ tqdm.pandas()
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
+from timeatlas.data_modeling import *
 from utils import iiif
-from utils.rde import RDE
+from timeatlas.RDEModel import RDEType
 from pathlib import Path
 
 gpd.options.io_engine = "pyogrio"
@@ -47,9 +47,9 @@ gdf = gpd.GeoDataFrame(df).set_geometry('geometry')
 gdf = gdf.set_crs('EPSG:4326')
 
 tqdm.pandas(desc="Generating obs uuid")
-gdf['obs_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['index'], ad_hoc_seed='obs'), axis=1)
+gdf['obs_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['index'], ad_hoc_seed='obs'), axis=1)
 tqdm.pandas(desc="Generating hr uuid")
-gdf['hr_uuid'] = gdf.progress_apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['index'], ad_hoc_seed='hr'), axis=1)
+gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['index'], ad_hoc_seed='hr'), axis=1)
 
 # Produce HR RDE
 tpe = 'commerce location'
@@ -57,7 +57,7 @@ obs = [produce_obs_obj(r.obs_uuid, TR_OBJ, DS_UUID, r.hr_uuid, tpe, r.geometry, 
 gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, '1857_gc_obs', RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, '1857_gc_obs', RDEType.OBS.value)
 
 # Produce HR RDE
 exclude_hr_labels = {
@@ -74,10 +74,10 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        [[r.obs_uuid, 'place']],\
                        TR_OBJ,\
                        tpe,\
-                   r[hr_metadata_cols].to_dict()) \
+                   r[hr_metadata_cols].to_dict()).to_dict(flatten_metadata=False) \
                    for _, r in gdf.iterrows()]
 
-save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'1857_gc_hrs', RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'1857_gc_hrs', RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 
@@ -98,7 +98,7 @@ for i, x in df_pages.iterrows():
                                                                 x['media_type'], x['width'], x['height'], 'it')
     
 df_pages['canvas_id'] = df_pages['page_obj'].apply(lambda x: x['id'])
-df_of_hr['page'] = df_of_hr['annotated_content'].apply(lambda v: v['PAGE_NUM'])
+df_of_hr['page'] = df_of_hr['metadata'].apply(lambda v: v['PAGE_NUM'])
 page_to_canvas = df_pages[['page_num', 'canvas_id']].set_index('page_num').to_dict()['canvas_id']
 # preparing the data to insert in the canvas of the manifest.
 df_iiif_links = df_of_hr[df_of_hr['page'].notnull()]
@@ -124,7 +124,7 @@ def cg_1857_metadata_object_to_string_representation(metadata: dict) -> str:
     vals = [quick_check(metadata.get(v, '')) for v in col_in_order]
     return ' '.join([v for v in vals if len(v) > 0])
 
-df_iiif_links['iiif_display_string'] = df_iiif_links['annotated_content'].apply(cg_1857_metadata_object_to_string_representation)
+df_iiif_links['iiif_display_string'] = df_iiif_links['metadata'].apply(cg_1857_metadata_object_to_string_representation)
 df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
 # applying the page to canvas mapping.
 df_iiif_links['canvas_id'] = df_iiif_links['page'].apply(lambda v: page_to_canvas.get(v, None))
@@ -163,4 +163,4 @@ ds = produce_dataset_obj(DS_UUID,
     venice_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], '1857_gc_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], '1857_gc_dataset', RDEType.DATASET.value, is_dataset_obj=True)

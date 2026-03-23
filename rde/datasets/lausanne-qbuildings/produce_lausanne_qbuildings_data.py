@@ -9,16 +9,15 @@ from pathlib import Path
 from tqdm import tqdm
 import json
 
-# to have progress bar in the notebook
-tqdm.pandas()
 with open('dataproduction_config.json') as f:
     DATA_CONFIG = json.load(f)
 
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from utils.data_modeling import *
-from utils.rde import RDE
+from timeatlas.data_modeling import *
+from utils import iiif
+from timeatlas.RDEModel import RDEType
 
 
 DATA_SRC_PATH = Path('src')
@@ -45,8 +44,7 @@ gdf['end_time'] = pd.Series(data = [TR_OBJ[1]] * len(gdf), name='end_time')
 
 MAP_FOLDER = '../../maps/lausanne-qbuildings/'
 cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'buildings')
-tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.progress_apply(lambda row: make_uuid_from_row_selection(VTM_UUID5_NS, row, ['geometry']), axis=1)
+gdf['uuid'] = gdf.apply(lambda row: make_uuid_from_row_selection(VTM_UUID5_NS, row, ['geometry']), axis=1)
 
 
 gdf['center'] = gdf['geometry'].apply(lambda v: v.centroid)
@@ -64,14 +62,12 @@ if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
 
 geom_shorthand = 'lausanne_qbuildings_geometries'
 # "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDE.GEOM.value)
-tqdm.pandas(desc="Generating uuid for hr")
+save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
 df = gdf.drop(columns=['geometry']).copy().reset_index()
 
-df['hr_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['index'], ad_hoc_seed='hr'), axis=1)
+df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['index'], ad_hoc_seed='hr'), axis=1)
 
-tqdm.pandas(desc="Generating uuid for obs")
-df['obs_uuid'] = df.progress_apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
+df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
 
 obs_df = df[['obs_uuid','hr_uuid', 'center', 'has_geometry']].copy().reset_index().set_index('obs_uuid')
 tpe = 'parcel ownership'
@@ -84,7 +80,7 @@ gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'lausanne_qbuildings_obs'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDE.OBS.value)
+save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
 QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
 
 #HR RDE Production
@@ -119,24 +115,21 @@ recs = [produce_hr_obj(r.hr_uuid,\
                        [[r['obs_uuid'], 'identifier']],\
                        TR_OBJ,\
                        tpe,\
-                       r[hr_metadata_cols].to_dict()) \
+                       r[hr_metadata_cols].to_dict()).to_dict(flatten_metadata=False) \
             for _, r in df.iterrows()
         ]
 
 hr_shorthand = 'lausanne_qbuildings_historical_records'
-save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDE.HR.value)
+save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand, RDEType.HR.value)
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
 QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
 
-from utils import iiif
-
-
 # manifest for 2d thumbnails generation
 man_list = {}
 for _, row in df_of_hr.iterrows():
-    content = row['annotated_content']
+    content = row['metadata']
     man_label = f"{content['id_building']} - {content['class']}, {content['system_hotwater']}, {content['system_heating']}"
     hr_uuid = row['uuid']
     man_uuid = str(uuid.uuid5(VTM_UUID5_NS, man_label))
@@ -154,10 +147,10 @@ for _, row in df_of_hr.iterrows():
 
 # 3d manifest generation
 format = "application/vnd.las"
-df_of_hr['3d_filename'] = df_of_hr['annotated_content'].apply(lambda x: f"qbuilding_{x['id_building']}.las")
+df_of_hr['3d_filename'] = df_of_hr['metadata'].apply(lambda x: f"qbuilding_{x['id_building']}.las")
 man_3d_list = {}
 for _, row in df_of_hr.iterrows():
-    content = row['annotated_content']
+    content = row['metadata']
     label = f"{content['id_building']} - {content['class']}, {content['system_hotwater']}, {content['system_heating']}"
     filename = row['3d_filename']
     man_uuid = str(uuid.uuid5(VTM_UUID5_NS, filename))
@@ -201,4 +194,4 @@ ds = produce_dataset_obj(
     lausanne_area_uuids
 )
 
-save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'lausanne_qbuildings_dataset', RDE.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER,'datasets', [ds], 'lausanne_qbuildings_dataset', RDEType.DATASET.value, is_dataset_obj=True)
