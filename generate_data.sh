@@ -53,7 +53,7 @@ run_scripts_in_directory() {
 run_scripts_in_directory "rde/maps"
 
 # Step 3: Run scripts in rde/datasets
-run_scripts_in_directory "rde/datasets" "europeana-pipeline-postcards" "venice-1740-catastici" "venice-1808-sommarioni" "venice-contemporary-cloudpoint" "venice-dorigo" "ludus-data"
+run_scripts_in_directory "rde/datasets" "ludus-data"
 
 # Step 4: Run scripts in rde/areas
 cd rde/areas
