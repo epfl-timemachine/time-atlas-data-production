@@ -20,7 +20,7 @@ type MapReference = Map | UUID
 
 class RDEType(Enum):
     HR = 'historical_record'
-    OBS = 'obs'
+    OBS = 'observation'
     POI = 'poi'
     GEOM = 'geometry'
     DATASET = 'dataset'

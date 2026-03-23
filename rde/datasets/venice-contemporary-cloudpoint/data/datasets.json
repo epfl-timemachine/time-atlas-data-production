@@ -3,7 +3,7 @@
  "type_in_file": [
   "dataset"
  ],
- "creation_time": "2026-02-24T18:12:05.493604",
+ "creation_time": "2026-03-19T10:39:27.519364",
  "rde_objects": [
   {
    "uuid": "93d47eb8-f298-59c4-ab1d-9e6a217788f2",
@@ -131,17 +131,17 @@
     "external_source": false,
     "metadata_field_config": [
      {
-      "id": "mean_height",
-      "type": "FLOAT",
+      "id": "nb_points",
+      "type": "INTEGER",
       "display_label": {
        "en": [
-        "Mean height"
+        "Number of points"
        ],
        "it": [
-        "Altezza media"
+        "Numero di punti"
        ],
        "fr": [
-        "Hauteur médiane"
+        "Nombre de points"
        ]
       },
       "nullable": false,
@@ -152,107 +152,23 @@
       "tag": null
      },
      {
-      "id": "SESTIERE",
-      "type": "STRING",
+      "id": "area",
+      "type": "FLOAT",
       "display_label": {
        "en": [
-        "District"
+        "Area [m2]"
        ],
        "it": [
-        "Sestiere"
+        "Area [m2]"
        ],
        "fr": [
-        "Sestiere"
-       ]
-      },
-      "nullable": false,
-      "indexable": false,
-      "paradata": "s",
-      "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "wikidata",
-      "type": "STRING",
-      "display_label": {
-       "en": [
-        "Wikidata"
-       ],
-       "it": [
-        "Wikidata"
-       ],
-       "fr": [
-        "Wikidata"
+        "Aire [m2]"
        ]
       },
       "nullable": true,
       "indexable": false,
-      "paradata": "s",
+      "paradata": "a",
       "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "aulic_name",
-      "type": "STRING",
-      "display_label": {
-       "en": [
-        "Aulic name"
-       ],
-       "it": [
-        "Nome aulico"
-       ],
-       "fr": [
-        "Nom aulique"
-       ]
-      },
-      "nullable": false,
-      "indexable": true,
-      "paradata": "m",
-      "short_display": true,
-      "hidden": false,
-      "tag": "PLACE"
-     },
-     {
-      "id": "style",
-      "type": "STRING",
-      "display_label": {
-       "en": [
-        "Style"
-       ],
-       "it": [
-        "Stile"
-       ],
-       "fr": [
-        "Style"
-       ]
-      },
-      "nullable": true,
-      "indexable": false,
-      "paradata": "m",
-      "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "EDIFI_ID",
-      "type": "STRING",
-      "display_label": {
-       "en": [
-        "EDIFICI ID"
-       ],
-       "it": [
-        "EDIFICI ID"
-       ],
-       "fr": [
-        "EDIFICI ID"
-       ]
-      },
-      "nullable": false,
-      "indexable": false,
-      "paradata": "s",
-      "short_display": true,
       "hidden": false,
       "tag": null
      },
@@ -278,17 +194,17 @@
       "tag": null
      },
      {
-      "id": "max_height",
+      "id": "mean_height",
       "type": "FLOAT",
       "display_label": {
        "en": [
-        "Max height"
+        "Mean height"
        ],
        "it": [
-        "Altezza massima"
+        "Altezza media"
        ],
        "fr": [
-        "Hauteur maximale"
+        "Hauteur médiane"
        ]
       },
       "nullable": false,
@@ -320,6 +236,48 @@
       "tag": null
      },
      {
+      "id": "aulic_name",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Aulic name"
+       ],
+       "it": [
+        "Nome aulico"
+       ],
+       "fr": [
+        "Nom aulique"
+       ]
+      },
+      "nullable": false,
+      "indexable": true,
+      "paradata": "m",
+      "short_display": true,
+      "hidden": false,
+      "tag": "PLACE"
+     },
+     {
+      "id": "EDIFI_ID",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "EDIFICI ID"
+       ],
+       "it": [
+        "EDIFICI ID"
+       ],
+       "fr": [
+        "EDIFICI ID"
+       ]
+      },
+      "nullable": false,
+      "indexable": false,
+      "paradata": "s",
+      "short_display": true,
+      "hidden": false,
+      "tag": null
+     },
+     {
       "id": "CIVICI",
       "type": "STRING",
       "display_label": {
@@ -331,6 +289,90 @@
        ],
        "fr": [
         "Civic number"
+       ]
+      },
+      "nullable": false,
+      "indexable": false,
+      "paradata": "s",
+      "short_display": false,
+      "hidden": false,
+      "tag": null
+     },
+     {
+      "id": "ISOLA",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Island"
+       ],
+       "it": [
+        "Isola"
+       ],
+       "fr": [
+        "Île"
+       ]
+      },
+      "nullable": true,
+      "indexable": false,
+      "paradata": "s",
+      "short_display": false,
+      "hidden": false,
+      "tag": null
+     },
+     {
+      "id": "max_height",
+      "type": "FLOAT",
+      "display_label": {
+       "en": [
+        "Max height"
+       ],
+       "it": [
+        "Altezza massima"
+       ],
+       "fr": [
+        "Hauteur maximale"
+       ]
+      },
+      "nullable": false,
+      "indexable": false,
+      "paradata": "a",
+      "short_display": false,
+      "hidden": false,
+      "tag": null
+     },
+     {
+      "id": "style",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "Style"
+       ],
+       "it": [
+        "Stile"
+       ],
+       "fr": [
+        "Style"
+       ]
+      },
+      "nullable": true,
+      "indexable": false,
+      "paradata": "m",
+      "short_display": false,
+      "hidden": false,
+      "tag": null
+     },
+     {
+      "id": "SESTIERE",
+      "type": "STRING",
+      "display_label": {
+       "en": [
+        "District"
+       ],
+       "it": [
+        "Sestiere"
+       ],
+       "fr": [
+        "Sestiere"
        ]
       },
       "nullable": false,
@@ -362,64 +404,22 @@
       "tag": null
      },
      {
-      "id": "area",
-      "type": "FLOAT",
-      "display_label": {
-       "en": [
-        "Area [m2]"
-       ],
-       "it": [
-        "Area [m2]"
-       ],
-       "fr": [
-        "Aire [m2]"
-       ]
-      },
-      "nullable": true,
-      "indexable": false,
-      "paradata": "a",
-      "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "ISOLA",
+      "id": "wikidata",
       "type": "STRING",
       "display_label": {
        "en": [
-        "Island"
+        "Wikidata"
        ],
        "it": [
-        "Isola"
+        "Wikidata"
        ],
        "fr": [
-        "Île"
+        "Wikidata"
        ]
       },
       "nullable": true,
       "indexable": false,
       "paradata": "s",
-      "short_display": false,
-      "hidden": false,
-      "tag": null
-     },
-     {
-      "id": "nb_points",
-      "type": "INTEGER",
-      "display_label": {
-       "en": [
-        "Number of points"
-       ],
-       "it": [
-        "Numero di punti"
-       ],
-       "fr": [
-        "Nombre de points"
-       ]
-      },
-      "nullable": false,
-      "indexable": false,
-      "paradata": "a",
       "short_display": false,
       "hidden": false,
       "tag": null
@@ -430,7 +430,7 @@
     "ce22c093-3d47-56b8-bf06-0ab86bda0db4",
     "ae0fb021-bbb4-5de7-bca2-afddad4b9d17"
    ],
-   "creation_time": "2026-02-24T18:12:05.489991"
+   "creation_time": "2026-03-19T10:39:27.513459"
   }
  ]
 }

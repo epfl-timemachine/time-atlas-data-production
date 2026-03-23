@@ -559,15 +559,13 @@ def get_likely_type_of_series(s:pd.Series) -> str:
 def python_type_to_ad_hoc_conf_type(tpe: type) -> str:
     if tpe == int or str(tpe).startswith('int'): 
         return "INTEGER"
-    if tpe == str:
+    if tpe == str or str(tpe) == 'str':
         return "STRING"
     if tpe == float or str(tpe).startswith('float'):
         return "FLOAT"
     if tpe == list or tpe == np.ndarray:
         return "LIST"
-    
     return str(tpe)
-    #TODO: add CATEGORY; also the type of the list, URL and timedate entities. 
 
 def quick_display_label(label:str) -> str:
     vs = label.replace('_', ' ').replace('-', '').split(' ')

@@ -282,7 +282,6 @@ def quick_uuid(hr_uuid:str, coords:str) -> str:
 
 # need to split between obs that actually have street level geolocatin, and as such will have POIs. 
 df_precise_coords = df[df['coordinates'].apply(len) > 0].copy()
-df_precise_coords.to_csv('geolocated_postcards.csv', index=False)
 df = df_precise_coords.copy() # TODO: REMOVE once the Obs/Poi switch has been done in frontend
 # the "no precise coords" are the ones that will only have the city level geolocation, will still have observations ang get triggered by reserach, but no POIs.s
 # df_no_precise_coords = df[df['coordinates'].apply(len) == 0].copy() # TODO: restablish once the Obs/Poi switch has been done in frontend

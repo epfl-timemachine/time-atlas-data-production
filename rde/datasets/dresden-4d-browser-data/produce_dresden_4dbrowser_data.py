@@ -158,6 +158,7 @@ def extract_image_name_from_id(image_id):
 gdf['lat_lon'] = gdf['geometry'].apply(lambda geom: f'{geom.y},{geom.x}') # for "guessing" the 4d browser in context url
 img_base = 'dresden/4d_browser/{filename}'
 man_list = {}
+gdf['title'] = gdf['title'].fillna('Untitled')
 for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
     file_obj = row['file']
     filename = extract_image_name_from_id(row['id'])
