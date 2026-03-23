@@ -305,9 +305,9 @@ def produce_obs_gdf(df:pd.DataFrame, need_poi:bool=True) -> gpd.GeoDataFrame:
     return gdf_obs
 
 gdf_obs_precise = produce_obs_gdf(df_precise_coords)
-# gdf_obs_no_precise = produce_obs_gdf(df_no_precise_coords, need_poi=False) # TODO: restablish once the Obs/Poi switch has been done in frontend
-# gdf_obs = pd.concat([gdf_obs_precise, gdf_obs_no_precise], ignore_index=False) # TODO: restablish once the Obs/Poi switch has been done in frontend
-gdf_obs = gdf_obs_precise.copy() # TODO: REMOVE once the Obs/Poi switch has been done in frontend
+gdf_obs_no_precise = produce_obs_gdf(df_no_precise_coords, need_poi=False) # TODO: restablish once the Obs/Poi switch has been done in frontend
+gdf_obs = pd.concat([gdf_obs_precise, gdf_obs_no_precise], ignore_index=False) # TODO: restablish once the Obs/Poi switch has been done in frontend
+# gdf_obs = gdf_obs_precise.copy() # TODO: REMOVE once the Obs/Poi switch has been done in frontend
 print(f'Total number of observations generated: {len(gdf_obs)}')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'europeana_postcards_obs', RDEType.OBS.value)
