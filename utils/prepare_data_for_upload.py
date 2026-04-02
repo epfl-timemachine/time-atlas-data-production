@@ -12,6 +12,17 @@ from pathlib import Path
 from datetime import datetime
 
 
+FILENAMES_TO_KEEP = [
+    'observations.json',
+    'historical_records.json',
+    'areas.json',
+    'datasets.json',
+    'layers.json',
+    'map.json',
+    'points_of_interest.json'
+]
+
+
 def get_timestamp():
     """Generate timestamp in format YYYYMMDDHHMM."""
     return datetime.now().strftime("%Y%m%d%H%M")
@@ -44,6 +55,7 @@ def should_include_file(file_path, rde_path):
         return False
     
     parts = rel_path.parts
+    filename = file_path.name
     
     # Skip if any parent directory is named 'src'
     if 'src' in parts:
@@ -51,20 +63,26 @@ def should_include_file(file_path, rde_path):
     
     # Check if file is in datasets folder
     if len(parts) >= 2 and parts[0] == 'datasets':
-        # If file is directly in rde/datasets/<dataset_name>/, exclude it
-        # Format: rde/datasets/<dataset_name>/file.json
+        # For datasets, check if file is directly in rde/datasets/<dataset_name>/
+        # and matches one of the filenames in FILENAMES_TO_KEEP
         if len(parts) == 3:
-            return False
+            return filename in FILENAMES_TO_KEEP
         
-        # If file is in rde/datasets/<dataset_name>/data/ or deeper, include it
-        # Format: rde/datasets/<dataset_name>/data/file.json or deeper
-        if len(parts) >= 4 and parts[2] == 'data':
-            return True
-        
-        # Any other location in datasets (not in data/) should be excluded
+        # Any other location in datasets (deeper nesting) should be excluded
         return False
     
-    # All other JSON files are included (maps, areas, pois, etc.)
+    # Check if file is in areas folder
+    if len(parts) >= 2 and parts[0] == 'areas':
+        # For areas, keep the old logic: include files from rde/areas/<area>/data/
+        if len(parts) >= 4 and parts[2] == 'data':
+            return True
+        # Exclude area-level JSON files (directly in rde/areas/<area>/)
+        if len(parts) == 3:
+            return False
+        # Any other location in areas (not in data/) should be excluded
+        return False
+    
+    # All other JSON files are included (maps, pois, etc.)
     return True
 
 
@@ -137,9 +155,13 @@ def main():
         print(f"Error: rde folder not found at {rde_path}")
         sys.exit(1)
     
+    # Create s3_dump folder if it doesn't exist
+    s3_dump_folder = repo_root / "s3_dump"
+    s3_dump_folder.mkdir(parents=True, exist_ok=True)
+    
     # Generate timestamp and create output folder
     timestamp = get_timestamp()
-    output_folder = repo_root / timestamp
+    output_folder = s3_dump_folder / timestamp
     
     print(f"\n[1/4] Configuration:")
     print(f"  Source folder: {rde_path}")
@@ -149,8 +171,8 @@ def main():
     # Find JSON files
     print(f"\n[2/4] Scanning for JSON files...")
     print(f"  - Excluding files under 'src' folders")
-    print(f"  - Excluding dataset-level JSON files")
-    print(f"  - Including files from rde/datasets/<dataset>/data/")
+    print(f"  - Including files from rde/datasets/<dataset>/ matching FILENAMES_TO_KEEP")
+    print(f"  - Including files from rde/areas/<area>/data/")
     json_files = find_json_files(rde_path)
     print(f"✓ Found {len(json_files)} JSON files to copy")
     
