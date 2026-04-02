@@ -30,7 +30,7 @@ edifici_layer_uuid = get_layer_uuid(MAP_FOLDER+'layers.json', 'venice-2024-conte
 DATA_VENICE_FOLDER = os.path.join(parent_dir, 'data-venice')
 
 # to note: all the geometries are expressde as multipolygon, but actually there is a single geometry in each. No need to do multiple geometries per obs a simple explode reduce them to single polygon.
-df = gpd.read_file('src/parcelsofvenice_pointcloud_images_2025-08-06/2025-08-06_edifici_forwebinterface.geojson').to_crs('EPSG:4326').explode()
+df = gpd.read_file('src/2025-08-06_edifici_forwebinterface.geojson').to_crs('EPSG:4326').explode()
 df = df.drop_duplicates()
 df['EDIFI_ID'] = df['EDIFI_ID'].astype(str)
 
