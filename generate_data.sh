@@ -52,15 +52,16 @@ run_scripts_in_directory() {
 # Step 2: Run scripts in rde/maps
 run_scripts_in_directory "rde/maps"
 
-# Step 3: Run scripts in rde/datasets
-run_scripts_in_directory "rde/datasets" "ludus-data"
-
-# Step 4: Run scripts in rde/areas
+# Step 3: Run scripts in rde/areas
 cd rde/areas
 echo "Generating data for areas"
 python3 produce_areas.py
 echo ""
 cd - > /dev/null
+
+
+# Step 4: Run scripts in rde/datasets
+run_scripts_in_directory "rde/datasets" "ludus-data" "switzerland-qbuildings"
 
 # Step 4: Run script in rde/pois
 cd rde/pois

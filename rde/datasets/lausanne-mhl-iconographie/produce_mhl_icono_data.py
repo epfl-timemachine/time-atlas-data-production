@@ -23,7 +23,7 @@ from timeatlas.RDEModel import RDEType
 
 DATA_SRC_PATH = Path(join(parent_dir, 'data-lausanne/icono-data-processing'))
 TM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
@@ -66,6 +66,7 @@ df['display_title'] = df.apply(lambda r: f"({r['file_reference']}) {r['titre']}"
 
 
 from utils.iiif import *
+create_iiif_directory_if_not_exists()
 # Generating the IIIF manifests
 df['image_fp'] = df['image_id'].apply(lambda v: 'lausanne/mhl_iconographie/' + v)
 man_list = {}
@@ -89,7 +90,7 @@ for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests
     )
     man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[row['display_title'] + ' ' + row['description']]},'en', [page_obj])
 
-    with open(f'data/iiif/manifests/{manifest_uuid}.json', 'w') as f:
+    with open(f'iiif/manifests/{manifest_uuid}.json', 'w') as f:
         f.write(json.dumps(man, indent=2, ensure_ascii=False))
     man_list[manifest_uuid] = ({"en":[row['description']]}, page_obj)
 
@@ -100,7 +101,7 @@ collection_obj = generate_collection_manifest(
     {'en': ['Geolocated photographs from the MHL, Lausanne. Data retrieved from museris.lausanne.ch']},
     man_list)
 
-with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
+with open(f'iiif/collections/{collection_uuid}.json', 'w') as f:
     f.write(json.dumps(collection_obj, indent=2, ensure_ascii=False))
 
 drop_cols = ['image_id', 'width', 'height',

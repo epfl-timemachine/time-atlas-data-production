@@ -12,7 +12,7 @@ if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
 from timeatlas.data_modeling import *
 
 all_datasets = [f for f in os.listdir('../datasets') if os.path.isdir(os.path.join('../datasets', f))]
-dobs_suffix = 'data/observations.json'
+dobs_suffix = 'observations.json'
 all_obs_files = [os.path.join('../datasets/', ds, dobs_suffix) for ds in all_datasets if os.path.exists(os.path.join('../datasets/', ds, dobs_suffix))]
 
 obs_data = []

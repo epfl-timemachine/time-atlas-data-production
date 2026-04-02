@@ -24,7 +24,7 @@ with open('dataproduction_config.json') as f:
 
 # arbitrary namespace, just to generate reproducible UUIDv5 from the data of this dataset.
 VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_UUID, DS_SLUG)
@@ -113,8 +113,9 @@ registry_label = {
 
 collection[manifest_uid] = (registry_label, df_pages['page_obj'].tolist()[0])
 
+create_iiif_directory_if_not_exists()
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
-with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+with open(f'iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, registry_label, collection), f, indent=2, ensure_ascii=False)
 
 col_in_order = ['LAST_N', 'FIRST_N', 'PER_GRP', 'PER_COMPL', 'LOC_PAR', 'LOC_STR', 'NUM', 'LOC_COMPL']
@@ -132,7 +133,7 @@ df_iiif_links['canvas_id'] = df_iiif_links['page'].apply(lambda v: page_to_canva
 iiif_links = df_iiif_links[['canvas_id', 'iiif_metadata_obj']].groupby('canvas_id', sort=False).agg(list).reset_index().set_index('canvas_id')['iiif_metadata_obj'].to_dict()
 df_pages['page_obj'] = df_pages['page_obj'].apply(lambda x: dict(x, metadata = iiif_links.get(x['id'], '')))
 
-with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
+with open(f'iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, registry_label, 'en', df_pages['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
 
 

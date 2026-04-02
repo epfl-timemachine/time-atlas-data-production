@@ -30,7 +30,7 @@ amsterdam_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 
 # Geometry RDE production
 geometries_fp = join(DATA_SRC_PATH, '1832_Adamhuurw_gebouwlaagkadaster')

@@ -38,7 +38,7 @@ cadaster_layer_uuid = get_layer_uuid(MAP_FOLDER+'layers.json', 'venice-dorigo-ma
 formatted_begin = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM'])
 formatted_end = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
 TR_OBJ = [formatted_begin, formatted_end]
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 geometries_fp = list(DORIGO_DATA_PATH.rglob('*geometries.geojson'))[0]

@@ -33,7 +33,7 @@ venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['A
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 
 # Source Entities Production:
 #1. manifest for the registry
@@ -90,17 +90,17 @@ df_imgs['canvas_id'] = df_imgs['page_obj'].apply(lambda x: x['id'])
 # df_maps['canvas_id'] = df_maps['page_obj'].apply(lambda x: x['id'])
 
 
-# with open(f'data/iiif/manifests/{map_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+# with open(f'iiif/manifests/{map_manifest_uid}.json', 'w+', encoding='utf-8') as f:
 #     json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, map_manifest_uid, map_label, 'en', df_maps['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
 
-
+create_iiif_directory_if_not_exists()
 #3. the collection of manifests
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
 collection_label = {"en": ['Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni'],
                   "fr": ['Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni'],
                     "it": ['Archivio di Stato di Venezia, Catasti, Censo Stabile, Sommarioni']
                     }
-with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+with open(f'iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, collection), f, indent=2, ensure_ascii=False)
 
 # Geometry RDE production
@@ -248,7 +248,7 @@ df_imgs['page_obj'] = df_imgs['page_obj'].apply(lambda x: dict(x, metadata = iii
 
 for manifest_uid, sub_df in df_imgs.groupby('manifest_uid'):
     curr_label = collection[manifest_uid][0]
-    with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
+    with open(f'iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
         json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, curr_label, 'en', sub_df['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
 
 

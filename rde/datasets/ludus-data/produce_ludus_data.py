@@ -27,4 +27,4 @@ DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''

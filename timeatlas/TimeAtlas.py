@@ -1,5 +1,4 @@
 import os
-from turtle import pd
 from .RDEModel import *
 import requests
 import pickle

@@ -38,7 +38,7 @@ edifi_id_to_remove = ['6422','6421']
 df = df[~df['EDIFI_ID'].isin(edifi_id_to_remove)]
 df['start_time'] = min_time
 df['end_time'] = max_time
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 
 venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
@@ -174,7 +174,7 @@ df_of_hr['label_txt'] = df_of_hr['metadata'].apply(lambda x: f"{x['aulic_name']}
 
 # Source Production
 url_prefix = 'https://image-timemachine.epfl.ch/iiif/3/venice%2F3Dbuilding%2Ffigures%2F{folder}/{file_name}.png/full/max/0/default.jpg'
-
+create_iiif_directory_if_not_exists()
 man_list = {}
 for group, sdf in df_man_edifici.groupby('uid'):
     vals = df_of_hr[df_of_hr['EDIFI_ID'] == group]
@@ -197,13 +197,13 @@ for group, sdf in df_man_edifici.groupby('uid'):
         pages.append(page_obj)
     man_cont = iiif.generate_manifest_object(VTM_UUID5_NS, man_uuid, {'en': [man_label]}, 'en', pages, None)
     man_list[man_uuid] = (man_label, pages[0])
-    with open(f'data/iiif/manifests/{man_uuid}.json', 'w+', encoding='utf-8') as f:
+    with open(f'iiif/manifests/{man_uuid}.json', 'w+', encoding='utf-8') as f:
         json.dump(man_cont, f, indent=2, ensure_ascii=False)
 
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
 collection_label = {"en": ['Figures of facades and panoramas extracted from cloudpoints of venetian buildings']}
-
-with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+create_iiif_directory_if_not_exists()
+with open(f'iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, man_list), f, indent=2, ensure_ascii=False)
 
 format = "application/vnd.las"
@@ -220,13 +220,13 @@ for _, row in df_of_hr.iterrows():
     annotation = iiif.generate_hr_commenting_annotation(VTM_UUID5_NS, canvas_id, 'en', [(row['uuid'], {"en": [label]})], 'Scene')
     manifest['items'][0]['annotations'] = [annotation]
     man_3d_list[man_uuid] = (label, man_uuid)
-    with open(f'data/iiif/manifests/{man_uuid}.json', 'w+') as f:
+    with open(f'iiif/manifests/{man_uuid}.json', 'w+') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
 collection_3d_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_3d_{DS_SLUG}'))
 collection_3d_label = {"en": ['Cloudpoints models in LAS format from all venetian buildings from contemporary data acquisition']}
 
-with open(f'data/iiif/collections/{collection_3d_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+with open(f'iiif/collections/{collection_3d_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest_no_thumbnail(collection_3d_manifest_uid, collection_3d_label, man_3d_list), f, indent=2, ensure_ascii=False)
 
 # Produce dataset object

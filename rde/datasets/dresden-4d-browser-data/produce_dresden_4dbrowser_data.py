@@ -24,7 +24,7 @@ with open('dataproduction_config.json') as f:
 # arbitrary namespace, just to generate reproducible UUIDv5 from the data of this dataset.
 TM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
@@ -159,6 +159,8 @@ gdf['lat_lon'] = gdf['geometry'].apply(lambda geom: f'{geom.y},{geom.x}') # for 
 img_base = 'dresden/4d_browser/{filename}'
 man_list = {}
 gdf['title'] = gdf['title'].fillna('Untitled')
+
+create_iiif_directory_if_not_exists()
 for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifests"):
     file_obj = row['file']
     filename = extract_image_name_from_id(row['id'])
@@ -180,7 +182,7 @@ for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifest
         metadata=[[row['hr_uuid'], row['title']]],
         external_resource=original_source)
     man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[row['title']]},'en', [page_obj])
-    with open(f'data/iiif/manifests/{manifest_uuid}.json', 'w') as f:
+    with open(f'iiif/manifests/{manifest_uuid}.json', 'w') as f:
         f.write(json.dumps(man, indent=2, ensure_ascii=False))
     man_list[manifest_uuid] = ({"en":[row['title']]}, page_obj)
     
@@ -190,7 +192,7 @@ collection_obj = generate_collection_manifest(
     collection_uuid,
     {'en': ['Geolocated pictures of Dresden, Germany. Data retrieved from 4dbrowser.org.']},
     man_list)
-with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
+with open(f'iiif/collections/{collection_uuid}.json', 'w') as f:
     f.write(json.dumps(collection_obj, indent=2, ensure_ascii=False))
 
 # Dataset RDE Object production

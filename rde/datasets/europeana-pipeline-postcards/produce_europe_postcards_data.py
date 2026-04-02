@@ -207,7 +207,7 @@ with open('dataproduction_config.json') as f:
 # arbitrary namespace, just to generate reproducible UUIDv5 from the data of this dataset.
 TM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
@@ -282,10 +282,9 @@ def quick_uuid(hr_uuid:str, coords:str) -> str:
 
 # need to split between obs that actually have street level geolocatin, and as such will have POIs. 
 df_precise_coords = df[df['coordinates'].apply(len) > 0].copy()
-df = df_precise_coords.copy() # TODO: REMOVE once the Obs/Poi switch has been done in frontend
 # the "no precise coords" are the ones that will only have the city level geolocation, will still have observations ang get triggered by reserach, but no POIs.s
-# df_no_precise_coords = df[df['coordinates'].apply(len) == 0].copy() # TODO: restablish once the Obs/Poi switch has been done in frontend
-# df_no_precise_coords['coordinates'] = df_no_precise_coords['country_city_coordinates'].apply(lambda v: [v]) # TODO: restablish once the Obs/Poi switch has been done in frontend
+df_no_precise_coords = df[df['coordinates'].apply(len) == 0].copy()
+df_no_precise_coords['coordinates'] = df_no_precise_coords['country_city_coordinates'].apply(lambda v: [v])
 tpe='postcard'
 def produce_obs_gdf(df:pd.DataFrame, need_poi:bool=True) -> gpd.GeoDataFrame:
     tqdm.pandas(desc="Generating obs uuid")
@@ -305,9 +304,8 @@ def produce_obs_gdf(df:pd.DataFrame, need_poi:bool=True) -> gpd.GeoDataFrame:
     return gdf_obs
 
 gdf_obs_precise = produce_obs_gdf(df_precise_coords)
-gdf_obs_no_precise = produce_obs_gdf(df_no_precise_coords, need_poi=False) # TODO: restablish once the Obs/Poi switch has been done in frontend
-gdf_obs = pd.concat([gdf_obs_precise, gdf_obs_no_precise], ignore_index=False) # TODO: restablish once the Obs/Poi switch has been done in frontend
-# gdf_obs = gdf_obs_precise.copy() # TODO: REMOVE once the Obs/Poi switch has been done in frontend
+gdf_obs_no_precise = produce_obs_gdf(df_no_precise_coords, need_poi=False)
+gdf_obs = pd.concat([gdf_obs_precise, gdf_obs_no_precise], ignore_index=False)
 print(f'Total number of observations generated: {len(gdf_obs)}')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'europeana_postcards_obs', RDEType.OBS.value)
@@ -324,6 +322,7 @@ from utils.iiif import *
 # Generating the IIIF manifests
 df['image_fp'] = df['filename'].apply(lambda v: f'europeana/postcards/{v}')
 man_list = {}
+create_iiif_directory_if_not_exists()
 for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests"):
     manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['record_id'], ad_hoc_seed='postcard_manifest')
     description = row['description']
@@ -354,7 +353,7 @@ for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests
             print(f'Warning: no width/height info for file {fname}')
             continue
     man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[description]},'en', pages_obj)
-    with open(f'data/iiif/manifests/{manifest_uuid}.json', 'w') as f:
+    with open(f'iiif/manifests/{manifest_uuid}.json', 'w') as f:
         f.write(json.dumps(man, indent=2, ensure_ascii=False))
     man_list[manifest_uuid] = ({"en":[description]}, pages_obj[0])
 
@@ -370,7 +369,7 @@ collection_obj = generate_collection_manifest(
     collection_uuid,
     {'en': [f'{len(man_list)} geolocated postcards from Europeana. Data retrieved from Europeana. Geolocation process done at EPFL.']},
     man_list)
-with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
+with open(f'iiif/collections/{collection_uuid}.json', 'w') as f:
     f.write(json.dumps(collection_obj, indent=2, ensure_ascii=False))
 
 remove_cols_from_hr = [

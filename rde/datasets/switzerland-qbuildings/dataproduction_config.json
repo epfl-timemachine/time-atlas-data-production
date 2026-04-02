@@ -1,0 +1,542 @@
+{
+    "UUID_NAMESPACE": "https://timemachine.epfl.ch/switzerland/qbuildings",
+    "TIMERANGE_MINIMUM": 20240101,
+    "TIMERANGE_MAXIMUM": 20251231,
+    "AREA_SLUGS": ["country-switzerland-area"],
+    "DATASET_CONFIGURATION": {
+        "slug": "switzerland-qbuildings",
+        "name": {
+            "en": ["QBuildings Data"],
+            "it": ["QBuildings Data"],
+            "fr": ["QBuildings Data"],
+            "nl": ["QBuildings Data"]
+        },
+        "display_thumbnail": true,
+         "dataset_metadata_config":  {
+            "description": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Description"],
+                    "fr": ["Description"],
+                    "it": ["Descrizione"],
+                    "de": ["Beschreibung"]
+                },
+                "value": {
+                    "en": ["QBuildings is a GIS database, containing layers of information for the characterisation of the territory from an energy perspective. This dataset is only a snippet from the whole project, and only contains the buildings located in the city of Lausanne."],
+                    "it": ["QBuildings è un database GIS, contenente strati di informazioni per la caratterizzazione del territorio dal punto di vista energetico. Questo dataset è solo un estratto dell'intero progetto e contiene solo gli edifici situati nella città di Losanna."],
+                    "fr": ["QBuildings est une base de données SIG, contenant des couches d'informations pour la caractérisation du territoire du point de vue énergétique. Ce jeu de données n'est qu'un extrait du projet complet et ne contient que les bâtiments situés dans la ville de Lausanne."],
+                    "nl": ["QBuildings is een GIS-database, met lagen van informatie voor de karakterisering van het gebied vanuit een energieperspectief. Deze dataset is slechts een fragment van het hele project en bevat alleen de gebouwen in de stad Lausanne."],
+                    "de": ["QBuildings ist eine GIS-Datenbank, die Informationsschichten zur Charakterisierung des Gebiets aus energetischer Sicht enthält. Dieser Datensatz ist nur ein Ausschnitt des gesamten Projekts und enthält nur die Gebäude in der Stadt Lausanne."]
+                }
+            },
+            "url": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["URL"],
+                    "fr": ["URL"],
+                    "it": ["URL"],
+                    "de": ["URL"]
+                },
+                "value": {
+                    "en": ["https://ipese-web.epfl.ch/lepour/qbuildings/"],
+                    "it": ["https://ipese-web.epfl.ch/lepour/qbuildings/"],
+                    "fr": ["https://ipese-web.epfl.ch/lepour/qbuildings/"],
+                    "nl": ["https://ipese-web.epfl.ch/lepour/qbuildings/"],
+                    "de": ["https://ipese-web.epfl.ch/lepour/qbuildings/"]
+                }
+            },
+            "citation": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Citation"],
+                    "fr": ["Citation"],
+                    "it": ["Citazione"],
+                    "de": ["Zitat"]
+                },
+                "value": {
+                    "en": ["QBuildings, Loustau and Lepour, IPESE 2023"],
+                    "it": ["QBuildings, Loustau and Lepour, IPESE 2023"],
+                    "fr": ["QBuildings, Loustau and Lepour, IPESE 2023"],
+                    "nl": ["QBuildings, Loustau and Lepour, IPESE 2023"],
+                    "de": ["QBuildings, Loustau and Lepour, IPESE 2023"]
+                }
+            },
+            "paradata": {
+                "type": "STRING",
+                "display_label": {
+                    "en": ["Paradata"],
+                    "fr": ["Paradata"],
+                    "it": ["Paradata"]
+                },
+                "value": {
+                    "en": ["Source data were extracted from the PostgreSQL database of the QBuildings project, cross-referenced with a LIDAR of the whole area from swisstopo, and transformed to fit the TimeAtlas data model."],
+                    "fr": ["Les données sources ont été extraites de la base de données PostgreSQL du projet QBuildings, recoupées avec un LIDAR de toute la zone provenant de swisstopo, et transformées pour s'adapter au modèle de données TimeAtlas."],
+                    "it": ["I dati di origine sono stati estratti dal database PostgreSQL del progetto QBuildings, incrociati con un LIDAR dell'intera area proveniente da swisstopo, e trasformati per adattarsi al modello di dati TimeAtlas."],
+                    "nl": ["De brongegevens zijn geëxtraheerd uit de PostgreSQL-database van het QBuildings-project, gekruist met een LIDAR van het hele gebied van swisstopo, en getransformeerd om te passen bij het TimeAtlas-datamodel."],
+                    "de": ["Die Quelldaten wurden aus der PostgreSQL-Datenbank des QBuildings-Projekts extrahiert, mit einem LIDAR der gesamten Fläche von swisstopo abgeglichen und so transformiert, dass sie zum TimeAtlas-Datenmodell passen."]
+                }
+            }
+        },
+        "indexed": [
+            "source_heating",
+            "system_hotwater",
+            "class"
+        ],
+        "short_display" : [
+            "class",
+            "count_floor",
+            "source_heating",
+            "area_roof_m2"
+        ],
+        "hidden": [
+        ],
+        "automatic_fields": [
+        ],
+        "manual_fields": [
+        ],
+        "semi_automatic_fields": [
+        ],
+        "ai_fields": [
+        ],
+        "main_label": "${class}",
+        "sub_label": "${system_heating}",
+        "tagged_fields": {
+        },
+        "labels": {
+            "count_floor": {
+                "en": ["Number of Floors"],
+                "fr": ["Nombre d'étages"],
+                "it": ["Numero di piani"],
+                "nl": ["Aantal verdiepingen"],
+                "de": ["Anzahl der Stockwerke"]
+            },
+            "gas_grid": {
+                "en": ["Gas Grid Connection"],
+                "fr": ["Raccordement au réseau de gaz"],
+                "it": ["Collegamento alla rete del gas"],
+                "nl": ["Gasnetaansluiting"],
+                "de": ["Gasanschluss"]
+            },
+            "area_facade_solar_m2": {
+                "en": ["Solar Facade Area (m²)"],
+                "fr": ["Surface de façade solaire (m²)"],
+                "it": ["Area facciata solare (m²)"],
+                "nl": ["Zonnegevel Oppervlakte (m²)"],
+                "de": ["Solare Fassadenfläche (m²)"]
+            },
+            "area_net_floor_m2": {
+                "en": ["Net Floor Area (m²)"],
+                "fr": ["Surface utile nette (m²)"],
+                "it": ["Superficie netta del pavimento (m²)"],
+                "nl": ["Netto vloeroppervlak (m²)"],
+                "de": ["Nettogrundfläche (m²)"]
+            },
+            "solar_gain_factor_signature_m2": {
+                "en": ["Solar Gain Factor (m²)"],
+                "fr": ["Facteur de gain solaire (m²)"],
+                "it": ["Fattore di guadagno solare (m²)"],
+                "nl": ["Zonnewinst Factor (m²)"],
+                "de": ["Solargewinnfaktor (m²)"]
+            },
+            "power_cooling_signature_kW": {
+                "en": ["Cooling Power (kW)"],
+                "fr": ["Puissance de refroidissement (kW)"],
+                "it": ["Potenza di raffreddamento (kW)"],
+                "nl": ["Koelvermogen (kW)"],
+                "de": ["Kühlleistung (kW)"]
+            },
+            "energy_cooling_signature_kWh_y": {
+                "en": ["Annual Cooling Energy (kWh/year)"],
+                "fr": ["Énergie de refroidissement annuelle (kWh/an)"],
+                "it": ["Energia di raffreddamento annuale (kWh/anno)"],
+                "nl": ["Jaarlijkse koelenergie (kWh/jaar)"],
+                "de": ["Jährliche Kühlenergie (kWh/Jahr)"]
+            },
+            "h2_grid": {
+                "en": ["Hydrogen Grid Connection"],
+                "fr": ["Raccordement au réseau d'hydrogène"],
+                "it": ["Collegamento alla rete dell'idrogeno"],
+                "nl": ["Waterstofnetaansluiting"],
+                "de": ["Wasserstoffnetzanschluss"]
+            },
+            "z": {
+                "en": ["Elevation (m)"],
+                "fr": ["Altitude (m)"],
+                "it": ["Altitudine (m)"],
+                "nl": ["Hoogte (m)"],
+                "de": ["Höhe (m)"]
+            },
+            "source_heating": {
+                "en": ["Heating Source"],
+                "fr": ["Source de chauffage"],
+                "it": ["Fonte di riscaldamento"],
+                "nl": ["Verwarmingsbron"],
+                "de": ["Heizquelle"]
+            },
+            "length_footprint_facade_m": {
+                "en": ["Facade Perimeter (m)"],
+                "fr": ["Périmètre de façade (m)"],
+                "it": ["Perimetro facciata (m)"],
+                "nl": ["Gevelperimeter (m)"],
+                "de": ["Fassadenumfang (m)"]
+            },
+            "area_era_m2": {
+                "en": ["ERA Area (m²)"],
+                "fr": ["Surface ERA (m²)"],
+                "it": ["Area ERA (m²)"],
+                "nl": ["ERA Oppervlakte (m²)"],
+                "de": ["ERA-Fläche (m²)"]
+            },
+            "temperature_heating_return_C": {
+                "en": ["Heating Return Temperature (°C)"],
+                "fr": ["Température de retour de chauffage (°C)"],
+                "it": ["Temperatura di ritorno riscaldamento (°C)"],
+                "nl": ["Verwarmingsretourtemperatuur (°C)"],
+                "de": ["Heizungsrücklauftemperatur (°C)"]
+            },
+            "thermal_transmittance_signature_kW_m2_K": {
+                "en": ["Thermal Transmittance (kW/m²K)"],
+                "fr": ["Transmittance thermique (kW/m²K)"],
+                "it": ["Trasmittanza termica (kW/m²K)"],
+                "nl": ["Thermische transmissie (kW/m²K)"],
+                "de": ["Wärmedurchgangskoeffizient (kW/m²K)"]
+            },
+            "power_hotwater_signature_W": {
+                "en": ["Hot Water Power (W)"],
+                "fr": ["Puissance eau chaude (W)"],
+                "it": ["Potenza acqua calda (W)"],
+                "nl": ["Warmwatervermogen (W)"],
+                "de": ["Warmwasserleistung (W)"]
+            },
+            "area_facade_m2": {
+                "en": ["Facade Area (m²)"],
+                "fr": ["Surface de façade (m²)"],
+                "it": ["Area facciata (m²)"],
+                "nl": ["Geveloppervlak (m²)"],
+                "de": ["Fassadenfläche (m²)"]
+            },
+            "temperature_hotwater_return_C": {
+                "en": ["Hot Water Return Temperature (°C)"],
+                "fr": ["Température de retour eau chaude (°C)"],
+                "it": ["Temperatura di ritorno acqua calda (°C)"],
+                "nl": ["Warmwaterretourtemperatuur (°C)"],
+                "de": ["Warmwasserrücklauftemperatur (°C)"]
+            },
+            "period": {
+                "en": ["Construction Period"],
+                "fr": ["Période de construction"],
+                "it": ["Periodo di costruzione"],
+                "nl": ["Bouwperiode"],
+                "de": ["Bauzeit"]
+            },
+            "waste_signature_kW": {
+                "en": ["Waste Power (kW)"],
+                "fr": ["Puissance déchets (kW)"],
+                "it": ["Potenza rifiuti (kW)"],
+                "nl": ["Afvalvermogen (kW)"],
+                "de": ["Abfallleistung (kW)"]
+            },
+            "system_hotwater": {
+                "en": ["Hot Water System"],
+                "fr": ["Système d'eau chaude"],
+                "it": ["Sistema acqua calda"],
+                "nl": ["Warmwatersysteem"],
+                "de": ["Warmwassersystem"]
+            },
+            "capita_cap": {
+                "en": ["Population Capacity"],
+                "fr": ["Capacité de population"],
+                "it": ["Capacità popolazione"],
+                "nl": ["Bevolkingscapaciteit"],
+                "de": ["Bevölkerungskapazität"]
+            },
+            "energy_hotwater_signature_kWh_y": {
+                "en": ["Annual Hot Water Energy (kWh/year)"],
+                "fr": ["Énergie eau chaude annuelle (kWh/an)"],
+                "it": ["Energia acqua calda annuale (kWh/anno)"],
+                "nl": ["Jaarlijkse warmwaterenergie (kWh/jaar)"],
+                "de": ["Jährliche Warmwasserenergie (kWh/Jahr)"]
+            },
+            "height_m": {
+                "en": ["Building Height (m)"],
+                "fr": ["Hauteur du bâtiment (m)"],
+                "it": ["Altezza edificio (m)"],
+                "nl": ["Gebouwhoogte (m)"],
+                "de": ["Gebäudehöhe (m)"]
+            },
+            "area_roof_solar_m2": {
+                "en": ["Solar Roof Area (m²)"],
+                "fr": ["Surface de toit solaire (m²)"],
+                "it": ["Area tetto solare (m²)"],
+                "nl": ["Zonnedakoppervlak (m²)"],
+                "de": ["Solare Dachfläche (m²)"]
+            },
+            "id_city": {
+                "en": ["City ID"],
+                "fr": ["ID de ville"],
+                "it": ["ID città"],
+                "nl": ["Stad-ID"],
+                "de": ["Stadt-ID"]
+            },
+            "facade_annual_irr_kWh_y": {
+                "en": ["Annual Facade Irradiation (kWh/year)"],
+                "fr": ["Irradiation annuelle de façade (kWh/an)"],
+                "it": ["Irraggiamento annuale facciata (kWh/anno)"],
+                "nl": ["Jaarlijkse gevelbestraling (kWh/jaar)"],
+                "de": ["Jährliche Fassadenbestrahlung (kWh/Jahr)"]
+            },
+            "id_class": {
+                "en": ["Energy Class ID"],
+                "fr": ["ID de classe énergétique"],
+                "it": ["ID classe energetica"],
+                "nl": ["Energieklasse-ID"],
+                "de": ["Energieklasse-ID"]
+            },
+            "is_hotwater_system": {
+                "en": ["Has Hot Water System"],
+                "fr": ["Possède système eau chaude"],
+                "it": ["Ha sistema acqua calda"],
+                "nl": ["Heeft warmwatersysteem"],
+                "de": ["Hat Warmwassersystem"]
+            },
+            "y": {
+                "en": ["Y Coordinate"],
+                "fr": ["Coordonnée Y"],
+                "it": ["Coordinata Y"],
+                "nl": ["Y-coördinaat"],
+                "de": ["Y-Koordinate"]
+            },
+            "energy_heating_2024_kWh_y": {
+                "en": ["Heating Energy 2024 (kWh/year)"],
+                "fr": ["Énergie de chauffage 2024 (kWh/an)"],
+                "it": ["Energia riscaldamento 2024 (kWh/anno)"],
+                "nl": ["Verwarmingsenergie 2024 (kWh/jaar)"],
+                "de": ["Heizenergie 2024 (kWh/Jahr)"]
+            },
+            "roof_annual_irr_kWh_y": {
+                "en": ["Annual Roof Irradiation (kWh/year)"],
+                "fr": ["Irradiation annuelle de toit (kWh/an)"],
+                "it": ["Irraggiamento annuale tetto (kWh/anno)"],
+                "nl": ["Jaarlijkse dakbestraling (kWh/jaar)"],
+                "de": ["Jährliche Dachbestrahlung (kWh/Jahr)"]
+            },
+            "temperature_hotwater_supply_C": {
+                "en": ["Hot Water Supply Temperature (°C)"],
+                "fr": ["Température d'alimentation eau chaude (°C)"],
+                "it": ["Temperatura alimentazione acqua calda (°C)"],
+                "nl": ["Warmwatertoevoertemperatuur (°C)"],
+                "de": ["Warmwasservorlauftemperatur (°C)"]
+            },
+            "area_footprint_m2": {
+                "en": ["Footprint Area (m²)"],
+                "fr": ["Emprise au sol (m²)"],
+                "it": ["Area di ingombro (m²)"],
+                "nl": ["Voetstuk oppervlak (m²)"],
+                "de": ["Grundfläche (m²)"]
+            },
+            "source_hotwater": {
+                "en": ["Hot Water Source"],
+                "fr": ["Source d'eau chaude"],
+                "it": ["Fonte acqua calda"],
+                "nl": ["Warmwaterbron"],
+                "de": ["Warmwasserquelle"]
+            },
+            "power_heating_signature_kW": {
+                "en": ["Heating Power (kW)"],
+                "fr": ["Puissance de chauffage (kW)"],
+                "it": ["Potenza di riscaldamento (kW)"],
+                "nl": ["Verwarmingsvermogen (kW)"],
+                "de": ["Heizleistung (kW)"]
+            },
+            "egid": {
+                "en": ["Federal Building ID (EGID)"],
+                "fr": ["ID fédéral du bâtiment (EGID)"],
+                "it": ["ID federale edificio (EGID)"],
+                "nl": ["Federaal gebouw-ID (EGID)"],
+                "de": ["Eidgenössische Gebäudeidentifikation (EGID)"]
+            },
+            "length_footprint_m": {
+                "en": ["Footprint Perimeter (m)"],
+                "fr": ["Périmètre de l'emprise (m)"],
+                "it": ["Perimetro ingombro (m)"],
+                "nl": ["Voetstukperimeter (m)"],
+                "de": ["Grundflächenumfang (m)"]
+            },
+            "waste_signature_kg_y": {
+                "en": ["Annual Waste (kg/year)"],
+                "fr": ["Déchets annuels (kg/an)"],
+                "it": ["Rifiuti annuali (kg/anno)"],
+                "nl": ["Jaarlijks afval (kg/jaar)"],
+                "de": ["Jährlicher Abfall (kg/Jahr)"]
+            },
+            "area_roof_m2": {
+                "en": ["Roof Area (m²)"],
+                "fr": ["Surface de toit (m²)"],
+                "it": ["Area tetto (m²)"],
+                "nl": ["Dakoppervlak (m²)"],
+                "de": ["Dachfläche (m²)"]
+            },
+            "temperature_heating_supply_C": {
+                "en": ["Heating Supply Temperature (°C)"],
+                "fr": ["Température d'alimentation de chauffage (°C)"],
+                "it": ["Temperatura alimentazione riscaldamento (°C)"],
+                "nl": ["Verwarmingstoevoertemperatuur (°C)"],
+                "de": ["Heizungsvorlauftemperatur (°C)"]
+            },
+            "id_transformers_V2": {
+                "en": ["Transformer ID V2"],
+                "fr": ["ID transformateur V2"],
+                "it": ["ID trasformatore V2"],
+                "nl": ["Transformator-ID V2"],
+                "de": ["Transformator-ID V2"]
+            },
+            "temperature_interior_C": {
+                "en": ["Interior Temperature (°C)"],
+                "fr": ["Température intérieure (°C)"],
+                "it": ["Temperatura interna (°C)"],
+                "nl": ["Binnentemperatuur (°C)"],
+                "de": ["Innentemperatur (°C)"]
+            },
+            "temperature_threshold_heating_C": {
+                "en": ["Heating Threshold Temperature (°C)"],
+                "fr": ["Température seuil de chauffage (°C)"],
+                "it": ["Temperatura soglia riscaldamento (°C)"],
+                "nl": ["Drempeltemperatuur verwarming (°C)"],
+                "de": ["Heizschwellentemperatur (°C)"]
+            },
+            "area_solar_m2": {
+                "en": ["Total Solar Area (m²)"],
+                "fr": ["Surface solaire totale (m²)"],
+                "it": ["Area solare totale (m²)"],
+                "nl": ["Totaal zonneoppervlak (m²)"],
+                "de": ["Gesamte Solarfläche (m²)"]
+            },
+            "id_building": {
+                "en": ["Building ID"],
+                "fr": ["ID du bâtiment"],
+                "it": ["ID edificio"],
+                "nl": ["Gebouw-ID"],
+                "de": ["Gebäude-ID"]
+            },
+            "geothermal_well": {
+                "en": ["Geothermal Well"],
+                "fr": ["Puits géothermique"],
+                "it": ["Pozzo geotermico"],
+                "nl": ["Geothermische put"],
+                "de": ["Geothermischer Brunnen"]
+            },
+            "id_neighborhood": {
+                "en": ["Neighborhood ID"],
+                "fr": ["ID du quartier"],
+                "it": ["ID quartiere"],
+                "nl": ["Wijk-ID"],
+                "de": ["Stadtteil-ID"]
+            },
+            "x": {
+                "en": ["X Coordinate"],
+                "fr": ["Coordonnée X"],
+                "it": ["Coordinata X"],
+                "nl": ["X-coördinaat"],
+                "de": ["X-Koordinate"]
+            },
+            "energy_hotwater_2024_kWh_y": {
+                "en": ["Hot Water Energy 2024 (kWh/year)"],
+                "fr": ["Énergie eau chaude 2024 (kWh/an)"],
+                "it": ["Energia acqua calda 2024 (kWh/anno)"],
+                "nl": ["Warmwaterenergie 2024 (kWh/jaar)"],
+                "de": ["Warmwasserenergie 2024 (kWh/Jahr)"]
+            },
+            "energy_heating_signature_kWh_y": {
+                "en": ["Annual Heating Energy (kWh/year)"],
+                "fr": ["Énergie de chauffage annuelle (kWh/an)"],
+                "it": ["Energia riscaldamento annuale (kWh/anno)"],
+                "nl": ["Jaarlijkse verwarmingsenergie (kWh/jaar)"],
+                "de": ["Jährliche Heizenergie (kWh/Jahr)"]
+            },
+            "energy_el_kWh_y": {
+                "en": ["Annual Electrical Energy (kWh/year)"],
+                "fr": ["Énergie électrique annuelle (kWh/an)"],
+                "it": ["Energia elettrica annuale (kWh/anno)"],
+                "nl": ["Jaarlijkse elektrische energie (kWh/jaar)"],
+                "de": ["Jährliche Elektrische Energie (kWh/Jahr)"]
+            },
+            "thermal_k1_cooling_W_m2_K": {
+                "en": ["Thermal K1 Cooling (W/m²K)"],
+                "fr": ["K1 thermique refroidissement (W/m²K)"],
+                "it": ["K1 termico raffreddamento (W/m²K)"],
+                "nl": ["Thermische K1 koeling (W/m²K)"],
+                "de": ["Thermisches K1 Kühlung (W/m²K)"]
+            },
+            "temperature_cooling_supply_C": {
+                "en": ["Cooling Supply Temperature (°C)"],
+                "fr": ["Température d'alimentation de refroidissement (°C)"],
+                "it": ["Temperatura alimentazione raffreddamento (°C)"],
+                "nl": ["Koeltoevoertemperatuur (°C)"],
+                "de": ["Kühlungsvorlauftemperatur (°C)"]
+            },
+            "total_annual_irr_kWh_y": {
+                "en": ["Total Annual Irradiation (kWh/year)"],
+                "fr": ["Irradiation annuelle totale (kWh/an)"],
+                "it": ["Irraggiamento annuale totale (kWh/anno)"],
+                "nl": ["Totale jaarlijkse bestraling (kWh/jaar)"],
+                "de": ["Gesamte jährliche Bestrahlung (kWh/Jahr)"]
+            },
+            "temperature_cooling_return_C": {
+                "en": ["Cooling Return Temperature (°C)"],
+                "fr": ["Température de retour de refroidissement (°C)"],
+                "it": ["Temperatura di ritorno raffreddamento (°C)"],
+                "nl": ["Koelretourtemperatuur (°C)"],
+                "de": ["Kühlungsrücklauftemperatur (°C)"]
+            },
+            "system_heating2": {
+                "en": ["Secondary Heating System"],
+                "fr": ["Système de chauffage secondaire"],
+                "it": ["Sistema riscaldamento secondario"],
+                "nl": ["Secundair verwarmingssysteem"],
+                "de": ["Sekundäres Heizsystem"]
+            },
+            "transformer": {
+                "en": ["Transformer"],
+                "fr": ["Transformateur"],
+                "it": ["Trasformatore"],
+                "nl": ["Transformator"],
+                "de": ["Transformator"]
+            },
+            "temperature_threshold_cooling_C": {
+                "en": ["Cooling Threshold Temperature (°C)"],
+                "fr": ["Température seuil de refroidissement (°C)"],
+                "it": ["Temperatura soglia raffreddamento (°C)"],
+                "nl": ["Drempeltemperatuur koeling (°C)"],
+                "de": ["Kühlungsschwellentemperatur (°C)"]
+            },
+            "ratio": {
+                "en": ["Ratio"],
+                "fr": ["Rapport"],
+                "it": ["Rapporto"],
+                "nl": ["Verhouding"],
+                "de": ["Verhältnis"]
+            },
+            "system_heating": {
+                "en": ["Heating System"],
+                "fr": ["Système de chauffage"],
+                "it": ["Sistema di riscaldamento"],
+                "nl": ["Verwarmingssysteem"],
+                "de": ["Heizsystem"]
+            },
+            "class": {
+                "en": ["Building Class"],
+                "fr": ["Classe de bâtiment"],
+                "it": ["Classe edificio"],
+                "nl": ["Gebouwklasse"],
+                "de": ["Gebäudeklasse"]
+            },
+            "thermal_specific_capacity_Wh_m2_K": {
+                "en": ["Thermal Specific Capacity (Wh/m²K)"],
+                "fr": ["Capacité thermique spécifique (Wh/m²K)"],
+                "it": ["Capacità termica specifica (Wh/m²K)"],
+                "nl": ["Thermische soortelijke capaciteit (Wh/m²K)"],
+                "de": ["Spezifische Wärmekapazität (Wh/m²K)"]
+            }
+        }
+    }
+}

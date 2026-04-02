@@ -33,7 +33,7 @@ gpd.options.io_engine = "pyogrio"
 
 # arbitrary namespace, just to generate reproducible UUIDv5 from the data of this dataset.
 VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_UUID, DS_SLUG)
@@ -358,10 +358,10 @@ df_iiif_links['iiif_display_string'] = df_iiif_links['metadata'].apply(catastici
 df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
 iiif_links = df_iiif_links[['canvas_id', 'iiif_metadata_obj']].groupby('canvas_id').agg(list).reset_index().set_index('canvas_id')['iiif_metadata_obj'].to_dict()
 df_pages['page_obj'] = df_pages['page_obj'].apply(lambda x: dict(x, metadata = iiif_links.get(x['id'], '')))
-
+create_iiif_directory_if_not_exists()
 for manifest_uid, (man_label,_) in collection.items():
     # generating the manifests
-    with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
+    with open(f'iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
         data = df_pages[df_pages['manifest_uid'] == manifest_uid].copy()
         json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, man_label, 'it', data['page_obj'].tolist(), structures[manifest_uid]), f, indent=2, ensure_ascii=False)
 
@@ -370,7 +370,7 @@ coll_mulilingual_label = {'en': ["Archivio di Stato di Venezia, Dieci Savi alle 
   'it': ['Archivio di Stato di Venezia, Dieci Savi alle Decime di Rialto, Deputazioni Unite, Commisurazione delle imposte, Catastici di Venezia']
 }
 
-with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+with open(f'iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, coll_mulilingual_label, collection), f, indent=2, ensure_ascii=False)
 
 # Dataset RDE Production

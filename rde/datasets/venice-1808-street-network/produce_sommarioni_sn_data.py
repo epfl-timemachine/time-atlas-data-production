@@ -27,7 +27,7 @@ DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(VTM_SN_UUID5_NS, DS_SLUG))
 
 DS_OBJ = (DS_UUID, DS_SLUG)
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 
 venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
@@ -109,4 +109,4 @@ ds = produce_dataset_obj(
     ds_conf,
     venice_area_uuids
 )
-save_data_file_if_different(DATA_FOLDER, 'dataset', [ds], f'1808_street_network_dataset', RDEType.DATASET.value, is_dataset_obj=True)
+save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], f'1808_street_network_dataset', RDEType.DATASET.value, is_dataset_obj=True)

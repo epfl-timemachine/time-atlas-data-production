@@ -25,7 +25,7 @@ with open('dataproduction_config.json') as f:
 # arbitrary namespace, just to generate reproducible UUIDv5 from the data of this dataset.
 TM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
@@ -70,6 +70,7 @@ from utils.iiif import *
 df_wh['image_fp'] = df_wh['filename'].apply(lambda v: 'lausanne/raimund_hotels/'+v)
 df = gdf.merge(df_wh, left_on='photo_name', right_on='filename')
 man_list = {}
+create_iiif_directory_if_not_exists()
 for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests"):
     manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['filename'], ad_hoc_seed='hotel_photo_manifest')
     width, height = row['width'], row['height']
@@ -86,7 +87,7 @@ for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests
         'en',
         metadata=[[row['hr_uuid'], row['photo_comment_en']]])
     man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[row['photo_comment_en']], 'de': [row['photo_comment_de']]}, 'fr', [page_obj])
-    with open(f'data/iiif/manifests/{manifest_uuid}.json', 'w') as f:
+    with open(f'iiif/manifests/{manifest_uuid}.json', 'w') as f:
         f.write(json.dumps(man, indent=2, ensure_ascii=False))
     man_list[manifest_uuid] = ({"en":[row['photo_comment_en']]}, page_obj)
     
@@ -96,7 +97,7 @@ collection_obj = generate_collection_manifest(
     collection_uuid,
     {'en': ['Raimund Journey - Hotels'], "fr": ["Voyage de Raimund - Hôtels"], "de": ["Raimunds Reise - Hotels"], "it": ["Viaggio di Raimund - Hotel"]},
     man_list)
-with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
+with open(f'iiif/collections/{collection_uuid}.json', 'w') as f:
     f.write(json.dumps(collection_obj, indent=2, ensure_ascii=False))
 # HR RDE Production
 # 1 to 1 relationship 

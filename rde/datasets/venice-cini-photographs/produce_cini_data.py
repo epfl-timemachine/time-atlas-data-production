@@ -48,7 +48,7 @@ gdf = gpd.GeoDataFrame(df, geometry='geometry').set_crs('EPSG:4326')
 geom_begin = datetime_obj_from_int_time(20240101)
 geom_end = datetime_obj_from_int_time(20241231, match_to_end=True)
 gdf_geom = gdf[['geometry', 'EDIFI_ID']].groupby('EDIFI_ID').first().reset_index()
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 
 venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
@@ -182,15 +182,15 @@ for g, sdf in df_wh.groupby('Drawer'):
         # annotation done with the "metadata" tag. Weird.
         pages.append(dict(page_obj, metadata =[(r['hr_uuid'], r['annotation_txt'])]))
     man_uuids_and_cont[man_uuid] = (iiif.generate_manifest_object(VTM_UUID5_NS, man_uuid, {'en': ['Cardboards Photographs from Cini\'s Foundation: '+g]}, 'en', pages, None), pages[0])
-
+create_iiif_directory_if_not_exists()
 for uid,(man,_) in man_uuids_and_cont.items():
-    with open(f'data/iiif/manifests/{uid}.json', 'w+', encoding='utf-8') as f:
+    with open(f'iiif/manifests/{uid}.json', 'w+', encoding='utf-8') as f:
         json.dump(man, f, indent=2)
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
 collection_label = {"en": ['Cini\'s Foundation: Photographs of 3 Venetian Buildings (test sample)']
                     }
 man_and_label = {k: (v[0]['label']['en'][0], v[1]) for k,v in man_uuids_and_cont.items()}
-with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+with open(f'iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, collection_label, man_and_label), f, indent=2, ensure_ascii=False)
 
 # Produce dataset object

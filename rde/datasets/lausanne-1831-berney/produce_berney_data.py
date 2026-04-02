@@ -32,7 +32,7 @@ lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG[
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 
 # Geometry RDE production
 geometries_fp = join(DATA_SRC_PATH, 'Berney_merge_legende_v7-7_formatted_for_timeatlas.geojson')
@@ -185,9 +185,9 @@ registry_label = {
                 }
 
 collection[manifest_uid] = (registry_label, df_pages['page_obj'].tolist()[0])
-
+create_iiif_directory_if_not_exists()
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
-with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+with open(f'iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_collection_manifest(collection_manifest_uid, registry_label, collection), f, indent=2, ensure_ascii=False)
 
 hr_uuid_to_page_filename
@@ -202,7 +202,7 @@ for hr_uuid, page_filename in hr_uuid_to_page_filename.items():
 
 df_pages['page_obj'] = df_pages['page_obj'].apply(lambda x: dict(x, metadata = canvas_to_hr_list.get(x['id'], '')))
 
-with open(f'data/iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
+with open(f'iiif/manifests/{manifest_uid}.json', 'w+', encoding='utf-8') as f:
     json.dump(iiif.generate_manifest_object(VTM_UUID5_NS, manifest_uid, registry_label, 'en', df_pages['page_obj'].tolist()), f, indent=2, ensure_ascii=False)
 
 

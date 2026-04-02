@@ -29,7 +29,7 @@ def resource(resource:str, fp: str):
         return f'Unknown resource, this endpoint only accepts /manifest or /collection', 405
     if not fp.endswith('.json'):
         fp = fp + '.json'
-    file_path = os.path.join(f'data/iiif/{resource}', fp)
+    file_path = os.path.join(f'iiif/{resource}', fp)
     if not os.path.exists(file_path):
         return f'File {file_path} does not exists on the disk', 404
     with open(file_path, encoding='utf-8') as f:

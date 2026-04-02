@@ -31,7 +31,7 @@ DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_UUID, DS_SLUG)
 
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 man_id = str(uuid.uuid5(VTM_UUID5_NS, f"manifest_{DS_SLUG}"))
 PAR_TR_OBJ = (datetime_obj_from_int_time(17400101), datetime_obj_from_int_time(17401231, match_to_end=True))
@@ -262,9 +262,8 @@ QA_check_uuid_are_unique(df_of_hr)
 
 # ad-hoc manifest and collection production for testing purposes
 ad_hoc_man_prod = False
-
 if ad_hoc_man_prod:
-    def produce_five_of_uuuid(manifest_uid:str, seed:str)->tuple[str, str, str, str,str ]:
+    def produce_five_of_uuuid(manifest_uid:str, seed:str)->tuple[str, str, str, str, str]:
         return str(uuid.uuid5(VTM_UUID5_NS, f"{manifest_uid}_{seed}_1")), \
             str(uuid.uuid5(VTM_UUID5_NS, f"{manifest_uid}_{seed}_2")), str(uuid.uuid5(VTM_UUID5_NS, f"{manifest_uid}_{seed}_3")), str(uuid.uuid5(VTM_UUID5_NS, f"{manifest_uid}_{seed}_4")), str(uuid.uuid5(VTM_UUID5_NS, f"{manifest_uid}_{seed}_5"))
 
@@ -280,9 +279,10 @@ if ad_hoc_man_prod:
     for p in three_contracts_ids:
         print(p, produce_five_of_uuuid(man_id, p))
         
+    create_iiif_directory_if_not_exists()
     coll_name = {"en": ["Garzoni document collection"], "fr": ["Collection de documents Garzoni"], "it": ["Collezione di documenti Garzoni"]}
     from utils import iiif
-    with open(f'data/iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
+    with open(f'iiif/collections/{collection_manifest_uid}.json', 'w+', encoding='utf-8') as f:
         json.dump(iiif.generate_collection_manifest(collection_manifest_uid, coll_name, collection), f, indent=2, ensure_ascii=False)
 
     # hr257 = df_flat[df_flat['Contract ID'] == three_contracts_ids[0]]['hr_uuid'].values[0]
@@ -298,7 +298,7 @@ if ad_hoc_man_prod:
 
     pages = [iiif.generate_page_object(VTM_UUID5_NS, DS_SLUG,p[0],man_id,p[1],p[2], p[3],p[4],p[5], 'en', [p[6]]) for p in pgs]
     manifest = iiif.generate_manifest_object(VTM_UUID5_NS, man_id, {"en": ["Garzoni 3 page sample for testing annotations."], "fr": ["Garzoni, échantillon de 3 pages pour tester les annotations."], "it":["Garzoni 3 pagine, test."]}, 'en', pages, None)
-    with open(f'data/iiif/manifests/{man_id}.json', 'w+', encoding='utf-8') as f:
+    with open(f'iiif/manifests/{man_id}.json', 'w+', encoding='utf-8') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
 # parish dictionary, can also be used for catastici, so some more treatment are made, and the wikidata name is used as the "canon" value

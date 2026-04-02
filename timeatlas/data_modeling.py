@@ -538,14 +538,7 @@ def save_data_file_if_different(fp:str,
     elif len(matching_files) > 1:
         raise ValueError(f'Multiple files found with the same prefix: {matching_files}')
     #it no matching file, directly saving the new file.
-    
-    if get_data_footprint_in_memory(t_data) > 100000000: # if the data is bigger than 100MB, we split it into two smaller files to avoid issues with saving and reading large files. The two files are saved with the same name but with a suffix "_part1" and "_part2".
-        mid_point = len(t_data) // 2
-        saving_routine(t_data[:mid_point], filepath.replace('.json', '_part1.json'), name=name+'_part1', tpe=tpe)
-        saving_routine(t_data[mid_point:], filepath.replace('.json', '_part2.json'), name=name+'_part2', tpe=tpe)
-    else:   
-        # saving the file if no other point of termination happened.
-        saving_routine(t_data, filepath, name=name, tpe=tpe)
+    saving_routine(t_data, filepath, name=name, tpe=tpe)
 
 def get_likely_type_of_series(s:pd.Series) -> str:
     tpe = str(s.dtype)
@@ -555,6 +548,13 @@ def get_likely_type_of_series(s:pd.Series) -> str:
                 return type(v)
         return None
     return tpe
+
+def create_iiif_directory_if_not_exists(fp:str = '') -> None:
+    iiif_dir = os.path.join(fp, 'iiif')
+    if not os.path.exists(iiif_dir):
+        os.makedirs(iiif_dir)
+        os.makedirs(os.path.join(iiif_dir, 'manifests'))
+        os.makedirs(os.path.join(iiif_dir, 'collections'))
 
 def python_type_to_ad_hoc_conf_type(tpe: type) -> str:
     if tpe == int or str(tpe).startswith('int'): 

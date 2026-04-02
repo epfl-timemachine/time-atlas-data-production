@@ -25,7 +25,7 @@ with open('dataproduction_config.json') as f:
 # arbitrary namespace, just to generate reproducible UUIDv5 from the data of this dataset.
 TM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 
-DATA_FOLDER = 'data'
+DATA_FOLDER = ''
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
@@ -62,6 +62,7 @@ QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDEType.OBS.value)
 
 from utils.iiif import *
+create_iiif_directory_if_not_exists()
 # Generating the IIIF manifests
 gdf['image_fp'] = df['image_path'].apply(lambda v: v.replace('to_iiif/dresden', 'dresden/europeana_postcards'))
 man_list = {}
@@ -82,7 +83,7 @@ for i, row in tqdm(gdf.iterrows(), total=len(df), desc="Generating IIIF manifest
         metadata=[[row['hr_uuid'], row['description']]],
         external_resource=row['landin_page'],)
     man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[row['description']]},'en', [page_obj])
-    with open(f'data/iiif/manifests/{manifest_uuid}.json', 'w') as f:
+    with open(f'iiif/manifests/{manifest_uuid}.json', 'w') as f:
         f.write(json.dumps(man, indent=2, ensure_ascii=False))
     man_list[manifest_uuid] = ({"en":[row['description']]}, page_obj)
     
@@ -92,7 +93,7 @@ collection_obj = generate_collection_manifest(
     collection_uuid,
     {'en': ['Geolocated postcards from Dresden, Germany. Data retrieved from Europeana.']},
     man_list)
-with open(f'data/iiif/collections/{collection_uuid}.json', 'w') as f:
+with open(f'iiif/collections/{collection_uuid}.json', 'w') as f:
     f.write(json.dumps(collection_obj, indent=2, ensure_ascii=False))
 # HR RDE Production
 # 1 to 1 relationship 
