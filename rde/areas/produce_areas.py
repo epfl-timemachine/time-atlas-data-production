@@ -11,6 +11,7 @@ if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
 from timeatlas.data_modeling import produce_area_obj, AREA_UUID5_NS, save_data_file_if_different
 from timeatlas.RDEModel import RDEType
 
+
 def produce_geometry_obj_from_two_corners(corners_array: list[float]) -> dict:
     if len(corners_array) != 4:
         raise ValueError("The corners_array must contain exactly four elements.")
@@ -25,6 +26,9 @@ def remove_weird_characters(input_str: str) -> str:
     # remove punctation as well:
     input_str = ''.join(char for char in input_str if char.isalnum() or char == '-' or char == '_')
     return input_str
+
+if not os.path.exists('data'):
+    os.makedirs('data')
 
 varea_min = [12.290776992, 45.373579637]
 varea_max = [12.469331224, 45.497617311]

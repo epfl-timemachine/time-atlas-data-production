@@ -394,7 +394,7 @@ def produce_area_obj(uuid: str,
     name: str,
     geometry: dict,
     slug: str,
-    version: str) -> gpd.GeoDataFrame:
+    version: str) -> dict:
     return {
         "uuid": uuid,
         "rde_type": RDEType.AREA.value,

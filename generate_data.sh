@@ -48,10 +48,6 @@ run_scripts_in_directory() {
     done
 }
 
-
-# Step 2: Run scripts in rde/maps
-run_scripts_in_directory "rde/maps"
-
 # Step 3: Run scripts in rde/areas
 cd rde/areas
 echo "Generating data for areas"
@@ -60,10 +56,13 @@ echo ""
 cd - > /dev/null
 
 
+# Step 2: Run scripts in rde/maps
+run_scripts_in_directory "rde/maps"
+
 # Step 4: Run scripts in rde/datasets
 run_scripts_in_directory "rde/datasets" "ludus-data" "switzerland-qbuildings"
 
-# Step 4: Run script in rde/pois
+# Step 5: Run script in rde/pois
 cd rde/pois
 echo "Generating Points of Interests object from the observations"
 python3 merge_obs.py
@@ -73,7 +72,7 @@ cd - > /dev/null
 # Inform success
 echo "Data generation completed successfully."
 
-# Step 5: Validate data
+# Step 6: Validate data
 pip install -r validation/requirements.txt
 cd validation
 python3 validate_data.py

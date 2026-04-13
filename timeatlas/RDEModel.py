@@ -69,6 +69,10 @@ class RDE:
             result['rde_type'] = CLASS_NAME_TO_RDE[rde_name].value
         return result
     
+    def get_type(self) -> Optional[RDEType]:
+        rde_name = self.__class__.__name__.lower()
+        return CLASS_NAME_TO_RDE.get(rde_name).value
+    
     @classmethod
     def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         raise NotImplementedError('This method should be implemented in subclasses')
@@ -312,6 +316,20 @@ class Geometry(RDE, UUIDEntity):
             layer=props.get('layer_uuid'),
             geometry=shapely.from_geojson(json.dumps(geometry)),
         )
+    
+    @classmethod
+    def constructor_from_raw_geojson_line(cls, geojson_line: str, uuid: str, layer_uuid: str) -> Self:
+        json_obj = json.loads(geojson_line)
+        return cls(
+            uuid=uuid,
+            layer=layer_uuid,
+            geometry=shapely.from_geojson(json.dumps(json_obj.get('geometry', {}))),
+        )
+    
+    def to_dict(self) -> dict:
+        result = super().to_dict()
+        result['geometry'] = json.loads(shapely.to_geojson(self.geometry))
+        return result
 
 @dataclass
 class Area(RDE, UUIDEntity):
