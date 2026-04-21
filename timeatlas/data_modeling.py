@@ -15,7 +15,8 @@ from functools import reduce
 import typing
 from collections import Counter
 from datetime import datetime as dt
-from .RDEModel import RDEType, HR, RDETimeRange
+from .RDEModel import RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, DatasetConfiguration, Geometry, RDETimeRange, Area
+from .TAEnums import LayerType, LAYER_TYPE_TO_ENUM
 from .get_terrain_and_building_heights import processing_points
 
 UNIVERSAL_CRS = "EPSG:4326"
@@ -169,14 +170,14 @@ def produce_hr_obj(uuid: str,
         else:
             new_md[k] = None
     
-    return HR(
+    return HistoricalRecord(
         uuid=uuid,
         dataset=ds,
         type=tpe,
         time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
         paradata=paradata,
         rights_attribution=rights_attribution,
-        documents=[v[0] for v in obs_uid_list],
+        observations=[v[0] for v in obs_uid_list],
         metadata=new_md
     )
 
@@ -203,20 +204,16 @@ def produce_obs_obj(uuid:str,
 
     Note that no poi link are expected as they are patched later, by merging all observations based on their coordinates.
     '''
-    return {
-        "uuid": uuid,
-        "dataset": ds, 
-        "rde_type": RDEType.OBS.value,
-        "type": tpe,
-        "start_time": time_range[0], 
-        "end_time": time_range[1],
-        "coordinate": coords,
-        "has_geometry": geometries_links,
-        "documented_in": hr_uuid,
-        "has_handle": need_poi
-    }
+    return Observation(
+        id =uuid,
+        type=tpe,
+        geometry=Point(coords) if coords is not None else None,
+        has_geometries=geometries_links,
+        historical_record=hr_uuid,
+        part_of_point_of_interest=need_poi
+    ).to_dict()
 
-
+# deprecated, left for old version of the scripts to be working
 def produce_poi_obj(uuid:str, coordinate, height_data) -> dict:
     '''
     returns the geometry object created as a dictionary
@@ -224,16 +221,15 @@ def produce_poi_obj(uuid:str, coordinate, height_data) -> dict:
     coordinate: the coordinate of the geometry
     obs_uuid: the UUID of the observation aggregated under this PoI
     '''
-    return {
-        "uuid": uuid,
-        "rde_type": RDEType.POI.value,
-        "coordinate": coordinate,
-        "height": height_data
-    }
-
+    return PointOfInterest(
+        id=uuid,
+        coordinate=coordinate,
+        height=height_data
+    ).to_dict()
 
 MultiLingualDesc = dict[str, list[str]]
 
+# deprecated, left for old version of the scripts to be working
 def produce_dataset_obj(
     uuid: uuid.UUID,
     slug: str,
@@ -248,20 +244,20 @@ def produce_dataset_obj(
     metadata = configuration.get('metadata', {})
     # remove the metadata from the configuration to avoid duplication
     configuration.pop('metadata', None) 
-    return {
-        "uuid": uuid,
-        "slug": slug,
-        "metadata": metadata,
-        "version": version,
-        "creation_time": now_ts(),
-        "name": name,
-        "rde_type": RDEType.DATASET.value,
-        "sources": sources,
-        "start_time": time_range[0],
-        "end_time": time_range[1],
-        "configuration": configuration['configuration'],
-        "falls_within": areas_ids,
-    }
+    ds = Dataset(
+        id=uuid,
+        slug=slug,
+        metadata=metadata,
+        version=version,
+        creation_time=now_ts(),
+        name=name,
+        sources=sources,
+        time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
+        configuration=None,
+        has_areas=areas_ids,
+    ).to_dict()
+    ds['configuration'] = configuration
+    return ds
 
 def maximal_extent_from_extent_list(extent_list: list[list[float]]) -> tuple[Point, Point]:
     min_x = min([ext[0] for ext in extent_list])
@@ -270,6 +266,7 @@ def maximal_extent_from_extent_list(extent_list: list[list[float]]) -> tuple[Poi
     max_y = max([ext[3] for ext in extent_list])
     return [min_x, min_y, max_x, max_y]
 
+# deprecated, left for old version of the scripts to be working
 def produce_map_obj(
     map_uuid: str,
     map_slug: str,
@@ -283,12 +280,7 @@ def produce_map_obj(
     areas_id: list[str],
     ) -> dict:  
     extent_list = [layer['is_operationally_described_by'][0]['extent'] for layer in layer_list if 'is_operationally_described_by' in layer and 'extent' in layer['is_operationally_described_by'][0]]
-    return {  
-        "uuid": map_uuid,
-        "slug": map_slug,
-        "rde_type": RDEType.MAP.value,
-        "name": name,
-        "metadata": [{
+    metadata = [{
             "type": "STRING",
             "value": description,
             "label": {
@@ -329,18 +321,21 @@ def produce_map_obj(
                     "Paradata"
                 ]
             },
-        }],
-        "thumbnail": thumbnail,
-        "version": version,
-        "start_time": time_range[0],
-        "end_time": time_range[1],
-        "extent": maximal_extent_from_extent_list(extent_list),
-        "contains": [layer['uuid'] for layer in layer_list],
-        "falls_within": areas_id
-    }
+        }]
+    return Map(
+        id=map_uuid,
+        name=name,
+        slug=map_slug,
+        time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
+        layers=[layer['uuid'] for layer in layer_list],
+        metadata=metadata,
+        version=version,
+        areas=areas_id
+    ).to_dict()
 
 from shapely.wkt import loads as wkt_loads
 
+# deprecated, left for old version of the scripts to be working
 def produce_layer_config(
     uuid: str,
     zoom_lvl: tuple[int, int],
@@ -357,16 +352,18 @@ def produce_layer_config(
         raise Exception(f'Zoom levels should not exceed 23')
     conv_extent = [wkt_loads(extent[0]), wkt_loads(extent[1])]
     # extent is expressed in the order North Western corner, South Eastern corner, we need to change if to South Western corner, North Eastern corner:
-    return {  
-        "uuid": uuid,
-        "extent": [conv_extent[0].x, conv_extent[1].y, conv_extent[1].x, conv_extent[0].y],
-        "zoom_lvl": zoom_lvl,
-        "service": {
-            "url": access_url,
-            "media_type": format
-        }
-    }
+    return LayerConfiguration(  
+        id=uuid,
+        extent=GeographicalExtent([conv_extent[0].x, conv_extent[1].y, conv_extent[1].x, conv_extent[0].y]),
+        min_zoom_level=lo_zoom,
+        max_zoom_level=hi_zoom,
+        service=LayerConfigurationService(
+            url=access_url,
+            type=format
+        )
+    ).to_dict()
 
+# deprecated, left for old version of the scripts to be working
 def produce_layer_obj(
     uuid: str,
     layer_slug: str,
@@ -377,32 +374,31 @@ def produce_layer_obj(
     is_vector: bool,
     layer_configs: list[dict]
     ) -> dict:
-    return  {  
-        "uuid": uuid,
-        "name": name,
-        "description": description,
-        "slug": layer_slug,
-        "map_uuid": map_uuid,
-        "type": "vector" if is_vector else "raster",
-        "rde_type": RDEType.LAYER.value,
-        "start_time": time_range[0],
-        "end_time": time_range[1],
-        "is_operationally_described_by": layer_configs
-    }
+    
+    layer = Layer(  
+        id=uuid,
+        name=name,
+        description=description,
+        slug=layer_slug,
+        map=map_uuid,
+        type=LAYER_TYPE_TO_ENUM.get("VECTOR" if is_vector else "RASTER", LayerType.RASTER),
+        time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1])
+    ).to_dict()
+    layer['layer_configurations'] = layer_configs
+    return layer
 
+# deprecated, left for old version of the scripts to be working
 def produce_area_obj(uuid: str,
     name: str,
     geometry: dict,
     slug: str,
     version: str) -> dict:
-    return {
-        "uuid": uuid,
-        "rde_type": RDEType.AREA.value,
-        "name": name,
-        "geometry": geometry,
-        "slug": slug,
-        "version": version
-    }
+    return Area(
+        uuid=uuid,
+        name=name,
+        geometry=geometry,
+        slug=slug
+    ).to_dict()
 
 def make_uuid_from_row_selection(uuid_ns: uuid.UUID, pandas_row:pd.Series, col_sel:list[str], ad_hoc_seed: str = '') -> str: 
     '''
@@ -593,7 +589,6 @@ def is_empty_or_null(x):
         return x.strip() == ""
     else:
         return np.any(pd.isna(x))
-    
 
 def test_field_intersection(field_list_1: list[str], field_list_2: list[str], field_list_1_name: str, field_list_2_name: str) -> None:
     overlap = set(field_list_1).intersection(set(field_list_2))
@@ -601,7 +596,7 @@ def test_field_intersection(field_list_1: list[str], field_list_2: list[str], fi
         raise Exception(f'The following fields are both in {field_list_1_name} and {field_list_2_name}: {overlap}')
 
 
-
+# deprecated, left for old version of the scripts to be working
 def produce_configuration_file_from_metadata_df(
         uuid_ns: uuid.UUID,
         df: pd.DataFrame,

@@ -191,6 +191,7 @@ SAVE_FILE_PREAMBLE = {
  "creation_time": None,
  "rde_objects": None
 }
+
 def save_list_of_hr_as_ingestion_file(ls: list[HR], save_folder:str, name:str)->None:
     df_of_hr = TimeAtlas.hr_list_to_dataframe(ls)
     QA_check_uuid_are_unique(df_of_hr)
@@ -198,7 +199,8 @@ def save_list_of_hr_as_ingestion_file(ls: list[HR], save_folder:str, name:str)->
     save_data_file_if_different(save_folder, 'historical_records',  [l.to_dict(flatten_metadata=False) for l in ls], name, RDEType.HR.value)
 
 def save_list_of_rde_as_ingestion_file(ls: list[RDE], save_fp:str, name:str)->None:
-    # does no checking. Used to brute force saving in case of huge amounts of data where automatic checking is too slow. Use with caution and make sure data is clean before using it.
+    # does no checking. Used to brute force saving in case of huge amounts of data where automatic checking is too slow.
+    # Use with caution and make sure data is clean before using it.
     all_types = list(set([l.get_type() for l in ls]))
     base = SAVE_FILE_PREAMBLE.copy()
     base['name'] = name
