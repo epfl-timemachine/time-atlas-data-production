@@ -73,7 +73,7 @@ recs = [produce_hr_obj(r.hr_uuid,\
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations')
 save_data_file_if_different(DATA_FOLDER, 'historical_records',  recs, f'1808_street_network_hrs', RDEType.HR.value)
 
 # Obs RDE Production
@@ -81,9 +81,9 @@ tpe = "street toponym"
 gpd.options.io_engine = "pyogrio"
 
 gdf_obs = gpd.GeoDataFrame([produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid,tpe, v.coordinate,  [v.uuid]) for _, v in gdf.iterrows()])
-gdf_obs = gdf_obs.set_geometry('coordinate').set_index('uuid').set_crs('EPSG:4326')
+gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
-QA_check_unique_uuid_in_uuid_array(gdf_obs, 'has_geometry')
+QA_check_unique_uuid_in_uuid_array(gdf_obs, 'has_geometries')
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, f'1808_street_network_obs', RDEType.OBS.value)
 
 # Dataset Object Production

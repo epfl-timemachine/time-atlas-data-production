@@ -5,7 +5,7 @@ import json
 from typing import Optional, Self
 from datetime import datetime
 import pandas as pd
-from TAEnums import *
+from .TAEnums import *
 
 type GeometryType = Point | LineString | Polygon | MultiLineString | MultiPolygon
 type UUID = str
@@ -34,9 +34,11 @@ class UUIDEntity:
 
 @dataclass
 class RDE:
-    def to_dict(self) -> dict:
+    def to_dict(self, exclude_fields = {}) -> dict:
         result = {}
         for field_name, field_value in self.__dict__.items():
+            if field_name in exclude_fields:
+                continue
             match field_value:
                 case UUIDEntity():
                     result[field_name] = field_value.get_ref()
@@ -90,14 +92,14 @@ class MultiLingualValue:
 @dataclass
 class MetadataFieldConfig(RDE):
     id: str
-    type: MetadataType
-    display_label: MultiLingualValue
-    nullable: bool
-    indexable: bool
-    short_display: bool
-    hidden: bool
-    tag: Optional[MetadataTag]
-    paradata: Optional[ParadataValues]
+    type: Optional[MetadataType] = None
+    display_label: MultiLingualValue = ""
+    nullable: bool = True
+    indexable: bool = False
+    short_display: bool = False
+    hidden: bool = False
+    tag: Optional[MetadataTag] = None
+    paradata: Optional[ParadataValues] = None
 
     @classmethod
     def constructor_from_json_obj(cls, json_obj: dict) -> Self:
@@ -137,10 +139,13 @@ class Dataset(RDE, UUIDEntity):
     name: MultiLingualValue
     time_range: RDETimeRange
     configuration: DatasetConfiguration
+    metadata: dict # TODO: define class MetdataFieldAndValues that works as well for this similar part in maps. 
+    creation_time: Optional[str] = None
     version: Optional[str] = None
     sources: list[str] = field(default_factory=list)
     has_areas: Optional[list[AreaReference]] = field(default_factory=list)
-    # fields that do not exist in the RDE data model, only there to make python processing easier:
+
+    # fields that do not exist in the RDE data model, only there to make python processing easier: 
     hrs: list['HistoricalRecord'] = field(default_factory=list)
     obs: list['Observation'] = field(default_factory=list)
 
@@ -149,19 +154,25 @@ class Dataset(RDE, UUIDEntity):
         config_data = json_obj.get('configuration')
         configuration = DatasetConfiguration.constructor_from_json_obj(config_data) if config_data else None
         return cls(
-            uuid=UUIDEntity.parse_uuid(json_obj['uuid']),
+            id=UUIDEntity.parse_uuid(json_obj['id']),
             slug=json_obj['slug'],
             name=MultiLingualValue(values=json_obj['name']),
+            metadata = json_obj.get('metadata', {}),
             time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
             configuration=configuration,
+            creation_time=json_obj.get('creation_time', None),
             version=json_obj.get('version', None),
             sources=json_obj.get('sources', []),
             has_areas=json_obj.get('has_areas', [])
         )
     
+    # override to exclude specific fields 
+    def to_dict(self, exclude_fields = {'hrs', 'obs'}) -> dict:
+        return super().to_dict(exclude_fields=exclude_fields)
+
     def instantiate_all_rde_members(self, rde_list: list[RDE]) -> None:
         for rde in rde_list:
-            if hasattr(rde, "dataset") and RDEType.dataset == self.uuid:
+            if hasattr(rde, "dataset") and RDEType.dataset == self.id:
                 match rde:
                     case HistoricalRecord(): self.hrs.append(rde)
                     case Observation(): self.obs.append(rde)
@@ -171,7 +182,6 @@ class HistoricalRecord(RDE, UUIDEntity):
     dataset: DatasetReference
     time_range: RDETimeRange
     paradata: ParadataValues
-    type: str
     has_observations: list[ObsReference]
     metadata: dict = field(default_factory=dict)
     rights_attribution: Optional[str] = None
@@ -179,8 +189,8 @@ class HistoricalRecord(RDE, UUIDEntity):
     @classmethod
     def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         return cls(
-            uuid=UUIDEntity.parse_uuid(json_obj['uuid']),
-            dataset=UUIDEntity.parse_uuid(json_obj['dataset']['uuid']),
+            id=UUIDEntity.parse_uuid(json_obj['id']),
+            dataset=UUIDEntity.parse_uuid(json_obj['dataset']['id']),
             time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
             paradata=json_obj.get('paradata', ''),
             type=json_obj.get('type', ''),
@@ -207,7 +217,7 @@ class HistoricalRecord(RDE, UUIDEntity):
         metadata_keys = set(row.index).difference({'uuid', 'dataset', 'start_time', 'end_time', 'paradata', 'type', 'has_observations', 'rights_attribution'})
         metadata = {k: row[k] for k in metadata_keys}
         return cls(
-            uuid=UUIDEntity.parse_uuid(row['uuid']),
+            id=UUIDEntity.parse_uuid(row['id']),
             dataset=UUIDEntity.parse_uuid(row['dataset']),
             time_range=RDETimeRange(row['start_time'], row['end_time']),
             paradata=row.get('paradata', ''),
@@ -232,8 +242,8 @@ class PointOfInterest(RDE, UUIDEntity):
         geom = json_obj.get('geometry')
         json_obj = json_obj.get('properties', json_obj)  # in case the JSON object is a GeoJSON Feature object
         return cls(
-            uuid=UUIDEntity.parse_uuid(json_obj['uuid']),
-            geometry=shapely.from_geojson(json.dumps(geom)) if geom else None,
+            id=UUIDEntity.parse_uuid(json_obj['id']),
+            geometry=(shapely.from_geojson(json.dumps(geom)) if geom else None),
             height=HeightInfo(
                 terrain=json_obj.get('terrain_height'),
                 building=json_obj.get('building_height')
@@ -242,11 +252,8 @@ class PointOfInterest(RDE, UUIDEntity):
 
 @dataclass
 class Observation(RDE, UUIDEntity):
-    type: str
     historical_record: HRReference
-    has_geometries: GeometryType
     geometry: Point
-    # height: HeightInfo
     has_geometries: list[GeometryReference] = field(default_factory=list)
     part_of_point_of_interest: Optional[POIReference] = None
 
@@ -260,15 +267,14 @@ class Observation(RDE, UUIDEntity):
         geom = json_obj.get('geometry')
         json_obj = json_obj.get('properties', json_obj)  # in case the JSON object is a GeoJSON Feature object
         return cls(
-            uuid=UUIDEntity.parse_uuid(json_obj['uuid']),
-            type=json_obj.get('type', ''),
+            id=UUIDEntity.parse_uuid(json_obj['id']),
             historical_record=json_obj.get('documented_in')[0] if isinstance(json_obj.get('documented_in'), list) and len(json_obj.get('documented_in')) > 0 else None,
-            geometry=shapely.from_geojson(json.dumps(geom)) if geom else None,
+            geometry=shapely.from_geojson(json.dumps(geom)),
+            has_geometries=json_obj.get('has_geometries', []),
             # height=HeightInfo(
             #     terrain=json_obj.get('height', {}).get('terrain'),
             #     building=json_obj.get('height', {}).get('building')
             # ),
-            has_geometries=json_obj.get('has_geometries', []),
             part_of_point_of_interest=json_obj.get('part_of_point_of_interest', None)
         )
     
@@ -298,14 +304,15 @@ class Map(RDE, UUIDEntity):
     @classmethod
     def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         return cls(
-            uuid=UUIDEntity.parse_uuid(json_obj['id']),
+            id=UUIDEntity.parse_uuid(json_obj['id']),
             name=MultiLingualValue(values=json_obj['name']),
+            slug=json_obj['slug'],
+            time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
             layers=json_obj.get('layers', []),
             metadata=json_obj.get('metadata', {}),
             thumbnail=json_obj.get('thumbnail'),
             extent=GeographicalExtent(json_obj.get('extent', [])),
             version=json_obj.get('version'),
-            time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
             areas=json_obj.get('areas', [])
         )
 
@@ -329,7 +336,7 @@ class LayerConfiguration(RDE, UUIDEntity):
             type=service_data.get('type', '')
         )
         return cls(
-            uuid=UUIDEntity.parse_uuid(json_obj['uuid']),
+            id=UUIDEntity.parse_uuid(json_obj['id']),
             service=service,
             min_zoom_level=json_obj.get('min_zoom_level', 0),
             max_zoom_level=json_obj.get('max_zoom_level', 22),
@@ -349,12 +356,12 @@ class Layer(RDE, UUIDEntity):
     @classmethod
     def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         return cls(
-            uuid=UUIDEntity.parse_uuid(json_obj['uuid']),
+            id=UUIDEntity.parse_uuid(json_obj['id']),
             slug=json_obj['slug'],
             name=MultiLingualValue(values=json_obj['name']),
             description=MultiLingualValue(values=json_obj.get('description', {})),
             time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
-            map=UUIDEntity.parse_uuid(json_obj['map']['uuid']) if 'map' in json_obj and isinstance(json_obj['map'], dict) else None,
+            map=UUIDEntity.parse_uuid(json_obj['map']['id']) if 'map' in json_obj and isinstance(json_obj['map'], dict) else None,
             type=LAYER_TYPE_TO_ENUM.get(json_obj.get('type', '').upper(), LayerType.RASTER),
             layer_configurations=[LayerConfiguration.constructor_from_json_obj(lc) for lc in json_obj.get('layer_configurations', [])]
         )
@@ -362,7 +369,7 @@ class Layer(RDE, UUIDEntity):
 @dataclass
 class Geometry(RDE, UUIDEntity):
     geometry: GeometryType
-    layer: Optional[LayerReference] = None
+    has_layer: Optional[LayerReference] = None
 
     def __post_init__(self):
         if not self.geometry.is_valid:
@@ -374,8 +381,8 @@ class Geometry(RDE, UUIDEntity):
         props = json_obj.get('properties', {})
         geometry = json_obj.get('geometry', {})
         return cls(
-            uuid=UUIDEntity.parse_uuid(props.get('uuid', json_obj.get('uuid'))),
-            layer=UUIDEntity.parse_uuid(props.get('layer_uuid')) if 'layer_uuid' in props else None,
+            id=UUIDEntity.parse_uuid(props.get('id', json_obj.get('id'))),
+            has_layer=UUIDEntity.parse_uuid(props.get('has_layer')) if 'has_layer' in props else None,
             geometry=shapely.from_geojson(json.dumps(geometry)),
         )
     
@@ -383,8 +390,8 @@ class Geometry(RDE, UUIDEntity):
     def constructor_from_raw_geojson_line(cls, geojson_line: str, uuid: str, layer_uuid: str) -> Self:
         json_obj = json.loads(geojson_line)
         return cls(
-            uuid=UUIDEntity.parse_uuid(uuid),
-            layer=UUIDEntity.parse_uuid(layer_uuid),
+            id=UUIDEntity.parse_uuid(uuid),
+            has_layer=UUIDEntity.parse_uuid(layer_uuid),
             geometry=shapely.from_geojson(json.dumps(json_obj.get('geometry', {}))),
         )
     
@@ -402,7 +409,7 @@ class Area(RDE, UUIDEntity):
     @classmethod
     def constructor_from_json_obj(cls, json_obj: dict) -> Self:
         return cls(
-            uuid=UUIDEntity.parse_uuid(json_obj['uuid']),
+            id=UUIDEntity.parse_uuid(json_obj['id']),
             name=MultiLingualValue(values=json_obj['name']),
             geometry=shapely.from_geojson(json.dumps(json_obj.get('geometry', {})))
         )

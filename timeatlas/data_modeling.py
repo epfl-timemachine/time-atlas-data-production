@@ -49,7 +49,6 @@ def find_closest_polygon(point: Point, polygon: MultiPolygon) -> Polygon:
             closest_polygon = p
     return closest_polygon
 
-
 def get_area_uuids_from_slugs(area_loc:str, area_slugs: list[str]) -> list[str]:
     '''
     Given a list of area slugs, returns the corresponding area uuids from the area file located at area_loc.
@@ -171,13 +170,12 @@ def produce_hr_obj(uuid: str,
             new_md[k] = None
     
     return HistoricalRecord(
-        uuid=uuid,
+        id=uuid,
         dataset=ds,
-        type=tpe,
         time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
         paradata=paradata,
         rights_attribution=rights_attribution,
-        observations=[v[0] for v in obs_uid_list],
+        has_observations=[v[0] for v in obs_uid_list],
         metadata=new_md
     )
 
@@ -206,7 +204,6 @@ def produce_obs_obj(uuid:str,
     '''
     return Observation(
         id =uuid,
-        type=tpe,
         geometry=Point(coords) if coords is not None else None,
         has_geometries=geometries_links,
         historical_record=hr_uuid,
@@ -326,6 +323,7 @@ def produce_map_obj(
         id=map_uuid,
         name=name,
         slug=map_slug,
+        thumbnail=thumbnail,
         time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
         layers=[layer['uuid'] for layer in layer_list],
         metadata=metadata,
@@ -422,11 +420,14 @@ def QA_check_uuid_are_unique(df:pd.DataFrame) -> None:
     the dataframe given as argument are not unique. Doesn't do 
     anything otherwise.
     '''
-    duplicates_entry = df[df.duplicated('uuid', keep=False) == True]
+    field_name = 'uuid'
+    if field_name not in df.columns:
+        field_name = 'id'
+    duplicates_entry = df[df.duplicated(field_name, keep=False) == True]
     n = len(duplicates_entry)
     if n != 0:
-        non_unique_ids = duplicates_entry.uuid.unique()
-        raise Exception(f'There was {n} non unique uuid generated: {non_unique_ids}')
+        non_unique_ids = duplicates_entry[field_name].unique()
+        raise Exception(f'There was {n} non unique {field_name} generated: {non_unique_ids}')
 
 def open_and_anonymize_geojson_file(fp: str) -> dict:
     '''
@@ -496,7 +497,7 @@ def save_data_file_if_different(fp:str,
     filename_with_ext = f'{filename}.json'
     filepath = os.path.join(fp, filename_with_ext)
     if isinstance(data, gpd.GeoDataFrame):
-        if tpe == RDEType.OBS.value:
+        if tpe == RDEType.POI.value:
             data = processing_points(data, format_rde=True)
         t_data = geodataframe_to_json(data)
         t_data = t_data['features']

@@ -12,10 +12,10 @@ from .data_modeling import (
 
 #TODO: fix discrepencies on how "hr" are written between the data and the API.
 RDE_TYPE_TO_STATIC_CLASS_DEF = {
-    RDEType.HR.value: HR,
-    'hr': HR,
-    RDEType.OBS.value: Obs,
-    RDEType.POI.value: POI,
+    RDEType.HR.value: HistoricalRecord,
+    'hr': HistoricalRecord,
+    RDEType.OBS.value: Observation,
+    RDEType.POI.value: PointOfInterest,
     RDEType.GEOM.value: Geometry,
     RDEType.DATASET.value: Dataset,
     RDEType.MAP.value: Map,
@@ -101,14 +101,14 @@ class TimeAtlas:
                 return ds
         raise ValueError(f'Dataset with slug {slug} not found')
 
-    def generate_all_hr_from_dataset(self, dataset: Dataset) -> list[HR]:
+    def generate_all_hr_from_dataset(self, dataset: Dataset) -> list[HistoricalRecord]:
         hr_jsons = self.get_all_results_from_endpoint('hr/search?query=&dataset_slug=' + dataset.slug, per_page=1000)
         hrs = [HR.constructor_from_json_obj(hr_json) for hr_json in hr_jsons]
         self.entity_cache.update({hr.uuid: hr for hr in hrs})
         return hrs
 
     # Waring: very slow. Waiting on a better API endpoint to retrieve all obs for a dataset
-    def generate_obs_from_list_of_hr(self, hr_list: list[HR]) -> list[Obs]:
+    def generate_obs_from_list_of_hr(self, hr_list: list[HistoricalRecord]) -> list[Observation]:
         obs_uuids = set()
         for hr in hr_list:
             for obs_ref in hr.documents:
@@ -123,7 +123,7 @@ class TimeAtlas:
             obs_list.append(self.get_single_rde_object('obs', obs_uuid))
         return obs_list
     
-    def generate_geoms_from_list_of_obs(self, obs_list: list[Obs]) -> list[Geometry]:
+    def generate_geoms_from_list_of_obs(self, obs_list: list[Observation    ]) -> list[Geometry]:
         geom_uuids = set()
         for obs in obs_list:
             for geom_ref in obs.has_geometry:
@@ -139,14 +139,14 @@ class TimeAtlas:
         return geom_list
 
 
-    def generate_pois_from_list_of_obs(self, obs_list: list[Obs]) -> list[POI]:
+    def generate_pois_from_list_of_obs(self, obs_list: list[Observation]) -> list[PointOfInterest]:
         poi_uuids = set()
         for obs in obs_list:
             poi_ref = obs.has_handle
             match poi_ref:
                 case str():
                     poi_uuids.add(poi_ref)
-                case POI():
+                case PointOfInterest():
                     poi_uuids.add(poi_ref.uuid)
         poi_list = []
         # for poi_uuid in tqdm(poi_uuids, desc='Fetching POIs'):
@@ -169,7 +169,7 @@ class TimeAtlas:
         return self.materialize_all_rde_from_dataset_obj(ds)
 
     @staticmethod
-    def hr_list_to_dataframe(hr_list: list[HR]) -> pd.DataFrame:    
+    def hr_list_to_dataframe(hr_list: list[HistoricalRecord]) -> pd.DataFrame:    
         hr_dicts = []
         for hr in hr_list:
             hr_dict = hr.to_dict()
@@ -192,7 +192,7 @@ SAVE_FILE_PREAMBLE = {
  "rde_objects": None
 }
 
-def save_list_of_hr_as_ingestion_file(ls: list[HR], save_folder:str, name:str)->None:
+def save_list_of_hr_as_ingestion_file(ls: list[HistoricalRecord], save_folder:str, name:str)->None:
     df_of_hr = TimeAtlas.hr_list_to_dataframe(ls)
     QA_check_uuid_are_unique(df_of_hr)
     QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
