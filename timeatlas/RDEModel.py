@@ -134,12 +134,19 @@ class DatasetConfiguration(RDE):
         )
 
 @dataclass
+class FreeFormMetadata():
+    type: MetadataType
+    label: MultiLingualValue
+    value: MultiLingualValue
+
+
+@dataclass
 class Dataset(RDE, UUIDEntity):
     slug: str
     name: MultiLingualValue
     time_range: RDETimeRange
     configuration: DatasetConfiguration
-    metadata: dict # TODO: define class MetdataFieldAndValues that works as well for this similar part in maps. 
+    metadata: list[FreeFormMetadata] # TODO: define class MetdataFieldAndValues that works as well for this similar part in maps. 
     creation_time: Optional[str] = None
     version: Optional[str] = None
     sources: list[str] = field(default_factory=list)
@@ -157,7 +164,9 @@ class Dataset(RDE, UUIDEntity):
             id=UUIDEntity.parse_uuid(json_obj['id']),
             slug=json_obj['slug'],
             name=MultiLingualValue(values=json_obj['name']),
-            metadata = json_obj.get('metadata', {}),
+            metadata = [FreeFormMetadata(type=METADATA_TYPE_TO_ENUM.get(m['type'], MetadataType.STRING),
+                                         label=MultiLingualValue(values=m.get('label', {})),
+                                         value=MultiLingualValue(values=m.get('value', {}))) for m in json_obj.get('metadata', [])],
             time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
             configuration=configuration,
             creation_time=json_obj.get('creation_time', None),
@@ -296,7 +305,7 @@ class Map(RDE, UUIDEntity):
     slug: str
     time_range: RDETimeRange
     layers: list[LayerReference] = field(default_factory=list)
-    metadata: dict = field(default_factory=dict)
+    metadata: list[FreeFormMetadata] = field(default_factory=list)
     thumbnail: Optional[str] = None
     version: Optional[str] = None
     areas: list[AreaReference] = field(default_factory=list)
@@ -309,7 +318,9 @@ class Map(RDE, UUIDEntity):
             slug=json_obj['slug'],
             time_range=RDETimeRange(json_obj['start_time'], json_obj['end_time']),
             layers=json_obj.get('layers', []),
-            metadata=json_obj.get('metadata', {}),
+            metadata=[FreeFormMetadata(type=METADATA_TYPE_TO_ENUM.get(m['type'], MetadataType.STRING),
+                                       label=MultiLingualValue(values=m.get('label', {})),
+                                       value=MultiLingualValue(values=m.get('value', {}))) for m in json_obj.get('metadata', [])],
             thumbnail=json_obj.get('thumbnail'),
             extent=GeographicalExtent(json_obj.get('extent', [])),
             version=json_obj.get('version'),

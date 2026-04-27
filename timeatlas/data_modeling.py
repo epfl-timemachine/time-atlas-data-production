@@ -15,8 +15,8 @@ from functools import reduce
 import typing
 from collections import Counter
 from datetime import datetime as dt
-from .RDEModel import RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, DatasetConfiguration, Geometry, RDETimeRange, Area
-from .TAEnums import LayerType, LAYER_TYPE_TO_ENUM
+from .RDEModel import MetadataFieldConfig, RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, FreeFormMetadata, DatasetConfiguration, Geometry, RDETimeRange, Area
+from .TAEnums import LayerType, LAYER_TYPE_TO_ENUM, MetadataType, METADATA_TYPE_TO_ENUM, ParadataValues, PARADATA_VALUE_TO_ENUM
 from .get_terrain_and_building_heights import processing_points
 
 UNIVERSAL_CRS = "EPSG:4326"
@@ -235,12 +235,10 @@ def produce_dataset_obj(
     sources: list[str],
     time_range: tuple[str, str],
     transribed_pages_amount: int,
-    configuration: dict,
+    configuration: DatasetConfiguration,
+    metadata: list[FreeFormMetadata],
     areas_ids: list[str],
     ) -> dict: 
-    metadata = configuration.get('metadata', {})
-    # remove the metadata from the configuration to avoid duplication
-    configuration.pop('metadata', None) 
     ds = Dataset(
         id=uuid,
         slug=slug,
@@ -253,7 +251,6 @@ def produce_dataset_obj(
         configuration=None,
         has_areas=areas_ids,
     ).to_dict()
-    ds['configuration'] = configuration
     return ds
 
 def maximal_extent_from_extent_list(extent_list: list[list[float]]) -> tuple[Point, Point]:
@@ -601,7 +598,7 @@ def test_field_intersection(field_list_1: list[str], field_list_2: list[str], fi
 def produce_configuration_file_from_metadata_df(
         uuid_ns: uuid.UUID,
         df: pd.DataFrame,
-        config: dict) -> dict:
+        config: dict) -> tuple[DatasetConfiguration, list[FreeFormMetadata]]:
     '''
     Returns a configuration file for the dataset based on the values from the dataframe and 
     various configuration object given as parameters.
@@ -619,7 +616,7 @@ def produce_configuration_file_from_metadata_df(
             main_label: a formatting string indicating how for each data entry, its main label should be formatted on the frontend using the values of the dataset.
             sub_label: a formatting string indicating how for each data entry, its sub label should be formatted on the frontend using the values of the dataset.
     Returns:
-        the configuration file as a dictionary
+        the configuration file as a dictionary and a list of FreeFormMetadata
     '''
 
     dataset_metadata_config: dict = config['dataset_metadata_config']
@@ -650,79 +647,53 @@ def produce_configuration_file_from_metadata_df(
     if len(overlap_hidden_short_display) > 0:
         raise Exception(f'The following fields are both in hidden and short display fields: {overlap_hidden_short_display}')
 
-    base = {
-        "configuration": {
-            "main_label": "",
-            "sub_label": "",
-            "display_thumbnail": False,
-            "external_source": False,
-            "metadata_field_config": []
-        },
-        "metadata": [],
-    }
-    if main_label:
-        base['configuration']['main_label'] = main_label
-
-    if sub_label:
-        base['configuration']['sub_label'] = sub_label
-
-    base['configuration']['display_thumbnail'] = display_thumbnail
-    base['configuration']['external_source'] = external_source
-    
     ds_md_c = []
-    base_dmc = {
-        "type": None,
-        "label": None,
-        "value": None,
-    }
-    for i, (k, v) in enumerate(dataset_metadata_config.items()):
-        curr_dmc = base_dmc.copy()
-        curr_dmc['type'] = v['type']
-        curr_dmc['label'] = v['display_label']
-        curr_dmc['value'] = v['value']
-        # curr_dmc['uuid'] = str(uuid.uuid5(uuid_ns, f'dataset_md_config_{k}'))
-        # curr_dmc['display_order'] = i + 1
-        ds_md_c.append(curr_dmc)
+    for _, v in dataset_metadata_config.items():
+        # curr_dmc = base_dmc.copy()
+        # curr_dmc['type'] = v['type']
+        # curr_dmc['label'] = v['display_label']
+        # curr_dmc['value'] = v['value']
+        ds_md_c.append(FreeFormMetadata(
+            type = v['type'],
+            label = v['display_label'],
+            value = v['value']
+        ))
 
-    base['metadata'] = ds_md_c
-    field_template = {
-        "id": "",
-        "type": None,
-        "display_label": "",
-        "nullable": True,
-        "indexable": False,
-        "paradata": None,
-        "short_display": False,
-        "hidden": False,
-        "tag": None,
-    }
+    md_configs = []
+
     for col in df.columns:
         if not 'uid' in col:
             vals = df[col]
-            curr_conf = field_template.copy()
-            curr_conf["id"] = col
-            nullable = is_empty_or_null(vals)
-            curr_conf["nullable"] = bool(nullable)
+            curr_conf = MetadataFieldConfig(
+                id = col,
+                type = METADATA_TYPE_TO_ENUM[python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))] if get_likely_type_of_series(vals) in METADATA_TYPE_TO_ENUM else METADATA_TYPE_TO_ENUM['STRING'],
+                display_label = labels[col] if col in labels else quick_display_label(col),
+                nullable = is_empty_or_null(vals)
+            )
             if col in indexable_array:
-                curr_conf['indexable'] = True
+                curr_conf.indexable = True
             if col in hidden:
-                curr_conf['hidden'] = True
+                curr_conf.hidden = True
             if col in short_display:
-                curr_conf['short_display'] = True
+                curr_conf.short_display = True
             if col in tagged_fields:
-                curr_conf['tag'] = tagged_fields[col]
+                curr_conf.tag = tagged_fields[col]
             if col in automatic_fields:
-                curr_conf['paradata'] = 'a'
+                curr_conf.paradata = ParadataValues.AUTOMATIC.value
             elif col in semi_automatic_fields:
-                curr_conf['paradata'] = 's'
+                curr_conf.paradata = ParadataValues.SEMI_AUTOMATIC.value
             elif col in manual_fields:
-                curr_conf['paradata'] = 'm'
+                curr_conf.paradata = ParadataValues.MANUAL.value
             elif col in ai_fields:
-                curr_conf['paradata'] = 'i'
-            curr_conf["type"] = python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))
-            curr_conf["display_label"] = labels[col] if col in labels else quick_display_label(col)
-            base["configuration"]["metadata_field_config"].append(curr_conf)
-    return base
+                curr_conf.paradata = ParadataValues.AI_ASSISTED.value
+            md_configs.append(curr_conf)
+    return DatasetConfiguration(
+        metadata_field_config=md_configs,
+        main_label=main_label,
+        sub_label=sub_label,
+        display_thumbnail=display_thumbnail,
+        external_source=external_source
+    ), ds_md_c
 
 
 def QA_check_unique_uuid_in_uuid_array(df: pd.DataFrame, uuid_array_col_name:str, raise_exception:bool = True) -> bool:

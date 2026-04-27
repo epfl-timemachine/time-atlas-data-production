@@ -92,7 +92,7 @@ CONF = DATA_CONFIG['DATASET_CONFIGURATION']
 # the columns of the df needs to be ordered the way we want them to be ordered then in the configuration file.
 labels = CONF['labels']
 order = labels.keys()
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     VTM_SN_UUID5_NS,
     gdf[order], 
     CONF
@@ -107,6 +107,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
+    md,
     venice_area_uuids
 )
 save_data_file_if_different(DATA_FOLDER, 'datasets', [ds], f'1808_street_network_dataset', RDEType.DATASET.value, is_dataset_obj=True)
