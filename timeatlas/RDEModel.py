@@ -93,11 +93,11 @@ class MultiLingualValue:
 class MetadataFieldConfig(RDE):
     id: str
     type: Optional[MetadataType] = None
-    display_label: MultiLingualValue = ""
-    nullable: bool = True
-    indexable: bool = False
-    short_display: bool = False
-    hidden: bool = False
+    display_label: MultiLingualValue = field(default_factory=MultiLingualValue)
+    nullable: bool = field(default=True)
+    indexable: bool = field(default=False)
+    short_display: bool = field(default=False)
+    hidden: bool = field(default=False)
     tag: Optional[MetadataTag] = None
     paradata: Optional[ParadataValues] = None
 
@@ -132,25 +132,35 @@ class DatasetConfiguration(RDE):
             display_thumbnail=json_obj.get('dataset_config', {}).get('display_thumbnail', False),
             external_source=json_obj.get('dataset_config', {}).get('external_source', False)
         )
+    
+    def to_dict(self, exclude_fields={}):
+        self.metadata_field_config = [v.to_dict() for v in self.metadata_field_config] if self.metadata_field_config else []
+        return super().to_dict(exclude_fields=exclude_fields)
 
 @dataclass
-class FreeFormMetadata():
+class FreeFormMetadata(RDE):
     type: MetadataType
     label: MultiLingualValue
     value: MultiLingualValue
 
+    def to_dict(self):
+        return {
+            'type': self.type.value,
+            'label': self.label.values,
+            'value': self.value.values
+        }
 
 @dataclass
 class Dataset(RDE, UUIDEntity):
     slug: str
     name: MultiLingualValue
     time_range: RDETimeRange
-    configuration: DatasetConfiguration
-    metadata: list[FreeFormMetadata] # TODO: define class MetdataFieldAndValues that works as well for this similar part in maps. 
     creation_time: Optional[str] = None
     version: Optional[str] = None
     sources: list[str] = field(default_factory=list)
     has_areas: Optional[list[AreaReference]] = field(default_factory=list)
+    configuration: DatasetConfiguration = field(default_factory=DatasetConfiguration)
+    metadata: list[FreeFormMetadata] = field(default_factory=list)
 
     # fields that do not exist in the RDE data model, only there to make python processing easier: 
     hrs: list['HistoricalRecord'] = field(default_factory=list)
@@ -177,6 +187,8 @@ class Dataset(RDE, UUIDEntity):
     
     # override to exclude specific fields 
     def to_dict(self, exclude_fields = {'hrs', 'obs'}) -> dict:
+        self.configuration = self.configuration.to_dict() if self.configuration else None
+        self.metadata = [v.to_dict() for v in self.metadata] if self.metadata else []
         return super().to_dict(exclude_fields=exclude_fields)
 
     def instantiate_all_rde_members(self, rde_list: list[RDE]) -> None:
@@ -326,7 +338,11 @@ class Map(RDE, UUIDEntity):
             version=json_obj.get('version'),
             areas=json_obj.get('areas', [])
         )
-
+    
+    def to_dict(self, exclude_fields = {}) -> dict:
+        self.metadata = [v.to_dict() for v in self.metadata] if self.metadata else []
+        return super().to_dict(exclude_fields=exclude_fields)
+    
 @dataclass
 class LayerConfigurationService:
     url: str

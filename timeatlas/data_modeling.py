@@ -15,7 +15,7 @@ from functools import reduce
 import typing
 from collections import Counter
 from datetime import datetime as dt
-from .RDEModel import MetadataFieldConfig, RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, FreeFormMetadata, DatasetConfiguration, Geometry, RDETimeRange, Area
+from .RDEModel import MetadataFieldConfig, RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, FreeFormMetadata, DatasetConfiguration, Geometry, MultiLingualValue, RDETimeRange, Area
 from .TAEnums import LayerType, LAYER_TYPE_TO_ENUM, MetadataType, METADATA_TYPE_TO_ENUM, ParadataValues, PARADATA_VALUE_TO_ENUM
 from .get_terrain_and_building_heights import processing_points
 
@@ -121,7 +121,6 @@ def to_wgs84_from_epsg3857(x, y):
 
 def now_ts() -> str: return dt.now().isoformat()
 
-
 COMPACT_DATE_FMT = '%Y%m%d'
 def datetime_obj_from_int_time(date_val: Union[str, int], match_to_end:bool = False) -> str:
     '''
@@ -220,7 +219,7 @@ def produce_poi_obj(uuid:str, coordinate, height_data) -> dict:
     '''
     return PointOfInterest(
         id=uuid,
-        coordinate=coordinate,
+        geometry=coordinate,
         height=height_data
     ).to_dict()
 
@@ -238,8 +237,8 @@ def produce_dataset_obj(
     configuration: DatasetConfiguration,
     metadata: list[FreeFormMetadata],
     areas_ids: list[str],
-    ) -> dict: 
-    ds = Dataset(
+    ) -> dict:
+    return Dataset(
         id=uuid,
         slug=slug,
         metadata=metadata,
@@ -248,10 +247,9 @@ def produce_dataset_obj(
         name=name,
         sources=sources,
         time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
-        configuration=None,
+        configuration=configuration,
         has_areas=areas_ids,
     ).to_dict()
-    return ds
 
 def maximal_extent_from_extent_list(extent_list: list[list[float]]) -> tuple[Point, Point]:
     min_x = min([ext[0] for ext in extent_list])
@@ -274,55 +272,45 @@ def produce_map_obj(
     areas_id: list[str],
     ) -> dict:  
     extent_list = [layer['is_operationally_described_by'][0]['extent'] for layer in layer_list if 'is_operationally_described_by' in layer and 'extent' in layer['is_operationally_described_by'][0]]
-    metadata = [{
-            "type": "STRING",
-            "value": description,
-            "label": {
-                "en": [
-                    "Description"
-                ],
-                "fr": [
-                    "Description"
-                ],
-                "it": [
-                    "Descrizione"
-                ],
-                "nl": [
-                    "Beschrijving"
-                ],
-                "de": [
-                    "Beschreibung"
-                ]
-            }
-        },
-        {
-            "type": "STRING",
-            "value": paradata,
-            "label": {
-                "en": [
-                    "Paradata"
-                ],
-                "fr": [
-                    "Paradata"
-                ],
-                "it": [
-                    "Paradata"
-                ],
-                "nl": [
-                    "Paradata"
-                ],
-                "de": [
-                    "Paradata"
-                ]
-            },
-        }]
+    metadata = [FreeFormMetadata(
+                    type=MetadataType.STRING,
+                    label=MultiLingualValue(values={
+                        "en": ["Description"
+                        ],
+                        "fr": ["Description"
+                        ],
+                        "it": ["Descrizione"    
+                        ],
+                        "nl": ["Beschrijving"
+                        ],
+                        "de": ["Beschreibung"
+                        ]                    
+                    }),
+                    value=MultiLingualValue(values=description)
+                ),
+                FreeFormMetadata(
+                    type=MetadataType.STRING,
+                    label=MultiLingualValue(values={
+                        "en": ["Paradata"
+                        ],
+                        "fr": ["Paradata"
+                        ],
+                        "it": ["Paradata"    
+                        ],
+                        "nl": ["Paradata"
+                        ],
+                        "de": ["Paradata"
+                        ]                    
+                    }),
+                    value=MultiLingualValue(values=paradata)
+                )]
     return Map(
         id=map_uuid,
         name=name,
         slug=map_slug,
         thumbnail=thumbnail,
         time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
-        layers=[layer['uuid'] for layer in layer_list],
+        layers=layer_list,
         metadata=metadata,
         version=version,
         areas=areas_id
@@ -356,7 +344,7 @@ def produce_layer_config(
             url=access_url,
             type=format
         )
-    ).to_dict()
+    )
 
 # deprecated, left for old version of the scripts to be working
 def produce_layer_obj(
@@ -367,20 +355,18 @@ def produce_layer_obj(
     time_range: tuple[str, str],
     map_uuid: str,
     is_vector: bool,
-    layer_configs: list[dict]
+    layer_configs: list[LayerConfiguration]
     ) -> dict:
-    
-    layer = Layer(  
+    return Layer(  
         id=uuid,
         name=name,
         description=description,
         slug=layer_slug,
         map=map_uuid,
         type=LAYER_TYPE_TO_ENUM.get("VECTOR" if is_vector else "RASTER", LayerType.RASTER),
-        time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1])
+        time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
+        layer_configurations=layer_configs
     ).to_dict()
-    layer['layer_configurations'] = layer_configs
-    return layer
 
 # deprecated, left for old version of the scripts to be working
 def produce_area_obj(uuid: str,
@@ -459,6 +445,9 @@ def saving_routine(d:list[dict], f:str, name:str, tpe: Union[str, list]) -> None
         "creation_time": now_ts(),
         "rde_objects": d
     }
+    try: json.dumps(obj)
+    except Exception as e:
+        print(obj)
     with open(f, 'w+', encoding='utf-8') as f:
         f.write(json.dumps(obj, indent=1, ensure_ascii=False))
 
@@ -668,7 +657,7 @@ def produce_configuration_file_from_metadata_df(
                 id = col,
                 type = METADATA_TYPE_TO_ENUM[python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))] if get_likely_type_of_series(vals) in METADATA_TYPE_TO_ENUM else METADATA_TYPE_TO_ENUM['STRING'],
                 display_label = labels[col] if col in labels else quick_display_label(col),
-                nullable = is_empty_or_null(vals)
+                nullable = bool(is_empty_or_null(vals))
             )
             if col in indexable_array:
                 curr_conf.indexable = True
