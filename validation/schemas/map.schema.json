@@ -2,7 +2,7 @@
   "$id": "https://timeatlas.eu/rde/map.schema.json",
   "type": "object",
   "properties": {
-    "uuid": {
+    "id": {
       "type": "string"
     },
     "slug": {
@@ -29,21 +29,13 @@
     "end_time": {
       "type": "string"
     },
-    "extent": {
-        "type": "array",
-        "items": {
-            "type": "number"
-        },
-        "minItems": 4,
-        "maxItems": 4
-    },
     "contains": {
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "falls_within": {
+    "areas": {
       "type": "array",
       "items": {
         "type": "string"
@@ -53,15 +45,14 @@
   "required": [
     "contains",
     "end_time",
-    "falls_within",
+    "areas",
     "name",
     "metadata",
-    "extent",
     "version",
     "thumbnail",
     "rde_type",
     "slug",
     "start_time",
-    "uuid"
+    "id"
   ]
 }

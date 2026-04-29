@@ -2,7 +2,7 @@
   "$id": "https://timeatlas.eu/rde/layer.schema.json",
   "type": "object",
   "properties": {
-    "uuid": {
+    "id": {
       "type": "string"
     },
     "name": {
@@ -60,7 +60,7 @@
     "slug": {
       "type": "string"
     },
-    "map_uuid": {
+    "map": {
       "type": "string"
     },
     "type": {
@@ -75,7 +75,7 @@
     "end_time": {
       "type": "string"
     },
-    "is_operationally_described_by": {
+    "layer_configurations": {
       "type": "array",
       "items": {
         "$ref": "https://timeatlas.eu/rde/layer_configuration.schema.json"
@@ -83,15 +83,16 @@
     }
   },
   "required": [
+    "map",
     "description",
     "end_time",
     "name",
-    "is_operationally_described_by",
+    "layer_configurations",
     "rde_type",
     "slug",
     "start_time",
     "type",
-    "uuid"
+    "id"
   ],
   "additionalProperties": false
 }

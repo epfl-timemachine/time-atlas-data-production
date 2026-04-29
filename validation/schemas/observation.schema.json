@@ -2,7 +2,7 @@
   "$id": "https://timeatlas.eu/rde/observation.schema.json",
   "type": "object",
   "properties": {
-    "uuid": {
+    "id": {
       "type": "string"
     },
     "dataset": {
@@ -14,28 +14,7 @@
     "type": {
       "type": "string"
     },
-    "start_time": {
-      "type": "string"
-    },
-    "end_time": {
-      "type": "string"
-    },
-    "height": {
-      "type": "object",
-      "building": {
-        "type": {
-          "type": "number"
-        },
-        "terrain": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "building",
-        "terrain"
-      ]
-    },
-    "has_geometry": {
+    "has_geometries": {
       "oneOf": [
         {
           "type": "array",
@@ -48,10 +27,10 @@
         }
       ]
     },
-    "documented_in": {
+    "historical_record": {
       "type": "string"
     },
-    "has_handle": {
+    "part_of_point_of_interest": {
       "type": "string"
     },
     "geometry": {
@@ -75,14 +54,14 @@
   },
   "required": [
     "dataset",
-    "documented_in",
+    "historical_record",
     "end_time",
-    "has_geometry",
-    "has_handle",
+    "has_geometries",
+    "part_of_point_of_interest",
     "rde_type",
     "start_time",
     "type",
-    "uuid"
+    "id"
   ],
   "additionalProperties":false
 }

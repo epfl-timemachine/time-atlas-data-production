@@ -2,7 +2,7 @@
     "$id": "https://timeatlas.eu/rde/layer_configuration.schema.json",
     "type": "object",
     "properties": {
-        "uuid": {
+        "id": {
             "type": "string"
         },
         "extent": {
@@ -13,11 +13,11 @@
             "minItems": 4,
             "maxItems": 4
         },
-        "zoom_lvl": {
-            "type": "array",
-            "items": {
-                "type": "integer"
-            }
+        "min_zoom_level": {
+            "type": "integer"
+        },
+        "max_zoom_level": {
+            "type": "integer"
         },
         "service": {
             "type": "object",
@@ -25,22 +25,23 @@
                 "url": {
                     "type": "string"
                 },
-                "media_type": {
+                "type": {
                     "type": "string"
                 }
             },
             "required": [
                 "url",
-                "media_type"
+                "type"
             ],
             "additionalProperties": true
         }
     },
     "required": [
         "service",
-        "uuid",
+        "id",
         "extent",
-        "zoom_lvl"
+        "min_zoom_level",
+        "max_zoom_level"
     ],
     "additionalProperties": false
 }

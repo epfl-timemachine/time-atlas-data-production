@@ -2,7 +2,7 @@
   "$id": "https://timeatlas.eu/rde/dataset.schema.json",
   "type": "object",
   "properties": {
-    "uuid": {
+    "id": {
       "type": "string"
     },
     "slug": {
@@ -38,7 +38,7 @@
     "configuration": {
       "$ref": "https://timeatlas.eu/rde/configuration.schema.json"
     },
-    "falls_within": {
+    "has_areas": {
       "type": "array",
       "items": {
         "type": "string"
@@ -48,7 +48,7 @@
   "required": [
     "creation_time",
     "end_time",
-    "falls_within",
+    "has_areas",
     "name",
     "version",
     "metadata",
@@ -57,7 +57,7 @@
     "sources",
     "start_time",
     "rde_type",
-    "uuid"
+    "id"
   ],
   "additionalProperties": false
 }
