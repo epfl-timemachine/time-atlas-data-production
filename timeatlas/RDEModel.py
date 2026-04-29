@@ -399,6 +399,8 @@ class Geometry(RDE, UUIDEntity):
     has_layer: Optional[LayerReference] = None
 
     def __post_init__(self):
+        if isinstance(self.geometry, dict):
+            self.geometry = shapely.from_geojson(json.dumps(self.geometry))
         if not self.geometry.is_valid:
             raise ValueError(f'Invalid geometry, because  {shapely.validation.explain_validity(self.geometry)}')
 

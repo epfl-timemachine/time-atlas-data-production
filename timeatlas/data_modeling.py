@@ -15,7 +15,7 @@ from functools import reduce
 import typing
 from collections import Counter
 from datetime import datetime as dt
-from .RDEModel import MetadataFieldConfig, RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, FreeFormMetadata, DatasetConfiguration, Geometry, MultiLingualValue, RDETimeRange, Area
+from .RDEModel import MetadataFieldConfig, RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, FreeFormMetadata, DatasetConfiguration, Geometry, HeightInfo, MultiLingualValue, RDETimeRange, Area
 from .TAEnums import LayerType, LAYER_TYPE_TO_ENUM, MetadataType, METADATA_TYPE_TO_ENUM, ParadataValues, PARADATA_VALUE_TO_ENUM
 from .get_terrain_and_building_heights import processing_points
 
@@ -105,7 +105,7 @@ def get_single_object_uuid(obj_fp:str) -> str:
 
 def get_layer_uuid(layer_fp:str, slug_part:str) -> str:
     with open(layer_fp) as f:
-        slug_uuids = [(v['slug'], v['uuid']) for v in  json.load(f)['rde_objects']]
+        slug_uuids = [(v['slug'], v['id']) for v in  json.load(f)['rde_objects']]
         sel = [(k,v) for k, v in slug_uuids if slug_part in k]
         if len(sel) == 0:
             raise Exception(f'No layer with a slug looking like "{slug_part}" found in {layer_fp}')
@@ -487,8 +487,25 @@ def save_data_file_if_different(fp:str,
             data = processing_points(data, format_rde=True)
         t_data = geodataframe_to_json(data)
         t_data = t_data['features']
+        match tpe:
+            case RDEType.POI.value:
+                t_data = [PointOfInterest(
+                    id=f['properties']['uuid'],
+                    geometry=f['geometry'],
+                    height=HeightInfo(terrain = f['properties']['height']['terrain'], building = f['properties']['height']['building'])
+                ).to_dict() for f in t_data]
+            case RDEType.GEOM.value:
+                t_data = [Geometry(
+                    id=f['properties']['uuid'],
+                    has_layer=f['properties']['layer_uuid'],
+                    geometry=f['geometry']
+                ).to_dict() for f in t_data]
+            case RDEType.OBS.value:
+                # already converted by "produce_obs_obj" function, so just keeping the geometry as a field of the properties dict to be able to do the comparison with the file version.
+                t_data = [{**f['properties'], **{"geometry": f['geometry']}} for f in t_data]
+            case _:
+                raise ValueError(f'Unsupported type for geodataframe data: {tpe}')
         # flattening the geojson object to only keep the features
-        t_data = [{**f['properties'], **{"geometry": f['geometry']}} for f in t_data]
     elif isinstance(data, list):
         t_data = data
     elif isinstance(data, dict):
