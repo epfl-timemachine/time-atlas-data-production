@@ -145,36 +145,31 @@ def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd
     num_points = len(points)
 
     for _, row in tqdm(points.iterrows(), desc="Processing elevation data", total=num_points):
-        if row['has_handle']:
-            tile_x, tile_y = row.tile_x, row.tile_y
+        tile_x, tile_y = row.tile_x, row.tile_y
 
-            if (tile_x != previous_tile_x or tile_y != previous_tile_y):
-                rgb_img_data = get_terrain_tile(tile_x, tile_y, highest_zoom_level)
-                shapely_features = get_vector_tile(tile_x, tile_y, highest_zoom_level)
+        if (tile_x != previous_tile_x or tile_y != previous_tile_y):
+            rgb_img_data = get_terrain_tile(tile_x, tile_y, highest_zoom_level)
+            shapely_features = get_vector_tile(tile_x, tile_y, highest_zoom_level)
 
-            height_rgb = rgb_img_data[row.terrain_y, row.terrain_x]
-            # decode height
-            height = -10000 + ((height_rgb[0] * 256 * 256 + height_rgb[1] * 256 + height_rgb[2]) * 0.1)
-            terrain_height_values.append(height)
+        height_rgb = rgb_img_data[row.terrain_y, row.terrain_x]
+        # decode height
+        height = -10000 + ((height_rgb[0] * 256 * 256 + height_rgb[1] * 256 + height_rgb[2]) * 0.1)
+        terrain_height_values.append(height)
 
-            found = False
+        found = False
 
-            for feature in shapely_features:
-                # check if the point is inside the building polygon
-                if (shapely.intersects_xy(feature["geometry"], row.vector_x, row.vector_y)):
-                    building_height_values.append(feature["render_height"])
-                    found = True
-                    break
+        for feature in shapely_features:
+            # check if the point is inside the building polygon
+            if (shapely.intersects_xy(feature["geometry"], row.vector_x, row.vector_y)):
+                building_height_values.append(feature["render_height"])
+                found = True
+                break
 
-            if not found:
-                building_height_values.append(0)
-
-            previous_tile_x = tile_x
-            previous_tile_y = tile_y
-        else:
-            # no need to compute it for obs that do not require PoIs. 
-            terrain_height_values.append(0)
+        if not found:
             building_height_values.append(0)
+
+        previous_tile_x = tile_x
+        previous_tile_y = tile_y
 
     points["terrain_height"] = [rounding_to_n_decimals(vs, 1) for vs in terrain_height_values]
     points["building_height"] = [rounding_to_n_decimals(vs, 1) for vs in building_height_values]

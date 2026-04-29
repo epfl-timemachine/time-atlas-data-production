@@ -116,6 +116,19 @@ class MetadataFieldConfig(RDE):
         )
 
 @dataclass
+class FreeFormMetadata(RDE):
+    type: MetadataType
+    label: MultiLingualValue
+    value: MultiLingualValue
+
+    def to_dict(self):
+        return {
+            'type': self.type.value,
+            'label': self.label.values,
+            'value': self.value.values
+        }
+    
+@dataclass
 class DatasetConfiguration(RDE):
     metadata_field_config: list[MetadataFieldConfig] = field(default_factory=list)
     main_label: str = ''
@@ -136,19 +149,6 @@ class DatasetConfiguration(RDE):
     def to_dict(self, exclude_fields={}):
         self.metadata_field_config = [v.to_dict() for v in self.metadata_field_config] if self.metadata_field_config else []
         return super().to_dict(exclude_fields=exclude_fields)
-
-@dataclass
-class FreeFormMetadata(RDE):
-    type: MetadataType
-    label: MultiLingualValue
-    value: MultiLingualValue
-
-    def to_dict(self):
-        return {
-            'type': self.type.value,
-            'label': self.label.values,
-            'value': self.value.values
-        }
 
 @dataclass
 class Dataset(RDE, UUIDEntity):
@@ -341,6 +341,7 @@ class Map(RDE, UUIDEntity):
     
     def to_dict(self, exclude_fields = {}) -> dict:
         self.metadata = [v.to_dict() for v in self.metadata] if self.metadata else []
+        self.layers = [layer.get_ref() if isinstance(layer, Layer) else layer['id'] if isinstance(layer, dict) and 'id' in layer else layer for layer in self.layers]
         return super().to_dict(exclude_fields=exclude_fields)
     
 @dataclass
@@ -369,6 +370,14 @@ class LayerConfiguration(RDE, UUIDEntity):
             max_zoom_level=json_obj.get('max_zoom_level', 22),
             extent=GeographicalExtent(json_obj.get('extent', [])) if 'extent' in json_obj else None
         )
+    
+    def to_dict(self, exclude_fields={}):
+        self.service = {
+            'url': self.service.url,
+            'type': self.service.type
+        }
+        self.extent = self.extent.coordinates if self.extent else None
+        return super().to_dict(exclude_fields)
 
 @dataclass 
 class Layer(RDE, UUIDEntity):
@@ -392,6 +401,10 @@ class Layer(RDE, UUIDEntity):
             type=LAYER_TYPE_TO_ENUM.get(json_obj.get('type', '').upper(), LayerType.RASTER),
             layer_configurations=[LayerConfiguration.constructor_from_json_obj(lc) for lc in json_obj.get('layer_configurations', [])]
         )
+    
+    def to_dict(self, exclude_fields={}):
+        self.layer_configurations = [lc.to_dict() for lc in self.layer_configurations] if self.layer_configurations else []
+        return super().to_dict()
 
 @dataclass
 class Geometry(RDE, UUIDEntity):

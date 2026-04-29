@@ -101,7 +101,7 @@ def get_single_object_uuid(obj_fp:str) -> str:
     Useful to fetch uuid for object like area, dataset or dictionary.
     '''
     with open(obj_fp) as f:
-        return json.load(f)['rde_objects'][0]['uuid']
+        return json.load(f)['rde_objects'][0]['id']
 
 def get_layer_uuid(layer_fp:str, slug_part:str) -> str:
     with open(layer_fp) as f:
@@ -210,7 +210,7 @@ def produce_obs_obj(uuid:str,
     ).to_dict()
 
 # deprecated, left for old version of the scripts to be working
-def produce_poi_obj(uuid:str, coordinate, height_data) -> dict:
+def produce_poi_obj(uuid:str, coordinate: Point, terrain_height: float, building_height: float) -> dict:
     '''
     returns the geometry object created as a dictionary
     uuid: the UUID of the PoI
@@ -220,36 +220,11 @@ def produce_poi_obj(uuid:str, coordinate, height_data) -> dict:
     return PointOfInterest(
         id=uuid,
         geometry=coordinate,
-        height=height_data
+        height=HeightInfo(terrain=terrain_height, building=building_height)
     ).to_dict()
 
 MultiLingualDesc = dict[str, list[str]]
 
-# deprecated, left for old version of the scripts to be working
-def produce_dataset_obj(
-    uuid: uuid.UUID,
-    slug: str,
-    version: str,
-    name: MultiLingualDesc,
-    sources: list[str],
-    time_range: tuple[str, str],
-    transribed_pages_amount: int,
-    configuration: DatasetConfiguration,
-    metadata: list[FreeFormMetadata],
-    areas_ids: list[str],
-    ) -> dict:
-    return Dataset(
-        id=uuid,
-        slug=slug,
-        metadata=metadata,
-        version=version,
-        creation_time=now_ts(),
-        name=name,
-        sources=sources,
-        time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
-        configuration=configuration,
-        has_areas=areas_ids,
-    ).to_dict()
 
 def maximal_extent_from_extent_list(extent_list: list[list[float]]) -> tuple[Point, Point]:
     min_x = min([ext[0] for ext in extent_list])
@@ -370,12 +345,14 @@ def produce_layer_obj(
 
 # deprecated, left for old version of the scripts to be working
 def produce_area_obj(uuid: str,
-    name: str,
+    name: MultiLingualValue,
     geometry: dict,
     slug: str,
     version: str) -> dict:
+    if isinstance(name, dict):
+        name = MultiLingualValue(values=name)
     return Area(
-        uuid=uuid,
+        id=uuid,
         name=name,
         geometry=geometry,
         slug=slug
@@ -445,9 +422,6 @@ def saving_routine(d:list[dict], f:str, name:str, tpe: Union[str, list]) -> None
         "creation_time": now_ts(),
         "rde_objects": d
     }
-    try: json.dumps(obj)
-    except Exception as e:
-        print(obj)
     with open(f, 'w+', encoding='utf-8') as f:
         f.write(json.dumps(obj, indent=1, ensure_ascii=False))
 
@@ -483,16 +457,15 @@ def save_data_file_if_different(fp:str,
     filename_with_ext = f'{filename}.json'
     filepath = os.path.join(fp, filename_with_ext)
     if isinstance(data, gpd.GeoDataFrame):
-        if tpe == RDEType.POI.value:
-            data = processing_points(data, format_rde=True)
         t_data = geodataframe_to_json(data)
         t_data = t_data['features']
         match tpe:
             case RDEType.POI.value:
+                print(t_data)
                 t_data = [PointOfInterest(
-                    id=f['properties']['uuid'],
+                    id=f['properties']['id'],
                     geometry=f['geometry'],
-                    height=HeightInfo(terrain = f['properties']['height']['terrain'], building = f['properties']['height']['building'])
+                    height=HeightInfo(terrain = f['properties']['terrain_height'], building = f['properties']['building_height'])
                 ).to_dict() for f in t_data]
             case RDEType.GEOM.value:
                 t_data = [Geometry(
@@ -599,6 +572,31 @@ def test_field_intersection(field_list_1: list[str], field_list_2: list[str], fi
     if len(overlap) > 0:
         raise Exception(f'The following fields are both in {field_list_1_name} and {field_list_2_name}: {overlap}')
 
+# deprecated, left for old version of the scripts to be working
+def produce_dataset_obj(
+    uuid: uuid.UUID,
+    slug: str,
+    version: str,
+    name: MultiLingualDesc,
+    sources: list[str],
+    time_range: tuple[str, str],
+    transribed_pages_amount: int,
+    configuration: DatasetConfiguration,
+    metadata: list[FreeFormMetadata],
+    areas_ids: list[str],
+    ) -> dict:
+    return Dataset(
+        id=uuid,
+        slug=slug,
+        metadata=metadata,
+        version=version,
+        creation_time=now_ts(),
+        name=name,
+        sources=sources,
+        time_range=RDETimeRange(start_time=time_range[0], end_time=time_range[1]),
+        configuration=configuration,
+        has_areas=areas_ids,
+    ).to_dict()
 
 # deprecated, left for old version of the scripts to be working
 def produce_configuration_file_from_metadata_df(
@@ -660,11 +658,10 @@ def produce_configuration_file_from_metadata_df(
         # curr_dmc['label'] = v['display_label']
         # curr_dmc['value'] = v['value']
         ds_md_c.append(FreeFormMetadata(
-            type = v['type'],
-            label = v['display_label'],
-            value = v['value']
+            type = METADATA_TYPE_TO_ENUM[v['type']],
+            label = MultiLingualValue(values=v['display_label']),
+            value = MultiLingualValue(values=v['value'])
         ))
-
     md_configs = []
 
     for col in df.columns:
@@ -673,7 +670,7 @@ def produce_configuration_file_from_metadata_df(
             curr_conf = MetadataFieldConfig(
                 id = col,
                 type = METADATA_TYPE_TO_ENUM[python_type_to_ad_hoc_conf_type(get_likely_type_of_series(vals))] if get_likely_type_of_series(vals) in METADATA_TYPE_TO_ENUM else METADATA_TYPE_TO_ENUM['STRING'],
-                display_label = labels[col] if col in labels else quick_display_label(col),
+                display_label = MultiLingualValue(values=labels[col]) if col in labels else quick_display_label(col),
                 nullable = bool(is_empty_or_null(vals))
             )
             if col in indexable_array:

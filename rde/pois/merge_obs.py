@@ -6,12 +6,24 @@ import geopandas as gpd
 import uuid
 from shapely.geometry import Point
 import sys
+import argparse
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
 from timeatlas.data_modeling import *
 
+# Parse command line arguments
+parser = argparse.ArgumentParser(description='Merge observations and create POIs from dataset folders.')
+parser.add_argument('--filter', type=str, default=None, 
+                    help='Filter for dataset folder names (substring match). If not provided, all datasets are processed.')
+args = parser.parse_args()
+
 all_datasets = [f for f in os.listdir('../datasets') if os.path.isdir(os.path.join('../datasets', f))]
+
+# Apply filter if provided
+if args.filter:
+    all_datasets = [ds for ds in all_datasets if args.filter in ds]
+    print(f"Filtering datasets with '{args.filter}': {len(all_datasets)} dataset(s) matched.")
 dobs_suffix = 'observations.json'
 all_obs_files = [os.path.join('../datasets/', ds, dobs_suffix) for ds in all_datasets if os.path.exists(os.path.join('../datasets/', ds, dobs_suffix))]
 
@@ -25,7 +37,7 @@ for fp in all_obs_files:
 def filter_obs_that_needs_poi(obs_data: list) -> list:
     filtered_obs = []
     for obs in obs_data:
-        if obs['has_handle'] or obs['has_handle'] == None:
+        if obs['part_of_point_of_interest'] or obs['part_of_point_of_interest'] == None:
             filtered_obs.append(obs)
     return filtered_obs
 
@@ -48,10 +60,14 @@ df_obs_grouped = df_obs.groupby(by=['lon', 'lat']).agg(list).reset_index()
 
 TM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, 'https://timemachine.epfl.ch/operational/pois/')
 df_obs_grouped['new_poi_uuid'] = df_obs_grouped.apply(lambda v: str(uuid.uuid5(TM_UUID5_NS, f"poi_{v.lon}_{v.lat}")), axis=1)
-df_obs_grouped['obs_uuids'] = df_obs_grouped.apply(lambda v: [obs['uuid'] for obs in v.obs_data], axis=1)
+df_obs_grouped['obs_uuids'] = df_obs_grouped.apply(lambda v: [obs['id'] for obs in v.obs_data], axis=1)
 new_count = len(df_obs_grouped)
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(row.new_poi_uuid, Point(row['lon'], row['lat']), row['obs_data'][0]['height']) for _, row in df_obs_grouped.iterrows()])
-gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
+
+gdf = gpd.GeoDataFrame(df_obs_grouped, geometry=gpd.points_from_xy(df_obs_grouped.lon, df_obs_grouped.lat), crs='EPSG:4326')
+gdf_height = processing_points(gdf)
+print(gdf_height.head())
+gdf_poi = gpd.GeoDataFrame([produce_poi_obj(row.new_poi_uuid, row.geometry, row.terrain_height, row.building_height) for _, row in gdf_height.iterrows()])
+# gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
 
 QA_check_uuid_are_unique(gdf_poi.reset_index())
 save_data_file_if_different('', 'points_of_interest', gdf_poi, f'all_pois', RDEType.POI.value)
@@ -66,10 +82,10 @@ def update_obs_file(obs_fp:str, obs_uuid_to_poi_uuid: dict[str, str]) -> None:
     with open(obs_fp, 'r', encoding='utf-8') as f:
         data = json.load(f)
         for obs in data['rde_objects']:
-            if obs['uuid'] in obs_uuid_to_poi_uuid:
-                obs['has_handle'] = obs_uuid_to_poi_uuid[obs['uuid']]
+            if obs['id'] in obs_uuid_to_poi_uuid:
+                obs['part_of_point_of_interest'] = obs_uuid_to_poi_uuid[obs['id']]
             else:
-                obs['has_handle'] = None  # meaning this is an obs without a PoI
+                obs['part_of_point_of_interest'] = None  # meaning this is an obs without a PoI
     with open(obs_fp, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
 

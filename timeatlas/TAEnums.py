@@ -67,12 +67,15 @@ CLASS_NAME_TO_RDE = {
     'obs': RDEType.OBS,
     'poi': RDEType.POI,
     'historical_record': RDEType.HR, 
+    'historicalrecord': RDEType.HR,
     'observation': RDEType.OBS,
     'point_of_interest': RDEType.POI,
+    'pointofinterest': RDEType.POI,
     'geometry': RDEType.GEOM,
     'dataset': RDEType.DATASET,
     'map': RDEType.MAP,
     'layer': RDEType.LAYER,
     'layer_configuration': RDEType.LAYER_CONFIGURATION,
+    'layerconfiguration': RDEType.LAYER_CONFIGURATION,
     'area': RDEType.AREA
 }
