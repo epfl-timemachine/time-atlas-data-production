@@ -25,12 +25,14 @@ class MetadataType(Enum):
     INTEGER = "INTEGER"
     FLOAT = "FLOAT"
     LIST = "LIST"
+    URL = "URL"
 
 METADATA_TYPE_TO_ENUM = {
     "STRING": MetadataType.STRING,
     "INTEGER": MetadataType.INTEGER,
     "FLOAT": MetadataType.FLOAT,
-    "LIST": MetadataType.LIST
+    "LIST": MetadataType.LIST,
+    "URL": MetadataType.URL
 }
 
 class ParadataValues(Enum):

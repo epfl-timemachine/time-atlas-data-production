@@ -300,7 +300,7 @@ def produce_obs_gdf(df:pd.DataFrame, need_poi:bool=True) -> gpd.GeoDataFrame:
     ) for _,v in gdf.iterrows()]
 
     gdf_obs = gpd.GeoDataFrame(obs)
-    gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+    gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
     return gdf_obs
 
 gdf_obs_precise = produce_obs_gdf(df_precise_coords)
@@ -359,9 +359,9 @@ for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests
 
 hr_uuid_to_obs_uuid = {}
 for _, row in tqdm(gdf_obs.reset_index().iterrows(), total=len(gdf_obs), desc="Mapping hr_uuid to obs_uuid"):
-    if row['documented_in'] not in hr_uuid_to_obs_uuid:
-        hr_uuid_to_obs_uuid[row['documented_in']] = []
-    hr_uuid_to_obs_uuid[row['documented_in']].append(row['uuid'])
+    if row['historical_record'] not in hr_uuid_to_obs_uuid:
+        hr_uuid_to_obs_uuid[row['historical_record']] = []
+    hr_uuid_to_obs_uuid[row['historical_record']].append(row['id'])
 
     # generating the collection
 collection_uuid = str(uuid.uuid5(TM_UUID5_NS, f'{DS_SLUG}_collection'))
@@ -410,13 +410,13 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'europeana
 df_of_hr = pd.DataFrame(data = recs)
 
 QA_check_uuid_are_unique(df_of_hr)
-# QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents') # disabled because of "Monuments" being the same field of origin for both obs uuuid.
+# QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations') # disabled because of "Monuments" being the same field of origin for both obs uuuid.
 
 # Dataset RDE Object production
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']
 filtered_df = df_hr.drop(columns=['hr_uuid', 'obs_uuid'])
 order = CONF['labels'].keys()
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     TM_UUID5_NS,
     filtered_df[order],
     CONF
@@ -431,6 +431,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
+    md,
     europeana_area_uuids,
 )
 

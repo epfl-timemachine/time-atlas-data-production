@@ -56,7 +56,7 @@ obs = [produce_obs_obj(
 ) for _,v in gdf.iterrows()]
 
 gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDEType.OBS.value)
@@ -121,14 +121,14 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'dresden_h
 df_of_hr = pd.DataFrame(data = recs)
 
 QA_check_uuid_are_unique(df_of_hr)
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations')
 
 # Dataset RDE Object production
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']
 filtered_df = hr_df.drop(columns=['hr_uuid', 'obs_uuid'])
 labels = CONF['labels']
 order = labels.keys()
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     TM_UUID5_NS,
     filtered_df[order],
     CONF
@@ -143,6 +143,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
+    md,
     dresden_area_uuids
 )
 

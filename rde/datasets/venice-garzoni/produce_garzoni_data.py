@@ -231,7 +231,7 @@ for _, r in df_flat.iterrows():
             obs.append(produce_obs_from_uuid_geom_id_and_date(r[s][0], r[s][1], r.hr_uuid, (r.start_time, r.end_time)))
 
 
-gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_index('uuid').set_crs('EPSG:4326')
+gdf_obs = gpd.GeoDataFrame(obs).set_index('id').set_crs('EPSG:4326')
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, f'garzoni_obs', RDEType.OBS.value)
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 
@@ -331,7 +331,7 @@ order = ['Apprentice',
 ]
 
 
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,
     df_flat[order],
     CONF
@@ -346,6 +346,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     3,
     ds_conf,
+    md,
     venice_area_uuids
 )
 

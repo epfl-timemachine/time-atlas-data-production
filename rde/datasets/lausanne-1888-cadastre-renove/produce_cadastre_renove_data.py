@@ -126,14 +126,14 @@ tpe = 'parcel ownership'
 obs_from_row = lambda v: produce_obs_obj(v.uuid, TR_OBJ, DS_UUID, v.hr_uuid, tpe, v.coordinate, None if pd.isna(v.has_geometry) else [v.has_geometry])
 obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'lausanne_1888_cadastre_renove_observations'
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
-QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
+QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometries')
 
 #HR RDE Production
 exclude_hr_labels = {
@@ -174,7 +174,7 @@ filtered_df = dfs[hr_metadata_cols].copy()
 remaining_vals = list(filtered_df.columns)
 order = CONF['labels'].keys()
 
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     LTM_UUID5_NS, 
     filtered_df[order], 
     CONF
@@ -189,6 +189,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
+    md,
     lausanne_area_uuids
 )
 

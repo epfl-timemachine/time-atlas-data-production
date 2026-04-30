@@ -84,7 +84,7 @@ gdf['type'] = 'photograph'
 obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.geometry.centroid, v.has_geometry)
 obs = [obs_from_row(v) for _, v in gdf.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
@@ -151,7 +151,7 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations')
 
 # Source Production
 url_prefix = 'https://image-timemachine.epfl.ch/iiif/3/venice%2Fcini%2Fcardboards%2F{drawer}%2F{CINI_ID}.jpg/full/max/0/default.jpg'
@@ -203,7 +203,7 @@ cols_of_interest_ordered = [
        'SimpleCollection', 'author_birth_date_time', 'author_death_date_time',
 ]
 
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,
     df[cols_of_interest_ordered],
     CONF
@@ -218,6 +218,7 @@ ds = produce_dataset_obj(
     (min_time, max_time),
     0,
     ds_conf,
+    md,
     venice_area_uuids
 )
 

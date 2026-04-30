@@ -123,7 +123,8 @@ gdf['start_time'] = pd.Series(data = [TR_OBJ[0]] * len(gdf), name='start_time')
 gdf['end_time'] = pd.Series(data = [TR_OBJ[1]] * len(gdf), name='end_time')
 
 tqdm.pandas(desc="Generating uuid from geometry")
-gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['id']), axis=1)
+gdf.rename(columns={'id': 'geom_id'}, inplace=True)
+gdf['uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, r, ['geom_id']), axis=1)
 gdf['layer_uuid'] = cadaster_layer_uuid
 gdf['rde_type'] = "geometry"
 QA_check_uuid_are_unique(gdf)
@@ -138,7 +139,7 @@ geom_shorthand = 'sommarioni_geometries'
 save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
 
 # storing in a single dataframe all the data that will be needed to add to the Obs objects. 
-geomid_uuid_list = gdf.groupby(by="geometry_id")['uuid'].apply(list).reset_index(name='has_geometry').set_index('geometry_id')
+geomid_uuid_list = gdf.groupby(by="geometry_id")['uuid'].apply(list).reset_index(name='has_geometries').set_index('geometry_id')
 centre_gdf = centre_gdf.set_index('geometry_id')
 geomid_uuid_list['coordinate'] = centre_gdf['coordinate']
 geomid_uuid_list['parish_standardised'] = centre_gdf['parish_standardised']
@@ -160,21 +161,23 @@ df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v
 # Obs RDE Procution
 obs_df = df[['obs_uuid','hr_uuid', 'coordinate']].groupby(by=['obs_uuid','coordinate']).agg(list).reset_index().set_index('obs_uuid')
 tpe = 'parcel ownership'
-obs_df['has_geometry'] = df[~df.duplicated('obs_uuid',keep='first')].set_index('obs_uuid')['has_geometry']
+obs_df['has_geometry'] = df[~df.duplicated('obs_uuid',keep='first')].set_index('obs_uuid')['has_geometries']
 obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid[0], tpe, v.coordinate, [r for r in v.has_geometry])
 obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'sommarioni_obs'
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
-QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometry')
+QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometries')
 
 #HR RDE Production
 exclude_hr_labels = {
+    'id',
+    'has_geometries',
     'geometry_id', 
     'has_geometry', 
     'coordinate',
@@ -220,7 +223,7 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations')
 
 # Generating the manifest for the textual data
 # (now that all HR uuid were generated)
@@ -239,7 +242,7 @@ def sommarioni_metadata_object_to_string_representation(metadata: dict) -> str:
     return ' | '.join([v for v in vals if len(v) > 0])
 
 df_iiif_links['iiif_display_string'] = df_iiif_links['metadata'].apply(sommarioni_metadata_object_to_string_representation)
-df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
+df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['id'], x['iiif_display_string']), axis=1)
 # applying the page to canvas mapping.
 df_iiif_links['canvas_id'] = df_iiif_links['page'].apply(lambda v: page_to_canvas.get(v, None))
 # # the hr_uuid is missing. 
@@ -260,7 +263,7 @@ remaining_vals = list(filtered_df.columns)
 remaining_vals.remove('unique_id')
 order = CONF['labels'].keys()
 
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS, 
     filtered_df[order], 
     CONF
@@ -275,6 +278,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     len(df_iiif_links['canvas_id'].unique()),
     ds_conf,
+    md,
     venice_area_uuids
 )
 

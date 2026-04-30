@@ -115,7 +115,7 @@ df['corrected_centroid_str'] = df['corrected_centroid'].apply(lambda p: p.wkt)
 obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.corrected_centroid, v.has_geometry)
 obs = [obs_from_row(v) for _, v in df.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
 # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
 gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
 gdf_obs = gdf_obs.set_geometry('geometry')
@@ -154,7 +154,7 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records',recs, hr_shorthand
 
 df_of_hr = pd.DataFrame(data = recs)
 QA_check_uuid_are_unique(df_of_hr)
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations')
 
 # Producing dataset
 CONF = DATA_CONFIG['DATASET_CONFIGURATION']
@@ -164,7 +164,7 @@ filtered_df = df[hr_metadata_cols].copy()
 remaining_vals = list(filtered_df.columns)
 order = labels.keys()
 
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS,
     filtered_df[order],
     CONF
@@ -178,6 +178,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     0,
     ds_conf,
+    md,
     venice_area_uuids
 )
 

@@ -10,7 +10,6 @@ from .data_modeling import (
     save_data_file_if_different
 )
 
-#TODO: fix discrepencies on how "hr" are written between the data and the API.
 RDE_TYPE_TO_STATIC_CLASS_DEF = {
     RDEType.HR.value: HistoricalRecord,
     'hr': HistoricalRecord,
@@ -195,7 +194,7 @@ SAVE_FILE_PREAMBLE = {
 def save_list_of_hr_as_ingestion_file(ls: list[HistoricalRecord], save_folder:str, name:str)->None:
     df_of_hr = TimeAtlas.hr_list_to_dataframe(ls)
     QA_check_uuid_are_unique(df_of_hr)
-    QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+    QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations')
     save_data_file_if_different(save_folder, 'historical_records',  [l.to_dict(flatten_metadata=False) for l in ls], name, RDEType.HR.value)
 
 def save_list_of_rde_as_ingestion_file(ls: list[RDE], save_fp:str, name:str)->None:

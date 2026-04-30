@@ -54,7 +54,7 @@ gdf['hr_uuid'] = gdf.apply(lambda r: make_uuid_from_row_selection(VTM_UUID5_NS, 
 # Produce HR RDE
 tpe = 'commerce location'
 obs = [produce_obs_obj(r.obs_uuid, TR_OBJ, DS_UUID, r.hr_uuid, tpe, r.geometry, None) for _,r in gdf.iterrows()]
-gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_crs('EPSG:4326').set_index('uuid')
+gdf_obs = gpd.GeoDataFrame(obs).set_crs('EPSG:4326').set_index('id')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, '1857_gc_obs', RDEType.OBS.value)
@@ -82,7 +82,7 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'1857_gc_h
 df_of_hr = pd.DataFrame(data = recs)
 
 QA_check_uuid_are_unique(df_of_hr)
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations')
 
 IMG_LOC_PREFIX = 'venice/commercial_guides/1857/pages'
 
@@ -126,7 +126,7 @@ def cg_1857_metadata_object_to_string_representation(metadata: dict) -> str:
     return ' '.join([v for v in vals if len(v) > 0])
 
 df_iiif_links['iiif_display_string'] = df_iiif_links['metadata'].apply(cg_1857_metadata_object_to_string_representation)
-df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
+df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['id'], x['iiif_display_string']), axis=1)
 # applying the page to canvas mapping.
 df_iiif_links['canvas_id'] = df_iiif_links['page'].apply(lambda v: page_to_canvas.get(v, None))
 # # the hr_uuid is missing. 
@@ -147,7 +147,7 @@ labels = CONF['labels']
 order = labels.keys()
 main_label = "${name}"
 sub_label = "${profession_eng}"
-ds_conf = produce_configuration_file_from_metadata_df(
+ds_conf, md = produce_configuration_file_from_metadata_df(
     VTM_UUID5_NS, 
     filtered_df[order],
     CONF
@@ -161,6 +161,7 @@ ds = produce_dataset_obj(DS_UUID,
     TR_OBJ,
     0,
     ds_conf,
+    md,
     venice_area_uuids
 )
 

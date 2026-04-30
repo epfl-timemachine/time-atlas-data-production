@@ -64,8 +64,7 @@ df_obs_grouped['obs_uuids'] = df_obs_grouped.apply(lambda v: [obs['id'] for obs 
 new_count = len(df_obs_grouped)
 
 gdf = gpd.GeoDataFrame(df_obs_grouped, geometry=gpd.points_from_xy(df_obs_grouped.lon, df_obs_grouped.lat), crs='EPSG:4326')
-gdf_height = processing_points(gdf)
-print(gdf_height.head())
+gdf_height = processing_points(gdf).to_crs('EPSG:4326')
 gdf_poi = gpd.GeoDataFrame([produce_poi_obj(row.new_poi_uuid, row.geometry, row.terrain_height, row.building_height) for _, row in gdf_height.iterrows()])
 # gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
 

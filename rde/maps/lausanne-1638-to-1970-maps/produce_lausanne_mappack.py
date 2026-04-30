@@ -6,6 +6,7 @@ if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
 from timeatlas.data_modeling import *
 from timeatlas.RDEModel import RDEType
 from ast import literal_eval
+from shapely import wkt
 
 df = pd.read_csv('../lausanne_map_pack_with_extents.csv')
 
@@ -18,7 +19,9 @@ layers = []
 maps = []
 for index, r in df.iterrows():
     slug = r['slug']
-    extent = literal_eval(r['extent'])
+    extent = [wkt.loads(v) for v in list(reversed(literal_eval(r['extent'])))]
+    # need to reverse the y order of the extent:
+    extent = [str(Point(extent[0].x, extent[1].y)), str(Point(extent[1].x, extent[0].y))]
     begin_tr = int(r['start_time'])*10000 + 101
     end_tr = int(r['end_time'])*10000 + 1231
     BASE_SLUG = slug
@@ -32,7 +35,6 @@ for index, r in df.iterrows():
     zoom_lvl= [11,21]
 
     lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', ['city-lausanne-area', 'country-switzerland-area'])
-
     bm_layer = produce_layer_obj(basemap_layer_uuid,
                                             bm_slug,
                                             {

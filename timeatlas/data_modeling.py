@@ -684,11 +684,11 @@ def produce_configuration_file_from_metadata_df(
             if col in automatic_fields:
                 curr_conf.paradata = ParadataValues.AUTOMATIC.value
             elif col in semi_automatic_fields:
-                curr_conf.paradata = ParadataValues.SEMI_AUTOMATIC.value
+                curr_conf.paradata = ParadataValues.SEMIAUTOMATIC.value
             elif col in manual_fields:
                 curr_conf.paradata = ParadataValues.MANUAL.value
             elif col in ai_fields:
-                curr_conf.paradata = ParadataValues.AI_ASSISTED.value
+                curr_conf.paradata = ParadataValues.AI.value
             md_configs.append(curr_conf)
     return DatasetConfiguration(
         metadata_field_config=md_configs,

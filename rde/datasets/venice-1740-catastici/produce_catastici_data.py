@@ -296,7 +296,7 @@ df['bibliographic_reference'] = df.apply(lambda v: volume_number_to_cote.get(str
 # Generate Obs RDE
 tpe = 'parcel ownership'
 obs = [produce_obs_obj(r.obs_uuid, TR_OBJ, DS_UUID, r.hr_uuid, tpe, r.geometry, None) for _,r in df.iterrows()]
-gdf_obs = gpd.GeoDataFrame(obs).set_geometry('coordinate').set_crs('EPSG:32633').to_crs('EPSG:4326').set_index('uuid')
+gdf_obs = gpd.GeoDataFrame(obs).set_crs('EPSG:32633').to_crs('EPSG:4326').set_index('id')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, 'catastici_obs', RDEType.OBS.value)
@@ -325,7 +325,7 @@ save_data_file_if_different(DATA_FOLDER, 'historical_records', recs, f'catastici
 df_of_hr = pd.DataFrame(data = recs)
 
 QA_check_uuid_are_unique(df_of_hr)
-QA_check_unique_uuid_in_uuid_array(df_of_hr, 'documents')
+QA_check_unique_uuid_in_uuid_array(df_of_hr, 'has_observations')
 
 # Source Entities Production
 # (Now that we have all the HR generated, we can finish the manifest generation process)
@@ -355,7 +355,7 @@ def catastici_metadata_object_to_string_representation(metadata: dict) -> str:
     return ' | '.join([v for v in vals + [rendi] if len(v) > 0])
 
 df_iiif_links['iiif_display_string'] = df_iiif_links['metadata'].apply(catastici_metadata_object_to_string_representation)
-df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['uuid'], x['iiif_display_string']), axis=1)
+df_iiif_links['iiif_metadata_obj'] = df_iiif_links.apply(lambda x: (x['id'], x['iiif_display_string']), axis=1)
 iiif_links = df_iiif_links[['canvas_id', 'iiif_metadata_obj']].groupby('canvas_id').agg(list).reset_index().set_index('canvas_id')['iiif_metadata_obj'].to_dict()
 df_pages['page_obj'] = df_pages['page_obj'].apply(lambda x: dict(x, metadata = iiif_links.get(x['id'], '')))
 create_iiif_directory_if_not_exists()
@@ -379,7 +379,7 @@ CONF = DATA_CONFIG['DATASET_CONFIGURATION']
 filtered_df = df.drop(columns=exclude_hr_labels)
 # the columns of the df needs to be ordered the way we want them to be ordered then in the configuration file.
 order = CONF['labels'].keys()
-ds_conf = produce_configuration_file_from_metadata_df(VTM_UUID5_NS, 
+ds_conf, md = produce_configuration_file_from_metadata_df(VTM_UUID5_NS, 
                                                       filtered_df[order],
                                                       CONF)
 
@@ -392,6 +392,7 @@ ds = produce_dataset_obj(
     TR_OBJ,
     len(df_iiif_links['canvas_id'].unique()),
     ds_conf,
+    md,
     venice_area_uuids
 )
 
