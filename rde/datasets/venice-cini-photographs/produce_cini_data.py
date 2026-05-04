@@ -79,9 +79,9 @@ gdf['hr_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, 
 gdf['obs_uuid'] = gdf.apply(lambda x: make_uuid_from_row_selection(VTM_UUID5_NS, x, ['ImageNumber'], ad_hoc_seed='obs'), axis=1)
 
 # Generating Obs
-gdf['has_geometry'] = gdf.apply(lambda r: gdf_geom[gdf_geom['EDIFI_ID'] == r['EDIFI_ID']]['uuid'].values, axis=1)
+gdf['has_geometries'] = gdf.apply(lambda r: list(gdf_geom[gdf_geom['EDIFI_ID'] == r['EDIFI_ID']]['uuid'].values), axis=1)
 gdf['type'] = 'photograph'
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.geometry.centroid, v.has_geometry)
+obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.geometry.centroid, v.has_geometries)
 obs = [obs_from_row(v) for _, v in gdf.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
 gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
@@ -98,7 +98,7 @@ cols_of_non_interest = [
     'centroid',
     'hr_uuid',
     'obs_uuid',
-    'has_geometry',
+    'has_geometries',
     'FondoStamp',
     'Country',
     'ImageNumber',
