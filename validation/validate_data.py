@@ -64,7 +64,7 @@ def validate_file(fp:str, validator:Draft202012Validator, raise_error=False):
             try:
                 for obj in cont['rde_objects']:
                     rde_validator.validate(obj)
-                    uuids.append(obj['uuid'])
+                    uuids.append(obj['id'])
             except ValidationError as e:
                 if raise_error:
                     raise e
@@ -73,7 +73,12 @@ def validate_file(fp:str, validator:Draft202012Validator, raise_error=False):
                     uuid_store[fp] = uuids
                     return
             uuid_store[fp] = uuids
-                
+
+
+def is_file_holding_rde_objects(fp:str):
+    with open(fp) as f:
+        cont = json.load(f)
+        return 'type_in_file' in cont and 'rde_objects' in cont  
 
 file_schema = all_schemas['file']
 registry = Registry().with_resources(schema_store)
@@ -99,7 +104,7 @@ if __name__ == '__main__':
         if not args.m:
             for d in dataset_list:
                 # not validating pois, as they will be validated separately.
-                all_files_to_validate = [v for v in list(Path(join(DATASET_ROOT, d, 'data')).rglob('*.json')) if 'iiif' not in str(v) and 'points_of_interest.json' not in str(v)]
+                all_files_to_validate = [v for v in list(Path(join(DATASET_ROOT, d, '')).rglob('*.json')) if 'iiif' not in str(v) and 'points_of_interest.json' not in str(v) and is_file_holding_rde_objects(v)]
                 for fp in all_files_to_validate:
                     print(f'Validating {fp}')
                     validate_file(fp, validator, raise_error=args.error_interrupt)
@@ -136,9 +141,7 @@ if __name__ == '__main__':
 
     if not args.m:
         for ds in dataset_list:
-            if 'catastici' in ds:
-                continue
-            iiif_loc_path = os.path.join(DATASET_ROOT, ds, 'data', 'iiif')
+            iiif_loc_path = os.path.join(DATASET_ROOT, ds, 'iiif')
             if os.path.exists(iiif_loc_path):
                 coll_list = [f for f in  os.listdir(os.path.join(iiif_loc_path, 'collections')) if f.endswith('.json')]
                 if len(coll_list) > 1:

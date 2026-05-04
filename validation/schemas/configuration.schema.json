@@ -49,10 +49,14 @@
             ]
           },
           "paradata": {
-            "type": "string"
-          },
-          "dictionary": {
-            "type": "string"
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "required": [

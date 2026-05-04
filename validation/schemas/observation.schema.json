@@ -5,13 +5,7 @@
     "id": {
       "type": "string"
     },
-    "dataset": {
-      "type": "string"
-    },
     "rde_type": {
-      "type": "string"
-    },
-    "type": {
       "type": "string"
     },
     "has_geometries": {
@@ -31,7 +25,14 @@
       "type": "string"
     },
     "part_of_point_of_interest": {
-      "type": "string"
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "geometry": {
       "type": "object",
@@ -53,14 +54,10 @@
     }
   },
   "required": [
-    "dataset",
     "historical_record",
-    "end_time",
     "has_geometries",
     "part_of_point_of_interest",
     "rde_type",
-    "start_time",
-    "type",
     "id"
   ],
   "additionalProperties":false
