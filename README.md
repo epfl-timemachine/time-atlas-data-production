@@ -12,13 +12,13 @@ Then
 ```
 
 # Data Model & Data Production
-The data model is quite simple and generic, having only 7 data classes, with most of them sharing a similar set of core attributes. The principle of this modeling is to highlight the most common characteristics of any set of data that could be visualized in the Time Atlas interface and generalize them into simple entites class, hereby called "Research Data Entities". At the same time, this model expects each of those entities to record as much heterogeneous and specific metadata as posisble from the original historical source while having both the backend and the frontend be made aware of dataset-level idiosyncracies. Correctly displaying, indexing and manipulating specific metadata are documented in "configuration" object describing technical information for both a backend and frontend system on how to parse, disperese and process those informations. Only layers and dataset are concerned by configuration objects.
+The data model is quite simple and generic, having only 7 data classes, most of which share a similar set of core attributes. The principle of this modeling is to highlight the most common characteristics of any set of data that could be visualized in the Time Atlas interface and generalize them into simple entites class, hereby called "Research Data Entities". At the same time, this model expects each of those entities to record as much heterogeneous and specific metadata as posisble from the original historical source while having both the backend and the frontend be made aware of dataset-level idiosyncracies. Correctly displaying, indexing and manipulating specific metadata are documented in "configuration" objects describing technical information for both a backend and frontend system on how to parse, disperse and process those informations. Only layers and dataset are concerned by those so-called "configuration" objects.
 
 ![alt text](TimeMachineAtlasDataModelV1.png "Schema of the data model")
 
 [The data model can be consulted in a schema form here.](https://drive.google.com/file/d/1EIOD5CXVXQbVtyl8GyjySE-XnqohTbvL/view)
 
-Instances of data generated through this model are related using numerical identifier : each entity has a unique UUID, and references to other instances of data within one entity's set of parameters are done through their UUID.
+Instances of data generated through this model are related using numerical identifier : each entity has a unique UUID, and references to other instances of data within one entity's set of parameters are done through their UUID. When ingested in the backend, those UUID are transformed into URL, making the interconnection between the entities work in a loose linked data fashion. The UUID generated is still part of this URL. URL are not used in the data generation part, as the data is agnostic to the API domain through which it might be accessed.
 
 ## Research Data Entities (RDE)
 
@@ -38,7 +38,7 @@ Each of these entities have specific set of properties which are described in th
 ```json
 {
     "id": "<uuid>",
-    "rde_type": "[historical_record, poi, observation, geometry, dataset, map, layer, area]",
+    "rde_type": "[historical_record, poi, observation, geometry, dataset, map, layer, layer_configuration, area]",
     "start_time": "<begin_date>",
     "end_time": "<end_date>",
     
@@ -46,14 +46,14 @@ Each of these entities have specific set of properties which are described in th
 ```
 
 * `id`: string, universal unique identifier of the resource. At the moment, the UUID are generated from a [uuidv5](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_(namespace_name-based)) algorithm to which a custom dataset-based namespace and a unique deterministic identifier stemming from the data. If possible, the UUID generated should be deterministic wrt the namespace and identifier given, so that new version of the dataset share as much similar identifiers a spossible. The dataset, maps and layers entities and maps hold an `slug` parameter in addition, as they benefit from having a human readable identifier.
-* `rde_type`: the type of the RDE according to the data model. Possible values are therefore `poi`, `historical_record`, `observation`, `geometry`, `dataset`, `map`, `layer`.
+* `rde_type`: the type of the RDE according to the data model. Possible values are therefore `poi`, `historical_record`, `observation`, `geometry`, `dataset`, `map`, `layer`, `layer_configuration` and `area`.
 * `start_time` and `end_time`: datetime values formatted in string following the ISO 8601 representing the range for the time existence of the current RDE, denoting the starting and ending point of existence. **Not all RDE have time data** but as it is a common field in more than one type or RDE it is explained here.
 
 
 
 ### Historical Record (HR)
 
-An "Historical Record (HR)" is the source from which any of the information accessible through the Local Time Machine projects comes from. It is a single "atom" of knowledge, meaning a record of information about a place, a location or a set of people found from a historical document. It is supposed to hold a direct link to a raw numeric scan of an excerpt of an historical document, and/or the transcription stemming from this document and any metadata derived from it. It can be a single entry from a census data, a row in a listing of parcels in civil registers, a sentence in an academic research book documenting a city, a photograph depicting an urban space and so forth. Wehenever possible, the granularity of the documental source should be as precise as possible, meaning the source URL should be a IIIF annotation of the information from a document's scan. The field holding the IIIF source is generated by the frontend using the UUID of the HR as indicated in the annotations of the document's manifest, it is why it is absent from this part of the model.
+An "Historical Record (HR)" is the source from which any of the information accessible through the Local Time Machine projects comes from. It is a single "atom" of knowledge, meaning a record of information about a place, a location or a set of people found from a historical document. It is supposed to hold a direct link to a raw numeric scan of an excerpt of an historical document, and/or the transcription stemming from this document and any metadata derived from it. It can be a single entry from a census data, a row in a listing of parcels in civil registers, a sentence in an academic research book documenting a city, a photograph depicting an urban space and so forth. Wehenever possible, the granularity of the documental source should be as precise as possible, meaning the source URL should be a IIIF annotation of the information from a document's scan. The field holding the IIIF source is generated by the frontend using the UUID of the HR as indicated in the annotations of the document's manifest, hence it is absent from this part of the model.
 
 ```json
 {
@@ -62,7 +62,7 @@ An "Historical Record (HR)" is the source from which any of the information acce
     "rde_type": "historical_record",
     "start_time": "<begin_date>",
     "end_time": "<end_date>",
-    "paradata": "< m OR sa OR a>",
+    "paradata": "<`m` OR `sa` OR `a`>",
     "has_observations": [
         "<obs_uuid_1>",
         "<obs_uuid_2>",
@@ -77,15 +77,13 @@ An "Historical Record (HR)" is the source from which any of the information acce
     }
 }
 ```
-* `dataset`: UUID of the RDE dataset from which this HR belongs. This fields allows both the fronted and the backend to load the correct metadata configuration file, as well as filtering data objects from their sources.
+* `dataset`: UUID of the dataset from which this HR belongs. This fields allows both the fronted and the backend to load the correct metadata configuration file, as well as filtering data objects from their sources.
 * `paradata`: type of three possible value, "m" (manual), "sa" (semi-automatic), "a" (automatic/AI). Informs the user how the data was acquired from the historical record source ; For instance, if the data was acquired through manual transcription, then the value "m" should be tied to the HR. If it was through OCR with some manual correction/validation, then the metadata is set to "sa", and finally for purely automatic process without direct involvement of a human, it is set to "a". 
 * `has_observations`: List of `uuid`, stores the direct reference to all the Obs (or none) that are documented in the historical source. A historical record can reference multiple locations, or none.
 * `metadata`: Dict of arbitrary key-values pairs storing all the metadata associated with the current HR. Consult "Historical Record Metadata Configuration" for more information on how this property should be treated.
 
-
 ### Observation (Obs)
-
-An "observsation" (obs) is the space time representation of the information recorded in a historical source. It is tied to a single point of physical space represented by a single latitude and longitude that has a duration in time. It can be a physical location, such as a cadaster's parcel, or an event such as an apprenticeship. In a single sentence the relationship between HR, PoI and Obs, can be summarized as "Sources are collection of historical record of observed points of interests". As a geographical entity, it is fromatted as a GeoJson object.
+An "observsation" (obs) is the space time representation of the information recorded in a historical source. It is tied to a single point of physical space represented by a single latitude and longitude. It can be a physical location, such as a cadaster's parcel, or an event such as an apprenticeship. In a single sentence the relationship between HR, PoI and Obs, can be summarized as "Sources are collection of historical record of observed points of interests". It is kind of a pivot data entity, as it can link to the HR, the PoI and the geometries. A single HR can hold multiple Observations, this is a flexibility assumed by the model.
 
 ```json
 {
@@ -107,14 +105,14 @@ An "observsation" (obs) is the space time representation of the information reco
 ```
 * `has_geometries`: List of UUID of the geometry tied to the current observation (if any). Not all observations can have geometries and as such this field can be null.
 * `historical_record`: UUID, link of the HR that establish the existence of the current Obs. An Obs cannot exist without a historical record attesting its existence, this field should never be null. 
-* `part_of_point_of_interest`: link to the PoI associated with the Obs. It can be empty, in the case of unprecisely geolocated document that still needs some vague spatial indexing through it. 
-* `geometry`: tuple of float, representing the GPS coordinate of the Obs. Although the Observation are not displayed by the frontend (this duty is reserved to the PoI), it is still useful for spatial indexing. 
+* `part_of_point_of_interest`: link to the PoI associated with the Obs. It can be empty, in the case of unprecisely geolocated document that still needs some vague spatial indexing through it. (for instance a postcard that was located at the city level, will have the geometry of the centroid of such city, while having no points of interest).
+* `geometry`: GPS coordinates of the Observation. Although the Observations are not displayed by the frontend (this duty is reserved to the PoI), it is still useful for spatial indexing and unprecise geolocating of documents. 
 
 If no Point of Interest exist in any dataset that could "hold" the current Obs, a new PoI is specifically created for it.
 
 ### Point of Interest (PoI)
 
-A "Point of Interest" is what has been observed by one or many observations from a single or many dataset, and relates to a coordinate handle of the observation to place on a map. Likewise the Obs, it is a GeoJson object
+A "Point of Interest" is what has been observed by one or many observations from a single or many dataset, and relates to a coordinate handle of the observation to place on a map. They can be pointed by multiple Observations from different dataset, acting as an aggregate by virtue of having observation located on the same exact coordinate space.
 
 ```json
 {
@@ -133,7 +131,7 @@ A "Point of Interest" is what has been observed by one or many observations from
 * `terrain_height` & `building_height`: elevation information about the current point, separated between the terrain and building height, both expressed in meters. This information is generally reference by the system and stems from Maptiler's Database. This is used by the interface to correctly place the PoI in the 3D vision mode. 
 
 ### Geometry
-A "Geometry" entity is the mathematical representation of a physical location described as a set of GPS coordinates. It can represent the parcel of a building, a street, a courtyard, a parish, or any arbitrary zone representing a geographical area which is tied to an Observation and the Historical Record documenting it.
+A "Geometry" entity is the mathematical representation of a physical location described as a set of GPS coordinates. It can represent the parcel of a building, a street, a courtyard, a parish, or any arbitrary zone representing a geographical area which is tied to an Observation and the Historical Record documenting it. It can also exist without being referenced by a record, it will as such only exist in the system as part of a Layer object of type "vector".
 
 ```json
 {
