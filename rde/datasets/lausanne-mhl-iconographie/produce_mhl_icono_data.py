@@ -7,7 +7,6 @@ import sys
 from pathlib import Path
 from tqdm import tqdm
 import json
-from functools import reduce
 from shapely.geometry import Point
 
 # to have progress bar in the notebook
@@ -33,6 +32,12 @@ lausanne_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG[
 
 gdf = pd.read_json(list(DATA_SRC_PATH.glob('matched_records.json'))[0])
 gdf['geometry'] = gdf.apply(lambda x: Point(x['longitude'], x['latitude']), axis=1)
+
+INSTITUIONS_TO_KEEP = [
+    "Musée Historique Lausanne",
+    "Urbanisme"
+]
+gdf = gdf[gdf.institution.isin(INSTITUIONS_TO_KEEP)]
 gdf = gpd.GeoDataFrame(gdf, geometry='geometry', crs='EPSG:4326').drop(columns=['latitude', 'longitude'])
 # removing the 5-6 records that have incoherent dates 
 gdf = gdf[gdf.start_year > 1500]
