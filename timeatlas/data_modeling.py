@@ -470,7 +470,7 @@ def save_data_file_if_different(fp:str,
             case RDEType.GEOM.value:
                 t_data = [Geometry(
                     id=f['properties']['uuid'],
-                    has_layer=f['properties']['layer_uuid'],
+                    part_of_layer=f['properties']['layer_uuid'],
                     geometry=f['geometry']
                 ).to_dict() for f in t_data]
             case RDEType.OBS.value:

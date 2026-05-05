@@ -20,6 +20,13 @@ The data model is quite simple and generic, having only 7 data classes, most of 
 
 Instances of data generated through this model are related using numerical identifier : each entity has a unique UUID, and references to other instances of data within one entity's set of parameters are done through their UUID. When ingested in the backend, those UUID are transformed into URL, making the interconnection between the entities work in a loose linked data fashion. The UUID generated is still part of this URL. URL are not used in the data generation part, as the data is agnostic to the API domain through which it might be accessed.
 
+At first glance, the name of the fields holding the relationship between the entities might seems a bit inconsistent, they however follow a systemic logic that tries to semantically represent the cardinality of the relationship:
+* Exactly one (1): semantic of the singular RDE type's name. (HR => Dataset (`dataset`), Obs => HR (`historical_record`), Obs => Dataset (`dataset`), Layer => Map (`map`))
+* One or Zero (< 2): sémantique of the `part_of_<rde_type>` (Obs => PoI (`part_of_point_of_interest`) , Geometry => Layer (`part_of_layer`))
+* Zero or Many: semantic of `has_<type-plural>` (HR => Obs (`has_observations`), Obs => Geometries (`has_geometries`), Dataset => Area (`has_areas`))
+* Obligatory Many (> 0): semantic of the RDE type's name to the plural (Maps => Layers (layers), PoI => Observations, Map => Area (areas))
+
+
 ## Research Data Entities (RDE)
 
 There are seven classes of RDE to be manipulated through both the frontend and the backend of the time machine information system:
@@ -58,10 +65,10 @@ An "Historical Record (HR)" is the source from which any of the information acce
 ```json
 {
     "id": "<uuid>",
-    "dataset": "<uuid>", 
     "rde_type": "historical_record",
     "start_time": "<begin_date>",
     "end_time": "<end_date>",
+    "dataset": "<uuid>",
     "paradata": "<`m` OR `sa` OR `a`>",
     "has_observations": [
         "<obs_uuid_1>",
@@ -73,7 +80,7 @@ An "Historical Record (HR)" is the source from which any of the information acce
         "<label_1>": "<value_1>",
         "<label_2>": "<value_2>",
         "..."
-        "<label_n>": "<value_n>"
+        "<label_n>": "<value_N>"
     }
 }
 ```
@@ -105,25 +112,24 @@ An "observsation" (obs) is the space time representation of the information reco
 ```
 * `has_geometries`: List of UUID of the geometry tied to the current observation (if any). Not all observations can have geometries and as such this field can be null.
 * `historical_record`: UUID, link of the HR that establish the existence of the current Obs. An Obs cannot exist without a historical record attesting its existence, this field should never be null. 
-* `part_of_point_of_interest`: link to the PoI associated with the Obs. It can be empty, in the case of unprecisely geolocated document that still needs some vague spatial indexing through it. (for instance a postcard that was located at the city level, will have the geometry of the centroid of such city, while having no points of interest).
-* `geometry`: GPS coordinates of the Observation. Although the Observations are not displayed by the frontend (this duty is reserved to the PoI), it is still useful for spatial indexing and unprecise geolocating of documents. 
+* `part_of_point_of_interest`: link to the PoI associated with the Obs. It can be empty, in the case of unprecisely geolocated document that still needs some vague spatial indexing through it. (for instance a postcard that was located at the city level, will have for its observation's geometry the centroid of such city, without points of interest).
+* `geometry`: GPS coordinates of the Observation. Although the Observations are not displayed by the frontend (this duty is reserved to the PoI), it is still useful for spatial indexing and unprecise geolocating of records. 
 
 If no Point of Interest exist in any dataset that could "hold" the current Obs, a new PoI is specifically created for it.
 
 ### Point of Interest (PoI)
-
 A "Point of Interest" is what has been observed by one or many observations from a single or many dataset, and relates to a coordinate handle of the observation to place on a map. They can be pointed by multiple Observations from different dataset, acting as an aggregate by virtue of having observation located on the same exact coordinate space.
 
 ```json
 {
-        "id": "<uuid>", 
-        "rde_type": "poi",
-        "terrain_height": "<float_value>",
-        "building_height": "<float_value>",
-        "geometry": { 
-            "type": "Point", 
-            "coordinates": ["<lat>", "<lon>"]
-        } 
+    "id": "<uuid>", 
+    "rde_type": "poi",
+    "terrain_height": "<float_value>",
+    "building_height": "<float_value>",
+    "geometry": { 
+        "type": "Point", 
+        "coordinates": ["<lat>", "<lon>"]
+    } 
 }
 ```
 
@@ -136,8 +142,8 @@ A "Geometry" entity is the mathematical representation of a physical location de
 ```json
 {
     "id": "<uuid>",
-    "has_layer": "<layer_uuid>",
     "rde_type": "geometry", 
+    "has_layer": "<layer_uuid>",
     "geometry": { 
         "type": "[Polygon, LineString, Point, MultiPolygon, MultiLineString]",
         "coordinates": [  
@@ -153,9 +159,23 @@ A "Geometry" entity is the mathematical representation of a physical location de
 * `has_layer`: optional UUID of the layer the geometry belongs to.
 
 ### Area
-TODO
 ```json
+{
+    "id": "<uuid>",
+    "rde_type": "area",
+    "slug": "<ad hoc label>",
+    "name": "<multilingual text>",
+    "geometry": { 
+        "type": "[Polygon, LineString, Point, MultiPolygon, MultiLineString]",
+        "coordinates": [  
+            [ 12.3433387, 45.4382745 ], 
+            [ 12.3432396, 45.4382918 ],
+            "..."
+        ]
+    } 
+}
 ```
+The area is a special geometric entity that represents the boundary of a specific geographical entity, wether it is a continent, country, city, or ad-hoc administrative zone. It is useful to index maps and datasets to areas in the the Time Atlas.
 
 ### Dataset
 
@@ -164,33 +184,42 @@ The "Dataset" entity represents a homogeneous collection of information that has
 ```json
 {
     "id": "<uuid>",
+    "rde_type": "dataset",
+    "start_time": "<begin_date>",
+    "end_time": "<end_date>",
     "slug": "<ad hoc label>",
     "name": "<multilingual text>",
-    "description": "<multilingual text>",
+    "metdata": [
+        "<metadata_field_1>",
+        "<metadata_field_2>",
+        "..."
+        "<metadata_field_N>",
+    ],
     "version": "<version>",
-    "paradata": "<short text>",
-    "creation_date": "<timestamp>",
-    "rde_type": "dataset",
+    "creation_time": "<timestamp>",
     "sources": [
         "<url1>",
         "<url2>",
         "..."
     ],
+    "has_areas": [
+        "<area_link_1>",
+        "<area_link_2>",
+        "...",
+        "<area_link_N>",
+    ],
     "version": "<version number>",
-    "start_time": "<begin_date>",
-    "end_time": "<end_date>",
-    "configuration": "<link to corresponding operational entity>"
-    
+    "configuration": "<link/embedding to corresponding operational entity>"
 }
 ```
-* `id`: UUID identifying the dataset.
 * `slug`: ad-hoc label identifying the dataset.
-* `creation_date`: timestamp indicating the precise moment the current version of the dataset was created. Useful for debugging purpose.
-* `sources`: List of UUIDs, when available, should link to the sources used to produce the dataset. It can reference IIIF manifest (of single document, or collection of documents), permalink of facsimile from cultural institution, etc...
-* `description`: multilingual text, short description of the type and range of data associated to this dataset. Should be displayed somewhere in the frontend or made easily accessible to the user. 
+* `name`: multilingual text (cf. operation entities below), short title of the dataset to be displayed as header in the frontend.
+* `metadata`: list of free form metadata field (cf. operational entities below), recording any number of contextual information about the dataset.
+* `creation_time`: timestamp indicating the precise moment the current version of the dataset was created. Useful for debugging purpose.
 * `version`: short numeric-like text attributed to the dataset to denote its current version. Should be formatted in "X.Y.Z" Whenever some data is changed in any of the constituents of the dataset, it should be udated. If a a dataset is at version "1.0.0" and only small textual changes happen in its HRs for instance, it is a minor adjustement, only the smalles part of the version is incremented ("1.0.0" => "1.0.1"). If some new data points or fields have been added to the dataset while keeping its structure generally the same, it is a normal adjustement, the middle part of the version is updated ("1.0.0" => "1.1.0"). If the way the data is structured on the RDE classes is changed, it is a major adjustement and the first part of the version number is updated ("1.0.0" => "2.0.0"). 
-* `paradata`: multilingual text, description on the processes and methodology used to produce the numeric data displayed by the inteface. As with the description, should be made easily accessible to the user. 
-* `configuration`: short name of the operational entity holding the metadata configuration for the RDEs recorded in this dataset.
+* `sources`: List of UUIDs, when available, should link to the sources used to produce the dataset. It can reference IIIF manifest (of single document, or collection of documents), permalink of facsimile from cultural institution, etc...somewhere in the frontend or made easily accessible to the user. 
+* `has_areas`: all Areas the dataset is related to. Can be empty.
+* `configuration`: short name of the operational entity holding the metadata configuration for the HRs from this dataset.
 
 ### Map
 The "Map" entity represents a group of geographical layers stemming from a single historical map which the user can freely select in order to display it in the right-side panel of the interface (historical map view). 
@@ -198,47 +227,62 @@ The "Map" entity represents a group of geographical layers stemming from a singl
 ```json
 {
     "id": "<uuid>",
-    "slug": "<ad-hoc label>",
-    "name": "<multilingual text>",
-    "description": "<multilingual text>",
     "rde_type": "map",
+    "slug": "<ad-hoc label>",
+    "name": "<multilingual_text>",
+    "metdata": [
+        "<metadata_field_1>",
+        "<metadata_field_2>",
+        "..."
+        "<metadata_field_N>",
+    ],
     "start_time": "<begin_date>",
     "version": "<version>",
+    "thumbnail": "<iiif_img_url>",
     "end_time": "<end_date>",
     "layers": [
       "<layer_uuid1>",
       "<layer_uuid2>",
       "...",
       "<layer_uuidN>"
-    ]
+    ],
+    "areas": [
+        "<area_link_1>",
+        "<area_link_2>",
+        "...",
+        "<area_link_N>",
+    ],
 }
 ```
 * `slug`: short string identifying the map.
-* `name`: very brief description of the map to be displayed by the frontend in the map choice.
-* `description`: rich-text, concise description of the content and process by which the map was produiced, as well as any related information. This should be easily accessible to the user on the frontend.
+* `name`: very brief description of the map to be displayed by the frontend.
+* `metadata`: list of free form metadata field (cf. operational entities below), recording any number of contextual information about the map.
 * `layers`: list of uuids from layers that are derived from the current Map.
+* `thumbnail`: URL that links to an image following the IIIF protocol to be displayed on the frontend as the thumbnail for the map.
 * `version`: version label of the current map. Follows the same principle as described in the dataset object.
+* `areas`: all Areas the dataset is related to. A map must necesseraily be tied to at least one area.
 
 ### Layer
-A layer is a snythetic derivation from a map stemming either from a vectorization of a specific type of content from the map, or from the actual digital facsimile of the map. It is basically an abstraction of the objects that the user can manipulate to display as a 2D planar field in the interface. It is described by the following base set of fields:
+A layer is a synthetic derivation from a map stemming either from a vectorization of a specific type of content from the map, or from the actual digital facsimile of the map. It is basically an abstraction of the objects that the user can manipulate to display as a 2D planar field in the interface. It is described by the following base set of fields:
 
 ```json
 {
     "id": "<uuid>",
-    "name": "<multilingual text>",
-    "map": "<map link>",
     "rde_type": "layer",
+    "slug": "<ad-hoc label>",
+    "map": "<map link>",
+    "name": "<multilingual text>",
+    "description": "<multilingual_text>",
+    "type": "<vector OR raster>",
     "start_time": "<begin_date>",
     "end_time": "<end_date>",
-    "is_operationally_described_by": {
-        "access_url": "<url pointing to the map's access on the geoserver>",
-        "crs": "<crs value>",
-        "zoom_level": ["<min_zoom_level>", "<max_zoom_level>"],
-        "extent": ["<N>", "<W>", "<E>", "<S>"]
-    }  
+    "layer_configurations": [
+
+    ] 
 }
 ```
 * `map`: indicating from which map the current layer is part of.
+* `name`: very brief description of the layer to be displayed by the frontend in the overlay choices.
 * `name`: very brief description of the layer to be displayed by the frontend in the overlay choices.
 
 In addition to this core set of fields, type specific fields are possible according to the type of layers found within the interface:
@@ -246,12 +290,22 @@ In addition to this core set of fields, type specific fields are possible accord
 * "Geometrical Layers" (i.e. vectorization from the historical map) with the field `formed_by`
 * "Background Layer" (i.e. digital facsimile of the historical map) with the field `is_operationally_described_by`
 * `is_operationally_described_by`: 
-* `access_url`: URL on the geoserver that serves the tiles for building the layer on the frontend.
-* `crs`: the coordinate system used to display the map.
-* `zoom_level`: tuple of int, describe the minimum first then maximum zoom level available for the display of the layer.
-* `extent`: Array of four float values, representing the bounding box boundary of the layer in values expressed through the CRS described above. Order of the extent boundaries are North, West, East and South.
+
 
 ## Configuration entities 
+
+
+### Free form metadata field
+
+For both maps and dataset, there is a field "metadata" which hold free form metadata of any contextual information that relates to the entity. As they are free formed, both the label and the value have to be specified in multilingual entities . They are formed following this format:
+
+```json
+{
+     "type": "<metadata_type>",
+     "label": "<multilingual_text_object>",
+     "value": "<multilingual_text_object>"
+}
+```
 
 ### Multlingual text
 
@@ -268,7 +322,7 @@ Whenever a RDE has a field that can be expressed in multiple language (like its 
 `lanX` denotes a short 2-3 letters identifier of the language, each time multiple values can be attributed. To give an example here is the multilingual text associated to the "name" of the Sommarioni dataset:
 
 ```json
-"name": {
+{
   "en": [
    "Napoleonic Cadaster of 1808"
   ],
@@ -278,7 +332,7 @@ Whenever a RDE has a field that can be expressed in multiple language (like its 
   "it": [
    "Catasto Napoleonico del 1808"
   ]
- }
+}
 ```
 
 ### Metadata types
@@ -289,29 +343,46 @@ Whenever a RDE has a field that can be expressed in multiple language (like its 
 * LIST[]: a list of values of set type. The syntax of such composite type would be "LIST\[`<type>`\]". For instance, a list of standardized information is written as "LIST\[CATEGORICAL\]" while a list of rent prices would be written as "LIST\[FLOAT\]".
 
 
-### HR Configuration Entity
+### layer configuration
 
 ```json
 {
-    "id": "<ad-hoc label>",
-    "dataset": "<dataset_uuid>",
-    "configuration": {
-        "main_label": "<formatted>",
-        "sub_label": "<formatted>",
-        "metadata_field_config": [
-            {"≤RDE Metadata Configuration Object 1>"},
-            "..."
-            {"≤RDE Metadata Configuration Object n>"}
-        ]    
-    }
+    "id": "<uuid>",
+    "rde_type": "layer_configuration",
+    "service": {
+        "url": "<url pointing to the map's access on the geoserver>",
+        "type": "<layer format>"
+    },
+    "min_zoom_level": "<min_zoom_level>",
+    "max_zoom_level": "<max_zoom_level>",
+    "extent": ["<N>", "<W>", "<E>", "<S>"]
+} 
+```
+
+* `service.url`: URL on the geoserver that serves the tiles for building the layer on the frontend.
+* `service.type`: short string of the tile type (MVT, MVTS, XYZ,...)
+* `min_zoom_level/max_zoom_level`: tuple of int, describe the minimum first then maximum zoom level available for the display of the layer.
+* `extent`: Array of four float values, representing the bounding box boundary of the layer in values expressed through the CRS described above. Order of the extent boundaries are North, West, East and South.
+
+### dataset configuration Entity
+
+```json
+{
+    "main_label": "<formatted>",
+    "sub_label": "<formatted>",
+    "metadata_field_config": [
+        {"≤RDE Metadata Configuration Object 1>"},
+        "..."
+        {"≤RDE Metadata Configuration Object n>"}
+    ]    
 }
 ```
 
 * `main_label`: A formatting string, indicate which metadata to use for displaying the main label of the object in search results, and how to format them in a string.
-* `main_label`: A formatting string, similar purpose as the `main_label`, only for a potential sub label.
+* `sub_label`: A formatting string, similar purpose as the `main_label`, only for a potential sub label.
 * `metadata_field_config`: List of JSON object of set form, describes how the frontend and/or the backend should manipulate the values recorded in the HR's `metadata` property. Consult the next section for documentation regarding this property.
 
-**NOTE**:  It might be possible that other RDE types than the HR might require some specific per-dataset configuration. If that is the case, a similar parametre as `configuration` will contain a new configuration dict which will be described in this document.
+**NOTE**:  It might be possible that other RDE types than the HR might require some specific per-dataset configuration. If that is the case, a similar parametre as `metadata_field_config` will contain a new configuration dict which will be described in this document.
 
 
 #### RDE Metadata configuration

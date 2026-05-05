@@ -409,7 +409,7 @@ class Layer(RDE, UUIDEntity):
 @dataclass
 class Geometry(RDE, UUIDEntity):
     geometry: GeometryType
-    has_layer: Optional[LayerReference] = None
+    part_of_layer: Optional[LayerReference] = None
 
     def __post_init__(self):
         if isinstance(self.geometry, dict):
@@ -424,7 +424,7 @@ class Geometry(RDE, UUIDEntity):
         geometry = json_obj.get('geometry', {})
         return cls(
             id=UUIDEntity.parse_uuid(props.get('id', json_obj.get('id'))),
-            has_layer=UUIDEntity.parse_uuid(props.get('has_layer')) if 'has_layer' in props else None,
+            part_of_layer=UUIDEntity.parse_uuid(props.get('part_of_layer')) if 'part_of_layer' in props else None,
             geometry=shapely.from_geojson(json.dumps(geometry)),
         )
     
