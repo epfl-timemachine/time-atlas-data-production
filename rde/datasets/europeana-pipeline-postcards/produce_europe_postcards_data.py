@@ -5,7 +5,7 @@ import pandas as pd
 with open('src/WebAnnotationModel-2500-sample-results.json', 'r') as f:
     cont25 = json.load(f)
 
-with open('src/wam_22k_results_internal.json', 'r') as f:
+with open('src/wam_full_results_internal.json', 'r') as f:
     cont22k = json.load(f)
 
 cont = cont25 + cont22k
@@ -142,10 +142,21 @@ for s in cont22k:
 df22k = pd.DataFrame(sampled_vals_22k)
 df25 = pd.DataFrame(sampled_vals_25)
 
+# those records cause issue down the line for IIIF generation, could not debug further, so excluding them from the dataset.
+exclude_record_ids = {
+    'https___1914_1918_europeana_eu_contributions_19257_attachments_217301',
+    'URN_NBN_SI_IMG_FF0770PS',
+    'Culturalia_00199ba9_22f6_49a8_a623_faad8ee61ce6',
+    'Culturalia_36fd4fc0_b88a_47cb_b443_24ed18570e83',
+    'item_LWYGFYKNRSOET7CEVYNMZEDFBYR4VZOT',
+    'https___www_esbirky_cz_detail_31569485'
+}
+
+
 df = pd.DataFrame(sampled_values)
 # all HR will at least have an observation at the level of the city. 
 df = df[df['final_country'].notna() & df['final_city'].notna()]
-
+df = df[~df['record_id'].isin(exclude_record_ids)]
 
 with open('src/cached_city_country_loc.json', 'r') as f:
     city_country_loc = json.load(f)
@@ -164,7 +175,9 @@ df = df[~df['record_id'].str.contains('S_TEK_photo_TEKA0221776')]
 
 df_wh_25 = pd.read_csv('src/2500_imgs_width_height.csv')
 df_wh_22k = pd.read_csv('src/27k_image_width_height_format.csv')
-df_wh = pd.concat([df_wh_25, df_wh_22k], ignore_index=True)
+df_wh = pd.read_csv('src/all_imgs_wh_final_batch_europeana.csv')
+df_wh = pd.concat([df_wh, df_wh_25, df_wh_22k], ignore_index=True).drop_duplicates(subset=['filename'], keep='last')
+# df_wh = pd.concat([df_wh_25, df_wh_22k], ignore_index=True)
 df_wh['filename'] = df_wh['filename'].apply(lambda v: v.split('/')[-1])
 df_wh['width'] = df_wh['width'].astype(int)
 df_wh['height'] = df_wh['height'].astype(int)
@@ -231,6 +244,11 @@ df['start_time'], df['end_time']= zip(*df['date'].apply(format_single_date_elem)
 # split the dataset into two: one with duplicates record_id and one without duplicates record_id. The duplicates will be processed to have a single entry
 # for each record_id, merging the information from the different postcards (front and back).
 df_dup = df[df.duplicated(subset=['record_id'], keep=False)].sort_values(by=['record_id']).copy()
+
+back_postcard_df = pd.read_csv('src/back_of_postcard_detector_results.csv')
+back_postcard_df['answer'] = back_postcard_df['answer'].apply(lambda x: x.strip().lower().replace('.', ''))
+back_postcard_dict = back_postcard_df.set_index('filename')['answer'].to_dict()
+df_dup['back_postcard'] = df_dup.apply(lambda s: back_postcard_dict[s['filename']] if s['filename'] in back_postcard_dict else s['back_postcard'], axis=1)
 # splitting the dataset from any entries that had a duplicate:
 df_no_dup = df[~df['record_id'].isin(df_dup['record_id'].unique())].copy()
 df_dup_grouped = df_dup.groupby('record_id')
@@ -238,7 +256,10 @@ df_dup_grouped = df_dup.groupby('record_id')
 # there has been a change in pandas vers 3, where the groupby no longer keep a copy of the value used to group in the subdataframe, so we need to provide it ourselves to the function that will process the group.
 def generate_single_row_from_postcard_group(group_key:str, rows: pd.DataFrame) -> pd.Series:
     # taking the postcard that is not a back postcard as the main entry
-    first_entry = rows[rows['back_postcard'] == 'no'].iloc[0].copy()
+    try:
+        first_entry = rows[rows['back_postcard'] == 'no'].iloc[0].copy()
+    except:
+        first_entry = rows.iloc[0].copy()
     country_city_coords = first_entry['country_city_coordinates']
     if country_city_coords is None:
         # try to get it from other entries
@@ -318,40 +339,49 @@ for idx, row in df_wh.iterrows():
         'format': row['format'] if 'format' in row else 'media/jpeg'
     }
 
+
 from utils.iiif import *
 # Generating the IIIF manifests
 df['image_fp'] = df['filename'].apply(lambda v: f'europeana/postcards/{v}')
 man_list = {}
+
+
 create_iiif_directory_if_not_exists()
 for i, row in tqdm(df.iterrows(), total=len(df), desc="Generating IIIF manifests"):
+    # if row['record_id'] in exclude_record_ids:
+    #     print(f'Skipping record_id {row["record_id"]} as it is in the exclude list.')
+    #     continue
     manifest_uuid = make_uuid_from_row_selection(TM_UUID5_NS, row, ['record_id'], ad_hoc_seed='postcard_manifest')
     description = row['description']
     pages_obj = []
     if len(row['filename']) == 0:
         continue
     for fname in row['filename']:
-        if fname.endswith('.webp'):
-            fname = fname.replace('.webp', '.jpg')
-        wh_info = filename_to_wh_infos.get(fname, None)
-        if wh_info is not None:
-            width, height = wh_info['width'], wh_info['height']
-            media_type = wh_info['format']
-            pages_obj.append(generate_page_object(
-                TM_UUID5_NS,
-                DS_UUID,
-                0,
-                manifest_uuid,
-                description,
-                f'europeana/postcards/{fname}',
-                media_type,
-                height,
-                width,
-                'en',
-                metadata=[[row['hr_uuid'], description]],
-                external_resource=row['europeana_link']))
-        else:
-            print(f'Warning: no width/height info for file {fname}')
-            continue
+        try:
+            if fname.endswith('.webp'):
+                fname = fname.replace('.webp', '.jpg')
+            wh_info = filename_to_wh_infos.get(fname, None)
+            if wh_info is not None:
+                width, height = wh_info['width'], wh_info['height']
+                media_type = wh_info['format']
+                pages_obj.append(generate_page_object(
+                    TM_UUID5_NS,
+                    DS_UUID,
+                    0,
+                    manifest_uuid,
+                    description,
+                    f'europeana/postcards/{fname}',
+                    media_type,
+                    height,
+                    width,
+                    'en',
+                    metadata=[[row['hr_uuid'], description]],
+                    external_resource=row['europeana_link']))
+            else:
+                print(f'Warning: no width/height info for file {fname}')
+                continue
+        except AttributeError:
+            print(f'Error processing file {fname} for record {row["record_id"]}. Skipping this file. Error details: {sys.exc_info()}')
     man = generate_manifest_object(TM_UUID5_NS, manifest_uuid, {'en':[description]},'en', pages_obj)
     with open(f'iiif/manifests/{manifest_uuid}.json', 'w') as f:
         f.write(json.dumps(man, indent=2, ensure_ascii=False))
@@ -385,7 +415,6 @@ remove_cols_from_hr = [
     'coordinates',
     "image_fp"
 ]
-
 
 df_hr = df.copy().drop(columns=remove_cols_from_hr)
 

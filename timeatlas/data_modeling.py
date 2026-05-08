@@ -461,7 +461,6 @@ def save_data_file_if_different(fp:str,
         t_data = t_data['features']
         match tpe:
             case RDEType.POI.value:
-                print(t_data)
                 t_data = [PointOfInterest(
                     id=f['properties']['id'],
                     geometry=f['geometry'],

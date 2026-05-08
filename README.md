@@ -360,7 +360,7 @@ In the free form metadata fields of the dataset and maps as well as the configur
 ```
 
 * `service.url`: URL on the geoserver that serves the tiles for building the layer on the frontend.
-* `service.type`: short string of the tile type (MVT, MVTS, XYZ,...)
+* `service.type`: short string of the tile type (MVT, WMTS, XYZ,...)
 * `min_zoom_level/max_zoom_level`: tuple of int, describe the minimum first then maximum zoom level available for the display of the layer.
 * `extent`: Array of four float values, representing the bounding box boundary of the layer in values expressed through the CRS described above. Order of the extent boundaries are North, East, South and West.
 

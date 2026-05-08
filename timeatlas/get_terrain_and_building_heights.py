@@ -148,8 +148,12 @@ def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd
         tile_x, tile_y = row.tile_x, row.tile_y
 
         if (tile_x != previous_tile_x or tile_y != previous_tile_y):
-            rgb_img_data = get_terrain_tile(tile_x, tile_y, highest_zoom_level)
-            shapely_features = get_vector_tile(tile_x, tile_y, highest_zoom_level)
+            try:
+                rgb_img_data = get_terrain_tile(tile_x, tile_y, highest_zoom_level)
+                shapely_features = get_vector_tile(tile_x, tile_y, highest_zoom_level)
+            except Exception as e:
+                print(f"Error fetching tile data for tile ({tile_x}, {tile_y}): {e}")
+                continue
 
         height_rgb = rgb_img_data[row.terrain_y, row.terrain_x]
         # decode height
