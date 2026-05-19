@@ -8,7 +8,7 @@ from unidecode import unidecode
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from timeatlas.data_modeling import produce_area_obj, AREA_UUID5_NS, save_data_file_if_different
+from utils.data_modeling import produce_area_obj, AREA_UUID5_NS, save_data_file_if_different
 from timeatlas.RDEModel import RDEType
 
 

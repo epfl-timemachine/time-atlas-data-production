@@ -1,8 +1,8 @@
 import os
 from pathlib import Path
 import json
-from timeatlas.data_modeling import save_data_file_if_different
-from timeatlas.data_modeling import today_date
+from utils.data_modeling import save_data_file_if_different
+from utils.data_modeling import today_date
 
 ROOTS = ['1740_Catastici', '1808_Sommarioni', 'Garzoni']
 DATA_FOLDER = 'aggregated_data'

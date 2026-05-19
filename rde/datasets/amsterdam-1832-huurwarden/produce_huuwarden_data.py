@@ -18,7 +18,7 @@ DATA_SRC_PATH = Path('src')
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from timeatlas.data_modeling import *
+from utils.data_modeling import *
 from timeatlas.RDEModel import RDEType
 
 # aribtrary namespace, just to generate reproducible UUIDv5 from the entries of the dataset.

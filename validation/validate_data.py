@@ -30,6 +30,7 @@ def validate_iiif_file_and_report(fp:str, raise_error=False):
 
 parent_dir = os.path.abspath('../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'time-atlas-python')))
 from timeatlas.RDEModel import RDEType
 
 all_resources_name = ["file", 

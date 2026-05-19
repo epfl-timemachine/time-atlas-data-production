@@ -1,3 +1,4 @@
+import sys
 import uuid
 import pandas as pd
 import geopandas as gpd
@@ -15,8 +16,9 @@ from functools import reduce
 import typing
 from collections import Counter
 from datetime import datetime as dt
-from .RDEModel import MetadataFieldConfig, RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, FreeFormMetadata, DatasetConfiguration, Geometry, HeightInfo, MultiLingualValue, RDETimeRange, Area
-from .TAEnums import LayerType, LAYER_TYPE_TO_ENUM, MetadataType, METADATA_TYPE_TO_ENUM, ParadataValues, PARADATA_VALUE_TO_ENUM
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'time-atlas-python')))
+from timeatlas.RDEModel import MetadataFieldConfig, RDEType, HistoricalRecord, Observation, PointOfInterest, Dataset, Map, LayerConfiguration, LayerConfigurationService, GeographicalExtent, Layer, FreeFormMetadata, DatasetConfiguration, Geometry, HeightInfo, MultiLingualValue, RDETimeRange, Area
+from timeatlas.TAEnums import LayerType, LAYER_TYPE_TO_ENUM, MetadataType, METADATA_TYPE_TO_ENUM, ParadataValues, PARADATA_VALUE_TO_ENUM
 from .get_terrain_and_building_heights import processing_points
 
 UNIVERSAL_CRS = "EPSG:4326"

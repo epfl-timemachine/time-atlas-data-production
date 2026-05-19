@@ -10,7 +10,7 @@ import argparse
 # to retrieve the utils function used by all notebooks
 parent_dir = os.path.abspath('../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-from timeatlas.data_modeling import *
+from utils.data_modeling import *
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Merge observations and create POIs from dataset folders.')
