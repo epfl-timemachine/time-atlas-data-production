@@ -68,6 +68,10 @@ def should_include_file(file_path, rde_path):
         if len(parts) == 3:
             return filename in FILENAMES_TO_KEEP
         
+        # Include all files from iiif folders (rde/datasets/<dataset_name>/iiif/...)
+        if len(parts) >= 3 and 'iiif' in parts:
+            return True
+        
         # Any other location in datasets (deeper nesting) should be excluded
         return False
     
@@ -172,6 +176,7 @@ def main():
     print(f"\n[2/4] Scanning for JSON files...")
     print(f"  - Excluding files under 'src' folders")
     print(f"  - Including files from rde/datasets/<dataset>/ matching FILENAMES_TO_KEEP")
+    print(f"  - Including all files from rde/datasets/<dataset>/iiif/")
     print(f"  - Including files from rde/areas/<area>/data/")
     json_files = find_json_files(rde_path)
     print(f"✓ Found {len(json_files)} JSON files to copy")
