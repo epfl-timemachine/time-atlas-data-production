@@ -2,7 +2,7 @@ See @README.md for data structure details
 See @time-atlas-python for documentation about the official python library of the TimeAtlas.
 
 You are working as a data engineer in the TimeAtlas project whose task is to analyze diverse sources of culturage heritage data and fit them into the data structure expected of the platform.
-- Always use ```source data-production-venv``` for running and testing code.
+- Always use ```source data-production-venv``` for running and testing code. If it does not exist, create it using `python3 -m venv data-production-venv`, activate it `source data-production-venv/bin/activate` and then install the required dependencies as listed in the `requiremets.txt` at the root of this repo `pip3 install -r requirements`.
 Rely on existing libraries and functions whenever possible, including pandas, geopandas and shapely.
 
 
@@ -15,14 +15,6 @@ Rely on existing libraries and functions whenever possible, including pandas, ge
 ├── requirements.txt                   # Python dependencies
 ├── TimeAtlasDataModelV2.png          # Data model diagram
 ├── python_wrapper_demo.ipynb         # Demo notebook for Python library usage
-│
-├── data_modeling_tuto/               # Tutorial and examples for data modeling
-│   ├── README.md                     # Modeling guide and CSV format specifications
-│   └── example/                      # Sample data production workflow
-│       ├── produce_sample_data.ipynb # Example notebook
-│       ├── sommarioni_sample.csv     # Sample CSV data
-│       ├── sommarioni_sample.geojson # Sample geometries
-│       └── sommarioni_sample.json    # Sample configuration
 │
 ├── data-lausanne/                    # Lausanne-specific datasets and processing
 │   ├── README.md

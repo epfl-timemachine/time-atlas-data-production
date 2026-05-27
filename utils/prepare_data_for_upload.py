@@ -77,13 +77,13 @@ def should_include_file(file_path, rde_path):
     
     # Check if file is in areas folder
     if len(parts) >= 2 and parts[0] == 'areas':
-        # For areas, keep the old logic: include files from rde/areas/<area>/data/
+        # Include files directly in rde/areas/<area>/ that match FILENAMES_TO_KEEP
+        if len(parts) == 3:
+            return filename in FILENAMES_TO_KEEP
+        # Include files from rde/areas/<area>/data/
         if len(parts) >= 4 and parts[2] == 'data':
             return True
-        # Exclude area-level JSON files (directly in rde/areas/<area>/)
-        if len(parts) == 3:
-            return False
-        # Any other location in areas (not in data/) should be excluded
+        # Any other location in areas should be excluded
         return False
     
     # All other JSON files are included (maps, pois, etc.)
