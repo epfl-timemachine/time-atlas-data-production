@@ -1,4 +1,3 @@
-
 import uuid
 import pandas as pd
 import geopandas as gpd
@@ -17,7 +16,7 @@ parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
 from utils.data_modeling import *
 from utils import iiif
-from timeatlas.RDEModel import RDEType
+from timeatlas.RDEModel import RDEType, Geometry
 
 
 DATA_SRC_PATH = Path('src')
@@ -27,47 +26,91 @@ VTM_UUID5_NS = uuid.uuid5(uuid.NAMESPACE_URL, DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
-swiss_area_uids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
+
+
 DATA_FOLDER = ''
+MAP_FOLDER = '../../maps/lausanne-qbuildings/'
 
 # Geometry RDE production
 geometries_fp = join(DATA_SRC_PATH, 'qbuildings_whole_db.geojson')
 # sample for testing uuid_gen
-print("loading source file, this may take a while...")
-gdf = gpd.read_file(geometries_fp, use_arrow=True).to_crs("EPSG:4326")
-print(f"Amount of geometries loaded: {len(gdf)}")
 
-gdf['start_time'] = pd.Series(data = [TR_OBJ[0]] * len(gdf), name='start_time')
-gdf['end_time'] = pd.Series(data = [TR_OBJ[1]] * len(gdf), name='end_time')
+# the file is too big, so we're going to proceed by reading it line by line and generated the data this way.
+import json
+from shapely import wkt
 
-MAP_FOLDER = '../../maps/switzerland-qbuildings/'
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'buildings')
-gdf['uuid'] = gdf.apply(lambda row: make_uuid_from_row_selection(VTM_UUID5_NS, row, ['geometry']), axis=1)
+SAVE_FILE_PREAMBLE = {
+ "name": None,
+ "type_in_file": [
+ ],
+ "creation_time": None,
+ "rde_objects": None
+}
 
-gdf['center'] = gdf['geometry'].apply(lambda v: v.centroid)
+from datetime import datetime
+def save_list_of_rde_as_ingestion_file(ls: list, save_fp:str, name:str)->None:
+    # does no checking. Used to brute force saving in case of huge amounts of data where automatic checking is too slow.
+    # Use with caution and make sure data is clean before using it.
+    all_types = list(set([l.get_type() for l in ls]))
+    base = SAVE_FILE_PREAMBLE.copy()
+    base['name'] = name
+    base['type_in_file'] = all_types
+    base['creation_time'] = datetime.now().isoformat()
+    base['rde_objects'] = [l.to_dict() for l in ls]
+    with open(save_fp, 'w', encoding='utf-8') as f:
+        json.dump(base, f, ensure_ascii=False, indent=4)
 
-gdf['has_geometry'] = gdf['uuid'].apply(lambda v: [v])
+def blocks(files, size=65536):
+    while True:
+        b = files.read(size)
+        if not b: break
+        yield b
 
-gdf['layer_uuid'] = cadaster_layer_uuid
-gdf['rde_type'] = "geometry"
-QA_check_uuid_are_unique(gdf)
+with open(geometries_fp, "r",encoding="utf-8",errors='ignore') as f:
+    number_of_lines = sum(bl.count("\n") for bl in blocks(f))
 
-if not QA_check_all_geometries_are_valid(gdf, raise_exception=False):
-    from shapely.validation import make_valid
-    gdf['geometry'] = gdf['geometry'].apply(lambda g: g if g.is_valid else make_valid(g))
-    QA_check_all_geometries_are_valid(gdf)
 
-geom_shorthand = 'switzerland_qbuildings_geometries'
-# "parcel_type" was removed for consistency with the other datasets. 
-save_data_file_if_different(MAP_FOLDER, 'geometries', gdf[['uuid', 'geometry', 'start_time', 'end_time', 'layer_uuid', 'rde_type']], geom_shorthand, RDEType.GEOM.value)
-df = gdf.drop(columns=['geometry']).copy().reset_index()
+MAP_FOLDER_ORIG = '../../maps/switzerland-qbuildings/'
+cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER_ORIG+'layers', 'json'), 'buildings')
+prop_array = []
+geoms = []
 
-df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['index'], ad_hoc_seed='hr'), axis=1)
 
+BATCH_SIZE = 100_000
+batch_nbr = 0
+
+for i, line in tqdm(enumerate(open(geometries_fp, 'r')), desc='Processing geometries', total=number_of_lines):
+    if not line.startswith('{ "type": "Feature",'):
+        continue
+    else:
+        to_proc = line.strip().rstrip(',')  # remove the comma at the end of the line, which is not valid JSON
+        feature = json.loads(to_proc)
+        geometry = feature.get('geometry')
+        properties = feature.get('properties')
+        curr_uuid = str(uuid.uuid5(VTM_UUID5_NS, properties['egid'] + '_geometry'))
+        # todo: check the geometries are valid
+        geom = Geometry.constructor_from_raw_geojson_line(to_proc, curr_uuid, cadaster_layer_uuid)
+        geoms.append(geom)
+        center = geom.geometry.centroid
+        properties['center'] = center
+        prop_array.append(properties)
+
+        if (i + 1) % BATCH_SIZE == 0:
+            vs = save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
+            batch_nbr += 1
+            # clear the memory from the list content
+            del geoms[:]
+            geoms = []
+            
+save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
+df = pd.DataFrame(prop_array)
+df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['egid'], ad_hoc_seed='hr'), axis=1)
 df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
+df['has_geometry'] = df['egid'].apply(lambda x: [str(uuid.uuid5(VTM_UUID5_NS, str(x) + '_geometry'))])
+# df.to_csv(f'tmp_geometries_properties_batch.csv', index=False)
 
 obs_df = df[['obs_uuid','hr_uuid', 'center', 'has_geometry']].copy().reset_index().set_index('obs_uuid')
 tpe = 'parcel ownership'
@@ -138,6 +181,7 @@ ds_conf, md = produce_configuration_file_from_metadata_df(
     filtered_df[order], 
     CONF
 )
+swiss_area_uids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
 
 ds = produce_dataset_obj(
     DS_UUID,
