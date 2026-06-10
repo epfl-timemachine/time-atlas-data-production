@@ -7,7 +7,39 @@ description: 'Pre-production source data analysis for TimeAtlas datasets. Use be
 
 ## When to Use
 
-Before writing any `produce_*.py` script for a new dataset, analyze the source data in `src/` to answer three key questions. The answers directly determine how to write the production script.
+Before writing any `produce_*.py` script for a new dataset, analyze the source data in the indicated source folder (may be `src/`) to answer three key questions. The answers directly determine how to write the production script.
+
+---
+
+## Step 0 — Create the dataset output folder and config file
+
+Before any analysis, create a dedicated folder for the dataset under `rde/datasets/` if it does not already exist, and initialize its configuration file:
+
+```bash
+# Replace <dataset-slug> with the unique slug for the new dataset (e.g. venice-1808-sommarioni)
+mkdir -p rde/datasets/<dataset-slug>
+cp rde/datasets/dataproduction_config_template.json rde/datasets/<dataset-slug>/dataproduction_config.json
+```
+
+Then open `rde/datasets/<dataset-slug>/dataproduction_config.json` and fill in all fields:
+
+| Field | What to fill |
+|---|---|
+| `UUID_NAMESPACE` | Unique URL identifying this dataset, e.g. `https://timemachine.epfl.ch/<area>/<dataset-slug>` |
+| `TIMERANGE_MINIMUM` | Start date of the dataset's coverage (format `YYYYMMDD`) |
+| `TIMERANGE_MAXIMUM` | End date of the dataset's coverage (format `YYYYMMDD`) |
+| `AREA_LOCS` | List of area UUIDs the dataset belongs to |
+| `DATASET_CONFIGURATION.slug` | URL-safe slug matching the folder name |
+| `DATASET_CONFIGURATION.name` | Multilingual display name, e.g. `{"en": "...", "fr": "..."}` |
+| `DATASET_CONFIGURATION.description` | Multilingual description of the dataset |
+| `DATASET_CONFIGURATION.paradata` | Multilingual description of the production method |
+| `DATASET_CONFIGURATION.main_label` | Field key used as the primary display label on POIs |
+| `DATASET_CONFIGURATION.sub_label` | Field key used as the secondary display label on POIs |
+| `indexed` | Field keys used for search/filter |
+| `short_display` | Field keys shown in compact/card view |
+| `manual_fields` / `semi_automatic_fields` / `ai_fields` | Fields classified by transcription method |
+
+Only proceed to the analysis questions below once the config file exists and the namespace/slug are set.
 
 ---
 
@@ -120,7 +152,7 @@ hr = HistoricalRecord(
 
 ## Question 3 — What dataset configuration can be derived from the source?
 
-Before producing `dataproduction_config.json` (or verifying an existing one), copy `rde/datasets/dataproduction_config_template.json` as the starting point and fill in the fields identified below. Inspect the source to extract:
+The `dataproduction_config.json` was created in Step 0. Now complete its field-level entries using the information extracted below. Inspect the source to extract:
 
 ### 3a. Field inventory
 ```python
