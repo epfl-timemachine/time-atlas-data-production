@@ -17,6 +17,7 @@ from datetime import datetime as dt
 from pathlib import Path
 from tqdm import tqdm
 
+# TODO: remove once the library is stable enough for direct installation through pip
 parent_dir = os.path.abspath('../../../')
 if parent_dir not in sys.path:
     sys.path.insert(0, parent_dir)

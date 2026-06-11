@@ -29,7 +29,7 @@ DS_UUID = str(uuid.uuid5(VTM_UUID5_NS, DS_SLUG))
 
 MAP_FOLDER = '../../maps/venice-1808-sommarioni/'
 cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'cadaster')
-venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
+venice_area_uuids = [get_single_object_uuid(p) for p in DATA_CONFIG['AREA_LOCS']]
 
 DS_OBJ = (DS_UUID, DS_SLUG)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
