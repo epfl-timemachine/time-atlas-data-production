@@ -50,7 +50,7 @@ geom_end = datetime_obj_from_int_time(20241231, match_to_end=True)
 gdf_geom = gdf[['geometry', 'EDIFI_ID']].groupby('EDIFI_ID').first().reset_index()
 DATA_FOLDER = ''
 
-venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
+venice_area_uuids = [get_single_object_uuid(p) for p in DATA_CONFIG['AREA_LOCS']]
 
 # Generating geometries
 gdf_edifici['start_time'] = geom_begin
