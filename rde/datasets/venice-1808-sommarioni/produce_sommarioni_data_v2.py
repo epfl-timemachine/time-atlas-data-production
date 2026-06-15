@@ -30,7 +30,7 @@ from timeatlas.RDEModel import (
     UUIDManager, RDETimeRange,
     HistoricalRecord, Observation, Geometry, Dataset, MultiLingualValue,
 )
-from timeatlas.helpers import _datetime_from_int, _get_layer_uuid, _get_filepath_like
+from timeatlas.helpers import _datetime_from_int, _get_layer_uuid, _get_filepath_like, _seed
 from timeatlas.TimeAtlas import RDECollection
 from timeatlas.DocumentModel import Page, Annotation, Document, Collection
 
@@ -55,13 +55,6 @@ cadaster_layer_uuid = _get_layer_uuid(
 )
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
-def _seed(row: pd.Series, cols: list[str]) -> str:
-    """Replicate the CSV-seed produced by legacy make_uuid_from_row_selection."""
-    buf = io.StringIO()
-    row[cols].to_csv(buf, index=False, header=False)
-    return buf.getvalue()
-
-
 def _constrain_centroid(point, geom):
     """Keep centroid inside a (possibly multi-)polygon, matching legacy behaviour."""
     if isinstance(geom, MultiPolygon):

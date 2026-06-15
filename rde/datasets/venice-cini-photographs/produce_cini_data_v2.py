@@ -30,7 +30,7 @@ from timeatlas.RDEModel import (
     UUIDManager, RDETimeRange, HistoricalRecord, Observation, Geometry,
     Dataset, MultiLingualValue,
 )
-from timeatlas.helpers import _datetime_from_int, _get_layer_uuid, _clean_metadata
+from timeatlas.helpers import _datetime_from_int, _get_layer_uuid, _clean_metadata, _seed
 from timeatlas.TimeAtlas import RDECollection
 from timeatlas.DocumentModel import Page, Annotation, Document, Collection
 
@@ -43,13 +43,6 @@ with open('dataproduction_config.json') as f:
 uuid_mgr = UUIDManager(DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG  = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID  = uuid_mgr._generate_uuid(DS_SLUG)
-
-
-def _seed(row: pd.Series, cols: list[str], suffix: str = '') -> str:
-    """Replicate the CSV-seed produced by legacy make_uuid_from_row_selection."""
-    buf = io.StringIO()
-    row[cols].to_csv(buf, index=False, header=False)
-    return buf.getvalue() + suffix
 
 
 # ── 1. Load and prepare source data ───────────────────────────────────────────
