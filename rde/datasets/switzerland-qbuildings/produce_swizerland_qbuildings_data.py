@@ -7,6 +7,8 @@ import sys
 from pathlib import Path
 from tqdm import tqdm
 import json
+from pyproj import Transformer
+from shapely.ops import transform
 
 with open('dataproduction_config.json') as f:
     DATA_CONFIG = json.load(f)
@@ -32,7 +34,7 @@ TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime
 
 
 DATA_FOLDER = ''
-MAP_FOLDER = '../../maps/lausanne-qbuildings/'
+MAP_FOLDER = '../../maps/switzerland-qbuildings/'
 
 # Geometry RDE production
 geometries_fp = join(DATA_SRC_PATH, 'qbuildings_whole_db.geojson')
@@ -54,6 +56,11 @@ from datetime import datetime
 def save_list_of_rde_as_ingestion_file(ls: list, save_fp:str, name:str)->None:
     # does no checking. Used to brute force saving in case of huge amounts of data where automatic checking is too slow.
     # Use with caution and make sure data is clean before using it.
+    # Ensure the directory exists before saving
+    save_dir = os.path.dirname(save_fp)
+    if save_dir and not os.path.exists(save_dir):
+        os.makedirs(save_dir, exist_ok=True)
+    
     all_types = list(set([l.get_type() for l in ls]))
     base = SAVE_FILE_PREAMBLE.copy()
     base['name'] = name
@@ -79,34 +86,50 @@ prop_array = []
 geoms = []
 
 
-BATCH_SIZE = 100_000
+MAX_FILE_SIZE_BYTES = 104857600 / 3  # 100MB (divided by 3 to be safe and avoid memory issues, since the size in memory can be bigger than the size on disk due to serialization overhead)
 batch_nbr = 0
+current_batch_size = 0
+
+# because we don't instantiate a geofataframe, we have to do the CRS transformation manually, which is done here.
+crs_transformer = Transformer.from_crs("EPSG:2056", "EPSG:4326", always_xy=True)
 
 for i, line in tqdm(enumerate(open(geometries_fp, 'r')), desc='Processing geometries', total=number_of_lines):
+    # break
     if not line.startswith('{ "type": "Feature",'):
         continue
     else:
         to_proc = line.strip().rstrip(',')  # remove the comma at the end of the line, which is not valid JSON
         feature = json.loads(to_proc)
-        geometry = feature.get('geometry')
         properties = feature.get('properties')
         curr_uuid = str(uuid.uuid5(VTM_UUID5_NS, properties['egid'] + '_geometry'))
         # todo: check the geometries are valid
         geom = Geometry.constructor_from_raw_geojson_line(to_proc, curr_uuid, cadaster_layer_uuid)
+        geom.geometry = transform(crs_transformer.transform, geom.geometry)
         geoms.append(geom)
         center = geom.geometry.centroid
         properties['center'] = center
         prop_array.append(properties)
 
-        if (i + 1) % BATCH_SIZE == 0:
-            vs = save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
+        # Estimate current batch size by serializing to JSON
+        geom_dict = geom.to_dict()
+        geom_size = len(json.dumps(geom_dict, ensure_ascii=False).encode('utf-8'))
+        current_batch_size += geom_size
+        
+        # Save batch when it reaches approximately 100MB
+        if current_batch_size >= MAX_FILE_SIZE_BYTES:
+            save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
             batch_nbr += 1
             # clear the memory from the list content
             del geoms[:]
             geoms = []
+            current_batch_size = 0
             
 save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
+import pickle
+with open(join(DATA_SRC_PATH, 'prop_array.pkl'), 'wb') as f:
+    pickle.dump(prop_array, f)
 df = pd.DataFrame(prop_array)
+# df = pd.read_csv('tmp_geometries_properties_batch.csv')
 df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['egid'], ad_hoc_seed='hr'), axis=1)
 df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
 df['has_geometry'] = df['egid'].apply(lambda x: [str(uuid.uuid5(VTM_UUID5_NS, str(x) + '_geometry'))])

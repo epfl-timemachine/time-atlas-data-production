@@ -153,6 +153,9 @@ def processing_points(points: gpd.GeoDataFrame, format_rde: bool = False) -> gpd
                 shapely_features = get_vector_tile(tile_x, tile_y, highest_zoom_level)
             except Exception as e:
                 print(f"Error fetching tile data for tile ({tile_x}, {tile_y}): {e}")
+                # otherwise mismatch in length assignation later.
+                terrain_height_values.append(0)
+                building_height_values.append(0)
                 continue
 
         height_rgb = rgb_img_data[row.terrain_y, row.terrain_x]

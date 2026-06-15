@@ -12,6 +12,7 @@ from functools import reduce
 import json
 import io
 import os
+import re
 from functools import reduce 
 import typing
 from collections import Counter
@@ -437,6 +438,34 @@ def get_data_footprint_in_memory(data: DATA) -> int:
     os.remove(tmp_fn)
     return size
 
+def split_data_into_chunks(data: list[dict], max_size_bytes: int = 104857600) -> list[list[dict]]:
+    '''
+    Splits a list of RDE objects into chunks, where each chunk when serialized to JSON 
+    stays under the specified max_size_bytes (default 100MB).
+    
+    Returns a list of chunks, where each chunk is a list of RDE objects.
+    If data fits in one chunk, returns a single-element list.
+    '''
+    if len(data) == 0:
+        return [data]
+    
+    # Calculate average size per object by estimating the first object
+    sample_obj = json.dumps([data[0]], ensure_ascii=False)
+    avg_size_per_obj = len(sample_obj.encode('utf-8'))
+    
+    # Estimate objects per chunk, with a safety margin
+    if avg_size_per_obj > 0:
+        estimated_objs_per_chunk = max(1, int((max_size_bytes * 0.9) / avg_size_per_obj))
+    else:
+        estimated_objs_per_chunk = 1000  # fallback estimate
+    
+    chunks = []
+    for i in range(0, len(data), estimated_objs_per_chunk):
+        chunk = data[i:i + estimated_objs_per_chunk]
+        chunks.append(chunk)
+    
+    return chunks
+
 def save_data_file_if_different(fp:str,
                                 filename:str, 
                                 data:DATA,
@@ -447,6 +476,8 @@ def save_data_file_if_different(fp:str,
     Saves the dataframe to the file path given as argument only if the file doesn't exist and
     the dataframe is different from the one in the file. If saved, the previous file is also deleted.
     (or overwritten if both were produced the same day)
+    
+    For files larger than 100MB, automatically splits into multiple files with suffixes _[1], _[2], etc.
     
     Parameters:
         fp: the directory where to save the file
@@ -486,9 +517,30 @@ def save_data_file_if_different(fp:str,
         t_data = [data]
     else:
         raise ValueError(f'Data type not supported: {type(data)}')
-    matching_files = list(map(str, Path(fp).glob("*"+filename_with_ext)))
-    if len(matching_files) == 1:
-        curr_file = list(matching_files)[0]
+    
+    # Check if file size will exceed 100MB and split if needed
+    MAX_FILE_SIZE = 104857600  # 100MB in bytes
+    data_size = get_data_footprint_in_memory(t_data)
+    will_split = data_size > MAX_FILE_SIZE
+    chunks = split_data_into_chunks(t_data, MAX_FILE_SIZE) if will_split else [t_data]
+    
+    # Find existing files (both single and multi-part)
+    filename_base = filename
+    matching_files = []
+    if will_split:
+        # Look for multi-part files with pattern filename_[n].json
+        for f in Path(fp).glob(f"{filename_base}_[0-9]*.json"):
+            matching_files.append(str(f))
+    else:
+        # Look for single file or legacy multi-part files
+        for f in Path(fp).glob(f"{filename_base}*.json"):
+            matching_files.append(str(f))
+    
+    # Handle comparison with existing files
+    should_save = True
+    if len(matching_files) > 0 and not will_split and len(matching_files) == 1:
+        # Single file comparison (legacy case)
+        curr_file = matching_files[0]
         with open(curr_file, 'r', encoding='utf-8') as f:
             curr_data = json.loads(f.read())['rde_objects']
         
@@ -499,20 +551,66 @@ def save_data_file_if_different(fp:str,
             curr_data[0].pop('creation_time')
             ts = t_data[0].pop('creation_time')
             if json.dumps(curr_data) == json.dumps(t_data):
-                return
+                should_save = False
             else:
                 t_data[0]['creation_time'] = ts
-        # only removing the previous version of the file if it is differnt (the new version is saved at the end of the function)
         elif curr_data == t_data:
-            # the dumps is a way to do a deep equality check of the object, as list comparison can sometimes returns false when both objects are actually equals.
-            return
-        else:
+            # the dumps is a way to do a deep equality check of the object
+            should_save = False
+        
+        if should_save:
             os.remove(curr_file)
-    
     elif len(matching_files) > 1:
-        raise ValueError(f'Multiple files found with the same prefix: {matching_files}')
-    #it no matching file, directly saving the new file.
-    saving_routine(t_data, filepath, name=name, tpe=tpe)
+        # Multiple files exist - check if it's a multi-part file set
+        multi_part_pattern = re.compile(rf"{re.escape(filename_base)}_\[(\d+)\]\.json$")
+        multi_part_files = [f for f in matching_files if multi_part_pattern.search(f)]
+        
+        if len(multi_part_files) > 0:
+            # This is a multi-part file set
+            if will_split and len(multi_part_files) == len(chunks):
+                # Compare each chunk
+                all_same = True
+                for i, chunk in enumerate(chunks):
+                    chunk_idx = i + 1
+                    chunk_files = [f for f in multi_part_files if multi_part_pattern.search(f).group(1) == str(chunk_idx)]
+                    if len(chunk_files) == 1:
+                        with open(chunk_files[0], 'r', encoding='utf-8') as f:
+                            curr_chunk_data = json.loads(f.read())['rde_objects']
+                        
+                        if is_dataset_obj and len(curr_chunk_data) > 0:
+                            curr_chunk_data[0].pop('creation_time', None)
+                            chunk[0].pop('creation_time', None)
+                        
+                        if json.dumps(curr_chunk_data) != json.dumps(chunk):
+                            all_same = False
+                            break
+                    else:
+                        all_same = False
+                        break
+                
+                if all_same:
+                    should_save = False
+                else:
+                    # Remove all old multi-part files
+                    for f in multi_part_files:
+                        os.remove(f)
+            else:
+                raise ValueError(f'Multiple file parts found but count mismatch or split status changed: {matching_files}')
+        else:
+            raise ValueError(f'Multiple files found with the same prefix: {matching_files}')
+    
+    # Save the file(s) if needed
+    if should_save:
+        if will_split:
+            # Save as multi-part files
+            for i, chunk in enumerate(chunks):
+                chunk_num = i + 1
+                chunk_filename = f"{filename_base}_[{chunk_num}].json"
+                chunk_filepath = os.path.join(fp, chunk_filename)
+                saving_routine(chunk, chunk_filepath, name=name, tpe=tpe)
+        else:
+            # Save as single file
+            saving_routine(t_data, filepath, name=name, tpe=tpe)
 
 def get_likely_type_of_series(s:pd.Series) -> str:
     tpe = str(s.dtype)

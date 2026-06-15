@@ -20,13 +20,18 @@ args = parser.parse_args()
 
 all_datasets = [f for f in os.listdir('../datasets') if os.path.isdir(os.path.join('../datasets', f))]
 
+def find_all_observations_from_dataset_folder(dataset_folder: str) -> list:
+    all_files = os.listdir(dataset_folder)
+    obs_files = [os.path.join(dataset_folder, f) for f in all_files if f.endswith('.json') and 'observations' in f]
+    return obs_files
+
 # Apply filter if provided
 if args.filter:
     all_datasets = [ds for ds in all_datasets if args.filter in ds]
     print(f"Filtering datasets with '{args.filter}': {len(all_datasets)} dataset(s) matched.")
-dobs_suffix = 'observations.json'
-all_obs_files = [os.path.join('../datasets/', ds, dobs_suffix) for ds in all_datasets if os.path.exists(os.path.join('../datasets/', ds, dobs_suffix))]
-
+dobs_suffix = 'observations'
+all_obs_files = [find_all_observations_from_dataset_folder(os.path.join('../datasets', ds)) for ds in all_datasets]
+all_obs_files = [item for sublist in all_obs_files for item in sublist]  # Flatten the list of lists
 obs_data = []
 all_datasets, all_obs_files
 for fp in all_obs_files:
@@ -45,6 +50,11 @@ obs_data_pre_filtering = obs_data.copy()
 obs_data = filter_obs_that_needs_poi(obs_data)
 original_count = len(obs_data)
 print(f"Loaded {original_count} Obs needing poi from {len(all_obs_files)} datasets.")
+
+for obs in obs_data:
+    if 'geometry' not in obs or not obs['geometry']:
+        print(f"Observation {obs['id']} is missing geometry. Skipping.")
+        continue
 
 coords_obs = [[v['geometry']['coordinates'][0], v['geometry']['coordinates'][1], v] for v in obs_data]
 df_obs = pd.DataFrame(coords_obs, columns=['lon', 'lat', 'obs_data'])
