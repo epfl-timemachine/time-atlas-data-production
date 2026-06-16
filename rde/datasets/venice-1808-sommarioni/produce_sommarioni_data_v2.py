@@ -16,6 +16,7 @@ import pandas as pd
 import geopandas as gpd
 from pathlib import Path
 from shapely.geometry import MultiPolygon
+from shapely.geometry.base import BaseGeometry
 from tqdm import tqdm
 
 # ── Library path bootstrap ─────────────────────────────────────────────────────
@@ -165,6 +166,7 @@ hr_metadata_cols = [c for c in dfs.columns if c not in EXCLUDE]
 
 hrs, obs_list = [], []
 hr_uuid_by_unique_id: dict[int, str] = {}
+skipped_observations: list[tuple[int, int]] = []
 for _, row in tqdm(dfs.iterrows(), total=len(dfs), desc='HRs & Obs'):
     hr_uuid  = uuid_mgr._generate_uuid(_seed(row, ['unique_id']))
     _buf = io.StringIO()
@@ -172,21 +174,35 @@ for _, row in tqdm(dfs.iterrows(), total=len(dfs), desc='HRs & Obs'):
     obs_uuid = uuid_mgr._generate_uuid(_buf.getvalue())
     hr_uuid_by_unique_id[row['unique_id']] = hr_uuid
     has_geom = row['has_geometries'] if isinstance(row['has_geometries'], list) else []
+    coordinate = row['coordinate']
+    has_observation = isinstance(coordinate, BaseGeometry)
+    if not has_observation:
+        skipped_observations.append((row['unique_id'], row['geometry_id']))
     hrs.append(HistoricalRecord(
         id=hr_uuid,
         dataset=DS_UUID,
         time_range=TR,
         paradata='m',
-        has_observations=[obs_uuid],
+        has_observations=[obs_uuid] if has_observation else [],
         metadata=dict(row[hr_metadata_cols]),
     ))
-    obs_list.append(Observation(
-        id=obs_uuid,
-        historical_record=hr_uuid,
-        geometry=row['coordinate'],
-        has_geometries=has_geom,
-        part_of_point_of_interest=True,
-    ))
+    if has_observation:
+        obs_list.append(Observation(
+            id=obs_uuid,
+            historical_record=hr_uuid,
+            geometry=coordinate,
+            has_geometries=has_geom,
+            part_of_point_of_interest=True,
+        ))
+
+if skipped_observations:
+    print(
+        'Skipped observations without joined geometry: '
+        + ', '.join(
+            f'unique_id={unique_id} geometry_id={geometry_id}'
+            for unique_id, geometry_id in skipped_observations
+        )
+    )
 
 # ── 4. IIIF – attach Annotation objects to pages ──────────────────────────────
 hr_with_page = (
