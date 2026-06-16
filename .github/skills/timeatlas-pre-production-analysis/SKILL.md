@@ -47,6 +47,10 @@ Only proceed to the analysis questions below once the config file exists and the
 
 Identify which of the following cases applies, as they require different production patterns:
 
+**Do not assume every dataset needs RDE Geometry, Map, or Layer objects.** First decide whether the source geometry is a reusable/vector layer in its own right, or whether it is only the coordinate evidence for observations. If the source contains only point locations that are equivalent to observation coordinates, generate observations directly; do **not** generate map/layer/geometries just to mirror those points.
+
+**Do not generate PoIs in dataset-specific production scripts.** PoIs are produced and reconciled by the dedicated PoI/observation merge workflow, not by individual `rde/datasets/<dataset-slug>/produce_*.py` scripts. In dataset scripts, leave `Observation.part_of_point_of_interest` unset/`None` unless you are intentionally referencing an already-existing PoI UUID supplied by a separate authoritative process.
+
 ### Case A: Source has polygon/area geometries (GeoJSON or Shapefile)
 Observations must be **derived** from the geometry — the observation coordinate is the centroid (constrained to inside the polygon).
 
@@ -70,29 +74,20 @@ Observations use coordinates **directly from the source**.
 
 **Indicators:** source CSV/JSON has columns like `latitude`/`longitude`, `lat`/`lon`, `x`/`y`, or WGS84 point coordinates.
 
+**Production decision:** if these points only locate records, treat them as observation coordinates and generate corresponding Observations. Keep `has_geometries=[]` and do not create a map folder, layer, or geometry RDEs. Only create a map/layer/geometry set for points when the point collection is intended to be a standalone vector layer users should toggle independently of observations.
+
 **Production pattern:**
 ```python
 gdf['geometry'] = gdf.apply(lambda x: Point(x['longitude'], x['latitude']), axis=1)
 # observation coordinate = geometry directly
-obs = produce_obs_obj(uuid, time_range, ds_uuid, hr_uuid, tpe, row.geometry, geometries_links=[])
+obs = Observation(
+    id=(uuid_manager, str(row[UNIQUE_ID_COL])),
+    historical_record=hr.id,
+    geometry=row.geometry,
+    has_geometries=[],
+    part_of_point_of_interest=True # should be False only in the case the current observation needs spatial indexing without a PoI for interaction on the map. 
+)
 ```
-
----
-
-### Case C: Source has no geometry at all
-Observations **cannot be geolocated** — `geometry` field should be `None`, and `part_of_point_of_interest` should be `False`.
-
-**Indicators:** source is purely tabular (CSV/JSON) with no coordinate columns and no linked geometry file.
-
-**Production pattern:**
-```python
-obs = produce_obs_obj(uuid, time_range, ds_uuid, hr_uuid, tpe, coords=None, geometries_links=[], need_poi=False)
-```
-
----
-
-### Case D: Source has geometry for some records only (partial)
-Same as Case A or B, but only a subset of records can be geolocated. Unlocated records use `coords=None, need_poi=False`.
 
 ---
 
@@ -202,6 +197,9 @@ Check if source has image/document URLs or file references:
 - If yes → IIIF manifest generation will be needed
 - Look for columns: `image_url`, `filename`, `page_number`, `folio`, `canvas_id`
 
+
+When constructing the dataset with `Dataset.constructor_from_dataconfiguration_file_and_dataframe(...)`, the `sources` argument must contain only UUIDs of TimeAtlas/IIIF source objects such as collections, manifests, or documents generated or referenced by the production pipeline. Do **not** put DOIs, external URLs, archival web pages, image URLs, repository URLs, citations, or free-text source labels in `sources`; those belong in `dataset_metadata_config` as metadata fields.
+
 ---
 
 ## Checklist Before Writing the Production Script
@@ -211,14 +209,18 @@ Run through these checks and note the answers:
 ```
 [ ] Geometry type: polygon / point coordinates / none / mixed
 [ ] Obs derived from geometry centroid, or taken directly from coords?
+[ ] Does this dataset actually need Geometry/Map/Layer RDEs, or are source points only observation coordinates?
+[ ] Confirm the dataset script does not generate PoIs directly
 [ ] HR:Obs cardinality: 1:1 / N:1 / 1:N
 [ ] Unique identifier column confirmed as unique
 [ ] Time range: uniform (from config) or per-record (from source columns)
 [ ] Fields with nullable values identified
+[ ] Confirm the dataset script does not generate PoIs directly
 [ ] Paradata class for each field determined (m / sa / a)
 [ ] Indexed fields identified (fields used for search/filter)
 [ ] Short-display fields identified (fields shown in compact view)
 [ ] IIIF / image sources present?
+[ ] If using dataset `sources`, confirm each value is a collection/manifest/document UUID only
 [ ] description and paradata text prepared for all supported languages
 ```
 
