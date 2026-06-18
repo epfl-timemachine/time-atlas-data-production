@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
 Script to prepare JSON files from the rde folder for upload by copying them
-to a timestamped folder. Excludes files under 'src' folders and dataset-level
-JSON files (only includes files from dataset/data/ subfolders).
+to a timestamped folder under the selected destination. If no destination is
+provided, the timestamped folder is created under s3_dump. Excludes files under
+'src' folders and dataset-level JSON files according to the rules in
+should_include_file().
 """
 
+import argparse
 import os
 import sys
 import shutil
@@ -21,6 +24,23 @@ FILENAMES_TO_KEEP = [
     'map.json',
     'points_of_interest.json'
 ]
+
+
+def parse_args(argv=None):
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Prepare RDE JSON files for upload."
+    )
+    parser.add_argument(
+        "--dest",
+        type=Path,
+        help=(
+            "Parent directory where a timestamped folder containing the "
+            "prepared rde/ tree will be created. "
+            "Defaults to s3_dump/<timestamp>."
+        ),
+    )
+    return parser.parse_args(argv)
 
 
 def get_timestamp():
@@ -145,8 +165,10 @@ def copy_file(file_path, output_folder, rde_path):
         return False
 
 
-def main():
+def main(argv=None):
     """Main function to prepare data for upload."""
+    args = parse_args(argv)
+
     print("=" * 70)
     print("Prepare Data for Upload Script")
     print("=" * 70)
@@ -159,13 +181,11 @@ def main():
         print(f"Error: rde folder not found at {rde_path}")
         sys.exit(1)
     
-    # Create s3_dump folder if it doesn't exist
-    s3_dump_folder = repo_root / "s3_dump"
-    s3_dump_folder.mkdir(parents=True, exist_ok=True)
-    
-    # Generate timestamp and create output folder
     timestamp = get_timestamp()
-    output_folder = s3_dump_folder / timestamp
+    if args.dest is None:
+        output_folder = repo_root / "s3_dump" / timestamp
+    else:
+        output_folder = args.dest.expanduser().resolve() / timestamp
     
     print(f"\n[1/4] Configuration:")
     print(f"  Source folder: {rde_path}")
