@@ -1,0 +1,38 @@
+GIS Verponding_wijken columns:
+id		Integer	automatically generated id
+UID		String	Unique id for each record
+UID1		String	Unique id for each record without wijk
+inventory 	String	Inventory number of the original document in Amsterdam City Archives
+wijk		String	District (wijk) number mentioned in the Verponding 1647-1652
+folio		String	Folio number of the original document in Amsterdam City Archives
+folio_side	String	"1 for the frontside of the page, 2 for the backside"
+Ordernumber	String	The order of records mentioned in each wijk
+Street	String	Street names or locational references mentioned in the Verponding 1647-1652
+rent/own	String	"r for rental houses indicated by 'per' in the original document; o for the ownership of the house, meaning the owner lived in this property"
+rental_val	String	"The rental value of the house, listed in the Verponding 1647-1652"
+notes		String	Additional remarks
+profession	String	"Profession of the owner/renter if mentioned in the Verponding 1647-1652"
+rent		Integer	Numerical value of rental_val column
+
+
+
+CSV file:
+UID			Unique id for each record
+inventory nr.	Inventory number of the original document in Amsterdam City Archives
+wijk			District (wijk) number mentioned in the Verponding 1647-1652
+folio			Folio number of the original document in Amsterdam City Archives
+folio front/backside	"1 for the frontside of the page, 2 for the backside"
+Ordernumber		The order of records mentioned in each wijk
+Street		Street names or locational references mentioned in the Verponding 1647-1652
+rent/own		"r for rental houses indicated by 'per' in the original document; o for the ownership of the house, meaning the owner lived in this property"
+value			"The rental value of the house, listed in the Verponding 1647-1652"
+tax			The 8th-penny tax charged on the rental value (in the 'value' column). The value in this column is 1/8 of the value in 'value' column.
+notes			Additional remarks
+FirstnameO		First name of the owner of the house (the first name mentioned in each record)
+PatronymO		Patronymic name of the owner of the house 
+LastnameO		Last name of the owner of the house
+owner_modifier	Additional information of the owner mentioned
+FirstnameR		First name of the renter of the house (the name mentioned after 'per')
+PatronymR		Patronymic name of the renter of the house
+LastnameR	Last name of the renter of the house
+renter_modifier	Additional information of the renter mentioned

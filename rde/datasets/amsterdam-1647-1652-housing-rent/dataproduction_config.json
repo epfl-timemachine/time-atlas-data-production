@@ -1,0 +1,166 @@
+{
+  "UUID_NAMESPACE": "https://timemachine.epfl.ch/amsterdam/1647-1652-housing-rent",
+  "TIMERANGE_MINIMUM": 16470101,
+  "TIMERANGE_MAXIMUM": 16521231,
+  "AREA_LOCS": [
+    "../../areas/data/city-amsterdam-area.json",
+    "../../areas/data/country-kingdom-of-the-netherlands-area.json"
+  ],
+  "DATASET_CONFIGURATION": {
+    "slug": "amsterdam-1647-1652-housing-rent",
+    "name": {
+      "en": ["1647-1652 - Housing Rent"],
+      "fr": ["1647-1652 - Valeurs locatives des logements"],
+      "it": ["1647-1652 - Valori locativi delle abitazioni"],
+      "nl": ["1647-1652 - Verponding huizenhuur"],
+      "de": ["1647-1652 - Wohnmietwerte"]
+    },
+    "dataset_metadata_config": {
+      "description": {
+        "type": "STRING",
+        "display_label": {
+          "en": ["Description"],
+          "fr": ["Description"],
+          "it": ["Descrizione"],
+          "nl": ["Beschrijving"],
+          "de": ["Beschreibung"]
+        },
+        "value": {
+          "en": ["Manual transcription and GIS point layer for the Amsterdam Verponding registers of 1647-1652. The dataset records streets or locational references, rental values, the eighth-penny tax, ownership or rental status, and named owners or renters when available."],
+          "fr": ["Transcription manuelle et couche de points SIG des registres de Verponding d'Amsterdam de 1647-1652. Le jeu de donnees contient les rues ou references de localisation, les valeurs locatives, l'impot du huitieme denier, le statut de propriete ou de location, et les noms de proprietaires ou locataires lorsqu'ils sont disponibles."],
+          "it": ["Trascrizione manuale e livello puntuale GIS dei registri Verponding di Amsterdam del 1647-1652. Il dataset registra strade o riferimenti di localizzazione, valori locativi, imposta dell'ottavo denaro, stato di proprieta o affitto, e nomi di proprietari o inquilini quando disponibili."],
+          "nl": ["Handmatige transcriptie en GIS-puntenlaag voor de Amsterdamse Verponding-registers van 1647-1652. De dataset bevat straten of locatieverwijzingen, huurwaarden, de achtste-penningbelasting, eigendoms- of huurstatus, en namen van eigenaren of huurders wanneer beschikbaar."],
+          "de": ["Manuelle Transkription und GIS-Punktlayer der Amsterdamer Verponding-Register von 1647-1652. Der Datensatz erfasst Strassen oder Ortsangaben, Mietwerte, die Achtpfennigsteuer, Eigentums- oder Mietstatus sowie Namen von Eigentuemern oder Mietern, sofern vorhanden."]
+        }
+      },
+      "paradata": {
+        "type": "STRING",
+        "display_label": {
+          "en": ["Paradata"],
+          "fr": ["Paradata"],
+          "it": ["Paradata"],
+          "nl": ["Paradata"],
+          "de": ["Paradata"]
+        },
+        "value": {
+          "en": ["The textual register data were manually transcribed. The GIS points were provided with the source data and joined to the transcription through the source UID."],
+          "fr": ["Les donnees textuelles du registre ont ete transcrites manuellement. Les points SIG etaient fournis avec les donnees sources et ont ete joints a la transcription au moyen de l'identifiant source."],
+          "it": ["I dati testuali del registro sono stati trascritti manualmente. I punti GIS sono stati forniti con i dati sorgente e collegati alla trascrizione tramite l'identificativo sorgente."],
+          "nl": ["De tekstuele registergegevens zijn handmatig getranscribeerd. De GIS-punten werden met de brondata meegeleverd en via de bron-UID aan de transcriptie gekoppeld."],
+          "de": ["Die Textdaten des Registers wurden manuell transkribiert. Die GIS-Punkte wurden mit den Quelldaten geliefert und ueber die Quellen-UID mit der Transkription verknuepft."]
+        }
+      },
+      "doi": {
+        "type": "URL",
+        "display_label": {
+          "en": ["DOI"],
+          "fr": ["DOI"],
+          "it": ["DOI"],
+          "nl": ["DOI"],
+          "de": ["DOI"]
+        },
+        "value": {
+          "en": ["https://doi.org/10.5281/zenodo.7473120"],
+          "fr": ["https://doi.org/10.5281/zenodo.7473120"],
+          "it": ["https://doi.org/10.5281/zenodo.7473120"],
+          "nl": ["https://doi.org/10.5281/zenodo.7473120"],
+          "de": ["https://doi.org/10.5281/zenodo.7473120"]
+        }
+      }
+    },
+    "indexed": [
+      "street",
+      "wijk",
+      "ownership_status",
+      "owner_last_name",
+      "renter_last_name",
+      "profession"
+    ],
+    "short_display": [
+      "street",
+      "ownership_status",
+      "rental_value",
+      "owner_full_name",
+      "renter_full_name"
+    ],
+    "hidden": [
+      "source_uid",
+      "geometry_source_uid",
+      "geometry_uid",
+      "inventory_nr"
+    ],
+    "automatic_fields": [
+      "ownership_status"
+    ],
+    "manual_fields": [
+      "source_uid",
+      "inventory_nr",
+      "wijk",
+      "folio",
+      "folio_side",
+      "order_number",
+      "street",
+      "rent_or_own",
+      "rental_value",
+      "tax",
+      "notes",
+      "owner_first_name",
+      "owner_patronym",
+      "owner_last_name",
+      "owner_modifier",
+      "renter_first_name",
+      "renter_patronym",
+      "renter_last_name",
+      "renter_modifier"
+    ],
+    "semi_automatic_fields": [
+      "geometry_source_uid",
+      "geometry_uid",
+      "profession"
+    ],
+    "ai_fields": [],
+    "main_label": "${street}",
+    "sub_label": "${owner_full_name} ${renter_full_name}",
+    "tagged_fields": {
+      "street": "PLACE",
+      "wijk": "PLACE",
+      "owner_first_name": "PEOPLE",
+      "owner_patronym": "PEOPLE",
+      "owner_last_name": "PEOPLE",
+      "owner_full_name": "PEOPLE",
+      "renter_first_name": "PEOPLE",
+      "renter_patronym": "PEOPLE",
+      "renter_last_name": "PEOPLE",
+      "renter_full_name": "PEOPLE",
+      "profession": "LAND_USE",
+      "ownership_status": "LAND_USE"
+    },
+    "labels": {
+      "source_uid": {"en": ["Source UID"], "fr": ["Identifiant source"], "it": ["Identificativo sorgente"], "nl": ["Bron-UID"], "de": ["Quellen-UID"]},
+      "geometry_source_uid": {"en": ["Geometry source UID"], "fr": ["Identifiant source de la geometrie"], "it": ["Identificativo sorgente della geometria"], "nl": ["Bron-UID geometrie"], "de": ["Quellen-UID der Geometrie"]},
+      "geometry_uid": {"en": ["Geometry UID"], "fr": ["Identifiant de la geometrie"], "it": ["Identificativo della geometria"], "nl": ["Geometrie-UID"], "de": ["Geometrie-UID"]},
+      "inventory_nr": {"en": ["Inventory number"], "fr": ["Numero d'inventaire"], "it": ["Numero d'inventario"], "nl": ["Inventarisnummer"], "de": ["Inventarnummer"]},
+      "wijk": {"en": ["District"], "fr": ["Quartier"], "it": ["Quartiere"], "nl": ["Wijk"], "de": ["Bezirk"]},
+      "folio": {"en": ["Folio"], "fr": ["Folio"], "it": ["Folio"], "nl": ["Folio"], "de": ["Folio"]},
+      "folio_side": {"en": ["Folio side"], "fr": ["Cote du folio"], "it": ["Lato del folio"], "nl": ["Foliozijde"], "de": ["Folioseite"]},
+      "order_number": {"en": ["Order number"], "fr": ["Numero d'ordre"], "it": ["Numero d'ordine"], "nl": ["Volgnummer"], "de": ["Ordnungsnummer"]},
+      "street": {"en": ["Street or location"], "fr": ["Rue ou localisation"], "it": ["Strada o localizzazione"], "nl": ["Straat of locatie"], "de": ["Strasse oder Lage"]},
+      "rent_or_own": {"en": ["Source rental/ownership code"], "fr": ["Code source location/propriete"], "it": ["Codice sorgente affitto/proprieta"], "nl": ["Broncode huur/eigendom"], "de": ["Quellcode Miete/Eigentum"]},
+      "ownership_status": {"en": ["Occupancy status"], "fr": ["Statut d'occupation"], "it": ["Stato di occupazione"], "nl": ["Gebruiksstatus"], "de": ["Nutzungsstatus"]},
+      "rental_value": {"en": ["Rental value"], "fr": ["Valeur locative"], "it": ["Valore locativo"], "nl": ["Huurwaarde"], "de": ["Mietwert"]},
+      "tax": {"en": ["Eighth-penny tax"], "fr": ["Impot du huitieme denier"], "it": ["Imposta dell'ottavo denaro"], "nl": ["Achtste-penningbelasting"], "de": ["Achtpfennigsteuer"]},
+      "notes": {"en": ["Notes"], "fr": ["Notes"], "it": ["Note"], "nl": ["Notities"], "de": ["Notizen"]},
+      "profession": {"en": ["Profession"], "fr": ["Profession"], "it": ["Professione"], "nl": ["Beroep"], "de": ["Beruf"]},
+      "owner_first_name": {"en": ["Owner first name"], "fr": ["Prenom du proprietaire"], "it": ["Nome del proprietario"], "nl": ["Voornaam eigenaar"], "de": ["Vorname des Eigentuemers"]},
+      "owner_patronym": {"en": ["Owner patronym"], "fr": ["Patronyme du proprietaire"], "it": ["Patronimico del proprietario"], "nl": ["Patroniem eigenaar"], "de": ["Patronym des Eigentuemers"]},
+      "owner_last_name": {"en": ["Owner last name"], "fr": ["Nom du proprietaire"], "it": ["Cognome del proprietario"], "nl": ["Achternaam eigenaar"], "de": ["Nachname des Eigentuemers"]},
+      "owner_modifier": {"en": ["Owner modifier"], "fr": ["Complement du proprietaire"], "it": ["Modificatore del proprietario"], "nl": ["Aanvulling eigenaar"], "de": ["Zusatz zum Eigentuemer"]},
+      "owner_full_name": {"en": ["Owner full name"], "fr": ["Nom complet du proprietaire"], "it": ["Nome completo del proprietario"], "nl": ["Volledige naam eigenaar"], "de": ["Vollstaendiger Name des Eigentuemers"]},
+      "renter_first_name": {"en": ["Renter first name"], "fr": ["Prenom du locataire"], "it": ["Nome dell'inquilino"], "nl": ["Voornaam huurder"], "de": ["Vorname des Mieters"]},
+      "renter_patronym": {"en": ["Renter patronym"], "fr": ["Patronyme du locataire"], "it": ["Patronimico dell'inquilino"], "nl": ["Patroniem huurder"], "de": ["Patronym des Mieters"]},
+      "renter_last_name": {"en": ["Renter last name"], "fr": ["Nom du locataire"], "it": ["Cognome dell'inquilino"], "nl": ["Achternaam huurder"], "de": ["Nachname des Mieters"]},
+      "renter_modifier": {"en": ["Renter modifier"], "fr": ["Complement du locataire"], "it": ["Modificatore dell'inquilino"], "nl": ["Aanvulling huurder"], "de": ["Zusatz zum Mieter"]},
+      "renter_full_name": {"en": ["Renter full name"], "fr": ["Nom complet du locataire"], "it": ["Nome completo dell'inquilino"], "nl": ["Volledige naam huurder"], "de": ["Vollstaendiger Name des Mieters"]}
+    }
+  }
+}
