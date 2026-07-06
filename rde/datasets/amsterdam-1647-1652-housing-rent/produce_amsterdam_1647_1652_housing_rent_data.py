@@ -161,7 +161,7 @@ for _, row in tqdm(df.iterrows(), total=len(df), desc="HRs & Obs"):
 dataset = Dataset.constructor_from_dataconfiguration_file_and_dataframe(
     str(SCRIPT_DIR / "dataproduction_config.json"),
     pd.DataFrame([hr.metadata for hr in hrs])[[col for col in metadata_cols if col != "geometry"]],
-    sources=["https://doi.org/10.5281/zenodo.7473120"],
+    sources=[],
     ds_id=DS_UUID,
 )
 dataset.version = "1.0"

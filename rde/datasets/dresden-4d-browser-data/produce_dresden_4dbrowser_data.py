@@ -7,6 +7,7 @@ import sys
 from tqdm import tqdm
 from ast import literal_eval
 from shapely import Point
+from shapely.geometry import shape
 # to have progress bar in the notebook
 tqdm.pandas()
 
@@ -30,7 +31,11 @@ DS_UUID = str(uuid.uuid5(TM_UUID5_NS, DS_SLUG))
 DS_OBJ = (DS_SLUG, DS_UUID)
 TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True))
 
-dresden_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
+dresden_area_uuids = (
+    get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
+    if 'AREA_SLUGS' in DATA_CONFIG
+    else [get_single_object_uuid(p) for p in DATA_CONFIG['AREA_LOCS']]
+)
 
 # some pictures could not be downloaded. Removing them from the dataset
 with open('src/404_images.txt') as f:
@@ -63,7 +68,9 @@ obs = [produce_obs_obj(
 ) for _,v in gdf.iterrows()]
 
 gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
+gdf_obs['geometry'] = gdf_obs['geometry'].apply(lambda geom: shape(geom) if isinstance(geom, dict) else geom)
+gdf_obs = gpd.GeoDataFrame(gdf_obs, geometry='geometry', crs='EPSG:4326')
+gdf_obs = gdf_obs.set_index('id')
 
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 save_data_file_if_different(DATA_FOLDER, "observations", gdf_obs, f'dresden_obs', RDEType.OBS.value)
