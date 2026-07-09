@@ -6,6 +6,7 @@ from os.path import join
 import sys
 from pathlib import Path
 from tqdm import tqdm
+import pickle
 import json
 from pyproj import Transformer
 from shapely.ops import transform
@@ -35,6 +36,7 @@ TR_OBJ = (datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM']), datetime
 
 DATA_FOLDER = ''
 MAP_FOLDER = '../../maps/switzerland-qbuildings/'
+
 
 # Geometry RDE production
 geometries_fp = join(DATA_SRC_PATH, 'qbuildings_whole_db.geojson')
@@ -76,78 +78,88 @@ def blocks(files, size=65536):
         if not b: break
         yield b
 
-with open(geometries_fp, "r",encoding="utf-8",errors='ignore') as f:
-    number_of_lines = sum(bl.count("\n") for bl in blocks(f))
+need_geometry_computing = False
+if need_geometry_computing:
+    with open(geometries_fp, "r",encoding="utf-8",errors='ignore') as f:
+        number_of_lines = sum(bl.count("\n") for bl in blocks(f))
 
+    MAP_FOLDER_ORIG = '../../maps/switzerland-qbuildings/'
+    cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER_ORIG+'layers', 'json'), 'buildings')
+    prop_array = []
+    geoms = []
 
-MAP_FOLDER_ORIG = '../../maps/switzerland-qbuildings/'
-cadaster_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER_ORIG+'layers', 'json'), 'buildings')
-prop_array = []
-geoms = []
+    MAX_FILE_SIZE_BYTES = 104857600 / 3  # 100MB (divided by 3 to be safe and avoid memory issues, since the size in memory can be bigger than the size on disk due to serialization overhead)
+    batch_nbr = 0
+    current_batch_size = 0
 
+    # because we don't instantiate a geofataframe, we have to do the CRS transformation manually, which is done here.
+    crs_transformer = Transformer.from_crs("EPSG:2056", "EPSG:4326", always_xy=True)
 
-MAX_FILE_SIZE_BYTES = 104857600 / 3  # 100MB (divided by 3 to be safe and avoid memory issues, since the size in memory can be bigger than the size on disk due to serialization overhead)
-batch_nbr = 0
-current_batch_size = 0
+    for i, line in tqdm(enumerate(open(geometries_fp, 'r')), desc='Processing geometries', total=number_of_lines):
+        # break
+        if not line.startswith('{ "type": "Feature",'):
+            continue
+        else:
+            to_proc = line.strip().rstrip(',')  # remove the comma at the end of the line, which is not valid JSON
+            feature = json.loads(to_proc)
+            properties = feature.get('properties')
+            curr_uuid = str(uuid.uuid5(VTM_UUID5_NS, properties['egid'] + '_geometry'))
+            geom = Geometry.constructor_from_raw_geojson_line(to_proc, curr_uuid, cadaster_layer_uuid)
+            geom.geometry = transform(crs_transformer.transform, geom.geometry)
+            geoms.append(geom)
+            center = geom.geometry.centroid
+            properties['center'] = center
+            prop_array.append(properties)
 
-# because we don't instantiate a geofataframe, we have to do the CRS transformation manually, which is done here.
-crs_transformer = Transformer.from_crs("EPSG:2056", "EPSG:4326", always_xy=True)
-
-for i, line in tqdm(enumerate(open(geometries_fp, 'r')), desc='Processing geometries', total=number_of_lines):
-    # break
-    if not line.startswith('{ "type": "Feature",'):
-        continue
-    else:
-        to_proc = line.strip().rstrip(',')  # remove the comma at the end of the line, which is not valid JSON
-        feature = json.loads(to_proc)
-        properties = feature.get('properties')
-        curr_uuid = str(uuid.uuid5(VTM_UUID5_NS, properties['egid'] + '_geometry'))
-        # todo: check the geometries are valid
-        geom = Geometry.constructor_from_raw_geojson_line(to_proc, curr_uuid, cadaster_layer_uuid)
-        geom.geometry = transform(crs_transformer.transform, geom.geometry)
-        geoms.append(geom)
-        center = geom.geometry.centroid
-        properties['center'] = center
-        prop_array.append(properties)
-
-        # Estimate current batch size by serializing to JSON
-        geom_dict = geom.to_dict()
-        geom_size = len(json.dumps(geom_dict, ensure_ascii=False).encode('utf-8'))
-        current_batch_size += geom_size
-        
-        # Save batch when it reaches approximately 100MB
-        if current_batch_size >= MAX_FILE_SIZE_BYTES:
-            save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
-            batch_nbr += 1
-            # clear the memory from the list content
-            del geoms[:]
-            geoms = []
-            current_batch_size = 0
+            # Estimate current batch size by serializing to JSON
+            geom_dict = geom.to_dict()
+            geom_size = len(json.dumps(geom_dict, ensure_ascii=False).encode('utf-8'))
+            current_batch_size += geom_size
             
-save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
-import pickle
-with open(join(DATA_SRC_PATH, 'prop_array.pkl'), 'wb') as f:
-    pickle.dump(prop_array, f)
-df = pd.DataFrame(prop_array)
-# df = pd.read_csv('tmp_geometries_properties_batch.csv')
-df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['egid'], ad_hoc_seed='hr'), axis=1)
-df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
-df['has_geometry'] = df['egid'].apply(lambda x: [str(uuid.uuid5(VTM_UUID5_NS, str(x) + '_geometry'))])
-# df.to_csv(f'tmp_geometries_properties_batch.csv', index=False)
+            # Save batch when it reaches approximately 100MB
+            if current_batch_size >= MAX_FILE_SIZE_BYTES:
+                save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
+                batch_nbr += 1
+                # clear the memory from the list content
+                del geoms[:]
+                geoms = []
+                current_batch_size = 0
+                
+    save_list_of_rde_as_ingestion_file(geoms, join(MAP_FOLDER, f'geometries_batch_{batch_nbr}.json'), f'switzerland_qbuildings_geometries_batch_{batch_nbr}')
+    with open(join(DATA_SRC_PATH, 'prop_array.pkl'), 'wb') as f:
+        pickle.dump(prop_array, f)
 
-obs_df = df[['obs_uuid','hr_uuid', 'center', 'has_geometry']].copy().reset_index().set_index('obs_uuid')
-tpe = 'parcel ownership'
-obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid, tpe, v.center, v.has_geometry)
-obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
-gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
-# when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
-gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
-gdf_obs = gdf_obs.set_geometry('geometry')
-QA_check_uuid_are_unique(gdf_obs.reset_index())
-obs_shorthand = 'switzerland_qbuildings_obs'
-save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
-QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometries')
+
+need_observations_computing = True
+if not need_geometry_computing and need_observations_computing:
+    with open(join(DATA_SRC_PATH, 'prop_array.pkl'), 'rb') as f:
+        prop_array = pickle.load(f)
+
+if need_observations_computing:
+    df = pd.DataFrame(prop_array)
+    # df = pd.read_csv('tmp_geometries_properties_batch.csv')
+    df['hr_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['egid'], ad_hoc_seed='hr'), axis=1)
+    df['obs_uuid'] = df.apply(lambda v: make_uuid_from_row_selection(VTM_UUID5_NS, v, ['center'], ad_hoc_seed='obs'), axis=1)
+    df['has_geometry'] = df['egid'].apply(lambda x: [str(uuid.uuid5(VTM_UUID5_NS, str(x) + '_geometry'))])
+    # df.to_csv(f'tmp_geometries_properties_batch.csv', index=False)
+
+    obs_df = df[['obs_uuid','hr_uuid', 'center', 'has_geometry']].copy().reset_index().set_index('obs_uuid')
+    tpe = 'parcel ownership'
+    obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, TR_OBJ, DS_UUID, v.hr_uuid, tpe, v.center, v.has_geometry)
+    obs = [obs_from_row(v) for _, v in obs_df.reset_index().iterrows()]
+    gdf_obs = gpd.GeoDataFrame(obs)
+    gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
+    # when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
+    gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
+    gdf_obs = gdf_obs.set_geometry('geometry')
+    QA_check_uuid_are_unique(gdf_obs.reset_index())
+    obs_shorthand = 'switzerland_qbuildings_obs'
+    save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
+    QA_check_unique_uuid_in_uuid_array(gdf_obs.reset_index(), 'has_geometries')
+    df.to_csv(join(DATA_SRC_PATH, 'obs_properties.csv'), index=False)
+
+if not need_observations_computing:
+    df = pd.read_csv(join(DATA_SRC_PATH, 'obs_properties.csv'))
 
 #HR RDE Production
 exclude_hr_labels = {

@@ -6,6 +6,7 @@ import os
 from os.path import join
 from tqdm import tqdm
 from shapely import Point
+from shapely.geometry import shape
 from datetime import datetime as dt
 # to have progress bar in the notebook
 tqdm.pandas()
@@ -39,7 +40,10 @@ collection = {man_id: "Garzoni 3 page sample for testing annotations."}
 collection_manifest_uid = str(uuid.uuid5(VTM_UUID5_NS, f'collection_{DS_SLUG}'))
 MAP_FOLDER = '../../maps/venice-1740-parish/'
 parish_layer_uuid = get_layer_uuid(get_filepath_like(MAP_FOLDER+'layers', 'json'), 'parish')
-venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
+if 'AREA_SLUGS' in DATA_CONFIG:
+    venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
+else:
+    venice_area_uuids = [get_single_object_uuid(p) for p in DATA_CONFIG['AREA_LOCS']]
 
 # Geometry RDE production
 gdf = gpd.read_file(join(VENICE_DATA_SRC, '1740_redrawn_parishes_cleaned_wikidata_standardised.geojson'))
@@ -231,7 +235,9 @@ for _, r in df_flat.iterrows():
             obs.append(produce_obs_from_uuid_geom_id_and_date(r[s][0], r[s][1], r.hr_uuid, (r.start_time, r.end_time)))
 
 
-gdf_obs = gpd.GeoDataFrame(obs).set_index('id').set_crs('EPSG:4326')
+gdf_obs = gpd.GeoDataFrame(obs)
+gdf_obs['geometry'] = gdf_obs['geometry'].apply(shape)
+gdf_obs = gdf_obs.set_index('id').set_geometry('geometry').set_crs('EPSG:4326')
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, f'garzoni_obs', RDEType.OBS.value)
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 

@@ -7,6 +7,7 @@ import sys
 from tqdm import tqdm
 from pathlib import Path
 from datetime import datetime
+from shapely.geometry import shape
 # to have progress bar in the notebook
 tqdm.pandas()
 
@@ -39,7 +40,10 @@ formatted_begin = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MINIMUM'])
 formatted_end = datetime_obj_from_int_time(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
 TR_OBJ = [formatted_begin, formatted_end]
 DATA_FOLDER = ''
-venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
+if 'AREA_SLUGS' in DATA_CONFIG:
+    venice_area_uuids = get_area_uuids_from_slugs('../../areas/data', DATA_CONFIG['AREA_SLUGS'])
+else:
+    venice_area_uuids = [get_single_object_uuid(area_loc) for area_loc in DATA_CONFIG['AREA_LOCS']]
 
 geometries_fp = list(DORIGO_DATA_PATH.rglob('*geometries.geojson'))[0]
 # sample for testing uuid_gen
@@ -47,8 +51,13 @@ gdf = gpd.read_file(geometries_fp)
 gdf = gdf.to_crs(UNIVERSAL_CRS)
 
 # latest data from raimund has this data expressed as native Timestamp object, so we can directly convert it to ISO format string
-gdf['start_time'] = gdf['start_date'].apply(lambda v: v.isoformat() if v and not pd.isnull(v) else None).fillna(TR_OBJ[0])
-gdf['end_time'] = gdf['end_date'].apply(lambda v: v.isoformat() if v and not pd.isnull(v) else None).fillna(TR_OBJ[1])
+def isoformat_if_possible(v):
+    if v and not pd.isnull(v):
+        return v.isoformat() if hasattr(v, 'isoformat') else v
+    return None
+
+gdf['start_time'] = gdf['start_date'].apply(isoformat_if_possible).fillna(TR_OBJ[0])
+gdf['end_time'] = gdf['end_date'].apply(isoformat_if_possible).fillna(TR_OBJ[1])
 
 # TODO: allow for multipolygon??
 tqdm.pandas(desc="Generating uuid from geometry")
@@ -115,10 +124,8 @@ df['corrected_centroid_str'] = df['corrected_centroid'].apply(lambda p: p.wkt)
 obs_from_row = lambda v: produce_obs_obj(v.obs_uuid, (v.start_time, v.end_time), DS_UUID, v.hr_uuid, v.type, v.corrected_centroid, v.has_geometry)
 obs = [obs_from_row(v) for _, v in df.iterrows()]
 gdf_obs = gpd.GeoDataFrame(obs)
-gdf_obs = gdf_obs.set_index('id').set_crs('EPSG:4326')
-# when the geodataframe is serialized, the label of the geometry column is lost (default to geometry), doing it here makes it explicit and make the save_data_file_if_different work.
-gdf_obs = gdf_obs.rename(columns={'coordinate': 'geometry'})
-gdf_obs = gdf_obs.set_geometry('geometry')
+gdf_obs['geometry'] = gdf_obs['geometry'].apply(lambda geom: shape(geom) if isinstance(geom, dict) else geom)
+gdf_obs = gpd.GeoDataFrame(gdf_obs, geometry='geometry', crs='EPSG:4326').set_index('id')
 QA_check_uuid_are_unique(gdf_obs.reset_index())
 obs_shorthand = 'dorigo_obs'
 save_data_file_if_different(DATA_FOLDER, 'observations', gdf_obs, obs_shorthand, RDEType.OBS.value)
