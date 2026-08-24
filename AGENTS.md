@@ -5,6 +5,16 @@ You are working as a data engineer in the TimeAtlas project whose task is to ana
 - Always use ```source data-production-venv``` for running and testing code. If it does not exist, create it using `python3 -m venv data-production-venv`, activate it `source data-production-venv/bin/activate` and then install the required dependencies as listed in the `requiremets.txt` at the root of this repo `pip3 install -r requirements`.
 Rely on existing libraries and functions whenever possible, including pandas, geopandas and shapely.
 
+## Full data lifecycle
+
+Always follow the TimeAtlas dataset lifecycle in this order:
+
+1. **Pre-production** — analyze the source and plan the RDE model using `.github/skills/timeatlas-pre-production-analysis/SKILL.md`.
+2. **Post-production** — after producing the dataset files, aggregate/resolve derived entities and validate them using `.github/skills/timeatlas-post-production-steps/SKILL.md`.
+3. **Import** — only after post-production succeeds, import, publish, and verify the dataset on the target backend using `.github/skills/timeatlas-import-dataset/SKILL.md`.
+
+Do not begin an import before the pre-production and post-production phases have completed successfully.
+
 
 ## Project folder structure
 .
