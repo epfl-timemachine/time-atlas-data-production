@@ -47,7 +47,7 @@ from timeatlas.RDEModel import (  # noqa: E402
     UUIDManager,
 )
 from timeatlas.TimeAtlas import RDECollection  # noqa: E402
-from timeatlas.helpers import _clean_metadata, _get_area_uuids, _seed  # noqa: E402
+from timeatlas.production import get_area_uuids, csv_seed  # noqa: E402
 
 
 IIIF_BASE_URL = "https://image-timemachine.epfl.ch/iiif/3"
@@ -58,7 +58,7 @@ with open(SCRIPT_DIR / "dataproduction_config.json", encoding="utf-8") as f:
 uuid_mgr = UUIDManager(DATA_CONFIG["UUID_NAMESPACE"])
 DS_SLUG = DATA_CONFIG["DATASET_CONFIGURATION"]["slug"]
 DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
-AREA_UUIDS = _get_area_uuids(DATA_CONFIG["AREA_LOCS"])
+AREA_UUIDS = get_area_uuids(DATA_CONFIG["AREA_LOCS"])
 
 
 def _parse_start_date(date_obj: dict, fallback: str) -> str:
@@ -151,26 +151,22 @@ df["end_time"] = df["date_obj"].apply(lambda value: _parse_end_date(value, max_d
 gdf = gpd.GeoDataFrame(df, geometry="geometry", crs="EPSG:4326")
 
 gdf["obs_uuid"] = [
-    uuid_mgr._generate_uuid(_seed(row, ["id"], "obs"))
+    uuid_mgr._generate_uuid(csv_seed(row, ["id"], "obs"))
     for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="Observation UUIDs")
 ]
 gdf["hr_uuid"] = [
-    uuid_mgr._generate_uuid(_seed(row, ["id"], "hr"))
+    uuid_mgr._generate_uuid(csv_seed(row, ["id"], "hr"))
     for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="HistoricalRecord UUIDs")
 ]
 
 
 # 2. Observation RDEs
-obs_list = [
-    Observation(
-        id=row.obs_uuid,
-        historical_record=row.hr_uuid,
-        geometry=row.geometry,
-        has_geometries=None,
-        part_of_point_of_interest=True,
-    )
-    for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="Observations")
-]
+obs_list = Observation.observations_from_df(
+    gdf,
+    id_col="obs_uuid",
+    hr_col="hr_uuid",
+    geometry_col="geometry",
+)
 
 
 # 3. HistoricalRecord RDEs
@@ -201,17 +197,14 @@ metadata_cols = [
     if col not in {"hr_uuid", "obs_uuid", "start_time", "end_time", *drop_cols}
 ]
 
-hrs = [
-    HistoricalRecord(
-        id=row.hr_uuid,
-        dataset=DS_UUID,
-        time_range=RDETimeRange(row.start_time, row.end_time),
-        paradata="m",
-        has_observations=[row.obs_uuid[0]],
-        metadata=_clean_metadata({col: row[col] for col in metadata_cols}),
-    )
-    for _, row in tqdm(hr_df.iterrows(), total=len(hr_df), desc="Historical records")
-]
+hrs = HistoricalRecord.historical_records_from_df(
+    hr_df,
+    id_col="hr_uuid",
+    obs_col="obs_uuid",
+    dataset_id=DS_UUID,
+    time_range=lambda row: RDETimeRange(row.start_time, row.end_time),
+    metadata_cols=metadata_cols,
+)
 
 
 # 4. IIIF manifests and collection
@@ -223,7 +216,7 @@ for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="IIIF manifests"):
     file_obj = row["file"]
     filename = extract_image_name_from_id(row["id"])
     img_path = f"dresden/4d_browser/{filename}"
-    manifest_uuid = uuid_mgr._generate_uuid(_seed(row, ["id"], "manifest"))
+    manifest_uuid = uuid_mgr._generate_uuid(csv_seed(row, ["id"], "manifest"))
     original_source = f"https://4dbrowser.urbanhistory4d.org/explore/{row['lat_lon']}/image/{row['id']}"
 
     canvas_uuid = uuid_mgr._generate_uuid(f"{DS_UUID}_{manifest_uuid}_0")
@@ -284,10 +277,9 @@ dataset.version = "1.0"
 
 
 # 6. Save RDE data
-# This raw dataset intentionally keeps has_geometries=None to match the v1
-# producer. RDECollection.validate_data expects iterable geometry references, so
-# validation is left to the downstream full pipeline after POI consolidation.
 full_collection = RDECollection(hrs + obs_list + [dataset])
+full_collection.validate_data(mode="raw")
+print("Validation passed in raw mode: legacy output contains observations with null has_geometries.")
 full_collection.save_rde_to_files(
     str(SCRIPT_DIR),
     overwrite=True,

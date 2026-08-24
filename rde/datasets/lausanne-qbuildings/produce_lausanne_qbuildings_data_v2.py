@@ -20,7 +20,6 @@ import pandas as pd
 import geopandas as gpd
 from pathlib import Path
 from tqdm import tqdm
-from shapely.validation import make_valid
 
 # ── Library bootstrap ─────────────────────────────────────────────────────────
 parent_dir = os.path.abspath('../../../')
@@ -34,7 +33,12 @@ from timeatlas.RDEModel import (
     UUIDManager, RDETimeRange, HistoricalRecord, Observation, Geometry,
     Dataset, MultiLingualValue,
 )
-from timeatlas.helpers import _datetime_from_int, _get_layer_uuid, _clean_metadata, _seed
+from timeatlas.production import (
+    datetime_from_int,
+    find_layer_uuid,
+    normalize_to_epsg4326,
+    csv_seed,
+)
 from timeatlas.TimeAtlas import RDECollection
 from timeatlas.DocumentModel import Page, Annotation, Document, Model, Collection
 
@@ -53,12 +57,14 @@ DS_UUID  = uuid_mgr._generate_uuid(DS_SLUG)
 
 # ── 1. Load source data ────────────────────────────────────────────────────────
 MAP_FOLDER = '../../maps/lausanne-qbuildings/'
-cadaster_layer_uuid = _get_layer_uuid(MAP_FOLDER + 'layers.json', 'buildings')
+cadaster_layer_uuid = find_layer_uuid(MAP_FOLDER + 'layers.json', 'buildings')
 
-gdf = gpd.read_file(Path('src') / 'qbuildings-lausanne.geojson', use_arrow=True).to_crs('EPSG:4326')
+gdf = normalize_to_epsg4326(
+    gpd.read_file(Path('src') / 'qbuildings-lausanne.geojson', use_arrow=True)
+)
 
-TR_START   = _datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM'])
-TR_END     = _datetime_from_int(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
+TR_START   = datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM'])
+TR_END     = datetime_from_int(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True)
 time_range = RDETimeRange(TR_START, TR_END)
 
 gdf['start_time'] = TR_START
@@ -66,16 +72,15 @@ gdf['end_time']   = TR_END
 gdf['center']     = gdf['geometry'].apply(lambda g: g.centroid)
 
 # ── 2. Geometries ──────────────────────────────────────────────────────────────
-# Generate UUIDs from original (possibly invalid) geometries — matching v1 order
-geom_uuids = [uuid_mgr._generate_uuid(_seed(row, ['geometry'])) for _, row in gdf.iterrows()]
-
-# Fix invalid geometries (mirrors the QA block in v1)
-gdf['geometry'] = gdf['geometry'].apply(lambda g: g if g.is_valid else make_valid(g))
-
-geometries = [
-    Geometry(id=gid, geometry=row.geometry, part_of_layer=cadaster_layer_uuid)
-    for gid, (_, row) in tqdm(zip(geom_uuids, gdf.iterrows()), total=len(gdf), desc='Geometries')
-]
+# Generate UUIDs from original (possibly invalid) geometries, then repair
+# inside Geometry if needed.
+geometries = Geometry.geometries_from_gdf(
+    gdf,
+    ['geometry'],
+    cadaster_layer_uuid,
+    uuid_manager=uuid_mgr,
+    force_valid=True,
+)
 
 # ── 3. Historical Records & Observations ──────────────────────────────────────
 EXCLUDE = {
@@ -86,28 +91,26 @@ EXCLUDE = {
 
 # Replicate: df = gdf.drop(columns=['geometry']).copy().reset_index()
 df = gdf.drop(columns=['geometry']).copy().reset_index()
+df['has_geometry'] = [geometry.id for geometry in geometries]
 hr_metadata_cols = [c for c in df.columns if c not in EXCLUDE]
 
-hrs, obs_list = [], []
-for (_, row), geom in tqdm(zip(df.iterrows(), geometries), total=len(df), desc='HRs & Obs'):
-    hr_uuid  = uuid_mgr._generate_uuid(_seed(row, ['index'], 'hr'))
-    obs_uuid = uuid_mgr._generate_uuid(_seed(row, ['center'], 'obs'))
-
-    hrs.append(HistoricalRecord(
-        id=hr_uuid,
-        dataset=DS_UUID,
-        time_range=time_range,
-        paradata='m',
-        has_observations=[obs_uuid],
-        metadata=_clean_metadata({k: row[k] for k in hr_metadata_cols}),
-    ))
-    obs_list.append(Observation(
-        id=obs_uuid,
-        historical_record=hr_uuid,
-        geometry=row['center'],
-        has_geometries=[geom.id],
-        part_of_point_of_interest=True,
-    ))
+df['hr_uuid'] = [uuid_mgr._generate_uuid(csv_seed(row, ['index'], 'hr')) for _, row in df.iterrows()]
+df['obs_uuid'] = [uuid_mgr._generate_uuid(csv_seed(row, ['center'], 'obs')) for _, row in df.iterrows()]
+hrs = HistoricalRecord.historical_records_from_df(
+    df,
+    id_col='hr_uuid',
+    obs_col='obs_uuid',
+    dataset_id=DS_UUID,
+    time_range=time_range,
+    metadata_cols=hr_metadata_cols,
+)
+obs_list = Observation.observations_from_df(
+    df,
+    id_col='obs_uuid',
+    hr_col='hr_uuid',
+    geometry_col='center',
+    has_geometries_col='has_geometry',
+)
 
 # ── 4. IIIF – 2D thumbnail manifests (one per building) ───────────────────────
 os.makedirs('iiif/manifests',   exist_ok=True)

@@ -20,7 +20,6 @@ import geopandas as gpd
 import numpy as np
 import pandas as pd
 from shapely import wkt
-from tqdm import tqdm
 
 # Library path bootstrap
 parent_dir = os.path.abspath("../../../")
@@ -40,7 +39,7 @@ from timeatlas.RDEModel import (  # noqa: E402
     UUIDManager,
 )
 from timeatlas.TimeAtlas import RDECollection  # noqa: E402
-from timeatlas.helpers import _clean_metadata, _datetime_from_int, _seed  # noqa: E402
+from timeatlas.production import datetime_from_int, csv_seed  # noqa: E402
 from timeatlas.TAEnums import MetadataType  # noqa: E402
 
 
@@ -55,8 +54,8 @@ uuid_mgr = UUIDManager(DATA_CONFIG["UUID_NAMESPACE"])
 DS_SLUG = DATA_CONFIG["DATASET_CONFIGURATION"]["slug"]
 DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
 TR = RDETimeRange(
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
 )
 
 
@@ -80,34 +79,22 @@ exclude_hr_labels = {
 }
 hr_metadata_cols = [col for col in df.columns if col not in exclude_hr_labels]
 
-hrs = []
-obs_list = []
-
-for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="HRs & Obs"):
-    obs_uuid = uuid_mgr._generate_uuid(_seed(row, ["index"], suffix="obs"))
-    hr_uuid = uuid_mgr._generate_uuid(_seed(row, ["index"], suffix="hr"))
-
-    metadata = _clean_metadata({col: row[col] for col in hr_metadata_cols})
-
-    obs_list.append(
-        Observation(
-            id=obs_uuid,
-            historical_record=hr_uuid,
-            geometry=row.geometry,
-            has_geometries=None,
-            part_of_point_of_interest=True,
-        )
-    )
-    hrs.append(
-        HistoricalRecord(
-            id=hr_uuid,
-            dataset=DS_UUID,
-            time_range=TR,
-            paradata="m",
-            has_observations=[obs_uuid],
-            metadata=metadata,
-        )
-    )
+gdf["obs_uuid"] = gdf.apply(lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["index"], suffix="obs")), axis=1)
+gdf["hr_uuid"] = gdf.apply(lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["index"], suffix="hr")), axis=1)
+obs_list = Observation.observations_from_df(
+    gdf,
+    id_col="obs_uuid",
+    hr_col="hr_uuid",
+    geometry_col="geometry",
+)
+hrs = HistoricalRecord.historical_records_from_df(
+    gdf,
+    id_col="hr_uuid",
+    obs_col="obs_uuid",
+    dataset_id=DS_UUID,
+    time_range=TR,
+    metadata_cols=hr_metadata_cols,
+)
 
 
 # 3. IIIF manifest and collection
@@ -230,7 +217,8 @@ dataset.version = "1.0"
 # 5. Validate and save
 full_collection = RDECollection(hrs + obs_list + [dataset])
 if any(obs.has_geometries is None for obs in obs_list):
-    print("Skipped validation: legacy output contains observations with null has_geometries.")
+    full_collection.validate_data(mode="raw")
+    print("Validation passed in raw mode: legacy output contains observations with null has_geometries.")
 else:
     full_collection.validate_data()
     print("Validation passed.")

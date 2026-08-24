@@ -30,7 +30,12 @@ from timeatlas.RDEModel import (
     UUIDManager, RDETimeRange, HistoricalRecord, Observation, Geometry,
     Dataset, MultiLingualValue,
 )
-from timeatlas.helpers import _datetime_from_int, _get_layer_uuid, _clean_metadata, _seed
+from timeatlas.production import (
+    datetime_from_int,
+    find_layer_uuid,
+    normalize_to_epsg4326,
+    csv_seed,
+)
 from timeatlas.TimeAtlas import RDECollection
 from timeatlas.DocumentModel import Page, Annotation, Document, Collection
 
@@ -48,23 +53,23 @@ DS_UUID  = uuid_mgr._generate_uuid(DS_SLUG)
 # ── 1. Load and prepare source data ───────────────────────────────────────────
 DATA_VENICE_FOLDER = os.path.join(parent_dir, 'data-venice')
 MAP_FOLDER = '../../maps/venice-2024-contemporary/'
-edifici_layer_uuid = _get_layer_uuid(MAP_FOLDER + 'layers.json', 'venice-2024-contemporary-map-edifici')
+edifici_layer_uuid = find_layer_uuid(MAP_FOLDER + 'layers.json', 'venice-2024-contemporary-map-edifici')
 
 df_raw = pd.read_json('src/sample_3_edifici.json').replace({np.nan: None})
 
-min_time = _datetime_from_int(int(df_raw['BeginDate'].dropna().min()))
-max_time = _datetime_from_int(int(df_raw['EndDate'].dropna().max()), match_to_end=True)
+min_time = datetime_from_int(int(df_raw['BeginDate'].dropna().min()))
+max_time = datetime_from_int(int(df_raw['EndDate'].dropna().max()), match_to_end=True)
 
-df_raw['start_time']             = df_raw['BeginDate'].apply(lambda x: _datetime_from_int(int(x))                    if x is not None else min_time)
-df_raw['end_time']               = df_raw['EndDate'].apply(lambda x: _datetime_from_int(int(x), match_to_end=True)   if x is not None else max_time)
-df_raw['author_birth_date_time'] = df_raw['AuthorBirth'].apply(lambda x: _datetime_from_int(int(x)) if x is not None else None)
-df_raw['author_death_date_time'] = df_raw['AuthorDeath'].apply(lambda x: _datetime_from_int(int(x)) if x is not None else None)
+df_raw['start_time']             = df_raw['BeginDate'].apply(lambda x: datetime_from_int(int(x))                    if x is not None else min_time)
+df_raw['end_time']               = df_raw['EndDate'].apply(lambda x: datetime_from_int(int(x), match_to_end=True)   if x is not None else max_time)
+df_raw['author_birth_date_time'] = df_raw['AuthorBirth'].apply(lambda x: datetime_from_int(int(x)) if x is not None else None)
+df_raw['author_death_date_time'] = df_raw['AuthorDeath'].apply(lambda x: datetime_from_int(int(x)) if x is not None else None)
 df_raw['type'] = 'photograph'
 
 # ── 2. Geometries (all edifici, matching v1 scope) ────────────────────────────
 gdf_all_edifici = (
     gpd.read_file(os.path.join(DATA_VENICE_FOLDER, 'contemporary_maps/2024_Edifici_EPSG32633.geojson'))
-       .to_crs('EPSG:4326')
+       .pipe(normalize_to_epsg4326)
        .explode()
 )
 # One geometry per EDIFI_ID (first polygon after explode)
@@ -106,32 +111,30 @@ EXCLUDE = {
 }
 hr_metadata_cols = [c for c in gdf.columns if c not in EXCLUDE]
 
-hrs, obs_list = [], []
-hr_uuid_by_image = {}
+gdf['hr_uuid'] = [uuid_mgr._generate_uuid(csv_seed(row, ['ImageNumber'])) for _, row in gdf.iterrows()]
+gdf['obs_uuid'] = [
+    uuid_mgr._generate_uuid(csv_seed(row, ['ImageNumber'], suffix='obs'))
+    for _, row in gdf.iterrows()
+]
+gdf['has_geometries'] = gdf['EDIFI_ID'].apply(lambda edifi_id: [edifi_to_uuid[edifi_id]])
+gdf['obs_geometry'] = gdf['geometry'].apply(lambda geometry: geometry.centroid)
+hr_uuid_by_image = gdf.set_index('ImageNumber')['hr_uuid'].to_dict()
 
-for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc='HRs & Obs'):
-    hr_uuid  = uuid_mgr._generate_uuid(_seed(row, ['ImageNumber']))
-    obs_uuid = uuid_mgr._generate_uuid(_seed(row, ['ImageNumber'], suffix='obs'))
-    has_geom = [edifi_to_uuid[row['EDIFI_ID']]]
-    time_range = RDETimeRange(row['start_time'], row['end_time'])
-    metadata = _clean_metadata({k: row[k] for k in hr_metadata_cols})
-
-    hrs.append(HistoricalRecord(
-        id=hr_uuid,
-        dataset=DS_UUID,
-        time_range=time_range,
-        paradata='m',
-        has_observations=[obs_uuid],
-        metadata=metadata,
-    ))
-    obs_list.append(Observation(
-        id=obs_uuid,
-        historical_record=hr_uuid,
-        geometry=row.geometry.centroid,
-        has_geometries=has_geom,
-        part_of_point_of_interest=True,
-    ))
-    hr_uuid_by_image[row['ImageNumber']] = hr_uuid
+hrs = HistoricalRecord.historical_records_from_df(
+    gdf,
+    id_col='hr_uuid',
+    obs_col='obs_uuid',
+    dataset_id=DS_UUID,
+    time_range=lambda row: RDETimeRange(row['start_time'], row['end_time']),
+    metadata_cols=hr_metadata_cols,
+)
+obs_list = Observation.observations_from_df(
+    gdf,
+    id_col='obs_uuid',
+    hr_col='hr_uuid',
+    geometry_col='obs_geometry',
+    has_geometries_col='has_geometries',
+)
 
 # ── 4. IIIF – build Page objects per Drawer ────────────────────────────────────
 def _read_wh_csv(f: Path) -> pd.DataFrame:

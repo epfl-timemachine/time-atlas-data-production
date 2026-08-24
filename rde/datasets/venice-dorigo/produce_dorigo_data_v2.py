@@ -18,9 +18,7 @@ from pathlib import Path
 import geopandas as gpd
 import numpy as np
 import pandas as pd
-from shapely.geometry import MultiPolygon, Polygon
 from shapely.validation import make_valid
-from tqdm import tqdm
 
 
 # Library path bootstrap
@@ -40,34 +38,18 @@ from timeatlas.RDEModel import (  # noqa: E402
     UUIDManager,
 )
 from timeatlas.TimeAtlas import RDECollection  # noqa: E402
-from timeatlas.helpers import (  # noqa: E402
-    _clean_metadata,
-    _datetime_from_int,
-    _get_filepath_like,
-    _get_layer_uuid,
-    _seed,
+from timeatlas.production import (  # noqa: E402
+    datetime_from_int,
+    find_latest_file,
+    find_layer_uuid,
+    normalize_to_epsg4326,
+    csv_seed,
 )
 
 from process.resolve_acronym import process_source_acronym  # noqa: E402
 
 
-UNIVERSAL_CRS = "EPSG:4326"
 CITATION_FMT = "Dorigo W. (2003) “Venezia romanica”. Cierre edizioni. P."
-
-
-def _find_closest_polygon(point, multipolygon: MultiPolygon) -> Polygon:
-    return min(multipolygon.geoms, key=lambda polygon: polygon.distance(point))
-
-
-def _constrain_point_to_polygon_center(point, geometry):
-    if type(geometry) is MultiPolygon:
-        for polygon in geometry.geoms:
-            if polygon.contains(point):
-                return point
-        return _find_closest_polygon(point, geometry).centroid
-    if type(geometry) is Polygon and not geometry.contains(point):
-        return geometry.centroid
-    return point
 
 
 def _union_geom_from_geometry_ids(geometry_ids: list[str], gdf: gpd.GeoDataFrame):
@@ -93,7 +75,7 @@ def _pages_from_cell_ids(cell_ids: list[str], pages_by_annotation_id: dict[str, 
 
 def _try_parse_end_date(date_end) -> str | None:
     try:
-        return _datetime_from_int(date_end, match_to_end=True)
+        return datetime_from_int(date_end, match_to_end=True)
     except Exception:
         print(f"Could not parse date_end: {date_end}")
         return None
@@ -106,38 +88,33 @@ uuid_mgr = UUIDManager(DATA_CONFIG["UUID_NAMESPACE"])
 DS_SLUG = DATA_CONFIG["DATASET_CONFIGURATION"]["slug"]
 DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
 TR = RDETimeRange(
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
 )
 
 DORIGO_DATA_PATH = Path(os.path.join(parent_dir, "data-venice/Dorigo"))
 DATA_FOLDER = ""
 MAP_FOLDER = "../../maps/venice-dorigo/"
-zones_layer_uuid = _get_layer_uuid(
-    _get_filepath_like(MAP_FOLDER + "layers", "json"),
+zones_layer_uuid = find_layer_uuid(
+    find_latest_file(MAP_FOLDER + "layers", "json"),
     "venice-dorigo-map-zones",
 )
 
 
 # 1. Geometry RDEs
 geometries_fp = list(DORIGO_DATA_PATH.rglob("*geometries.geojson"))[0]
-gdf = gpd.read_file(geometries_fp).to_crs(UNIVERSAL_CRS)
+gdf = normalize_to_epsg4326(gpd.read_file(geometries_fp))
 
-gdf["uuid"] = [
-    uuid_mgr._generate_uuid(_seed(row, ["id"]))
-    for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="Geometry UUIDs")
-]
 gdf["geometry"] = gdf["geometry"].apply(lambda geom: geom if geom.is_valid else make_valid(geom))
 
-geometries = [
-    Geometry(
-        id=row.uuid,
-        geometry=row.geometry,
-        part_of_layer=zones_layer_uuid,
-        force_valid=True,
-    )
-    for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="Geometries")
-]
+geometries = Geometry.geometries_from_gdf(
+    gdf,
+    ["id"],
+    zones_layer_uuid,
+    uuid_manager=uuid_mgr,
+    force_valid=True,
+)
+gdf["uuid"] = [geometry.id for geometry in geometries]
 
 
 # 2. Historical source data
@@ -147,7 +124,7 @@ df = df[~df["date_start"].isna()].copy()
 
 df = process_source_acronym(df)
 df.rename(columns={"source": "source_ocr", "source_resolved": "source"}, inplace=True)
-df["start_time"] = df["date_start"].astype(int).apply(_datetime_from_int)
+df["start_time"] = df["date_start"].astype(int).apply(datetime_from_int)
 df["end_time"] = df["date_end"].astype(int).apply(_try_parse_end_date)
 
 with open(DORIGO_DATA_PATH / "ownerships_and_places/tables_manifest.json") as f:
@@ -170,32 +147,25 @@ df["bibliographic_citation"] = df["pages"].apply(
 df["geometries"] = df["geometry_ids"].apply(
     lambda geometry_ids: _union_geom_from_geometry_ids(geometry_ids, gdf)
 )
-df["centroid"] = df["geometries"].apply(lambda geometry: geometry.centroid)
-df["corrected_centroid"] = df.apply(
-    lambda row: _constrain_point_to_polygon_center(row["centroid"], row["geometries"]),
-    axis=1,
-)
+df["corrected_centroid"] = df["geometries"].apply(Geometry.representative_point_inside)
 df["has_geometry"] = df["geometry_ids"].apply(
     lambda geometry_ids: _geometry_uuids_from_ids(geometry_ids, gdf)
 )
-df["hr_uuid"] = df.apply(lambda row: uuid_mgr._generate_uuid(_seed(row, ["id"])), axis=1)
+df["hr_uuid"] = df.apply(lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["id"])), axis=1)
 df["obs_uuid"] = df.apply(
-    lambda row: uuid_mgr._generate_uuid(_seed(row, ["id"], suffix="obs")),
+    lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["id"], suffix="obs")),
     axis=1,
 )
 
 
 # 4. Observation RDEs
-obs_list = [
-    Observation(
-        id=row.obs_uuid,
-        historical_record=row.hr_uuid,
-        geometry=row.corrected_centroid,
-        has_geometries=row.has_geometry,
-        part_of_point_of_interest=True,
-    )
-    for _, row in tqdm(df.iterrows(), total=len(df), desc="Observations")
-]
+obs_list = Observation.observations_from_df(
+    df,
+    id_col="obs_uuid",
+    hr_col="hr_uuid",
+    geometry_col="corrected_centroid",
+    has_geometries_col="has_geometry",
+)
 
 
 # 5. HistoricalRecord RDEs
@@ -215,17 +185,14 @@ hr_metadata_cols = [
 ]
 
 df["owner_name"] = df["owner_name"].fillna("Unknown owner")
-hrs = [
-    HistoricalRecord(
-        id=row.hr_uuid,
-        dataset=DS_UUID,
-        time_range=RDETimeRange(row.start_time, row.end_time),
-        paradata="m",
-        has_observations=[row.obs_uuid],
-        metadata=_clean_metadata(row[hr_metadata_cols].to_dict()),
-    )
-    for _, row in tqdm(df.iterrows(), total=len(df), desc="Historical records")
-]
+hrs = HistoricalRecord.historical_records_from_df(
+    df,
+    id_col="hr_uuid",
+    obs_col="obs_uuid",
+    dataset_id=DS_UUID,
+    time_range=lambda row: RDETimeRange(row.start_time, row.end_time),
+    metadata_cols=hr_metadata_cols,
+)
 
 
 # 6. Dataset RDE

@@ -16,6 +16,16 @@ from utils.data_modeling import *
 parser = argparse.ArgumentParser(description='Merge observations and create POIs from dataset folders.')
 parser.add_argument('--filter', type=str, default=None, 
                     help='Filter for dataset folder names (substring match). If not provided, all datasets are processed.')
+parser.add_argument('--output-dir', type=str, default='',
+                    help='Directory for points_of_interest.json. Defaults to the shared rde/pois directory.')
+parser.add_argument('--skip-height-enrichment', action='store_true',
+                    help='Do not send coordinates to MapTiler; store neutral 0.0 terrain/building heights instead.')
+parser.add_argument('--only-boolean-candidates', action='store_true',
+                    help=(
+                        'Aggregate only observations whose part_of_point_of_interest is the '
+                        'raw boolean true. This makes dataset-local post-production idempotent '
+                        'and leaves already-resolved UUID references untouched.'
+                    ))
 args = parser.parse_args()
 
 all_datasets = [f for f in os.listdir('../datasets') if os.path.isdir(os.path.join('../datasets', f))]
@@ -42,7 +52,15 @@ for fp in all_obs_files:
 def filter_obs_that_needs_poi(obs_data: list) -> list:
     filtered_obs = []
     for obs in obs_data:
-        if obs['part_of_point_of_interest'] or obs['part_of_point_of_interest'] == None:
+        poi_reference = obs['part_of_point_of_interest']
+        if args.only_boolean_candidates:
+            needs_poi = poi_reference is True
+        else:
+            # Legacy behavior supports older raw files that used null as the
+            # unresolved marker. Boolean-only mode is safer for producers that
+            # use false/null to designate spatial-only observations.
+            needs_poi = bool(poi_reference) or poi_reference is None
+        if needs_poi:
             filtered_obs.append(obs)
     return filtered_obs
 
@@ -50,6 +68,26 @@ obs_data_pre_filtering = obs_data.copy()
 obs_data = filter_obs_that_needs_poi(obs_data)
 original_count = len(obs_data)
 print(f"Loaded {original_count} Obs needing poi from {len(all_obs_files)} datasets.")
+if original_count == 0:
+    normalised = 0
+    if args.only_boolean_candidates:
+        for obs_fp in all_obs_files:
+            with open(obs_fp, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            changed = False
+            for obs in data['rde_objects']:
+                if obs['part_of_point_of_interest'] is False:
+                    obs['part_of_point_of_interest'] = None
+                    changed = True
+                    normalised += 1
+            if changed:
+                with open(obs_fp, 'w', encoding='utf-8') as f:
+                    json.dump(data, f, indent=2)
+    print(
+        'No unresolved observations found; '
+        f'normalised {normalised} spatial-only references and left existing PoIs unchanged.'
+    )
+    sys.exit(0)
 
 for obs in obs_data:
     if 'geometry' not in obs or not obs['geometry']:
@@ -74,13 +112,36 @@ df_obs_grouped['obs_uuids'] = df_obs_grouped.apply(lambda v: [obs['id'] for obs 
 new_count = len(df_obs_grouped)
 
 gdf = gpd.GeoDataFrame(df_obs_grouped, geometry=gpd.points_from_xy(df_obs_grouped.lon, df_obs_grouped.lat), crs='EPSG:4326')
-gdf_height = processing_points(gdf).to_crs('EPSG:4326')
-gdf_poi = gpd.GeoDataFrame([produce_poi_obj(row.new_poi_uuid, row.geometry, row.terrain_height, row.building_height) for _, row in gdf_height.iterrows()])
-# gdf_poi = gdf_poi.set_geometry('coordinate').set_crs('EPSG:4326')
+if args.skip_height_enrichment:
+    gdf_height = gdf.copy()
+    gdf_height['terrain_height'] = 0.0
+    gdf_height['building_height'] = 0.0
+    print('Height enrichment skipped; using neutral 0.0 terrain/building heights.')
+else:
+    gdf_height = processing_points(gdf).to_crs('EPSG:4326')
 
-QA_check_uuid_are_unique(gdf_poi.reset_index())
-save_data_file_if_different('', 'points_of_interest', gdf_poi, f'all_pois', RDEType.POI.value)
-print(f"Produced {len(gdf_poi)} PoIs from {original_count} Obs (aggregation rate of {(original_count - new_count) / original_count * 100:.2f}%) by aggregating Obs based on rounded coordinates.")
+poi_data = [
+    produce_poi_obj(
+        row.new_poi_uuid,
+        row.geometry,
+        float(row.terrain_height),
+        float(row.building_height),
+    )
+    for _, row in gdf_height.iterrows()
+]
+
+QA_check_uuid_are_unique(pd.DataFrame(poi_data))
+if args.output_dir:
+    os.makedirs(args.output_dir, exist_ok=True)
+save_data_file_if_different(
+    args.output_dir,
+    'points_of_interest',
+    poi_data,
+    'all_pois',
+    RDEType.POI.value,
+    related_dataset_slugs=all_datasets if args.output_dir else None,
+)
+print(f"Produced {len(poi_data)} PoIs from {original_count} Obs (aggregation rate of {(original_count - new_count) / original_count * 100:.2f}%) by aggregating Obs based on rounded coordinates.")
 
 obs_uuid_to_poi_uuid = {}
 for _, row in df_obs_grouped.iterrows():
@@ -93,7 +154,7 @@ def update_obs_file(obs_fp:str, obs_uuid_to_poi_uuid: dict[str, str]) -> None:
         for obs in data['rde_objects']:
             if obs['id'] in obs_uuid_to_poi_uuid:
                 obs['part_of_point_of_interest'] = obs_uuid_to_poi_uuid[obs['id']]
-            else:
+            elif not args.only_boolean_candidates or obs['part_of_point_of_interest'] is False:
                 obs['part_of_point_of_interest'] = None  # meaning this is an obs without a PoI
     with open(obs_fp, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)

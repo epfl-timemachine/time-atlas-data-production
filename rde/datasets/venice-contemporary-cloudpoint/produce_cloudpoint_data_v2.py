@@ -42,7 +42,7 @@ from timeatlas.RDEModel import (
     UUIDManager,
 )
 from timeatlas.TimeAtlas import RDECollection
-from timeatlas.helpers import _clean_metadata, _datetime_from_int, _seed
+from timeatlas.production import datetime_from_int, normalize_to_epsg4326, csv_seed
 
 
 IIIF_BASE_URL = "https://image-timemachine.epfl.ch/iiif/3"
@@ -55,8 +55,8 @@ uuid_mgr = UUIDManager(DATA_CONFIG["UUID_NAMESPACE"])
 DS_SLUG = DATA_CONFIG["DATASET_CONFIGURATION"]["slug"]
 DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
 
-TR_START = _datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"])
-TR_END = _datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True)
+TR_START = datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"])
+TR_END = datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True)
 TIME_RANGE = RDETimeRange(TR_START, TR_END)
 
 MAP_FOLDER = "../../maps/venice-2024-contemporary/"
@@ -75,7 +75,7 @@ def extract_uid_beginning(value: str) -> str | None:
 # 1. Load and prepare source data
 df = (
     gpd.read_file("src/2025-08-06_edifici_forwebinterface.geojson")
-    .to_crs("EPSG:4326")
+    .pipe(normalize_to_epsg4326)
     .explode()
     .drop_duplicates()
 )
@@ -90,22 +90,20 @@ with open("../venice-cini-photographs/edifici_id_to_geom_uuid.json", encoding="u
 df["geometry_uuid"] = df["EDIFI_ID"].map(edifici_id_to_geom_uuid)
 df["has_geometry"] = df["geometry_uuid"].apply(lambda value: [value])
 df["aulic_name"] = df["aulic_name"].fillna("Unknown edifice name")
+df["centroid"] = df["geometry"].apply(lambda geometry: geometry.centroid)
 
-df["hr_uuid"] = df.apply(lambda row: uuid_mgr._generate_uuid(_seed(row, ["EDIFI_ID"])), axis=1)
-df["obs_uuid"] = df.apply(lambda row: uuid_mgr._generate_uuid(_seed(row, ["geometry"], "obs")), axis=1)
+df["hr_uuid"] = df.apply(lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["EDIFI_ID"])), axis=1)
+df["obs_uuid"] = df.apply(lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["geometry"], "obs")), axis=1)
 
 
 # 2. Observations
-observations = [
-    Observation(
-        id=row.obs_uuid,
-        historical_record=row.hr_uuid,
-        geometry=row.geometry.centroid,
-        has_geometries=row.has_geometry,
-        part_of_point_of_interest=True,
-    )
-    for _, row in tqdm(df.iterrows(), total=len(df), desc="Observations")
-]
+observations = Observation.observations_from_df(
+    df,
+    id_col="obs_uuid",
+    hr_col="hr_uuid",
+    geometry_col="centroid",
+    has_geometries_col="has_geometry",
+)
 
 
 # 3. Historical Records
@@ -126,17 +124,14 @@ cols_of_non_interest = [
 
 df["type"] = "3d-structure"
 metadata_columns = [column for column in df.columns if column not in cols_of_non_interest]
-historical_records = [
-    HistoricalRecord(
-        id=row.hr_uuid,
-        dataset=DS_UUID,
-        time_range=TIME_RANGE,
-        paradata="m",
-        has_observations=[row.obs_uuid],
-        metadata=_clean_metadata({column: row[column] for column in metadata_columns}),
-    )
-    for _, row in tqdm(df.iterrows(), total=len(df), desc="Historical records")
-]
+historical_records = HistoricalRecord.historical_records_from_df(
+    df,
+    id_col="hr_uuid",
+    obs_col="obs_uuid",
+    dataset_id=DS_UUID,
+    time_range=TIME_RANGE,
+    metadata_cols=metadata_columns,
+)
 
 hr_records = [hr.to_dict() for hr in historical_records]
 df_of_hr = pd.DataFrame(data=hr_records)

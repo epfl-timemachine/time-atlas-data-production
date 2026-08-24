@@ -37,7 +37,7 @@ from timeatlas.RDEModel import (  # noqa: E402
 )
 from timeatlas.TAEnums import MetadataType  # noqa: E402
 from timeatlas.TimeAtlas import RDECollection  # noqa: E402
-from timeatlas.helpers import _clean_metadata, _datetime_from_int, _seed  # noqa: E402
+from timeatlas.production import datetime_from_int, csv_seed  # noqa: E402
 
 
 IIIF_BASE_URL = "https://image-timemachine.epfl.ch/iiif/3"
@@ -76,25 +76,21 @@ def main() -> None:
     gdf["night_stays"] = gdf["dates"].apply(lambda dates: len(dates.split("/")) - 1)
 
     gdf["obs_uuid"] = gdf.apply(
-        lambda row: uuid_mgr._generate_uuid(_seed(row, ["photo_name"], "obs")),
+        lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["photo_name"], "obs")),
         axis=1,
     )
     gdf["hr_uuid"] = gdf.apply(
-        lambda row: uuid_mgr._generate_uuid(_seed(row, ["photo_name"], "hr")),
+        lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["photo_name"], "hr")),
         axis=1,
     )
 
     # 2. Observations
-    observations = [
-        Observation(
-            id=row.obs_uuid,
-            historical_record=row.hr_uuid,
-            geometry=row.geometry,
-            has_geometries=None,
-            part_of_point_of_interest=True,
-        )
-        for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="Observations")
-    ]
+    observations = Observation.observations_from_df(
+        gdf,
+        id_col="obs_uuid",
+        hr_col="hr_uuid",
+        geometry_col="geometry",
+    )
 
     # 3. IIIF manifests and collection
     df_wh = pd.read_csv("src/images_width_height.csv")
@@ -106,7 +102,7 @@ def main() -> None:
 
     documents: dict[str, Document] = {}
     for _, row in tqdm(df.iterrows(), total=len(df), desc="IIIF manifests"):
-        manifest_uuid = uuid_mgr._generate_uuid(_seed(row, ["filename"], "hotel_photo_manifest"))
+        manifest_uuid = uuid_mgr._generate_uuid(csv_seed(row, ["filename"], "hotel_photo_manifest"))
         canvas_uuid = uuid_mgr._generate_uuid(f"{ds_uuid}_{manifest_uuid}_0")
         annotation_value = row["photo_comment_en"]
 
@@ -168,17 +164,14 @@ def main() -> None:
         for col in hr_df.columns
         if col not in {"hr_uuid", "obs_uuid", "start_time", "end_time"}
     ]
-    historical_records = [
-        HistoricalRecord(
-            id=row.hr_uuid,
-            dataset=ds_uuid,
-            time_range=RDETimeRange(row.start_time, row.end_time),
-            paradata="m",
-            has_observations=[row.obs_uuid[0]],
-            metadata=_clean_metadata({col: row[col] for col in metadata_cols}),
-        )
-        for _, row in tqdm(hr_df.iterrows(), total=len(hr_df), desc="Historical records")
-    ]
+    historical_records = HistoricalRecord.historical_records_from_df(
+        hr_df,
+        id_col="hr_uuid",
+        obs_col="obs_uuid",
+        dataset_id=ds_uuid,
+        time_range=lambda row: RDETimeRange(row.start_time, row.end_time),
+        metadata_cols=metadata_cols,
+    )
 
     # 5. Dataset
     labels_order = list(data_config["DATASET_CONFIGURATION"]["labels"].keys())
@@ -199,7 +192,8 @@ def main() -> None:
     # 6. Save
     full_collection = RDECollection(historical_records + observations + [dataset])
     if any(obs.has_geometries is None for obs in observations):
-        print("Skipped validation: legacy output contains observations with null has_geometries.")
+        full_collection.validate_data(mode="raw")
+        print("Validation passed in raw mode: legacy output contains observations with null has_geometries.")
     else:
         full_collection.validate_data()
         print("Validation passed.")

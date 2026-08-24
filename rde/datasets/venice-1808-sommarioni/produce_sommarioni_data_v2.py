@@ -15,8 +15,6 @@ import numpy as np
 import pandas as pd
 import geopandas as gpd
 from pathlib import Path
-from shapely.geometry import MultiPolygon
-from tqdm import tqdm
 
 # ── Library path bootstrap ─────────────────────────────────────────────────────
 parent_dir = os.path.abspath('../../../')
@@ -30,7 +28,7 @@ from timeatlas.RDEModel import (
     UUIDManager, RDETimeRange,
     HistoricalRecord, Observation, Geometry, Dataset, MultiLingualValue,
 )
-from timeatlas.helpers import _datetime_from_int, _get_layer_uuid, _get_filepath_like, _seed
+from timeatlas.production import datetime_from_int, find_layer_uuid, find_latest_file, csv_seed
 from timeatlas.TimeAtlas import RDECollection
 from timeatlas.DocumentModel import Page, Annotation, Document, Collection
 
@@ -44,25 +42,15 @@ uuid_mgr = UUIDManager(DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG  = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID  = uuid_mgr._generate_uuid(DS_SLUG)
 TR       = RDETimeRange(
-    _datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM']),
-    _datetime_from_int(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True),
+    datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM']),
+    datetime_from_int(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True),
 )
 
 DATA_SRC_PATH = Path(os.path.join(parent_dir, 'data-venice/1808_Sommarioni/'))
 MAP_FOLDER    = '../../maps/venice-1808-sommarioni/'
-cadaster_layer_uuid = _get_layer_uuid(
-    _get_filepath_like(MAP_FOLDER + 'layers', 'json'), 'cadaster'
+cadaster_layer_uuid = find_layer_uuid(
+    find_latest_file(MAP_FOLDER + 'layers', 'json'), 'cadaster'
 )
-
-# ── Helpers ────────────────────────────────────────────────────────────────────
-def _constrain_centroid(point, geom):
-    """Keep centroid inside a (possibly multi-)polygon, matching legacy behaviour."""
-    if isinstance(geom, MultiPolygon):
-        if any(p.contains(point) for p in geom.geoms):
-            return point
-        return min(geom.geoms, key=lambda p: p.distance(point)).centroid
-    return point if geom.contains(point) else geom.centroid
-
 
 def _iiif_display(md: dict) -> str:
     chk  = lambda x: x if isinstance(x, str) and x.lower() != 'nan' and x else ''
@@ -101,13 +89,13 @@ for vol, sdf in df_imgs.groupby('volume'):
 page_by_id = {p.id: p for doc in documents.values() for p in doc.items}
 
 # ── 2. Geometries ──────────────────────────────────────────────────────────────
-geom_fp = _get_filepath_like(
+geom_fp = find_latest_file(
     str(DATA_SRC_PATH / 'venice_1808_landregister_geometries_internal_version'), 'geojson'
 )
 gdf = gpd.read_file(geom_fp)
 gdf['geometry_id'] = gdf['geometry_id'].fillna(0).astype(int)
 
-txt_fp = _get_filepath_like(
+txt_fp = find_latest_file(
     str(DATA_SRC_PATH / 'venice_1808_landregister_textual_entries_internal_version'), 'json'
 )
 dfs = pd.read_json(txt_fp)
@@ -117,22 +105,18 @@ centre   = (
     gdf_star.dissolve(by='geometry_id')
             .reset_index()[['geometry_id', 'geometry', 'parish_standardised']]
 )
-centre['coordinate'] = centre.apply(
-    lambda x: _constrain_centroid(x['geometry'].centroid, x['geometry']), axis=1
-)
+centre['coordinate'] = centre['geometry'].apply(Geometry.representative_point_inside)
 centre = centre.set_index('geometry_id')
 
 gdf.rename(columns={'id': 'geom_id'}, inplace=True)
 
-geometries = [
-    Geometry(
-        id=uuid_mgr._generate_uuid(_seed(row, ['geom_id'])),
-        geometry=row.geometry,
-        part_of_layer=cadaster_layer_uuid,
-        force_valid=True,  # some geometries are invalid; legacy script did not fix them but we need valid ones for the centroid constraint to work properly
-    )
-    for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc='Geometries')
-]
+geometries = Geometry.geometries_from_gdf(
+    gdf,
+    ['geom_id'],
+    cadaster_layer_uuid,
+    uuid_manager=uuid_mgr,
+    force_valid=True,
+)
 
 geom_uuids_by_geom_id = (
     gdf.assign(uuid=[g.id for g in geometries])
@@ -163,30 +147,33 @@ dfs.at[dfs[dfs.unique_id == 23647].index[0], 'parish_standardised'] = None
 
 hr_metadata_cols = [c for c in dfs.columns if c not in EXCLUDE]
 
-hrs, obs_list = [], []
-hr_uuid_by_unique_id: dict[int, str] = {}
-for _, row in tqdm(dfs.iterrows(), total=len(dfs), desc='HRs & Obs'):
-    hr_uuid  = uuid_mgr._generate_uuid(_seed(row, ['unique_id']))
+dfs['hr_uuid'] = [uuid_mgr._generate_uuid(csv_seed(row, ['unique_id'])) for _, row in dfs.iterrows()]
+
+
+def _observation_uuid_from_row(row: pd.Series) -> str:
     _buf = io.StringIO()
-    pd.Series([row['parcel_id'], row['place'], hr_uuid]).to_csv(_buf, index=False, header=False)
-    obs_uuid = uuid_mgr._generate_uuid(_buf.getvalue())
-    hr_uuid_by_unique_id[row['unique_id']] = hr_uuid
-    has_geom = row['has_geometries'] if isinstance(row['has_geometries'], list) else []
-    hrs.append(HistoricalRecord(
-        id=hr_uuid,
-        dataset=DS_UUID,
-        time_range=TR,
-        paradata='m',
-        has_observations=[obs_uuid],
-        metadata=dict(row[hr_metadata_cols]),
-    ))
-    obs_list.append(Observation(
-        id=obs_uuid,
-        historical_record=hr_uuid,
-        geometry=row['coordinate'],
-        has_geometries=has_geom,
-        part_of_point_of_interest=True,
-    ))
+    pd.Series([row['parcel_id'], row['place'], row['hr_uuid']]).to_csv(_buf, index=False, header=False)
+    return uuid_mgr._generate_uuid(_buf.getvalue())
+
+
+dfs['obs_uuid'] = dfs.apply(_observation_uuid_from_row, axis=1)
+hr_uuid_by_unique_id: dict[int, str] = dfs.set_index('unique_id')['hr_uuid'].to_dict()
+
+hrs = HistoricalRecord.historical_records_from_df(
+    dfs,
+    id_col='hr_uuid',
+    obs_col='obs_uuid',
+    dataset_id=DS_UUID,
+    time_range=TR,
+    metadata_cols=hr_metadata_cols,
+)
+obs_list = Observation.observations_from_df(
+    dfs,
+    id_col='obs_uuid',
+    hr_col='hr_uuid',
+    geometry_col='coordinate',
+    has_geometries_col='has_geometries',
+)
 
 # ── 4. IIIF – attach Annotation objects to pages ──────────────────────────────
 hr_with_page = (

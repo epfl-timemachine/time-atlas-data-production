@@ -30,24 +30,19 @@ if timeatlas_dir not in sys.path:
 
 from timeatlas.RDEModel import (  # noqa: E402
     Dataset,
-    DatasetConfiguration,
-    FreeFormMetadata,
     Geometry,
     HistoricalRecord,
-    MetadataFieldConfig,
-    MultiLingualValue,
     Observation,
     RDETimeRange,
     UUIDManager,
 )
 from timeatlas.TimeAtlas import RDECollection  # noqa: E402
-from timeatlas.TAEnums import METADATA_TYPE_TO_ENUM, ParadataValues  # noqa: E402
-from timeatlas.helpers import (  # noqa: E402
-    _clean_metadata,
-    _datetime_from_int,
-    _get_filepath_like,
-    _get_layer_uuid,
-    _seed,
+from timeatlas.production import (  # noqa: E402
+    clean_metadata,
+    datetime_from_int,
+    find_latest_file,
+    find_layer_uuid,
+    csv_seed,
 )
 
 gpd.options.io_engine = "pyogrio"
@@ -92,135 +87,6 @@ def assert_unique(values: list[str], label: str) -> None:
     duplicates = pd.Series(values)[pd.Series(values).duplicated()].unique().tolist()
     if duplicates:
         raise ValueError(f"Duplicate {label} UUIDs: {duplicates[:10]}")
-
-
-def python_type_to_legacy_conf_type(value_type: type) -> str:
-    if value_type is int or str(value_type).startswith("int"):
-        return "INTEGER"
-    if value_type is str or str(value_type) == "str":
-        return "STRING"
-    if value_type is float or str(value_type).startswith("float"):
-        return "FLOAT"
-    if value_type is list or value_type is np.ndarray:
-        return "LIST"
-    return str(value_type)
-
-
-def get_legacy_likely_type_of_series(series: pd.Series):
-    dtype = str(series.dtype)
-    if dtype == "object":
-        for value in series.values:
-            if value:
-                return type(value)
-        return None
-    return dtype
-
-
-def is_legacy_empty_or_null(value) -> bool:
-    if isinstance(value, (np.ndarray, pd.Series)):
-        return value.size == 0 or np.any(pd.isna(value))
-    if isinstance(value, list):
-        return len(value) == 0 or any(pd.isna(value))
-    if isinstance(value, str):
-        return value.strip() == ""
-    return np.any(pd.isna(value))
-
-
-def quick_display_label(label: str) -> str:
-    values = label.replace("_", " ").replace("-", "").split(" ")
-    return " ".join(value[0].upper() + value[1:] for value in values)
-
-
-def assert_no_overlap(left: list[str], right: list[str], left_name: str, right_name: str) -> None:
-    overlap = set(left).intersection(set(right))
-    if overlap:
-        raise ValueError(f"The following fields are both in {left_name} and {right_name}: {overlap}")
-
-
-def build_legacy_dataset_configuration(
-    df: pd.DataFrame,
-    config: dict,
-) -> tuple[DatasetConfiguration, list[FreeFormMetadata]]:
-    dataset_metadata_config = config["dataset_metadata_config"]
-    indexable_array = config["indexed"]
-    short_display = config["short_display"]
-    hidden = config["hidden"]
-    automatic_fields = config["automatic_fields"]
-    semi_automatic_fields = config["semi_automatic_fields"]
-    manual_fields = config["manual_fields"]
-    ai_fields = config["ai_fields"]
-    tagged_fields = config["tagged_fields"]
-    labels = config["labels"]
-    display_thumbnail = config["display_thumbnail"] if "display_thumbnail" in config else False
-    external_source = config["external_source"] if "external_source" in config else False
-
-    assert_no_overlap(automatic_fields, semi_automatic_fields, "automatic_fields", "semi_automatic_fields")
-    assert_no_overlap(automatic_fields, manual_fields, "automatic_fields", "manual_fields")
-    assert_no_overlap(automatic_fields, ai_fields, "automatic_fields", "ai_fields")
-    assert_no_overlap(semi_automatic_fields, manual_fields, "semi_automatic_fields", "manual_fields")
-    assert_no_overlap(semi_automatic_fields, ai_fields, "semi_automatic_fields", "ai_fields")
-    assert_no_overlap(manual_fields, ai_fields, "manual_fields", "ai_fields")
-    assert_no_overlap(hidden, short_display, "hidden", "short_display")
-
-    dataset_metadata = [
-        FreeFormMetadata(
-            type=METADATA_TYPE_TO_ENUM[value["type"]],
-            label=MultiLingualValue(values=value["display_label"]),
-            value=MultiLingualValue(values=value["value"]),
-        )
-        for value in dataset_metadata_config.values()
-    ]
-
-    field_configs = []
-    for col in df.columns:
-        if "uid" in col:
-            continue
-        values = df[col]
-        legacy_type = get_legacy_likely_type_of_series(values)
-        conf_type = python_type_to_legacy_conf_type(legacy_type)
-        curr_conf = MetadataFieldConfig(
-            id=col,
-            type=METADATA_TYPE_TO_ENUM[conf_type]
-            if legacy_type in METADATA_TYPE_TO_ENUM
-            else METADATA_TYPE_TO_ENUM["STRING"],
-            display_label=MultiLingualValue(values=labels[col])
-            if col in labels
-            else quick_display_label(col),
-            nullable=bool(is_legacy_empty_or_null(values)),
-        )
-        if col in indexable_array:
-            curr_conf.indexable = True
-        if col in hidden:
-            curr_conf.hidden = True
-        if col in short_display:
-            curr_conf.short_display = True
-        if col in tagged_fields:
-            curr_conf.tag = tagged_fields[col]
-        if col in automatic_fields:
-            curr_conf.paradata = ParadataValues.AUTOMATIC.value
-        elif col in semi_automatic_fields:
-            curr_conf.paradata = ParadataValues.SEMIAUTOMATIC.value
-        elif col in manual_fields:
-            curr_conf.paradata = ParadataValues.MANUAL.value
-        elif col in ai_fields:
-            curr_conf.paradata = ParadataValues.AI.value
-        field_configs.append(curr_conf)
-
-    return (
-        DatasetConfiguration(
-            metadata_field_config=field_configs,
-            main_label=config["main_label"],
-            sub_label=config["sub_label"],
-            display_thumbnail=display_thumbnail,
-            external_source=external_source,
-        ),
-        dataset_metadata,
-    )
-
-
-def get_single_object_uuid(obj_fp: str) -> str:
-    with open(obj_fp, encoding="utf-8") as f:
-        return json.load(f)["rde_objects"][0]["id"]
 
 
 def validate_unresolved_poi_collection(
@@ -269,13 +135,13 @@ uuid_mgr = UUIDManager(DATA_CONFIG["UUID_NAMESPACE"])
 DS_SLUG = DATA_CONFIG["DATASET_CONFIGURATION"]["slug"]
 DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
 TR = RDETimeRange(
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
 )
 
 collection_manifest_uid = uuid_mgr._generate_uuid(f"collection_{DS_SLUG}")
 MAP_FOLDER = "../../maps/venice-1740-parish/"
-parish_layer_uuid = _get_layer_uuid(_get_filepath_like(MAP_FOLDER + "layers", "json"), "parish")
+parish_layer_uuid = find_layer_uuid(find_latest_file(MAP_FOLDER + "layers", "json"), "parish")
 
 # Geometry RDE production.
 gdf = gpd.read_file(os.path.join(VENICE_DATA_SRC, "1740_redrawn_parishes_cleaned_wikidata_standardised.geojson"))
@@ -292,16 +158,18 @@ sestiere_to_acronym = {
 }
 gdf["district_acronym"] = gdf["SESTIERE"].apply(lambda v: sestiere_to_acronym[v])
 
-geom_uuids = [uuid_mgr._generate_uuid(_seed(row, ["geometry"])) for _, row in gdf.iterrows()]
-geometries = [
-    Geometry(id=geom_uuid, geometry=row.geometry, part_of_layer=parish_layer_uuid)
-    for geom_uuid, (_, row) in tqdm(
-        zip(geom_uuids, gdf.iterrows()),
-        total=len(gdf),
-        desc="Geometries",
-    )
-]
-geom_id_to_geom_uuid = gdf.assign(uuid=geom_uuids).groupby("id")["uuid"].apply(list).to_dict()
+geometries = Geometry.geometries_from_gdf(
+    gdf,
+    ["geometry"],
+    parish_layer_uuid,
+    uuid_manager=uuid_mgr,
+)
+geom_id_to_geom_uuid = (
+    gdf.assign(uuid=[geometry.id for geometry in geometries])
+    .groupby("id")["uuid"]
+    .apply(list)
+    .to_dict()
+)
 
 # Contract and people mention flattening.
 print("loading garzoni data into a dataframe, this may take a while.")
@@ -402,7 +270,7 @@ df_flat["img_path"] = df_flat["Contract ID"].apply(
 
 grz_to_loc = pd.read_csv(os.path.join(GARZONI_DATA_SRC, "grz_parish_to_geometry_id_and_church_coordinates.csv"))
 grz_to_loc["poi_uuid"] = [
-    uuid_mgr._generate_uuid(_seed(row, ["church_coordinate"]))
+    uuid_mgr._generate_uuid(csv_seed(row, ["church_coordinate"]))
     for _, row in grz_to_loc.iterrows()
 ]
 grz_to_loc["church_coordinate"] = grz_to_loc["church_coordinate"].apply(parse_coordinates)
@@ -427,7 +295,7 @@ for loc_col in parish_loc_cols:
     parish_id_col = loc_col + parish_id_suffix
     df_flat[parish_id_col] = df_flat.apply(
         lambda row: (
-            uuid_mgr._generate_uuid(_seed(row, ["Contract ID"], loc_col)),
+            uuid_mgr._generate_uuid(csv_seed(row, ["Contract ID"], loc_col)),
             row[parish_id_col],
         )
         if row[parish_id_col]
@@ -436,7 +304,7 @@ for loc_col in parish_loc_cols:
     )
 
 df_flat["hr_uuid"] = [
-    uuid_mgr._generate_uuid(_seed(row, ["Contract ID"]))
+    uuid_mgr._generate_uuid(csv_seed(row, ["Contract ID"]))
     for _, row in tqdm(df_flat.iterrows(), total=len(df_flat), desc="HR UUIDs")
 ]
 
@@ -493,7 +361,7 @@ for _, row in tqdm(df_flat.iterrows(), total=len(df_flat), desc="Historical reco
             time_range=RDETimeRange(row.start_time, row.end_time),
             paradata="m",
             has_observations=obs_refs,
-            metadata=_clean_metadata(row[hr_metadata_cols].to_dict()),
+            metadata=clean_metadata(row[hr_metadata_cols].to_dict()),
         )
     )
 
@@ -514,21 +382,11 @@ metadata_order = [
     "Contract ID",
 ]
 
-dataset_configuration, dataset_metadata = build_legacy_dataset_configuration(
+dataset = Dataset.constructor_from_dataconfiguration_file_and_dataframe(
+    "dataproduction_config.json",
     df_flat[metadata_order],
-    DATA_CONFIG["DATASET_CONFIGURATION"],
-)
-dataset = Dataset(
-    id=DS_UUID,
-    slug=DS_SLUG,
-    metadata=dataset_metadata,
-    version="1.0",
-    creation_time=dt.now().isoformat(),
-    name=MultiLingualValue(values=DATA_CONFIG["DATASET_CONFIGURATION"]["name"]),
     sources=[collection_manifest_uid],
-    time_range=TR,
-    configuration=dataset_configuration,
-    has_areas=[get_single_object_uuid(path) for path in DATA_CONFIG["AREA_LOCS"]],
+    ds_id=DS_UUID,
 )
 
 # Save.

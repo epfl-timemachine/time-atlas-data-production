@@ -11,6 +11,7 @@ the original producer.
 
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -39,7 +40,7 @@ from timeatlas.RDEModel import (
     UUIDManager,
 )
 from timeatlas.TimeAtlas import RDECollection
-from timeatlas.helpers import _clean_metadata, _datetime_from_int, _seed
+from timeatlas.production import datetime_from_int, csv_seed
 
 IIIF_BASE_URL = "https://image-timemachine.epfl.ch/iiif/3"
 
@@ -54,8 +55,21 @@ DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
 DATA_SRC_PATH = Path(parent_dir) / "data-lausanne" / "icono-data-processing"
 
 
+def museris_record_url_from_image_url(image_url):
+    """Build the Museris record URL using the image URL's authoritative ID."""
+    match = re.search(r"(?:[?&]|&amp;)id=(\d+)", str(image_url))
+    if match is None:
+        raise ValueError(f"Could not extract a Museris ID from image URL: {image_url}")
+    return f"https://museris.lausanne.ch/SGCM/Consultation.aspx?id={match.group(1)}"
+
+
 # 1. Load and prepare source data
 df_source = pd.read_json(next(DATA_SRC_PATH.glob("matched_records.json")))
+df_source["record_url"] = df_source["image_url"].apply(museris_record_url_from_image_url)
+image_ids = df_source["image_url"].str.extract(r"(?:[?&]|&amp;)id=(\d+)", expand=False)
+record_ids = df_source["record_url"].str.extract(r"[?&]id=(\d+)", expand=False)
+assert image_ids.notna().all(), "Every image URL must contain a Museris ID"
+assert image_ids.equals(record_ids), "Museris IDs in record_url and image_url do not match"
 df_source["geometry"] = df_source.apply(lambda row: Point(row["longitude"], row["latitude"]), axis=1)
 
 institutions_to_keep = {
@@ -72,25 +86,21 @@ df_wh = pd.read_csv(next(DATA_SRC_PATH.glob("wh_image_dimensions.csv")))
 df_wh = df_wh[df_wh["image_url"].isin(gdf["image_url"])].copy()
 df_wh["image_id"] = df_wh.image_url.apply(lambda url: f"image_{url.split('id=')[1]}.jpg")
 
-gdf["start_time"] = gdf["start_year"].apply(lambda year: _datetime_from_int(year * 10000 + 101))
+gdf["start_time"] = gdf["start_year"].apply(lambda year: datetime_from_int(year * 10000 + 101))
 gdf["end_time"] = gdf["end_year"].apply(
-    lambda year: _datetime_from_int(year * 10000 + 1231, match_to_end=True)
+    lambda year: datetime_from_int(year * 10000 + 1231, match_to_end=True)
 )
-gdf["hr_uuid"] = gdf.apply(lambda row: uuid_mgr._generate_uuid(_seed(row, ["id"], "hr")), axis=1)
-gdf["obs_uuid"] = gdf.apply(lambda row: uuid_mgr._generate_uuid(_seed(row, ["id"], "obs")), axis=1)
+gdf["hr_uuid"] = gdf.apply(lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["id"], "hr")), axis=1)
+gdf["obs_uuid"] = gdf.apply(lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["id"], "obs")), axis=1)
 
 
 # 2. Observations
-obs_list = [
-    Observation(
-        id=row.obs_uuid,
-        historical_record=row.hr_uuid,
-        geometry=row.geometry,
-        has_geometries=None,
-        part_of_point_of_interest=True,
-    )
-    for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="Observations")
-]
+obs_list = Observation.observations_from_df(
+    gdf,
+    id_col="obs_uuid",
+    hr_col="hr_uuid",
+    geometry_col="geometry",
+)
 
 
 # 3. Merge image dimensions and generate IIIF manifests
@@ -103,7 +113,7 @@ os.makedirs("iiif/collections", exist_ok=True)
 
 documents: dict[str, Document] = {}
 for _, row in tqdm(df.iterrows(), total=len(df), desc="IIIF manifests"):
-    manifest_uuid = uuid_mgr._generate_uuid(_seed(row, ["id"], "photograph_manifest"))
+    manifest_uuid = uuid_mgr._generate_uuid(csv_seed(row, ["id"], "photograph_manifest"))
     canvas_uuid = uuid_mgr._generate_uuid(f"{DS_UUID}_{manifest_uuid}_0")
     description = row["description"] if pd.notna(row["description"]) else "No description available."
 
@@ -161,17 +171,14 @@ drop_cols = [
 df_hr = df.drop(columns=drop_cols).replace({np.nan: None})
 metadata_cols = [col for col in df_hr.columns if col not in {"hr_uuid", "obs_uuid", "start_time", "end_time"}]
 
-hrs = [
-    HistoricalRecord(
-        id=row.hr_uuid,
-        dataset=DS_UUID,
-        time_range=RDETimeRange(row.start_time, row.end_time),
-        paradata="m",
-        has_observations=[row.obs_uuid],
-        metadata=_clean_metadata({col: row[col] for col in metadata_cols}),
-    )
-    for _, row in tqdm(df_hr.iterrows(), total=len(df_hr), desc="Historical records")
-]
+hrs = HistoricalRecord.historical_records_from_df(
+    df_hr,
+    id_col="hr_uuid",
+    obs_col="obs_uuid",
+    dataset_id=DS_UUID,
+    time_range=lambda row: RDETimeRange(row.start_time, row.end_time),
+    metadata_cols=metadata_cols,
+)
 
 
 # 5. Dataset

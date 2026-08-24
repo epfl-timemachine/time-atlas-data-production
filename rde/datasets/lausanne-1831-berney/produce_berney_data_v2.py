@@ -18,7 +18,6 @@ import numpy as np
 import pandas as pd
 from shapely.geometry import Point
 from shapely.ops import unary_union
-from shapely.validation import make_valid
 from tqdm import tqdm
 
 # Library path bootstrap
@@ -40,12 +39,12 @@ from timeatlas.RDEModel import (  # noqa: E402
     UUIDManager,
 )
 from timeatlas.TimeAtlas import RDECollection  # noqa: E402
-from timeatlas.helpers import (  # noqa: E402
-    _clean_metadata,
-    _datetime_from_int,
-    _get_filepath_like,
-    _get_layer_uuid,
-    _seed,
+from timeatlas.production import (  # noqa: E402
+    datetime_from_int,
+    find_latest_file,
+    find_layer_uuid,
+    normalize_to_epsg4326,
+    csv_seed,
 )
 from timeatlas.TAEnums import MetadataType  # noqa: E402
 
@@ -59,15 +58,15 @@ uuid_mgr = UUIDManager(DATA_CONFIG["UUID_NAMESPACE"])
 DS_SLUG = DATA_CONFIG["DATASET_CONFIGURATION"]["slug"]
 DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
 TR = RDETimeRange(
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
 )
 
 DATA_SRC_PATH = Path(os.path.join(parent_dir, "data-lausanne/1831-cadastre-berney"))
 DATA_FOLDER = ""
 MAP_FOLDER = "../../maps/lausanne-1831-berney/"
-cadaster_layer_uuid = _get_layer_uuid(
-    _get_filepath_like(MAP_FOLDER + "layers", "json"),
+cadaster_layer_uuid = find_layer_uuid(
+    find_latest_file(MAP_FOLDER + "layers", "json"),
     "cadaster",
 )
 
@@ -92,15 +91,18 @@ def format_filename_to_code(filename: str) -> str | int:
 
 # 1. Geometry RDEs and registry rows
 geometries_fp = DATA_SRC_PATH / "Berney_merge_legende_v7-7_formatted_for_timeatlas.geojson"
-gdf = gpd.read_file(geometries_fp, use_arrow=True).to_crs("EPSG:4326")
+gdf = normalize_to_epsg4326(gpd.read_file(geometries_fp, use_arrow=True))
 gdf["start_time"] = TR.start_time
 gdf["end_time"] = TR.end_time
 
-geom_uuids = [
-    uuid_mgr._generate_uuid(_seed(row, ["geometry"]))
-    for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="Geometry UUIDs")
-]
-gdf["uuid"] = geom_uuids
+geometries = Geometry.geometries_from_gdf(
+    gdf,
+    ["geometry"],
+    cadaster_layer_uuid,
+    uuid_manager=uuid_mgr,
+    force_valid=True,
+)
+gdf["uuid"] = [geometry.id for geometry in geometries]
 
 df = gdf[gdf["identifier"] != ""].copy()
 df = df.groupby("identifier").first().reset_index()
@@ -118,33 +120,13 @@ df["has_geometry"] = df["identifier"].map(id_to_geometries)
 df["center"] = df["identifier"].map(id_to_center)
 df = df.drop(columns=["uuid"])
 
-if not gdf.geometry.is_valid.all():
-    gdf["geometry"] = gdf["geometry"].apply(lambda geom: geom if geom.is_valid else make_valid(geom))
-    if not gdf.geometry.is_valid.all():
-        raise ValueError("Invalid geometries remain after make_valid().")
-
-geometries = [
-    Geometry(
-        id=geom_uuid,
-        geometry=row.geometry,
-        part_of_layer=cadaster_layer_uuid,
-        force_valid=True,
-    )
-    for geom_uuid, (_, row) in tqdm(
-        zip(geom_uuids, gdf.iterrows()),
-        total=len(gdf),
-        desc="Geometries",
-    )
-]
-
-
 # 2. HistoricalRecord and Observation UUIDs
 df["hr_uuid"] = [
-    uuid_mgr._generate_uuid(_seed(row, ["identifier"], "hr"))
+    uuid_mgr._generate_uuid(csv_seed(row, ["identifier"], "hr"))
     for _, row in tqdm(df.iterrows(), total=len(df), desc="HistoricalRecord UUIDs")
 ]
 df["obs_uuid"] = [
-    uuid_mgr._generate_uuid(_seed(row, ["center"], "obs"))
+    uuid_mgr._generate_uuid(csv_seed(row, ["center"], "obs"))
     for _, row in tqdm(df.iterrows(), total=len(df), desc="Observation UUIDs")
 ]
 
@@ -152,17 +134,13 @@ df["obs_uuid"] = [
 # 3. Observation RDEs
 obs_df = df[["obs_uuid", "hr_uuid", "center", "has_geometry"]].copy().reset_index().set_index("obs_uuid")
 
-obs_list = []
-for _, row in tqdm(obs_df.reset_index().iterrows(), total=len(obs_df), desc="Observations"):
-    obs_list.append(
-        Observation(
-            id=row.obs_uuid,
-            historical_record=row.hr_uuid,
-            geometry=row.center,
-            has_geometries=row.has_geometry,
-            part_of_point_of_interest=True,
-        )
-    )
+obs_list = Observation.observations_from_df(
+    obs_df.reset_index(),
+    id_col="obs_uuid",
+    hr_col="hr_uuid",
+    geometry_col="center",
+    has_geometries_col="has_geometry",
+)
 
 
 # 4. HistoricalRecord RDEs
@@ -185,18 +163,14 @@ exclude_cols = exclude_hr_labels.union(drop_cols)
 df = df.replace({np.nan: None})
 hr_metadata_cols = list(set(df.columns).difference(exclude_cols))
 
-hrs = []
-for _, row in tqdm(df.iterrows(), total=len(df), desc="Historical records"):
-    hrs.append(
-        HistoricalRecord(
-            id=row.hr_uuid,
-            dataset=DS_UUID,
-            time_range=TR,
-            paradata="m",
-            has_observations=[row.obs_uuid],
-            metadata=_clean_metadata({col: row[col] for col in hr_metadata_cols}),
-        )
-    )
+hrs = HistoricalRecord.historical_records_from_df(
+    df,
+    id_col="hr_uuid",
+    obs_col="obs_uuid",
+    dataset_id=DS_UUID,
+    time_range=TR,
+    metadata_cols=hr_metadata_cols,
+)
 
 
 # 5. IIIF documents

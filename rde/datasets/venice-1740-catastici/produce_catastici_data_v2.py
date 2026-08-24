@@ -30,7 +30,7 @@ if timeatlas_dir not in sys.path:
 from timeatlas.RDEModel import (
     UUIDManager, RDETimeRange, HistoricalRecord, Observation, Dataset, MultiLingualValue,
 )
-from timeatlas.helpers import _datetime_from_int, _clean_metadata, _seed
+from timeatlas.production import datetime_from_int, normalize_to_epsg4326, csv_seed
 from timeatlas.TimeAtlas import RDECollection
 from timeatlas.DocumentModel import (
     Page, Annotation, Document, Collection,
@@ -47,8 +47,8 @@ uuid_mgr = UUIDManager(DATA_CONFIG['UUID_NAMESPACE'])
 DS_SLUG  = DATA_CONFIG['DATASET_CONFIGURATION']['slug']
 DS_UUID  = uuid_mgr._generate_uuid(DS_SLUG)
 TR       = RDETimeRange(
-    _datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM']),
-    _datetime_from_int(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True),
+    datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM']),
+    datetime_from_int(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True),
 )
 
 CATASTICI_DATA_PATH = Path(os.path.join(parent_dir, 'data-venice/1740_Catastici/'))
@@ -74,7 +74,10 @@ for col in ('quantity_income', 'quality_income', 'id_napo', 'ten_name',
     df[col] = df[col].replace({'nan': None})
 
 # CRS conversion: obs geometry will come from gdf (EPSG:4326)
-gdf = gpd.GeoDataFrame(df, geometry='geometry').set_crs('EPSG:32633').to_crs('EPSG:4326')
+gdf = normalize_to_epsg4326(
+    gpd.GeoDataFrame(df, geometry='geometry'),
+    source_crs='EPSG:32633',
+)
 
 # Path fixes for jpeg-version IIIF (path_img) — applied to gdf only so that
 # HR metadata (from df) retains the original unfixed path_img values, matching v1.
@@ -364,31 +367,25 @@ df['bibliographic_reference'] = df['volume_number'].map(volume_number_to_cote)
 EXCLUDE = {'geometry', 'obs_uuid', 'hr_uuid', 'uidx', 'uid', 'volume_number'}
 hr_metadata_cols = [c for c in df.columns if c not in EXCLUDE]
 
-hrs: list[HistoricalRecord] = []
-obs_list: list[Observation]  = []
-hr_uuid_by_row_idx: dict[int, str] = {}   # df row index → hr_uuid (for IIIF annotations)
+df['hr_uuid'] = [uuid_mgr._generate_uuid(csv_seed(row, ['uidx'])) for _, row in df.iterrows()]
+df['obs_uuid'] = [uuid_mgr._generate_uuid(csv_seed(row, ['uidx', 'uid'])) for _, row in df.iterrows()]
+df['obs_geometry'] = [gdf.loc[row.name, 'geometry'] for _, row in df.iterrows()]
+hr_uuid_by_row_idx: dict[int, str] = df.set_index('uidx')['hr_uuid'].to_dict()
 
-for i, (_, row) in enumerate(tqdm(df.iterrows(), total=len(df), desc='HRs & Obs')):
-    hr_uuid  = uuid_mgr._generate_uuid(_seed(row, ['uidx']))
-    obs_uuid = uuid_mgr._generate_uuid(_seed(row, ['uidx', 'uid']))
-    hr_uuid_by_row_idx[row['uidx']] = hr_uuid
-
-    hrs.append(HistoricalRecord(
-        id=hr_uuid,
-        dataset=DS_UUID,
-        time_range=TR,
-        paradata='m',
-        has_observations=[obs_uuid],
-        metadata=_clean_metadata({col: row[col] for col in hr_metadata_cols}),
-    ))
-    obs_list.append(Observation(
-        id=obs_uuid,
-        historical_record=hr_uuid,
-        # Use geometry from gdf (EPSG:4326), replicating the v1 set_crs/to_crs dance
-        geometry=gdf.loc[row.name, 'geometry'],
-        has_geometries=None,
-        part_of_point_of_interest=True,
-    ))
+hrs = HistoricalRecord.historical_records_from_df(
+    df,
+    id_col='hr_uuid',
+    obs_col='obs_uuid',
+    dataset_id=DS_UUID,
+    time_range=TR,
+    metadata_cols=hr_metadata_cols,
+)
+obs_list = Observation.observations_from_df(
+    df,
+    id_col='obs_uuid',
+    hr_col='hr_uuid',
+    geometry_col='obs_geometry',
+)
 
 # ── 7. Attach IIIF annotations (HR ↔ canvas links) ────────────────────────────
 def catastici_metadata_to_display_string(metadata: dict) -> str:
@@ -463,7 +460,8 @@ dataset.version = '1.1'
 # ── 10. Validate and save ──────────────────────────────────────────────────────
 full_collection = RDECollection(hrs + obs_list + [dataset])
 if any(obs.has_geometries is None for obs in obs_list):
-    print('Skipped validation: legacy output contains observations with null has_geometries.')
+    full_collection.validate_data(mode='raw')
+    print('Validation passed in raw mode: legacy output contains observations with null has_geometries.')
 else:
     full_collection.validate_data()
     print('Validation passed.')

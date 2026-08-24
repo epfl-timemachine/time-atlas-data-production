@@ -110,15 +110,16 @@ if __name__ == '__main__':
                     print(f'Validating {fp}')
                     validate_file(fp, validator, raise_error=args.error_interrupt)
         
-        MAP_ROOT = '../rde/maps'
-        map_list = os.listdir(MAP_ROOT)
-        for m in map_list:
-            all_files_to_validate = [v for v in list(Path(join(MAP_ROOT, m)).rglob('*.json'))]
-            for fp in all_files_to_validate:
-                print(f'Validating {fp}')
-                validate_file(fp, validator)
+        if not args.dataset:
+            MAP_ROOT = '../rde/maps'
+            map_list = os.listdir(MAP_ROOT)
+            for m in map_list:
+                all_files_to_validate = [v for v in list(Path(join(MAP_ROOT, m)).rglob('*.json'))]
+                for fp in all_files_to_validate:
+                    print(f'Validating {fp}')
+                    validate_file(fp, validator)
 
-        if not args.m:
+        if not args.m and not args.dataset:
             AREA_ROOT = '../rde/areas/data'
             for a in list(Path(AREA_ROOT).rglob('*.json')):
                 print(f'Validating {a}')

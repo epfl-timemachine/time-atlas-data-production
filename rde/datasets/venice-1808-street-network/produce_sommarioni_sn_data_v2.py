@@ -34,11 +34,12 @@ from timeatlas.RDEModel import (
     Geometry,
     Dataset,
 )
-from timeatlas.helpers import (
-    _datetime_from_int,
-    _get_layer_uuid,
-    _get_filepath_like,
-    _clean_metadata,
+from timeatlas.production import (
+    datetime_from_int,
+    find_layer_uuid,
+    find_latest_file,
+    normalize_to_epsg4326,
+    clean_metadata,
 )
 from timeatlas.TimeAtlas import RDECollection
 
@@ -56,13 +57,13 @@ DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
 DATA_FOLDER = ''          # current directory (rde/datasets/venice-1808-street-network/)
 MAP_FOLDER  = '../../maps/venice-1808-sommarioni/'
 TR = RDETimeRange(
-    start_time=_datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM']),
-    end_time=_datetime_from_int(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True),
+    start_time=datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM']),
+    end_time=datetime_from_int(DATA_CONFIG['TIMERANGE_MAXIMUM'], match_to_end=True),
 )
 
 # ── Area and layer references ──────────────────────────────────────────────────
-sn_layer_uuid = _get_layer_uuid(
-    _get_filepath_like(MAP_FOLDER + 'layers', 'json'),
+sn_layer_uuid = find_layer_uuid(
+    find_latest_file(MAP_FOLDER + 'layers', 'json'),
     'street',
 )
 
@@ -78,7 +79,7 @@ gdf = gdf.drop(columns=['lenght', 'id']).reset_index()
 # Geometry UUIDs must be seeded from the ORIGINAL CRS (before reprojection),
 # matching the order of operations in the legacy script.
 orig_geoms = gdf.geometry.tolist()
-gdf = gdf.set_geometry('geometry').to_crs('EPSG:4326')
+gdf = normalize_to_epsg4326(gdf.set_geometry('geometry'))
 
 geometries, hrs, obs_list = [], [], []
 
@@ -105,7 +106,7 @@ for i, (_, row) in enumerate(tqdm(gdf.iterrows(), total=len(gdf), desc="Building
         time_range=TR,
         paradata='m',
         has_observations=[obs_uuid],
-        metadata=_clean_metadata(row[['NAME', 'length']].to_dict()),
+        metadata=clean_metadata(row[['NAME', 'length']].to_dict()),
     ))
 
 # ── Build Dataset entity ───────────────────────────────────────────────────────

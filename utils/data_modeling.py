@@ -418,13 +418,15 @@ def geodataframe_to_json(gdf: gpd.GeoDataFrame) -> dict:
 
 DATA = Union[gpd.GeoDataFrame, list]
 
-def saving_routine(d:list[dict], f:str, name:str, tpe: Union[str, list]) -> None:
+def saving_routine(d:list[dict], f:str, name:str, tpe: Union[str, list], related_dataset_slugs: list[str] = None) -> None:
     obj = {
         "name": name,
         "type_in_file": tpe if type(tpe) is list else [tpe],
         "creation_time": now_ts(),
-        "rde_objects": d
     }
+    if related_dataset_slugs is not None:
+        obj["related_dataset_slugs"] = related_dataset_slugs
+    obj["rde_objects"] = d
     with open(f, 'w+', encoding='utf-8') as f:
         f.write(json.dumps(obj, indent=1, ensure_ascii=False))
 
@@ -471,7 +473,8 @@ def save_data_file_if_different(fp:str,
                                 data:DATA,
                                 name: str,
                                 tpe: Union[str, list],
-                                is_dataset_obj:bool = False) -> None:
+                                is_dataset_obj:bool = False,
+                                related_dataset_slugs: list[str] = None) -> None:
     '''
     Saves the dataframe to the file path given as argument only if the file doesn't exist and
     the dataframe is different from the one in the file. If saved, the previous file is also deleted.
@@ -607,10 +610,10 @@ def save_data_file_if_different(fp:str,
                 chunk_num = i + 1
                 chunk_filename = f"{filename_base}_[{chunk_num}].json"
                 chunk_filepath = os.path.join(fp, chunk_filename)
-                saving_routine(chunk, chunk_filepath, name=name, tpe=tpe)
+                saving_routine(chunk, chunk_filepath, name=name, tpe=tpe, related_dataset_slugs=related_dataset_slugs)
         else:
             # Save as single file
-            saving_routine(t_data, filepath, name=name, tpe=tpe)
+            saving_routine(t_data, filepath, name=name, tpe=tpe, related_dataset_slugs=related_dataset_slugs)
 
 def get_likely_type_of_series(s:pd.Series) -> str:
     tpe = str(s.dtype)

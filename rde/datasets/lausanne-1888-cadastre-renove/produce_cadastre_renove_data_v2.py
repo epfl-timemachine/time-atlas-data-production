@@ -36,12 +36,11 @@ from timeatlas.RDEModel import (  # noqa: E402
     UUIDManager,
 )
 from timeatlas.TimeAtlas import RDECollection  # noqa: E402
-from timeatlas.helpers import (  # noqa: E402
-    _clean_metadata,
-    _datetime_from_int,
-    _get_filepath_like,
-    _get_layer_uuid,
-    _seed,
+from timeatlas.production import (  # noqa: E402
+    datetime_from_int,
+    find_latest_file,
+    find_layer_uuid,
+    csv_seed,
 )
 from timeatlas.TAEnums import MetadataType  # noqa: E402
 
@@ -53,21 +52,21 @@ uuid_mgr = UUIDManager(DATA_CONFIG["UUID_NAMESPACE"])
 DS_SLUG = DATA_CONFIG["DATASET_CONFIGURATION"]["slug"]
 DS_UUID = uuid_mgr._generate_uuid(DS_SLUG)
 TR = RDETimeRange(
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
-    _datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MINIMUM"]),
+    datetime_from_int(DATA_CONFIG["TIMERANGE_MAXIMUM"], match_to_end=True),
 )
 
 DATA_SRC_PATH = Path(os.path.join(parent_dir, "data-lausanne/1888-cadastre-renove"))
 DATA_FOLDER = ""
 MAP_FOLDER = "../../maps/lausanne-1888-cadastre-renove/"
-cadaster_layer_uuid = _get_layer_uuid(
-    _get_filepath_like(MAP_FOLDER + "layers", "json"),
+cadaster_layer_uuid = find_layer_uuid(
+    find_latest_file(MAP_FOLDER + "layers", "json"),
     "vector",
 )
 
 
 # 1. Geometry RDEs
-geometries_fp = _get_filepath_like(
+geometries_fp = find_latest_file(
     os.path.join(DATA_SRC_PATH, "lausanne-1888-cadastre-renove-geometries-"),
     "geojson",
 )
@@ -77,24 +76,13 @@ gdf = gpd.read_file(geometries_fp)
 # so this does not remove the row whose value is "2849".
 gdf = gdf[gdf.geom_id != 2849].copy()
 
-geom_uuids = [
-    uuid_mgr._generate_uuid(_seed(row, ["geom_id"]))
-    for _, row in tqdm(gdf.iterrows(), total=len(gdf), desc="Geometry UUIDs")
-]
-
-geometries = [
-    Geometry(
-        id=geom_uuid,
-        geometry=row.geometry,
-        part_of_layer=cadaster_layer_uuid,
-        force_valid=True,
-    )
-    for geom_uuid, (_, row) in tqdm(
-        zip(geom_uuids, gdf.iterrows()),
-        total=len(gdf),
-        desc="Geometries",
-    )
-]
+geometries = Geometry.geometries_from_gdf(
+    gdf,
+    ["geom_id"],
+    cadaster_layer_uuid,
+    uuid_manager=uuid_mgr,
+    force_valid=True,
+)
 geom_id_to_uuid = {
     str(row["geom_id"]): geometry.id
     for (_, row), geometry in zip(gdf.iterrows(), geometries)
@@ -102,7 +90,7 @@ geom_id_to_uuid = {
 
 
 # 2. Registry and point joins
-txt_fp = _get_filepath_like(
+txt_fp = find_latest_file(
     os.path.join(DATA_SRC_PATH, "lausanne-1888-cadastre-renove-registre-"),
     "csv",
 )
@@ -118,7 +106,7 @@ dfs.drop(
     inplace=True,
 )
 
-point_fp = _get_filepath_like(
+point_fp = find_latest_file(
     os.path.join(DATA_SRC_PATH, "lausanne-1888-cadastre-renove-points-"),
     "geojson",
 )
@@ -153,7 +141,7 @@ def obs_uuid_and_point_id_gen(row: pd.Series) -> list[tuple[str, int]]:
 
 
 merge_df["obs_uuid_point_id"] = merge_df.apply(obs_uuid_and_point_id_gen, axis=1)
-dfs["hr_uuid"] = dfs.apply(lambda row: uuid_mgr._generate_uuid(_seed(row, ["*"])), axis=1)
+dfs["hr_uuid"] = dfs.apply(lambda row: uuid_mgr._generate_uuid(csv_seed(row, ["*"])), axis=1)
 
 obs_uuid_to_point_id = dict(
     reduce(lambda acc, item: acc + item[0], merge_df[["obs_uuid_point_id"]].values, [])
@@ -205,26 +193,24 @@ exclude_hr_labels = {
     "has_geometry",
     "coordinate",
     "obs_uuid",
+    "obs_ids",
     "hr_uuid",
 }
 
 dfs["obs_uuid"] = dfs["obs_uuid"].apply(lambda obs_ids: [[obs_id, "parcel_id"] for obs_id in obs_ids])
+dfs["obs_ids"] = dfs["obs_uuid"].apply(lambda obs_refs: [obs_ref[0] for obs_ref in obs_refs])
 dfs["owner"] = dfs["owner"].fillna("Propriétaire inconnu")
 dfs["Noms locaux"] = dfs["Noms locaux"].fillna("Toponyme inconnu")
 hr_metadata_cols = [col for col in dfs.columns if col not in exclude_hr_labels]
 
-hrs = []
-for _, row in tqdm(dfs.iterrows(), total=len(dfs), desc="Historical records"):
-    hrs.append(
-        HistoricalRecord(
-            id=row.hr_uuid,
-            dataset=DS_UUID,
-            time_range=TR,
-            paradata="m",
-            has_observations=[obs_ref[0] for obs_ref in row.obs_uuid],
-            metadata=_clean_metadata({col: row[col] for col in hr_metadata_cols}),
-        )
-    )
+hrs = HistoricalRecord.historical_records_from_df(
+    dfs,
+    id_col="hr_uuid",
+    obs_col="obs_ids",
+    dataset_id=DS_UUID,
+    time_range=TR,
+    metadata_cols=hr_metadata_cols,
+)
 
 
 # 5. Dataset RDE
@@ -243,7 +229,8 @@ for field_config in dataset.configuration.metadata_field_config:
 # 6. Validate and save
 full_collection = RDECollection(hrs + obs_list + [dataset] + geometries)
 if any(obs.has_geometries is None for obs in obs_list):
-    print("Skipped validation: legacy output contains observations with null has_geometries.")
+    full_collection.validate_data(mode="raw")
+    print("Validation passed in raw mode: legacy output contains observations with null has_geometries.")
 else:
     full_collection.validate_data()
     print("Validation passed.")
