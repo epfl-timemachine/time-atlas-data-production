@@ -1,0 +1,169 @@
+{
+  "UUID_NAMESPACE": "https://timemachine.epfl.ch/venice/venice-1582-catastici",
+  "TIMERANGE_MINIMUM": 15820101,
+  "TIMERANGE_MAXIMUM": 15821231,
+  "AREA_LOCS": [
+    "../../areas/data/city-venice-area.json",
+    "../../areas/data/country-italy-area.json"
+  ],
+  "DATASET_CONFIGURATION": {
+    "slug": "venice-1582-catastici",
+    "name": {
+      "en": ["1582 – Redecima Catastici Index of Venice"],
+      "it": ["1582 – Indice dei Catastici della Redecima di Venezia"],
+      "fr": ["1582 – Index des Catastici de la Redecima de Venise"],
+      "de": ["1582 – Index der Redecima-Catastici von Venedig"]
+    },
+    "dataset_metadata_config": {
+      "description": {
+        "type": "STRING",
+        "display_label": {
+          "en": ["Description"],
+          "it": ["Descrizione"],
+          "fr": ["Description"],
+          "de": ["Beschreibung"]
+        },
+        "value": {
+          "en": ["Semantic transcription of the index to the 1582 redecima declarations preserved by the Archivio di Stato di Venezia (Dieci savi alle decime in Rialto, busta 445). Entries identify people, relationships, occupations, places, parishes, and archival references."],
+          "it": ["Trascrizione semantica dell'indice delle condizioni di redecima del 1582 conservato presso l'Archivio di Stato di Venezia (Dieci savi alle decime in Rialto, busta 445). Le voci identificano persone, relazioni, mestieri, luoghi, parrocchie e riferimenti archivistici."],
+          "fr": ["Transcription sémantique de l'index des déclarations de redecima de 1582 conservé aux Archives d'État de Venise (Dieci savi alle decime in Rialto, busta 445). Les entrées identifient personnes, relations, métiers, lieux, paroisses et références archivistiques."],
+          "de": ["Semantische Transkription des Index der Redecima-Erklärungen von 1582 im Staatsarchiv Venedig (Dieci savi alle decime in Rialto, busta 445). Die Einträge erschließen Personen, Beziehungen, Berufe, Orte, Pfarreien und Archivsignaturen."]
+        }
+      },
+      "paradata": {
+        "type": "STRING",
+        "display_label": {
+          "en": ["Paradata"],
+          "it": ["Paradata"],
+          "fr": ["Paradonnées"],
+          "de": ["Paradata"]
+        },
+        "value": {
+          "en": ["The 1994 typescript index was digitized page by page and semantically structured with a large language model. Deterministic validation, targeted adjudication, coverage checks, and parish reconciliation against the 1740 Venice parish layer were applied. Records and fields requiring human review remain explicitly flagged."],
+          "it": ["L'indice dattiloscritto del 1994 è stato digitalizzato pagina per pagina e strutturato semanticamente con un modello linguistico di grandi dimensioni. Sono stati applicati controlli deterministici, verifiche mirate, controlli di copertura e la riconciliazione delle parrocchie con il layer veneziano del 1740. Le voci e i campi da verificare restano esplicitamente segnalati."],
+          "fr": ["L'index dactylographié de 1994 a été numérisé page par page puis structuré sémantiquement par un grand modèle de langage. Des validations déterministes, des arbitrages ciblés, des contrôles de couverture et une réconciliation avec la couche des paroisses vénitiennes de 1740 ont été appliqués. Les données à revoir restent explicitement signalées."],
+          "de": ["Der maschinenschriftliche Index von 1994 wurde seitenweise digitalisiert und mit einem großen Sprachmodell semantisch strukturiert. Deterministische Validierung, gezielte Prüfung, Abdeckungsanalysen und der Abgleich mit der venezianischen Pfarreischicht von 1740 wurden durchgeführt. Prüfbedürftige Datensätze und Felder bleiben ausdrücklich markiert."]
+        }
+      },
+      "archival_reference": {
+        "type": "STRING",
+        "display_label": {
+          "en": ["Archival reference"],
+          "it": ["Riferimento archivistico"],
+          "fr": ["Référence archivistique"],
+          "de": ["Archivsignatur"]
+        },
+        "value": {
+          "en": ["Archivio di Stato di Venezia, Dieci savi alle decime in Rialto, busta 445"],
+          "it": ["Archivio di Stato di Venezia, Dieci savi alle decime in Rialto, busta 445"],
+          "fr": ["Archives d'État de Venise, Dieci savi alle decime in Rialto, busta 445"],
+          "de": ["Staatsarchiv Venedig, Dieci savi alle decime in Rialto, busta 445"]
+        }
+      },
+      "url": {
+        "type": "URL",
+        "display_label": {
+          "en": ["State Archive of Venice record"],
+          "it": ["Scheda dell'Archivio di Stato di Venezia"],
+          "fr": ["Notice des Archives d'État de Venise"],
+          "de": ["Eintrag im Staatsarchiv Venedig"]
+        },
+        "value": {
+          "en": ["https://asve.arianna4.cloud/patrimonio/1eb74ff7-c3fd-4856-8032-40fe1eb4b589/445-"],
+          "it": ["https://asve.arianna4.cloud/patrimonio/1eb74ff7-c3fd-4856-8032-40fe1eb4b589/445-"],
+          "fr": ["https://asve.arianna4.cloud/patrimonio/1eb74ff7-c3fd-4856-8032-40fe1eb4b589/445-"],
+          "de": ["https://asve.arianna4.cloud/patrimonio/1eb74ff7-c3fd-4856-8032-40fe1eb4b589/445-"]
+        }
+      }
+    },
+    "indexed": [
+      "DISPLAY_LABEL",
+      "INDEX_HEADING",
+      "RAW_ENTRY",
+      "PRIMARY_PEOPLE",
+      "RELATED_PEOPLE",
+      "OCCUPATIONS",
+      "PARISHES",
+      "PLACE_MENTIONS",
+      "ARCHIVAL_REFERENCES"
+    ],
+    "short_display": [
+      "RAW_ENTRY",
+      "PARISHES",
+      "OCCUPATIONS",
+      "ARCHIVAL_REFERENCES"
+    ],
+    "hidden": [
+      "ENTRY_ID",
+      "PDF_PAGE",
+      "SOURCE_LINE_START",
+      "SOURCE_LINE_END"
+    ],
+    "automatic_fields": [
+      "ENTRY_ID",
+      "PDF_PAGE",
+      "PRINTED_PAGE",
+      "CITATION",
+      "SOURCE_LINE_START",
+      "SOURCE_LINE_END"
+    ],
+    "manual_fields": [],
+    "semi_automatic_fields": [],
+    "ai_fields": [
+      "DISPLAY_LABEL",
+      "INDEX_HEADING",
+      "ENTRY_TYPE",
+      "RAW_ENTRY",
+      "EDITORIAL_QUALIFIERS",
+      "PRIMARY_PEOPLE",
+      "RELATED_PEOPLE",
+      "OCCUPATIONS",
+      "OTHER_ROLES",
+      "PARISHES",
+      "PLACE_MENTIONS",
+      "ARCHIVAL_REFERENCES",
+      "RELATIONSHIPS",
+      "CROSS_REFERENCES",
+      "EXTRACTION_CONFIDENCE",
+      "REVIEW_STATUS",
+      "REVIEW_NOTE"
+    ],
+    "main_label": "${DISPLAY_LABEL}",
+    "sub_label": "${PARISHES}",
+    "display_thumbnail": true,
+    "external_source": false,
+    "tagged_fields": {
+      "DISPLAY_LABEL": "PEOPLE",
+      "PRIMARY_PEOPLE": "PEOPLE",
+      "RELATED_PEOPLE": "PEOPLE",
+      "OCCUPATIONS": "PROFESSION",
+      "PARISHES": "PLACE",
+      "PLACE_MENTIONS": "PLACE"
+    },
+    "labels": {
+      "DISPLAY_LABEL": {"en": ["Entry label"], "it": ["Etichetta della voce"], "fr": ["Libellé de l'entrée"], "de": ["Eintragsbezeichnung"]},
+      "ENTRY_ID": {"en": ["Internal entry ID"], "it": ["ID interno della voce"], "fr": ["Identifiant interne"], "de": ["Interne Eintrags-ID"]},
+      "PDF_PAGE": {"en": ["PDF page"], "it": ["Pagina PDF"], "fr": ["Page PDF"], "de": ["PDF-Seite"]},
+      "PRINTED_PAGE": {"en": ["Printed page"], "it": ["Pagina stampata"], "fr": ["Page imprimée"], "de": ["Gedruckte Seite"]},
+      "CITATION": {"en": ["Bibliographical citation"], "it": ["Citazione bibliografica"], "fr": ["Citation bibliographique"], "de": ["Bibliografisches Zitat"]},
+      "SOURCE_LINE_START": {"en": ["Source line start"], "it": ["Prima riga della fonte"], "fr": ["Première ligne source"], "de": ["Erste Quellenzeile"]},
+      "SOURCE_LINE_END": {"en": ["Source line end"], "it": ["Ultima riga della fonte"], "fr": ["Dernière ligne source"], "de": ["Letzte Quellenzeile"]},
+      "INDEX_HEADING": {"en": ["Index heading"], "it": ["Esponente dell'indice"], "fr": ["Rubrique de l'index"], "de": ["Indexrubrik"]},
+      "ENTRY_TYPE": {"en": ["Entry type"], "it": ["Tipo di voce"], "fr": ["Type d'entrée"], "de": ["Eintragstyp"]},
+      "RAW_ENTRY": {"en": ["Transcribed entry"], "it": ["Voce trascritta"], "fr": ["Entrée transcrite"], "de": ["Transkribierter Eintrag"]},
+      "EDITORIAL_QUALIFIERS": {"en": ["Editorial qualifiers"], "it": ["Qualificazioni editoriali"], "fr": ["Qualificatifs éditoriaux"], "de": ["Redaktionelle Qualifikatoren"]},
+      "PRIMARY_PEOPLE": {"en": ["Primary people"], "it": ["Persone principali"], "fr": ["Personnes principales"], "de": ["Hauptpersonen"]},
+      "RELATED_PEOPLE": {"en": ["Related people"], "it": ["Persone collegate"], "fr": ["Personnes liées"], "de": ["Verbundene Personen"]},
+      "OCCUPATIONS": {"en": ["Occupations"], "it": ["Mestieri"], "fr": ["Métiers"], "de": ["Berufe"]},
+      "OTHER_ROLES": {"en": ["Other roles and capacities"], "it": ["Altri ruoli e capacità"], "fr": ["Autres rôles et qualités"], "de": ["Weitere Rollen und Eigenschaften"]},
+      "PARISHES": {"en": ["Reconciled parishes"], "it": ["Parrocchie riconciliate"], "fr": ["Paroisses réconciliées"], "de": ["Abgeglichene Pfarreien"]},
+      "PLACE_MENTIONS": {"en": ["Place mentions"], "it": ["Menzioni di luogo"], "fr": ["Mentions de lieux"], "de": ["Ortsnennungen"]},
+      "ARCHIVAL_REFERENCES": {"en": ["Archival references"], "it": ["Riferimenti archivistici"], "fr": ["Références archivistiques"], "de": ["Archivsignaturen"]},
+      "RELATIONSHIPS": {"en": ["Relationships"], "it": ["Relazioni"], "fr": ["Relations"], "de": ["Beziehungen"]},
+      "CROSS_REFERENCES": {"en": ["Index cross-references"], "it": ["Rinvii dell'indice"], "fr": ["Renvois de l'index"], "de": ["Indexverweise"]},
+      "EXTRACTION_CONFIDENCE": {"en": ["Extraction confidence"], "it": ["Confidenza di estrazione"], "fr": ["Confiance de l'extraction"], "de": ["Extraktionskonfidenz"]},
+      "REVIEW_STATUS": {"en": ["Review status"], "it": ["Stato della verifica"], "fr": ["Statut de révision"], "de": ["Prüfstatus"]},
+      "REVIEW_NOTE": {"en": ["Review note"], "it": ["Nota di verifica"], "fr": ["Note de révision"], "de": ["Prüfhinweis"]}
+    }
+  }
+}
