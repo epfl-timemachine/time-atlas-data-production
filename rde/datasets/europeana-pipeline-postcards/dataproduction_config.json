@@ -1,98 +1,481 @@
 {
     "UUID_NAMESPACE": "https://timemachine.epfl.ch/europe/europeana_postcards",
-    "TIMERANGE_MINIMUM": 18900101,
-    "TIMERANGE_MAXIMUM": 20241231,
-    "AREA_LOCS": ["europeana-postcards-area.json"],
+    "TIMERANGE_MINIMUM": 10000101,
+    "TIMERANGE_MAXIMUM": 20291231,
+    "VERSION": "2.0.0",
+    "AREA_LOCS": [
+        "europeana-postcards-area.json"
+    ],
     "DATASET_CONFIGURATION": {
         "slug": "europeana-pipeline-postcards",
         "name": {
-            "en": ["Postcards from Europeana"],
-            "fr": ["Cartes postales d'Europeana"],
-            "de": ["Postkarten aus Europeana"],
-            "it": ["Cartoline di Europeana"]
+            "en": [
+                "Postcards from Europeana"
+            ],
+            "fr": [
+                "Cartes postales d'Europeana"
+            ],
+            "de": [
+                "Postkarten aus Europeana"
+            ],
+            "it": [
+                "Cartoline di Europeana"
+            ]
         },
         "display_thumbnail": true,
         "external_source": true,
-        "dataset_metadata_config":  {
+        "dataset_metadata_config": {
             "description": {
                 "type": "STRING",
                 "display_label": {
-                    "en": ["Description"],
-                    "fr": ["Description"],
-                    "it": ["Descrizione"],
-                    "de": ["Beschreibung"]
+                    "en": [
+                        "Description"
+                    ],
+                    "fr": [
+                        "Description"
+                    ],
+                    "de": [
+                        "Beschreibung"
+                    ],
+                    "it": [
+                        "Descrizione"
+                    ]
                 },
                 "value": {
-                    "en": ["Extract from Europeana. Historical metadata has been structured and georeferenced or realigned using LLM. Dataset created at EPFL."],
-                    "fr": ["Extrait d'Europeana. Les métadonnées historiques ont été structurées et géoréférencées ou réalignées à l'aide de LLM. Jeu de données créé à l'EPFL."],
-                    "de": ["Auszug aus Europeana. Historische Metadaten wurden strukturiert und mithilfe von LLM georeferenziert oder neu ausgerichtet. Datensatz erstellt an der EPFL."],
-                    "it": ["Estrazione da Europeana. I metadati storici sono stati strutturati e georeferenziati o riallineati utilizzando LLM. Dataset creato presso l'EPFL."]
+                    "en": [
+                        "Postcards aggregated by Europeana and enriched by the TimeAtlas postcard pipeline. Visual descriptions, transcriptions, historical dates, place identifications, landmarks and geospatial evidence were extracted or reconciled from the postcard images and related web resources."
+                    ],
+                    "fr": [
+                        "Cartes postales agrégées par Europeana et enrichies par le pipeline de cartes postales TimeAtlas. Les descriptions visuelles, transcriptions, dates historiques, identifications de lieux, monuments et indices géospatiaux ont été extraits ou réconciliés à partir des images et de ressources web associées."
+                    ],
+                    "de": [
+                        "Von Europeana aggregierte und durch die TimeAtlas-Postkartenpipeline angereicherte Postkarten. Bildbeschreibungen, Transkriptionen, historische Datierungen, Orts- und Denkmalidentifikationen sowie Geodaten wurden aus den Bildern und zugehörigen Webressourcen extrahiert oder abgeglichen."
+                    ],
+                    "it": [
+                        "Cartoline aggregate da Europeana e arricchite dalla pipeline TimeAtlas. Descrizioni visive, trascrizioni, date storiche, identificazioni di luoghi e monumenti e dati geospaziali sono stati estratti o riconciliati dalle immagini e dalle risorse web collegate."
+                    ]
                 }
             },
             "paradata": {
                 "type": "STRING",
                 "display_label": {
-                    "en": ["Paradata"],
-                    "fr": ["Paradata"],
-                    "it": ["Paradata"]
+                    "en": [
+                        "Paradata"
+                    ],
+                    "fr": [
+                        "Paradonnées"
+                    ],
+                    "de": [
+                        "Paradaten"
+                    ],
+                    "it": [
+                        "Paradati"
+                    ]
                 },
                 "value": {
-                    "en": ["Geolocated using monument identification through LLM with vision capabilities and then Wikidata matching."],
-                    "fr": ["Géolocalisé en utilisant l'identification de monuments par LLM avec des capacités de vision, puis la correspondance avec Wikidata."],
-                    "de": ["Geolokalisiert mit Hilfe der Denkmalidentifikation durch LLM mit Vision-Fähigkeiten und anschließender Wikidata-Übereinstimmung."],
-                    "it": ["Geolocalizzato utilizzando l'identificazione dei monumenti tramite LLM con capacità di visione e poi la corrispondenza con wikidata."]
+                    "en": [
+                        "Generated by the TimeAtlas postcard-enrichment pipeline (Web Annotation mapping 3.1.0). Point-of-Interest-grade observations come from Wikidata-reconciled landmarks and selected web matches that meet explicit confidence, precision and contextual-consistency rules. Other selected web coordinates and cached country/city centroids are retained only for spatial indexing."
+                    ],
+                    "fr": [
+                        "Produit par le pipeline d'enrichissement de cartes postales TimeAtlas (mappage Web Annotation 3.1.0). Les observations promues en points d'intérêt proviennent de monuments réconciliés avec Wikidata et de correspondances web satisfaisant des règles explicites de confiance, de précision et de cohérence contextuelle. Les autres coordonnées web et centroïdes pays/ville servent uniquement à l'indexation spatiale."
+                    ],
+                    "de": [
+                        "Erzeugt durch die TimeAtlas-Postkartenpipeline (Web-Annotation-Mapping 3.1.0). Als Points of Interest verwendete Beobachtungen stammen aus mit Wikidata abgeglichenen Denkmälern und Webtreffern, die festgelegte Regeln für Konfidenz, Genauigkeit und Kontextkonsistenz erfüllen. Andere Webkoordinaten und Landes-/Stadtmittelpunkte dienen nur der räumlichen Indexierung."
+                    ],
+                    "it": [
+                        "Generato dalla pipeline di arricchimento delle cartoline TimeAtlas (mappatura Web Annotation 3.1.0). Le osservazioni promosse a punti di interesse derivano da monumenti riconciliati con Wikidata e da corrispondenze web che soddisfano regole esplicite di affidabilità, precisione e coerenza contestuale. Le altre coordinate web e i centroidi paese/città sono usati solo per l'indicizzazione spaziale."
+                    ]
+                }
+            },
+            "web_annotation_corpus": {
+                "type": "URL",
+                "display_label": {
+                    "en": [
+                        "Web Annotation corpus"
+                    ],
+                    "fr": [
+                        "Corpus Web Annotation"
+                    ],
+                    "de": [
+                        "Web-Annotation-Korpus"
+                    ],
+                    "it": [
+                        "Corpus Web Annotation"
+                    ]
+                },
+                "value": {
+                    "en": [
+                        "https://timeatlas.eu/annotations/postcards/paginated"
+                    ],
+                    "fr": [
+                        "https://timeatlas.eu/annotations/postcards/paginated"
+                    ],
+                    "de": [
+                        "https://timeatlas.eu/annotations/postcards/paginated"
+                    ],
+                    "it": [
+                        "https://timeatlas.eu/annotations/postcards/paginated"
+                    ]
+                }
+            },
+            "doi": {
+                "type": "URL",
+                "display_label": {
+                    "en": [
+                        "DOI"
+                    ],
+                    "fr": [
+                        "DOI"
+                    ],
+                    "de": [
+                        "DOI"
+                    ],
+                    "it": [
+                        "DOI"
+                    ]
+                },
+                "value": {
+                    "en": [
+                        "https://doi.org/10.5281/zenodo.21918274"
+                    ],
+                    "fr": [
+                        "https://doi.org/10.5281/zenodo.21918274"
+                    ],
+                    "de": [
+                        "https://doi.org/10.5281/zenodo.21918274"
+                    ],
+                    "it": [
+                        "https://doi.org/10.5281/zenodo.21918274"
+                    ]
                 }
             }
         },
+        "types": {
+            "final_place": "STRING",
+            "final_country": "STRING",
+            "final_city": "STRING",
+            "description": "STRING",
+            "transcription": "STRING",
+            "date": "STRING",
+            "temporal_precision": "STRING",
+            "reason": "STRING",
+            "postcard_reverse": "STRING",
+            "city_view": "STRING",
+            "scene_categories": "LIST",
+            "landmarks_identified": "LIST",
+            "geolocated_places": "LIST",
+            "lens_resource_url": "URL",
+            "lens_evidence_url": "URL",
+            "lens_confidence_score": "FLOAT",
+            "lens_source_confidence": "FLOAT",
+            "lens_confidence_level": "STRING",
+            "lens_geolocation_source": "STRING",
+            "lens_source_domain": "STRING",
+            "lens_extraction_method": "STRING",
+            "lens_coordinate_precision": "STRING",
+            "lens_location_role": "URL",
+            "lens_match_type": "STRING",
+            "lens_selection_policy": "STRING",
+            "lens_evidence": "STRING",
+            "lens_context_consistency": "STRING",
+            "lens_context_distance_km": "FLOAT",
+            "lens_context_city_text_match": "STRING",
+            "lens_context_score_adjustment": "FLOAT",
+            "lens_spatial_tier": "STRING",
+            "exact_visual_matches": "LIST",
+            "img_src": "URL",
+            "source_image_claim": "URL",
+            "europeana_url": "URL",
+            "annotation_id": "URL",
+            "record_id": "STRING"
+        },
+        "nullable": [
+            "final_place",
+            "final_country",
+            "final_city",
+            "transcription",
+            "date",
+            "temporal_precision",
+            "postcard_reverse",
+            "city_view",
+            "scene_categories",
+            "landmarks_identified",
+            "geolocated_places",
+            "lens_resource_url",
+            "lens_evidence_url",
+            "lens_confidence_score",
+            "lens_source_confidence",
+            "lens_confidence_level",
+            "lens_geolocation_source",
+            "lens_source_domain",
+            "lens_extraction_method",
+            "lens_coordinate_precision",
+            "lens_location_role",
+            "lens_match_type",
+            "lens_selection_policy",
+            "lens_evidence",
+            "lens_context_consistency",
+            "lens_context_distance_km",
+            "lens_context_city_text_match",
+            "lens_context_score_adjustment",
+            "lens_spatial_tier",
+            "exact_visual_matches",
+            "europeana_url"
+        ],
         "indexed": [
             "final_place",
+            "final_country",
             "final_city",
-            "landmarks_identified"
+            "transcription",
+            "scene_categories",
+            "landmarks_identified",
+            "geolocated_places",
+            "lens_confidence_level",
+            "lens_source_domain",
+            "lens_coordinate_precision",
+            "lens_match_type",
+            "lens_spatial_tier",
+            "lens_context_consistency"
         ],
-        "short_display" : [
+        "short_display": [
             "final_place",
             "final_city",
-            "landmarks_identified",
-            "date"
+            "date",
+            "scene_categories",
+            "landmarks_identified"
         ],
         "hidden": [
             "img_src",
+            "source_image_claim",
+            "lens_resource_url",
+            "lens_evidence_url",
+            "lens_geolocation_source",
+            "lens_source_domain",
+            "lens_extraction_method",
+            "lens_selection_policy",
+            "lens_evidence",
+            "europeana_url",
+            "annotation_id",
             "record_id"
         ],
         "automatic_fields": [
             "record_id",
             "img_src",
-            "google_search"
+            "source_image_claim",
+            "europeana_url",
+            "annotation_id",
+            "exact_visual_matches",
+            "lens_resource_url",
+            "lens_evidence_url",
+            "lens_confidence_score",
+            "lens_source_confidence",
+            "lens_confidence_level",
+            "lens_geolocation_source",
+            "lens_source_domain",
+            "lens_extraction_method",
+            "lens_coordinate_precision",
+            "lens_location_role",
+            "lens_match_type",
+            "lens_selection_policy",
+            "lens_evidence",
+            "lens_context_consistency",
+            "lens_context_distance_km",
+            "lens_context_city_text_match",
+            "lens_context_score_adjustment",
+            "lens_spatial_tier"
         ],
-        "manual_fields": [
-        ],
-        "semi_automatic_fields": [
-        ],
+        "manual_fields": [],
+        "semi_automatic_fields": [],
         "ai_fields": [
             "final_place",
+            "final_country",
             "final_city",
-            "date",
             "description",
             "transcription",
+            "date",
+            "temporal_precision",
             "reason",
-            "landmarks_identified"
+            "postcard_reverse",
+            "city_view",
+            "scene_categories",
+            "landmarks_identified",
+            "geolocated_places"
         ],
         "main_label": "${final_country}, ${final_city}",
         "sub_label": "${final_place}, ${date}",
         "tagged_fields": {
+            "final_place": "PLACE",
+            "final_country": "PLACE",
+            "final_city": "PLACE",
+            "landmarks_identified": "PLACE",
+            "geolocated_places": "PLACE"
         },
         "labels": {
-            "final_place": {"en": ["Final Place"], "fr": ["Lieu final"], "de": ["Endort"], "it": ["Luogo finale"]},
-            "final_country": {"en": ["Final Country"], "fr": ["Pays final"], "de": ["Endland"], "it": ["Paese finale"]},
-            "final_city": {"en": ["Final City"], "fr": ["Ville finale"], "de": ["Endstadt"], "it": ["Città finale"]},
-            "description": {"en": ["Description"], "fr": ["Description"], "de": ["Beschreibung"], "it": ["Descrizione"]},
-            "transcription": {"en": ["Transcription"], "fr": ["Transcription"], "de": ["Transkription"], "it": ["Trascrizione"]},
-            "date": {"en": ["Date estimation"], "fr": ["Estimation de la date"], "de": ["Datumsabschätzung"], "it": ["Stima della data"]},
-            "reason": {"en": ["Reason"], "fr": ["Raison"], "de": ["Grund"], "it": ["Motivo"]},
-            "img_src": {"en": ["Image Source"], "fr": ["Source de l'image"], "de": ["Bildquelle"], "it": ["Fonte dell'immagine"]},
-            "record_id": {"en": ["Europeana Record ID"], "fr": ["ID d'enregistrement Europeana"], "de": ["Europeana-Datensatz-ID"], "it": ["ID record Europeana"]},
-            "google_search": {"en": ["Google Search"], "fr": ["Recherche Google"], "de": ["Google-Suche"], "it": ["Ricerca Google"]},
-            "landmarks_identified": {"en": ["Landmarks Identified"], "fr": ["Monuments identifiés"], "de": ["Identifizierte Wahrzeichen"], "it": ["Monumenti identificati"]}
+            "final_place": {
+                "en": ["Place"],
+                "fr": ["Lieu"],
+                "de": ["Ort"],
+                "it": ["Luogo"]
+            },
+            "final_country": {
+                "en": ["Country"],
+                "fr": ["Pays"],
+                "de": ["Land"],
+                "it": ["Paese"]
+            },
+            "final_city": {
+                "en": ["City"],
+                "fr": ["Ville"],
+                "de": ["Stadt"],
+                "it": ["Città"]
+            },
+            "description": {
+                "en": ["Visual description"],
+                "fr": ["Description visuelle"],
+                "de": ["Bildbeschreibung"],
+                "it": ["Descrizione visiva"]
+            },
+            "transcription": {
+                "en": ["Transcription"],
+                "fr": ["Transcription"],
+                "de": ["Transkription"],
+                "it": ["Trascrizione"]
+            },
+            "date": {
+                "en": ["Depicted date"],
+                "fr": ["Date représentée"],
+                "de": ["Dargestelltes Datum"],
+                "it": ["Data rappresentata"]
+            },
+            "temporal_precision": {
+                "en": ["Temporal precision"],
+                "fr": ["Précision temporelle"],
+                "de": ["Zeitliche Genauigkeit"],
+                "it": ["Precisione temporale"]
+            },
+            "reason": {
+                "en": ["Pipeline assessment"],
+                "fr": ["Évaluation du pipeline"],
+                "de": ["Pipeline-Bewertung"],
+                "it": ["Valutazione della pipeline"]
+            },
+            "postcard_reverse": {
+                "en": ["Postcard reverse"],
+                "fr": ["Verso de la carte postale"],
+                "de": ["Postkartenrückseite"],
+                "it": ["Retro della cartolina"]
+            },
+            "city_view": {
+                "en": ["City view"],
+                "fr": ["Vue urbaine"],
+                "de": ["Stadtansicht"],
+                "it": ["Veduta urbana"]
+            },
+            "scene_categories": {
+                "en": ["Scene categories"],
+                "fr": ["Catégories de scène"],
+                "de": ["Szenenkategorien"],
+                "it": ["Categorie della scena"]
+            },
+            "landmarks_identified": {
+                "en": ["Landmarks identified"],
+                "fr": ["Monuments identifiés"],
+                "de": ["Identifizierte Wahrzeichen"],
+                "it": ["Monumenti identificati"]
+            },
+            "geolocated_places": {
+                "en": ["Web-matched places"],
+                "fr": ["Lieux rapprochés sur le web"],
+                "de": ["Im Web abgeglichene Orte"],
+                "it": ["Luoghi associati sul web"]
+            },
+            "lens_resource_url": {
+                "en": ["Web-matched place identifier"]
+            },
+            "lens_evidence_url": {
+                "en": ["Web geolocation evidence page"]
+            },
+            "lens_confidence_score": {
+                "en": ["Web geolocation confidence"]
+            },
+            "lens_source_confidence": {
+                "en": ["Web source confidence"]
+            },
+            "lens_confidence_level": {
+                "en": ["Web geolocation confidence level"]
+            },
+            "lens_geolocation_source": {
+                "en": ["Web geolocation source"]
+            },
+            "lens_source_domain": {
+                "en": ["Web geolocation source domain"]
+            },
+            "lens_extraction_method": {
+                "en": ["Web geolocation extraction method"]
+            },
+            "lens_coordinate_precision": {
+                "en": ["Web geolocation coordinate precision"]
+            },
+            "lens_location_role": {
+                "en": ["Web geolocation location role"]
+            },
+            "lens_match_type": {
+                "en": ["Web geolocation visual-match type"]
+            },
+            "lens_selection_policy": {
+                "en": ["Web geolocation selection policy"]
+            },
+            "lens_evidence": {
+                "en": ["Web geolocation evidence"]
+            },
+            "lens_context_consistency": {
+                "en": ["Web geolocation context consistency"]
+            },
+            "lens_context_distance_km": {
+                "en": ["Web geolocation context distance (km)"]
+            },
+            "lens_context_city_text_match": {
+                "en": ["Web geolocation city-text match"]
+            },
+            "lens_context_score_adjustment": {
+                "en": ["Web geolocation context score adjustment"]
+            },
+            "lens_spatial_tier": {
+                "en": ["Web geolocation spatial tier"]
+            },
+            "exact_visual_matches": {
+                "en": ["Exact visual matches"],
+                "fr": ["Correspondances visuelles exactes"],
+                "de": ["Exakte visuelle Treffer"],
+                "it": ["Corrispondenze visive esatte"]
+            },
+            "img_src": {
+                "en": ["Analysed image source"],
+                "fr": ["Source de l'image analysée"],
+                "de": ["Quelle des analysierten Bildes"],
+                "it": ["Fonte dell'immagine analizzata"]
+            },
+            "source_image_claim": {
+                "en": ["Source Web Annotation image claim"]
+            },
+            "europeana_url": {
+                "en": ["Europeana record"],
+                "fr": ["Notice Europeana"],
+                "de": ["Europeana-Datensatz"],
+                "it": ["Record Europeana"]
+            },
+            "annotation_id": {
+                "en": ["Web Annotation ID"],
+                "fr": ["Identifiant Web Annotation"],
+                "de": ["Web-Annotation-ID"],
+                "it": ["ID Web Annotation"]
+            },
+            "record_id": {
+                "en": ["Europeana record ID"],
+                "fr": ["Identifiant de notice Europeana"],
+                "de": ["Europeana-Datensatz-ID"],
+                "it": ["ID record Europeana"]
+            }
         }
     }
 }

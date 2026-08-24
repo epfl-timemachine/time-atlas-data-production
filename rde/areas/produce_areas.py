@@ -80,8 +80,10 @@ aarea_uid = str(uuid.uuid5(AREA_UUID5_NS, aarea_slug))
 aarea_data = produce_area_obj(aarea_uid, aarea_name, produce_geometry_obj_from_two_corners(aarea_min+aarea_max), aarea_slug, '1.0')
 save_data_file_if_different('data', aarea_slug, aarea_data, aarea_slug, RDEType.AREA.value)
 
-earea_max = [126.48944444444444, 62.390556]
-earea_min = [-135.0, 14.917119]
+# Exact WGS84 envelope of the Europeana postcard observations.  Observation
+# coordinates are stored longitude-first, latitude-second.
+earea_max = [170.5035755, 72.78473923863221]
+earea_min = [-175.2018080279231, -54.935774797397805]
 
 earea_name = {"en": ['Europeana\'s postcards Area'], "fr": ["Aire des cartes postales d'Europe"], "de": ["Bereich der Postkarten von Europeana"], 'it': ["Area delle cartoline d'Europeana"], 'nl': ["Europeana's ansichtkaartengebied"]}
 earea_slug = 'europeana-postcards-area'
