@@ -1,4 +1,134 @@
-# Run the data production script
+# TimeAtlas data production
+
+## Containerized data-production sandbox
+
+The repository includes a Python 3.12 container intended for interactive data
+engineering and AI-agent workflows. It installs the root and validation
+dependencies in `/opt/venv`, installs the official `time-atlas-python` package
+directly from this repository's submodule, and includes Git, cURL, and archive
+tools for retrieving source data. The container opens a Bash shell by default; it
+is not a long-running web service.
+
+### Prepare the checkout and build the image
+
+Start from a shallow checkout so neither the main repository nor the Python
+library's history is downloaded. Only `time-atlas-python` is required to build
+the image; the data-only submodules can remain uninitialized:
+
+```bash
+git clone --depth 1 --single-branch --no-tags \
+  https://github.com/epfl-timemachine/time-atlas-data-production.git
+cd time-atlas-data-production
+git submodule update --init --depth 1 time-atlas-python
+
+docker build \
+  --build-arg USER_ID="$(id -u)" \
+  --build-arg GROUP_ID="$(id -g)" \
+  --tag time-atlas-data-production:local \
+  .
+```
+
+For an existing checkout, only the `git submodule update` command is needed.
+It retrieves the single `time-atlas-python` commit pinned by this repository,
+without its preceding history. The root and nested `.git` metadata are excluded
+from the Docker build context, and the Dockerfile verifies that neither is
+present in the image.
+
+The UID/GID arguments make files created in a bind-mounted checkout belong to the
+host user on Linux and macOS. They can be omitted on platforms without `id`; both
+default to `1000`. A missing `time-atlas-python/pyproject.toml` causes the build to
+fail with the shallow initialization command. Dependencies are installed from
+the local submodule and not from the unstable PyPI release.
+
+### Configure runtime credentials
+
+Copy the environment template and fill only the values needed for the task:
+
+```bash
+cp .env.example .env
+chmod 600 .env
+```
+
+If `.env` already exists, merge the missing names instead of overwriting it. The
+supported runtime variables are:
+
+| Variable | When it is needed |
+| --- | --- |
+| `MAPTILER_API_KEY` | Terrain and building-height derivation with `utils/get_terrain_and_building_heights.py`. |
+| `TIMEATLAS_API_URL` | Target versioned API root, for example `https://example.org/v1`. |
+| `TIMEATLAS_TOKEN` | Personal/user access token for an optional authenticated import. |
+| `TIMEATLAS_TEAM_ID` | UUID of the team that owns an optional import. This is an identifier, not a second secret token. |
+| `S3_RW_KEY` and `S3_RW_SECRET` | Optional access to `utils/s3_bucket_push.py`. |
+
+The `.dockerignore` file keeps `.env`, credential files, the host virtual
+environment, caches, raw dataset `src` directories, data-only submodules, and
+large generated outputs out of the build context. Supply raw inputs through a
+read-only runtime mount as shown below. Pass secrets only when the container
+starts—never through `docker build` arguments or Dockerfile `ENV` values.
+
+### Start a writable sandbox
+
+For data-production work, bind-mount the checkout so scripts, retrieved sources,
+and generated RDE files persist on the host. The named cache volume preserves
+downloaded MapTiler tiles between disposable containers:
+
+```bash
+docker run --rm -it \
+  --env-file .env \
+  --mount type=bind,source="$PWD",target=/workspace \
+  --mount type=volume,source=time-atlas-cache,target=/home/atlas/.cache \
+  time-atlas-data-production:local
+```
+
+The virtual environment is already active through `PATH`; do not create
+`data-production-venv` inside the container. Verify the main dependencies with:
+
+```bash
+python --version
+python -c "import geopandas, rasterio, timeatlas; print('sandbox ready')"
+```
+
+An agent can receive source material from another project without copying it into
+the image by adding a read-only mount:
+
+```bash
+docker run --rm -it \
+  --env-file .env \
+  --mount type=bind,source="$PWD",target=/workspace \
+  --mount type=bind,source=/absolute/path/to/source-data,target=/inputs,readonly \
+  --mount type=volume,source=time-atlas-cache,target=/home/atlas/.cache \
+  time-atlas-data-production:local
+```
+
+Outbound network access is available under Docker's normal network policy, so the
+agent can retrieve public source and contextual data. On Docker Desktop, use
+`host.docker.internal` rather than `localhost` when `TIMEATLAS_API_URL` points to a
+backend running on the host. On Linux, add
+`--add-host=host.docker.internal:host-gateway` if that hostname is needed.
+
+The container is suitable for producing and validating data without any backend
+credentials. Supplying TimeAtlas credentials merely makes an optional import
+possible; it does not trigger one. Agents must follow the lifecycle in
+`AGENTS.md`: pre-production analysis, production, post-production aggregation and
+validation, and only then an explicitly authorized backend import. Code can load
+the import settings as follows:
+
+```python
+import os
+from timeatlas import TimeAtlasImportClient
+
+client = TimeAtlasImportClient(
+    os.environ["TIMEATLAS_API_URL"],
+    token=os.environ["TIMEATLAS_TOKEN"],
+    team_id=os.environ["TIMEATLAS_TEAM_ID"],
+)
+```
+
+To inspect the immutable repository snapshot baked into the image instead of
+mounting the host checkout, omit the bind mount. Any changes will then disappear
+when the `--rm` container exits.
+
+## Run the data production script on the host
 
 Simply run the bash script "generate_data.sh", this will take care of installing the required dependencies, run all generation data script and validate the data. The script needs to be set the execution mode to be run, requiring the following command to be issued once:
 

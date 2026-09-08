@@ -26,6 +26,15 @@ FILENAMES_TO_KEEP = [
 ]
 
 
+def is_historical_record_batch(filename):
+    """Return whether ``filename`` is a size-split HR envelope."""
+    return (
+        filename.startswith('historical_records_')
+        and filename.endswith('.json')
+        and filename[len('historical_records_'):-len('.json')].isdigit()
+    )
+
+
 def parse_args(argv=None):
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
@@ -86,7 +95,7 @@ def should_include_file(file_path, rde_path):
         # For datasets, check if file is directly in rde/datasets/<dataset_name>/
         # and matches one of the filenames in FILENAMES_TO_KEEP
         if len(parts) == 3:
-            return filename in FILENAMES_TO_KEEP
+            return filename in FILENAMES_TO_KEEP or is_historical_record_batch(filename)
         
         # Include all files from iiif folders (rde/datasets/<dataset_name>/iiif/...)
         if len(parts) >= 3 and 'iiif' in parts:

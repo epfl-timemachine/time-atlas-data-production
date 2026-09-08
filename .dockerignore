@@ -1,0 +1,51 @@
+# Git histories stay on the host; the image only receives the working trees.
+.git
+**/.git
+
+# Local development state
+.DS_Store
+**/.DS_Store
+.vscode
+.idea
+.ipynb_checkpoints
+**/.ipynb_checkpoints
+
+# Host Python environments and caches
+data-production-venv
+height_venv
+**/__pycache__
+**/*.py[cod]
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/.coverage
+**/htmlcov
+
+# Runtime credentials must only be injected when the container starts.
+.env
+.env.*
+!.env.example
+token_and_team_id.txt
+**/token_and_team_id.txt
+**/maptiler_key.txt
+**/fnf_toks.txt
+
+# Local caches, exports, and large generated artefacts that are not part of a
+# clean checkout. Inputs can be bind-mounted when an agent needs them.
+s3_dump
+rde_entity_cache.pkl
+data-lausanne
+data-venice
+rde/datasets/**/src
+rde/maps/**/src
+rde/areas/countries_src/src
+rde/demo-datasets
+rde/datasets/**/data
+rde/datasets/**/iiif
+rde/datasets/**/Archive
+rde/datasets/**/img
+rde/datasets/**/historical_records.json
+rde/datasets/**/observations.json
+rde/datasets/**/datasets.json
+rde/datasets/**/dataset.json
+rde/pois/points_of_interest.json
