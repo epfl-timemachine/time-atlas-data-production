@@ -44,7 +44,7 @@ RUN python -m pip install --upgrade pip setuptools wheel \
     && python -m pip install \
         --index-url https://test.pypi.org/simple/ \
         --no-deps \
-        time-atlas-python==0.2.0
+        time-atlas-python==0.3.0
 
 COPY --chown=${USER_ID}:${GROUP_ID} . .
 

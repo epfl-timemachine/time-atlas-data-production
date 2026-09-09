@@ -13,7 +13,11 @@
 # Host Python environments and caches
 data-production-venv
 height_venv
+**/.venv
+**/venv
+**/*_venv
 **/__pycache__
+**/.cache
 **/*.py[cod]
 **/.pytest_cache
 **/.mypy_cache
@@ -40,12 +44,25 @@ time-atlas-python
 # Raw inputs belong on runtime mounts, regardless of where a dataset keeps them.
 **/src
 rde/demo-datasets
+rde/areas/data
 rde/datasets/**/data
+rde/datasets/**/data_v[0-9]
 rde/datasets/**/iiif
 rde/datasets/**/Archive
 rde/datasets/**/img
-rde/datasets/**/historical_records.json
-rde/datasets/**/observations.json
+rde/datasets/**/src.zip
+rde/datasets/**/*.jsonl
+rde/datasets/**/historical_records*.json
+rde/datasets/**/observations*.json
+rde/datasets/**/geometries*.json
+rde/datasets/**/points_of_interest*.json
 rde/datasets/**/datasets.json
 rde/datasets/**/dataset.json
+rde/datasets/**/CLASS_FIELD_AUDIT.json
+rde/datasets/**/FIELD_AUDIT.json
+rde/datasets/**/GENERATION_SUMMARY.json
+rde/maps/**/geometries*.json
+rde/maps/**/layers.json
+rde/maps/**/map.json
+rde/maps/**/maps.json
 rde/pois/points_of_interest.json

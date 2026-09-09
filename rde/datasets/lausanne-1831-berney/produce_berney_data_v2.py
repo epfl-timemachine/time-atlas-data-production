@@ -91,7 +91,7 @@ def format_filename_to_code(filename: str) -> str | int:
 
 # 1. Geometry RDEs and registry rows
 geometries_fp = DATA_SRC_PATH / "Berney_merge_legende_v7-7_formatted_for_timeatlas.geojson"
-gdf = normalize_to_epsg4326(gpd.read_file(geometries_fp, use_arrow=True))
+gdf = normalize_to_epsg4326(gpd.read_file(geometries_fp))
 gdf["start_time"] = TR.start_time
 gdf["end_time"] = TR.end_time
 

@@ -38,7 +38,7 @@ DATA_FOLDER = ''
 geometries_fp = join(DATA_SRC_PATH, 'Berney_merge_legende_v7-7_formatted_for_timeatlas.geojson')
 wh_fp = join(DATA_SRC_PATH, 'wh_images.csv')
 # sample for testing uuid_gen
-gdf = gpd.read_file(geometries_fp, use_arrow=True).to_crs("EPSG:4326")
+gdf = gpd.read_file(geometries_fp).to_crs("EPSG:4326")
 
 
 gdf['start_time'] = pd.Series(data = [TR_OBJ[0]] * len(gdf), name='start_time')

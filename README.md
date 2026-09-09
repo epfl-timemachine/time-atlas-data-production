@@ -56,13 +56,13 @@ supported runtime variables are:
 | `TIMEATLAS_TEAM_ID` | UUID of the team that owns an optional import. This is an identifier, not a second secret token. |
 | `S3_RW_KEY` and `S3_RW_SECRET` | Optional access to `utils/s3_bucket_push.py`. |
 
-The `.dockerignore` file keeps `.env`, credential files, the host virtual
-environment, caches, every `src` directory, `rde/demo-datasets`, data-only
-submodules, and large generated outputs out of the build context. It also
-excludes the `time-atlas-python` submodule because that dependency is installed
-from TestPyPI. Supply raw inputs through a read-only runtime mount as shown below.
-Pass secrets only when the container starts—never through `docker build`
-arguments or Dockerfile `ENV` values.
+The `.dockerignore` file keeps `.env`, credential files, host virtual
+environments, caches, every `src` directory, `rde/demo-datasets`, generated RDE
+outputs, data-only submodules, and the `time-atlas-python` submodule out of the
+build context. The Python library is installed from TestPyPI instead. Supply raw
+inputs and generated data through runtime mounts as shown below. Pass secrets
+only when the container starts—never through `docker build` arguments or
+Dockerfile `ENV` values.
 
 ### Start a writable sandbox
 

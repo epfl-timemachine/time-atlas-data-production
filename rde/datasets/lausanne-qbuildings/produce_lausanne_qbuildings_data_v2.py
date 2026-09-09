@@ -60,7 +60,7 @@ MAP_FOLDER = '../../maps/lausanne-qbuildings/'
 cadaster_layer_uuid = find_layer_uuid(MAP_FOLDER + 'layers.json', 'buildings')
 
 gdf = normalize_to_epsg4326(
-    gpd.read_file(Path('src') / 'qbuildings-lausanne.geojson', use_arrow=True)
+    gpd.read_file(Path('src') / 'qbuildings-lausanne.geojson')
 )
 
 TR_START   = datetime_from_int(DATA_CONFIG['TIMERANGE_MINIMUM'])
