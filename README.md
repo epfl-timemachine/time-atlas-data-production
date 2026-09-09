@@ -5,21 +5,19 @@
 The repository includes a Python 3.12 container intended for interactive data
 engineering and AI-agent workflows. It installs the root and validation
 dependencies in `/opt/venv`, installs the official `time-atlas-python` package
-directly from this repository's submodule, and includes Git, cURL, and archive
-tools for retrieving source data. The container opens a Bash shell by default; it
-is not a long-running web service.
+version 0.2.0 from TestPyPI, and includes Git, cURL, and archive tools for
+retrieving source data. The container opens a Bash shell by default; it is not a
+long-running web service.
 
 ### Prepare the checkout and build the image
 
-Start from a shallow checkout so neither the main repository nor the Python
-library's history is downloaded. Only `time-atlas-python` is required to build
-the image; the data-only submodules can remain uninitialized:
+Start from a shallow checkout so the main repository's history is not
+downloaded. No submodules are required to build the image:
 
 ```bash
 git clone --depth 1 --single-branch --no-tags \
   https://github.com/epfl-timemachine/time-atlas-data-production.git
 cd time-atlas-data-production
-git submodule update --init --depth 1 time-atlas-python
 
 docker build \
   --build-arg USER_ID="$(id -u)" \
@@ -28,17 +26,15 @@ docker build \
   .
 ```
 
-For an existing checkout, only the `git submodule update` command is needed.
-It retrieves the single `time-atlas-python` commit pinned by this repository,
-without its preceding history. The root and nested `.git` metadata are excluded
-from the Docker build context, and the Dockerfile verifies that neither is
-present in the image.
+The root `.git` metadata and the `data-lausanne`, `data-venice`, and
+`time-atlas-python` submodule working trees are excluded from the Docker build
+context. The Dockerfile verifies that none of them is present in the image.
 
 The UID/GID arguments make files created in a bind-mounted checkout belong to the
 host user on Linux and macOS. They can be omitted on platforms without `id`; both
-default to `1000`. A missing `time-atlas-python/pyproject.toml` causes the build to
-fail with the shallow initialization command. Dependencies are installed from
-the local submodule and not from the unstable PyPI release.
+default to `1000`. The `time-atlas-python==0.2.0` package is installed from the
+TestPyPI package index; its dependencies are installed separately from the
+repository requirements files.
 
 ### Configure runtime credentials
 
@@ -61,10 +57,12 @@ supported runtime variables are:
 | `S3_RW_KEY` and `S3_RW_SECRET` | Optional access to `utils/s3_bucket_push.py`. |
 
 The `.dockerignore` file keeps `.env`, credential files, the host virtual
-environment, caches, raw dataset `src` directories, data-only submodules, and
-large generated outputs out of the build context. Supply raw inputs through a
-read-only runtime mount as shown below. Pass secrets only when the container
-starts—never through `docker build` arguments or Dockerfile `ENV` values.
+environment, caches, every `src` directory, `rde/demo-datasets`, data-only
+submodules, and large generated outputs out of the build context. It also
+excludes the `time-atlas-python` submodule because that dependency is installed
+from TestPyPI. Supply raw inputs through a read-only runtime mount as shown below.
+Pass secrets only when the container starts—never through `docker build`
+arguments or Dockerfile `ENV` values.
 
 ### Start a writable sandbox
 

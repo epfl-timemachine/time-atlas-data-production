@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PIP_NO_CACHE_DIR=1 \
     VIRTUAL_ENV=/opt/venv \
     PATH="/opt/venv/bin:${PATH}" \
-    PYTHONPATH="/workspace/time-atlas-python:/workspace"
+    PYTHONPATH="/workspace"
 
 RUN apt-get update \
     && apt-get install --yes --no-install-recommends \
@@ -40,20 +40,20 @@ USER atlas
 RUN python -m pip install --upgrade pip setuptools wheel \
     && python -m pip install \
         --requirement requirements.txt \
-        --requirement validation/requirements.txt
+        --requirement validation/requirements.txt \
+    && python -m pip install \
+        --index-url https://test.pypi.org/simple/ \
+        --no-deps \
+        time-atlas-python==0.2.0
 
 COPY --chown=${USER_ID}:${GROUP_ID} . .
 
-# The image contains working trees only. The matching .dockerignore rules keep
-# both repositories' Git histories outside the build context.
-RUN test ! -e .git && test ! -e time-atlas-python/.git
-
-# time-atlas-python is intentionally installed from the checked-out submodule,
-# not from PyPI. PYTHONPATH above also makes a bind-mounted submodule take
-# precedence during interactive data-production work.
-RUN test -f time-atlas-python/pyproject.toml \
-    || (echo >&2 "time-atlas-python submodule is missing; run: git submodule update --init --depth 1 time-atlas-python"; exit 1) \
-    && python -m pip install --no-deps ./time-atlas-python \
+# The image contains the main repository working tree only. Git metadata and
+# submodule working trees are excluded by .dockerignore.
+RUN test ! -e .git \
+    && test ! -e data-lausanne \
+    && test ! -e data-venice \
+    && test ! -e time-atlas-python \
     && python -c "import geopandas, rasterio, timeatlas"
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
