@@ -4,20 +4,23 @@
 
 The repository includes a Python 3.12 container intended for interactive data
 engineering and AI-agent workflows. It installs the root and validation
-dependencies in `/opt/venv`, installs the official `time-atlas-python` package
-version 0.2.0 from TestPyPI, and includes Git, cURL, and archive tools for
-retrieving source data. The container opens a Bash shell by default; it is not a
-long-running web service.
+dependencies in `/opt/venv` from a hash-locked `requirements.lock`, builds the
+`time-atlas-python` library as a wheel from the submodule commit this repository
+records, and includes Git, cURL, and archive tools for retrieving source data.
+The container opens a Bash shell by default; it is not a long-running web
+service.
 
 ### Prepare the checkout and build the image
 
 Start from a shallow checkout so the main repository's history is not
-downloaded. No submodules are required to build the image:
+downloaded. Only the `time-atlas-python` submodule is required to build the
+image; the data submodules stay on the host:
 
 ```bash
 git clone --depth 1 --single-branch --no-tags \
   https://github.com/epfl-timemachine/time-atlas-data-production.git
 cd time-atlas-data-production
+git submodule update --init --depth 1 time-atlas-python
 
 docker build \
   --build-arg USER_ID="$(id -u)" \
@@ -26,15 +29,53 @@ docker build \
   .
 ```
 
-The root `.git` metadata and the `data-lausanne`, `data-venice`, and
-`time-atlas-python` submodule working trees are excluded from the Docker build
-context. The Dockerfile verifies that none of them is present in the image.
+The Dockerfile has two stages. A builder stage receives only the
+`time-atlas-python` submodule tree and runs `pip wheel` on it; the final stage
+installs that wheel into the virtual environment. The library version is
+whatever the submodule's `pyproject.toml` declares, so the image is a function of
+two commits: this repository's and the submodule pointer it records. The root
+`.git` metadata and the `data-lausanne` and `data-venice` submodule working trees
+are excluded from the Docker build context, and the `time-atlas-python` tree is
+excluded from the final stage. The Dockerfile verifies that none of them is
+present in the image.
+
+The build ends with a smoke test that mirrors the modeling agent's start-up
+probe: it imports `geopandas`, `rasterio` and `timeatlas`, checks that
+`RDECollection` exposes `aggregate_observations_into_points_of_interest`,
+`produce_area_from_current_extent`, `save_rde_to_files` and `validate_data`, and
+checks that `AGENTS.md` and the pre-production-analysis and output-file-format
+skills are present and non-empty under `/workspace`. The build fails if any of
+them is missing.
 
 The UID/GID arguments make files created in a bind-mounted checkout belong to the
 host user on Linux and macOS. They can be omitted on platforms without `id`; both
-default to `1000`. The `time-atlas-python==0.2.0` package is installed from the
-TestPyPI package index; its dependencies are installed separately from the
-repository requirements files.
+default to `1000`.
+
+### Locked dependencies
+
+The base image is pinned to an exact Python patch release in the Dockerfile.
+Python dependencies are installed with `pip install --require-hashes` from `requirements.lock`, which is
+generated from `requirements.txt` and `validation/requirements.txt`. Edit those
+two files to change a dependency, then regenerate the lock file:
+
+```bash
+uv pip compile requirements.txt validation/requirements.txt \
+  --generate-hashes --python-version 3.12 --python-platform linux \
+  --output-file requirements.lock
+```
+
+The library's own runtime dependencies (`requests`, `pandas`, `shapely`,
+`Pillow`) are covered by the lock file; the wheel is installed with `--no-deps`.
+
+### Published image
+
+Every push to `main` runs `.github/workflows/docker-build.yml`, which builds the
+image and pushes it to the private package
+`ghcr.io/epfl-timemachine/time-atlas-data-production` with the tags `main` and
+`sha-<commit>`. Pushes that only touch Markdown, notebooks, images or the data
+submodule pointers do not trigger a build, and a commit that already has a
+`sha-` image is not rebuilt. The workflow does not deploy anything; the tag used
+by the modeling sandbox is bumped by hand in the deployment repository.
 
 ### Configure runtime credentials
 
@@ -58,8 +99,7 @@ supported runtime variables are:
 
 The `.dockerignore` file keeps `.env`, credential files, host virtual
 environments, caches, every `src` directory, `rde/demo-datasets`, generated RDE
-outputs, data-only submodules, and the `time-atlas-python` submodule out of the
-build context. The Python library is installed from TestPyPI instead. Supply raw
+outputs, and the data-only submodules out of the build context. Supply raw
 inputs and generated data through runtime mounts as shown below. Pass secrets
 only when the container starts—never through `docker build` arguments or
 Dockerfile `ENV` values.

@@ -1,0 +1,95 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - '**.ipynb'
+      - '**.png'
+      - CHANGELOG.md
+      - data-lausanne
+      - data-venice
+  workflow_dispatch:
+    inputs:
+      force_rebuild:
+        description: >-
+          Rebuild even if this commit already has an image. A rebuild of identical source still
+          gets a different digest (build timestamp and provenance attestation differ). Leave off
+          unless a previous build is actually broken.
+        type: boolean
+        default: false
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: docker-build-data-production-${{ github.sha }}
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # Only the library submodule is needed for the image. The data-* submodules hold
+      # hundreds of megabytes of raw data and are excluded from the build context anyway.
+      - name: Check out the time-atlas-python submodule
+        run: git submodule update --init --depth 1 time-atlas-python
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata for Docker
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value={{branch}}
+            type=sha,format=long
+
+      - name: Check if image already exists for this commit
+        id: image_check
+        run: |
+          SHA_IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${GITHUB_SHA}"
+          echo "image=${SHA_IMAGE}" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.force_rebuild }}" = "true" ]; then
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          elif docker buildx imagetools inspect "${SHA_IMAGE}" > /dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Retag existing image for this branch (skips rebuild)
+        if: steps.image_check.outputs.exists == 'true'
+        run: |
+          mapfile -t TAGS <<< '${{ steps.meta.outputs.tags }}'
+          docker buildx imagetools create "${TAGS[@]/#/--tag=}" "${{ steps.image_check.outputs.image }}"
+
+      # The deployed tag is bumped by hand in the deployment repository.
+      - name: Build and push Docker image
+        if: steps.image_check.outputs.exists == 'false'
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
