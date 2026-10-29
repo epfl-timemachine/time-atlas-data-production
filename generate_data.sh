@@ -75,7 +75,8 @@ echo "Data generation completed successfully."
 # Step 6: Validate data
 pip install -r validation/requirements.txt
 cd validation
-python3 validate_data.py
+# Propagate schema-lock and data validation failures to the caller.
+python3 validate_data.py || exit $?
 
 # Deactivate and remove the virtual environment
 cd - > /dev/null

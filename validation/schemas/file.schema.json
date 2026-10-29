@@ -1,17 +1,20 @@
 {
-    "$id": "https://timeatlas.eu/rde/file.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/file.schema.json",
     "type": "object",
     "properties": {
       "name": {
-        "type_in_file": {
-          "type": "array",
-          "items": {
-            "enum": ["historical_record",  "observation", "point_of_interest", "geometry", "dataset", "map", "layer", "area", "dictionary"]
-          }
-        }
+        "type": "string"
       },
       "creation_time": {
         "type": "string"
+      },
+      "type_in_file": {
+        "type": "array",
+        "items": {
+          "enum": ["historical_record", "hr", "observation", "obs", "point_of_interest", "poi", "geometry", "geom", "dataset", "map", "layer", "area", "dictionary"]
+        },
+        "minItems": 1
       },
       "related_dataset_slugs": {
         "type": "array",
@@ -25,28 +28,28 @@
         "items": {
          "anyOf": [
             {
-              "$ref": "https://timeatlas.eu/rde/observation.schema.json"
+              "$ref": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/observation.schema.json"
             },
             {
-              "$ref": "https://timeatlas.eu/rde/historical_record.schema.json"
+              "$ref": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/historical_record.schema.json"
             },
             {
-              "$ref": "https://timeatlas.eu/rde/poi.schema.json"
+              "$ref": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/point_of_interest.schema.json"
             },
             {
-              "$ref": "https://timeatlas.eu/rde/geometry.schema.json"
+              "$ref": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/geometry.schema.json"
             },
             {
-              "$ref": "https://timeatlas.eu/rde/dataset.schema.json"
+              "$ref": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/dataset.schema.json"
             },
             {
-              "$ref": "https://timeatlas.eu/rde/layer.schema.json"
+              "$ref": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/layer.schema.json"
             },
             {
-              "$ref": "https://timeatlas.eu/rde/map.schema.json"
+              "$ref": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/map.schema.json"
             },
             {
-              "$ref": "https://timeatlas.eu/rde/area.schema.json"
+              "$ref": "https://epfl-timemachine.github.io/time-atlas-json-schema/rde/area.schema.json"
             }
           ]
         }

@@ -1,163 +1,243 @@
+"""Validate locally produced RDE files using a local, optionally pinned schema set."""
+
+from argparse import ArgumentParser, BooleanOptionalAction
 import json
-from referencing.jsonschema import DRAFT202012
-from referencing import Registry
+from pathlib import Path
+import sys
+
 from jsonschema import Draft202012Validator
 from jsonschema.exceptions import ValidationError
-from pathlib import Path
-from os.path import join
-import sys
-from argparse import ArgumentParser, BooleanOptionalAction
-import os
-from iiif_validation.schemavalidator import validate
+from referencing import Registry
+from referencing.exceptions import NoSuchResource
+from referencing.jsonschema import DRAFT202012
 
-def validate_iiif_file_and_report(fp:str, raise_error=False):
-    try:
-        err_reports = validate(open(fp).read())
-        if err_reports['warnings'] and len(err_reports['warnings']) > 0:
-            print(f"{len(err_reports['warnings'])} warnings found in {fp}:")
-            for w in err_reports['warnings']:
-                print('Warning:', w)
-            
-        if err_reports['errorList'] and len(err_reports['errorList']) > 0:
-            print(f"{len(err_reports['errorList'])} errors found in {fp}:")
-            for w in err_reports['errorList']:
-                print('Error:', w)
-            if raise_error:
-                raise Exception('Validation errors found: ', err_reports['errorList'])
-    except Exception as e:
-        print(f"Error validating {fp}: {e}")
-        raise e
+if __package__:
+    from .sync_schemas import check_destination, load_manifest
+else:
+    from sync_schemas import check_destination, load_manifest
 
-parent_dir = os.path.abspath('../')
-if parent_dir not in sys.path: sys.path.insert(0, parent_dir)
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'time-atlas-python')))
-from timeatlas.RDEModel import RDEType
 
-all_resources_name = ["file", 
-                RDEType.HR.value,
-                RDEType.OBS.value,
-                RDEType.POI.value,
-                RDEType.GEOM.value, 
-                RDEType.DATASET.value,
-                'configuration',
-                "metadata",
-                "multilingual_data",
-                RDEType.AREA.value,
-                RDEType.LAYER.value,
-                RDEType.LAYER.value + '_configuration',
-                RDEType.MAP.value]
-all_schemas = {k: json.load(open(f'schemas/{k}.schema.json')) for k in all_resources_name}
-schema_store = [(s['$id'], DRAFT202012.create_resource(s)) for _,s in all_schemas.items()]
-
+VALIDATION_ROOT = Path(__file__).resolve().parent
+REPOSITORY_ROOT = VALIDATION_ROOT.parent
+DEFAULT_SCHEMA_DIRECTORY = VALIDATION_ROOT / "schemas"
 uuid_store = {}
 
-def validate_file(fp:str, validator:Draft202012Validator, raise_error=False):
-    with open(fp) as f:
-        cont = json.load(f)
-        try:
-            validator.validate(cont)
-        except ValidationError as e:
-            uuids = []
-            #the validationError launched from $ref tag with jsonschema is unfortunately very vague, so we need to check the error message by directly validating the object
-            rde_type = cont['type_in_file'][0]
-            corr_schema = all_schemas[rde_type]
-            rde_validator = Draft202012Validator(schema=corr_schema, registry=registry)
-            try:
-                for obj in cont['rde_objects']:
-                    rde_validator.validate(obj)
-                    uuids.append(obj['id'])
-            except ValidationError as e:
+
+def _offline_resource(uri):
+    raise NoSuchResource(ref=uri)
+
+
+def build_validator(schema_directory=None, schema_manifest=None):
+    """Load a schema bundle and registry without retrieving remote references.
+
+    The repository's default bundle requires its release lock. An adjacent lock
+    is also used automatically for custom schema directories; custom directories
+    without a lock remain available for inspecting candidate or legacy schemas.
+    """
+    directory = Path(schema_directory) if schema_directory is not None else DEFAULT_SCHEMA_DIRECTORY
+    manifest_path = Path(schema_manifest) if schema_manifest is not None else directory.parent / "rde-schemas.lock.json"
+    manifest = None
+    if (schema_manifest is not None
+            or directory.resolve() == DEFAULT_SCHEMA_DIRECTORY.resolve()
+            or manifest_path.exists()):
+        manifest = load_manifest(manifest_path)
+        check_destination(manifest, directory)
+
+    schemas = {}
+    resources = []
+    ids = set()
+    for path in sorted(directory.glob("*.schema.json")):
+        schema = json.loads(path.read_text(encoding="utf-8"))
+        Draft202012Validator.check_schema(schema)
+        if not isinstance(schema, dict) or not isinstance(schema.get("$id"), str):
+            raise ValueError(f"Schema must declare a string $id: {path}")
+        if schema["$id"] in ids:
+            raise ValueError(f"Duplicate schema $id: {schema['$id']}")
+        if manifest is not None and schema["$id"] != manifest["files"][f"rde/{path.name}"]["id"]:
+            raise ValueError(f"Schema $id differs from its release lock: {path}")
+        ids.add(schema["$id"])
+        schemas[path.name.removesuffix(".schema.json")] = schema
+        resources.append((schema["$id"], DRAFT202012.create_resource(schema)))
+    if "file" not in schemas:
+        raise ValueError(f"Missing file.schema.json in {directory}")
+    registry = Registry(retrieve=_offline_resource).with_resources(resources)
+    validator = Draft202012Validator(schema=schemas["file"], registry=registry)
+    return schemas, registry, validator
+
+
+def validate_iiif_file_and_report(fp: str, raise_error=False):
+    # RDE validation and imports must not require the separate IIIF validator.
+    if __package__:
+        from .iiif_validation.schemavalidator import validate
+    else:
+        from iiif_validation.schemavalidator import validate
+
+    try:
+        err_reports = validate(Path(fp).read_text(encoding="utf-8"))
+        if err_reports['warnings'] and len(err_reports['warnings']) > 0:
+            print(f"{len(err_reports['warnings'])} warnings found in {fp}:")
+            for warning in err_reports['warnings']:
+                print('Warning:', warning)
+        if err_reports['errorList'] and len(err_reports['errorList']) > 0:
+            print(f"{len(err_reports['errorList'])} errors found in {fp}:")
+            for error in err_reports['errorList']:
+                print('Error:', error)
+            if raise_error:
+                raise Exception('Validation errors found: ', err_reports['errorList'])
+    except Exception as error:
+        print(f"Error validating {fp}: {error}")
+        raise
+
+
+def _validation_error_message(error):
+    path = "/" + "/".join(str(part).replace("~", "~0").replace("/", "~1") for part in error.absolute_path)
+    if error.validator in {"anyOf", "oneOf"}:
+        reason = "value does not match the permitted schema alternatives"
+    else:
+        reason = error.message
+    if len(reason) > 240:
+        reason = reason[:237] + "..."
+    return f"at {path} ({error.validator}): {reason}"
+
+
+def validate_file(fp: str, validator: Draft202012Validator, raise_error=False):
+    """Report every invalid envelope and retain the original validation error."""
+    with open(fp, encoding="utf-8") as stream:
+        content = json.load(stream)
+    uuid_store[fp] = []
+    try:
+        validator.validate(content)
+    except ValidationError as error:
+        if raise_error:
+            raise
+        print(f"Error in {fp} {_validation_error_message(error)}")
+        return False
+    # Valid envelopes may contain heterogeneous RDE types. There is no need to
+    # guess a single object schema from the first type_in_file entry.
+    uuid_store[fp] = [
+        obj["id"] for obj in content["rde_objects"]
+        if isinstance(obj, dict) and isinstance(obj.get("id"), str)
+    ]
+    return True
+
+
+def is_file_holding_rde_objects(fp: str):
+    with open(fp, encoding="utf-8") as stream:
+        content = json.load(stream)
+    return isinstance(content, dict) and 'type_in_file' in content and 'rde_objects' in content
+
+
+def check_uuid_uniqueness(raise_error=False):
+    uuid_file = {}
+    valid = True
+    for path, uuids in uuid_store.items():
+        for uuid in uuids:
+            if uuid not in uuid_file:
+                uuid_file[uuid] = path
+            else:
+                message = f'UUID {uuid} found in multiple files: {uuid_file[uuid]} and {path}'
+                print(message)
+                valid = False
                 if raise_error:
-                    raise e
-                else:
-                    print(f'Error in {fp}, on obj {obj}: {e}')
-                    uuid_store[fp] = uuids
-                    return
-            uuid_store[fp] = uuids
+                    raise ValueError(message)
+    return valid
 
 
-def is_file_holding_rde_objects(fp:str):
-    with open(fp) as f:
-        cont = json.load(f)
-        return 'type_in_file' in cont and 'rde_objects' in cont  
+def main(argv=None):
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument('-d', '--dataset', default=None, help='Dataset to validate (does not support maps and areas)')
+    parser.add_argument('--only_iiif', default=False, action=BooleanOptionalAction, help='Only validate IIIF files')
+    parser.add_argument('--error_interrupt', default=False, action=BooleanOptionalAction, help='Interrupt if any validation fails')
+    parser.add_argument('--m', default=False, action=BooleanOptionalAction, help='Only validate maps')
+    parser.add_argument('--schema-directory', type=Path, help='Local schema directory (default: validation/schemas)')
+    parser.add_argument('--schema-manifest', type=Path, help='Release lock to verify before loading schemas')
+    parser.add_argument('--file', type=Path, action='append', default=[], help='Validate this RDE file only; repeat to select several files, without IIIF or directory crawling')
+    args = parser.parse_args(argv)
+    if args.file and (args.only_iiif or args.dataset or args.m):
+        parser.error('--file cannot be combined with --only_iiif, --dataset, or --m')
 
-file_schema = all_schemas['file']
-registry = Registry().with_resources(schema_store)
-validator = Draft202012Validator(schema=file_schema, registry=registry)
+    uuid_store.clear()
+    validator = None
+    if not args.only_iiif:
+        _, _, validator = build_validator(args.schema_directory, args.schema_manifest)
 
-if __name__ == '__main__':
-    args = ArgumentParser()
-    args.add_argument('-d', '--dataset', default=None, help='Dataset to validate (does no support maps and areas)')
-    args.add_argument('--only_iiif', default=False, action=BooleanOptionalAction, help='Only validate IIIF files')
-    args.add_argument('--error_interrupt', default=False, action=BooleanOptionalAction, help='Interrupts the script if any validation fails')
-    args.add_argument('--m', default=False, action=BooleanOptionalAction, help='Only validate maps')
-    args = args.parse_args()
+    valid = True
 
-    DATASET_ROOT = '../rde/datasets'
-    dataset_list = os.listdir(DATASET_ROOT)
+    def validate_rde(path):
+        nonlocal valid
+        print(f'Validating {path}')
+        if not validate_file(path, validator, raise_error=args.error_interrupt):
+            valid = False
+
+    if args.file:
+        # Avoid validating the same selection twice and reporting its UUIDs twice.
+        for path in dict.fromkeys(path.resolve() for path in args.file):
+            validate_rde(path)
+        print('Checking unicity of UUIDs')
+        return 0 if check_uuid_uniqueness(args.error_interrupt) and valid else 1
+
+    dataset_root = REPOSITORY_ROOT / 'rde' / 'datasets'
+    dataset_list = list(dataset_root.iterdir())
     if args.dataset:
-        new_dataset_list = [d for d in dataset_list if args.dataset in d]
-        if len(new_dataset_list) == 0:
-            print(f'Dataset {args.dataset} not found in {DATASET_ROOT}')
-            sys.exit(1)
-        dataset_list = new_dataset_list
+        dataset_list = [path for path in dataset_list if args.dataset in path.name]
+        if not dataset_list:
+            print(f'Dataset {args.dataset} not found in {dataset_root}')
+            return 1
+
     if not args.only_iiif:
         if not args.m:
-            for d in dataset_list:
-                # not validating pois, as they will be validated separately.
-                all_files_to_validate = [v for v in list(Path(join(DATASET_ROOT, d, '')).rglob('*.json')) if 'iiif' not in str(v) and 'points_of_interest.json' not in str(v) and is_file_holding_rde_objects(v)]
-                for fp in all_files_to_validate:
-                    print(f'Validating {fp}')
-                    validate_file(fp, validator, raise_error=args.error_interrupt)
-        
+            for dataset in dataset_list:
+                # POIs are validated separately, as in the existing crawler.
+                files = [path for path in dataset.rglob('*.json')
+                         if 'iiif' not in str(path) and 'points_of_interest.json' not in str(path)
+                         and is_file_holding_rde_objects(path)]
+                for path in files:
+                    validate_rde(path)
+
         if not args.dataset:
-            MAP_ROOT = '../rde/maps'
-            map_list = os.listdir(MAP_ROOT)
-            for m in map_list:
-                all_files_to_validate = [v for v in list(Path(join(MAP_ROOT, m)).rglob('*.json'))]
-                for fp in all_files_to_validate:
-                    print(f'Validating {fp}')
-                    validate_file(fp, validator)
+            map_root = REPOSITORY_ROOT / 'rde' / 'maps'
+            for map_path in map_root.iterdir():
+                for path in map_path.rglob('*.json'):
+                    validate_rde(path)
 
         if not args.m and not args.dataset:
-            AREA_ROOT = '../rde/areas/data'
-            for a in list(Path(AREA_ROOT).rglob('*.json')):
-                print(f'Validating {a}')
-                validate_file(a, validator)
-
-            POIS_ROOT = '../rde/pois'
-            for p in list(Path(POIS_ROOT).rglob('*.json')):
-                print(f'Validating {p}')
-                validate_file(p, validator)
+            area_root = REPOSITORY_ROOT / 'rde' / 'areas' / 'data'
+            for path in area_root.rglob('*.json'):
+                validate_rde(path)
+            poi_root = REPOSITORY_ROOT / 'rde' / 'pois'
+            for path in poi_root.rglob('*.json'):
+                validate_rde(path)
 
     print('Checking unicity of UUIDs')
-    uuid_file = {}
-    for k, vs in uuid_store.items():
-        for v in vs:
-            if v not in uuid_file:
-                uuid_file[v] = k
-            else:
-                print(f'UUID {v} found in multiple files: {uuid_file[v]} and {k}')
-                if args.error_interrupt:
-                    raise Exception(f'UUID {v} found in multiple files: {uuid_file[v]} and {k}')
+    if not check_uuid_uniqueness(args.error_interrupt):
+        valid = False
 
     if not args.m:
-        for ds in dataset_list:
-            iiif_loc_path = os.path.join(DATASET_ROOT, ds, 'iiif')
-            if os.path.exists(iiif_loc_path):
-                coll_list = [f for f in  os.listdir(os.path.join(iiif_loc_path, 'collections')) if f.endswith('.json')]
-                if len(coll_list) > 1:
-                    print('Multiple collections found in', ds, ' is this expected?')
-                    print('Validating collection manifests of', ds)
+        for dataset in dataset_list:
+            iiif_path = dataset / 'iiif'
+            if iiif_path.exists():
+                collections = [path for path in (iiif_path / 'collections').iterdir() if path.suffix == '.json']
+                if len(collections) > 1:
+                    print('Multiple collections found in', dataset.name, ' is this expected?')
+                    print('Validating collection manifests of', dataset.name)
                 else:
-                    print('Validating collection manifest of', ds)
-                for c in coll_list:
-                    validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'collections', c))
-                man_list = os.listdir(os.path.join(iiif_loc_path, 'manifests'))
-                print('Validating ', len(man_list), ' manifests of ', ds)
-                man_list = [m for m in man_list if m.endswith('.json')]
-                for m in man_list:
-                    try:
-                        validate_iiif_file_and_report(os.path.join(iiif_loc_path, 'manifests', m))
-                    except Exception as e:
-                        print(f"Error validating {m}: {e}")
+                    print('Validating collection manifest of', dataset.name)
+                for collection in collections:
+                    validate_iiif_file_and_report(collection)
+                manifests = list((iiif_path / 'manifests').iterdir())
+                print('Validating ', len(manifests), ' manifests of ', dataset.name)
+                for manifest in manifests:
+                    if manifest.suffix == '.json':
+                        try:
+                            validate_iiif_file_and_report(manifest)
+                        except Exception as error:
+                            print(f"Error validating {manifest.name}: {error}")
+    return 0 if valid else 1
+
+
+if __name__ == '__main__':
+    try:
+        sys.exit(main())
+    except ValidationError as error:
+        print(f'Validation failed {_validation_error_message(error)}', file=sys.stderr)
+        sys.exit(1)

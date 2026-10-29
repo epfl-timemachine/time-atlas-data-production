@@ -45,7 +45,10 @@ probe: it imports `geopandas`, `rasterio` and `timeatlas`, checks that
 `produce_area_from_current_extent`, `save_rde_to_files` and `validate_data`, and
 checks that `AGENTS.md` and the pre-production-analysis and output-file-format
 skills are present and non-empty under `/workspace`. The build fails if any of
-them is missing.
+them is missing. It also verifies and loads the vendored RDE schemas against
+`validation/rde-schemas.lock.json`; missing or changed schema files fail the build.
+See [schema release synchronization and validation](validation/README.md) for the
+update procedure and offline checks.
 
 The UID/GID arguments make files created in a bind-mounted checkout belong to the
 host user on Linux and macOS. They can be omitted on platforms without `id`; both

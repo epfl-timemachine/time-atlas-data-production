@@ -70,6 +70,8 @@ from pathlib import Path
 
 import geopandas, rasterio, timeatlas
 from timeatlas import RDECollection
+from timeatlas.SourceInventory import normalize_source_inventory, normalize_source_manifests, plan_source_image_urls, normalize_source_image_urls, link_source_records, build_source_collection, write_source_collection
+from validation.validate_data import build_validator
 
 files = [
     "AGENTS.md",
@@ -89,6 +91,8 @@ if empty:
     raise SystemExit(f"Empty instruction files: {', '.join(empty)}")
 if missing:
     raise SystemExit(f"RDECollection is missing: {', '.join(missing)}")
+schemas, _, _ = build_validator()
+print(f"Verified {len(schemas)} local RDE schemas against the release lock")
 print("time-atlas-python", version("time-atlas-python"))
 PY
 
